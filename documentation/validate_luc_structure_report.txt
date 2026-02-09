@@ -1,0 +1,14 @@
+structure_consistent=true
+header_same=true
+instruction_count_same=true
+constant_count_same=true
+prototype_count_same=true
+debug_count_same=true
+function_count=34 -> 34
+instruction_total=127908 -> 127908
+constant_total=24576 -> 24576
+prototype_total=33 -> 33
+debug_lineinfo_total=127908 -> 127908
+debug_localvars_total=38 -> 38
+debug_upvalue_names_total=0 -> 0
+details=none

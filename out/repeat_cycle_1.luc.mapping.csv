@@ -1,0 +1,4 @@
+quest_id,field_key,function_path,constant_index,constant_type,old_value,new_value,max_bytes,new_bytes,length_ok,action
+1,condition_json.needLevel,root,127,number,15,33,8,8,true,patch_number
+94,reward_item_count,root,92,number,99,50,8,8,true,patch_number
+115,reward_item_count,root,88,number,1,50,8,8,true,patch_number
