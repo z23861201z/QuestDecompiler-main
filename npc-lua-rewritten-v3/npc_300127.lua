@@ -1,0 +1,90 @@
+local function __QUEST_HAS_ALL_ITEMS(goalItems)
+  for i, v in ipairs(goalItems) do
+    if CHECK_ITEM_CNT(v.id) < v.count then
+      return false
+    end
+  end
+  return true
+end
+
+local function __QUEST_FIRST_ITEM_ID(goalItems)
+  if goalItems == nil or goalItems[1] == nil then
+    return 0
+  end
+  return goalItems[1].id
+end
+
+local function __QUEST_FIRST_ITEM_COUNT(goalItems)
+  if goalItems == nil or goalItems[1] == nil then
+    return 0
+  end
+  return goalItems[1].count
+end
+
+function npcsay(id)
+  if id ~= 4300127 then
+    return
+  end
+  clickNPCid = id
+  if qData[1409].state == 1 then
+    if __QUEST_HAS_ALL_ITEMS(qt[1409].goal.getItem) then
+      NPC_SAY("????. ????? ???? ?? ?? ????. ??? ?? ?? ?? ?? ??? 2?? ??? ??? ?? ?? ??.")
+      SET_QUEST_STATE(1409, 2)
+      return
+    else
+      NPC_SAY("??? ?? ???? ???? {0xFFFFFF00}????? 10?{END}? ????.")
+      return
+    end
+  end
+  if qData[1410].state == 1 then
+    if __QUEST_HAS_ALL_ITEMS(qt[1410].goal.getItem) then
+      NPC_SAY("????. ????? ???? ?? ?? ????. ??? ?? ?? ?? ?? ??? 2?? ??? ??? ?? ?? ??.")
+      SET_QUEST_STATE(1410, 2)
+      return
+    else
+      NPC_SAY("??? ?? ???? ???? {0xFFFFFF00}????? 10?{END}? ????.")
+      return
+    end
+  end
+  if qData[1411].state == 1 then
+    if __QUEST_HAS_ALL_ITEMS(qt[1411].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[1411].goal.getItem) then
+      NPC_SAY("????. ????? ????? ??? ?? ??? ???. ??? ???? ???? ?? ?? ? ?? ???. ?? ?? ???.")
+      SET_QUEST_STATE(1411, 2)
+      return
+    else
+      NPC_SAY("??? ?? ???? ???? {0xFFFFFF00}?????? ?????? ?? 10??{END} ????.")
+      return
+    end
+  end
+  if qData[1409].state == 0 and GET_PLAYER_FACTION() == 0 then
+    ADD_QUEST_BTN(qt[1409].id, qt[1409].name)
+  end
+  if qData[1410].state == 0 and GET_PLAYER_FACTION() == 1 then
+    ADD_QUEST_BTN(qt[1410].id, qt[1410].name)
+  end
+  if qData[1411].state == 0 and GET_PLAYER_FACTION() == -1 then
+    ADD_QUEST_BTN(qt[1411].id, qt[1411].name)
+  end
+  if GET_PLAYER_FACTION() == 0 then
+    ADD_FACTION1_EVENT(id)
+    ADD_FACTION1_EVENT_SHOW(id)
+  end
+  if GET_PLAYER_FACTION() == 1 then
+    ADD_FACTION2_EVENT(id)
+    ADD_FACTION2_EVENT_SHOW(id)
+  end
+end
+function chkQState(id)
+  QSTATE(id, -1)
+  if qData[1411].state ~= 2 and GET_PLAYER_FACTION() == -1 then
+    if qData[1411].state == 1 then
+      if __QUEST_HAS_ALL_ITEMS(qt[1411].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[1411].goal.getItem) then
+        QSTATE(id, 2)
+      else
+        QSTATE(id, 1)
+      end
+    else
+      QSTATE(id, 0)
+    end
+  end
+end

@@ -43,6 +43,7 @@ public class QuestSemanticPatchApplier {
     QuestSemanticExtractor.ExtractionResult extracted = extractor.extract(chunk);
 
     List<QuestSemanticCsvTool.CsvQuestRow> editedRows = QuestSemanticCsvTool.importCsv(inputCsv);
+
     Map<Integer, QuestSemanticCsvTool.CsvQuestRow> rowByQuest = new HashMap<Integer, QuestSemanticCsvTool.CsvQuestRow>();
     for(QuestSemanticCsvTool.CsvQuestRow row : editedRows) {
       rowByQuest.put(Integer.valueOf(row.questId), row);

@@ -22,6 +22,7 @@ import unluac.semantic.QuestSemanticCsvTool;
 import unluac.semantic.QuestSemanticExtractor;
 import unluac.semantic.QuestSemanticJson;
 import unluac.semantic.QuestSemanticModel;
+import unluac.semantic.QuestModificationRiskValidator;
 import unluac.semantic.NpcSemanticExtractor;
 import unluac.semantic.ScriptTypeDetector;
 import unluac.semantic.ItemRequirement;
@@ -124,10 +125,14 @@ public class QuestEditorService {
   public QuestEditorSaveResult savePatchedLuc(Path sourceLuc,
                                               List<QuestEditorModel> rows,
                                               Path outputLuc) throws Exception {
+    List<QuestEditorModel> dirtyRows = collectDirtyRows(rows);
+
     Path csvPath = createTempCsvPath(outputLuc, "quest_editor_gui_input");
     Path workingOutput = createTempLucPath(outputLuc, "quest_editor_gui_output");
 
     Path mappingPath = Paths.get(outputLuc.toString() + ".mapping.csv");
+    Path dependencyIndexPath = Paths.get("reports", "quest_npc_dependency_index.json");
+    Path riskReportPath = Paths.get("reports", "quest_modification_risk_report.json");
     try {
       writeCsv(csvPath, rows);
       if(Files.size(csvPath) <= QuestSemanticCsvTool.CSV_HEADER.length() + 2) {
@@ -139,9 +144,17 @@ public class QuestEditorService {
             Collections.singletonList("quest_id,field_key,function_path,constant_index,constant_type,old_value,new_value,max_bytes,new_bytes,length_ok,action"),
             Charset.forName("UTF-8"));
       } else {
+        QuestModificationRiskValidator.validateBeforeSave(
+            sourceLuc,
+            rows,
+            resolveNpcLuaDirectory(sourceLuc),
+            dependencyIndexPath,
+            riskReportPath);
         unluac.semantic.QuestSemanticPatchApplier.apply(sourceLuc, csvPath, workingOutput, mappingPath);
         Files.move(workingOutput, outputLuc, StandardCopyOption.REPLACE_EXISTING);
       }
+
+      markRowsClean(dirtyRows);
     } finally {
       deleteIfExistsQuietly(csvPath);
       deleteIfExistsQuietly(workingOutput);
@@ -272,8 +285,6 @@ public class QuestEditorService {
           + csv(rewardSkillJson) + ","
           + csv(dialogJson) + ","
           + csv(mergedConditionJson));
-
-      row.dirty = false;
     }
 
     Files.write(csvPath, lines, Charset.forName("UTF-8"));
@@ -921,6 +932,46 @@ public class QuestEditorService {
   private Path createTempLucPath(Path base, String prefix) throws Exception {
     Path dir = base.getParent() == null ? Paths.get(".") : base.getParent();
     return Files.createTempFile(dir, prefix + ".", ".luc");
+  }
+
+  private List<QuestEditorModel> collectDirtyRows(List<QuestEditorModel> rows) {
+    List<QuestEditorModel> out = new ArrayList<QuestEditorModel>();
+    if(rows == null) {
+      return out;
+    }
+    for(QuestEditorModel row : rows) {
+      if(row != null && row.dirty) {
+        out.add(row);
+      }
+    }
+    return out;
+  }
+
+  private void markRowsClean(List<QuestEditorModel> rows) {
+    if(rows == null) {
+      return;
+    }
+    for(QuestEditorModel row : rows) {
+      if(row != null) {
+        row.dirty = false;
+      }
+    }
+  }
+
+  private Path resolveNpcLuaDirectory(Path sourceLuc) {
+    String override = System.getenv("QUEST_NPC_LUA_DIR");
+    if(!isBlank(override)) {
+      return Paths.get(override.trim());
+    }
+
+    if(sourceLuc != null && sourceLuc.getParent() != null) {
+      Path siblingNpcLua = sourceLuc.getParent().resolve("npc-lua");
+      if(Files.isDirectory(siblingNpcLua)) {
+        return siblingNpcLua;
+      }
+    }
+
+    return Paths.get("D:\\TitanGames\\GhostOnline\\zChina\\Script\\npc-lua");
   }
 
   private String buildRewardDiffSummary(List<QuestEditorModel> rows) {
