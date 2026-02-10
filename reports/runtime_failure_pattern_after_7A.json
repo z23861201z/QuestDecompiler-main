@@ -1,0 +1,1309 @@
+{
+  "generatedAt": "2026-02-10T23:17:18.251+08:00",
+  "totalFailures": 184,
+  "patternTypes": [
+    {
+      "patternType": "模式B：qt[x].goal.getItem[n].id/.count",
+      "count": 7,
+      "exampleFiles": ["npc_300011.lua", "npc_215005.lua", "npc_316009.lua", "npc_315025.lua", "npc_316013.lua"],
+      "exampleCodeSnippets": ["if qData[91].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[91].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[234].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[485].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[867].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2379].goal.getItem) then"]
+    },
+    {
+      "patternType": "模式G：其它未识别结构",
+      "count": 177,
+      "exampleFiles": ["npc_314011.lua", "npc_314012.lua", "npc_213006.lua", "npc_213001.lua", "npc_314020.lua"],
+      "exampleCodeSnippets": ["hardcodedGoalIndexes=[1]", "NPC_SAY(\"{0xFFFFFF00}[????] 20??{END}? ??????\")", "else", "if CHECK_ITEM_CNT(qt[2087].goal.getItem[1].id) >= qt[2087].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2087].goal.getItem[2].id) >= qt[2087].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[2083].goal.getItem[1].id) >= qt[2083].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2083].goal.getItem[2].id) >= qt[2083].goal.getItem[2].count then"]
+    }
+  ],
+  "unclassifiedCount": 177,
+  "classifiedFailures": [
+    {
+      "npcFile": "npc_203001.lua",
+      "questIds": [1190, 1191],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_203006.lua",
+      "questIds": [1198, 3704],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_213001.lua",
+      "questIds": [84, 122, 127, 154, 201, 339, 342, 348, 548, 549],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["else", "SET_INFO(108, 1)", "QSTATE(id, 2)"]
+    },
+    {
+      "npcFile": "npc_213002.lua",
+      "questIds": [93, 450, 1086, 1094, 1218],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_213003.lua",
+      "questIds": [340, 343, 1224, 1237],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_213004.lua",
+      "questIds": [197, 441, 554],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_213005.lua",
+      "questIds": [83, 129, 1188],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_213006.lua",
+      "questIds": [132, 429, 430, 431, 432, 437, 447, 687, 1151, 1185, 1186],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["NPC_SAY(\"{0xFFFFFF00}[????] 20??{END}? ??????\")", "SET_INFO(338, 1)", "return"]
+    },
+    {
+      "npcFile": "npc_213008.lua",
+      "questIds": [236],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214001.lua",
+      "questIds": [1113, 1341],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214002.lua",
+      "questIds": [861],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214003.lua",
+      "questIds": [1117],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214004.lua",
+      "questIds": [1085, 1093, 1118, 1136],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214005.lua",
+      "questIds": [1181],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_214006.lua",
+      "questIds": [1150, 1183, 1184, 1187],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_214010.lua",
+      "questIds": [1101],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_215001.lua",
+      "questIds": [237, 1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1274, 1282, 1297, 1298],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["function npcsay(id)", "if qData[237].state == 1 then", "ADD_REPAIR_EQUIPMENT(id)"]
+    },
+    {
+      "npcFile": "npc_215002.lua",
+      "questIds": [153, 1087, 1095, 1281],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_215003.lua",
+      "questIds": [152, 165, 1273, 1275],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_215004.lua",
+      "questIds": [160, 164, 276, 451, 556, 1283, 1306, 1307, 1308, 1309, 1310, 1311, 1312],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["return true", "if qData[160].state == 1 then", "NPC_SAY(\"???? {0xFFFFFF00}??? ? 40?{END}? ??????\")"]
+    },
+    {
+      "npcFile": "npc_215005.lua",
+      "questIds": [234, 544, 545, 557, 1070, 1284, 1303, 1304],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[234].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[544].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[545].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_216001.lua",
+      "questIds": [293, 1544, 1550, 1555],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_216002.lua",
+      "questIds": [289, 291],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_216003.lua",
+      "questIds": [295, 482],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_216006.lua",
+      "questIds": [2125, 2129],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_216007.lua",
+      "questIds": [533],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_216008.lua",
+      "questIds": [1011, 2439, 2440, 2441, 2490, 2491, 2492, 2493, 3666, 3667],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["end", "return", "if __QUEST_HAS_ALL_ITEMS(qt[2439].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_217001.lua",
+      "questIds": [1159, 1162],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_217005.lua",
+      "questIds": [347, 1156, 1163],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_218006.lua",
+      "questIds": [1397],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_218007.lua",
+      "questIds": [576],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_218008.lua",
+      "questIds": [1459],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_220001.lua",
+      "questIds": [1013, 1014, 2469],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_221011.lua",
+      "questIds": [3658],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_222001.lua",
+      "questIds": [2329, 2663, 2664, 2667, 2678, 2738, 2803, 2804, 2805, 3742],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["end", "GIVE_DONATION_BUFF(id)", "if qData[2330].state == 1 then"]
+    },
+    {
+      "npcFile": "npc_222002.lua",
+      "questIds": [1049, 1056],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_222003.lua",
+      "questIds": [1050],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_222004.lua",
+      "questIds": [1051, 1057, 2675, 2676],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[1051].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[1057].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2675].goal.getItem) and __QUEST_HAS_ALL_KILL_TARGETS(qt[2675].goal.killMonster) then"]
+    },
+    {
+      "npcFile": "npc_222006.lua",
+      "questIds": [1055, 2714, 2800, 2801, 2802],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_240001.lua",
+      "questIds": [2594, 2596],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_240002.lua",
+      "questIds": [2181, 3644, 3702],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_240003.lua",
+      "questIds": [2182, 3645, 3698],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_240004.lua",
+      "questIds": [1479, 2184, 2588, 2590, 2598, 2863, 2869, 2871, 2872, 2873, 2877, 2878, 2881, 3647],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["end", "return", "else"]
+    },
+    {
+      "npcFile": "npc_240005.lua",
+      "questIds": [1478],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_240008.lua",
+      "questIds": [3699, 3700, 3703],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_241001.lua",
+      "questIds": [3736],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_241002.lua",
+      "questIds": [3787],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_241003.lua",
+      "questIds": [2721, 3785],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_241004.lua",
+      "questIds": [2904, 2910],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_241006.lua",
+      "questIds": [2903],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300003.lua",
+      "questIds": [2560, 2561, 2706],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_300007.lua",
+      "questIds": [2654, 2655],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300008.lua",
+      "questIds": [718, 719, 724, 2190, 2197, 2208, 2210, 2211, 2212, 2213, 2324],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["function npcsay(id)", "if qData[716].state == 1 then", "else"]
+    },
+    {
+      "npcFile": "npc_300009.lua",
+      "questIds": [248, 460, 1346],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300010.lua",
+      "questIds": [136, 242, 456, 1241, 1242, 1243, 1244],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[136].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[136].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[136].goal.getItem) then", "if qData[242].state == 1 and qData[241].state == 2 and qData[243].state == 2 and __QUEST_HAS_ALL_ITEMS(qt[242].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_300011.lua",
+      "questIds": [91, 133, 134, 135, 1005, 1207, 1210, 2066, 2067, 2068, 2898],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[91].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[91].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[91].goal.getItem) then", "if qData[133].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[133].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_300012.lua",
+      "questIds": [1132, 1133, 2025, 2065],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300111.lua",
+      "questIds": [1339, 1340, 1342],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300117.lua",
+      "questIds": [1801, 1802, 1803, 1804, 1805, 1806, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1822, 1825, 1826, 1827, 1828, 1829, 1830, 1831],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[1801].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1801].goal.getItem) then", "if qData[1802].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1802].goal.getItem) then", "if qData[1803].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1803].goal.getItem) and qData[1803].killMonster[qt[1803].goal.killMonster[1].id] >= qt[1803].goal.killMonster[1].count then"]
+    },
+    {
+      "npcFile": "npc_300119.lua",
+      "questIds": [1402, 2008],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300127.lua",
+      "questIds": [1409, 1410, 1411],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_300128.lua",
+      "questIds": [2012, 2013, 2014],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3, 4]"]
+    },
+    {
+      "npcFile": "npc_300135.lua",
+      "questIds": [2177, 2178, 2179, 2180, 3643],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_300139.lua",
+      "questIds": [3706],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300145.lua",
+      "questIds": [2582],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300155.lua",
+      "questIds": [3711],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300164.lua",
+      "questIds": [3744],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300165.lua",
+      "questIds": [3745],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300166.lua",
+      "questIds": [2751],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300167.lua",
+      "questIds": [2846],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_300169.lua",
+      "questIds": [3747],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300170.lua",
+      "questIds": [3751],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300173.lua",
+      "questIds": [3756],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_300174.lua",
+      "questIds": [3768],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_301002.lua",
+      "questIds": [1078],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_310003.lua",
+      "questIds": [560, 561, 1222],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_310005.lua",
+      "questIds": [202, 246, 277, 280, 282, 464, 465, 466, 1219, 1220, 1227, 1319, 1320, 1321, 1322],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["return", "NPC_SAY(\"少侠，{0xFFFFFF00}10个[ 金牙 ]{END}收集回来了吗？世上到处都有困难的人啊\")", "NPC_SAY(\"这次是为了什么事来找我的啊\")"]
+    },
+    {
+      "npcFile": "npc_313002.lua",
+      "questIds": [76, 106, 198, 200, 1214, 1415],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["end", "SET_MEETNPC(95, 2, id)", "SET_QUEST_STATE(106, 2)"]
+    },
+    {
+      "npcFile": "npc_313003.lua",
+      "questIds": [1501],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_313004.lua",
+      "questIds": [1236],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_313005.lua",
+      "questIds": [336],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_313006.lua",
+      "questIds": [85, 1234],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_313007.lua",
+      "questIds": [1229, 1231, 1232, 1239, 2073, 2074, 2075, 2077, 2078],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[804].state == 1 then", "if qData[2079].state == 0 and qData[2078].state == 2 and GET_PLAYER_JOB1() == 11 then", "NPC_SAY(\"少侠击退了大胡子吗？真是帮我去除了一个心病。谢谢了。\")"]
+    },
+    {
+      "npcFile": "npc_314001.lua",
+      "questIds": [1130],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_314003.lua",
+      "questIds": [1141, 2024],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3, 4]"]
+    },
+    {
+      "npcFile": "npc_314004.lua",
+      "questIds": [1131],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_314006.lua",
+      "questIds": [1119],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314007.lua",
+      "questIds": [1116, 1143],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314008.lua",
+      "questIds": [1142],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314011.lua",
+      "questIds": [279],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314012.lua",
+      "questIds": [1418],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314020.lua",
+      "questIds": [64, 112, 123, 124, 125, 170, 176, 182, 382, 386, 631, 636, 637, 1124, 1125, 1147, 1177, 1179, 1404, 2087, 2093, 2094],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2087].goal.getItem[1].id) >= qt[2087].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2087].goal.getItem[2].id) >= qt[2087].goal.getItem[2].count then", "end", "return"]
+    },
+    {
+      "npcFile": "npc_314021.lua",
+      "questIds": [60, 113, 118, 119, 120, 167, 173, 179, 381, 383, 627, 633, 634, 1127, 1128, 1146, 1178, 1399, 2083, 2090, 2091],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2083].goal.getItem[1].id) >= qt[2083].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2083].goal.getItem[2].id) >= qt[2083].goal.getItem[2].count then", "end", "return"]
+    },
+    {
+      "npcFile": "npc_314035.lua",
+      "questIds": [2126, 2127, 2128, 2135],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314036.lua",
+      "questIds": [2119, 2120, 2121, 2134],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314058.lua",
+      "questIds": [1101],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314059.lua",
+      "questIds": [1111],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314060.lua",
+      "questIds": [1110],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314061.lua",
+      "questIds": [1109],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_314062.lua",
+      "questIds": [2034, 2039, 2040, 2041, 2042, 2046, 2047, 2048, 2049, 2055, 2061, 2062, 2063, 2071, 2072, 2156, 2157, 2158],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[2034].killMonster[qt[2034].goal.killMonster[1].id] >= qt[2034].goal.killMonster[1].count and __QUEST_HAS_ALL_ITEMS(qt[2034].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2039].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2040].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_315002.lua",
+      "questIds": [163, 1279, 1299, 1300, 1314],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_315006.lua",
+      "questIds": [157, 161],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_315007.lua",
+      "questIds": [235, 240, 244, 473, 1071, 1252],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["return", "if qData[235].state == 1 then", "end"]
+    },
+    {
+      "npcFile": "npc_315009.lua",
+      "questIds": [166],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315010.lua",
+      "questIds": [111, 1246],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315011.lua",
+      "questIds": [121, 126, 1257, 1258, 1259, 1260, 1261],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["SET_INFO(108, 2)", "if qData[108].state == 1 and GET_PLAYER_LEVEL() >= qt[108].needLevel then", "SET_QUEST_STATE(121, 2)"]
+    },
+    {
+      "npcFile": "npc_315015.lua",
+      "questIds": [144],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315018.lua",
+      "questIds": [1043, 1270, 1271],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315019.lua",
+      "questIds": [1008, 1289],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315020.lua",
+      "questIds": [1006, 1230],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315024.lua",
+      "questIds": [1254],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_315025.lua",
+      "questIds": [867, 1348, 1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1358, 1359, 1360, 1362, 1363, 1364, 1365, 1366, 1368, 1369, 1370, 1373, 1374, 1375, 1376, 1377, 1378, 1382, 1383, 1384, 1385, 1389],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[867].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[1348].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[1349].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_316003.lua",
+      "questIds": [284, 285, 1542, 1548, 1552],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_316004.lua",
+      "questIds": [481, 1546, 1558],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_316005.lua",
+      "questIds": [1557],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_316006.lua",
+      "questIds": [286, 288, 290, 483, 1560],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_316008.lua",
+      "questIds": [292],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_316009.lua",
+      "questIds": [485, 486, 487, 491, 492, 497, 714, 720, 721, 722, 1010, 2130, 2161],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[485].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[486].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[487].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_316010.lua",
+      "questIds": [534],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_316013.lua",
+      "questIds": [2379, 2420, 2421, 2423, 2425, 2442, 2443, 2444, 2452, 2453, 2454, 3664, 3665],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[2379].goal.getItem) then", "if qData[2420].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2420].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2421].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_317001.lua",
+      "questIds": [1167, 1172],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_317002.lua",
+      "questIds": [1157],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_317003.lua",
+      "questIds": [333, 1170],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_317004.lua",
+      "questIds": [1138, 1160, 1166, 1173, 1175],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_317006.lua",
+      "questIds": [329, 1161, 1168],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_317007.lua",
+      "questIds": [330, 1164, 1171],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_318001.lua",
+      "questIds": [3659, 3660, 3661],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_318003.lua",
+      "questIds": [579, 605],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_318006.lua",
+      "questIds": [1290],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_318013.lua",
+      "questIds": [1292, 1380],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_318020.lua",
+      "questIds": [568, 569, 570, 573, 575, 576, 579, 580, 581, 582, 583, 584, 586, 589, 590, 591, 592, 593, 599, 600, 603, 605],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_318021.lua",
+      "questIds": [771],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_318022.lua",
+      "questIds": [776],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_318023.lua",
+      "questIds": [779, 781, 783, 785, 787, 789],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[779].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[781].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[783].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_318024.lua",
+      "questIds": [791, 793, 794, 795],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_319006.lua",
+      "questIds": [1408],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_320001.lua",
+      "questIds": [1016, 1017, 1018, 2467, 2566, 2567, 2568],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[1016].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[1017].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[1018].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_320003.lua",
+      "questIds": [2473, 2475],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_320004.lua",
+      "questIds": [2482, 2483, 2484],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_321001.lua",
+      "questIds": [3657],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_321002.lua",
+      "questIds": [3656],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3, 4]"]
+    },
+    {
+      "npcFile": "npc_322003.lua",
+      "questIds": [2331, 2677, 2792],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_322004.lua",
+      "questIds": [1058, 1059, 2712],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_322005.lua",
+      "questIds": [1060, 1061, 2713],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_322006.lua",
+      "questIds": [2679, 2793, 2799],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_322009.lua",
+      "questIds": [2330, 2791],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_322012.lua",
+      "questIds": [2674, 2710, 2711, 2730, 2731],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_322013.lua",
+      "questIds": [2671, 2672, 2673],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_322014.lua",
+      "questIds": [2816, 2819],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_322015.lua",
+      "questIds": [2744, 2789],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2, 3]"]
+    },
+    {
+      "npcFile": "npc_322016.lua",
+      "questIds": [2832, 2833],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_322017.lua",
+      "questIds": [2788, 2861],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_322019.lua",
+      "questIds": [2735, 2790, 2830, 2831],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323001.lua",
+      "questIds": [2600],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323003.lua",
+      "questIds": [2599],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323004.lua",
+      "questIds": [2185, 3648],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323005.lua",
+      "questIds": [2186, 2883, 3649],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323006.lua",
+      "questIds": [1476, 1477, 2593, 2880, 2888, 2889],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["end", "if __QUEST_HAS_ALL_ITEMS(qt[1476].goal.getItem) then", "else"]
+    },
+    {
+      "npcFile": "npc_323007.lua",
+      "questIds": [2882],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323009.lua",
+      "questIds": [874, 875, 1483, 2858, 2859, 2860, 2864],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["NPC_SAY(\"嗯？还没去吗？(回到{0xFFFFFF00}安哥拉王宫{END}的{0xFFFFFF00}近卫兵可心{END}处吧)\")", "else", "return"]
+    },
+    {
+      "npcFile": "npc_323012.lua",
+      "questIds": [2183, 2589, 2595, 3646],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_323013.lua",
+      "questIds": [2587, 2591],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_324003.lua",
+      "questIds": [885, 1524],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341001.lua",
+      "questIds": [3729, 3783],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341004.lua",
+      "questIds": [2723],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341005.lua",
+      "questIds": [3731],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_341007.lua",
+      "questIds": [2914],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341008.lua",
+      "questIds": [2912],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341011.lua",
+      "questIds": [2908],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341013.lua",
+      "questIds": [3730],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341014.lua",
+      "questIds": [3732],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341019.lua",
+      "questIds": [2720],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341020.lua",
+      "questIds": [2724],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_341021.lua",
+      "questIds": [2722, 3735, 3786],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_341022.lua",
+      "questIds": [2906, 3733, 3784],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_391001.lua",
+      "questIds": [1502, 3629],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_391104.lua",
+      "questIds": [1347],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_391112.lua",
+      "questIds": [2698, 2699, 2700, 2701, 2736, 2737],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if __QUEST_HAS_ALL_ITEMS(qt[2698].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2699].goal.getItem) then", "if __QUEST_HAS_ALL_ITEMS(qt[2700].goal.getItem) then"]
+    },
+    {
+      "npcFile": "npc_901020.lua",
+      "questIds": [145, 146],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_901033.lua",
+      "questIds": [1245],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_901034.lua",
+      "questIds": [111],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_915015.lua",
+      "questIds": [158, 159],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1]"]
+    },
+    {
+      "npcFile": "npc_915017.lua",
+      "questIds": [155],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    },
+    {
+      "npcFile": "npc_915018.lua",
+      "questIds": [142, 162, 238, 1069],
+      "patternType": "G",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["hardcodedGoalIndexes=[1, 2]"]
+    }
+  ]
+}

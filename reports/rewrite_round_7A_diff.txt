@@ -1,0 +1,487 @@
+# rewrite_round_7A_diff
+# generatedAt=2026-02-10T23:00:47.427+08:00
+
+--- npc_213001.lua
++++ npc_213001.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_213001.lua
++++ npc_213001.lua (round_7A_rewritten)
+@@ lines 160-160 @@
+- CHECK_ITEM_CNT(qt[339].goal.getItem[1].id) >= qt[339].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[339].goal.getItem)
+
+--- npc_213006.lua
++++ npc_213006.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_213006.lua
++++ npc_213006.lua (round_7A_rewritten)
+@@ lines 20-20 @@
+- __QUEST_HAS_ALL_ITEMS(qt[132].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[132].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[132].goal.getItem)
+
+--- npc_215001.lua
++++ npc_215001.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_215001.lua
++++ npc_215001.lua (round_7A_rewritten)
+@@ lines 407-407 @@
+- __QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1024].goal.getItem) or CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1024].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1033].goal.getItem) or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count
+
+--- npc_215001.lua
++++ npc_215001.lua (round_7A_rewritten)
+@@ lines 405-405 @@
+- (qData[1023].state ~= 2 or qData[1024].state ~= 2 or qData[1033].state ~= 2 or qData[1034].state ~= 2) and GET_PLAYER_JOB1() == 1 and (__QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1024].goal.getItem) or CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count)
++ (qData[1023].state ~= 2 or qData[1024].state ~= 2 or qData[1033].state ~= 2 or qData[1034].state ~= 2) and GET_PLAYER_JOB1() == 1 and (__QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1024].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1033].goal.getItem) or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count)
+
+--- npc_215001.lua
++++ npc_215001.lua (round_7A_rewritten)
+@@ lines 327-327 @@
+- qData[1033].state == 0 and GET_PLAYER_JOB1() == 1 and CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count
++ qData[1033].state == 0 and GET_PLAYER_JOB1() == 1 and __QUEST_HAS_ALL_ITEMS(qt[1033].goal.getItem)
+
+--- npc_215001.lua
++++ npc_215001.lua (round_7A_rewritten)
+@@ lines 42-42 @@
+- CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[1033].goal.getItem)
+
+--- npc_215004.lua
++++ npc_215004.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_215004.lua
++++ npc_215004.lua (round_7A_rewritten)
+@@ lines 452-452 @@
+- CHECK_ITEM_CNT(qt[1283].goal.getItem[1].id) >= qt[1283].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[1283].goal.getItem)
+
+--- npc_215004.lua
++++ npc_215004.lua (round_7A_rewritten)
+@@ lines 424-424 @@
+- __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem)
+
+--- npc_215004.lua
++++ npc_215004.lua (round_7A_rewritten)
+@@ lines 233-233 @@
+- CHECK_ITEM_CNT(qt[1283].goal.getItem[1].id) >= qt[1283].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[1283].goal.getItem)
+
+--- npc_215004.lua
++++ npc_215004.lua (round_7A_rewritten)
+@@ lines 33-33 @@
+- __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[276].goal.getItem)
+
+--- npc_216008.lua
++++ npc_216008.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_216008.lua
++++ npc_216008.lua (round_7A_rewritten)
+@@ lines 86-86 @@
+- CHECK_ITEM_CNT(qt[2491].goal.getItem[1].id) >= qt[2491].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2491].goal.getItem)
+
+--- npc_222001.lua
++++ npc_222001.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_222001.lua
++++ npc_222001.lua (round_7A_rewritten)
+@@ lines 256-256 @@
+- CHECK_ITEM_CNT(qt[2738].goal.getItem[1].id) >= qt[2738].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2738].goal.getItem[2].id) >= qt[2738].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[2738].goal.getItem)
+
+--- npc_222001.lua
++++ npc_222001.lua (round_7A_rewritten)
+@@ lines 74-74 @@
+- qData[2738].state == 1 and CHECK_ITEM_CNT(qt[2738].goal.getItem[1].id) >= qt[2738].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2738].goal.getItem[2].id) >= qt[2738].goal.getItem[2].count
++ qData[2738].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2738].goal.getItem)
+
+--- npc_240004.lua
++++ npc_240004.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_240004.lua
++++ npc_240004.lua (round_7A_rewritten)
+@@ lines 277-277 @@
+- CHECK_ITEM_CNT(qt[3647].goal.getItem[1].id) >= qt[3647].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[3647].goal.getItem)
+
+--- npc_240004.lua
++++ npc_240004.lua (round_7A_rewritten)
+@@ lines 57-57 @@
+- CHECK_ITEM_CNT(qt[3647].goal.getItem[1].id) >= qt[3647].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[3647].goal.getItem)
+
+--- npc_300008.lua
++++ npc_300008.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_300008.lua
++++ npc_300008.lua (round_7A_rewritten)
+@@ lines 379-379 @@
+- __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem)
+
+--- npc_300008.lua
++++ npc_300008.lua (round_7A_rewritten)
+@@ lines 30-30 @@
+- __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[724].goal.getItem)
+
+--- npc_310005.lua
++++ npc_310005.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_310005.lua
++++ npc_310005.lua (round_7A_rewritten)
+@@ lines 592-592 @@
+- CHECK_ITEM_CNT(qt[464].goal.getItem[1].id) >= qt[464].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[464].goal.getItem)
+
+--- npc_310005.lua
++++ npc_310005.lua (round_7A_rewritten)
+@@ lines 573-573 @@
+- qData[277].state == 1 and GET_PLAYER_LEVEL() >= qt[277].needLevel and qData[277].state == 1
++ qData[277].state == 1 and GET_PLAYER_LEVEL() >= qt[277].needLevel
+
+--- npc_310005.lua
++++ npc_310005.lua (round_7A_rewritten)
+@@ lines 261-261 @@
+- CHECK_ITEM_CNT(qt[464].goal.getItem[1].id) >= qt[464].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[464].goal.getItem)
+
+--- npc_310005.lua
++++ npc_310005.lua (round_7A_rewritten)
+@@ lines 190-190 @@
+- __QUEST_HAS_ALL_ITEMS(qt[246].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[246].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[246].goal.getItem)
+
+--- npc_313002.lua
++++ npc_313002.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_313002.lua
++++ npc_313002.lua (round_7A_rewritten)
+@@ lines 92-92 @@
+- CHECK_ITEM_CNT(qt[1415].goal.getItem[1].id) >= qt[1415].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[1415].goal.getItem)
+
+--- npc_313007.lua
++++ npc_313007.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_313007.lua
++++ npc_313007.lua (round_7A_rewritten)
+@@ lines 222-222 @@
+- CHECK_ITEM_CNT(qt[2074].goal.getItem[1].id) >= qt[2074].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2074].goal.getItem)
+
+--- npc_313007.lua
++++ npc_313007.lua (round_7A_rewritten)
+@@ lines 69-69 @@
+- CHECK_ITEM_CNT(qt[2074].goal.getItem[1].id) >= qt[2074].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2074].goal.getItem)
+
+--- npc_314020.lua
++++ npc_314020.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_314020.lua
++++ npc_314020.lua (round_7A_rewritten)
+@@ lines 744-744 @@
+- CHECK_ITEM_CNT(qt[382].goal.getItem[1].id) >= qt[382].goal.getItem[1].count and CHECK_ITEM_CNT(qt[382].goal.getItem[2].id) >= qt[382].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[382].goal.getItem)
+
+--- npc_314020.lua
++++ npc_314020.lua (round_7A_rewritten)
+@@ lines 39-39 @@
+- CHECK_ITEM_CNT(qt[382].goal.getItem[1].id) >= qt[382].goal.getItem[1].count and CHECK_ITEM_CNT(qt[382].goal.getItem[2].id) >= qt[382].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[382].goal.getItem)
+
+--- npc_314021.lua
++++ npc_314021.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_314021.lua
++++ npc_314021.lua (round_7A_rewritten)
+@@ lines 747-747 @@
+- CHECK_ITEM_CNT(qt[381].goal.getItem[1].id) >= qt[381].goal.getItem[1].count and CHECK_ITEM_CNT(qt[381].goal.getItem[2].id) >= qt[381].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[381].goal.getItem)
+
+--- npc_314021.lua
++++ npc_314021.lua (round_7A_rewritten)
+@@ lines 39-39 @@
+- CHECK_ITEM_CNT(qt[381].goal.getItem[1].id) >= qt[381].goal.getItem[1].count and CHECK_ITEM_CNT(qt[381].goal.getItem[2].id) >= qt[381].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[381].goal.getItem)
+
+--- npc_315007.lua
++++ npc_315007.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_315007.lua
++++ npc_315007.lua (round_7A_rewritten)
+@@ lines 315-315 @@
+- qData[1505].state == 1 and qData[1505].state == 1
++ qData[1505].state == 1
+
+--- npc_315011.lua
++++ npc_315011.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_315011.lua
++++ npc_315011.lua (round_7A_rewritten)
+@@ lines 208-208 @@
+- CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[1260].goal.getItem)
+
+--- npc_315011.lua
++++ npc_315011.lua (round_7A_rewritten)
+@@ lines 88-88 @@
+- CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count
++ __QUEST_HAS_ALL_ITEMS(qt[1260].goal.getItem)
+
+--- npc_323006.lua
++++ npc_323006.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_323006.lua
++++ npc_323006.lua (round_7A_rewritten)
+@@ lines 164-164 @@
+- CHECK_ITEM_CNT(qt[2889].goal.getItem[1].id) >= qt[2889].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2889].goal.getItem)
+
+--- npc_323006.lua
++++ npc_323006.lua (round_7A_rewritten)
+@@ lines 57-57 @@
+- CHECK_ITEM_CNT(qt[2889].goal.getItem[1].id) >= qt[2889].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2889].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 1-9 @@
+- 
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ 
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 237-237 @@
+- CHECK_ITEM_CNT(qt[2860].goal.getItem[1].id) >= qt[2860].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2860].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 226-226 @@
+- __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 190-190 @@
+- __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 179-179 @@
+- __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 82-82 @@
+- CHECK_ITEM_CNT(qt[2860].goal.getItem[1].id) >= qt[2860].goal.getItem[1].count
++ __QUEST_HAS_ALL_ITEMS(qt[2860].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 73-73 @@
+- __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 49-49 @@
+- __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[875].goal.getItem)
+
+--- npc_323009.lua
++++ npc_323009.lua (round_7A_rewritten)
+@@ lines 36-36 @@
+- __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem)
++ __QUEST_HAS_ALL_ITEMS(qt[874].goal.getItem)
+

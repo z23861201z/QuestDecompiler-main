@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-02-10T23:00:47.134+08:00",
+  "clusterReportPath": "D:\\github\\QuestDecompiler-main\\reports\\round_5_structure_deep_analysis.json",
+  "sourceDir": "D:\\github\\QuestDecompiler-main\\npc-lua-regression\\round_5",
+  "outputDir": "D:\\github\\QuestDecompiler-main\\npc-lua-regression\\round_7A_rewritten",
+  "totalScannedFiles": 29,
+  "totalRewrittenFiles": 17,
+  "totalRewrittenBlocks": 41,
+  "totalRemovedIndexedAccess": 70,
+  "missingFiles": []
+}
