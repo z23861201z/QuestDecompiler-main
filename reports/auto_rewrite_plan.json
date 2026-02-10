@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "generatedAt": "2026-02-10T20:01:01.479+08:00",
+    "sourceDir": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\npc-lua",
+    "targetDir": "D:\\github\\QuestDecompiler-main\\npc-lua-auto-rewritten"
+  },
+  "npc_212001.lua": [
+    {
+      "line": 39,
+      "original": "CHECK_ITEM_CNT(qt[110].goal.getItem[1].id) >= qt[110].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 79,
+      "original": "CHECK_ITEM_CNT(qt[1240].goal.getItem[1].id) >= qt[1240].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 88,
+      "original": "CHECK_ITEM_CNT(qt[1250].goal.getItem[1].id) >= qt[1250].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 98,
+      "original": "CHECK_ITEM_CNT(qt[1251].goal.getItem[1].id) >= qt[1251].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 154,
+      "original": "CHECK_ITEM_CNT(qt[110].goal.getItem[1].id) >= qt[110].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 166,
+      "original": "CHECK_ITEM_CNT(qt[1240].goal.getItem[1].id) >= qt[1240].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 173,
+      "original": "CHECK_ITEM_CNT(qt[1250].goal.getItem[1].id) >= qt[1250].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    }
+  ],
+  "npc_314010.lua": [
+    {
+      "line": 71,
+      "original": "CHECK_ITEM_CNT(qt[280].goal.getItem[1].id) >= qt[280].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    },
+    {
+      "line": 195,
+      "original": "CHECK_ITEM_CNT(qt[280].goal.getItem[1].id) >= qt[280].goal.getItem[1].count",
+      "rewriteType": "loop_conversion"
+    }
+  ]
+}

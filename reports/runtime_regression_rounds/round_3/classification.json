@@ -1,0 +1,574 @@
+{
+  "generatedAt": "2026-02-10T21:50:37.036+08:00",
+  "totalFailures": 79,
+  "patternTypes": [
+    {
+      "patternType": "模式B：qt[x].goal.getItem[n].id/.count",
+      "count": 77,
+      "exampleFiles": ["npc_213006.lua", "npc_213001.lua", "npc_314020.lua", "npc_314021.lua", "npc_313002.lua"],
+      "exampleCodeSnippets": ["if CHECK_ITEM_CNT(qt[430].goal.getItem[1].id) >= qt[430].goal.getItem[1].count and CHECK_ITEM_CNT(qt[430].goal.getItem[2].id) >= qt[430].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[127].goal.getItem[1].id) >= qt[127].goal.getItem[1].count and CHECK_ITEM_CNT(qt[127].goal.getItem[2].id) >= qt[127].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[123].goal.getItem[1].id) >= qt[123].goal.getItem[1].count and CHECK_ITEM_CNT(qt[123].goal.getItem[2].id) >= qt[123].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[118].goal.getItem[1].id) >= qt[118].goal.getItem[1].count and CHECK_ITEM_CNT(qt[118].goal.getItem[2].id) >= qt[118].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[198].goal.getItem[1].id) >= qt[198].goal.getItem[1].count then"]
+    },
+    {
+      "patternType": "模式F：goal.killMonster[n]",
+      "count": 2,
+      "exampleFiles": ["npc_322003.lua", "npc_222004.lua"],
+      "exampleCodeSnippets": ["if qData[2792].state == 1 and CHECK_ITEM_CNT(qt[2792].goal.getItem[1].id) >= qt[2792].goal.getItem[1].count and qData[2792].killMonster[qt[2792].goal.killMonster[1].id] >= qt[2792].goal.killMonster[1].count then", "if CHECK_ITEM_CNT(qt[2675].goal.getItem[1].id) >= qt[2675].goal.getItem[1].count and qData[2675].killMonster[qt[2675].goal.killMonster[1].id] >= qt[2675].goal.killMonster[1].count then"]
+    }
+  ],
+  "unclassifiedCount": 0,
+  "classifiedFailures": [
+    {
+      "npcFile": "npc_213001.lua",
+      "questIds": [127, 154, 201, 339, 342, 348, 548, 549],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[127].goal.getItem[1].id) >= qt[127].goal.getItem[1].count and CHECK_ITEM_CNT(qt[127].goal.getItem[2].id) >= qt[127].goal.getItem[2].count then", "if qData[154].state == 1 and qData[154].meetNpc[1] ~= id and CHECK_ITEM_CNT(qt[154].goal.getItem[1].id) >= qt[154].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[201].goal.getItem[1].id) >= qt[201].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_213002.lua",
+      "questIds": [1086, 1094, 1218],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1086].goal.getItem[1].id) >= qt[1086].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1094].goal.getItem[1].id) >= qt[1094].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1218].goal.getItem[1].id) >= qt[1218].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_213003.lua",
+      "questIds": [1224, 1237],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1224].goal.getItem[1].id) >= qt[1224].goal.getItem[1].count then", "if qData[1224].state == 1 and CHECK_ITEM_CNT(qt[1224].goal.getItem[1].id) >= qt[1224].goal.getItem[1].count then", "if qData[1237].state == 1 and CHECK_ITEM_CNT(qt[1237].goal.getItem[1].id) >= qt[1237].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_213004.lua",
+      "questIds": [554],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[554].goal.getItem[1].id) >= qt[554].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_213005.lua",
+      "questIds": [1188],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[1188].state == 1 and CHECK_ITEM_CNT(qt[1188].goal.getItem[1].id) >= qt[1188].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1188].goal.getItem[2].id) >= qt[1188].goal.getItem[2].count then", "if qData[1188].state ~= 2 and qData[1188].state == 1 and CHECK_ITEM_CNT(qt[1188].goal.getItem[1].id) >= qt[1188].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1188].goal.getItem[2].id) >= qt[1188].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_213006.lua",
+      "questIds": [430, 431, 432, 437, 447, 687, 1151, 1185, 1186],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[430].goal.getItem[1].id) >= qt[430].goal.getItem[1].count and CHECK_ITEM_CNT(qt[430].goal.getItem[2].id) >= qt[430].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[431].goal.getItem[1].id) >= qt[431].goal.getItem[1].count and CHECK_ITEM_CNT(qt[431].goal.getItem[2].id) >= qt[431].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[432].goal.getItem[1].id) >= qt[432].goal.getItem[1].count and CHECK_ITEM_CNT(qt[432].goal.getItem[2].id) >= qt[432].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_214004.lua",
+      "questIds": [1118, 1136],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1118].goal.getItem[1].id) >= qt[1118].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1136].goal.getItem[1].id) >= qt[1136].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_214006.lua",
+      "questIds": [1184, 1187],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1184].goal.getItem[1].id) >= qt[1184].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1187].goal.getItem[1].id) >= qt[1187].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_215001.lua",
+      "questIds": [1023, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 1034, 1035, 1036, 1037, 1038, 1039, 1040, 1041, 1042, 1274, 1282, 1297, 1298],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1023].goal.getItem[1].id) >= qt[1023].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1024].goal.getItem[1].id) >= qt[1024].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1024].goal.getItem[1].id) >= qt[1024].goal.getItem[1].count then", "if qData[1024].state == 0 and GET_PLAYER_JOB1() == 1 and CHECK_ITEM_CNT(qt[1024].goal.getItem[1].id) >= qt[1024].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_215002.lua",
+      "questIds": [1095, 1281],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1095].goal.getItem[1].id) >= qt[1095].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1281].goal.getItem[1].id) >= qt[1281].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_215003.lua",
+      "questIds": [1273, 1275],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1273].goal.getItem[1].id) >= qt[1273].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1275].goal.getItem[1].id) >= qt[1275].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1275].goal.getItem[2].id) >= qt[1275].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_215004.lua",
+      "questIds": [276, 451, 556, 1283, 1306, 1307, 1308, 1309, 1310, 1311, 1312],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[276].goal.getItem[1].id) >= qt[276].goal.getItem[1].count and CHECK_ITEM_CNT(qt[276].goal.getItem[2].id) >= qt[276].goal.getItem[2].count and CHECK_ITEM_CNT(qt[276].goal.getItem[3].id) >= qt[276].goal.getItem[3].count and CHECK_ITEM_CNT(qt[276].goal.getItem[4].id) >= qt[276].goal.getItem[4].count then", "if CHECK_ITEM_CNT(qt[451].goal.getItem[1].id) >= qt[451].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[556].goal.getItem[1].id) >= qt[556].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_215005.lua",
+      "questIds": [545, 557, 1070, 1284, 1303, 1304],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[545].goal.getItem[1].id) >= qt[545].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[557].goal.getItem[1].id) >= qt[557].goal.getItem[1].count then", "if qData[1070].killMonster[qt[1070].goal.killMonster[1].id] >= qt[1070].goal.killMonster[1].count and CHECK_ITEM_CNT(qt[1070].goal.getItem[1].id) >= qt[1070].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_216001.lua",
+      "questIds": [1550, 1555],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1550].goal.getItem[1].id) >= qt[1550].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1555].goal.getItem[1].id) >= qt[1555].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_216008.lua",
+      "questIds": [2440, 2441, 2490, 2491, 2492, 2493, 3666, 3667],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2440].goal.getItem[1].id) >= qt[2440].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2441].goal.getItem[1].id) >= qt[2441].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2490].goal.getItem[1].id) >= qt[2490].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_217005.lua",
+      "questIds": [1163],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1163].goal.getItem[1].id) >= qt[1163].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_220001.lua",
+      "questIds": [2469],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2469].goal.getItem[1].id) >= qt[2469].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_222001.lua",
+      "questIds": [2664, 2667, 2678, 2738, 2803, 2804, 2805, 3742],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2664].goal.getItem[1].id) >= qt[2664].goal.getItem[1].count then", "if qData[2667].state == 1 and CHECK_ITEM_CNT(qt[2667].goal.getItem[1].id) >= qt[2667].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2667].goal.getItem[1].id) >= qt[2667].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_222004.lua",
+      "questIds": [2675, 2676],
+      "patternType": "F",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2675].goal.getItem[1].id) >= qt[2675].goal.getItem[1].count and qData[2675].killMonster[qt[2675].goal.killMonster[1].id] >= qt[2675].goal.killMonster[1].count then", "if CHECK_ITEM_CNT(qt[2676].goal.getItem[1].id) >= qt[2676].goal.getItem[1].count and qData[2676].killMonster[qt[2676].goal.killMonster[1].id] >= qt[2676].goal.killMonster[1].count then"]
+    },
+    {
+      "npcFile": "npc_222006.lua",
+      "questIds": [2800, 2801, 2802],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2800].goal.getItem[1].id) >= qt[2800].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2801].goal.getItem[1].id) >= qt[2801].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2802].goal.getItem[1].id) >= qt[2802].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_240002.lua",
+      "questIds": [3702],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3702].goal.getItem[1].id) >= qt[3702].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_240003.lua",
+      "questIds": [3698],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3698].goal.getItem[1].id) >= qt[3698].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_240004.lua",
+      "questIds": [2588, 2590, 2598, 2863, 2869, 2871, 2872, 2873, 2877, 2878, 2881, 3647],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2588].goal.getItem[1].id) >= qt[2588].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2590].goal.getItem[1].id) >= qt[2590].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2598].goal.getItem[1].id) >= qt[2598].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_240008.lua",
+      "questIds": [3703],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3703].goal.getItem[1].id) >= qt[3703].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300003.lua",
+      "questIds": [2706],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[2706].state == 1 and CHECK_ITEM_CNT(qt[2706].goal.getItem[1].id) >= qt[2706].goal.getItem[1].count and GET_SEAL_BOX_SOUL_PERSENT(8590010) >= 100 then"]
+    },
+    {
+      "npcFile": "npc_300008.lua",
+      "questIds": [724, 2190, 2197, 2208, 2210, 2211, 2212, 2213, 2324],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[724].goal.getItem[1].id) >= qt[724].goal.getItem[1].count and CHECK_ITEM_CNT(qt[724].goal.getItem[2].id) >= qt[724].goal.getItem[2].count and CHECK_ITEM_CNT(qt[724].goal.getItem[3].id) >= qt[724].goal.getItem[3].count then", "if CHECK_ITEM_CNT(qt[2190].goal.getItem[1].id) >= qt[2190].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2190].goal.getItem[2].id) >= qt[2190].goal.getItem[2].count then", "if qData[2197].state == 1 and CHECK_ITEM_CNT(qt[2197].goal.getItem[1].id) >= qt[2197].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300009.lua",
+      "questIds": [1346],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[1346].state == 1 and CHECK_ITEM_CNT(qt[1346].goal.getItem[1].id) >= qt[1346].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300010.lua",
+      "questIds": [456, 1241, 1242, 1243, 1244],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[456].goal.getItem[1].id) >= qt[456].goal.getItem[1].count then", "if qData[1241].state == 1 and CHECK_ITEM_CNT(qt[1241].goal.getItem[1].id) >= qt[1241].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1241].goal.getItem[1].id) >= qt[1241].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300011.lua",
+      "questIds": [134, 135, 1005, 1207, 1210, 2066, 2067, 2068, 2898],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[134].goal.getItem[1].id) >= qt[134].goal.getItem[1].count and CHECK_ITEM_CNT(qt[134].goal.getItem[2].id) >= qt[134].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[135].goal.getItem[1].id) >= qt[135].goal.getItem[1].count and SET_ITEM_PERCENT(8510061) >= 371 then", "if CHECK_ITEM_CNT(qt[1005].goal.getItem[1].id) >= qt[1005].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300012.lua",
+      "questIds": [2025, 2065],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2025].goal.getItem[1].id) >= qt[2025].goal.getItem[1].count then", "if qData[2065].state == 1 and CHECK_ITEM_CNT(qt[2065].goal.getItem[1].id) >= qt[2065].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2065].goal.getItem[1].id) >= qt[2065].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300111.lua",
+      "questIds": [1342],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1342].goal.getItem[1].id) >= qt[1342].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300117.lua",
+      "questIds": [1803, 1804, 1805, 1806, 1810, 1811, 1812, 1813, 1814, 1815, 1816, 1817, 1818, 1819, 1820, 1822, 1825, 1826, 1827, 1828, 1829, 1830, 1831],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[1803].state == 1 and CHECK_ITEM_CNT(qt[1803].goal.getItem[1].id) >= qt[1803].goal.getItem[1].count and qData[1803].killMonster[qt[1803].goal.killMonster[1].id] >= qt[1803].goal.killMonster[1].count then", "if qData[1804].state == 1 and CHECK_ITEM_CNT(qt[1804].goal.getItem[1].id) >= qt[1804].goal.getItem[1].count then", "if qData[1805].state == 1 and CHECK_ITEM_CNT(qt[1805].goal.getItem[1].id) >= qt[1805].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300127.lua",
+      "questIds": [1411],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1411].goal.getItem[1].id) >= qt[1411].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1411].goal.getItem[2].id) >= qt[1411].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_300128.lua",
+      "questIds": [2014],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2014].goal.getItem[1].id) >= qt[2014].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_300135.lua",
+      "questIds": [2179, 2180, 3643],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2179].goal.getItem[1].id) >= qt[2179].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2179].goal.getItem[2].id) >= qt[2179].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[2180].goal.getItem[1].id) >= qt[2180].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2180].goal.getItem[2].id) >= qt[2180].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[3643].goal.getItem[1].id) >= qt[3643].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_310003.lua",
+      "questIds": [1222],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1222].goal.getItem[1].id) >= qt[1222].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_310005.lua",
+      "questIds": [277, 280, 282, 464, 465, 466, 1219, 1220, 1227, 1319, 1320, 1321, 1322],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[277].goal.getItem[1].id) >= qt[277].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[280].goal.getItem[1].id) >= qt[282].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[282].goal.getItem[1].id) >= qt[282].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_313002.lua",
+      "questIds": [198, 200, 1214, 1415],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[198].goal.getItem[1].id) >= qt[198].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[200].goal.getItem[1].id) >= qt[200].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1214].goal.getItem[1].id) >= qt[1214].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_313007.lua",
+      "questIds": [1232, 1239, 2073, 2074, 2075, 2077, 2078],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1232].goal.getItem[1].id) >= qt[1232].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1239].goal.getItem[1].id) >= qt[1239].goal.getItem[1].count then", "if qData[2073].state == 1 and CHECK_ITEM_CNT(qt[2073].goal.getItem[1].id) >= qt[2073].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_314020.lua",
+      "questIds": [123, 124, 125, 170, 176, 182, 382, 386, 631, 636, 637, 1124, 1125, 1147, 1177, 1179, 1404, 2087, 2093, 2094],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[123].goal.getItem[1].id) >= qt[123].goal.getItem[1].count and CHECK_ITEM_CNT(qt[123].goal.getItem[2].id) >= qt[123].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[124].goal.getItem[1].id) >= qt[124].goal.getItem[1].count and CHECK_ITEM_CNT(qt[124].goal.getItem[2].id) >= qt[124].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[125].goal.getItem[1].id) >= qt[125].goal.getItem[1].count and CHECK_ITEM_CNT(qt[125].goal.getItem[2].id) >= qt[125].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_314021.lua",
+      "questIds": [118, 119, 120, 167, 173, 179, 381, 383, 627, 633, 634, 1127, 1128, 1146, 1178, 1399, 2083, 2090, 2091],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[118].goal.getItem[1].id) >= qt[118].goal.getItem[1].count and CHECK_ITEM_CNT(qt[118].goal.getItem[2].id) >= qt[118].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[119].goal.getItem[1].id) >= qt[119].goal.getItem[1].count and CHECK_ITEM_CNT(qt[119].goal.getItem[2].id) >= qt[119].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[120].goal.getItem[1].id) >= qt[120].goal.getItem[1].count and CHECK_ITEM_CNT(qt[120].goal.getItem[2].id) >= qt[120].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_314035.lua",
+      "questIds": [2128, 2135],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2128].goal.getItem[1].id) >= qt[2128].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2135].goal.getItem[1].id) >= qt[2135].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_314036.lua",
+      "questIds": [2121, 2134],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2121].goal.getItem[1].id) >= qt[2121].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2134].goal.getItem[1].id) >= qt[2134].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_314062.lua",
+      "questIds": [2040, 2041, 2042, 2046, 2047, 2048, 2049, 2055, 2061, 2062, 2063, 2071, 2072, 2156, 2157, 2158],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2040].goal.getItem[1].id) >= qt[2040].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2041].goal.getItem[1].id) >= qt[2041].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2042].goal.getItem[1].id) >= qt[2042].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_315002.lua",
+      "questIds": [1299, 1300, 1314],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1299].goal.getItem[1].id) >= qt[1299].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1300].goal.getItem[1].id) >= qt[1300].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1314].goal.getItem[1].id) >= qt[1314].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[2].id) >= qt[1314].goal.getItem[2].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[3].id) >= qt[1314].goal.getItem[3].count then"]
+    },
+    {
+      "npcFile": "npc_315007.lua",
+      "questIds": [244, 473, 1071, 1252],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[244].state == 1 and qData[242].state == 2 and CHECK_ITEM_CNT(qt[244].goal.getItem[1].id) >= qt[244].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[244].goal.getItem[1].id) >= qt[244].goal.getItem[1].count then", "if qData[473].state == 1 and CHECK_ITEM_CNT(qt[473].goal.getItem[1].id) >= qt[473].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_315011.lua",
+      "questIds": [1257, 1258, 1259, 1260, 1261],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1257].goal.getItem[1].id) >= qt[1257].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1258].goal.getItem[1].id) >= qt[1258].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1259].goal.getItem[1].id) >= qt[1259].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_315018.lua",
+      "questIds": [1271],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1271].goal.getItem[1].id) >= qt[1271].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_315025.lua",
+      "questIds": [1349, 1350, 1351, 1352, 1353, 1354, 1355, 1356, 1358, 1359, 1360, 1362, 1363, 1364, 1365, 1366, 1368, 1369, 1370, 1373, 1374, 1375, 1376, 1377, 1378, 1382, 1383, 1384, 1385, 1389],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1349].goal.getItem[1].id) >= qt[1349].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1350].goal.getItem[1].id) >= qt[1350].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1351].goal.getItem[1].id) >= qt[1351].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_316003.lua",
+      "questIds": [1542, 1548, 1552],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1542].goal.getItem[1].id) >= qt[1542].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1542].goal.getItem[2].id) >= qt[1542].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[1548].goal.getItem[1].id) >= qt[1548].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1552].goal.getItem[1].id) >= qt[1552].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_316004.lua",
+      "questIds": [1558],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1558].goal.getItem[1].id) >= qt[1558].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1558].goal.getItem[2].id) >= qt[1558].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_316006.lua",
+      "questIds": [290, 483, 1560],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[290].goal.getItem[1].id) >= qt[290].goal.getItem[1].count then", "if qData[483].meetNpc[3] ~= id and CHECK_ITEM_CNT(qt[483].goal.getItem[1].id) >= qt[483].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1560].goal.getItem[1].id) >= qt[1560].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_316009.lua",
+      "questIds": [487, 491, 492, 497, 714, 720, 721, 722, 1010, 2130, 2161],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[487].goal.getItem[1].id) >= qt[487].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[491].goal.getItem[1].id) >= qt[491].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[492].goal.getItem[1].id) >= qt[492].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_316013.lua",
+      "questIds": [2421, 2423, 2425, 2442, 2443, 2444, 2452, 2453, 2454, 3664, 3665],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2421].goal.getItem[1].id) >= qt[2421].goal.getItem[1].count then", "if qData[2423].state == 1 and CHECK_ITEM_CNT(qt[2423].goal.getItem[1].id) >= qt[2423].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2423].goal.getItem[2].id) >= qt[2423].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[2425].goal.getItem[1].id) >= qt[2425].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2425].goal.getItem[2].id) >= qt[2425].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_317004.lua",
+      "questIds": [1166, 1173, 1175],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1166].goal.getItem[1].id) >= qt[1166].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1173].goal.getItem[1].id) >= qt[1173].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1175].goal.getItem[1].id) >= qt[1175].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_317006.lua",
+      "questIds": [1168],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1168].goal.getItem[1].id) >= qt[1168].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_317007.lua",
+      "questIds": [1171],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1171].goal.getItem[1].id) >= qt[1171].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1171].goal.getItem[2].id) >= qt[1171].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_318001.lua",
+      "questIds": [3661],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3661].goal.getItem[1].id) >= qt[3661].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_318020.lua",
+      "questIds": [570, 573, 575, 576, 579, 580, 581, 582, 583, 584, 586, 589, 590, 591, 592, 593, 599, 600, 603, 605],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[570].goal.getItem[1].id) >= qt[570].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[573].goal.getItem[1].id) >= qt[573].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[575].goal.getItem[1].id) >= qt[575].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_318023.lua",
+      "questIds": [783, 785, 787, 789],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[783].goal.getItem[1].id) >= qt[783].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[785].goal.getItem[1].id) >= qt[785].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[787].goal.getItem[1].id) >= qt[787].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_318024.lua",
+      "questIds": [794, 795],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[794].goal.getItem[1].id) >= qt[794].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[795].goal.getItem[1].id) >= qt[795].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_320001.lua",
+      "questIds": [1018, 2467, 2566, 2567, 2568],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1018].goal.getItem[1].id) >= qt[1018].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2467].goal.getItem[1].id) >= qt[2467].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2566].goal.getItem[1].id) >= qt[2566].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2566].goal.getItem[2].id) >= qt[2566].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_320004.lua",
+      "questIds": [2484],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2484].goal.getItem[1].id) >= qt[2484].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_322003.lua",
+      "questIds": [2792],
+      "patternType": "F",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[2792].state == 1 and CHECK_ITEM_CNT(qt[2792].goal.getItem[1].id) >= qt[2792].goal.getItem[1].count and qData[2792].killMonster[qt[2792].goal.killMonster[1].id] >= qt[2792].goal.killMonster[1].count then"]
+    },
+    {
+      "npcFile": "npc_322004.lua",
+      "questIds": [2712],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2712].goal.getItem[1].id) >= qt[2712].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_322005.lua",
+      "questIds": [2713],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2713].goal.getItem[1].id) >= qt[2713].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_322006.lua",
+      "questIds": [2799],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2799].goal.getItem[1].id) >= qt[2799].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_322009.lua",
+      "questIds": [2791],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if qData[2791].state == 1 and CHECK_ITEM_CNT(qt[2791].goal.getItem[1].id) >= qt[2791].goal.getItem[1].count and __QUEST_HAS_ALL_KILL_TARGETS(qt[2791].goal.killMonster) then"]
+    },
+    {
+      "npcFile": "npc_322012.lua",
+      "questIds": [2711, 2730, 2731],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2711].goal.getItem[1].id) >= qt[2711].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2711].goal.getItem[2].id) >= qt[2711].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[2730].goal.getItem[1].id) >= qt[2730].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2731].goal.getItem[1].id) >= qt[2731].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_322013.lua",
+      "questIds": [2673],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2673].goal.getItem[1].id) >= qt[2673].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2673].goal.getItem[2].id) >= qt[2673].goal.getItem[2].count then"]
+    },
+    {
+      "npcFile": "npc_322019.lua",
+      "questIds": [2830, 2831],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2830].goal.getItem[1].id) >= qt[2830].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2831].goal.getItem[1].id) >= qt[2831].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_323005.lua",
+      "questIds": [3649],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3649].goal.getItem[1].id) >= qt[3649].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_323006.lua",
+      "questIds": [2593, 2880, 2888, 2889],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2593].goal.getItem[1].id) >= qt[2593].goal.getItem[1].count then", "if qData[2880].state == 1 and CHECK_ITEM_CNT(qt[2880].goal.getItem[1].id) >= qt[2880].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2880].goal.getItem[1].id) >= qt[2880].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_323009.lua",
+      "questIds": [1483, 2858, 2859, 2860, 2864],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[1483].goal.getItem[1].id) >= qt[1483].goal.getItem[1].count then", "if qData[2858].state == 1 and CHECK_ITEM_CNT(qt[2858].goal.getItem[1].id) >= qt[2858].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[2858].goal.getItem[1].id) >= qt[2858].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_323012.lua",
+      "questIds": [2595, 3646],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2595].goal.getItem[1].id) >= qt[2595].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[3646].goal.getItem[1].id) >= qt[3646].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_341021.lua",
+      "questIds": [3786],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3786].goal.getItem[1].id) >= qt[3786].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_341022.lua",
+      "questIds": [3784],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[3784].goal.getItem[1].id) >= qt[3784].goal.getItem[1].count then"]
+    },
+    {
+      "npcFile": "npc_391112.lua",
+      "questIds": [2700, 2701, 2736, 2737],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[2700].goal.getItem[1].id) >= qt[2700].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2700].goal.getItem[2].id) >= qt[2700].goal.getItem[2].count then", "if CHECK_ITEM_CNT(qt[2701].goal.getItem[1].id) >= qt[2701].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2701].goal.getItem[2].id) >= qt[2701].goal.getItem[2].count then", "if qData[2736].state == 1 and CHECK_ITEM_CNT(qt[2736].goal.getItem[1].id) >= qt[2736].goal.getItem[1].count and qData[2736].killMonster[qt[2736].goal.killMonster[1].id] >= qt[2736].goal.killMonster[1].count then"]
+    },
+    {
+      "npcFile": "npc_915018.lua",
+      "questIds": [238, 1069],
+      "patternType": "B",
+      "sourceRule": "RULE_1_NO_HARDCODED_GOAL_INDEX",
+      "failureCodeSnippets": ["if CHECK_ITEM_CNT(qt[238].goal.getItem[1].id) >= qt[238].goal.getItem[1].count then", "if CHECK_ITEM_CNT(qt[1069].goal.getItem[1].id) >= qt[1069].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1069].goal.getItem[2].id) >= qt[1069].goal.getItem[2].count then"]
+    }
+  ]
+}

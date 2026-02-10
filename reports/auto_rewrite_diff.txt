@@ -1,0 +1,64 @@
+--- npc_212001.lua
++++ npc_212001_rewritten.lua
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ local function __QUEST_FIRST_ITEM_ID(goalItems)
++   if goalItems == nil or goalItems[1] == nil then
++     return 0
++   end
++   return goalItems[1].id
++ end
++ local function __QUEST_FIRST_ITEM_COUNT(goalItems)
++   if goalItems == nil or goalItems[1] == nil then
++     return 0
++   end
++   return goalItems[1].count
++ end
+-     if CHECK_ITEM_CNT(qt[110].goal.getItem[1].id) >= qt[110].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[110].goal.getItem) then
+-   if qData[1240].state == 1 and CHECK_ITEM_CNT(qt[1240].goal.getItem[1].id) >= qt[1240].goal.getItem[1].count then
++   if qData[1240].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1240].goal.getItem) then
+-   if qData[1250].state == 1 and CHECK_ITEM_CNT(qt[1250].goal.getItem[1].id) >= qt[1250].goal.getItem[1].count then
++   if qData[1250].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1250].goal.getItem) then
+-     if CHECK_ITEM_CNT(qt[1251].goal.getItem[1].id) >= qt[1251].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1251].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[110].goal.getItem[1].id) >= qt[110].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[110].goal.getItem) then
+-   if qData[1240].state == 1 and GET_PLAYER_LEVEL() >= qt[1240].needLevel and CHECK_ITEM_CNT(qt[1240].goal.getItem[1].id) >= qt[1240].goal.getItem[1].count then
++   if qData[1240].state == 1 and GET_PLAYER_LEVEL() >= qt[1240].needLevel and __QUEST_HAS_ALL_ITEMS(qt[1240].goal.getItem) then
+-   if qData[1250].state == 1 and CHECK_ITEM_CNT(qt[1250].goal.getItem[1].id) >= qt[1250].goal.getItem[1].count then
++   if qData[1250].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1250].goal.getItem) then
+
+--- npc_314010.lua
++++ npc_314010_rewritten.lua
++ local function __QUEST_HAS_ALL_ITEMS(goalItems)
++   for i, v in ipairs(goalItems) do
++     if CHECK_ITEM_CNT(v.id) < v.count then
++       return false
++     end
++   end
++   return true
++ end
++ local function __QUEST_FIRST_ITEM_ID(goalItems)
++   if goalItems == nil or goalItems[1] == nil then
++     return 0
++   end
++   return goalItems[1].id
++ end
++ local function __QUEST_FIRST_ITEM_COUNT(goalItems)
++   if goalItems == nil or goalItems[1] == nil then
++     return 0
++   end
++   return goalItems[1].count
++ end
+-     if CHECK_ITEM_CNT(qt[280].goal.getItem[1].id) >= qt[280].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[280].goal.getItem) then
+-     if CHECK_ITEM_CNT(qt[280].goal.getItem[1].id) >= qt[280].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[280].goal.getItem) then
+

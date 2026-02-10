@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-02-10T21:50:40.512+08:00",
+  "classificationJsonPath": "D:\\github\\QuestDecompiler-main\\reports\\runtime_regression_rounds\\round_4\\classification.json",
+  "npcSourceDir": "D:\\github\\QuestDecompiler-main\\npc-lua-regression\\round_3",
+  "npcOutputDir": "D:\\github\\QuestDecompiler-main\\npc-lua-regression\\round_4",
+  "totalClassifiedFailures": 52,
+  "fixedCount": 52,
+  "skippedCount": 0,
+  "rewrittenLineCount": 89,
+  "patternCounts": {"B": 52, "F": 0},
+  "errors": [],
+  "fixers": [
+    {
+      "patternType": "B",
+      "targetedCount": 52,
+      "fixedCount": 52,
+      "skippedCount": 0,
+      "rewrittenLineCount": 89,
+      "fixedFiles": ["npc_213001.lua", "npc_213002.lua", "npc_213003.lua", "npc_213006.lua", "npc_214004.lua", "npc_214006.lua", "npc_215001.lua", "npc_215002.lua", "npc_215003.lua", "npc_215004.lua", "npc_215005.lua", "npc_216001.lua", "npc_216008.lua", "npc_222001.lua", "npc_222004.lua", "npc_222006.lua", "npc_240004.lua", "npc_300008.lua", "npc_300010.lua", "npc_300011.lua", "npc_300012.lua", "npc_300117.lua", "npc_300135.lua", "npc_310005.lua", "npc_313002.lua", "npc_313007.lua", "npc_314020.lua", "npc_314021.lua", "npc_314035.lua", "npc_314036.lua", "npc_314062.lua", "npc_315002.lua", "npc_315007.lua", "npc_315011.lua", "npc_315025.lua", "npc_316003.lua", "npc_316006.lua", "npc_316009.lua", "npc_316013.lua", "npc_317004.lua", "npc_318020.lua", "npc_318023.lua", "npc_318024.lua", "npc_320001.lua", "npc_322003.lua", "npc_322012.lua", "npc_322019.lua", "npc_323006.lua", "npc_323009.lua", "npc_323012.lua", "npc_391112.lua", "npc_915018.lua"],
+      "skippedFiles": [],
+      "errors": []
+    },
+    {
+      "patternType": "F",
+      "targetedCount": 0,
+      "fixedCount": 0,
+      "skippedCount": 0,
+      "rewrittenLineCount": 0,
+      "fixedFiles": [],
+      "skippedFiles": [],
+      "errors": []
+    }
+  ]
+}

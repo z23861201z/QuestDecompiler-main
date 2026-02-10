@@ -1,11 +1,6 @@
 package unluac.semantic;
 
-import java.nio.ByteBuffer;
-import java.nio.CharBuffer;
-import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CodingErrorAction;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -13,15 +8,12 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import unluac.chunk.Lua50ChunkParser;
 import unluac.chunk.LuaChunk;
@@ -30,408 +22,443 @@ public class QuestNpcGraphBuilder {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
 
-  private static final Pattern NPC_FILE_PATTERN = Pattern.compile("(?i)^npc_(\\d+)\\.(lua|luc)$");
-  private static final Pattern QDATA_STATE_PATTERN = Pattern.compile("qData\\s*\\[\\s*(\\d+)\\s*\\]\\s*\\.\\s*state\\b", Pattern.CASE_INSENSITIVE);
-  private static final Pattern QT_GOAL_PATTERN = Pattern.compile("qt\\s*\\[\\s*(\\d+)\\s*\\]\\s*\\.\\s*goal\\b", Pattern.CASE_INSENSITIVE);
-  private static final Pattern SET_QUEST_STATE_PATTERN = Pattern.compile("SET_QUEST_STATE\\s*\\(\\s*(\\d+)\\s*,\\s*(\\d+)\\s*\\)", Pattern.CASE_INSENSITIVE);
-  private static final Pattern GET_REWARD_CALL_PATTERN = Pattern.compile("\\b(?:get_?reward\\w*)\\s*\\(", Pattern.CASE_INSENSITIVE);
-  private static final Pattern CHECK_ITEM_WITH_QUEST_PATTERN = Pattern.compile(
-      "CHECK_ITEM_CNT\\s*\\(\\s*qt\\s*\\[\\s*(\\d+)\\s*\\]\\s*\\.\\s*goal", Pattern.CASE_INSENSITIVE);
-  private static final Pattern CHECK_ITEM_CALL_PATTERN = Pattern.compile("\\bCHECK_ITEM_CNT\\s*\\(", Pattern.CASE_INSENSITIVE);
-  private static final Pattern QUEST_REF_PATTERN = Pattern.compile("(?:qt|qData)\\s*\\[\\s*(\\d+)\\s*\\]", Pattern.CASE_INSENSITIVE);
-
-  private static final Pattern EXACT_STATE_PATTERN_TEMPLATE = Pattern.compile("qData\\s*\\[\\s*%d\\s*\\]\\s*\\.\\s*state\\s*==\\s*(\\d+)", Pattern.CASE_INSENSITIVE);
-
   public static void main(String[] args) throws Exception {
     if(args.length < 3) {
       printUsage();
       return;
     }
 
-    Path npcPath = Paths.get(args[0]);
-    Path questLuc = Paths.get(args[1]);
-    Path outputJson = Paths.get(args[2]);
+    Path dependencyIndexPath = Paths.get(args[0]);
+    Path propagationPath = Paths.get(args[1]);
+    Path snapshotPath = Paths.get(args[2]);
 
     QuestNpcGraphBuilder builder = new QuestNpcGraphBuilder();
-    BuildResult result = builder.build(npcPath, questLuc, outputJson);
+    BuildResult result = builder.build(dependencyIndexPath, propagationPath, snapshotPath);
 
-    System.out.println("scanned_files=" + result.scannedFiles);
-    System.out.println("linked_quest_count=" + result.linkedQuestCount);
-    System.out.println("orphan_npc_count=" + result.orphanNpcCount);
-    System.out.println("multi_npc_quest_count=" + result.multiNpcQuestCount);
-    System.out.println("output=" + outputJson.toAbsolutePath());
+    System.out.println("totalQuestNodes=" + result.totalQuestNodes);
+    System.out.println("totalNpcNodes=" + result.totalNpcNodes);
+    System.out.println("totalEdges=" + result.totalEdges);
+    System.out.println("highRiskQuestCount=" + result.highRiskQuestIds.size());
+    System.out.println("sccCount=" + result.stronglyConnectedComponents.size());
+    System.out.println("snapshot=" + snapshotPath.toAbsolutePath());
   }
 
-  public BuildResult build(Path npcPath, Path questLuc, Path outputJson) throws Exception {
-    if(npcPath == null || !Files.exists(npcPath) || !Files.isDirectory(npcPath)) {
-      throw new IllegalStateException("npc path not found: " + npcPath);
+  public BuildResult build(Path dependencyIndexPath,
+                           Path propagationPath,
+                           Path snapshotPath) throws Exception {
+    QuestNpcDependencyGraph graph = buildGraph(dependencyIndexPath, propagationPath);
+
+    GraphSnapshot snapshot = new GraphSnapshot();
+    snapshot.generatedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
+    snapshot.totalQuestNodes = graph.questNodes.size();
+    snapshot.totalNpcNodes = graph.npcNodes.size();
+    snapshot.totalEdges = graph.totalEdges();
+    snapshot.highRiskQuestIds.addAll(graph.highRiskQuestIds());
+    snapshot.stronglyConnectedComponents.addAll(graph.stronglyConnectedComponents());
+
+    if(snapshotPath.getParent() != null && !Files.exists(snapshotPath.getParent())) {
+      Files.createDirectories(snapshotPath.getParent());
     }
-    if(questLuc == null || !Files.exists(questLuc) || !Files.isRegularFile(questLuc)) {
-      throw new IllegalStateException("quest luc not found: " + questLuc);
+    Files.write(snapshotPath, snapshot.toJson().getBytes(UTF8));
+
+    BuildResult out = new BuildResult();
+    out.graph = graph;
+    out.totalQuestNodes = snapshot.totalQuestNodes;
+    out.totalNpcNodes = snapshot.totalNpcNodes;
+    out.totalEdges = snapshot.totalEdges;
+    out.highRiskQuestIds.addAll(snapshot.highRiskQuestIds);
+    out.stronglyConnectedComponents.addAll(snapshot.stronglyConnectedComponents);
+    return out;
+  }
+
+  public QuestNpcDependencyGraph buildGraph(Path dependencyIndexPath,
+                                            Path propagationPath) throws Exception {
+    return buildGraph(dependencyIndexPath, propagationPath, true);
+  }
+
+  public QuestNpcDependencyGraph buildGraph(Path dependencyIndexPath,
+                                            Path propagationPath,
+                                            boolean includeQuestSemanticFields) throws Exception {
+    if(dependencyIndexPath == null || !Files.exists(dependencyIndexPath)) {
+      throw new IllegalStateException("dependency index not found: " + dependencyIndexPath);
+    }
+    if(propagationPath == null || !Files.exists(propagationPath)) {
+      throw new IllegalStateException("propagation report not found: " + propagationPath);
     }
 
-    Map<Integer, String> questNameById = loadQuestNames(questLuc);
-    List<Path> npcLuaFiles = listNpcLuaFiles(npcPath);
+    QuestNpcDependencyGraph graph = new QuestNpcDependencyGraph();
 
-    GraphOutput graph = new GraphOutput();
-    graph.generatedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
-    graph.totalNpcFiles = npcLuaFiles.size();
+    Map<Integer, QuestSemanticModel> questSemanticById = includeQuestSemanticFields
+        ? loadQuestSemanticsFromDependencySource(dependencyIndexPath)
+        : new LinkedHashMap<Integer, QuestSemanticModel>();
 
-    NpcSemanticExtractor npcSemanticExtractor = new NpcSemanticExtractor();
-    int orphanCount = 0;
+    String depJson = new String(Files.readAllBytes(dependencyIndexPath), UTF8);
+    Map<String, Object> depRoot = QuestSemanticJson.parseObject(depJson, "quest_npc_dependency_index", 0);
+    loadDependencyIndex(depRoot, graph);
 
-    for(Path npcLuaFile : npcLuaFiles) {
-      FileGraphResult fileResult = scanSingleNpcFile(npcPath, npcLuaFile, npcSemanticExtractor);
-      if(fileResult.questIds.isEmpty()) {
-        orphanCount++;
+    String propagationJson = new String(Files.readAllBytes(propagationPath), UTF8);
+    Map<String, Object> propagationRoot = QuestSemanticJson.parseObject(propagationJson, "quest_modification_propagation", 0);
+    loadPropagation(propagationRoot, graph);
+
+    if(includeQuestSemanticFields) {
+      fillQuestStructures(graph, questSemanticById);
+    }
+    return graph;
+  }
+
+  @SuppressWarnings("unchecked")
+  private void loadDependencyIndex(Map<String, Object> root, QuestNpcDependencyGraph graph) {
+    if(root == null) {
+      return;
+    }
+    for(Map.Entry<String, Object> entry : root.entrySet()) {
+      String key = entry.getKey();
+      if(key == null || key.startsWith("_")) {
         continue;
       }
 
-      for(Integer questId : fileResult.questIds) {
-        if(questId == null || questId.intValue() <= 0) {
-          continue;
-        }
-        int qid = questId.intValue();
-        QuestNode node = graph.ensureQuest(qid);
-        if(node.questName == null || node.questName.isEmpty()) {
-          String questName = questNameById.get(Integer.valueOf(qid));
-          node.questName = questName == null ? "" : questName;
-        }
-
-        MutableNpcRelation relation = fileResult.relationByQuest.get(Integer.valueOf(qid));
-        if(relation == null) {
-          relation = new MutableNpcRelation(fileResult.npcId, npcLuaFile.getFileName().toString());
-        }
-        node.addOrMerge(relation.toFinal());
-      }
-    }
-
-    graph.sort();
-
-    int multiNpcQuestCount = 0;
-    for(QuestNode quest : graph.quests.values()) {
-      if(quest.npcRelations.size() > 1) {
-        multiNpcQuestCount++;
-      }
-    }
-
-    graph.totalQuestCount = graph.quests.size();
-
-    if(outputJson.getParent() != null && !Files.exists(outputJson.getParent())) {
-      Files.createDirectories(outputJson.getParent());
-    }
-    Files.write(outputJson, graph.toJson().getBytes(UTF8));
-
-    BuildResult result = new BuildResult();
-    result.scannedFiles = npcLuaFiles.size();
-    result.linkedQuestCount = graph.quests.size();
-    result.orphanNpcCount = orphanCount;
-    result.multiNpcQuestCount = multiNpcQuestCount;
-    return result;
-  }
-
-  private FileGraphResult scanSingleNpcFile(Path npcRoot,
-                                            Path npcLuaFile,
-                                            NpcSemanticExtractor npcSemanticExtractor) throws Exception {
-    FileGraphResult result = new FileGraphResult();
-    result.npcId = parseNpcId(npcLuaFile.getFileName().toString());
-    result.file = npcLuaFile.getFileName().toString();
-
-    List<String> lines = readAllLines(npcLuaFile);
-    Set<Integer> fileQuestIds = new LinkedHashSet<Integer>();
-    int lastContextQuestId = 0;
-
-    for(int i = 0; i < lines.size(); i++) {
-      String rawLine = lines.get(i);
-      String code = stripComment(rawLine);
-      if(code == null || code.trim().isEmpty()) {
+      int questId = parseIntSafe(key);
+      if(questId <= 0) {
         continue;
       }
 
-      Set<Integer> lineQuestIds = extractQuestIds(code);
-      if(!lineQuestIds.isEmpty()) {
-        lastContextQuestId = lineQuestIds.iterator().next().intValue();
+      if(!(entry.getValue() instanceof Map<?, ?>)) {
+        continue;
       }
-      fileQuestIds.addAll(lineQuestIds);
 
-      Matcher stateMatcher = QDATA_STATE_PATTERN.matcher(code);
-      while(stateMatcher.find()) {
-        int questId = parsePositiveInt(stateMatcher.group(1));
-        if(questId <= 0) {
+      Map<String, Object> questObj = (Map<String, Object>) entry.getValue();
+      QuestNode questNode = graph.ensureQuestNode(questId);
+
+      Object npcFilesObj = questObj.get("npcFiles");
+      if(!(npcFilesObj instanceof List<?>)) {
+        continue;
+      }
+
+      for(Object npcItemObj : (List<Object>) npcFilesObj) {
+        if(!(npcItemObj instanceof Map<?, ?>)) {
           continue;
         }
-        fileQuestIds.add(Integer.valueOf(questId));
-        MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-        rel.addRole("STATE_CHECK");
-      }
-
-      Matcher goalMatcher = QT_GOAL_PATTERN.matcher(code);
-      while(goalMatcher.find()) {
-        int questId = parsePositiveInt(goalMatcher.group(1));
-        if(questId <= 0) {
+        Map<String, Object> npcItem = (Map<String, Object>) npcItemObj;
+        String file = stringOf(npcItem.get("file"));
+        if(file.isEmpty()) {
           continue;
         }
-        fileQuestIds.add(Integer.valueOf(questId));
-        MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-        rel.addRole("GOAL_VERIFY");
-        rel.readsGoal = true;
-      }
 
-      Matcher checkItemMatcher = CHECK_ITEM_WITH_QUEST_PATTERN.matcher(code);
-      while(checkItemMatcher.find()) {
-        int questId = parsePositiveInt(checkItemMatcher.group(1));
-        if(questId <= 0) {
-          continue;
-        }
-        fileQuestIds.add(Integer.valueOf(questId));
-        MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-        rel.addRole("GOAL_VERIFY");
-        rel.readsGoal = true;
-      }
-
-      Matcher checkItemCall = CHECK_ITEM_CALL_PATTERN.matcher(code);
-      if(checkItemCall.find()) {
-        Set<Integer> checkQuests = new LinkedHashSet<Integer>();
-        checkQuests.addAll(lineQuestIds);
-        if(checkQuests.isEmpty() && lastContextQuestId > 0) {
-          checkQuests.add(Integer.valueOf(lastContextQuestId));
-        }
-        if(checkQuests.isEmpty() && fileQuestIds.size() == 1) {
-          checkQuests.add(fileQuestIds.iterator().next());
-        }
-        for(Integer qidObj : checkQuests) {
-          if(qidObj == null || qidObj.intValue() <= 0) {
-            continue;
-          }
-          int questId = qidObj.intValue();
-          fileQuestIds.add(Integer.valueOf(questId));
-          MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-          rel.addRole("GOAL_VERIFY");
-          rel.readsGoal = true;
-        }
-      }
-
-      Matcher setStateMatcher = SET_QUEST_STATE_PATTERN.matcher(code);
-      while(setStateMatcher.find()) {
-        int questId = parsePositiveInt(setStateMatcher.group(1));
-        int toState = parseIntSafe(setStateMatcher.group(2));
-        if(questId <= 0) {
-          continue;
-        }
-        fileQuestIds.add(Integer.valueOf(questId));
-        MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-        rel.addRole("STATE_ADVANCE");
-        rel.writesState = true;
-
-        int fromState = inferFromState(lines, i, questId);
-        if(fromState >= 0 && toState >= 0) {
-          rel.addTransition(fromState, toState);
-        }
-      }
-
-      Matcher rewardMatcher = GET_REWARD_CALL_PATTERN.matcher(code);
-      if(rewardMatcher.find()) {
-        Set<Integer> rewardQuestIds = new LinkedHashSet<Integer>();
-        rewardQuestIds.addAll(lineQuestIds);
-        if(rewardQuestIds.isEmpty() && lastContextQuestId > 0) {
-          rewardQuestIds.add(Integer.valueOf(lastContextQuestId));
-        }
-        if(rewardQuestIds.isEmpty() && fileQuestIds.size() == 1) {
-          rewardQuestIds.add(fileQuestIds.iterator().next());
+        graph.link(questId, file);
+        NpcNode npcNode = graph.ensureNpcNode(file);
+        if(npcNode.npcId <= 0) {
+          npcNode.npcId = parseNpcIdFromFile(file);
         }
 
-        for(Integer qidObj : rewardQuestIds) {
-          if(qidObj == null || qidObj.intValue() <= 0) {
-            continue;
-          }
-          int questId = qidObj.intValue();
-          fileQuestIds.add(Integer.valueOf(questId));
-          MutableNpcRelation rel = result.ensureRelation(questId, result.npcId, result.file);
-          rel.addRole("REWARD_TRIGGER");
-          rel.callsReward = true;
-        }
-      }
-    }
+        Object accessObj = npcItem.get("access");
+        if(accessObj instanceof List<?>) {
+          for(Object accessItemObj : (List<Object>) accessObj) {
+            if(!(accessItemObj instanceof Map<?, ?>)) {
+              continue;
+            }
+            Map<String, Object> accessItem = (Map<String, Object>) accessItemObj;
+            String type = stringOf(accessItem.get("type"));
+            boolean hardcodedIndex = boolOf(accessItem.get("hardcodedIndex"));
+            int index = intOf(accessItem.get("index"));
 
-    NpcScriptModel npcModel = tryExtractNpcModelFromLuc(npcRoot, npcLuaFile, npcSemanticExtractor);
-    if(npcModel != null) {
-      if(result.npcId <= 0 && npcModel.npcId > 0) {
-        result.npcId = npcModel.npcId;
-      }
-      for(Integer questId : npcModel.relatedQuestIds) {
-        if(questId == null || questId.intValue() <= 0) {
-          continue;
-        }
-        int qid = questId.intValue();
-        fileQuestIds.add(Integer.valueOf(qid));
-        result.ensureRelation(qid, result.npcId, result.file);
-      }
+            String mapped = mapDependencyType(type);
+            if(!mapped.isEmpty()) {
+              questNode.addDependencyType(mapped);
+              npcNode.addDependencyType(mapped);
+            }
 
-      for(NpcScriptModel.DialogBranch branch : npcModel.branches) {
-        if(branch == null || branch.questId <= 0) {
-          continue;
-        }
-        int qid = branch.questId;
-        fileQuestIds.add(Integer.valueOf(qid));
-        MutableNpcRelation rel = result.ensureRelation(qid, result.npcId, result.file);
-        if("SET_QUEST_STATE".equals(branch.action)) {
-          rel.addRole("STATE_ADVANCE");
-          rel.writesState = true;
-          if(branch.stateValue >= 0) {
-            int from = inferFromState(lines, 0, qid);
-            if(from >= 0) {
-              rel.addTransition(from, branch.stateValue);
+            if(hardcodedIndex && "goal.getItem".equalsIgnoreCase(type)) {
+              npcNode.addHardcodedGoalIndex(index);
             }
           }
-        } else if("CHECK_ITEM_CNT".equals(branch.action)) {
-          rel.addRole("GOAL_VERIFY");
-          rel.readsGoal = true;
+        }
+      }
+    }
+  }
+
+  @SuppressWarnings("unchecked")
+  private void loadPropagation(Map<String, Object> root, QuestNpcDependencyGraph graph) {
+    if(root == null) {
+      return;
+    }
+
+    Object questsObj = root.get("quests");
+    if(!(questsObj instanceof List<?>)) {
+      return;
+    }
+
+    for(Object questItemObj : (List<Object>) questsObj) {
+      if(!(questItemObj instanceof Map<?, ?>)) {
+        continue;
+      }
+      Map<String, Object> questItem = (Map<String, Object>) questItemObj;
+      int questId = intOf(questItem.get("questId"));
+      if(questId <= 0) {
+        continue;
+      }
+
+      QuestNode questNode = graph.ensureQuestNode(questId);
+      questNode.propagationRequired = true;
+
+      Object modsObj = questItem.get("modificationType");
+      if(modsObj instanceof List<?>) {
+        for(Object modObj : (List<Object>) modsObj) {
+          String mod = stringOf(modObj);
+          if(!mod.isEmpty()) {
+            questNode.addDependencyType(mod.toLowerCase(Locale.ROOT));
+          }
+        }
+      }
+
+      Object affectedObj = questItem.get("affectedNpcs");
+      if(!(affectedObj instanceof List<?>)) {
+        continue;
+      }
+
+      for(Object npcObj : (List<Object>) affectedObj) {
+        if(!(npcObj instanceof Map<?, ?>)) {
+          continue;
+        }
+
+        Map<String, Object> npcItem = (Map<String, Object>) npcObj;
+        String file = stringOf(npcItem.get("file"));
+        if(file.isEmpty()) {
+          continue;
+        }
+
+        graph.link(questId, file);
+
+        NpcNode npcNode = graph.ensureNpcNode(file);
+        if(npcNode.npcId <= 0) {
+          npcNode.npcId = intOf(npcItem.get("npcId"));
+          if(npcNode.npcId <= 0) {
+            npcNode.npcId = parseNpcIdFromFile(file);
+          }
+        }
+
+        String questRisk = stringOf(npcItem.get("riskLevel"));
+        questNode.mergeRiskLevel(questRisk);
+        npcNode.mergeRiskLevel(questRisk);
+
+        boolean rewriteRequired = boolOf(npcItem.get("rewriteRequired"));
+        if(rewriteRequired) {
+          questNode.propagationRequired = true;
+        }
+
+        Object rolesObj = npcItem.get("roles");
+        if(rolesObj instanceof List<?>) {
+          for(Object roleObj : (List<Object>) rolesObj) {
+            String role = stringOf(roleObj);
+            String mapped = mapRoleToDependencyType(role);
+            if(!mapped.isEmpty()) {
+              questNode.addDependencyType(mapped);
+              npcNode.addDependencyType(mapped);
+            }
+          }
         }
       }
     }
 
-    result.questIds.addAll(fileQuestIds);
-    return result;
+    for(QuestNode questNode : graph.questNodes.values()) {
+      if(questNode.riskLevel == null || questNode.riskLevel.isEmpty()) {
+        questNode.riskLevel = questNode.propagationRequired ? "MEDIUM" : "LOW";
+      }
+    }
+    for(NpcNode npcNode : graph.npcNodes.values()) {
+      if(npcNode.riskLevel == null || npcNode.riskLevel.isEmpty()) {
+        npcNode.riskLevel = npcNode.hardcodedGoalIndexes.isEmpty() ? "LOW" : "HIGH";
+      }
+    }
   }
 
-  private NpcScriptModel tryExtractNpcModelFromLuc(Path npcRoot,
-                                                   Path npcLuaFile,
-                                                   NpcSemanticExtractor npcSemanticExtractor) {
-    List<Path> candidates = resolveLucCandidates(npcRoot, npcLuaFile);
-    for(Path candidate : candidates) {
-      if(candidate == null || !Files.exists(candidate) || !Files.isRegularFile(candidate)) {
+  private void fillQuestStructures(QuestNpcDependencyGraph graph, Map<Integer, QuestSemanticModel> questSemanticById) {
+    for(QuestNode questNode : graph.questNodes.values()) {
+      QuestSemanticModel model = questSemanticById.get(Integer.valueOf(questNode.questId));
+      if(model == null) {
         continue;
       }
-      try {
-        return npcSemanticExtractor.extract(candidate);
-      } catch(Exception ignored) {
+      if(model.goal != null) {
+        questNode.goal = copyGoal(model.goal);
+        questNode.needLevel = model.goal.needLevel;
+      }
+      questNode.reward.clear();
+      for(QuestSemanticModel.Reward reward : model.rewards) {
+        questNode.reward.add(copyReward(reward));
+      }
+      if(questNode.needLevel <= 0) {
+        questNode.needLevel = intFromConditions(model.conditions, "needLevel");
       }
     }
-    return null;
   }
 
-  private List<Path> resolveLucCandidates(Path npcRoot, Path npcLuaFile) {
-    List<Path> out = new ArrayList<Path>();
-    String fileName = npcLuaFile.getFileName().toString();
-    String lucName = fileName.replaceAll("(?i)\\.lua$", ".luc");
+  private Map<Integer, QuestSemanticModel> loadQuestSemanticsFromDependencySource(Path dependencyIndexPath) throws Exception {
+    String depJson = new String(Files.readAllBytes(dependencyIndexPath), UTF8);
+    Map<String, Object> root = QuestSemanticJson.parseObject(depJson, "quest_npc_dependency_index", 0);
 
-    out.add(npcLuaFile.getParent().resolve(lucName));
+    Object metaObj = root.get("_meta");
+    if(!(metaObj instanceof Map<?, ?>)) {
+      return new LinkedHashMap<Integer, QuestSemanticModel>();
+    }
+    @SuppressWarnings("unchecked")
+    Map<String, Object> meta = (Map<String, Object>) metaObj;
+    String sourceDirectory = stringOf(meta.get("sourceDirectory"));
 
-    if(npcLuaFile.getParent() != null && npcLuaFile.getParent().getParent() != null) {
-      Path parent = npcLuaFile.getParent();
-      if("npc-lua".equalsIgnoreCase(parent.getFileName().toString())) {
-        out.add(parent.getParent().resolve(lucName));
-      }
+    Path questLuc = resolveQuestLucPath(sourceDirectory);
+    if(questLuc == null || !Files.exists(questLuc)) {
+      return new LinkedHashMap<Integer, QuestSemanticModel>();
     }
 
-    if(npcRoot != null) {
-      out.add(npcRoot.resolve(lucName));
-      if(npcRoot.getParent() != null) {
-        out.add(npcRoot.getParent().resolve(lucName));
-      }
-    }
-
-    List<Path> unique = new ArrayList<Path>();
-    Set<String> seen = new LinkedHashSet<String>();
-    for(Path p : out) {
-      if(p == null) {
-        continue;
-      }
-      String key = p.toAbsolutePath().normalize().toString();
-      if(seen.add(key)) {
-        unique.add(p);
-      }
-    }
-    return unique;
-  }
-
-  private int inferFromState(List<String> lines, int lineIndex, int questId) {
-    int start = Math.max(0, lineIndex - 8);
-    Pattern exactPattern = Pattern.compile(
-        String.format(Locale.ROOT, EXACT_STATE_PATTERN_TEMPLATE.pattern(), Integer.valueOf(questId)),
-        Pattern.CASE_INSENSITIVE);
-
-    for(int i = lineIndex; i >= start; i--) {
-      String code = stripComment(lines.get(i));
-      if(code == null) {
-        continue;
-      }
-      Matcher matcher = exactPattern.matcher(code);
-      if(matcher.find()) {
-        return parseIntSafe(matcher.group(1));
-      }
-    }
-    return -1;
-  }
-
-  private Map<Integer, String> loadQuestNames(Path questLuc) throws Exception {
     byte[] data = Files.readAllBytes(questLuc);
     LuaChunk chunk = new Lua50ChunkParser().parse(data);
     QuestSemanticExtractor extractor = new QuestSemanticExtractor();
     QuestSemanticExtractor.ExtractionResult extraction = extractor.extract(chunk);
 
-    Map<Integer, String> out = new LinkedHashMap<Integer, String>();
+    Map<Integer, QuestSemanticModel> out = new LinkedHashMap<Integer, QuestSemanticModel>();
     for(QuestSemanticModel model : extraction.quests) {
-      if(model == null || model.questId <= 0) {
+      if(model != null && model.questId > 0) {
+        out.put(Integer.valueOf(model.questId), model);
+      }
+    }
+    return out;
+  }
+
+  private Path resolveQuestLucPath(String sourceDirectory) {
+    if(sourceDirectory == null || sourceDirectory.trim().isEmpty()) {
+      return null;
+    }
+    Path sourcePath = Paths.get(sourceDirectory.trim());
+    if(!Files.exists(sourcePath)) {
+      return null;
+    }
+
+    Path scriptDir = sourcePath;
+    if(sourcePath.getFileName() != null && "npc-lua".equalsIgnoreCase(sourcePath.getFileName().toString())) {
+      scriptDir = sourcePath.getParent();
+    }
+    if(scriptDir == null) {
+      return null;
+    }
+
+    List<String> candidates = new ArrayList<String>();
+    candidates.add("quest.luc");
+    candidates.add("questbak.luc");
+    candidates.add("quest - 副本.luc");
+
+    for(String name : candidates) {
+      Path candidate = scriptDir.resolve(name);
+      if(Files.exists(candidate) && Files.isRegularFile(candidate)) {
+        return candidate;
+      }
+    }
+    return null;
+  }
+
+  private QuestGoal copyGoal(QuestGoal source) {
+    QuestGoal out = new QuestGoal();
+    if(source == null) {
+      return out;
+    }
+    out.needLevel = source.needLevel;
+    for(ItemRequirement item : source.items) {
+      if(item == null) {
         continue;
       }
-      out.put(Integer.valueOf(model.questId), model.title == null ? "" : model.title);
+      ItemRequirement copy = new ItemRequirement();
+      copy.meetCount = item.meetCount;
+      copy.itemId = item.itemId;
+      copy.itemCount = item.itemCount;
+      out.items.add(copy);
+    }
+    for(KillRequirement monster : source.monsters) {
+      if(monster == null) {
+        continue;
+      }
+      KillRequirement copy = new KillRequirement();
+      copy.monsterId = monster.monsterId;
+      copy.killCount = monster.killCount;
+      out.monsters.add(copy);
     }
     return out;
   }
 
-  private List<Path> listNpcLuaFiles(Path npcPath) throws Exception {
-    List<Path> out = new ArrayList<Path>();
-    Files.walk(npcPath)
-        .filter(Files::isRegularFile)
-        .forEach(path -> {
-          String name = path.getFileName().toString();
-          Matcher matcher = NPC_FILE_PATTERN.matcher(name);
-          if(!matcher.find()) {
-            return;
-          }
-          String ext = matcher.group(2);
-          if("lua".equalsIgnoreCase(ext)) {
-            out.add(path);
-          }
-        });
-    Collections.sort(out);
-    return out;
+  private QuestSemanticModel.Reward copyReward(QuestSemanticModel.Reward source) {
+    QuestSemanticModel.Reward copy = new QuestSemanticModel.Reward();
+    if(source == null) {
+      return copy;
+    }
+    copy.type = source.type;
+    copy.id = source.id;
+    copy.count = source.count;
+    copy.money = source.money;
+    copy.exp = source.exp;
+    copy.fame = source.fame;
+    copy.pvppoint = source.pvppoint;
+    copy.skillIds.addAll(source.skillIds);
+    copy.extraFields.putAll(source.extraFields);
+    copy.fieldOrder.addAll(source.fieldOrder);
+    return copy;
   }
 
-  private Set<Integer> extractQuestIds(String code) {
-    Set<Integer> ids = new LinkedHashSet<Integer>();
-    Matcher matcher = QUEST_REF_PATTERN.matcher(code);
-    while(matcher.find()) {
-      int id = parsePositiveInt(matcher.group(1));
-      if(id > 0) {
-        ids.add(Integer.valueOf(id));
-      }
-    }
-    Matcher setState = SET_QUEST_STATE_PATTERN.matcher(code);
-    while(setState.find()) {
-      int id = parsePositiveInt(setState.group(1));
-      if(id > 0) {
-        ids.add(Integer.valueOf(id));
-      }
-    }
-    return ids;
-  }
-
-  private int parseNpcId(String fileName) {
-    if(fileName == null) {
+  private int intFromConditions(Map<String, Object> conditions, String key) {
+    if(conditions == null || key == null) {
       return 0;
     }
-    Matcher matcher = NPC_FILE_PATTERN.matcher(fileName);
-    if(!matcher.find()) {
-      return 0;
-    }
-    return parsePositiveInt(matcher.group(1));
+    Object value = conditions.get(key);
+    return intOf(value);
   }
 
-  private int parsePositiveInt(String text) {
-    int value = parseIntSafe(text);
-    return value > 0 ? value : 0;
+  private String mapDependencyType(String type) {
+    if(type == null) {
+      return "";
+    }
+    String normalized = type.trim().toLowerCase(Locale.ROOT);
+    if(normalized.startsWith("goal")) {
+      return "goal_access";
+    }
+    if(normalized.startsWith("reward")) {
+      return "reward_access";
+    }
+    if("set_quest_state".equals(normalized) || "qdata".equals(normalized) || "directindex".equals(normalized) || "needlevel".equals(normalized)) {
+      return "state_transition";
+    }
+    return "";
+  }
+
+  private String mapRoleToDependencyType(String role) {
+    if(role == null) {
+      return "";
+    }
+    String up = role.trim().toUpperCase(Locale.ROOT);
+    if("GOAL_VERIFY".equals(up)) {
+      return "goal_access";
+    }
+    if("REWARD_TRIGGER".equals(up)) {
+      return "reward_access";
+    }
+    if("STATE_CHECK".equals(up) || "STATE_ADVANCE".equals(up)) {
+      return "state_transition";
+    }
+    return "";
+  }
+
+  private int parseNpcIdFromFile(String file) {
+    if(file == null) {
+      return 0;
+    }
+    String normalized = file.toLowerCase(Locale.ROOT);
+    int idx = normalized.indexOf("npc_");
+    if(idx < 0) {
+      return 0;
+    }
+    int start = idx + 4;
+    int end = start;
+    while(end < normalized.length() && Character.isDigit(normalized.charAt(end))) {
+      end++;
+    }
+    if(end <= start) {
+      return 0;
+    }
+    return parseIntSafe(normalized.substring(start, end));
   }
 
   private int parseIntSafe(String text) {
@@ -445,418 +472,93 @@ public class QuestNpcGraphBuilder {
     }
   }
 
+  private int intOf(Object value) {
+    if(value instanceof Number) {
+      return ((Number) value).intValue();
+    }
+    if(value instanceof String) {
+      return parseIntSafe((String) value);
+    }
+    return 0;
+  }
+
+  private boolean boolOf(Object value) {
+    if(value instanceof Boolean) {
+      return ((Boolean) value).booleanValue();
+    }
+    if(value instanceof String) {
+      return "true".equalsIgnoreCase(((String) value).trim());
+    }
+    return false;
+  }
+
+  private String stringOf(Object value) {
+    return value == null ? "" : String.valueOf(value);
+  }
+
   private static void printUsage() {
     System.out.println("Usage:");
-    System.out.println("  java -cp build unluac.semantic.QuestNpcGraphBuilder <npc-path> <quest.luc> <output.json>");
-  }
-
-  private List<String> readAllLines(Path file) throws Exception {
-    byte[] bytes = Files.readAllBytes(file);
-    return splitLines(decodeText(bytes));
-  }
-
-  private String decodeText(byte[] bytes) throws Exception {
-    byte[] content = bytes;
-    if(bytes.length >= 3
-        && (bytes[0] & 0xFF) == 0xEF
-        && (bytes[1] & 0xFF) == 0xBB
-        && (bytes[2] & 0xFF) == 0xBF) {
-      content = new byte[bytes.length - 3];
-      System.arraycopy(bytes, 3, content, 0, content.length);
-    }
-
-    Charset[] candidates = new Charset[] {
-        Charset.forName("UTF-8"),
-        Charset.forName("GB18030"),
-        Charset.forName("GBK"),
-        Charset.forName("Big5")
-    };
-
-    for(Charset candidate : candidates) {
-      try {
-        CharsetDecoder decoder = candidate.newDecoder();
-        decoder.onMalformedInput(CodingErrorAction.REPORT);
-        decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
-        CharBuffer buffer = decoder.decode(ByteBuffer.wrap(content));
-        return buffer.toString();
-      } catch(CharacterCodingException ignored) {
-      }
-    }
-
-    return new String(content, UTF8);
-  }
-
-  private List<String> splitLines(String text) {
-    String normalized = text.replace("\r\n", "\n").replace('\r', '\n');
-    String[] parts = normalized.split("\n", -1);
-    List<String> out = new ArrayList<String>(parts.length);
-    Collections.addAll(out, parts);
-    if(!out.isEmpty() && out.get(out.size() - 1).isEmpty()) {
-      out.remove(out.size() - 1);
-    }
-    return out;
-  }
-
-  private String stripComment(String line) {
-    if(line == null) {
-      return null;
-    }
-    int commentStart = findCommentStart(line);
-    if(commentStart < 0) {
-      return line;
-    }
-    return line.substring(0, commentStart);
-  }
-
-  private int findCommentStart(String line) {
-    boolean inSingle = false;
-    boolean inDouble = false;
-    for(int i = 0; i < line.length() - 1; i++) {
-      char c = line.charAt(i);
-      char n = line.charAt(i + 1);
-      if(c == '\\') {
-        i++;
-        continue;
-      }
-      if(c == '\'' && !inDouble) {
-        inSingle = !inSingle;
-        continue;
-      }
-      if(c == '"' && !inSingle) {
-        inDouble = !inDouble;
-        continue;
-      }
-      if(!inSingle && !inDouble && c == '-' && n == '-') {
-        return i;
-      }
-    }
-    return -1;
+    System.out.println("  java -cp build unluac.semantic.QuestNpcGraphBuilder <quest_npc_dependency_index.json> <quest_modification_propagation.json> <graph_snapshot.json>");
   }
 
   public static final class BuildResult {
-    public int scannedFiles;
-    public int linkedQuestCount;
-    public int orphanNpcCount;
-    public int multiNpcQuestCount;
+    public QuestNpcDependencyGraph graph;
+    public int totalQuestNodes;
+    public int totalNpcNodes;
+    public int totalEdges;
+    public final List<Integer> highRiskQuestIds = new ArrayList<Integer>();
+    public final List<List<String>> stronglyConnectedComponents = new ArrayList<List<String>>();
   }
 
-  private static final class FileGraphResult {
-    int npcId;
-    String file;
-    final Set<Integer> questIds = new LinkedHashSet<Integer>();
-    final Map<Integer, MutableNpcRelation> relationByQuest = new LinkedHashMap<Integer, MutableNpcRelation>();
+  public static final class GraphSnapshot {
+    public String generatedAt;
+    public int totalQuestNodes;
+    public int totalNpcNodes;
+    public int totalEdges;
+    public final List<Integer> highRiskQuestIds = new ArrayList<Integer>();
+    public final List<List<String>> stronglyConnectedComponents = new ArrayList<List<String>>();
 
-    MutableNpcRelation ensureRelation(int questId, int npcId, String file) {
-      MutableNpcRelation relation = relationByQuest.get(Integer.valueOf(questId));
-      if(relation == null) {
-        relation = new MutableNpcRelation(npcId, file);
-        relationByQuest.put(Integer.valueOf(questId), relation);
-      } else {
-        if(relation.npcId <= 0 && npcId > 0) {
-          relation.npcId = npcId;
-        }
-        if((relation.file == null || relation.file.isEmpty()) && file != null) {
-          relation.file = file;
-        }
-      }
-      return relation;
-    }
-  }
-
-  private static final class GraphOutput {
-    String generatedAt;
-    int totalNpcFiles;
-    int totalQuestCount;
-    final Map<Integer, QuestNode> quests = new LinkedHashMap<Integer, QuestNode>();
-
-    QuestNode ensureQuest(int questId) {
-      QuestNode node = quests.get(Integer.valueOf(questId));
-      if(node == null) {
-        node = new QuestNode();
-        node.questId = questId;
-        quests.put(Integer.valueOf(questId), node);
-      }
-      return node;
-    }
-
-    void sort() {
-      for(QuestNode node : quests.values()) {
-        node.sort();
-      }
-    }
-
-    String toJson() {
+    public String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{\n");
       sb.append("  \"generatedAt\": \"").append(escapeJson(generatedAt)).append("\",\n");
-      sb.append("  \"totalNpcFiles\": ").append(totalNpcFiles).append(",\n");
-      sb.append("  \"totalQuestCount\": ").append(totalQuestCount).append(",\n");
-      sb.append("  \"quests\": {");
-
-      List<Integer> questIds = new ArrayList<Integer>(quests.keySet());
-      Collections.sort(questIds);
-      if(!questIds.isEmpty()) {
-        sb.append("\n");
-      }
-
-      for(int i = 0; i < questIds.size(); i++) {
-        int questId = questIds.get(i).intValue();
-        QuestNode node = quests.get(Integer.valueOf(questId));
-        if(i > 0) {
-          sb.append(",\n");
-        }
-        sb.append("    \"").append(questId).append("\": ");
-        sb.append(node.toJson("    "));
-      }
-
-      if(!questIds.isEmpty()) {
-        sb.append("\n");
-      }
-      sb.append("  }\n");
-      sb.append("}\n");
-      return sb.toString();
-    }
-  }
-
-  private static final class QuestNode {
-    int questId;
-    String questName = "";
-    final List<NpcRelation> npcRelations = new ArrayList<NpcRelation>();
-
-    void addOrMerge(NpcRelation candidate) {
-      for(NpcRelation existing : npcRelations) {
-        if(existing.sameNpc(candidate)) {
-          existing.merge(candidate);
-          return;
-        }
-      }
-      npcRelations.add(candidate);
-    }
-
-    void sort() {
-      for(NpcRelation relation : npcRelations) {
-        relation.sort();
-      }
-      Collections.sort(npcRelations, new Comparator<NpcRelation>() {
-        @Override
-        public int compare(NpcRelation a, NpcRelation b) {
-          int c = Integer.compare(a.npcId, b.npcId);
-          if(c != 0) {
-            return c;
-          }
-          String af = a.file == null ? "" : a.file;
-          String bf = b.file == null ? "" : b.file;
-          return af.compareToIgnoreCase(bf);
-        }
-      });
-    }
-
-    String toJson(String indent) {
-      String next = indent + "  ";
-      StringBuilder sb = new StringBuilder();
-      sb.append("{\n");
-      sb.append(next).append("\"questId\": ").append(questId).append(",\n");
-      sb.append(next).append("\"questName\": \"").append(escapeJson(questName)).append("\",\n");
-      sb.append(next).append("\"npcRelations\": [");
-      if(!npcRelations.isEmpty()) {
-        sb.append("\n");
-      }
-
-      for(int i = 0; i < npcRelations.size(); i++) {
-        if(i > 0) {
-          sb.append(",\n");
-        }
-        sb.append(npcRelations.get(i).toJson(next + "  "));
-      }
-
-      if(!npcRelations.isEmpty()) {
-        sb.append("\n");
-      }
-      sb.append(next).append("]\n");
-      sb.append(indent).append("}");
-      return sb.toString();
-    }
-  }
-
-  private static final class MutableNpcRelation {
-    int npcId;
-    String file;
-    final Set<String> roles = new LinkedHashSet<String>();
-    final Set<String> transitionKeys = new LinkedHashSet<String>();
-    final List<StateTransition> transitions = new ArrayList<StateTransition>();
-    boolean readsGoal;
-    boolean writesState;
-    boolean callsReward;
-
-    MutableNpcRelation(int npcId, String file) {
-      this.npcId = npcId;
-      this.file = file;
-    }
-
-    void addRole(String role) {
-      if(role != null && !role.isEmpty()) {
-        roles.add(role);
-      }
-    }
-
-    void addTransition(int from, int to) {
-      if(from < 0 || to < 0) {
-        return;
-      }
-      String key = from + "->" + to;
-      if(!transitionKeys.add(key)) {
-        return;
-      }
-      StateTransition transition = new StateTransition();
-      transition.from = from;
-      transition.to = to;
-      transitions.add(transition);
-    }
-
-    NpcRelation toFinal() {
-      NpcRelation relation = new NpcRelation();
-      relation.npcId = npcId;
-      relation.file = file == null ? "" : file;
-
-      List<String> orderedRoles = new ArrayList<String>();
-      if(roles.contains("STATE_CHECK")) {
-        orderedRoles.add("STATE_CHECK");
-      }
-      if(roles.contains("GOAL_VERIFY")) {
-        orderedRoles.add("GOAL_VERIFY");
-      }
-      if(roles.contains("STATE_ADVANCE")) {
-        orderedRoles.add("STATE_ADVANCE");
-      }
-      if(roles.contains("REWARD_TRIGGER")) {
-        orderedRoles.add("REWARD_TRIGGER");
-      }
-      relation.roles.addAll(orderedRoles);
-
-      relation.stateTransitions.addAll(transitions);
-      relation.readsGoal = readsGoal;
-      relation.writesState = writesState;
-      relation.callsReward = callsReward;
-      relation.sort();
-      return relation;
-    }
-  }
-
-  private static final class NpcRelation {
-    int npcId;
-    String file;
-    final List<String> roles = new ArrayList<String>();
-    final List<StateTransition> stateTransitions = new ArrayList<StateTransition>();
-    boolean readsGoal;
-    boolean writesState;
-    boolean callsReward;
-
-    boolean sameNpc(NpcRelation other) {
-      if(other == null) {
-        return false;
-      }
-      if(this.npcId > 0 && other.npcId > 0) {
-        return this.npcId == other.npcId;
-      }
-      return safe(this.file).equalsIgnoreCase(safe(other.file));
-    }
-
-    void merge(NpcRelation other) {
-      if(other == null) {
-        return;
-      }
-      if(this.npcId <= 0 && other.npcId > 0) {
-        this.npcId = other.npcId;
-      }
-      if((this.file == null || this.file.isEmpty()) && other.file != null) {
-        this.file = other.file;
-      }
-      for(String role : other.roles) {
-        if(!this.roles.contains(role)) {
-          this.roles.add(role);
-        }
-      }
-      for(StateTransition transition : other.stateTransitions) {
-        boolean exists = false;
-        for(StateTransition current : this.stateTransitions) {
-          if(current.from == transition.from && current.to == transition.to) {
-            exists = true;
-            break;
-          }
-        }
-        if(!exists) {
-          StateTransition copy = new StateTransition();
-          copy.from = transition.from;
-          copy.to = transition.to;
-          this.stateTransitions.add(copy);
-        }
-      }
-      this.readsGoal = this.readsGoal || other.readsGoal;
-      this.writesState = this.writesState || other.writesState;
-      this.callsReward = this.callsReward || other.callsReward;
-      sort();
-    }
-
-    void sort() {
-      Collections.sort(stateTransitions, new Comparator<StateTransition>() {
-        @Override
-        public int compare(StateTransition a, StateTransition b) {
-          int c = Integer.compare(a.from, b.from);
-          if(c != 0) {
-            return c;
-          }
-          return Integer.compare(a.to, b.to);
-        }
-      });
-    }
-
-    String toJson(String indent) {
-      String next = indent + "  ";
-      StringBuilder sb = new StringBuilder();
-      sb.append(indent).append("{\n");
-      sb.append(next).append("\"npcId\": ").append(npcId).append(",\n");
-      sb.append(next).append("\"file\": \"").append(escapeJson(file)).append("\",\n");
-      sb.append(next).append("\"roles\": [");
-      for(int i = 0; i < roles.size(); i++) {
+      sb.append("  \"totalQuestNodes\": ").append(totalQuestNodes).append(",\n");
+      sb.append("  \"totalNpcNodes\": ").append(totalNpcNodes).append(",\n");
+      sb.append("  \"totalEdges\": ").append(totalEdges).append(",\n");
+      sb.append("  \"highRiskQuestIds\": [");
+      for(int i = 0; i < highRiskQuestIds.size(); i++) {
         if(i > 0) {
           sb.append(", ");
         }
-        sb.append("\"").append(escapeJson(roles.get(i))).append("\"");
+        sb.append(highRiskQuestIds.get(i).intValue());
       }
       sb.append("],\n");
 
-      sb.append(next).append("\"stateTransitions\": [");
-      if(!stateTransitions.isEmpty()) {
+      sb.append("  \"stronglyConnectedComponents\": [");
+      if(!stronglyConnectedComponents.isEmpty()) {
         sb.append("\n");
       }
-      for(int i = 0; i < stateTransitions.size(); i++) {
+      for(int i = 0; i < stronglyConnectedComponents.size(); i++) {
         if(i > 0) {
           sb.append(",\n");
         }
-        StateTransition t = stateTransitions.get(i);
-        sb.append(next).append("  { \"from\": ").append(t.from)
-            .append(", \"to\": ").append(t.to).append(" }");
+        List<String> component = stronglyConnectedComponents.get(i);
+        sb.append("    [");
+        for(int j = 0; j < component.size(); j++) {
+          if(j > 0) {
+            sb.append(", ");
+          }
+          sb.append("\"").append(escapeJson(component.get(j))).append("\"");
+        }
+        sb.append("]");
       }
-      if(!stateTransitions.isEmpty()) {
-        sb.append("\n").append(next);
+      if(!stronglyConnectedComponents.isEmpty()) {
+        sb.append("\n");
       }
-      sb.append("],\n");
-
-      sb.append(next).append("\"readsGoal\": ").append(readsGoal).append(",\n");
-      sb.append(next).append("\"writesState\": ").append(writesState).append(",\n");
-      sb.append(next).append("\"callsReward\": ").append(callsReward).append("\n");
-      sb.append(indent).append("}");
+      sb.append("  ]\n");
+      sb.append("}\n");
       return sb.toString();
     }
-  }
-
-  private static final class StateTransition {
-    int from;
-    int to;
-  }
-
-  private static String safe(String text) {
-    return text == null ? "" : text;
   }
 
   private static String escapeJson(String text) {

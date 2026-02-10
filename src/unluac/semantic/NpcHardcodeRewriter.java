@@ -14,10 +14,12 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -77,6 +79,31 @@ public class NpcHardcodeRewriter {
                                          Path rewrittenOutDir,
                                          Path planOut,
                                          Path diffOut) throws Exception {
+    return rewriteInternal(npcLuaDir, rewrittenOutDir, planOut, diffOut, null);
+  }
+
+  public static RewriteOutput rewriteSelected(Path npcLuaDir,
+                                              Path rewrittenOutDir,
+                                              Path planOut,
+                                              Path diffOut,
+                                              List<String> selectedRelativeFiles) throws Exception {
+    Set<String> selected = new LinkedHashSet<String>();
+    if(selectedRelativeFiles != null) {
+      for(String file : selectedRelativeFiles) {
+        String normalized = normalizeRelativePath(file);
+        if(!normalized.isEmpty()) {
+          selected.add(normalized);
+        }
+      }
+    }
+    return rewriteInternal(npcLuaDir, rewrittenOutDir, planOut, diffOut, selected);
+  }
+
+  private static RewriteOutput rewriteInternal(Path npcLuaDir,
+                                               Path rewrittenOutDir,
+                                               Path planOut,
+                                               Path diffOut,
+                                               Set<String> selectedRelativeFiles) throws Exception {
     if(npcLuaDir == null || !Files.exists(npcLuaDir) || !Files.isDirectory(npcLuaDir)) {
       throw new IllegalStateException("npc lua dir not found: " + npcLuaDir);
     }
@@ -103,12 +130,21 @@ public class NpcHardcodeRewriter {
 
     for(Path source : files) {
       Path rel = npcLuaDir.relativize(source);
-      Path target = rewrittenOutDir.resolve(rel);
+      String relativePath = normalizeRelativePath(rel.toString());
+      Path target = rewrittenOutDir.resolve(relativePath);
       if(target.getParent() != null && !Files.exists(target.getParent())) {
         Files.createDirectories(target.getParent());
       }
 
-      RewriteFileResult fileResult = rewriteOneFile(source, rel.toString().replace('\\', '/'));
+      boolean shouldRewrite = selectedRelativeFiles == null || selectedRelativeFiles.isEmpty()
+          || selectedRelativeFiles.contains(relativePath);
+
+      if(!shouldRewrite) {
+        Files.copy(source, target, StandardCopyOption.REPLACE_EXISTING);
+        continue;
+      }
+
+      RewriteFileResult fileResult = rewriteOneFile(source, relativePath);
       if(fileResult.changed) {
         output.rewrittenFiles++;
         output.rewrittenLineCount += fileResult.planItems.size();
@@ -123,6 +159,13 @@ public class NpcHardcodeRewriter {
     writePlan(planOut, plan, npcLuaDir, rewrittenOutDir);
     writeDiff(diffOut, fileDiffs);
     return output;
+  }
+
+  private static String normalizeRelativePath(String path) {
+    if(path == null) {
+      return "";
+    }
+    return path.replace('\\', '/').trim();
   }
 
   private static RewriteFileResult rewriteOneFile(Path sourceFile, String relativePath) throws Exception {

@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-02-10T20:01:01.708+08:00",
+  "sourceNpcDir": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\npc-lua",
+  "rewrittenNpcDir": "D:\\github\\QuestDecompiler-main\\npc-lua-auto-rewritten",
+  "scannedFiles": 468,
+  "rewrittenFiles": 2,
+  "rewrittenLineCount": 9,
+  "targetedQuestCount": 3,
+  "targetedNpcCount": 3,
+  "targetedQuestIds": [1, 40, 100],
+  "targetedNpcFiles": ["npc_212001.lua", "npc_314005.lua", "npc_314010.lua"],
+  "remainingHardcodedGoalIndexes": [],
+  "brokenReferences": [],
+  "unmatchedQuestIds": [],
+  "validationStatus": "PASS"
+}

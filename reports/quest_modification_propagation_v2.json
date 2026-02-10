@@ -1,0 +1,5130 @@
+{
+  "generatedAt": "2026-02-10T19:51:12.501+08:00",
+  "totalPropagationNodes": 408,
+  "quests": [
+    {
+      "questId": 1,
+      "modificationTypes": ["QUEST_ID_CHANGED"],
+      "affectedNpcFiles": ["npc_314005.lua"],
+      "propagationChains": [
+        {
+          "questId": 1,
+          "fromNode": "Q:1",
+          "toNode": "N:npc_314005.lua",
+          "rule": "QUEST_ID_CRITICAL_PROPAGATION",
+          "riskLevel": "CRITICAL"
+        }
+      ],
+      "highestRiskLevel": "CRITICAL",
+      "rewriteRequired": true
+    },
+    {
+      "questId": 7,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 10,
+      "modificationTypes": ["QUEST_ID_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 11,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 12,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 15,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 16,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua", "npc_314011.lua", "npc_314012.lua", "npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 16,
+          "fromNode": "Q:16",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 16,
+          "fromNode": "Q:16",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 16,
+          "fromNode": "Q:16",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 16,
+          "fromNode": "Q:16",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 17,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 18,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 19,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua", "npc_314011.lua", "npc_314012.lua", "npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 19,
+          "fromNode": "Q:19",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 19,
+          "fromNode": "Q:19",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 19,
+          "fromNode": "Q:19",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 19,
+          "fromNode": "Q:19",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 20,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 21,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua", "npc_314011.lua", "npc_314012.lua", "npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 21,
+          "fromNode": "Q:21",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 21,
+          "fromNode": "Q:21",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 21,
+          "fromNode": "Q:21",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 21,
+          "fromNode": "Q:21",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 22,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314009.lua"],
+      "propagationChains": [
+        {
+          "questId": 22,
+          "fromNode": "Q:22",
+          "toNode": "N:npc_314009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 23,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314009.lua"],
+      "propagationChains": [
+        {
+          "questId": 23,
+          "fromNode": "Q:23",
+          "toNode": "N:npc_314009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 24,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314009.lua"],
+      "propagationChains": [
+        {
+          "questId": 24,
+          "fromNode": "Q:24",
+          "toNode": "N:npc_314009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 25,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314009.lua"],
+      "propagationChains": [
+        {
+          "questId": 25,
+          "fromNode": "Q:25",
+          "toNode": "N:npc_314009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 32,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua"],
+      "propagationChains": [
+        {
+          "questId": 32,
+          "fromNode": "Q:32",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 33,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua"],
+      "propagationChains": [
+        {
+          "questId": 33,
+          "fromNode": "Q:33",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 34,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua"],
+      "propagationChains": [
+        {
+          "questId": 34,
+          "fromNode": "Q:34",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 35,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua"],
+      "propagationChains": [
+        {
+          "questId": 35,
+          "fromNode": "Q:35",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 40,
+      "modificationTypes": ["QUEST_ID_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua"],
+      "propagationChains": [
+        {
+          "questId": 40,
+          "fromNode": "Q:40",
+          "toNode": "N:npc_314010.lua",
+          "rule": "QUEST_ID_CRITICAL_PROPAGATION",
+          "riskLevel": "CRITICAL"
+        }
+      ],
+      "highestRiskLevel": "CRITICAL",
+      "rewriteRequired": true
+    },
+    {
+      "questId": 42,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314011.lua"],
+      "propagationChains": [
+        {
+          "questId": 42,
+          "fromNode": "Q:42",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 43,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314011.lua"],
+      "propagationChains": [
+        {
+          "questId": 43,
+          "fromNode": "Q:43",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 44,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314011.lua"],
+      "propagationChains": [
+        {
+          "questId": 44,
+          "fromNode": "Q:44",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 45,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314011.lua"],
+      "propagationChains": [
+        {
+          "questId": 45,
+          "fromNode": "Q:45",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 52,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 53,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 58,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 59,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 60,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_314020.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 60,
+          "fromNode": "Q:60",
+          "toNode": "N:npc_213001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 60,
+          "fromNode": "Q:60",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 60,
+          "fromNode": "Q:60",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 61,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 62,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 63,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 64,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_314020.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 64,
+          "fromNode": "Q:64",
+          "toNode": "N:npc_213001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 64,
+          "fromNode": "Q:64",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 64,
+          "fromNode": "Q:64",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 65,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 66,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 67,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 70,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 71,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 72,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 75,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 94,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213002.lua"],
+      "propagationChains": [
+        {
+          "questId": 94,
+          "fromNode": "Q:94",
+          "toNode": "N:npc_213002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 99,
+      "modificationTypes": ["GOAL_ITEM_COUNT_CHANGED", "REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED", "TEXT_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 100,
+      "modificationTypes": ["QUEST_ID_CHANGED"],
+      "affectedNpcFiles": ["npc_212001.lua"],
+      "propagationChains": [
+        {
+          "questId": 100,
+          "fromNode": "Q:100",
+          "toNode": "N:npc_212001.lua",
+          "rule": "QUEST_ID_CRITICAL_PROPAGATION",
+          "riskLevel": "CRITICAL"
+        }
+      ],
+      "highestRiskLevel": "CRITICAL",
+      "rewriteRequired": true
+    },
+    {
+      "questId": 101,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213002.lua"],
+      "propagationChains": [
+        {
+          "questId": 101,
+          "fromNode": "Q:101",
+          "toNode": "N:npc_213002.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 102,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 103,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_212001.lua"],
+      "propagationChains": [
+        {
+          "questId": 103,
+          "fromNode": "Q:103",
+          "toNode": "N:npc_212001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 104,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213002.lua"],
+      "propagationChains": [
+        {
+          "questId": 104,
+          "fromNode": "Q:104",
+          "toNode": "N:npc_213002.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 112,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 112,
+          "fromNode": "Q:112",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 113,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 113,
+          "fromNode": "Q:113",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 115,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 116,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 130,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 144,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315015.lua", "npc_915030.lua"],
+      "propagationChains": [
+        {
+          "questId": 144,
+          "fromNode": "Q:144",
+          "toNode": "N:npc_315015.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 144,
+          "fromNode": "Q:144",
+          "toNode": "N:npc_915030.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 154,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_215002.lua"],
+      "propagationChains": [
+        {
+          "questId": 154,
+          "fromNode": "Q:154",
+          "toNode": "N:npc_213001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 154,
+          "fromNode": "Q:154",
+          "toNode": "N:npc_215002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 166,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315009.lua"],
+      "propagationChains": [
+        {
+          "questId": 166,
+          "fromNode": "Q:166",
+          "toNode": "N:npc_315009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 200,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 200,
+          "fromNode": "Q:200",
+          "toNode": "N:npc_313002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 236,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213008.lua"],
+      "propagationChains": [
+        {
+          "questId": 236,
+          "fromNode": "Q:236",
+          "toNode": "N:npc_213008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 239,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_215002.lua"],
+      "propagationChains": [
+        {
+          "questId": 239,
+          "fromNode": "Q:239",
+          "toNode": "N:npc_215002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 282,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_310005.lua"],
+      "propagationChains": [
+        {
+          "questId": 282,
+          "fromNode": "Q:282",
+          "toNode": "N:npc_310005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 285,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_216002.lua", "npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 285,
+          "fromNode": "Q:285",
+          "toNode": "N:npc_216002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 285,
+          "fromNode": "Q:285",
+          "toNode": "N:npc_316003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 346,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_317002.lua"],
+      "propagationChains": [
+        {
+          "questId": 346,
+          "fromNode": "Q:346",
+          "toNode": "N:npc_317002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 350,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 351,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua", "npc_314011.lua", "npc_314012.lua", "npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 351,
+          "fromNode": "Q:351",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 351,
+          "fromNode": "Q:351",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 351,
+          "fromNode": "Q:351",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 351,
+          "fromNode": "Q:351",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 352,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314012.lua"],
+      "propagationChains": [
+        {
+          "questId": 352,
+          "fromNode": "Q:352",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 353,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314012.lua"],
+      "propagationChains": [
+        {
+          "questId": 353,
+          "fromNode": "Q:353",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 354,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314012.lua"],
+      "propagationChains": [
+        {
+          "questId": 354,
+          "fromNode": "Q:354",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 355,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314012.lua"],
+      "propagationChains": [
+        {
+          "questId": 355,
+          "fromNode": "Q:355",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 379,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 380,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 441,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213004.lua"],
+      "propagationChains": [
+        {
+          "questId": 441,
+          "fromNode": "Q:441",
+          "toNode": "N:npc_213004.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 444,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 468,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 469,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 470,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 471,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 500,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 572,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318020.lua"],
+      "propagationChains": [
+        {
+          "questId": 572,
+          "fromNode": "Q:572",
+          "toNode": "N:npc_318020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 605,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318003.lua", "npc_318020.lua"],
+      "propagationChains": [
+        {
+          "questId": 605,
+          "fromNode": "Q:605",
+          "toNode": "N:npc_318003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 605,
+          "fromNode": "Q:605",
+          "toNode": "N:npc_318020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 606,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318020.lua"],
+      "propagationChains": [
+        {
+          "questId": 606,
+          "fromNode": "Q:606",
+          "toNode": "N:npc_318020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 611,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318001.lua"],
+      "propagationChains": [
+        {
+          "questId": 611,
+          "fromNode": "Q:611",
+          "toNode": "N:npc_318001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 612,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314010.lua", "npc_314011.lua", "npc_314012.lua", "npc_318001.lua", "npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 612,
+          "fromNode": "Q:612",
+          "toNode": "N:npc_314010.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 612,
+          "fromNode": "Q:612",
+          "toNode": "N:npc_314011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 612,
+          "fromNode": "Q:612",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 612,
+          "fromNode": "Q:612",
+          "toNode": "N:npc_318001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 612,
+          "fromNode": "Q:612",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 613,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 613,
+          "fromNode": "Q:613",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 614,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 614,
+          "fromNode": "Q:614",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 615,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 615,
+          "fromNode": "Q:615",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 616,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_318007.lua"],
+      "propagationChains": [
+        {
+          "questId": 616,
+          "fromNode": "Q:616",
+          "toNode": "N:npc_318007.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 625,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 629,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 692,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 713,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_310005.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 713,
+          "fromNode": "Q:713",
+          "toNode": "N:npc_310005.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 713,
+          "fromNode": "Q:713",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 714,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 714,
+          "fromNode": "Q:714",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 715,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 715,
+          "fromNode": "Q:715",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 715,
+          "fromNode": "Q:715",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 716,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_300009.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 716,
+          "fromNode": "Q:716",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 716,
+          "fromNode": "Q:716",
+          "toNode": "N:npc_300009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 716,
+          "fromNode": "Q:716",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 717,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_300009.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 717,
+          "fromNode": "Q:717",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 717,
+          "fromNode": "Q:717",
+          "toNode": "N:npc_300009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 717,
+          "fromNode": "Q:717",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 718,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_300009.lua"],
+      "propagationChains": [
+        {
+          "questId": 718,
+          "fromNode": "Q:718",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 718,
+          "fromNode": "Q:718",
+          "toNode": "N:npc_300009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 719,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua"],
+      "propagationChains": [
+        {
+          "questId": 719,
+          "fromNode": "Q:719",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 720,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 720,
+          "fromNode": "Q:720",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 720,
+          "fromNode": "Q:720",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 721,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 721,
+          "fromNode": "Q:721",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 722,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 722,
+          "fromNode": "Q:722",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 723,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 723,
+          "fromNode": "Q:723",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 723,
+          "fromNode": "Q:723",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 724,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300008.lua", "npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 724,
+          "fromNode": "Q:724",
+          "toNode": "N:npc_300008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 724,
+          "fromNode": "Q:724",
+          "toNode": "N:npc_316009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 726,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 730,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 731,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 739,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 740,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 741,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 765,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_318021.lua"],
+      "propagationChains": [
+        {
+          "questId": 765,
+          "fromNode": "Q:765",
+          "toNode": "N:npc_318021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 802,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213009.lua", "npc_218008.lua", "npc_391012.lua"],
+      "propagationChains": [
+        {
+          "questId": 802,
+          "fromNode": "Q:802",
+          "toNode": "N:npc_213009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 802,
+          "fromNode": "Q:802",
+          "toNode": "N:npc_218008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 802,
+          "fromNode": "Q:802",
+          "toNode": "N:npc_391012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 804,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218008.lua", "npc_313007.lua", "npc_391912.lua"],
+      "propagationChains": [
+        {
+          "questId": 804,
+          "fromNode": "Q:804",
+          "toNode": "N:npc_218008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 804,
+          "fromNode": "Q:804",
+          "toNode": "N:npc_313007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 804,
+          "fromNode": "Q:804",
+          "toNode": "N:npc_391912.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 809,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 810,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 811,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 812,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 813,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 820,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 854,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_391062.lua"],
+      "propagationChains": [
+        {
+          "questId": 854,
+          "fromNode": "Q:854",
+          "toNode": "N:npc_391062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 861,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_214002.lua"],
+      "propagationChains": [
+        {
+          "questId": 861,
+          "fromNode": "Q:861",
+          "toNode": "N:npc_214002.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 867,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_315025.lua"],
+      "propagationChains": [
+        {
+          "questId": 867,
+          "fromNode": "Q:867",
+          "toNode": "N:npc_315025.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 871,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_218008.lua"],
+      "propagationChains": [
+        {
+          "questId": 871,
+          "fromNode": "Q:871",
+          "toNode": "N:npc_218008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 887,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 890,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 890,
+          "fromNode": "Q:890",
+          "toNode": "N:npc_316003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1074,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1077,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1101,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_214010.lua", "npc_314058.lua"],
+      "propagationChains": [
+        {
+          "questId": 1101,
+          "fromNode": "Q:1101",
+          "toNode": "N:npc_214010.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1101,
+          "fromNode": "Q:1101",
+          "toNode": "N:npc_314058.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1104,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314058.lua", "npc_314060.lua"],
+      "propagationChains": [
+        {
+          "questId": 1104,
+          "fromNode": "Q:1104",
+          "toNode": "N:npc_314058.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1104,
+          "fromNode": "Q:1104",
+          "toNode": "N:npc_314060.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1105,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314058.lua", "npc_314059.lua", "npc_314060.lua"],
+      "propagationChains": [
+        {
+          "questId": 1105,
+          "fromNode": "Q:1105",
+          "toNode": "N:npc_314058.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1105,
+          "fromNode": "Q:1105",
+          "toNode": "N:npc_314059.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1105,
+          "fromNode": "Q:1105",
+          "toNode": "N:npc_314060.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1112,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_214001.lua", "npc_314058.lua"],
+      "propagationChains": [
+        {
+          "questId": 1112,
+          "fromNode": "Q:1112",
+          "toNode": "N:npc_214001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1112,
+          "fromNode": "Q:1112",
+          "toNode": "N:npc_314058.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1113,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_214001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1113,
+          "fromNode": "Q:1113",
+          "toNode": "N:npc_214001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1114,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_214001.lua", "npc_300111.lua", "npc_314008.lua"],
+      "propagationChains": [
+        {
+          "questId": 1114,
+          "fromNode": "Q:1114",
+          "toNode": "N:npc_214001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1114,
+          "fromNode": "Q:1114",
+          "toNode": "N:npc_300111.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1114,
+          "fromNode": "Q:1114",
+          "toNode": "N:npc_314008.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1115,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_214001.lua", "npc_214002.lua", "npc_214003.lua", "npc_214004.lua", "npc_314008.lua"],
+      "propagationChains": [
+        {
+          "questId": 1115,
+          "fromNode": "Q:1115",
+          "toNode": "N:npc_214001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1115,
+          "fromNode": "Q:1115",
+          "toNode": "N:npc_214002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1115,
+          "fromNode": "Q:1115",
+          "toNode": "N:npc_214003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1115,
+          "fromNode": "Q:1115",
+          "toNode": "N:npc_214004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1115,
+          "fromNode": "Q:1115",
+          "toNode": "N:npc_314008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1121,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_214005.lua", "npc_314001.lua", "npc_314020.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1121,
+          "fromNode": "Q:1121",
+          "toNode": "N:npc_214005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1121,
+          "fromNode": "Q:1121",
+          "toNode": "N:npc_314001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1121,
+          "fromNode": "Q:1121",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1121,
+          "fromNode": "Q:1121",
+          "toNode": "N:npc_314021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1123,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_214005.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1123,
+          "fromNode": "Q:1123",
+          "toNode": "N:npc_214005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1123,
+          "fromNode": "Q:1123",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1125,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314020.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1125,
+          "fromNode": "Q:1125",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1125,
+          "fromNode": "Q:1125",
+          "toNode": "N:npc_314021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1128,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1128,
+          "fromNode": "Q:1128",
+          "toNode": "N:npc_314021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1131,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1131,
+          "fromNode": "Q:1131",
+          "toNode": "N:npc_314004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1138,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_317004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1138,
+          "fromNode": "Q:1138",
+          "toNode": "N:npc_317004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1140,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314003.lua", "npc_317007.lua"],
+      "propagationChains": [
+        {
+          "questId": 1140,
+          "fromNode": "Q:1140",
+          "toNode": "N:npc_314003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1140,
+          "fromNode": "Q:1140",
+          "toNode": "N:npc_317007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1147,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1147,
+          "fromNode": "Q:1147",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1155,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_317002.lua", "npc_317004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1155,
+          "fromNode": "Q:1155",
+          "toNode": "N:npc_317002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1155,
+          "fromNode": "Q:1155",
+          "toNode": "N:npc_317004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1165,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_317002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1165,
+          "fromNode": "Q:1165",
+          "toNode": "N:npc_317002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1183,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_214006.lua", "npc_314001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1183,
+          "fromNode": "Q:1183",
+          "toNode": "N:npc_214006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1183,
+          "fromNode": "Q:1183",
+          "toNode": "N:npc_314001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1186,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213006.lua"],
+      "propagationChains": [
+        {
+          "questId": 1186,
+          "fromNode": "Q:1186",
+          "toNode": "N:npc_213006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1190,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_203001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1190,
+          "fromNode": "Q:1190",
+          "toNode": "N:npc_203001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1191,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_203001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1191,
+          "fromNode": "Q:1191",
+          "toNode": "N:npc_203001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1195,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_391001.lua", "npc_391010.lua"],
+      "propagationChains": [
+        {
+          "questId": 1195,
+          "fromNode": "Q:1195",
+          "toNode": "N:npc_391001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1195,
+          "fromNode": "Q:1195",
+          "toNode": "N:npc_391010.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1196,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1197,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1198,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED", "TEXT_CHANGED"],
+      "affectedNpcFiles": ["npc_203006.lua"],
+      "propagationChains": [
+        {
+          "questId": 1198,
+          "fromNode": "Q:1198",
+          "toNode": "N:npc_203006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1199,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_214002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1199,
+          "fromNode": "Q:1199",
+          "toNode": "N:npc_214002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1201,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314059.lua", "npc_314060.lua"],
+      "propagationChains": [
+        {
+          "questId": 1201,
+          "fromNode": "Q:1201",
+          "toNode": "N:npc_314059.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1201,
+          "fromNode": "Q:1201",
+          "toNode": "N:npc_314060.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1202,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314058.lua", "npc_314059.lua"],
+      "propagationChains": [
+        {
+          "questId": 1202,
+          "fromNode": "Q:1202",
+          "toNode": "N:npc_314058.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1202,
+          "fromNode": "Q:1202",
+          "toNode": "N:npc_314059.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1210,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300011.lua"],
+      "propagationChains": [
+        {
+          "questId": 1210,
+          "fromNode": "Q:1210",
+          "toNode": "N:npc_300011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1211,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300011.lua"],
+      "propagationChains": [
+        {
+          "questId": 1211,
+          "fromNode": "Q:1211",
+          "toNode": "N:npc_300011.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1212,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1212,
+          "fromNode": "Q:1212",
+          "toNode": "N:npc_213001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1212,
+          "fromNode": "Q:1212",
+          "toNode": "N:npc_313002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1213,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1213,
+          "fromNode": "Q:1213",
+          "toNode": "N:npc_213001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1213,
+          "fromNode": "Q:1213",
+          "toNode": "N:npc_313002.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1220,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_310005.lua"],
+      "propagationChains": [
+        {
+          "questId": 1220,
+          "fromNode": "Q:1220",
+          "toNode": "N:npc_310005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1226,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213003.lua", "npc_310003.lua", "npc_310005.lua"],
+      "propagationChains": [
+        {
+          "questId": 1226,
+          "fromNode": "Q:1226",
+          "toNode": "N:npc_213003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1226,
+          "fromNode": "Q:1226",
+          "toNode": "N:npc_310003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1226,
+          "fromNode": "Q:1226",
+          "toNode": "N:npc_310005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1227,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_310005.lua"],
+      "propagationChains": [
+        {
+          "questId": 1227,
+          "fromNode": "Q:1227",
+          "toNode": "N:npc_310005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1229,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_213005.lua", "npc_313007.lua"],
+      "propagationChains": [
+        {
+          "questId": 1229,
+          "fromNode": "Q:1229",
+          "toNode": "N:npc_213005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1229,
+          "fromNode": "Q:1229",
+          "toNode": "N:npc_313007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1232,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_313007.lua"],
+      "propagationChains": [
+        {
+          "questId": 1232,
+          "fromNode": "Q:1232",
+          "toNode": "N:npc_313007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1239,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_313007.lua"],
+      "propagationChains": [
+        {
+          "questId": 1239,
+          "fromNode": "Q:1239",
+          "toNode": "N:npc_313007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1242,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300010.lua"],
+      "propagationChains": [
+        {
+          "questId": 1242,
+          "fromNode": "Q:1242",
+          "toNode": "N:npc_300010.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1258,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315011.lua"],
+      "propagationChains": [
+        {
+          "questId": 1258,
+          "fromNode": "Q:1258",
+          "toNode": "N:npc_315011.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1263,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315006.lua", "npc_391102.lua"],
+      "propagationChains": [
+        {
+          "questId": 1263,
+          "fromNode": "Q:1263",
+          "toNode": "N:npc_315006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1263,
+          "fromNode": "Q:1263",
+          "toNode": "N:npc_391102.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1264,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_213001.lua", "npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1264,
+          "fromNode": "Q:1264",
+          "toNode": "N:npc_213001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1264,
+          "fromNode": "Q:1264",
+          "toNode": "N:npc_313002.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1301,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1301,
+          "fromNode": "Q:1301",
+          "toNode": "N:npc_315002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1326,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1326,
+          "fromNode": "Q:1326",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1326,
+          "fromNode": "Q:1326",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1327,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1327,
+          "fromNode": "Q:1327",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1327,
+          "fromNode": "Q:1327",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1328,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1328,
+          "fromNode": "Q:1328",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1328,
+          "fromNode": "Q:1328",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1329,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1329,
+          "fromNode": "Q:1329",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1329,
+          "fromNode": "Q:1329",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1330,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1330,
+          "fromNode": "Q:1330",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1330,
+          "fromNode": "Q:1330",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1331,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1331,
+          "fromNode": "Q:1331",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1331,
+          "fromNode": "Q:1331",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1332,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1332,
+          "fromNode": "Q:1332",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1332,
+          "fromNode": "Q:1332",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1333,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1333,
+          "fromNode": "Q:1333",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1333,
+          "fromNode": "Q:1333",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1334,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1334,
+          "fromNode": "Q:1334",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1334,
+          "fromNode": "Q:1334",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1335,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1335,
+          "fromNode": "Q:1335",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1335,
+          "fromNode": "Q:1335",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1336,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1337,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1338,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300111.lua"],
+      "propagationChains": [
+        {
+          "questId": 1338,
+          "fromNode": "Q:1338",
+          "toNode": "N:npc_300111.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1390,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_315025.lua", "npc_391104.lua"],
+      "propagationChains": [
+        {
+          "questId": 1390,
+          "fromNode": "Q:1390",
+          "toNode": "N:npc_315025.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1390,
+          "fromNode": "Q:1390",
+          "toNode": "N:npc_391104.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1391,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_315023.lua", "npc_315025.lua"],
+      "propagationChains": [
+        {
+          "questId": 1391,
+          "fromNode": "Q:1391",
+          "toNode": "N:npc_315023.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1391,
+          "fromNode": "Q:1391",
+          "toNode": "N:npc_315025.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1392,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1395,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218006.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1395,
+          "fromNode": "Q:1395",
+          "toNode": "N:npc_218006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1395,
+          "fromNode": "Q:1395",
+          "toNode": "N:npc_314021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1396,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218006.lua", "npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1396,
+          "fromNode": "Q:1396",
+          "toNode": "N:npc_218006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1396,
+          "fromNode": "Q:1396",
+          "toNode": "N:npc_313002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1397,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218006.lua", "npc_313002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1397,
+          "fromNode": "Q:1397",
+          "toNode": "N:npc_218006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1397,
+          "fromNode": "Q:1397",
+          "toNode": "N:npc_313002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1398,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218006.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 1398,
+          "fromNode": "Q:1398",
+          "toNode": "N:npc_218006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1398,
+          "fromNode": "Q:1398",
+          "toNode": "N:npc_314021.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1400,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314020.lua", "npc_317004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1400,
+          "fromNode": "Q:1400",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1400,
+          "fromNode": "Q:1400",
+          "toNode": "N:npc_317004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1401,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua", "npc_317004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1401,
+          "fromNode": "Q:1401",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1401,
+          "fromNode": "Q:1401",
+          "toNode": "N:npc_317004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1402,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua"],
+      "propagationChains": [
+        {
+          "questId": 1402,
+          "fromNode": "Q:1402",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1403,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 1403,
+          "fromNode": "Q:1403",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1403,
+          "fromNode": "Q:1403",
+          "toNode": "N:npc_314020.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1407,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_319006.lua"],
+      "propagationChains": [
+        {
+          "questId": 1407,
+          "fromNode": "Q:1407",
+          "toNode": "N:npc_319006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1409,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300127.lua"],
+      "propagationChains": [
+        {
+          "questId": 1409,
+          "fromNode": "Q:1409",
+          "toNode": "N:npc_300127.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1410,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300127.lua"],
+      "propagationChains": [
+        {
+          "questId": 1410,
+          "fromNode": "Q:1410",
+          "toNode": "N:npc_300127.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1416,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1417,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1418,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314012.lua"],
+      "propagationChains": [
+        {
+          "questId": 1418,
+          "fromNode": "Q:1418",
+          "toNode": "N:npc_314012.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1419,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1420,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1421,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1422,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1423,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1424,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1465,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300003.lua", "npc_321008.lua"],
+      "propagationChains": [
+        {
+          "questId": 1465,
+          "fromNode": "Q:1465",
+          "toNode": "N:npc_300003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1465,
+          "fromNode": "Q:1465",
+          "toNode": "N:npc_321008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1466,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314059.lua"],
+      "propagationChains": [
+        {
+          "questId": 1466,
+          "fromNode": "Q:1466",
+          "toNode": "N:npc_314059.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1481,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_323005.lua", "npc_323007.lua"],
+      "propagationChains": [
+        {
+          "questId": 1481,
+          "fromNode": "Q:1481",
+          "toNode": "N:npc_323005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1481,
+          "fromNode": "Q:1481",
+          "toNode": "N:npc_323007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1487,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1488,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1507,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1507,
+          "fromNode": "Q:1507",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1508,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1508,
+          "fromNode": "Q:1508",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1509,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1509,
+          "fromNode": "Q:1509",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1510,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1510,
+          "fromNode": "Q:1510",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1511,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1511,
+          "fromNode": "Q:1511",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1511,
+          "fromNode": "Q:1511",
+          "toNode": "N:npc_324004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1512,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324004.lua"],
+      "propagationChains": [
+        {
+          "questId": 1512,
+          "fromNode": "Q:1512",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1512,
+          "fromNode": "Q:1512",
+          "toNode": "N:npc_324004.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1513,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1513,
+          "fromNode": "Q:1513",
+          "toNode": "N:npc_324002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1514,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1514,
+          "fromNode": "Q:1514",
+          "toNode": "N:npc_324002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1515,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324002.lua", "npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1515,
+          "fromNode": "Q:1515",
+          "toNode": "N:npc_324002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1515,
+          "fromNode": "Q:1515",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1516,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324002.lua", "npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1516,
+          "fromNode": "Q:1516",
+          "toNode": "N:npc_324002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1516,
+          "fromNode": "Q:1516",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1517,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1517,
+          "fromNode": "Q:1517",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1518,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1518,
+          "fromNode": "Q:1518",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1519,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1519,
+          "fromNode": "Q:1519",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1520,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1520,
+          "fromNode": "Q:1520",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1521,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1521,
+          "fromNode": "Q:1521",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1522,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1522,
+          "fromNode": "Q:1522",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1523,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1523,
+          "fromNode": "Q:1523",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1524,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1524,
+          "fromNode": "Q:1524",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1525,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218008.lua", "npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1525,
+          "fromNode": "Q:1525",
+          "toNode": "N:npc_218008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1525,
+          "fromNode": "Q:1525",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1526,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315006.lua", "npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1526,
+          "fromNode": "Q:1526",
+          "toNode": "N:npc_315006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1526,
+          "fromNode": "Q:1526",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1527,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_315002.lua", "npc_315006.lua"],
+      "propagationChains": [
+        {
+          "questId": 1527,
+          "fromNode": "Q:1527",
+          "toNode": "N:npc_315002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1527,
+          "fromNode": "Q:1527",
+          "toNode": "N:npc_315006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1533,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1541,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_300009.lua", "npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1541,
+          "fromNode": "Q:1541",
+          "toNode": "N:npc_300009.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1541,
+          "fromNode": "Q:1541",
+          "toNode": "N:npc_316003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1542,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1542,
+          "fromNode": "Q:1542",
+          "toNode": "N:npc_316003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1543,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_216001.lua", "npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1543,
+          "fromNode": "Q:1543",
+          "toNode": "N:npc_216001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1543,
+          "fromNode": "Q:1543",
+          "toNode": "N:npc_316003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1544,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_216001.lua", "npc_316003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1544,
+          "fromNode": "Q:1544",
+          "toNode": "N:npc_216001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 1544,
+          "fromNode": "Q:1544",
+          "toNode": "N:npc_316003.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1587,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1623,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1683,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1904,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_322003.lua"],
+      "propagationChains": [
+        {
+          "questId": 1904,
+          "fromNode": "Q:1904",
+          "toNode": "N:npc_322003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1908,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1908,
+          "fromNode": "Q:1908",
+          "toNode": "N:npc_830001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1909,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1909,
+          "fromNode": "Q:1909",
+          "toNode": "N:npc_830001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1910,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1910,
+          "fromNode": "Q:1910",
+          "toNode": "N:npc_830001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1912,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324005.lua", "npc_830001.lua"],
+      "propagationChains": [
+        {
+          "questId": 1912,
+          "fromNode": "Q:1912",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1912,
+          "fromNode": "Q:1912",
+          "toNode": "N:npc_324005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1912,
+          "fromNode": "Q:1912",
+          "toNode": "N:npc_830001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1914,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1914,
+          "fromNode": "Q:1914",
+          "toNode": "N:npc_830002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1915,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1915,
+          "fromNode": "Q:1915",
+          "toNode": "N:npc_830002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1916,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_830002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1916,
+          "fromNode": "Q:1916",
+          "toNode": "N:npc_830002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 1918,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324005.lua", "npc_830002.lua"],
+      "propagationChains": [
+        {
+          "questId": 1918,
+          "fromNode": "Q:1918",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1918,
+          "fromNode": "Q:1918",
+          "toNode": "N:npc_324005.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 1918,
+          "fromNode": "Q:1918",
+          "toNode": "N:npc_830002.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2001,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2002,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2003,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2004,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2006,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2007,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua"],
+      "propagationChains": [
+        {
+          "questId": 2007,
+          "fromNode": "Q:2007",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2008,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua"],
+      "propagationChains": [
+        {
+          "questId": 2008,
+          "fromNode": "Q:2008",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2009,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300119.lua"],
+      "propagationChains": [
+        {
+          "questId": 2009,
+          "fromNode": "Q:2009",
+          "toNode": "N:npc_300119.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2018,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314058.lua", "npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2018,
+          "fromNode": "Q:2018",
+          "toNode": "N:npc_314058.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 2018,
+          "fromNode": "Q:2018",
+          "toNode": "N:npc_314062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2019,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2019,
+          "fromNode": "Q:2019",
+          "toNode": "N:npc_314062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2020,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2020,
+          "fromNode": "Q:2020",
+          "toNode": "N:npc_314062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2044,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_218008.lua"],
+      "propagationChains": [
+        {
+          "questId": 2044,
+          "fromNode": "Q:2044",
+          "toNode": "N:npc_218008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2050,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2050,
+          "fromNode": "Q:2050",
+          "toNode": "N:npc_314062.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2057,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2057,
+          "fromNode": "Q:2057",
+          "toNode": "N:npc_314062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2059,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua", "npc_318001.lua"],
+      "propagationChains": [
+        {
+          "questId": 2059,
+          "fromNode": "Q:2059",
+          "toNode": "N:npc_314062.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2059,
+          "fromNode": "Q:2059",
+          "toNode": "N:npc_318001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2068,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_300011.lua"],
+      "propagationChains": [
+        {
+          "questId": 2068,
+          "fromNode": "Q:2068",
+          "toNode": "N:npc_300011.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2085,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314021.lua"],
+      "propagationChains": [
+        {
+          "questId": 2085,
+          "fromNode": "Q:2085",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 2085,
+          "fromNode": "Q:2085",
+          "toNode": "N:npc_314021.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2089,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_200001.lua", "npc_314020.lua"],
+      "propagationChains": [
+        {
+          "questId": 2089,
+          "fromNode": "Q:2089",
+          "toNode": "N:npc_200001.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 2089,
+          "fromNode": "Q:2089",
+          "toNode": "N:npc_314020.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2102,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_314062.lua"],
+      "propagationChains": [
+        {
+          "questId": 2102,
+          "fromNode": "Q:2102",
+          "toNode": "N:npc_314062.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2121,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314036.lua"],
+      "propagationChains": [
+        {
+          "questId": 2121,
+          "fromNode": "Q:2121",
+          "toNode": "N:npc_314036.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2124,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314035.lua"],
+      "propagationChains": [
+        {
+          "questId": 2124,
+          "fromNode": "Q:2124",
+          "toNode": "N:npc_314035.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2128,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314035.lua"],
+      "propagationChains": [
+        {
+          "questId": 2128,
+          "fromNode": "Q:2128",
+          "toNode": "N:npc_314035.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2129,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_216006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2129,
+          "fromNode": "Q:2129",
+          "toNode": "N:npc_216006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2130,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_316009.lua"],
+      "propagationChains": [
+        {
+          "questId": 2130,
+          "fromNode": "Q:2130",
+          "toNode": "N:npc_316009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2135,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_314035.lua"],
+      "propagationChains": [
+        {
+          "questId": 2135,
+          "fromNode": "Q:2135",
+          "toNode": "N:npc_314035.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2258,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2258,
+          "fromNode": "Q:2258",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2259,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2259,
+          "fromNode": "Q:2259",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2260,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2260,
+          "fromNode": "Q:2260",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2261,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua", "npc_324007.lua"],
+      "propagationChains": [
+        {
+          "questId": 2261,
+          "fromNode": "Q:2261",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2261,
+          "fromNode": "Q:2261",
+          "toNode": "N:npc_324007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2262,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324007.lua"],
+      "propagationChains": [
+        {
+          "questId": 2262,
+          "fromNode": "Q:2262",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2262,
+          "fromNode": "Q:2262",
+          "toNode": "N:npc_324007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2263,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2263,
+          "fromNode": "Q:2263",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2264,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2264,
+          "fromNode": "Q:2264",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2265,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua"],
+      "propagationChains": [
+        {
+          "questId": 2265,
+          "fromNode": "Q:2265",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2266,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324006.lua", "npc_324007.lua"],
+      "propagationChains": [
+        {
+          "questId": 2266,
+          "fromNode": "Q:2266",
+          "toNode": "N:npc_324006.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2266,
+          "fromNode": "Q:2266",
+          "toNode": "N:npc_324007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2267,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324007.lua"],
+      "propagationChains": [
+        {
+          "questId": 2267,
+          "fromNode": "Q:2267",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2267,
+          "fromNode": "Q:2267",
+          "toNode": "N:npc_324007.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2609,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 2609,
+          "fromNode": "Q:2609",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2610,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324008.lua"],
+      "propagationChains": [
+        {
+          "questId": 2610,
+          "fromNode": "Q:2610",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2610,
+          "fromNode": "Q:2610",
+          "toNode": "N:npc_324008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2611,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324009.lua"],
+      "propagationChains": [
+        {
+          "questId": 2611,
+          "fromNode": "Q:2611",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2611,
+          "fromNode": "Q:2611",
+          "toNode": "N:npc_324009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2612,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324009.lua", "npc_324010.lua"],
+      "propagationChains": [
+        {
+          "questId": 2612,
+          "fromNode": "Q:2612",
+          "toNode": "N:npc_324009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2612,
+          "fromNode": "Q:2612",
+          "toNode": "N:npc_324010.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2614,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324011.lua"],
+      "propagationChains": [
+        {
+          "questId": 2614,
+          "fromNode": "Q:2614",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2614,
+          "fromNode": "Q:2614",
+          "toNode": "N:npc_324011.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2615,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua"],
+      "propagationChains": [
+        {
+          "questId": 2615,
+          "fromNode": "Q:2615",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2616,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324008.lua"],
+      "propagationChains": [
+        {
+          "questId": 2616,
+          "fromNode": "Q:2616",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2616,
+          "fromNode": "Q:2616",
+          "toNode": "N:npc_324008.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2617,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324001.lua", "npc_324009.lua"],
+      "propagationChains": [
+        {
+          "questId": 2617,
+          "fromNode": "Q:2617",
+          "toNode": "N:npc_324001.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2617,
+          "fromNode": "Q:2617",
+          "toNode": "N:npc_324009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2618,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324009.lua", "npc_324010.lua"],
+      "propagationChains": [
+        {
+          "questId": 2618,
+          "fromNode": "Q:2618",
+          "toNode": "N:npc_324009.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2618,
+          "fromNode": "Q:2618",
+          "toNode": "N:npc_324010.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2620,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324011.lua"],
+      "propagationChains": [
+        {
+          "questId": 2620,
+          "fromNode": "Q:2620",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2620,
+          "fromNode": "Q:2620",
+          "toNode": "N:npc_324011.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2651,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_391114.lua", "npc_391115.lua"],
+      "propagationChains": [
+        {
+          "questId": 2651,
+          "fromNode": "Q:2651",
+          "toNode": "N:npc_391114.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2651,
+          "fromNode": "Q:2651",
+          "toNode": "N:npc_391115.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2680,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2681,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2682,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2765,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua"],
+      "propagationChains": [
+        {
+          "questId": 2765,
+          "fromNode": "Q:2765",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2766,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua"],
+      "propagationChains": [
+        {
+          "questId": 2766,
+          "fromNode": "Q:2766",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2767,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua", "npc_324013.lua"],
+      "propagationChains": [
+        {
+          "questId": 2767,
+          "fromNode": "Q:2767",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2767,
+          "fromNode": "Q:2767",
+          "toNode": "N:npc_324013.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2768,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324013.lua"],
+      "propagationChains": [
+        {
+          "questId": 2768,
+          "fromNode": "Q:2768",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2768,
+          "fromNode": "Q:2768",
+          "toNode": "N:npc_324013.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2769,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua"],
+      "propagationChains": [
+        {
+          "questId": 2769,
+          "fromNode": "Q:2769",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2770,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua"],
+      "propagationChains": [
+        {
+          "questId": 2770,
+          "fromNode": "Q:2770",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2771,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324012.lua", "npc_324013.lua"],
+      "propagationChains": [
+        {
+          "questId": 2771,
+          "fromNode": "Q:2771",
+          "toNode": "N:npc_324012.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2771,
+          "fromNode": "Q:2771",
+          "toNode": "N:npc_324013.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2772,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua", "npc_324013.lua"],
+      "propagationChains": [
+        {
+          "questId": 2772,
+          "fromNode": "Q:2772",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        },
+        {
+          "questId": 2772,
+          "fromNode": "Q:2772",
+          "toNode": "N:npc_324013.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2777,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 2777,
+          "fromNode": "Q:2777",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 2778,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": ["npc_324003.lua"],
+      "propagationChains": [
+        {
+          "questId": 2778,
+          "fromNode": "Q:2778",
+          "toNode": "N:npc_324003.lua",
+          "rule": "REWARD_STRUCTURE_PROPAGATION",
+          "riskLevel": "MEDIUM"
+        }
+      ],
+      "highestRiskLevel": "MEDIUM",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 3630,
+      "modificationTypes": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcFiles": ["npc_315023.lua", "npc_315025.lua"],
+      "propagationChains": [
+        {
+          "questId": 3630,
+          "fromNode": "Q:3630",
+          "toNode": "N:npc_315023.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        },
+        {
+          "questId": 3630,
+          "fromNode": "Q:3630",
+          "toNode": "N:npc_315025.lua",
+          "rule": "GENERIC_PROPAGATION",
+          "riskLevel": "LOW"
+        }
+      ],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    },
+    {
+      "questId": 3770,
+      "modificationTypes": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcFiles": [],
+      "propagationChains": [],
+      "highestRiskLevel": "LOW",
+      "rewriteRequired": false
+    }
+  ]
+}

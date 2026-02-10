@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-02-10T21:46:52.025+08:00",
+  "targetedLineCount": 2,
+  "fixedLineCount": 2,
+  "fixedFileCount": 1,
+  "skippedFileCount": 0,
+  "items": [
+    {"file": "npc_316005.lua", "line": 7, "questId": 1557, "before": "if __QUEST_HAS_ALL_ITEMS(qt[1557].goal.getItem) and qData[1557].killMonster[qt[1557].goal.killMonster[1].id] >= qt[1557].goal.killMonster[1].count then", "after": "if __QUEST_HAS_ALL_ITEMS(qt[1557].goal.getItem) and __QUEST_HAS_ALL_KILL_TARGETS(qt[1557].goal.killMonster) then"},
+    {"file": "npc_316005.lua", "line": 39, "questId": 1557, "before": "if __QUEST_HAS_ALL_ITEMS(qt[1557].goal.getItem) and qData[1557].killMonster[qt[1557].goal.killMonster[1].id] >= qt[1557].goal.killMonster[1].count then", "after": "if __QUEST_HAS_ALL_ITEMS(qt[1557].goal.getItem) and __QUEST_HAS_ALL_KILL_TARGETS(qt[1557].goal.killMonster) then"}
+  ]
+}

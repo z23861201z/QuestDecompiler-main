@@ -1,0 +1,180 @@
+function npcsay(id)
+  if id ~= 4320004 then
+    return
+  end
+  clickNPCid = id
+  NPC_SAY("œ÷‘⁄À‰»ª»ı–°£¨µ´ «Œ“±ÿ∂®ª·±‰µ√«ø¥Û∆¿¥µƒ")
+  if qData[2477].state == 1 then
+    if 1 <= CHECK_INVENTORY_CNT(3) then
+      NPC_SAY("¥ÁΩ≈, ≥™∏¶ æÓ∂ª∞‘ √£æ“¡ˆ?")
+      SET_QUEST_STATE(2477, 2)
+      return
+    else
+      NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+    end
+  end
+  if qData[2478].state == 1 then
+    if 1 <= CHECK_INVENTORY_CNT(3) then
+      NPC_SAY("∞‚º’«œΩ« « ø‰ æ¯Ω¿¥œ¥Ÿ. ¿««˘¥‘¿Ã ¥Î¥‹«œΩ≈ ∞Ã¥œ¥Ÿ.")
+      SET_QUEST_STATE(2478, 2)
+      return
+    else
+      NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+    end
+  end
+  if qData[2479].state == 1 then
+    if qData[2479].killMonster[qt[2479].goal.killMonster[1].id] >= qt[2479].goal.killMonster[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("π˙Ω· 130∏∂∏Æ∏¶ ≈ƒ°«œΩ≈∞≈ø‰? º“¿Œ¿Ã ¡≥±∏∑¡.")
+        SET_QUEST_STATE(2479, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° √‚∏Ù«œ¥¬ {0xFFFFFF00}ºˆ±›æ∆{END} 130∏∂∏Æ∏¶ ¥©∞° ∏’¿˙ ≈ƒ°«œ¥¬¡ˆ ∞Ê¿Ô«ÿ∫æΩ√¥Ÿ.")
+    end
+  end
+  if qData[2480].state == 1 then
+    if qData[2480].killMonster[qt[2480].goal.killMonster[1].id] >= qt[2480].goal.killMonster[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("¿Ãπ¯ø°¥¬ º“¿Œ¿Ã ¿Ã∞Âº“¿Ã¥Ÿ. «œ¡ˆ∏∏ ¡§∏ª ∞£πﬂ¿« ¬˜¿Ãø¥º“.")
+        SET_QUEST_STATE(2480, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° √‚∏Ù«œ¥¬ {0xFFFFFF00}≈∫¡÷æÓ{END} 150∏∂∏Æ∏¶ ¥©∞° ∏’¿˙ ≈ƒ°«œ¥¬¡ˆ ∞Ê¿Ô«ÿ∫æΩ√¥Ÿ.")
+    end
+  end
+  if qData[2481].state == 1 then
+    if qData[2481].killMonster[qt[2481].goal.killMonster[1].id] >= qt[2481].goal.killMonster[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("π˙Ω· ¥Ÿ ≈ƒ°«œºÃº“¿Ã±Ó? ¿Ω.. ¿œ¥‹ ¡ª Ω¨æ˙¥Ÿ ¥ŸΩ√ ∏∏≥≥Ω√¥Ÿ. {0xFFFFFF00}146∞¯∑¬{END}¿Ã µ«∏È ¥ŸΩ√ ∫∏µµ∑œ «œ¡“.")
+        SET_QUEST_STATE(2481, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° √‚∏Ù«œ¥¬ {0xFFFFFF00}ªÁ∑Ê{END} 120∏∂∏Æ∏¶ ¥©∞° ∏’¿˙ ≈ƒ°«œ¥¬¡ˆ ∞Ê¿Ô«ÿ∫æΩ√¥Ÿ.")
+    end
+  end
+  if qData[2482].state == 1 then
+    if CHECK_ITEM_CNT(qt[2482].goal.getItem[1].id) >= qt[2482].goal.getItem[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("∏øº“ªÁ, π˙Ω· ¥Ÿ ±∏«œºÃ¥Ÿ∞Ìø‰?")
+        SET_QUEST_STATE(2482, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° ∞°º≠ {0xFFFFFF00}[ºˆ±›æ∆]{END}∏¶ ≈ƒ°«œ∞Ì {0xFFFFFF00}ƒÆ≥Ø≤ø∏Æ{END}∏¶ 100∞≥∏¶ ∏’¿˙ ±∏«ÿø¿∏È ¿Ã±‚¥¬ ∞Ã¥œ¥Ÿ.")
+    end
+  end
+  if qData[2483].state == 1 then
+    if CHECK_ITEM_CNT(qt[2483].goal.getItem[1].id) >= qt[2483].goal.getItem[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("æ∆¥œ, ¿Ã∑≤ºˆ∞°! ¿Ãπ¯ø°µµ º“¿Œ¿Ã ¡ˆ¥Ÿ¥œ..")
+        SET_QUEST_STATE(2483, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° ∞°º≠ {0xFFFFFF00}[≈∫¡÷æÓ]{END}∏¶ ≈ƒ°«œ∞Ì {0xFFFFFF00}≈∫¡÷æÓª°∆«{END}¿ª 100∞≥∏¶ ∏’¿˙ ±∏«ÿø¿∏È ¿Ã±‚¥¬ ∞Ã¥œ¥Ÿ.")
+    end
+  end
+  if qData[2484].state == 1 then
+    if CHECK_ITEM_CNT(qt[2484].goal.getItem[1].id) >= qt[2484].goal.getItem[1].count then
+      if 1 <= CHECK_INVENTORY_CNT(3) then
+        NPC_SAY("¡§∏ª¿Ã¡ˆ... ¥Î¥‹«œΩ ¥œ¥Ÿ. ¿Ãπ¯ø°µµ ¡≥Ω¿¥œ¥Ÿ.")
+        SET_QUEST_STATE(2484, 2)
+        return
+      else
+        NPC_SAY("«‡≥∂¿Ã ≥ π´ π´∞ÃΩ¿¥œ¥Ÿ.")
+      end
+    else
+      NPC_SAY("{0xFFFFFF00}»Ê±Õ«˜∑Œ{END}ø° ∞°º≠ {0xFFFFFF00}[ªÁ∑Ê]{END}∏¶ ≈ƒ°«œ∞Ì {0xFFFFFF00}ªÁ∑Êºˆø∞{END}¿ª 100∞≥∏¶ ∏’¿˙ ±∏«ÿø¿∏È ¿Ã±‚¥¬ ∞Ã¥œ¥Ÿ.")
+    end
+  end
+  if qData[2485].state == 1 then
+    NPC_SAY("∂Ê«œΩ≈ πŸ∏¶ ¿Ã∑ÁΩ√±‚∏¶ ±‚ø¯«’¥œ¥Ÿ.")
+    SET_QUEST_STATE(2485, 2)
+    return
+  end
+  if qData[3679].state == 1 then
+    if qData[3679].killMonster[qt[3679].goal.killMonster[1].id] >= qt[3679].goal.killMonster[1].count then
+      NPC_SAY("‘ı√¥ª·’‚—˘£°Œ“ ‰¡À~")
+      SET_QUEST_STATE(3679, 2)
+      return
+    else
+      NPC_SAY(" «ø¥À≠∏¸øÏµƒª˜ÕÀ{0xFFFFFF00}50∏ˆ∫⁄πÌ—™¬∑µƒ»À…ﬂπ÷{END}µƒ∂‘æˆ")
+    end
+  end
+  if qData[3680].state == 1 then
+    if qData[3680].killMonster[qt[3680].goal.killMonster[1].id] >= qt[3680].goal.killMonster[1].count then
+      NPC_SAY("‘ı√¥ª·’‚—˘£°Œ“ ‰¡À~")
+      SET_QUEST_STATE(3680, 2)
+      return
+    else
+      NPC_SAY(" «ø¥À≠∏¸øÏµƒª˜ÕÀ{0xFFFFFF00}50∏ˆ∫⁄πÌ—™¬∑µƒÕÃ÷€”„{END}µƒ∂‘æˆ")
+    end
+  end
+  if qData[3681].state == 1 then
+    if qData[3681].killMonster[qt[3681].goal.killMonster[1].id] >= qt[3681].goal.killMonster[1].count then
+      NPC_SAY("‘ı√¥ª·’‚—˘£°Œ“ ‰¡À~")
+      SET_QUEST_STATE(3681, 2)
+      return
+    else
+      NPC_SAY(" «ø¥À≠∏¸øÏµƒª˜ÕÀ{0xFFFFFF00}50∏ˆ∫⁄πÌ—™¬∑µƒ–∞¡˙{END}µƒ∂‘æˆ")
+    end
+  end
+  if qData[3679].state == 0 and GET_PLAYER_LEVEL() >= qt[3679].needLevel then
+    ADD_QUEST_BTN(qt[3679].id, qt[3679].name)
+  end
+  if qData[3680].state == 0 and GET_PLAYER_LEVEL() >= qt[3680].needLevel then
+    ADD_QUEST_BTN(qt[3680].id, qt[3680].name)
+  end
+  if qData[3681].state == 0 and GET_PLAYER_LEVEL() >= qt[3681].needLevel then
+    ADD_QUEST_BTN(qt[3681].id, qt[3681].name)
+  end
+end
+function chkQState(id)
+  QSTATE(id, -1)
+  if qData[3679].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3679].needLevel then
+    if qData[3679].state == 1 then
+      if qData[3679].killMonster[qt[3679].goal.killMonster[1].id] >= qt[3679].goal.killMonster[1].count then
+        QSTATE(id, 2)
+      else
+        QSTATE(id, 1)
+      end
+    else
+      QSTATE(id, 0)
+    end
+  end
+  if qData[3680].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3680].needLevel then
+    if qData[3680].state == 1 then
+      if qData[3680].killMonster[qt[3680].goal.killMonster[1].id] >= qt[3680].goal.killMonster[1].count then
+        QSTATE(id, 2)
+      else
+        QSTATE(id, 1)
+      end
+    else
+      QSTATE(id, 0)
+    end
+  end
+  if qData[3681].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3681].needLevel then
+    if qData[3681].state == 1 then
+      if qData[3681].killMonster[qt[3681].goal.killMonster[1].id] >= qt[3681].goal.killMonster[1].count then
+        QSTATE(id, 2)
+      else
+        QSTATE(id, 1)
+      end
+    else
+      QSTATE(id, 0)
+    end
+  end
+end

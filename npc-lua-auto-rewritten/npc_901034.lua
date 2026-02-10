@@ -1,0 +1,30 @@
+function npcsay(id)
+  if id ~= 4901034 then
+    return
+  end
+  clickNPCid = id
+  if qData[111].state == 1 then
+    if qData[111].meetNpc[1] ~= qt[111].goal.meetNpc[1] then
+      SET_INFO(111, 1)
+      NPC_QSAY(111, 1)
+      SET_MEETNPC(111, 1, id)
+      return
+    elseif CHECK_ITEM_CNT(qt[111].goal.getItem[1].id) >= qt[111].goal.getItem[1].count then
+      NPC_QSAY(111, 8)
+      SET_QUEST_STATE(111, 2)
+      return
+    else
+      NPC_SAY("{0xFFFFFF00}[??]{END}? ?????? {0xFFFFFF00}15?{END}? ??? ??? ??? ???????.")
+    end
+  end
+end
+function chkQState(id)
+  QSTATE(id, -1)
+  if qData[111].state == 1 and GET_PLAYER_LEVEL() >= qt[111].needLevel and qData[111].state == 1 then
+    if CHECK_ITEM_CNT(qt[111].goal.getItem[1].id) >= qt[111].goal.getItem[1].count then
+      QSTATE(id, 2)
+    else
+      QSTATE(id, 1)
+    end
+  end
+end

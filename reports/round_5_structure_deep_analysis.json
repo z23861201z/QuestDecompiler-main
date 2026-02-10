@@ -1,0 +1,291 @@
+{
+  "generatedAt": "2026-02-10T22:22:12+08:00",
+  "sourceValidationPath": "D:\\github\\QuestDecompiler-main\\reports\\runtime_regression_rounds\\round_5\\validation_after.json",
+  "sourceRemainingFailuresPath": "D:\\github\\QuestDecompiler-main\\reports\\round_5_remaining_failures.json",
+  "totalRemaining": 30,
+  "patternClusters": [
+    {
+      "patternId": "X1",
+      "count": 19,
+      "description": "direct qt[x].goal.getItem[n] indexing; function-wrapped indexed access; goal.killMonster indexed access; multi-condition and/or expression",
+      "representativeSnippet": "    2:   if id ~= 4213006 then\n    3:     return\n    4:   end\n    5:   clickNPCid = id\n    6:   if qData[57].state == 1 then\n    7:     if qData[57].killMonster[qt[57].goal.killMonster[1].id] >= qt[57].goal.killMonster[1].count then\n    8:       NPC_SAY(\"{0xFFFFFF00}PLAYERNAME{END}???? ????? ??? ????? ??????. ?? ? ??? ?????. ?.. ??? ?? ?? ??? ??? ???? ??????.\")\n    9:       SET_QUEST_STATE(57, 2)\n   10:     else\n   11:       NPC_SAY(\"{0xFFFFFF00}[????] 20??{END}? ??????\")\n   12:     end\n   92:     else\n   93:       NPC_SAY(\"{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.\")\n   94:     end\n   95:   end\n   96:   if qData[687].state == 1 then\n   97:     if CHECK_ITEM_CNT(qt[687].goal.getItem[1].id) >= qt[687].goal.getItem[1].count and CHECK_ITEM_CNT(qt[687].goal.getItem[2].id) >= qt[687].goal.getItem[2].count then\n   98:       if 1 <= CHECK_INVENTORY_CNT(1) then\n   99:         NPC_SAY(\"?????. ?????. ? ???? ?? ???.\")\n  100:         SET_QUEST_STATE(687, 2)\n  101:         return\n  102:       else\n   92:     else\n   93:       NPC_SAY(\"{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.\")\n   94:     end\n   95:   end\n   96:   if qData[687].state == 1 then\n   97:     if CHECK_ITEM_CNT(qt[687].goal.getItem[1].id) >= qt[687].goal.getItem[1].count and CHECK_ITEM_CNT(qt[687].goal.getItem[2].id) >= qt[687].goal.getItem[2].count then\n   98:       if 1 <= CHECK_INVENTORY_CNT(1) then\n   99:         NPC_SAY(\"?????. ?????. ? ???? ?? ???.\")\n  100:         SET_QUEST_STATE(687, 2)\n  101:         return\n  102:       else\n  104:       end\n  105:     else\n  106:       NPC_SAY(\"{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.\")\n  107:     end\n  108:   end\n  109:   if qData[437].state == 1 and CHECK_ITEM_CNT(qt[437].goal.getItem[1].id) >= qt[437].goal.getItem[1].count then\n  110:     NPC_SAY(\" ?? ??? ??? ? ??? ???? ??? ?? ?????? ?? ?????.\")\n  111:     SET_QUEST_STATE(437, 2)\n  112:     return\n  113:   end\n  114:   if qData[447].state == 1 then\n  110:     NPC_SAY(\" ?? ??? ??? ? ??? ???? ??? ?? ?????? ?? ?????.\")\n  111:     SET_QUEST_STATE(437, 2)\n  112:     return\n  113:   end\n  114:   if qData[447].state == 1 then\n  115:     if CHECK_ITEM_CNT(qt[447].goal.getItem[1].id) >= qt[447].goal.getItem[1].count and CHECK_ITEM_CNT(qt[447].goal.getItem[2].id) >= qt[447].goal.getItem[2].count and CHECK_ITEM_CNT(qt[447].goal.getItem[3].id) >= qt[447].goal.getItem[3].count then\n  116:       NPC_SAY(qt[447].npcsay[2])\n  117:       SET_QUEST_STATE(447, 2)\n  118:       return\n  119:     else\n  120:       NPC_SAY(qt[447].npcsay[1])\n  110:     NPC_SAY(\" ?? ??? ??? ? ??? ???? ??? ?? ?????? ?? ?????.\")\n  111:     SET_QUEST_STATE(437, 2)\n  112:     return\n  113:   end\n  114:   if qData[447].state == 1 then\n  115:     if CHECK_ITEM_CNT(qt[447].goal.getItem[1].id) >= qt[447].goal.getItem[1].count and CHECK_ITEM_CNT(qt[447].goal.getItem[2].id) >= qt[447].goal.getItem[2].count and CHECK_ITEM_CNT(qt[447].goal.getItem[3].id) >= qt[447].goal.getItem[3].count then\n  116:       NPC_SAY(qt[447].npcsay[2])\n  117:       SET_QUEST_STATE(447, 2)\n  118:       return\n  119:     else\n  120:       NPC_SAY(qt[447].npcsay[1])\n  110:     NPC_SAY(\" ?? ??? ??? ? ??? ???? ??? ?? ?????? ?? ?????.\")\n  111:     SET_QUEST_STATE(437, 2)\n  112:     return\n  113:   end\n  114:   if qData[447].state == 1 then\n  115:     if CHECK_ITEM_CNT(qt[447].goal.getItem[1].id) >= qt[447].goal.getItem[1].count and CHECK_ITEM_CNT(qt[447].goal.getItem[2].id) >= qt[447].goal.getItem[2].count and CHECK_ITEM_CNT(qt[447].goal.getItem[3].id) >= qt[447].goal.getItem[3].count then\n  116:       NPC_SAY(qt[447].npcsay[2])\n  117:       SET_QUEST_STATE(447, 2)\n  118:       return\n  119:     else\n  120:       NPC_SAY(qt[447].npcsay[1])\n  127:     else\n  128:       NPC_SAY(\"行囊太沉。\")\n  129:     end\n  130:   end\n  131:   if qData[1151].state == 1 then\n  132:     if CHECK_ITEM_CNT(qt[1151].goal.getItem[1].id) >= qt[1151].goal.getItem[1].count then\n  133:       NPC_SAY(\"啊！那不是[ 鸟人的蛋 ]吗？啊！你想要知道什么？被袭击当时的情况？听乌骨鸡大侠说的？我什么都不知道。应该是个错误的情报。去跟乌骨鸡大侠再次确认一下吧。\")\n  134:       SET_QUEST_STATE(1151, 2)\n  135:     else\n  136:       NPC_SAY(\"我看到15个[ 鸟人的蛋 ]也会浑身起鸡皮疙瘩。\")\n  137:     end\n  135:     else\n  136:       NPC_SAY(\"我看到15个[ 鸟人的蛋 ]也会浑身起鸡皮疙瘩。\")\n  137:     end\n  138:   end\n  139:   if qData[1185].state == 1 then\n  140:     if CHECK_ITEM_CNT(qt[1185].goal.getItem[1].id) >= qt[1185].goal.getItem[1].count then\n  141:       NPC_SAY(\"咕咚！啊~你也要来一个吗？嗯…很好吃的啊…总之过去的事情就忘掉吧。\")\n  142:       SET_QUEST_STATE(1185, 2)\n  143:     else\n  144:       NPC_SAY(\"你只要拿来20个[ 糯米肠的蛋 ]我们就是朋友了。击退蛇腹窟的糯米肠收集20个[ 糯米肠的蛋 ]回来吧。\")\n  145:     end\n  143:     else\n  144:       NPC_SAY(\"你只要拿来20个[ 糯米肠的蛋 ]我们就是朋友了。击退蛇腹窟的糯米肠收集20个[ 糯米肠的蛋 ]回来吧。\")\n  145:     end\n  146:   end\n  147:   if qData[1186].state == 1 then\n  148:     if CHECK_ITEM_CNT(qt[1186].goal.getItem[1].id) >= qt[1186].goal.getItem[1].count then\n  149:       if 1 <= CHECK_INVENTORY_CNT(3) then\n  150:         NPC_SAY(\"谢谢。啊，这脆脆的口感！你真的不吃也没关系吗？\")\n  151:         SET_QUEST_STATE(1186, 2)\n  152:       else\n  153:         NPC_SAY(\"行囊太沉。\")\n  194:   if qData[1149].state == 1 then\n  195:     QSTATE(id, 2)\n  196:   end\n  197:   if qData[1149].state == 2 and qData[1151].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1151].needLevel then\n  198:     if qData[1151].state == 1 then\n  199:       if CHECK_ITEM_CNT(qt[1151].goal.getItem[1].id) >= qt[1151].goal.getItem[1].count then\n  200:         QSTATE(id, 2)\n  201:       else\n  202:         QSTATE(id, 1)\n  203:       end\n  204:     else\n  205:       QSTATE(id, 0)\n  206:     end\n  207:   end\n  208:   if qData[1185].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1185].needLevel then\n  209:     if qData[1185].state == 1 then\n  210:       if CHECK_ITEM_CNT(qt[1185].goal.getItem[1].id) >= qt[1185].goal.getItem[1].count then\n  211:         QSTATE(id, 2)\n  212:       else\n  213:         QSTATE(id, 1)\n  214:       end\n  215:     else\n  216:       QSTATE(id, 0)\n  217:     end\n  218:   end\n  219:   if qData[1185].state == 2 and qData[1186].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1186].needLevel then\n  220:     if qData[1186].state == 1 then\n  221:       if CHECK_ITEM_CNT(qt[1186].goal.getItem[1].id) >= qt[1186].goal.getItem[1].count then\n  222:         QSTATE(id, 2)\n  223:       else\n  224:         QSTATE(id, 1)\n  225:       end\n  226:     else",
+      "dimensions": {
+        "directQtGoalGetItemIndex": true,
+        "localVariableReceivesQt": false,
+        "forLoopAccess": false,
+        "functionWrappedAccess": true,
+        "tableUnpackUsage": false,
+        "killMonsterAccess": true,
+        "rewardAccess": false,
+        "multiConditionAndOr": true
+      },
+      "members": [
+        {
+          "failureId": 1,
+          "npcFile": "npc_213006.lua",
+          "questId": 57,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 2,
+          "npcFile": "npc_213001.lua",
+          "questId": 339,
+          "lineNumber": 160,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 3,
+          "npcFile": "npc_314020.lua",
+          "questId": 382,
+          "lineNumber": 39,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 4,
+          "npcFile": "npc_314021.lua",
+          "questId": 381,
+          "lineNumber": 39,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 6,
+          "npcFile": "npc_300011.lua",
+          "questId": 743,
+          "lineNumber": 65,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 7,
+          "npcFile": "npc_310005.lua",
+          "questId": 464,
+          "lineNumber": 261,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 9,
+          "npcFile": "npc_300010.lua",
+          "questId": 747,
+          "lineNumber": 71,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 12,
+          "npcFile": "npc_215005.lua",
+          "questId": 1070,
+          "lineNumber": 47,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 13,
+          "npcFile": "npc_315007.lua",
+          "questId": 474,
+          "lineNumber": 66,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 14,
+          "npcFile": "npc_316009.lua",
+          "questId": 891,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 17,
+          "npcFile": "npc_320001.lua",
+          "questId": 892,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 18,
+          "npcFile": "npc_300008.lua",
+          "questId": 2198,
+          "lineNumber": 76,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 19,
+          "npcFile": "npc_318023.lua",
+          "questId": 778,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 20,
+          "npcFile": "npc_315025.lua",
+          "questId": 889,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 22,
+          "npcFile": "npc_316013.lua",
+          "questId": 1009,
+          "lineNumber": 7,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 24,
+          "npcFile": "npc_222004.lua",
+          "questId": 2666,
+          "lineNumber": 39,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 27,
+          "npcFile": "npc_300117.lua",
+          "questId": 1803,
+          "lineNumber": 12,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 28,
+          "npcFile": "npc_314062.lua",
+          "questId": 2021,
+          "lineNumber": 24,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 30,
+          "npcFile": "npc_391112.lua",
+          "questId": 2732,
+          "lineNumber": 126,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        }
+      ]
+    },
+    {
+      "patternId": "X3",
+      "count": 9,
+      "description": "direct qt[x].goal.getItem[n] indexing; function-wrapped indexed access; multi-condition and/or expression",
+      "representativeSnippet": "   83:     else\n   84:       NPC_SAY(\"为了确保脱离口的通畅，击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}大菜头{END}并收集{0xFFFFFF00}20个电碳{END}回来吧。\")\n   85:     end\n   86:   end\n   87:   if qData[1260].state == 1 then\n   88:     if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then\n   89:       NPC_SAY(\"托您的福，脱离口现在应该是安全了、\")\n   90:       SET_QUEST_STATE(1260, 2)\n   91:     else\n   92:       NPC_SAY(\"击退{0xFFFFFF00}八豆妖和虾米狼{END}之后，收集{0xFFFFFF00}10个八豆妖的烂衣和10张虾米狼的皮{END}回来吧。\")\n   93:     end\n   83:     else\n   84:       NPC_SAY(\"为了确保脱离口的通畅，击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}大菜头{END}并收集{0xFFFFFF00}20个电碳{END}回来吧。\")\n   85:     end\n   86:   end\n   87:   if qData[1260].state == 1 then\n   88:     if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then\n   89:       NPC_SAY(\"托您的福，脱离口现在应该是安全了、\")\n   90:       SET_QUEST_STATE(1260, 2)\n   91:     else\n   92:       NPC_SAY(\"击退{0xFFFFFF00}八豆妖和虾米狼{END}之后，收集{0xFFFFFF00}10个八豆妖的烂衣和10张虾米狼的皮{END}回来吧。\")\n   93:     end\n   91:     else\n   92:       NPC_SAY(\"击退{0xFFFFFF00}八豆妖和虾米狼{END}之后，收集{0xFFFFFF00}10个八豆妖的烂衣和10张虾米狼的皮{END}回来吧。\")\n   93:     end\n   94:   end\n   95:   if qData[1261].state == 1 then\n   96:     if CHECK_ITEM_CNT(qt[1261].goal.getItem[1].id) >= qt[1261].goal.getItem[1].count then\n   97:       if 1 <= CHECK_INVENTORY_CNT(3) then\n   98:         NPC_SAY(\"谢谢。这都是托少侠的福。\")\n   99:         SET_QUEST_STATE(1261, 2)\n  100:       else\n  101:         NPC_SAY(\"行囊太沉。\")\n  166:   end\n  167:   if qData[156].state == 1 and GET_PLAYER_LEVEL() >= qt[156].needLevel then\n  168:     QSTATE(id, 1)\n  169:   end\n  170:   if qData[1261].state == 1 then\n  171:     if CHECK_ITEM_CNT(qt[1261].goal.getItem[1].id) >= qt[1261].goal.getItem[1].count then\n  172:       if 1 <= CHECK_INVENTORY_CNT(3) then\n  173:         QSTATE(id, 2)\n  174:       end\n  175:     else\n  176:       QSTATE(id, 1)\n  203:     else\n  204:       QSTATE(id, 1)\n  205:     end\n  206:   end\n  207:   if qData[1260].state == 1 then\n  208:     if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then\n  209:       QSTATE(id, 2)\n  210:     else\n  211:       QSTATE(id, 1)\n  212:     end\n  213:   end\n  203:     else\n  204:       QSTATE(id, 1)\n  205:     end\n  206:   end\n  207:   if qData[1260].state == 1 then\n  208:     if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then\n  209:       QSTATE(id, 2)\n  210:     else\n  211:       QSTATE(id, 1)\n  212:     end\n  213:   end",
+      "dimensions": {
+        "directQtGoalGetItemIndex": true,
+        "localVariableReceivesQt": false,
+        "forLoopAccess": false,
+        "functionWrappedAccess": true,
+        "tableUnpackUsage": false,
+        "killMonsterAccess": false,
+        "rewardAccess": false,
+        "multiConditionAndOr": true
+      },
+      "members": [
+        {
+          "failureId": 8,
+          "npcFile": "npc_315011.lua",
+          "questId": 1260,
+          "lineNumber": 88,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 10,
+          "npcFile": "npc_215001.lua",
+          "questId": 1033,
+          "lineNumber": 42,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 11,
+          "npcFile": "npc_215004.lua",
+          "questId": 1283,
+          "lineNumber": 233,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 16,
+          "npcFile": "npc_313007.lua",
+          "questId": 2074,
+          "lineNumber": 69,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 21,
+          "npcFile": "npc_323009.lua",
+          "questId": 2860,
+          "lineNumber": 82,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 23,
+          "npcFile": "npc_216008.lua",
+          "questId": 2491,
+          "lineNumber": 86,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 25,
+          "npcFile": "npc_323006.lua",
+          "questId": 2889,
+          "lineNumber": 57,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 26,
+          "npcFile": "npc_240004.lua",
+          "questId": 3647,
+          "lineNumber": 57,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        },
+        {
+          "failureId": 29,
+          "npcFile": "npc_222001.lua",
+          "questId": 2738,
+          "lineNumber": 74,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        }
+      ]
+    },
+    {
+      "patternId": "X2",
+      "count": 1,
+      "description": "direct qt[x].goal.getItem[n] indexing; function-wrapped indexed access",
+      "representativeSnippet": "   87:   end\n   88:   if qData[1397].state == 1 then\n   89:     NPC_SAY(\"击退怪物获得10个紫菜后，替我交给韩野村南的韩野村厨房长！\")\n   90:   end\n   91:   if qData[1415].state == 1 then\n   92:     if CHECK_ITEM_CNT(qt[1415].goal.getItem[1].id) >= qt[1415].goal.getItem[1].count then\n   93:       if 1 <= CHECK_INVENTORY_CNT(3) then\n   94:         NPC_SAY(\"谢谢，谢谢！来，请选择自己想要的包子吧！\")\n   95:         SET_QUEST_STATE(1415, 2)\n   96:       else\n   97:         NPC_SAY(\"行囊太沉。\")",
+      "dimensions": {
+        "directQtGoalGetItemIndex": true,
+        "localVariableReceivesQt": false,
+        "forLoopAccess": false,
+        "functionWrappedAccess": true,
+        "tableUnpackUsage": false,
+        "killMonsterAccess": false,
+        "rewardAccess": false,
+        "multiConditionAndOr": false
+      },
+      "members": [
+        {
+          "failureId": 5,
+          "npcFile": "npc_313002.lua",
+          "questId": 1415,
+          "lineNumber": 92,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        }
+      ]
+    },
+    {
+      "patternId": "X4",
+      "count": 1,
+      "description": "direct qt[x].goal.getItem[n] indexing; function-wrapped indexed access; goal.killMonster indexed access",
+      "representativeSnippet": "   14:   if qData[566].state == 1 then\n   15:     NPC_SAY(\"?? ??? ??? ?? ?????.\")\n   16:     SET_QUEST_STATE(566, 2)\n   17:   end\n   18:   if qData[567].state == 1 then\n   19:     if qData[567].killMonster[qt[567].goal.killMonster[1].id] >= qt[567].goal.killMonster[1].count then\n   20:       NPC_SAY(\"?? ???? ??? ?? ?????.\")\n   21:       SET_QUEST_STATE(567, 2)\n   22:     else\n   23:       NPC_SAY(\"??? 5??? ???? ?? ???.\")\n   24:     end\n   50:   if qData[571].state == 1 then\n   51:     NPC_SAY(\"?? ????(2)? ?? ?????.\")\n   52:     SET_QUEST_STATE(571, 2)\n   53:   end\n   54:   if qData[572].state == 1 then\n   55:     if qData[572].killMonster[qt[572].goal.killMonster[1].id] >= qt[572].goal.killMonster[1].count then\n   56:       NPC_SAY(\"?? ??? ??? ?? ?????.\")\n   57:       SET_QUEST_STATE(572, 2)\n   58:     else\n   59:       NPC_SAY(\"?? 5??? ???? ?? ???.\")\n   60:     end\n   66:     else\n   67:       NPC_SAY(\"????? 7?? ?? ???.\")\n   68:     end\n   69:   end\n   70:   if qData[574].state == 1 then\n   71:     if qData[574].killMonster[qt[574].goal.killMonster[1].id] >= qt[574].goal.killMonster[1].count then\n   72:       NPC_SAY(\"?? ????? ?? ?????.\")\n   73:       SET_QUEST_STATE(574, 2)\n   74:     else\n   75:       NPC_SAY(\"??? 10??? ???? ?? ???.\")\n   76:     end\n   82:     else\n   83:       NPC_SAY(\"????? 5?? ?? ???.\")\n   84:     end\n   85:   end\n   86:   if qData[576].state == 1 then\n   87:     if CHECK_ITEM_CNT(qt[576].goal.getItem[1].id) >= qt[576].goal.getItem[1].count then\n   88:       NPC_SAY(\"?? ?????? ?? ?????.\")\n   89:       SET_QUEST_STATE(576, 2)\n   90:     else\n   91:       NPC_SAY(\"??? 5?? ?? ???.\")\n   92:     end\n   90:     else\n   91:       NPC_SAY(\"??? 5?? ?? ???.\")\n   92:     end\n   93:   end\n   94:   if qData[577].state == 1 then\n   95:     if qData[577].killMonster[qt[577].goal.killMonster[1].id] >= qt[577].goal.killMonster[1].count then\n   96:       NPC_SAY(\"?? ????? ?? ?????.\")\n   97:       SET_QUEST_STATE(577, 2)\n   98:     else\n   99:       NPC_SAY(\"?? 10??? ???? ?? ???.\")\n  100:     end\n   98:     else\n   99:       NPC_SAY(\"?? 10??? ???? ?? ???.\")\n  100:     end\n  101:   end\n  102:   if qData[578].state == 1 then\n  103:     if qData[578].killMonster[qt[578].goal.killMonster[1].id] >= qt[578].goal.killMonster[1].count then\n  104:       NPC_SAY(\"?? ??? ???? ?? ?????.\")\n  105:       SET_QUEST_STATE(578, 2)\n  106:     else\n  107:       NPC_SAY(\"?? 10??? ???? ?? ???.\")\n  108:     end\n  106:     else\n  107:       NPC_SAY(\"?? 10??? ???? ?? ???.\")\n  108:     end\n  109:   end\n  110:   if qData[579].state == 1 then\n  111:     if CHECK_ITEM_CNT(qt[579].goal.getItem[1].id) >= qt[579].goal.getItem[1].count then\n  112:       NPC_SAY(\"?? ?? ? ?? ??? ?? ?????.\")\n  113:       SET_QUEST_STATE(579, 2)\n  114:     else\n  115:       NPC_SAY(\"??? 5?? ?? ???.\")\n  116:     end\n  114:     else\n  115:       NPC_SAY(\"??? 5?? ?? ???.\")\n  116:     end\n  117:   end\n  118:   if qData[580].state == 1 then\n  119:     if CHECK_ITEM_CNT(qt[580].goal.getItem[1].id) >= qt[580].goal.getItem[1].count then\n  120:       NPC_SAY(\"?? ?? ?? ?? ??? ?? ?????.\")\n  121:       SET_QUEST_STATE(580, 2)\n  122:     else\n  123:       NPC_SAY(\"?????? 8?? ?? ???.\")\n  124:     end\n  122:     else\n  123:       NPC_SAY(\"?????? 8?? ?? ???.\")\n  124:     end\n  125:   end\n  126:   if qData[581].state == 1 then\n  127:     if CHECK_ITEM_CNT(qt[581].goal.getItem[1].id) >= qt[581].goal.getItem[1].count then\n  128:       NPC_SAY(\"?? ??? ?? ???.? ?? ?????.\")\n  129:       SET_QUEST_STATE(581, 2)\n  130:     else\n  131:       NPC_SAY(\"?????? 10?? ?? ???.\")\n  132:     end\n  130:     else\n  131:       NPC_SAY(\"?????? 10?? ?? ???.\")\n  132:     end\n  133:   end\n  134:   if qData[582].state == 1 then\n  135:     if CHECK_ITEM_CNT(qt[582].goal.getItem[1].id) >= qt[582].goal.getItem[1].count then\n  136:       NPC_SAY(\"?? ??? ???? ?? ?????.\")\n  137:       SET_QUEST_STATE(582, 2)\n  138:     else\n  139:       NPC_SAY(\"???? 10?? ?? ???.\")\n  140:     end\n  138:     else\n  139:       NPC_SAY(\"???? 10?? ?? ???.\")\n  140:     end\n  141:   end\n  142:   if qData[583].state == 1 then\n  143:     if CHECK_ITEM_CNT(qt[583].goal.getItem[1].id) >= qt[583].goal.getItem[1].count then\n  144:       NPC_SAY(\"?? ??? ?????? ?? ?????.\")\n  145:       SET_QUEST_STATE(583, 2)\n  146:     else\n  147:       NPC_SAY(\"???? 10?? ?? ???.\")\n  148:     end\n  146:     else\n  147:       NPC_SAY(\"???? 10?? ?? ???.\")\n  148:     end\n  149:   end\n  150:   if qData[584].state == 1 then\n  151:     if CHECK_ITEM_CNT(qt[584].goal.getItem[1].id) >= qt[584].goal.getItem[1].count then\n  152:       NPC_SAY(\"?? ?? ??? ?? ?????.\")\n  153:       SET_QUEST_STATE(584, 2)\n  154:     else\n  155:       NPC_SAY(\"???? 7?? ?? ???.\")\n  156:     end\n  154:     else\n  155:       NPC_SAY(\"???? 7?? ?? ???.\")\n  156:     end\n  157:   end\n  158:   if qData[585].state == 1 then\n  159:     if qData[585].killMonster[qt[585].goal.killMonster[1].id] >= qt[585].goal.killMonster[1].count then\n  160:       NPC_SAY(\"?? ???? ?? ?????.\")\n  161:       SET_QUEST_STATE(585, 2)\n  162:     else\n  163:       NPC_SAY(\"??? 15??? ???? ?? ???.\")\n  164:     end\n  162:     else\n  163:       NPC_SAY(\"??? 15??? ???? ?? ???.\")\n  164:     end\n  165:   end\n  166:   if qData[586].state == 1 then\n  167:     if CHECK_ITEM_CNT(qt[586].goal.getItem[1].id) >= qt[586].goal.getItem[1].count then\n  168:       NPC_SAY(\"?? ?? ??? ?? ?????.\")\n  169:       SET_QUEST_STATE(586, 2)\n  170:     else\n  171:       NPC_SAY(\"????? 9?? ?? ???.\")\n  172:     end\n  170:     else\n  171:       NPC_SAY(\"????? 9?? ?? ???.\")\n  172:     end\n  173:   end\n  174:   if qData[587].state == 1 then\n  175:     if qData[578].killMonster[qt[578].goal.killMonster[1].id] >= qt[578].goal.killMonster[1].count then\n  176:       NPC_SAY(\"?? ??? ??? ?? ?????.\")\n  177:       SET_QUEST_STATE(587, 2)\n  178:     else\n  179:       NPC_SAY(\"?? 12??? ???? ?? ???.\")\n  180:     end\n  182:   if qData[588].state == 1 then\n  183:     NPC_SAY(\"?? ??(1)? ?? ?????.\")\n  184:     SET_QUEST_STATE(588, 2)\n  185:   end\n  186:   if qData[589].state == 1 then\n  187:     if CHECK_ITEM_CNT(qt[589].goal.getItem[1].id) >= qt[589].goal.getItem[1].count then\n  188:       NPC_SAY(\"?? ??(2)? ?? ?????.\")\n  189:       SET_QUEST_STATE(589, 2)\n  190:     else\n  191:       NPC_SAY(\"?? 10?? ?? ???.\")\n  192:     end\n  190:     else\n  191:       NPC_SAY(\"?? 10?? ?? ???.\")\n  192:     end\n  193:   end\n  194:   if qData[590].state == 1 then\n  195:     if CHECK_ITEM_CNT(qt[590].goal.getItem[1].id) >= qt[590].goal.getItem[1].count then\n  196:       NPC_SAY(\"?? ??? ???(1)? ?? ?????.\")\n  197:       SET_QUEST_STATE(590, 2)\n  198:     else\n  199:       NPC_SAY(\"??????? ?? ???.\")\n  200:     end\n  198:     else\n  199:       NPC_SAY(\"??????? ?? ???.\")\n  200:     end\n  201:   end\n  202:   if qData[591].state == 1 then\n  203:     if CHECK_ITEM_CNT(qt[591].goal.getItem[1].id) >= qt[591].goal.getItem[1].count then\n  204:       NPC_SAY(\"?? ??? ???(2)? ?? ?????.\")\n  205:       SET_QUEST_STATE(591, 2)\n  206:     else\n  207:       NPC_SAY(\"?????? 5?? ?? ???.\")\n  208:     end\n  206:     else\n  207:       NPC_SAY(\"?????? 5?? ?? ???.\")\n  208:     end\n  209:   end\n  210:   if qData[592].state == 1 then\n  211:     if CHECK_ITEM_CNT(qt[592].goal.getItem[1].id) >= qt[592].goal.getItem[1].count then\n  212:       NPC_SAY(\"?? ??? ??? ?? ?????.\")\n  213:       SET_QUEST_STATE(592, 2)\n  214:     else\n  215:       NPC_SAY(\"?????? 10?? ?? ???.\")\n  216:     end\n  214:     else\n  215:       NPC_SAY(\"?????? 10?? ?? ???.\")\n  216:     end\n  217:   end\n  218:   if qData[593].state == 1 then\n  219:     if CHECK_ITEM_CNT(qt[593].goal.getItem[1].id) >= qt[593].goal.getItem[1].count then\n  220:       NPC_SAY(\"?? ??? ??? ??? ?? ?????.\")\n  221:       SET_QUEST_STATE(593, 2)\n  222:     else\n  223:       NPC_SAY(\"?????? 20?? ?? ???.\")\n  224:     end\n  222:     else\n  223:       NPC_SAY(\"?????? 20?? ?? ???.\")\n  224:     end\n  225:   end\n  226:   if qData[594].state == 1 then\n  227:     if qData[594].killMonster[qt[594].goal.killMonster[1].id] >= qt[594].goal.killMonster[1].count then\n  228:       NPC_SAY(\"?? ???? ??? ?? ?????.\")\n  229:       SET_QUEST_STATE(594, 2)\n  230:     else\n  231:       NPC_SAY(\"???? 20??? ???? ?? ???.\")\n  232:     end\n  230:     else\n  231:       NPC_SAY(\"???? 20??? ???? ?? ???.\")\n  232:     end\n  233:   end\n  234:   if qData[595].state == 1 then\n  235:     if qData[595].killMonster[qt[595].goal.killMonster[1].id] >= qt[595].goal.killMonster[1].count then\n  236:       NPC_SAY(\"?? ?? ??? ?? ?????.\")\n  237:       SET_QUEST_STATE(595, 2)\n  238:     else\n  239:       NPC_SAY(\"???? 1??? ???? ?? ???.\")\n  240:     end\n  242:   if qData[596].state == 1 then\n  243:     NPC_SAY(\"?? ??? ??? ???? ?? ?????.\")\n  244:     SET_QUEST_STATE(596, 2)\n  245:   end\n  246:   if qData[597].state == 1 then\n  247:     if qData[597].killMonster[qt[597].goal.killMonster[1].id] >= qt[597].goal.killMonster[1].count then\n  248:       NPC_SAY(\"?? ?? ??? ?? ?????.\")\n  249:       SET_QUEST_STATE(597, 2)\n  250:     else\n  251:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  252:     end\n  250:     else\n  251:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  252:     end\n  253:   end\n  254:   if qData[598].state == 1 then\n  255:     if qData[598].killMonster[qt[598].goal.killMonster[1].id] >= qt[598].goal.killMonster[1].count then\n  256:       NPC_SAY(\"?? ?? ??? ?? ?????.\")\n  257:       SET_QUEST_STATE(598, 2)\n  258:     else\n  259:       NPC_SAY(\"??? 15??? ???? ?? ???.\")\n  260:     end\n  258:     else\n  259:       NPC_SAY(\"??? 15??? ???? ?? ???.\")\n  260:     end\n  261:   end\n  262:   if qData[599].state == 1 then\n  263:     if CHECK_ITEM_CNT(qt[599].goal.getItem[1].id) >= qt[599].goal.getItem[1].count then\n  264:       NPC_SAY(\"?? ??? ???? ?? ?????.\")\n  265:       SET_QUEST_STATE(599, 2)\n  266:     else\n  267:       NPC_SAY(\"???? 10?? ?? ???.\")\n  268:     end\n  266:     else\n  267:       NPC_SAY(\"???? 10?? ?? ???.\")\n  268:     end\n  269:   end\n  270:   if qData[600].state == 1 then\n  271:     if CHECK_ITEM_CNT(qt[600].goal.getItem[1].id) >= qt[600].goal.getItem[1].count then\n  272:       NPC_SAY(\"?? ??? ?? ?? ?????.\")\n  273:       SET_QUEST_STATE(600, 2)\n  274:     else\n  275:       NPC_SAY(\"????? 10?? ?? ???.\")\n  276:     end\n  274:     else\n  275:       NPC_SAY(\"????? 10?? ?? ???.\")\n  276:     end\n  277:   end\n  278:   if qData[601].state == 1 then\n  279:     if qData[601].killMonster[qt[601].goal.killMonster[1].id] >= qt[601].goal.killMonster[1].count then\n  280:       NPC_SAY(\"?? ??? ?? ?? ?????.\")\n  281:       SET_QUEST_STATE(601, 2)\n  282:     else\n  283:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  284:     end\n  286:   if qData[602].state == 1 then\n  287:     NPC_SAY(\"?? ???? ???? ?? ?????.\")\n  288:     SET_QUEST_STATE(602, 2)\n  289:   end\n  290:   if qData[603].state == 1 then\n  291:     if CHECK_ITEM_CNT(qt[603].goal.getItem[1].id) >= qt[603].goal.getItem[1].count then\n  292:       NPC_SAY(\"?? ???? ?? ?? ?? ?????.\")\n  293:       SET_QUEST_STATE(603, 2)\n  294:     else\n  295:       NPC_SAY(\"???? 10?? ?? ???.\")\n  296:     end\n  298:   if qData[604].state == 1 then\n  299:     NPC_SAY(\"?? ??? ???? ?? ?????.\")\n  300:     SET_QUEST_STATE(604, 2)\n  301:   end\n  302:   if qData[605].state == 1 then\n  303:     if CHECK_ITEM_CNT(qt[605].goal.getItem[1].id) >= qt[605].goal.getItem[1].count then\n  304:       NPC_SAY(\"?? ???? ??? ?? ?????.\")\n  305:       SET_QUEST_STATE(605, 2)\n  306:     else\n  307:       NPC_SAY(\"???? 15?? ?? ???.\")\n  308:     end\n  306:     else\n  307:       NPC_SAY(\"???? 15?? ?? ???.\")\n  308:     end\n  309:   end\n  310:   if qData[606].state == 1 then\n  311:     if qData[606].killMonster[qt[606].goal.killMonster[1].id] >= qt[606].goal.killMonster[1].count then\n  312:       NPC_SAY(\"?? ??? ????? ?? ?????.\")\n  313:       SET_QUEST_STATE(606, 2)\n  314:     else\n  315:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  316:     end\n  318:   if qData[607].state == 1 then\n  319:     NPC_SAY(\"?? ?? ??(1)? ?? ?????.\")\n  320:     SET_QUEST_STATE(607, 2)\n  321:   end\n  322:   if qData[608].state == 1 then\n  323:     if qData[608].killMonster[qt[608].goal.killMonster[1].id] >= qt[608].goal.killMonster[1].count then\n  324:       NPC_SAY(\"?? ?? ??(2)? ?? ?????.\")\n  325:       SET_QUEST_STATE(608, 2)\n  326:     else\n  327:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  328:     end\n  326:     else\n  327:       NPC_SAY(\"??? 20??? ???? ?? ???.\")\n  328:     end\n  329:   end\n  330:   if qData[609].state == 1 then\n  331:     if qData[609].killMonster[qt[609].goal.killMonster[1].id] >= qt[609].goal.killMonster[1].count then\n  332:       NPC_SAY(\"?? ?? ??(3)? ?? ?????.\")\n  333:       SET_QUEST_STATE(609, 2)\n  334:     else\n  335:       NPC_SAY(\"???? 1??? ???? ?? ???.\")\n  336:     end",
+      "dimensions": {
+        "directQtGoalGetItemIndex": true,
+        "localVariableReceivesQt": false,
+        "forLoopAccess": false,
+        "functionWrappedAccess": true,
+        "tableUnpackUsage": false,
+        "killMonsterAccess": true,
+        "rewardAccess": false,
+        "multiConditionAndOr": false
+      },
+      "members": [
+        {
+          "failureId": 15,
+          "npcFile": "npc_318020.lua",
+          "questId": 567,
+          "lineNumber": 19,
+          "failureRule": "RULE_1_NO_HARDCODED_GOAL_INDEX"
+        }
+      ]
+    }
+  ],
+  "unclassifiedCount": 0
+}

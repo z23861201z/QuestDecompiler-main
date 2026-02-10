@@ -1,0 +1,232 @@
+--- npc_213001.lua
++++ npc_213001_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[201].goal.getItem[1].id) >= qt[201].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[201].goal.getItem) then
+
+--- npc_213002.lua
++++ npc_213002_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1218].goal.getItem[1].id) >= qt[1218].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1218].goal.getItem) then
+-   if qData[1218].state == 1 and CHECK_ITEM_CNT(qt[1218].goal.getItem[1].id) >= qt[1218].goal.getItem[1].count then
++   if qData[1218].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1218].goal.getItem) then
+
+--- npc_213006.lua
++++ npc_213006_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[432].goal.getItem[1].id) >= qt[432].goal.getItem[1].count and CHECK_ITEM_CNT(qt[432].goal.getItem[2].id) >= qt[432].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[432].goal.getItem) then
+
+--- npc_215001.lua
++++ npc_215001_autofixed.lua
+-       if __QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or CHECK_ITEM_CNT(qt[1024].goal.getItem[1].id) >= qt[1024].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1023].goal.getItem) or __QUEST_HAS_ALL_ITEMS(qt[1024].goal.getItem) or CHECK_ITEM_CNT(qt[1033].goal.getItem[1].id) >= qt[1033].goal.getItem[1].count or CHECK_ITEM_CNT(qt[1034].goal.getItem[1].id) >= qt[1034].goal.getItem[1].count then
+
+--- npc_215004.lua
++++ npc_215004_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[556].goal.getItem[1].id) >= qt[556].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[556].goal.getItem) then
+
+--- npc_215005.lua
++++ npc_215005_autofixed.lua
+-     if qData[1070].killMonster[qt[1070].goal.killMonster[1].id] >= qt[1070].goal.killMonster[1].count and CHECK_ITEM_CNT(qt[1070].goal.getItem[1].id) >= qt[1070].goal.getItem[1].count then
++     if qData[1070].killMonster[qt[1070].goal.killMonster[1].id] >= qt[1070].goal.killMonster[1].count and __QUEST_HAS_ALL_ITEMS(qt[1070].goal.getItem) then
+
+--- npc_216008.lua
++++ npc_216008_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2490].goal.getItem[1].id) >= qt[2490].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2490].goal.getItem) then
+
+--- npc_222001.lua
++++ npc_222001_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2678].goal.getItem[1].id) >= qt[2678].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2678].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2678].goal.getItem[1].id) >= qt[2678].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2678].goal.getItem) then
+
+--- npc_222006.lua
++++ npc_222006_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2802].goal.getItem[1].id) >= qt[2802].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2802].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2802].goal.getItem[1].id) >= qt[2802].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2802].goal.getItem) then
+
+--- npc_240004.lua
++++ npc_240004_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2598].goal.getItem[1].id) >= qt[2598].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2598].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2598].goal.getItem[1].id) >= qt[2598].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2598].goal.getItem) then
+
+--- npc_300008.lua
++++ npc_300008_autofixed.lua
+-   if qData[2197].state == 1 and CHECK_ITEM_CNT(qt[2197].goal.getItem[1].id) >= qt[2197].goal.getItem[1].count then
++   if qData[2197].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2197].goal.getItem) then
+
+--- npc_300010.lua
++++ npc_300010_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1242].goal.getItem[1].id) >= qt[1242].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1242].goal.getItem) then
+
+--- npc_300011.lua
++++ npc_300011_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1005].goal.getItem[1].id) >= qt[1005].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1005].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1005].goal.getItem[1].id) >= qt[1005].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1005].goal.getItem) then
+
+--- npc_300117.lua
++++ npc_300117_autofixed.lua
+-   if qData[1805].state == 1 and CHECK_ITEM_CNT(qt[1805].goal.getItem[1].id) >= qt[1805].goal.getItem[1].count then
++   if qData[1805].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[1805].goal.getItem) then
+
+--- npc_300135.lua
++++ npc_300135_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[3643].goal.getItem[1].id) >= qt[3643].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[3643].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[3643].goal.getItem[1].id) >= qt[3643].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[3643].goal.getItem) then
+
+--- npc_310005.lua
++++ npc_310005_autofixed.lua
+-     if CHECK_ITEM_CNT(__QUEST_HAS_ALL_ITEMS(qt[280].goal.getItem)) >= qt[282].goal.getItem[1].count then
++     if CHECK_ITEM_CNT(__QUEST_HAS_ALL_ITEMS(qt[280].goal.getItem)) >= __QUEST_HAS_ALL_ITEMS(qt[282].goal.getItem) then
+-     if CHECK_ITEM_CNT(qt[282].goal.getItem[1].id) >= qt[282].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[282].goal.getItem) then
+
+--- npc_313002.lua
++++ npc_313002_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1214].goal.getItem[1].id) >= qt[1214].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1214].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1214].goal.getItem[1].id) >= qt[1214].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1214].goal.getItem) then
+
+--- npc_313007.lua
++++ npc_313007_autofixed.lua
+-   if qData[2073].state == 1 and CHECK_ITEM_CNT(qt[2073].goal.getItem[1].id) >= qt[2073].goal.getItem[1].count then
++   if qData[2073].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2073].goal.getItem) then
+-   if qData[2073].state == 1 and CHECK_ITEM_CNT(qt[2073].goal.getItem[1].id) >= qt[2073].goal.getItem[1].count then
++   if qData[2073].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2073].goal.getItem) then
+
+--- npc_314020.lua
++++ npc_314020_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[125].goal.getItem[1].id) >= qt[125].goal.getItem[1].count and CHECK_ITEM_CNT(qt[125].goal.getItem[2].id) >= qt[125].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[125].goal.getItem) then
+-         if CHECK_ITEM_CNT(qt[125].goal.getItem[1].id) >= qt[125].goal.getItem[1].count and CHECK_ITEM_CNT(qt[125].goal.getItem[2].id) >= qt[125].goal.getItem[2].count then
++         if __QUEST_HAS_ALL_ITEMS(qt[125].goal.getItem) then
+
+--- npc_314021.lua
++++ npc_314021_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[120].goal.getItem[1].id) >= qt[120].goal.getItem[1].count and CHECK_ITEM_CNT(qt[120].goal.getItem[2].id) >= qt[120].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[120].goal.getItem) then
+-         if CHECK_ITEM_CNT(qt[120].goal.getItem[1].id) >= qt[120].goal.getItem[1].count and CHECK_ITEM_CNT(qt[120].goal.getItem[2].id) >= qt[120].goal.getItem[2].count then
++         if __QUEST_HAS_ALL_ITEMS(qt[120].goal.getItem) then
+
+--- npc_314062.lua
++++ npc_314062_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2042].goal.getItem[1].id) >= qt[2042].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2042].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2042].goal.getItem[1].id) >= qt[2042].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2042].goal.getItem) then
+
+--- npc_315002.lua
++++ npc_315002_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1314].goal.getItem[1].id) >= qt[1314].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[2].id) >= qt[1314].goal.getItem[2].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[3].id) >= qt[1314].goal.getItem[3].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1314].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[1314].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1314].goal.getItem[1].id) >= qt[1314].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[2].id) >= qt[1314].goal.getItem[2].count and CHECK_ITEM_CNT(qt[1314].goal.getItem[3].id) >= qt[1314].goal.getItem[3].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1314].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[1314].goal.getItem) then
+
+--- npc_315007.lua
++++ npc_315007_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1071].goal.getItem[1].id) >= qt[1071].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1071].goal.getItem[2].id) >= qt[1071].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1071].goal.getItem) then
+
+--- npc_315011.lua
++++ npc_315011_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1259].goal.getItem[1].id) >= qt[1259].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1259].goal.getItem) then
+-     if CHECK_ITEM_CNT(qt[1259].goal.getItem[1].id) >= qt[1259].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1259].goal.getItem) then
+
+--- npc_315025.lua
++++ npc_315025_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1351].goal.getItem[1].id) >= qt[1351].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1351].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1351].goal.getItem[1].id) >= qt[1351].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1351].goal.getItem) then
+
+--- npc_316003.lua
++++ npc_316003_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1552].goal.getItem[1].id) >= qt[1552].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1552].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1552].goal.getItem[1].id) >= qt[1552].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1552].goal.getItem) then
+
+--- npc_316006.lua
++++ npc_316006_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1560].goal.getItem[1].id) >= qt[1560].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1560].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1560].goal.getItem[1].id) >= qt[1560].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1560].goal.getItem) then
+
+--- npc_316009.lua
++++ npc_316009_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[492].goal.getItem[1].id) >= qt[492].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[492].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[492].goal.getItem[1].id) >= qt[492].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[492].goal.getItem) then
+
+--- npc_316013.lua
++++ npc_316013_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2425].goal.getItem[1].id) >= qt[2425].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2425].goal.getItem[2].id) >= qt[2425].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2425].goal.getItem) then
+
+--- npc_317004.lua
++++ npc_317004_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[1175].goal.getItem[1].id) >= qt[1175].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[1175].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[1175].goal.getItem[1].id) >= qt[1175].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[1175].goal.getItem) then
+
+--- npc_318020.lua
++++ npc_318020_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[575].goal.getItem[1].id) >= qt[575].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[575].goal.getItem) then
+
+--- npc_318023.lua
++++ npc_318023_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[787].goal.getItem[1].id) >= qt[787].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[787].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[787].goal.getItem[1].id) >= qt[787].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[787].goal.getItem) then
+
+--- npc_320001.lua
++++ npc_320001_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2566].goal.getItem[1].id) >= qt[2566].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2566].goal.getItem[2].id) >= qt[2566].goal.getItem[2].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2566].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2566].goal.getItem[1].id) >= qt[2566].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2566].goal.getItem[2].id) >= qt[2566].goal.getItem[2].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2566].goal.getItem) then
+
+--- npc_322012.lua
++++ npc_322012_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2731].goal.getItem[1].id) >= qt[2731].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2731].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2731].goal.getItem[1].id) >= qt[2731].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2731].goal.getItem) then
+
+--- npc_323006.lua
++++ npc_323006_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2888].goal.getItem[1].id) >= qt[2888].goal.getItem[1].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2888].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2888].goal.getItem[1].id) >= qt[2888].goal.getItem[1].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2888].goal.getItem) then
+
+--- npc_323009.lua
++++ npc_323009_autofixed.lua
+-     if CHECK_ITEM_CNT(qt[2859].goal.getItem[1].id) >= qt[2859].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2859].goal.getItem[2].id) >= qt[2859].goal.getItem[2].count and CHECK_ITEM_CNT(qt[2859].goal.getItem[3].id) >= qt[2859].goal.getItem[3].count then
++     if __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) then
+-       if CHECK_ITEM_CNT(qt[2859].goal.getItem[1].id) >= qt[2859].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2859].goal.getItem[2].id) >= qt[2859].goal.getItem[2].count and CHECK_ITEM_CNT(qt[2859].goal.getItem[3].id) >= qt[2859].goal.getItem[3].count then
++       if __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) and __QUEST_HAS_ALL_ITEMS(qt[2859].goal.getItem) then
+
+--- npc_391112.lua
++++ npc_391112_autofixed.lua
+-   if qData[2736].state == 1 and CHECK_ITEM_CNT(qt[2736].goal.getItem[1].id) >= qt[2736].goal.getItem[1].count and qData[2736].killMonster[qt[2736].goal.killMonster[1].id] >= qt[2736].goal.killMonster[1].count then
++   if qData[2736].state == 1 and __QUEST_HAS_ALL_ITEMS(qt[2736].goal.getItem) and qData[2736].killMonster[qt[2736].goal.killMonster[1].id] >= qt[2736].goal.killMonster[1].count then
