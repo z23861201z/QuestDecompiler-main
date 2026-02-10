@@ -1,0 +1,5523 @@
+{
+  "generatedAt": "2026-02-10T09:47:36.016+08:00",
+  "affectedNpcCount": 101,
+  "rewriteRequiredCount": 149,
+  "autoSafeCount": 166,
+  "quests": [
+    {
+      "questId": 1,
+      "modificationType": ["QUEST_ID_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314005,
+          "file": "npc_314005.lua",
+          "riskLevel": "HIGH",
+          "reason": "questId changed, NPC runtime reference may break",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1 -> npc:npc_314005.lua(id=314005) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 7,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 10,
+      "modificationType": ["QUEST_ID_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 11,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 12,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 15,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 16,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 4,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:16 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:16 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:16 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:16 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 17,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 18,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 19,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 4,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:19 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:19 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:19 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:19 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 20,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 21,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 4,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:21 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:21 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:21 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:21 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 22,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314009,
+          "file": "npc_314009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:22 -> npc:npc_314009.lua(id=314009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 23,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314009,
+          "file": "npc_314009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:23 -> npc:npc_314009.lua(id=314009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 24,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314009,
+          "file": "npc_314009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:24 -> npc:npc_314009.lua(id=314009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 25,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314009,
+          "file": "npc_314009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:25 -> npc:npc_314009.lua(id=314009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 32,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:32 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 33,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:33 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 34,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:34 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 35,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:35 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 40,
+      "modificationType": ["QUEST_ID_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "HIGH",
+          "reason": "questId changed, NPC runtime reference may break",
+          "rewriteRequired": true,
+          "propagationPath": "quest:40 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 42,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:42 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 43,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:43 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 44,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:44 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 45,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:45 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 52,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 53,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 58,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 59,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 60,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:60 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:60 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:60 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 61,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 62,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 63,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 64,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:64 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:64 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:64 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 65,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 66,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 67,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 70,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 71,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 72,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 75,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 94,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213002,
+          "file": "npc_213002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:94 -> npc:npc_213002.lua(id=213002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 99,
+      "modificationType": ["GOAL_ITEM_COUNT_CHANGED", "REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED", "TEXT_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 100,
+      "modificationType": ["QUEST_ID_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 212001,
+          "file": "npc_212001.lua",
+          "riskLevel": "HIGH",
+          "reason": "questId changed, NPC runtime reference may break",
+          "rewriteRequired": true,
+          "propagationPath": "quest:100 -> npc:npc_212001.lua(id=212001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 101,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213002,
+          "file": "npc_213002.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:101 -> npc:npc_213002.lua(id=213002) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 102,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 103,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 212001,
+          "file": "npc_212001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:103 -> npc:npc_212001.lua(id=212001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 104,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213002,
+          "file": "npc_213002.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:104 -> npc:npc_213002.lua(id=213002) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 112,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:112 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 113,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:113 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 115,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 116,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 130,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 144,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315015,
+          "file": "npc_315015.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:144 -> npc:npc_315015.lua(id=315015) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 915030,
+          "file": "npc_915030.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:144 -> npc:npc_915030.lua(id=915030) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 154,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:154 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 215002,
+          "file": "npc_215002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:154 -> npc:npc_215002.lua(id=215002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 166,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 315009,
+          "file": "npc_315009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:166 -> npc:npc_315009.lua(id=315009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 200,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:200 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 236,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213008,
+          "file": "npc_213008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:236 -> npc:npc_213008.lua(id=213008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 239,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 215002,
+          "file": "npc_215002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:239 -> npc:npc_215002.lua(id=215002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 282,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 310005,
+          "file": "npc_310005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:282 -> npc:npc_310005.lua(id=310005) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 285,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 216002,
+          "file": "npc_216002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:285 -> npc:npc_216002.lua(id=216002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:285 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 346,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 317002,
+          "file": "npc_317002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:346 -> npc:npc_317002.lua(id=317002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 350,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 351,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 4,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:351 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:351 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:351 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:351 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 352,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:352 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 353,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:353 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 354,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:354 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 355,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:355 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 379,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 380,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 441,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213004,
+          "file": "npc_213004.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:441 -> npc:npc_213004.lua(id=213004) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 444,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 468,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 469,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 470,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 471,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 500,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 572,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318020,
+          "file": "npc_318020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:572 -> npc:npc_318020.lua(id=318020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 605,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 318003,
+          "file": "npc_318003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:605 -> npc:npc_318003.lua(id=318003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 318020,
+          "file": "npc_318020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:605 -> npc:npc_318020.lua(id=318020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 606,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318020,
+          "file": "npc_318020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:606 -> npc:npc_318020.lua(id=318020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 611,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318001,
+          "file": "npc_318001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:611 -> npc:npc_318001.lua(id=318001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 612,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 5,
+      "affectedNpcs": [
+        {
+          "npcId": 314010,
+          "file": "npc_314010.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:612 -> npc:npc_314010.lua(id=314010) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314011,
+          "file": "npc_314011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:612 -> npc:npc_314011.lua(id=314011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:612 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318001,
+          "file": "npc_318001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:612 -> npc:npc_318001.lua(id=318001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:612 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 613,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:613 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 614,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:614 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 615,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:615 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 616,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318007,
+          "file": "npc_318007.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:616 -> npc:npc_318007.lua(id=318007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 625,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 629,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 692,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 713,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 310005,
+          "file": "npc_310005.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:713 -> npc:npc_310005.lua(id=310005) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:713 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 714,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:714 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 715,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:715 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:715 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 716,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:716 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 300009,
+          "file": "npc_300009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:716 -> npc:npc_300009.lua(id=300009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:716 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 717,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:717 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 300009,
+          "file": "npc_300009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:717 -> npc:npc_300009.lua(id=300009) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:717 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 718,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:718 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 300009,
+          "file": "npc_300009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:718 -> npc:npc_300009.lua(id=300009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 719,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:719 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 720,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:720 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:720 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 721,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:721 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 722,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:722 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 723,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:723 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:723 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 724,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300008,
+          "file": "npc_300008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:724 -> npc:npc_300008.lua(id=300008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:724 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 726,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 730,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 731,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 739,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 740,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 741,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 765,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 318021,
+          "file": "npc_318021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:765 -> npc:npc_318021.lua(id=318021) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 802,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 213009,
+          "file": "npc_213009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:802 -> npc:npc_213009.lua(id=213009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 218008,
+          "file": "npc_218008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:802 -> npc:npc_218008.lua(id=218008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 391012,
+          "file": "npc_391012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:802 -> npc:npc_391012.lua(id=391012) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 804,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 218008,
+          "file": "npc_218008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:804 -> npc:npc_218008.lua(id=218008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 313007,
+          "file": "npc_313007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:804 -> npc:npc_313007.lua(id=313007) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 391912,
+          "file": "npc_391912.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:804 -> npc:npc_391912.lua(id=391912) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 809,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 810,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 811,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 812,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 813,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 820,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 854,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 391062,
+          "file": "npc_391062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:854 -> npc:npc_391062.lua(id=391062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 861,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 214002,
+          "file": "npc_214002.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:861 -> npc:npc_214002.lua(id=214002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 867,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 315025,
+          "file": "npc_315025.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:867 -> npc:npc_315025.lua(id=315025) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 871,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 218008,
+          "file": "npc_218008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:871 -> npc:npc_218008.lua(id=218008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 887,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 890,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:890 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1074,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1077,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1101,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 214010,
+          "file": "npc_214010.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1101 -> npc:npc_214010.lua(id=214010) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1101 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1104,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1104 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314060,
+          "file": "npc_314060.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1104 -> npc:npc_314060.lua(id=314060) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1105,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1105 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314059,
+          "file": "npc_314059.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1105 -> npc:npc_314059.lua(id=314059) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314060,
+          "file": "npc_314060.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1105 -> npc:npc_314060.lua(id=314060) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1112,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 214001,
+          "file": "npc_214001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1112 -> npc:npc_214001.lua(id=214001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1112 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1113,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 214001,
+          "file": "npc_214001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1113 -> npc:npc_214001.lua(id=214001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1114,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 214001,
+          "file": "npc_214001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1114 -> npc:npc_214001.lua(id=214001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 300111,
+          "file": "npc_300111.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1114 -> npc:npc_300111.lua(id=300111) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314008,
+          "file": "npc_314008.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1114 -> npc:npc_314008.lua(id=314008) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1115,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 5,
+      "affectedNpcs": [
+        {
+          "npcId": 214001,
+          "file": "npc_214001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1115 -> npc:npc_214001.lua(id=214001) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 214002,
+          "file": "npc_214002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1115 -> npc:npc_214002.lua(id=214002) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 214003,
+          "file": "npc_214003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1115 -> npc:npc_214003.lua(id=214003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 214004,
+          "file": "npc_214004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1115 -> npc:npc_214004.lua(id=214004) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 314008,
+          "file": "npc_314008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1115 -> npc:npc_314008.lua(id=314008) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1121,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 4,
+      "affectedNpcs": [
+        {
+          "npcId": 214005,
+          "file": "npc_214005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1121 -> npc:npc_214005.lua(id=214005) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314001,
+          "file": "npc_314001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1121 -> npc:npc_314001.lua(id=314001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1121 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1121 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK, GOAL_VERIFY]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1123,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 214005,
+          "file": "npc_214005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1123 -> npc:npc_214005.lua(id=214005) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1123 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1125,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1125 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1125 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1128,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1128 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1131,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314004,
+          "file": "npc_314004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1131 -> npc:npc_314004.lua(id=314004) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1138,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 317004,
+          "file": "npc_317004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1138 -> npc:npc_317004.lua(id=317004) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1140,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314003,
+          "file": "npc_314003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1140 -> npc:npc_314003.lua(id=314003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 317007,
+          "file": "npc_317007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1140 -> npc:npc_317007.lua(id=317007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1147,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1147 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1155,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 317002,
+          "file": "npc_317002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1155 -> npc:npc_317002.lua(id=317002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 317004,
+          "file": "npc_317004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1155 -> npc:npc_317004.lua(id=317004) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1165,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 317002,
+          "file": "npc_317002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1165 -> npc:npc_317002.lua(id=317002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1183,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 214006,
+          "file": "npc_214006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1183 -> npc:npc_214006.lua(id=214006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314001,
+          "file": "npc_314001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1183 -> npc:npc_314001.lua(id=314001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1186,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 213006,
+          "file": "npc_213006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1186 -> npc:npc_213006.lua(id=213006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1190,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 203001,
+          "file": "npc_203001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1190 -> npc:npc_203001.lua(id=203001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1191,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 203001,
+          "file": "npc_203001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1191 -> npc:npc_203001.lua(id=203001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1195,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 391001,
+          "file": "npc_391001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1195 -> npc:npc_391001.lua(id=391001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 391010,
+          "file": "npc_391010.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1195 -> npc:npc_391010.lua(id=391010) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1196,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1197,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1198,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED", "TEXT_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 203006,
+          "file": "npc_203006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1198 -> npc:npc_203006.lua(id=203006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1199,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 214002,
+          "file": "npc_214002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1199 -> npc:npc_214002.lua(id=214002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1201,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314059,
+          "file": "npc_314059.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1201 -> npc:npc_314059.lua(id=314059) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314060,
+          "file": "npc_314060.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1201 -> npc:npc_314060.lua(id=314060) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1202,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1202 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314059,
+          "file": "npc_314059.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1202 -> npc:npc_314059.lua(id=314059) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1210,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300011,
+          "file": "npc_300011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1210 -> npc:npc_300011.lua(id=300011) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1211,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300011,
+          "file": "npc_300011.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1211 -> npc:npc_300011.lua(id=300011) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1212,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1212 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1212 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1213,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1213 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1213 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1220,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 310005,
+          "file": "npc_310005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1220 -> npc:npc_310005.lua(id=310005) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1226,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 213003,
+          "file": "npc_213003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1226 -> npc:npc_213003.lua(id=213003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 310003,
+          "file": "npc_310003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1226 -> npc:npc_310003.lua(id=310003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 310005,
+          "file": "npc_310005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1226 -> npc:npc_310005.lua(id=310005) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1227,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 310005,
+          "file": "npc_310005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1227 -> npc:npc_310005.lua(id=310005) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1229,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 213005,
+          "file": "npc_213005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1229 -> npc:npc_213005.lua(id=213005) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 313007,
+          "file": "npc_313007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1229 -> npc:npc_313007.lua(id=313007) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1232,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 313007,
+          "file": "npc_313007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1232 -> npc:npc_313007.lua(id=313007) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1239,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 313007,
+          "file": "npc_313007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1239 -> npc:npc_313007.lua(id=313007) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1242,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300010,
+          "file": "npc_300010.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1242 -> npc:npc_300010.lua(id=300010) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1258,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 315011,
+          "file": "npc_315011.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1258 -> npc:npc_315011.lua(id=315011) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1263,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315006,
+          "file": "npc_315006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1263 -> npc:npc_315006.lua(id=315006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 391102,
+          "file": "npc_391102.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1263 -> npc:npc_391102.lua(id=391102) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1264,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 213001,
+          "file": "npc_213001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1264 -> npc:npc_213001.lua(id=213001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1264 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1301,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 315002,
+          "file": "npc_315002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1301 -> npc:npc_315002.lua(id=315002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1326,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1326 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1326 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1327,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1327 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1327 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1328,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1328 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1328 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1329,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1329 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1329 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1330,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1330 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1330 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1331,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1331 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1331 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1332,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1332 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1332 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1333,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1333 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1333 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1334,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1334 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1334 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1335,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1335 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1335 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1336,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1337,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1338,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300111,
+          "file": "npc_300111.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1338 -> npc:npc_300111.lua(id=300111) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1390,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315025,
+          "file": "npc_315025.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1390 -> npc:npc_315025.lua(id=315025) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 391104,
+          "file": "npc_391104.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1390 -> npc:npc_391104.lua(id=391104) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1391,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315023,
+          "file": "npc_315023.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1391 -> npc:npc_315023.lua(id=315023) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 315025,
+          "file": "npc_315025.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1391 -> npc:npc_315025.lua(id=315025) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1392,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1395,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 218006,
+          "file": "npc_218006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1395 -> npc:npc_218006.lua(id=218006) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1395 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1396,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 218006,
+          "file": "npc_218006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1396 -> npc:npc_218006.lua(id=218006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1396 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1397,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 218006,
+          "file": "npc_218006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1397 -> npc:npc_218006.lua(id=218006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 313002,
+          "file": "npc_313002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1397 -> npc:npc_313002.lua(id=313002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1398,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 218006,
+          "file": "npc_218006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1398 -> npc:npc_218006.lua(id=218006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1398 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1400,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1400 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 317004,
+          "file": "npc_317004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1400 -> npc:npc_317004.lua(id=317004) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1401,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1401 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 317004,
+          "file": "npc_317004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1401 -> npc:npc_317004.lua(id=317004) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1402,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1402 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1403,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1403 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1403 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1407,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 319006,
+          "file": "npc_319006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1407 -> npc:npc_319006.lua(id=319006) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1409,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300127,
+          "file": "npc_300127.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1409 -> npc:npc_300127.lua(id=300127) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1410,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300127,
+          "file": "npc_300127.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1410 -> npc:npc_300127.lua(id=300127) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1416,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1417,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1418,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314012,
+          "file": "npc_314012.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1418 -> npc:npc_314012.lua(id=314012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1419,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1420,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1421,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1422,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1423,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1424,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1465,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300003,
+          "file": "npc_300003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1465 -> npc:npc_300003.lua(id=300003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 321008,
+          "file": "npc_321008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1465 -> npc:npc_321008.lua(id=321008) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1466,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314059,
+          "file": "npc_314059.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1466 -> npc:npc_314059.lua(id=314059) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1481,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 323005,
+          "file": "npc_323005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1481 -> npc:npc_323005.lua(id=323005) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 323007,
+          "file": "npc_323007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1481 -> npc:npc_323007.lua(id=323007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1487,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1488,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED", "NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1507,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1507 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1508,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1508 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1509,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1509 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1510,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1510 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1511,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1511 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324004,
+          "file": "npc_324004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1511 -> npc:npc_324004.lua(id=324004) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1512,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1512 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324004,
+          "file": "npc_324004.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1512 -> npc:npc_324004.lua(id=324004) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1513,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324002,
+          "file": "npc_324002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1513 -> npc:npc_324002.lua(id=324002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1514,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324002,
+          "file": "npc_324002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1514 -> npc:npc_324002.lua(id=324002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1515,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324002,
+          "file": "npc_324002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1515 -> npc:npc_324002.lua(id=324002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1515 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1516,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324002,
+          "file": "npc_324002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1516 -> npc:npc_324002.lua(id=324002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1516 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1517,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1517 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1518,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1518 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1519,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1519 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1520,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1520 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1521,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1521 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1522,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1522 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1523,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1523 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1524,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1524 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1525,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 218008,
+          "file": "npc_218008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1525 -> npc:npc_218008.lua(id=218008) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1525 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1526,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315006,
+          "file": "npc_315006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1526 -> npc:npc_315006.lua(id=315006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1526 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1527,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315002,
+          "file": "npc_315002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1527 -> npc:npc_315002.lua(id=315002) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 315006,
+          "file": "npc_315006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1527 -> npc:npc_315006.lua(id=315006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1533,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1541,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 300009,
+          "file": "npc_300009.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1541 -> npc:npc_300009.lua(id=300009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1541 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1542,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1542 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1543,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 216001,
+          "file": "npc_216001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1543 -> npc:npc_216001.lua(id=216001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1543 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1544,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 216001,
+          "file": "npc_216001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1544 -> npc:npc_216001.lua(id=216001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 316003,
+          "file": "npc_316003.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1544 -> npc:npc_316003.lua(id=316003) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1587,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1623,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1683,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 1904,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 322003,
+          "file": "npc_322003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1904 -> npc:npc_322003.lua(id=322003) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1908,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830001,
+          "file": "npc_830001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1908 -> npc:npc_830001.lua(id=830001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1909,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830001,
+          "file": "npc_830001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1909 -> npc:npc_830001.lua(id=830001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1910,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830001,
+          "file": "npc_830001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1910 -> npc:npc_830001.lua(id=830001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1912,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1912 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324005,
+          "file": "npc_324005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1912 -> npc:npc_324005.lua(id=324005) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 830001,
+          "file": "npc_830001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1912 -> npc:npc_830001.lua(id=830001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1914,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830002,
+          "file": "npc_830002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1914 -> npc:npc_830002.lua(id=830002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1915,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830002,
+          "file": "npc_830002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1915 -> npc:npc_830002.lua(id=830002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1916,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 830002,
+          "file": "npc_830002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1916 -> npc:npc_830002.lua(id=830002) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 1918,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 3,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1918 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324005,
+          "file": "npc_324005.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:1918 -> npc:npc_324005.lua(id=324005) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 830002,
+          "file": "npc_830002.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:1918 -> npc:npc_830002.lua(id=830002) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2001,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2002,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2003,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2004,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2006,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2007,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2007 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2008,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2008 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2009,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300119,
+          "file": "npc_300119.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2009 -> npc:npc_300119.lua(id=300119) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2018,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314058,
+          "file": "npc_314058.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2018 -> npc:npc_314058.lua(id=314058) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2018 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2019,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2019 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2020,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2020 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2044,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 218008,
+          "file": "npc_218008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2044 -> npc:npc_218008.lua(id=218008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2050,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2050 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2057,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2057 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2059,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2059 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 318001,
+          "file": "npc_318001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2059 -> npc:npc_318001.lua(id=318001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2068,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 300011,
+          "file": "npc_300011.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2068 -> npc:npc_300011.lua(id=300011) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2085,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2085 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314021,
+          "file": "npc_314021.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2085 -> npc:npc_314021.lua(id=314021) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2089,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 200001,
+          "file": "npc_200001.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2089 -> npc:npc_200001.lua(id=200001) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 314020,
+          "file": "npc_314020.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2089 -> npc:npc_314020.lua(id=314020) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2102,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314062,
+          "file": "npc_314062.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2102 -> npc:npc_314062.lua(id=314062) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2121,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314036,
+          "file": "npc_314036.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2121 -> npc:npc_314036.lua(id=314036) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2124,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314035,
+          "file": "npc_314035.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2124 -> npc:npc_314035.lua(id=314035) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2128,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314035,
+          "file": "npc_314035.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2128 -> npc:npc_314035.lua(id=314035) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2129,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 216006,
+          "file": "npc_216006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2129 -> npc:npc_216006.lua(id=216006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2130,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 316009,
+          "file": "npc_316009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2130 -> npc:npc_316009.lua(id=316009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2135,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 314035,
+          "file": "npc_314035.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2135 -> npc:npc_314035.lua(id=314035) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2258,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2258 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2259,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2259 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2260,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2260 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2261,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2261 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324007,
+          "file": "npc_324007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2261 -> npc:npc_324007.lua(id=324007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2262,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2262 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324007,
+          "file": "npc_324007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2262 -> npc:npc_324007.lua(id=324007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2263,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2263 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2264,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2264 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2265,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2265 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2266,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324006,
+          "file": "npc_324006.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2266 -> npc:npc_324006.lua(id=324006) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324007,
+          "file": "npc_324007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2266 -> npc:npc_324007.lua(id=324007) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2267,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2267 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324007,
+          "file": "npc_324007.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2267 -> npc:npc_324007.lua(id=324007) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2609,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2609 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2610,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2610 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324008,
+          "file": "npc_324008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2610 -> npc:npc_324008.lua(id=324008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2611,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2611 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324009,
+          "file": "npc_324009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2611 -> npc:npc_324009.lua(id=324009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2612,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324009,
+          "file": "npc_324009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2612 -> npc:npc_324009.lua(id=324009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324010,
+          "file": "npc_324010.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2612 -> npc:npc_324010.lua(id=324010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2614,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2614 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324011,
+          "file": "npc_324011.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2614 -> npc:npc_324011.lua(id=324011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2615,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2615 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2616,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2616 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324008,
+          "file": "npc_324008.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2616 -> npc:npc_324008.lua(id=324008) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2617,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324001,
+          "file": "npc_324001.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2617 -> npc:npc_324001.lua(id=324001) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324009,
+          "file": "npc_324009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2617 -> npc:npc_324009.lua(id=324009) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2618,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324009,
+          "file": "npc_324009.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2618 -> npc:npc_324009.lua(id=324009) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324010,
+          "file": "npc_324010.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2618 -> npc:npc_324010.lua(id=324010) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2620,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2620 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324011,
+          "file": "npc_324011.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2620 -> npc:npc_324011.lua(id=324011) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2651,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 391114,
+          "file": "npc_391114.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2651 -> npc:npc_391114.lua(id=391114) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 391115,
+          "file": "npc_391115.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2651 -> npc:npc_391115.lua(id=391115) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2680,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2681,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2682,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 2765,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2765 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2766,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2766 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2767,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2767 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324013,
+          "file": "npc_324013.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2767 -> npc:npc_324013.lua(id=324013) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2768,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2768 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324013,
+          "file": "npc_324013.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2768 -> npc:npc_324013.lua(id=324013) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2769,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2769 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2770,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2770 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2771,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324012,
+          "file": "npc_324012.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2771 -> npc:npc_324012.lua(id=324012) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        },
+        {
+          "npcId": 324013,
+          "file": "npc_324013.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2771 -> npc:npc_324013.lua(id=324013) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2772,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2772 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 324013,
+          "file": "npc_324013.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:2772 -> npc:npc_324013.lua(id=324013) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2777,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2777 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 2778,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 1,
+      "affectedNpcs": [
+        {
+          "npcId": 324003,
+          "file": "npc_324003.lua",
+          "riskLevel": "MEDIUM",
+          "reason": "reward structure changed",
+          "rewriteRequired": true,
+          "propagationPath": "quest:2778 -> npc:npc_324003.lua(id=324003) -> roles:[STATE_CHECK, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "STATE_ADVANCE"]
+        }
+      ],
+      "safeToAutoApply": false
+    },
+    {
+      "questId": 3630,
+      "modificationType": ["NEED_LEVEL_CHANGED"],
+      "affectedNpcCount": 2,
+      "affectedNpcs": [
+        {
+          "npcId": 315023,
+          "file": "npc_315023.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:3630 -> npc:npc_315023.lua(id=315023) -> roles:[STATE_CHECK, GOAL_VERIFY, STATE_ADVANCE]",
+          "roles": ["STATE_CHECK", "GOAL_VERIFY", "STATE_ADVANCE"]
+        },
+        {
+          "npcId": 315025,
+          "file": "npc_315025.lua",
+          "riskLevel": "LOW",
+          "reason": "needLevel changed",
+          "rewriteRequired": false,
+          "propagationPath": "quest:3630 -> npc:npc_315025.lua(id=315025) -> roles:[STATE_CHECK]",
+          "roles": ["STATE_CHECK"]
+        }
+      ],
+      "safeToAutoApply": true
+    },
+    {
+      "questId": 3770,
+      "modificationType": ["REWARD_STRUCTURE_CHANGED"],
+      "affectedNpcCount": 0,
+      "affectedNpcs": [],
+      "safeToAutoApply": true
+    }
+  ]
+}
