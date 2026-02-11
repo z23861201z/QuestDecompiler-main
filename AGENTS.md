@@ -131,3 +131,50 @@
   - `java -cp build unluac.semantic.Phase7CNpcTextExporter "D:/TitanGames/GhostOnline/zChina/Script/npc-lua-generated" "reports/phase7C_exported_npc" "reports/phase7C_export_validation.json"`
 - 导出单个 NPC Luc（客户端替换用）：
   - `java "-Dunluac.stringCharset=GBK" -cp build unluac.semantic.Phase7NpcLucBinaryExporter "npc_218008.lua" "D:/TitanGames/GhostOnline/zChina/Script/npc_218008.luc" "reports/npc_218008.luc"`
+
+## 涉及数据库表（功能 + 核心字段）
+
+### Quest 主数据与结构表（Phase3）
+- `quest_main`
+  - 功能：任务主表（单行任务头信息）
+  - 核心字段：`quest_id`(PK), `name`, `need_level`, `bq_loop`, `reward_exp`, `reward_gold`
+- `quest_contents`
+  - 功能：任务 `contents[]` 顺序文本
+  - 核心字段：`quest_id`, `seq_index`, `text`（`quest_id+seq_index` 唯一）
+- `quest_answer`
+  - 功能：任务 `answer[]` 顺序文本
+  - 核心字段：`quest_id`, `seq_index`, `text`
+- `quest_info`
+  - 功能：任务 `info[]` 顺序文本
+  - 核心字段：`quest_id`, `seq_index`, `text`
+- `quest_goal_getitem`
+  - 功能：目标 `goal.getItem[]`
+  - 核心字段：`quest_id`, `seq_index`, `item_id`, `item_count`
+- `quest_goal_killmonster`
+  - 功能：目标 `goal.killMonster[]`
+  - 核心字段：`quest_id`, `seq_index`, `monster_id`, `monster_count`
+- `quest_goal_meetnpc`
+  - 功能：目标 `goal.meetNpc[]`
+  - 核心字段：`quest_id`, `seq_index`, `npc_id`
+- `quest_reward_item`
+  - 功能：奖励 `reward.items[]`
+  - 核心字段：`quest_id`, `seq_index`, `item_id`, `item_count`
+- `npc_quest_reference`
+  - 功能：NPC ↔ Quest 引用关系索引
+  - 核心字段：`npc_file`, `quest_id`, `reference_count`, `goal_access_count`
+
+### NPC 对话文本表（Phase7）
+- `npc_dialogue_text`（抽取层）
+  - 功能：从原始 NPC Lua AST 抽取的文本基线快照（Phase7A）
+  - 核心字段：`id`(PK), `npc_file`, `call_type`, `line_number`, `column_number`, `raw_text`, `string_literal`, `ast_marker`
+  - 说明：该表主要用于“原始定位与审计”，不作为首选编辑入口
+- `npc_text_edit_map`（编辑层）
+  - 功能：Web 编辑映射表（Phase7B/7C/7D 主要使用）
+  - 核心字段：`textId`(PK), `npcFile`, `line`, `columnNumber`, `callType`, `rawText`, `modifiedText`, `stringLiteral`, `astMarker`
+  - 说明：实际改文案时只改 `modifiedText`；`rawText/stringLiteral` 保留基线与定位
+
+### 字段使用约定（必须遵守）
+- 编辑时：仅写 `npc_text_edit_map.modifiedText`
+- 不改：`rawText`、`stringLiteral`
+- 导出生效条件：`modifiedText IS NOT NULL AND modifiedText <> rawText`
+- 定位优先级：`astMarker` > `npcFile + line + column(+callType)`
