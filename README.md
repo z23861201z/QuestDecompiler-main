@@ -46,7 +46,26 @@ Quest/NPC 数据链路工具（CLI + Web 管理后台）。
 
 ## 3. 启动后端（Spring Boot）
 
-在仓库根目录执行：
+推荐使用打包后的可执行 JAR 启动（更接近生产）：
+
+```bash
+mvn -DskipTests package
+java -jar target/questdecompiler-web-1.0.0-SNAPSHOT.jar
+```
+
+可选指定端口：
+
+```bash
+java -jar target/questdecompiler-web-1.0.0-SNAPSHOT.jar --server.port=18080
+```
+
+开发调试也可用 Maven 启动：
+
+```bash
+mvn spring-boot:run
+```
+
+在仓库根目录执行（开发模式）：
 
 ```bash
 mvn -DskipTests compile
