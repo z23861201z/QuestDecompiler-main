@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-02-11T16:31:34.363+08:00",
+  "mutatedQuestIds": [3604,3617],
+  "expectedAffectedNpcFiles": [],
+  "actualChangedNpcFiles": [],
+  "unexpectedChangedFiles": [],
+  "unchangedExpectedFiles": [],
+  "diffSummary": {"totalFilesCompared":468,"changedFileCount":0},
+  "diffDetails": [],
+  "finalStatus": "SAFE"
+}

@@ -1,0 +1,280 @@
+package unluac.semantic;
+
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.Driver;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+
+import unluac.chunk.Lua50ChunkParser;
+import unluac.chunk.Lua50ChunkSerializer;
+import unluac.chunk.Lua50StructureValidator;
+import unluac.chunk.LuaChunk;
+
+public class Phase7NpcLucBinaryExporter {
+
+  private static final String DEFAULT_JDBC = "jdbc:mysql://127.0.0.1:3306/ghost_game"
+      + "?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
+  private static final String DEFAULT_USER = "root";
+  private static final String DEFAULT_PASSWORD = "root";
+
+  public static void main(String[] args) throws Exception {
+    if(args.length < 3) {
+      System.out.println("Usage: java -cp build unluac.semantic.Phase7NpcLucBinaryExporter <npcFileName> <inputLuc> <outputLuc> [jdbcUrl] [user] [password] [stringCharset]");
+      return;
+    }
+
+    String npcFileName = args[0];
+    Path inputLuc = Paths.get(args[1]);
+    Path outputLuc = Paths.get(args[2]);
+    String jdbcUrl = args.length >= 4 ? args[3] : DEFAULT_JDBC;
+    String user = args.length >= 5 ? args[4] : DEFAULT_USER;
+    String password = args.length >= 6 ? args[5] : DEFAULT_PASSWORD;
+    String charsetName = args.length >= 7 ? args[6] : System.getProperty("unluac.stringCharset", "GBK");
+
+    Charset stringCharset = Charset.forName(charsetName);
+
+    ensureMysqlDriverAvailable(jdbcUrl);
+    List<TextMutation> mutations = loadMutations(jdbcUrl, user, password, npcFileName);
+    if(mutations.isEmpty()) {
+      throw new IllegalStateException("No modifiedText rows found for npc=" + npcFileName);
+    }
+
+    byte[] original = Files.readAllBytes(inputLuc);
+    LuaChunk chunk = new Lua50ChunkParser(stringCharset).parse(original);
+
+    List<ConstantRef> stringConstants = new ArrayList<ConstantRef>();
+    collectStringConstants(chunk.mainFunction, stringConstants);
+
+    int patchedCount = applyMutations(chunk, stringConstants, mutations, stringCharset);
+    if(patchedCount != mutations.size()) {
+      throw new IllegalStateException("Not all mutations applied. expected=" + mutations.size() + " actual=" + patchedCount);
+    }
+
+    byte[] rebuilt = new Lua50ChunkSerializer().serialize(chunk);
+
+    Lua50StructureValidator.ValidationReport report = new Lua50StructureValidator(original).validateLuc(rebuilt);
+    if(!report.structureConsistent) {
+      throw new IllegalStateException("structure validation failed after npc luc patch\n" + report.toTextReport());
+    }
+
+    if(outputLuc.getParent() != null && !Files.exists(outputLuc.getParent())) {
+      Files.createDirectories(outputLuc.getParent());
+    }
+    Files.write(outputLuc, rebuilt);
+
+    System.out.println("npc=" + npcFileName);
+    System.out.println("input=" + inputLuc.toAbsolutePath());
+    System.out.println("output=" + outputLuc.toAbsolutePath());
+    System.out.println("mutations=" + mutations.size());
+    System.out.println("patchedConstants=" + patchedCount);
+    System.out.println("structureConsistent=" + report.structureConsistent);
+  }
+
+  private static int applyMutations(LuaChunk chunk,
+                                    List<ConstantRef> constants,
+                                    List<TextMutation> mutations,
+                                    Charset stringCharset) {
+    int applied = 0;
+    Set<Integer> usedConstantIndexes = new HashSet<Integer>();
+
+    for(TextMutation mutation : mutations) {
+      int chosen = -1;
+      for(int i = 0; i < constants.size(); i++) {
+        ConstantRef ref = constants.get(i);
+        if(usedConstantIndexes.contains(Integer.valueOf(i))) {
+          continue;
+        }
+        String oldText = ref.constant.stringValue == null ? "" : ref.constant.stringValue.toDisplayString();
+        if(mutation.rawText.equals(oldText)) {
+          chosen = i;
+          break;
+        }
+      }
+
+      if(chosen < 0) {
+        throw new IllegalStateException("Cannot locate rawText in chunk constants for textId=" + mutation.textId + " rawText=" + mutation.rawText);
+      }
+
+      ConstantRef target = constants.get(chosen);
+      target.constant.stringValue = buildLuaString(mutation.modifiedText, stringCharset);
+      usedConstantIndexes.add(Integer.valueOf(chosen));
+      applied++;
+    }
+
+    return applied;
+  }
+
+  private static LuaChunk.LuaString buildLuaString(String text, Charset charset) {
+    byte[] body = text == null ? new byte[0] : text.getBytes(charset);
+    byte[] decoded = new byte[body.length + 1];
+    System.arraycopy(body, 0, decoded, 0, body.length);
+    decoded[decoded.length - 1] = 0;
+
+    LuaChunk.LuaString value = new LuaChunk.LuaString();
+    value.lengthField = decoded.length;
+    value.decodedBytes = decoded;
+    value.nullTerminated = true;
+    value.text = text == null ? "" : text;
+    return value;
+  }
+
+  private static void collectStringConstants(LuaChunk.Function function, List<ConstantRef> out) {
+    if(function == null) {
+      return;
+    }
+    for(int i = 0; i < function.constants.size(); i++) {
+      LuaChunk.Constant constant = function.constants.get(i);
+      if(constant != null && constant.type == LuaChunk.Constant.Type.STRING && constant.stringValue != null) {
+        ConstantRef ref = new ConstantRef();
+        ref.functionPath = function.path;
+        ref.constantIndex = i;
+        ref.constant = constant;
+        out.add(ref);
+      }
+    }
+    for(LuaChunk.Function child : function.prototypes) {
+      collectStringConstants(child, out);
+    }
+  }
+
+  private static List<TextMutation> loadMutations(String jdbcUrl,
+                                                  String user,
+                                                  String password,
+                                                  String npcFileName) throws Exception {
+    List<TextMutation> out = new ArrayList<TextMutation>();
+    String sql = "SELECT textId, rawText, modifiedText, line, columnNumber, astMarker "
+        + "FROM npc_text_edit_map "
+        + "WHERE npcFile=? AND modifiedText IS NOT NULL AND modifiedText <> rawText "
+        + "ORDER BY textId";
+
+    try(Connection connection = DriverManager.getConnection(jdbcUrl, user, password);
+        PreparedStatement ps = connection.prepareStatement(sql)) {
+      ps.setString(1, npcFileName);
+      try(ResultSet rs = ps.executeQuery()) {
+        while(rs.next()) {
+          TextMutation row = new TextMutation();
+          row.textId = rs.getLong("textId");
+          row.rawText = rs.getString("rawText");
+          row.modifiedText = rs.getString("modifiedText");
+          row.line = rs.getInt("line");
+          row.column = rs.getInt("columnNumber");
+          row.astMarker = rs.getString("astMarker");
+          out.add(row);
+        }
+      }
+    }
+
+    Set<Long> unique = new LinkedHashSet<Long>();
+    for(TextMutation row : out) {
+      unique.add(Long.valueOf(row.textId));
+    }
+    if(unique.size() != out.size()) {
+      throw new IllegalStateException("Duplicate textId found in mutation rows for npc=" + npcFileName);
+    }
+
+    return out;
+  }
+
+  private static void ensureMysqlDriverAvailable(String jdbcUrl) throws Exception {
+    try {
+      DriverManager.getDriver(jdbcUrl);
+      return;
+    } catch(Exception ignored) {
+    }
+
+    try {
+      Class<?> cls = Class.forName("com.mysql.cj.jdbc.Driver");
+      Object obj = cls.getDeclaredConstructor().newInstance();
+      if(obj instanceof Driver) {
+        DriverManager.registerDriver((Driver) obj);
+        return;
+      }
+    } catch(Throwable ignored) {
+    }
+
+    Path jar = Paths.get("lib", "mysql-connector-j-8.4.0.jar");
+    if(!Files.exists(jar)) {
+      throw new IllegalStateException("MySQL JDBC driver not found on classpath and missing jar: " + jar.toAbsolutePath());
+    }
+
+    URL url = jar.toUri().toURL();
+    URLClassLoader loader = new URLClassLoader(new URL[] {url}, Phase7NpcLucBinaryExporter.class.getClassLoader());
+    Class<?> cls = Class.forName("com.mysql.cj.jdbc.Driver", true, loader);
+    Object obj = cls.getDeclaredConstructor().newInstance();
+    if(!(obj instanceof Driver)) {
+      throw new IllegalStateException("Loaded class is not java.sql.Driver: " + cls.getName());
+    }
+    DriverManager.registerDriver(new DriverShim((Driver) obj));
+  }
+
+  private static final class DriverShim implements Driver {
+    private final Driver driver;
+
+    DriverShim(Driver driver) {
+      this.driver = driver;
+    }
+
+    @Override
+    public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
+      return driver.connect(url, info);
+    }
+
+    @Override
+    public boolean acceptsURL(String url) throws java.sql.SQLException {
+      return driver.acceptsURL(url);
+    }
+
+    @Override
+    public java.sql.DriverPropertyInfo[] getPropertyInfo(String url, java.util.Properties info) throws java.sql.SQLException {
+      return driver.getPropertyInfo(url, info);
+    }
+
+    @Override
+    public int getMajorVersion() {
+      return driver.getMajorVersion();
+    }
+
+    @Override
+    public int getMinorVersion() {
+      return driver.getMinorVersion();
+    }
+
+    @Override
+    public boolean jdbcCompliant() {
+      return driver.jdbcCompliant();
+    }
+
+    @Override
+    public java.util.logging.Logger getParentLogger() throws java.sql.SQLFeatureNotSupportedException {
+      return driver.getParentLogger();
+    }
+  }
+
+  private static final class ConstantRef {
+    String functionPath;
+    int constantIndex;
+    LuaChunk.Constant constant;
+  }
+
+  private static final class TextMutation {
+    long textId;
+    String rawText;
+    String modifiedText;
+    int line;
+    int column;
+    String astMarker;
+  }
+}
+

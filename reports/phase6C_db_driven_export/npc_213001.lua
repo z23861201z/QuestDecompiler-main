@@ -1,0 +1,312 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_213001.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_213001"
+  local refs = {}
+  refs[60] = {
+    name = "[ 选择派系 ]",
+    content0 = "所谓正派指的是尊敬长辈，遵守江湖秩序，胸怀大志，作风正直的武林人士。我相信只有正派人士才能拯救被恶鬼扰乱的世界。你也加入正派吧？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[64] = {
+    name = "[ 选择派系 ]",
+    content0 = "唯有力量才是江湖的秩序。所谓力量也可以让我们获得我们想要的东西。可不要像看怪物一样看我。我们邪派在和怪物们的战争当中最为活跃。哈哈哈！",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[80] = {
+    name = "[ 老婆婆的腰 ]",
+    content0 = "哎哟 我的腰..最近腰疼得越发厉害，都不能动了..如果我那帅气的儿子在..还可以帮我跑跑腿买来药",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[81] = {
+    name = "[ 道名寺的秘密 ]",
+    content0 = "看着{0xFFFFFF00}樱花{END}飘落想念妈妈了..不是..我在想什么啊..",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[84] = {
+    name = "[ ??? ?? ]",
+    content0 = "?? ???.. ??..",
+    reward0_count = 0,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  refs[96] = {
+    name = "[ ???? ??(?? 1??) ]",
+    content0 = "?? ???? ???. ? ????? ????.",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[97] = {
+    name = "[ ???? ??(?? 2??) ]",
+    content0 = "?? ???? ?????? ??? ???? ????. .. ???? ???? ??? ?? ??? ???? ??? ???",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[98] = {
+    name = "[ ???? ??(??) ]",
+    content0 = "?? ???? ?????? ??? ???? ????. .. ???? ???? ??? ?? ??? ???? ??? ???",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[108] = {
+    name = "[ ???? ?? ???? ]",
+    content0 = "?? ? ???. ?? ???…?..",
+    reward0_count = 0,
+    needLevel = 54,
+    bQLoop = 0
+  }
+  refs[118] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[119] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[120] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[121] = {
+    name = "[ 侠义之心1 ]",
+    content0 = "什么？是正派人吗？都邀请了很久了，终于来了啊。现在因为到处都是怪物，别说是干活了，都受伤了。",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[122] = {
+    name = "[ 侠义之心2 ]",
+    content0 = "那些在外面猖獗的凶恶怪物对于我们这种普通庶民来说是个恐怖的对象。可是这里的贪官们只顾着填饱自己的肚子…",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[123] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[124] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[125] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[126] = {
+    name = "[ 愤怒的治理1 ]",
+    content0 = "什么？是邪派人吗？虽然邀请了但没想到真回来。看着不是很厉害，邪派没有人了吗？",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[127] = {
+    name = "[ 愤怒的治理2 ]",
+    content0 = "你加入的邪派和那些猖獗的凶恶怪物对庶民来说都是恐怖的对象。也是不喜欢像你这样的邪派人帮助的理由。",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[154] = {
+    name = "[ ????? ?? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END} ????. ???? ?? ?? ???. ??? ???? ????? ?? ????. ?? ?? ????.",
+    reward0_count = 1,
+    needLevel = 64,
+    bQLoop = 0
+  }
+  refs[201] = {
+    name = "[ ??? ?? ]",
+    content0 = "?????.. ???? ??? ?? ??? ???.. ?! {0xFF99FF99}PLAYERNAME{END}?? ?????? ???? ???? ??? ??? ????.",
+    reward0_count = 0,
+    needLevel = 53,
+    bQLoop = 0
+  }
+  refs[338] = {
+    name = "[ ?????(4) ]",
+    content0 = "??? ????? ?? ???? {0xFFFFFF00}??? ??? ???? ?? ?????{END}? ??? ??? ????. ??????? {0xFFFFFF00}?????{END}?? ?? ??? ??????",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[339] = {
+    name = "[ ?????? ????. ]",
+    content0 = "??? ?????? ??????. ?? ?? ?? ? ?? ?? ???…. ?? ?? ??? ? ??? {0xFFFFFF00}'?????'{END}? ???? ?? ?????.",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[340] = {
+    name = "[ ?????(1) ]",
+    content0 = "?? {0xFFFFFF00}'??? ??'{END}? ?? ??? ???? ? ??? ?? ?????. ? ?? ???? ?? ?? ?? ?? ???? ?? ? ??? ???? ???.",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[342] = {
+    name = "[ ?? ???? ]",
+    content0 = "?…. ??? ?? ?? ????. ??? ??? ??? {0xFFFFFF00}?????{END}? ?? ??? ?? ??? ??? ??? ?? ???? ??? ? ? ?? ???.",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[348] = {
+    name = "[ ?? ???... ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}? ????. ?? ?? ??? ???? ??? ??? ?? ????.",
+    reward0_count = 20,
+    needLevel = 37,
+    bQLoop = 0
+  }
+  refs[381] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[382] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[548] = {
+    name = "[ ?????(1) ]",
+    content0 = "? ???!! ??? ??? ???!!",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[549] = {
+    name = "[ ?????(2) ]",
+    content0 = ",..?? ??? ????.. ?????. ?? ?? ???? ???? ??????.",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[550] = {
+    name = "[ ?????(3) ]",
+    content0 = "??..",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[551] = {
+    name = "[ ???? ??(1) ]",
+    content0 = "??.. ??? ?? ??? ??? ??????..",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[552] = {
+    name = "[ ???? ??(2) ]",
+    content0 = "???? ?????.",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[555] = {
+    name = "[ ???? ]",
+    content0 = "?? ????.. ??? ???? ??? ??? ????.. ?? ???..",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[627] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[631] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[862] = {
+    name = "[ ???? ??? ]",
+    content0 = "??? ?? ??? ??? ??? ? ????? ??? ???? ?????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1209] = {
+    name = "[ 正邪间的纠葛2 ]",
+    content0 = "我按照约定把少侠的事情跟冥珠城居民说了，他们都很高兴。说是好不容易才出现的有侠义心肠的侠客。",
+    reward0_count = 0,
+    needLevel = 39,
+    bQLoop = 0
+  }
+  refs[1212] = {
+    name = "[ 冥珠城的力士 ]",
+    content0 = "啊，是道名寺说了那事…。你听到的部分是对的。原来冥珠城是以连接中部和东部的交通要塞发展，积累了很多财富。",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1213] = {
+    name = "[ 正邪间的纠葛3 ]",
+    content0 = "我想获得冥珠城居民的信任才是优先级的。否则就因为深印在居民脑海里的对武林人士的不满就很难扭转局势。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1264] = {
+    name = "[ 正邪间的纠葛3 ]",
+    content0 = "我想获得冥珠城居民的信任才是优先级的。否则就因为深印在居民脑海里的对武林人士的不满就很难扭转局势。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2083] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[2087] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  return refs
+end

@@ -1,0 +1,53 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_300119.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_300119"
+  local refs = {}
+  refs[1401] = {
+    name = "[ ??? ??! ]",
+    content0 = "?? ?? ????? ??? ?? ??? ?? ???. ?? ?? ??? ? ????, ???? ??? ????",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1402] = {
+    name = "[ ?? ?? ?? ]",
+    content0 = "??, ??? ??? ??? ??? ???. ??… ? ?????",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1403] = {
+    name = "[ ??? ?? ]",
+    content0 = "? ???. ??? ????? ????. ?? ? ?? ????. ??… ? ?????",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2007] = {
+    name = "[ 永不放弃! ]",
+    content0 = "昨天做铁板料理的时候不小心烫伤了手. 说是休息几天就能恢复，不过那样就没时间了呀?",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2008] = {
+    name = "[ 认好东西 ]",
+    content0 = "咳咳，你是谁呀? 好熟悉的气味. 不对…好像是我身上的味儿?",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2009] = {
+    name = "[ 期待的胜利 ]",
+    content0 = "都做好了. 快点儿交给乌骨鸡吧. 果然异常美味. 不对…好像是我身上的味儿?",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
+end

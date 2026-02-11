@@ -1,0 +1,25 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_318004.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_318004"
+  local refs = {}
+  refs[574] = {
+    name = "[ ???? ]",
+    content0 = "???? ???? ?? ??? ???? ??? ?? ??…",
+    reward0_count = 0,
+    needLevel = 9,
+    bQLoop = 0
+  }
+  refs[578] = {
+    name = "[ ??? ??? ]",
+    content0 = "?? ???? ??? ???? ???.",
+    reward0_count = 0,
+    needLevel = 12,
+    bQLoop = 0
+  }
+  return refs
+end

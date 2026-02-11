@@ -1,0 +1,18 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_901034.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_901034"
+  local refs = {}
+  refs[111] = {
+    name = "[ ??? ?? ?? ]",
+    content0 = "? ? ? ?????. ??! ???.???? ??? ????...???? ??!",
+    reward0_count = 0,
+    needLevel = 56,
+    bQLoop = 0
+  }
+  return refs
+end

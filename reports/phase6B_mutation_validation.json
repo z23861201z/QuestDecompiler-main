@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-02-11T16:40:31.971+08:00",
+  "mutatedQuestIds": [1137,1115],
+  "questReferenceCount": {"1115":79,"1137":81},
+  "expectedAffectedNpcFiles": ["npc_214001.lua","npc_214002.lua","npc_214003.lua","npc_214004.lua","npc_314008.lua","npc_317001.lua","npc_317002.lua","npc_317003.lua","npc_317005.lua"],
+  "actualChangedNpcFiles": [],
+  "unexpectedChangedFiles": [],
+  "unchangedExpectedFiles": ["npc_214001.lua","npc_214002.lua","npc_214003.lua","npc_214004.lua","npc_314008.lua","npc_317001.lua","npc_317002.lua","npc_317003.lua","npc_317005.lua"],
+  "diffSummary": {"totalFilesCompared":468,"changedFileCount":0},
+  "diffSnippets": [],
+  "finalStatus": "UNSAFE"
+}

@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-02-11T18:59:08.097+08:00",
+  "sourceNpcDir": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\npc-lua-generated",
+  "exportedNpcDir": "D:\\github\\QuestDecompiler-main\\reports\\phase7C_exported_npc",
+  "mutatedTextIds": [],
+  "expectedNpcFiles": [],
+  "actualChangedNpcFiles": [],
+  "unexpectedChangedFiles": [],
+  "unchangedExpectedFiles": [],
+  "diffSummary": {"totalFilesCompared":468,"changedFileCount":0,"expectedAffectedCount":0,"unexpectedChangedCount":0,"unchangedExpectedCount":0,"structurallyChangedFileCount":0,"changedDialogNodeCount":0},
+  "validationErrors": [],
+  "diffEntries": [],
+  "finalStatus": "SAFE"
+}

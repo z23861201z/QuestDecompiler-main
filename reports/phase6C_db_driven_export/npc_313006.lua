@@ -1,0 +1,46 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_313006.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_313006"
+  local refs = {}
+  refs[78] = {
+    name = "[ ????? 1?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?, ??? ??? ?? ???? ?? ?? ? ??? ???, ? ??? ?? ??? ????? ??? ????.. ??",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[85] = {
+    name = "[ ????? 2?? ]",
+    content0 = "?? ?? ??? ??? ??? ? ?? ?? ?? ??? ?? ?? ?? ????. ?? ? ??? ?? ?? ??? ?? ?? ???..",
+    reward0_count = 1,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[1233] = {
+    name = "[ 皇宫的愤怒 ]",
+    content0 = "出事了。皇宫武士们为了找回圣旨折腾无辜的居民。哭泣美眉的父母因被怀疑是窃贼抓去，受到严刑拷打之后放回来了。",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[1234] = {
+    name = "[ 没有自责的时间 ]",
+    content0 = "全身淤青，身体像火一样烫。医生说如果烧不退就过不了几天。我该怎么办啊？",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[1235] = {
+    name = "[ 没有自责的时间2 ]",
+    content0 = "少侠，现在冥珠城南边的冥珠城银行找你找得很急啊。",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  return refs
+end

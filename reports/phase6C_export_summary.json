@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-02-11T17:11:51.624+08:00",
+  "sourceNpcDir": "DB_DRIVEN_GENERATION",
+  "outputDir": "D:\\github\\QuestDecompiler-main\\reports\\phase6C_db_driven_export",
+  "expectedNpcFiles": 468,
+  "exportedNpcFiles": 468,
+  "missingNpcFiles": [],
+  "dbQuestCount": 2602,
+  "dbGoalGetItemRows": 1609,
+  "dbGoalKillMonsterRows": 638,
+  "dbGoalMeetNpcRows": 395,
+  "dbRewardItemRows": 1078,
+  "dbNpcReferenceRows": 2373,
+  "dbOrphanReferenceRows": 47,
+  "exportMillis": 267
+}

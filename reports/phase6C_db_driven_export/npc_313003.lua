@@ -1,0 +1,46 @@
+-- DB_DRIVEN_EXPORT
+-- source: npc_313003.lua
+function npcsay(msg)
+  return msg
+end
+
+function chkQState(qData, qt)
+  local npc = "npc_313003"
+  local refs = {}
+  refs[78] = {
+    name = "[ ????? 1?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?, ??? ??? ?? ???? ?? ?? ? ??? ???, ? ??? ?? ??? ????? ??? ????.. ??",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[80] = {
+    name = "[ 老婆婆的腰 ]",
+    content0 = "哎哟 我的腰..最近腰疼得越发厉害，都不能动了..如果我那帅气的儿子在..还可以帮我跑跑腿买来药",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[81] = {
+    name = "[ 道名寺的秘密 ]",
+    content0 = "看着{0xFFFFFF00}樱花{END}飘落想念妈妈了..不是..我在想什么啊..",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[1501] = {
+    name = "[ ???-?????? ?? ]",
+    content0 = "PLAYERNAME?, ??????. ??..????? ?? ????? ??? ?? ?? ??? ???? ?? ??? ? ??? ????. ",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1505] = {
+    name = "[ 灵游记期末考 ]",
+    content0 = "在假期开始之前来个灵游记期末考。听好考官出的题目，自己去找正解之后接受下一题，继续去寻找正解的接力式考试。要开始吗？",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
+end

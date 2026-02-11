@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-02-11T16:40:31.269+08:00",
+  "sourceNpcDir": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\npc-lua-generated",
+  "outputDir": "D:\\github\\QuestDecompiler-main\\reports\\phase6B_export_after_mutation",
+  "expectedNpcFiles": 468,
+  "exportedNpcFiles": 468,
+  "missingNpcFiles": [],
+  "dbQuestCount": 2602,
+  "dbGoalGetItemRows": 1609,
+  "dbGoalKillMonsterRows": 638,
+  "dbGoalMeetNpcRows": 395,
+  "dbRewardItemRows": 1078,
+  "dbNpcReferenceRows": 2373,
+  "dbOrphanReferenceRows": 47,
+  "exportMillis": 603
+}
