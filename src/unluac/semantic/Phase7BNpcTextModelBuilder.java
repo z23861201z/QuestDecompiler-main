@@ -18,6 +18,15 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Phase7B 模型构建器：将 Phase7A 抽取结果映射为 Web 可编辑的文本模型表。
+ *
+ * <p>所属链路：链路 B（DB 修改 -> 导出 -> 客户端读取）中的编辑映射阶段。</p>
+ * <p>输入：`phase7A_npc_text_extraction.json`。</p>
+ * <p>输出：`npc_text_edit_map` 表、DDL 文件、映射说明文档。</p>
+ * <p>数据库副作用：创建/重建编辑映射表并写入基础行。</p>
+ * <p>文件副作用：写 DDL 与 `phase7B_npc_text_model_summary.md`。</p>
+ */
 public class Phase7BNpcTextModelBuilder {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -28,6 +37,12 @@ public class Phase7BNpcTextModelBuilder {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：phase7AReport、ddlOutput、docOutput、jdbcUrl、user、password
+   * @throws Exception 输入无效、入库失败或文档写入失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path phase7AReport = args.length >= 1
         ? Paths.get(args[0])
@@ -56,6 +71,18 @@ public class Phase7BNpcTextModelBuilder {
     System.out.println("phase7BMillis=" + elapsed);
   }
 
+  /**
+   * 基于 Phase7A 报告构建可编辑文本模型。
+   *
+   * @param phase7AReport 抽取报告路径
+   * @param ddlOutput DDL 输出路径
+   * @param docOutput 文档输出路径
+   * @param jdbcUrl 数据库连接
+   * @param user 数据库用户名
+   * @param password 数据库密码
+   * @return 构建结果统计
+   * @throws Exception 报告解析失败、数据库写入失败或文件写入失败时抛出
+   */
   public Result build(Path phase7AReport,
                       Path ddlOutput,
                       Path docOutput,
@@ -390,4 +417,3 @@ public class Phase7BNpcTextModelBuilder {
     int insertedRowCount;
   }
 }
-

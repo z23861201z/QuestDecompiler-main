@@ -16,6 +16,15 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Phase3 回写一致性校验器：验证 DB 数据能否无损还原 Phase2 结构。
+ *
+ * <p>所属链路：链路 A（写库后质量门禁）。</p>
+ * <p>输入：phase2_quest_data.json + MySQL quest 相关表。</p>
+ * <p>输出：phase3_db_roundtrip_validation.json。</p>
+ * <p>数据库副作用：无（只读）。</p>
+ * <p>文件副作用：写校验报告。</p>
+ */
 public class Phase3DbConsistencyValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -44,6 +53,17 @@ public class Phase3DbConsistencyValidator {
     System.out.println("output=" + output.toAbsolutePath());
   }
 
+  /**
+   * 比对 phase2 JSON 与 DB 读回结果。
+   *
+   * @param phase2QuestJson phase2 任务报告
+   * @param output 输出报告文件
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @return 校验报告
+   * @throws Exception 输入/查询/写报告失败时抛出
+   */
   public ValidationReport validate(Path phase2QuestJson,
                                    Path output,
                                    String jdbcUrl,
@@ -460,4 +480,3 @@ public class Phase3DbConsistencyValidator {
     }
   }
 }
-

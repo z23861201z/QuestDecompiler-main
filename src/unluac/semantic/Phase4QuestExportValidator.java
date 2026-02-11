@@ -15,6 +15,15 @@ import java.util.Map;
 import unluac.chunk.Lua50ChunkParser;
 import unluac.chunk.LuaChunk;
 
+/**
+ * Phase4 导出校验器：对比原始 quest.luc 与 Phase4 导出的 quest.lua 语义一致性。
+ *
+ * <p>所属链路：链路 B 的质量门禁阶段（quest 分支）。</p>
+ * <p>输入：原始 quest.luc、phase4_exported_quest.lua。</p>
+ * <p>输出：phase4_export_validation.json。</p>
+ * <p>数据库副作用：无。</p>
+ * <p>文件副作用：写校验报告。</p>
+ */
 public class Phase4QuestExportValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -42,6 +51,15 @@ public class Phase4QuestExportValidator {
     System.out.println("output=" + output.toAbsolutePath());
   }
 
+  /**
+   * 执行 quest 导出一致性校验。
+   *
+   * @param originalQuestLuc 原始 quest.luc
+   * @param exportedQuestLua Phase4 导出的 quest.lua
+   * @param output 校验报告输出路径
+   * @return 校验结果
+   * @throws Exception 输入缺失、解析失败或写报告失败时抛出
+   */
   public ValidationResult validate(Path originalQuestLuc,
                                    Path exportedQuestLua,
                                    Path output) throws Exception {

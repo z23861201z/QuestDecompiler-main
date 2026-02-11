@@ -19,6 +19,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase3 入库执行器：将 Phase2/2.5 的 JSON 结果落到 MySQL 结构化表。
+ *
+ * <p>所属链路：链路 A（luc -> 读取 -> semantic -> 写入 MySQL）。</p>
+ * <p>输入：phase2_quest_data.json、phase2_5_quest_npc_dependency_graph.json。</p>
+ * <p>输出：phase3_db_insert_summary.json。</p>
+ * <p>数据库副作用：会建表、清表并批量写入 quest/npc 关系数据。</p>
+ * <p>文件副作用：写出入库统计报告。</p>
+ * <p>阶段依赖：依赖 Phase2 和 Phase2.5 的报告格式稳定。</p>
+ */
 public class Phase3DatabaseWriter {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -27,6 +37,12 @@ public class Phase3DatabaseWriter {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：phase2QuestJson、phase25GraphJson、summaryOutput、jdbcUrl、user、password
+   * @throws Exception 输入无效、数据库连接失败或事务执行失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path phase2QuestJson = args.length >= 1
         ? Paths.get(args[0])
@@ -58,6 +74,19 @@ public class Phase3DatabaseWriter {
     System.out.println("insertMillis=" + elapsed);
   }
 
+  /**
+   * 执行 Phase3 入库流程（建表 + 清表 + 插入 + 报告）。
+   *
+   * @param phase2QuestJson Phase2 quest 报告
+   * @param phase25GraphJson Phase2.5 依赖图报告
+   * @param summaryOutput 入库统计输出文件
+   * @param jdbcUrl MySQL 连接串
+   * @param user DB 用户名
+   * @param password DB 密码
+   * @return 入库统计摘要
+   * @throws Exception 事务失败时抛出，且会回滚
+   * @implNote 副作用：写数据库（覆盖式刷新）与写 summary JSON
+   */
   public InsertSummary write(Path phase2QuestJson,
                              Path phase25GraphJson,
                              Path summaryOutput,
@@ -85,6 +114,7 @@ public class Phase3DatabaseWriter {
     try(Connection connection = DriverManager.getConnection(jdbcUrl, user, password)) {
       connection.setAutoCommit(false);
       try {
+        // 采用“建表 -> 清表 -> 全量写入”固定顺序，确保 DB 始终对应同一批 phase2/2.5 快照。
         createSchema(connection);
         truncateData(connection);
         insertQuestData(connection, quests, summary);
@@ -605,4 +635,3 @@ public class Phase3DatabaseWriter {
     }
   }
 }
-

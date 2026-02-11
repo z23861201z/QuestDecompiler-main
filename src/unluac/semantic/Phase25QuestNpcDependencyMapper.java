@@ -16,10 +16,26 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase2.5 依赖图构建器：把 Phase2 的 quest/npc 报告聚合成 Quest↔NPC 图。
+ *
+ * <p>所属链路：链路 A（luc -> 读取 -> semantic -> 写入 MySQL）的桥接阶段。</p>
+ * <p>输入：phase2_quest_data.json、phase2_npc_reference_index.json。</p>
+ * <p>输出：phase2_5_quest_npc_dependency_graph.json、phase2_5_dependency_summary.json。</p>
+ * <p>数据库副作用：无。</p>
+ * <p>文件副作用：会创建/覆盖 Phase2.5 图与汇总文件。</p>
+ * <p>阶段依赖：Phase3DatabaseWriter 直接消费本阶段 graph。</p>
+ */
 public class Phase25QuestNpcDependencyMapper {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：questInput、npcInput、graphOutput、summaryOutput
+   * @throws Exception 输入不存在、JSON 结构不合法或输出写入失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path questInput = args.length >= 1
         ? Paths.get(args[0])
@@ -48,6 +64,17 @@ public class Phase25QuestNpcDependencyMapper {
     System.out.println("summaryOutput=" + summaryOutput.toAbsolutePath());
   }
 
+  /**
+   * 构建 Quest↔NPC 双向聚合图并写出报告。
+   *
+   * @param questInput phase2 quest 报告
+   * @param npcInput phase2 npc 引用报告
+   * @param graphOutput 依赖图输出
+   * @param summaryOutput 聚合摘要输出
+   * @return 构建统计结果（节点数、边数、未引用 quest 等）
+   * @throws Exception 读取、解析、校验、自检失败时抛出
+   * @implNote 副作用：写出 2 个 JSON；不改数据库
+   */
   public BuildResult build(Path questInput,
                            Path npcInput,
                            Path graphOutput,
@@ -76,6 +103,7 @@ public class Phase25QuestNpcDependencyMapper {
         ? (List<Object>) npcRoot.get("nodeLocations")
         : Collections.<Object>emptyList();
 
+    // 逐条 nodeLocation 还原边信息：这样可以保留访问类型和索引信息，供后续风险分析使用。
     for(Object item : nodeLocations) {
       if(!(item instanceof Map<?, ?>)) {
         continue;
@@ -100,6 +128,7 @@ public class Phase25QuestNpcDependencyMapper {
         quest.totalReferenceCount++;
         quest.accessTypeCount.put(accessType, Integer.valueOf(quest.accessTypeCount.getOrDefault(accessType, Integer.valueOf(0)).intValue() + 1));
       } else {
+        // 保留 unresolved quest，避免静默丢失非法引用，便于 Phase3 前排查数据质量问题。
         unresolvedQuestIds.add(Integer.valueOf(questId));
       }
 

@@ -30,6 +30,15 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase7D 影响校验器：验证文本导出仅影响预期文本节点，不破坏 NPC 逻辑结构。
+ *
+ * <p>所属链路：链路 B（DB 修改 -> 导出 -> 客户端读取）的最终文本变更守门阶段。</p>
+ * <p>输入：原始 NPC 目录、Phase7C 导出目录、数据库中的 modifiedText 记录。</p>
+ * <p>输出：`phase7D_text_mutation_validation.json`。</p>
+ * <p>数据库副作用：无（只读查询）。</p>
+ * <p>文件副作用：写校验报告；不改写任何 NPC 文件。</p>
+ */
 public class Phase7DTextImpactValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -40,6 +49,12 @@ public class Phase7DTextImpactValidator {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：sourceNpcDir、exportedNpcDir、reportOutput、jdbcUrl、user、password
+   * @throws Exception 校验失败或 finalStatus 非 SAFE 时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path sourceNpcDir = args.length >= 1
         ? Paths.get(args[0])
@@ -73,6 +88,18 @@ public class Phase7DTextImpactValidator {
     }
   }
 
+  /**
+   * 对 Phase7C 的文本导出进行影响范围校验。
+   *
+   * @param sourceNpcDir 原始 NPC 目录
+   * @param exportedNpcDir 导出 NPC 目录
+   * @param reportOutput 报告输出路径
+   * @param jdbcUrl 数据库连接
+   * @param user 数据库用户名
+   * @param password 数据库密码
+   * @return 校验报告
+   * @throws Exception 目录错误、数据库读取失败或比对过程异常时抛出
+   */
   public ValidationReport validate(Path sourceNpcDir,
                                    Path exportedNpcDir,
                                    Path reportOutput,

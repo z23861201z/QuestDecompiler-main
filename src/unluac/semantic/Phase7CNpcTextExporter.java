@@ -32,6 +32,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase7C 文本导出器：按 AST 定位将 DB 中 modifiedText 精确回写到 NPC Lua。
+ *
+ * <p>所属链路：链路 B（MySQL 修改 -> 保存 DB -> 导出 luc -> 客户端读取）的文本导出段。</p>
+ * <p>输入：原始 npc-lua-generated 目录 + DB 文本映射表（优先 npc_text_edit_map）。</p>
+ * <p>输出：phase7C_exported_npc 目录 + phase7C_export_validation.json。</p>
+ * <p>数据库副作用：无（只读）。</p>
+ * <p>文件副作用：会创建/覆盖导出目录内对应 NPC 文件与校验报告。</p>
+ * <p>阶段依赖：依赖 Phase7A/7B 形成的 textId/astMarker 定位信息。</p>
+ */
 public class Phase7CNpcTextExporter {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -42,6 +52,12 @@ public class Phase7CNpcTextExporter {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：sourceNpcDir、outputDir、reportOutput、jdbcUrl、user、password
+   * @throws Exception 扫描、DB 读取或导出失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path sourceNpcDir = args.length >= 1
         ? Paths.get(args[0])
@@ -76,6 +92,19 @@ public class Phase7CNpcTextExporter {
     }
   }
 
+  /**
+   * 执行 Phase7C 导出。
+   *
+   * @param sourceNpcDir 原始 NPC Lua 目录
+   * @param outputDir 导出目录
+   * @param reportOutput 校验报告路径
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @return 导出与校验结果
+   * @throws Exception I/O、编码、DB 或 AST 匹配失败时抛出
+   * @implNote 副作用：写导出文件与报告；不改数据库
+   */
   public ExportValidationReport export(Path sourceNpcDir,
                                        Path outputDir,
                                        Path reportOutput,
@@ -113,6 +142,7 @@ public class Phase7CNpcTextExporter {
 
     Set<String> scannedRelativeFiles = new LinkedHashSet<String>();
 
+    // 逐文件处理而非全量字符串替换：这样可以保证“只改命中的文本节点”，避免误伤结构。
     for(Path sourceFile : npcFiles) {
       String relative = normalizePath(sourceNpcDir.relativize(sourceFile).toString());
       scannedRelativeFiles.add(relative);
@@ -216,6 +246,16 @@ public class Phase7CNpcTextExporter {
     }
   }
 
+  /**
+   * 处理单个 NPC 文件：定位待改文本节点并执行替换。
+   *
+   * @param relative 相对文件名（用于报告）
+   * @param sourceRaw 原始字节内容
+   * @param rows DB 中该文件的修改行
+   * @return 文件处理结果（新字节、是否变更、错误、diff）
+   * @throws Exception 解析或编码发生不可恢复错误时抛出
+   * @implNote 副作用：无（由调用方负责写盘）
+   */
   private FileProcessResult processFile(String relative,
                                         byte[] sourceRaw,
                                         List<ModifiedTextRow> rows) throws Exception {

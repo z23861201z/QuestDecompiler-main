@@ -28,6 +28,15 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase7A 文本抽取系统：从原始 NPC Lua 文件提取 NPC_SAY/NPC_ASK 文本并写入数据库。
+ *
+ * <p>所属链路：链路 B（DB 修改 -> 导出 -> 客户端读取）中的文本抽取阶段。</p>
+ * <p>输入：`npc-lua-generated` 目录下全部 NPC 文件。</p>
+ * <p>输出：`phase7A_npc_text_extraction.json`、DDL 文件、`npc_dialogue_text` 表记录。</p>
+ * <p>数据库副作用：清空并重建抽取表，然后批量写入文本节点。</p>
+ * <p>文件副作用：写报告和 DDL，不修改任何 NPC 源文件。</p>
+ */
 public class Phase7ANpcTextExtractionSystem {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -38,6 +47,12 @@ public class Phase7ANpcTextExtractionSystem {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：npcDir、reportOutput、ddlOutput、jdbcUrl、user、password
+   * @throws Exception 扫描、解析或入库失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path npcDir = args.length >= 1
         ? Paths.get(args[0])
@@ -67,6 +82,18 @@ public class Phase7ANpcTextExtractionSystem {
     System.out.println("phase7AMillis=" + elapsed);
   }
 
+  /**
+   * 扫描全量 NPC 文件并完成文本抽取入库。
+   *
+   * @param npcDir NPC 脚本目录
+   * @param reportOutput 抽取报告路径
+   * @param ddlOutput DDL 输出路径
+   * @param jdbcUrl 数据库连接
+   * @param user 数据库用户名
+   * @param password 数据库密码
+   * @return 抽取报告对象
+   * @throws Exception 输入目录不合法、抽取失败或数据库写入失败时抛出
+   */
   public ExtractionReport scanAndStore(Path npcDir,
                                        Path reportOutput,
                                        Path ddlOutput,
@@ -122,6 +149,14 @@ public class Phase7ANpcTextExtractionSystem {
     return report;
   }
 
+  /**
+   * 对单个 NPC 文件进行 token 解析并收集文本节点。
+   *
+   * @param file 文件绝对路径
+   * @param relativeFile 相对文件名（用于入库与报告定位）
+   * @param report 报告累加器
+   * @throws Exception 读取或解析失败时抛出
+   */
   private void scanOneFile(Path file,
                            String relativeFile,
                            ExtractionReport report) throws Exception {

@@ -25,10 +25,27 @@ import java.util.Set;
 import unluac.chunk.Lua50ChunkParser;
 import unluac.chunk.LuaChunk;
 
+/**
+ * Phase2 的统一抽取入口：将原始 Luc/Lua 脚本转换为可入库的语义 JSON。
+ *
+ * <p>所属链路：链路 A（luc -> 读取 -> semantic -> 写入 MySQL）。</p>
+ * <p>输入：quest.luc、npc-lua-generated 目录。</p>
+ * <p>输出：phase2_quest_data.json、phase2_npc_reference_index.json、phase2_scan_summary.json。</p>
+ * <p>数据库副作用：无（仅扫描与落盘报告）。</p>
+ * <p>文件副作用：会创建/覆盖 reports 下的 phase2 报告文件。</p>
+ * <p>阶段依赖：作为 Phase2.5/3 的前置数据源。</p>
+ */
 public class Phase2LucDataExtractionSystem {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：questLuc、npcDir、questOut、npcOut、summaryOut
+   * @throws Exception 任一步骤（读取、解析、写文件）失败时抛出
+   * @implNote 副作用：读取脚本文件并写出 3 份 phase2 报告
+   */
   public static void main(String[] args) throws Exception {
     Path questLuc = args.length >= 1
         ? Paths.get(args[0])
@@ -63,6 +80,18 @@ public class Phase2LucDataExtractionSystem {
     System.out.println("totalGoalIndexedAccess=" + result.summary.totalGoalIndexedAccessDetected);
   }
 
+  /**
+   * 执行完整 Phase2 流程并返回内存结果。
+   *
+   * @param questLuc quest.luc 路径
+   * @param npcDir npc-lua-generated 目录
+   * @param questOut quest 抽取报告输出路径
+   * @param npcOut npc 引用索引报告输出路径
+   * @param summaryOut 扫描汇总报告输出路径
+   * @return Phase2 运行结果（包含 quest 报告、npc 索引、汇总）
+   * @throws Exception 输入缺失、解析失败或写文件失败时抛出
+   * @implNote 副作用：创建/覆盖输出 JSON 文件；不写数据库
+   */
   public Phase2Result run(Path questLuc,
                           Path npcDir,
                           Path questOut,
@@ -76,6 +105,7 @@ public class Phase2LucDataExtractionSystem {
     }
 
     Phase2Result out = new Phase2Result();
+    // 先抽 quest，再扫 npc：保证后续统计口径按“任务主数据 -> NPC 依赖”顺序对齐。
     out.questData = extractQuestData(questLuc);
     out.npcIndex = scanNpcReferences(npcDir, out.summary);
 
@@ -87,6 +117,7 @@ public class Phase2LucDataExtractionSystem {
     ensureParent(npcOut);
     ensureParent(summaryOut);
 
+    // 统一汇总写出，避免只写部分报告导致 Phase2.5/Phase3 消费不一致。
     writeQuestReport(questOut, out.questData);
     writeNpcReport(npcOut, out.npcIndex);
     writeSummaryReport(summaryOut, out.summary);

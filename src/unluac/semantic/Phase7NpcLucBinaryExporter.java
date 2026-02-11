@@ -22,6 +22,16 @@ import unluac.chunk.Lua50ChunkSerializer;
 import unluac.chunk.Lua50StructureValidator;
 import unluac.chunk.LuaChunk;
 
+/**
+ * Phase7 单文件字节码导出器：将 DB 文本改动直接打进指定 npc_xxxx.luc。
+ *
+ * <p>所属链路：链路 B（MySQL 修改 -> 保存 DB -> 导出 luc -> 客户端读取）的最终落地步骤。</p>
+ * <p>输入：npc 文件名、原始 npc.luc、DB 中 npc_text_edit_map 的 modifiedText。</p>
+ * <p>输出：单个 patched npc.luc。</p>
+ * <p>数据库副作用：无（只读）。</p>
+ * <p>文件副作用：会创建/覆盖目标 luc 文件。</p>
+ * <p>阶段依赖：依赖 Phase7B/7C 的定位与文本基线约定（rawText 与 modifiedText）。</p>
+ */
 public class Phase7NpcLucBinaryExporter {
 
   private static final String DEFAULT_JDBC = "jdbc:mysql://127.0.0.1:3306/ghost_game"
@@ -29,6 +39,12 @@ public class Phase7NpcLucBinaryExporter {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：npcFileName、inputLuc、outputLuc、jdbcUrl、user、password、stringCharset
+   * @throws Exception DB 读取、字节码解析/序列化、结构校验失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     if(args.length < 3) {
       System.out.println("Usage: java -cp build unluac.semantic.Phase7NpcLucBinaryExporter <npcFileName> <inputLuc> <outputLuc> [jdbcUrl] [user] [password] [stringCharset]");
@@ -82,6 +98,16 @@ public class Phase7NpcLucBinaryExporter {
     System.out.println("structureConsistent=" + report.structureConsistent);
   }
 
+  /**
+   * 将 DB 变更应用到 chunk 的字符串常量池。
+   *
+   * @param chunk 已解析的 Lua chunk
+   * @param constants 可修改的字符串常量列表
+   * @param mutations 本次应应用的文本修改
+   * @param stringCharset 字符串编码
+   * @return 实际打补丁条数
+   * @implNote 副作用：会原地修改 chunk 常量对象
+   */
   private static int applyMutations(LuaChunk chunk,
                                     List<ConstantRef> constants,
                                     List<TextMutation> mutations,
@@ -91,6 +117,7 @@ public class Phase7NpcLucBinaryExporter {
 
     for(TextMutation mutation : mutations) {
       int chosen = -1;
+      // 使用 rawText 匹配常量而不是位置匹配：确保不引入新常量，仅替换已存在常量内容。
       for(int i = 0; i < constants.size(); i++) {
         ConstantRef ref = constants.get(i);
         if(usedConstantIndexes.contains(Integer.valueOf(i))) {
@@ -149,6 +176,17 @@ public class Phase7NpcLucBinaryExporter {
     }
   }
 
+  /**
+   * 从 DB 读取某个 NPC 的有效文本变更集合。
+   *
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @param npcFileName NPC 文件名（如 npc_218008.lua）
+   * @return 变更列表（仅包含 modifiedText != rawText）
+   * @throws Exception 查询失败时抛出
+   * @implNote 副作用：仅数据库读取
+   */
   private static List<TextMutation> loadMutations(String jdbcUrl,
                                                   String user,
                                                   String password,
@@ -277,4 +315,3 @@ public class Phase7NpcLucBinaryExporter {
     String astMarker;
   }
 }
-

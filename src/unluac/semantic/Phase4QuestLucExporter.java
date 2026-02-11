@@ -19,6 +19,16 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Phase4 导出器：从 MySQL 重建 quest 脚本（Lua 文本形态）。
+ *
+ * <p>所属链路：链路 B（DB -> semantic model -> 导出 lua -> 导出 luc -> 客户端读取）的 quest 分支。</p>
+ * <p>输入：`ghost_game` 中 quest 相关表（quest_main/goal/reward 等）。</p>
+ * <p>输出：`phase4_exported_quest.lua`。</p>
+ * <p>数据库副作用：无（只读）。</p>
+ * <p>文件副作用：创建/覆盖导出文件。</p>
+ * <p>阶段依赖：依赖 Phase3 成功入库与字段顺序语义。</p>
+ */
 public class Phase4QuestLucExporter {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -27,6 +37,12 @@ public class Phase4QuestLucExporter {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：output、jdbcUrl、user、password
+   * @throws Exception DB 读取失败或文件写入失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path output = args.length >= 1
         ? Paths.get(args[0])
@@ -45,6 +61,17 @@ public class Phase4QuestLucExporter {
     System.out.println("exportMillis=" + elapsed);
   }
 
+  /**
+   * 执行 DB -> quest.lua 导出。
+   *
+   * @param output 导出文件路径
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @return 导出结果统计
+   * @throws Exception 驱动加载、查询或写文件失败时抛出
+   * @implNote 副作用：写出 quest.lua 文件；不修改数据库
+   */
   public ExportResult export(Path output,
                              String jdbcUrl,
                              String user,
@@ -57,6 +84,7 @@ public class Phase4QuestLucExporter {
     sb.append("-- phase4 exported quest data\n");
     sb.append("-- generatedAt: ").append(OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME)).append("\n\n");
 
+    // 逐任务按稳定顺序输出，确保后续 validator 比对时结构可预测。
     for(int i = 0; i < quests.size(); i++) {
       QuestRecord quest = quests.get(i);
       appendQuest(sb, quest);
@@ -73,6 +101,16 @@ public class Phase4QuestLucExporter {
     return result;
   }
 
+  /**
+   * 读取 DB 并重建内存 QuestRecord 列表。
+   *
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @return quest 列表（quest_id 升序）
+   * @throws Exception 任一查询失败时抛出
+   * @implNote 副作用：仅数据库读取
+   */
   private List<QuestRecord> loadFromDb(String jdbcUrl,
                                        String user,
                                        String password) throws Exception {
@@ -480,4 +518,3 @@ public class Phase4QuestLucExporter {
     int questCount;
   }
 }
-

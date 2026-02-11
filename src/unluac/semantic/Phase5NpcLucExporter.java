@@ -21,6 +21,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase5 导出器：基于 DB 快照重建 NPC 脚本文本（Lua）。
+ *
+ * <p>所属链路：链路 B（DB -> semantic model -> 导出 lua -> 导出 luc -> 客户端读取）的 NPC 分支。</p>
+ * <p>输入：phase2_npc_reference_index.json + MySQL quest/npc 关系数据。</p>
+ * <p>输出：`reports/phase5_exported_npc/*.lua` 及导出摘要。</p>
+ * <p>数据库副作用：无（只读）。</p>
+ * <p>文件副作用：创建/覆盖 NPC 导出目录与 summary JSON。</p>
+ * <p>阶段依赖：依赖 Phase3 入库表完整性与 phase2 索引文件一致性。</p>
+ */
 public class Phase5NpcLucExporter {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -29,6 +39,12 @@ public class Phase5NpcLucExporter {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：phase2NpcIndex、outputDir、summaryOutput、jdbcUrl、user、password
+   * @throws Exception 输入、DB 或导出失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path phase2NpcIndex = args.length >= 1
         ? Paths.get(args[0])
@@ -58,6 +74,19 @@ public class Phase5NpcLucExporter {
     System.out.println("exportMillis=" + elapsed);
   }
 
+  /**
+   * 执行 Phase5 导出（DB -> NPC Lua）。
+   *
+   * @param phase2NpcIndex phase2 npc 索引文件
+   * @param outputDir 导出目录
+   * @param summaryOutput 汇总报告路径
+   * @param jdbcUrl DB 连接串
+   * @param user DB 用户
+   * @param password DB 密码
+   * @return 导出摘要
+   * @throws Exception 数据源不完整或 I/O 失败时抛出
+   * @implNote 副作用：写导出目录与 summary 报告
+   */
   public ExportSummary export(Path phase2NpcIndex,
                               Path outputDir,
                               Path summaryOutput,
@@ -102,6 +131,7 @@ public class Phase5NpcLucExporter {
     Map<String, Set<Integer>> questsByNpc = buildNpcQuestMap(db.references);
 
     long start = System.nanoTime();
+    // 逐文件写出而非增量 patch，确保每次导出都是同一份 DB 快照的确定性结果。
     for(String relative : sortedFiles) {
       Path dst = outputDir.resolve(relative);
       ensureParent(dst);

@@ -14,10 +14,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * Phase5 导出校验器：验证 DB -> NPC 导出结果与原始 NPC Lua 的语义结构一致性。
+ *
+ * <p>所属链路：链路 B（DB -> semantic model -> 导出 lua -> 导出 luc -> 客户端读取）的 NPC 校验关口。</p>
+ * <p>输入：原始 npc-lua-generated 目录 + Phase5 导出目录。</p>
+ * <p>输出：`reports/phase5_export_validation.json`。</p>
+ * <p>数据库副作用：无（不读写数据库）。</p>
+ * <p>文件副作用：写入校验报告；当校验失败时抛异常阻断后续阶段。</p>
+ */
 public class Phase5NpcExportValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
 
+  /**
+   * CLI 入口。
+   *
+   * @param args 参数顺序：originalNpcDir、exportedNpcDir、outputJson
+   * @throws Exception 目录无效、文件读取失败或语义校验失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path originalDir = args.length >= 1
         ? Paths.get(args[0])
@@ -41,6 +56,16 @@ public class Phase5NpcExportValidator {
     System.out.println("output=" + output.toAbsolutePath());
   }
 
+  /**
+   * 执行整目录的 NPC 导出语义校验。
+   *
+   * @param originalDir 原始 NPC 目录
+   * @param exportedDir 导出 NPC 目录
+   * @param output 校验报告输出路径
+   * @return 校验汇总结果
+   * @throws Exception 输入目录缺失、文件访问失败或结构不一致时抛出
+   * @implNote 副作用：写入 JSON 报告；失败时主动抛错，避免错误结果进入下一阶段。
+   */
   public ValidationReport validate(Path originalDir,
                                    Path exportedDir,
                                    Path output) throws Exception {
@@ -86,6 +111,15 @@ public class Phase5NpcExportValidator {
     return report;
   }
 
+  /**
+   * 逐文件比对语义签名。
+   *
+   * @param report 报告累加器
+   * @param rel 相对文件路径
+   * @param source 原始文件路径
+   * @param target 导出文件路径
+   * @throws Exception 文件读取失败时抛出
+   */
   private void compareOneFile(ValidationReport report,
                               String rel,
                               Path source,
@@ -542,4 +576,3 @@ public class Phase5NpcExportValidator {
     }
   }
 }
-
