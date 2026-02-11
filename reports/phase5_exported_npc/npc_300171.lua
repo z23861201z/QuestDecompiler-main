@@ -1,15 +1,11 @@
-function npcsay(id)
-  if id ~= 4300171 then
-    return
-  end
-  clickNPCid = id
-  i = math.random(0, 1)
-  if i == 0 then
-    NPC_SAY("这个村庄像朝鲜时代。是我们回到了过去吗？")
-  else
-    NPC_SAY("得尽快修理才行啊...")
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_300171.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300171"
+  local refs = {}
+  return refs
 end

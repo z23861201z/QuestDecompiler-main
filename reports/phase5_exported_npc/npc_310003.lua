@@ -1,121 +1,67 @@
-function npcsay(id)
-  if id ~= 4310003 then
-    return
-  end
-  clickNPCid = id
-  if qData[560].state == 1 then
-    if CHECK_ITEM_CNT(qt[560].goal.getItem[1].id) >= qt[560].goal.getItem[1].count then
-      NPC_SAY("啊~弄回来了啊。谢谢。当然钱我会分给穷困的人的。不知道能帮到什么程度。")
-      SET_QUEST_STATE(560, 2)
-      return
-    else
-      NPC_SAY("{0xFF36B8C2}50个毒蘑菇{END}收集回来了吗？还没有啊…击退第一阶梯的大脚怪就能获得。")
-    end
-  end
-  if qData[560].state == 2 and qData[561].state == 1 then
-    if CHECK_ITEM_CNT(qt[561].goal.getItem[1].id) >= qt[561].goal.getItem[1].count then
-      NPC_SAY("谢谢~吃这些我会变得更健康的吧。我会活的很久，也会变得更富有的。")
-      SET_QUEST_STATE(561, 2)
-      return
-    else
-      NPC_SAY("收集回来{0xFF36B8C2}50个骷髅鸟碎片{END}吧。击退第一阶梯的骷髅鸟就能获得。")
-    end
-  end
-  if qData[1221].state == 1 then
-    NPC_SAY("嗯，你是谁啊来找我？")
-    SET_QUEST_STATE(1221, 2)
-  end
-  if qData[1222].state == 1 then
-    if CHECK_ITEM_CNT(qt[1222].goal.getItem[1].id) >= qt[1222].goal.getItem[1].count then
-      if CHECK_INVENTORY_CNT(1) > 0 then
-        NPC_SAY("嗯？就是我门下的武人全部出动也比你慢得多啊？你比想象的有用得多啊。哈哈哈！")
-        SET_QUEST_STATE(1222, 2)
-        return
-      else
-        NPC_SAY("行囊已满。")
-      end
-    else
-      NPC_SAY("击退{0xFFFFFF00}冥珠平原{END}的{0xFFFFFF00}狼牙棒叔叔{END}收集{0xFFFFFF00}25个断掉的棒子{END}回来。")
-    end
-  end
-  if qData[1223].state == 1 then
-    NPC_SAY("你去冥珠城南边的冥珠城服装店按照合约收来衣服或者地契中的一个吧。")
-  end
-  if qData[1225].state == 1 then
-    NPC_SAY("回来了？切，在哪儿找的木屐呢？总之辛苦了。")
-    SET_QUEST_STATE(1225, 2)
-    return
-  end
-  if qData[1226].state == 1 then
-    NPC_SAY("即使是在冥珠城南边出没的偷笔怪盗也不会知道。嗯，嗯，…。呼噜，呼噜！")
-  end
-  if qData[560].state == 0 then
-    ADD_QUEST_BTN(qt[560].id, qt[560].name)
-  end
-  if qData[560].state == 2 and qData[561].state == 0 then
-    ADD_QUEST_BTN(qt[561].id, qt[561].name)
-  end
-  if qData[1222].state == 0 and qData[1221].state == 2 and GET_PLAYER_LEVEL() >= qt[1222].needLevel then
-    ADD_QUEST_BTN(qt[1222].id, qt[1222].name)
-  end
-  if qData[1223].state == 0 and qData[1222].state == 2 and GET_PLAYER_LEVEL() >= qt[1223].needLevel then
-    ADD_QUEST_BTN(qt[1223].id, qt[1223].name)
-  end
-  if qData[1226].state == 0 and qData[1224].state == 2 and GET_PLAYER_LEVEL() >= qt[1226].needLevel then
-    ADD_QUEST_BTN(qt[1226].id, qt[1226].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_310003.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[560].state ~= 2 and GET_PLAYER_LEVEL() >= qt[560].needLevel then
-    if qData[560].state == 1 then
-      if CHECK_ITEM_CNT(qt[560].goal.getItem[1].id) >= qt[560].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[560].state == 2 and qData[561].state ~= 2 and GET_PLAYER_LEVEL() >= qt[561].needLevel then
-    if qData[561].state == 1 then
-      if CHECK_ITEM_CNT(qt[561].goal.getItem[1].id) >= qt[561].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1221].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1222].state == 1 then
-    if CHECK_ITEM_CNT(qt[1222].goal.getItem[1].id) >= qt[1222].goal.getItem[1].count then
-      if 0 < CHECK_INVENTORY_CNT(1) then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1223].state == 0 and qData[1222].state == 2 and GET_PLAYER_LEVEL() >= qt[1223].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1223].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1225].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1226].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1226].state == 0 and qData[1223].state == 2 and GET_PLAYER_LEVEL() >= qt[1226].needLevel then
-    QSTATE(id, 0)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_310003"
+  local refs = {}
+  refs[560] = {
+    name = "[ 对身体好的毒蘑菇 ]",
+    content0 = "恩恩…我虽然挣了很多钱，也很富有…但最重要的不是健康吗？",
+    reward0_count = 0,
+    needLevel = 101,
+    bQLoop = 0
+  }
+  refs[561] = {
+    name = "[ 对身体好的骷髅鸟碎片 ]",
+    content0 = "PLAYERNAME，上次给我送来的毒蘑菇是真的吗？",
+    reward0_count = 0,
+    needLevel = 102,
+    bQLoop = 0
+  }
+  refs[1221] = {
+    name = "[ 更积极地解决方案2 ]",
+    content0 = "少侠，还剩下一件事情。",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[1222] = {
+    name = "[ 账簿的位置 ]",
+    content0 = "嗯？想为我做事？",
+    reward0_count = 1,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[1223] = {
+    name = "[ 收账业务 ]",
+    content0 = "知道了你是个可用之才。那就正式的帮我做事吧。如果能办成这件事你就成为指挥我手下高手们的指挥官，深得我的信任。",
+    reward0_count = 0,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  refs[1224] = {
+    name = "[ 收账业务2 ]",
+    content0 = "有什么事我也不能给他这个店！",
+    reward0_count = 20,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  refs[1225] = {
+    name = "[ 收账业务3 ]",
+    content0 = "托您的福顺利交货了。这个恩惠我不会忘记的。",
+    reward0_count = 0,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  refs[1226] = {
+    name = "[ 最重要的 ]",
+    content0 = "不管结果怎么样，我决定按照约定相信你。",
+    reward0_count = 1,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  return refs
 end

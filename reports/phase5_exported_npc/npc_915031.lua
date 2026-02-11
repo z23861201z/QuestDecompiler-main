@@ -1,25 +1,18 @@
-function npcsay(id)
-  if id ~= 4915031 then
-    return
-  end
-  clickNPCid = id
-  if qData[189].state == 1 and qData[189].meetNpc[1] ~= qt[189].goal.meetNpc[1] then
-    if 1 <= CHECK_INVENTORY_CNT(4) then
-      NPC_SAY("{0xFFFFFF00}??? ??{END}? ?????.")
-      SET_MEETNPC(189, 1, id)
-      return
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_915031.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[189].state == 1 and GET_PLAYER_LEVEL() >= qt[189].needLevel then
-    if qData[189].meetNpc[1] ~= qt[189].goal.meetNpc[1] then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_915031"
+  local refs = {}
+  refs[189] = {
+    name = "[ ?????? ?? ]",
+    content0 = "?? ??? ?? ????? ??????? ???~ ??? ???. ???? ???? ??? ????? ??? ?? ?????.",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

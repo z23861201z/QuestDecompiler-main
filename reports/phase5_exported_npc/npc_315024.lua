@@ -1,75 +1,46 @@
-function npcsay(id)
-  if id ~= 4315024 then
-    return
-  end
-  clickNPCid = id
-  if qData[1091].state == 1 then
-    if qData[1091].meetNpc[1] ~= id and CHECK_ITEM_CNT(8980109) > 0 then
-      SET_INFO(1091, 1)
-      NPC_QSAY(1091, 1)
-      SET_MEETNPC(1091, 1, id)
-      return
-    else
-      NPC_SAY("喜欢我的男的不止一两个，绝不原谅！")
-    end
-  end
-  if qData[1254].state == 1 and CHECK_ITEM_CNT(qt[1254].goal.getItem[1].id) >= qt[1254].goal.getItem[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(1) then
-      NPC_SAY("这是…。没用的。又不是我的父母能活过来。呜呜…。")
-      SET_QUEST_STATE(1254, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1255].state == 1 then
-    if qData[1255].killMonster[qt[1255].goal.killMonster[1].id] >= qt[1255].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("现在…。现在在天之灵的双亲也可以安息了。真的很感谢。")
-        SET_QUEST_STATE(1255, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去冥珠平原击退1只鸡冠呛吧。")
-    end
-  end
-  if qData[1580].state == 1 then
-    if qData[1580].meetNpc[1] ~= id and CHECK_ITEM_CNT(8980109) > 0 then
-      SET_INFO(1580, 1)
-      NPC_QSAY(1580, 1)
-      SET_MEETNPC(1580, 1, id)
-      return
-    else
-      NPC_SAY("在开学前收到了礼物，太开心了！")
-    end
-  end
-  if qData[1255].state == 0 and qData[1254].state == 2 and GET_PLAYER_LEVEL() >= qt[1255].needLevel then
-    ADD_QUEST_BTN(qt[1255].id, qt[1255].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315024.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1254].state ~= 2 and qData[1240].state == 2 and GET_PLAYER_LEVEL() >= qt[1254].needLevel and qData[1254].state == 1 and CHECK_ITEM_CNT(qt[1254].goal.getItem[1].id) >= qt[1254].goal.getItem[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(1) then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1255].state ~= 2 and qData[1254].state == 2 and GET_PLAYER_LEVEL() >= qt[1255].needLevel then
-    if qData[1255].state == 1 then
-      if qData[1255].killMonster[qt[1255].goal.killMonster[1].id] >= qt[1255].goal.killMonster[1].count then
-        if 1 <= CHECK_INVENTORY_CNT(2) then
-          QSTATE(id, 2)
-        end
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1580].state == 1 then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315024"
+  local refs = {}
+  refs[1091] = {
+    name = "[ 花花公子的情人节 ]",
+    content0 = "少侠，为了收集糖果忙得不可开交啊，暂时帮我个忙吧！",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1240] = {
+    name = "[ 支付宴会费用 ]",
+    content0 = "武林人之间的矛盾缓和了不少，皇宫武士也消停了。虽不能说很完美，但冥珠城以后也可以恢复平静了。",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[1254] = {
+    name = "[ 真正的理由1 ]",
+    content0 = "我睡不着的原因有两个。其中一个就是从冥珠平原传来的鸡叫声。",
+    reward0_count = 1,
+    needLevel = 51,
+    bQLoop = 0
+  }
+  refs[1255] = {
+    name = "[ 鸡叫声的真实面目 ]",
+    content0 = "一时失礼了。因为情绪有些激动…。总之我会把知道的都告诉你。大胡子们袭击我们宁静的村落的时候…。父母把我一个人藏在了大坛子里，他们却被杀害了。",
+    reward0_count = 1,
+    needLevel = 52,
+    bQLoop = 0
+  }
+  refs[1580] = {
+    name = "[ 准备开学了！ ]",
+    content0 = "少侠，你能帮我个忙吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

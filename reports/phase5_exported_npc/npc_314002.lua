@@ -1,57 +1,25 @@
-function npcsay(id)
-  if id ~= 4314002 then
-    return
-  end
-  clickNPCid = id
-  if qData[1129].state == 1 then
-    if qData[1129].killMonster[qt[1129].goal.killMonster[1].id] >= qt[1129].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("你看吧！我说的对吧？这是谢礼。")
-        SET_QUEST_STATE(1129, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("帮我证明我不是做梦！去击退北清阴平原的15个蛋蛋小妖吧。")
-    end
-  end
-  if qData[1144].state == 1 then
-    if qData[1144].killMonster[qt[1144].goal.killMonster[1].id] >= qt[1144].goal.killMonster[1].count then
-      NPC_SAY("现在可以睡个安稳觉… 不是，是警戒了。谢谢你，少侠。")
-      SET_QUEST_STATE(1144, 2)
-    else
-      NPC_SAY("我不是胆小鬼！快点击退芦苇林的20个姜丝男吧。")
-    end
-  end
-  if qData[1129].state == 0 then
-    ADD_QUEST_BTN(qt[1129].id, qt[1129].name)
-  end
-  if qData[1144].state == 0 then
-    ADD_QUEST_BTN(qt[1144].id, qt[1144].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1129].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1129].needLevel then
-    if qData[1129].state == 1 then
-      if qData[1129].killMonster[qt[1129].goal.killMonster[1].id] >= qt[1129].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1144].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1129].needLevel then
-    if qData[1144].state == 1 then
-      if qData[1144].killMonster[qt[1144].goal.killMonster[1].id] >= qt[1144].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314002"
+  local refs = {}
+  refs[1129] = {
+    name = "[ 酒鬼的担忧 ]",
+    content0 = "我真的没打盹！真的看到了。没有眼鼻口的光光的鸡蛋一样的脸！分明是看到了，说都不相信我！",
+    reward0_count = 20,
+    needLevel = 16,
+    bQLoop = 0
+  }
+  refs[1144] = {
+    name = "[ 酒鬼的担忧（2） ]",
+    content0 = "说谁是胆小鬼啊！嗯… 嗯… 呵！少侠，我没打，打盹。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  return refs
 end

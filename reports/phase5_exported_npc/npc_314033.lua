@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4314033 then
-    return
-  end
-  clickNPCid = id
-  if 0 < GET_PLAYER_JOB2() then
-    LearnSkill(id)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314033.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_314033"
+  local refs = {}
+  return refs
 end

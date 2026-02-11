@@ -1,47 +1,39 @@
-function npcsay(id)
-  if id ~= 4391113 then
-    return
-  end
-  clickNPCid = id
-  if qData[2337].state == 1 then
-    NPC_SAY("没有准备好就是这种状态？巨木神很吃惊")
-    SET_QUEST_STATE(2337, 2)
-    return
-  end
-  if qData[2338].state == 1 then
-    NPC_SAY("回去吧，巨木神会等着你准备好~")
-  end
-  if qData[2574].state == 1 then
-    NPC_SAY("巨木神认可。你有{0xFFFFFF00}资格登上玄境的境界！{END}来巨木重林中心吧")
-    SET_QUEST_STATE(2574, 2)
-    return
-  end
-  if qData[3663].state == 1 then
-    NPC_SAY("今天就到为止吧，巨木神期待你的成长！")
-    SET_QUEST_STATE(3663, 2)
-    return
-  end
-  if qData[2338].state == 0 and qData[2337].state == 2 and GET_PLAYER_LEVEL() >= qt[2338].needLevel then
-    ADD_QUEST_BTN(qt[2338].id, qt[2338].name)
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391113.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2337].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2338].state ~= 2 and qData[2337].state == 2 and GET_PLAYER_LEVEL() >= qt[2338].needLevel then
-    if qData[2338].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2574].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[3663].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391113"
+  local refs = {}
+  refs[2337] = {
+    name = "[ 你还没有准备好3 ]",
+    content0 = "巨木神该说的都说了。快回去吧，等你准备好了我再见你",
+    reward0_count = 0,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  refs[2338] = {
+    name = "[ 你还没有准备好4 ]",
+    content0 = "巨木神很吃惊",
+    reward0_count = 0,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  refs[2574] = {
+    name = "[ 玄境-那年那时 ]",
+    content0 = "巨木神在回忆。你是龟神介绍到此地的",
+    reward0_count = 0,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  refs[3663] = {
+    name = "[ 与巨木神的修炼 ]",
+    content0 = "巨木神对你的力量赞叹不止！",
+    reward0_count = 1,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  return refs
 end

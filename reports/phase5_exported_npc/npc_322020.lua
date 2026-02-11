@@ -1,28 +1,25 @@
-function npcsay(id)
-  if id ~= 4322020 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("..")
-  if qData[2817].state == 1 then
-    NPC_SAY("是...谁...啊...")
-    SET_QUEST_STATE(2817, 2)
-    return
-  end
-  if qData[2818].state == 0 and qData[2817].state == 2 and GET_PLAYER_LEVEL() >= qt[2818].needLevel then
-    ADD_QUEST_BTN(qt[2818].id, qt[2818].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_322020.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2817].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2818].state ~= 2 and qData[2817].state == 2 and GET_PLAYER_LEVEL() >= qt[2818].needLevel then
-    if qData[2818].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_322020"
+  local refs = {}
+  refs[2817] = {
+    name = "[ 春水糖留下的 ]",
+    content0 = "我收集了纸条，发现{0xFFFFFF00}春水糖{END}分明在此处逗留了很久。",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2818] = {
+    name = "[ 最后的獐子潭人 ]",
+    content0 = "别..过..",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  return refs
 end

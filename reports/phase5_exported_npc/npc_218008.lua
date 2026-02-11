@@ -1,278 +1,193 @@
-function npcsay(id)
-  if id ~= 4218008 then
-    return
-  end
-  clickNPCid = id
-  if qData[1525].state == 1 then
-    NPC_SAY("啊啊！见到你很高兴。同是汉谟拉比帝国人，能见面不容易啊！")
-    SET_QUEST_STATE(1525, 2)
-  end
-  if qData[676].state == 1 then
-    NPC_SAY("嘿嘿嘿。找我有事？去黄泉的方法？往我出售的这个灯火装满鬼魂，投放到封印里，路就会开启，嘿嘿。当然没有什么是免费的~")
-    SET_MEETNPC(676, 1, id)
-    SET_QUEST_STATE(676, 2)
-  end
-  if qData[802].state == 1 then
-    NPC_SAY("拥有{0xFFFFFF00}低级灯火{END}才能进入。在哪里获得？我在出售啊。嘿嘿。拿着低级灯火去找承宪道僧吧。")
-  end
-  if qData[803].state == 1 then
-    NPC_SAY("带着{0xFFFFFF00}[ 低级灯火 ]{END}去找{0xFFFFFF00}承宪道僧{END}，挑战一下{0xFFFFFF00}[ 暗血地狱 ]{END}吧。")
-  end
-  if qData[804].state == 1 then
-    NPC_SAY("得买{0xFFFFFF00}[中级灯火]{END}。咔咔，当然不是免费的。拿着我在出售的{0xFFFFFF00}[中级灯火]{END}去见冥珠都城的{0xFFFFFF00}[冥珠城父母官]{END}吧。")
-  end
-  if qData[806].state == 1 then
-    NPC_SAY("快通过承宪道僧进入八豆妖地狱击退贪婪的猪大长吧。")
-  end
-  if qData[855].state == 1 then
-    NPC_SAY("快通过承宪道僧进入霸主地狱击退逃亡者猪大长吧。")
-  end
-  if qData[856].state == 1 then
-    NPC_SAY("现在通过承宪道僧进入杀气地狱击退邪恶恶魂天鬼吧。")
-  end
-  if qData[857].state == 1 then
-    NPC_SAY("现在通过承宪道僧进入凶徒地狱击退邪恶魔王犬吧。")
-  end
-  if qData[870].state == 1 then
-    NPC_SAY("通过皲裂地狱去见秋叨鱼")
-  end
-  if qData[872].state == 1 then
-    NPC_SAY("击退超火车轮怪后去见菊花碴就可以领取奖励了")
-  end
-  if qData[1458].state == 1 then
-    NPC_SAY("啊！烦死了！签这个协议真是损失大了！")
-    SET_QUEST_STATE(1458, 2)
-  end
-  if qData[1459].state == 1 then
-    if CHECK_ITEM_CNT(qt[1459].goal.getItem[1].id) >= qt[1459].goal.getItem[1].count then
-      NPC_SAY("原来这个和那个一样，也没什么区别啊？难道是广告的效果？嘟嘟囔囔…随便了。按照约定你随便问吧")
-      SET_QUEST_STATE(1459, 2)
-    else
-      NPC_SAY("在{0xFFFFFF00}冥珠城北{END}的{0xFFFFFF00}证明管理人{END}那里购买{0xFFFFFF00}1个高级灯火{END}交给我")
-    end
-  end
-  if qData[1460].state == 1 then
-    NPC_SAY("（首先把这消息转告给位于古老的渡头的装扮成疯癫的老人的秋叨鱼）")
-  end
-  if qData[2032].state == 1 then
-    SET_QUEST_STATE(2032, 2)
-    NPC_SAY("怎么又是乳臭未干的家伙啊~")
-  end
-  if qData[2033].state == 1 then
-    NPC_SAY("还有什么疑问就问我吧，在这里呆久了太无聊了。你要经常来玩啊~  (得回到佣兵领袖处)")
-  end
-  if qData[2043].state == 1 then
-    SET_QUEST_STATE(2043, 2)
-    NPC_SAY("才来啊，怎么这么晚？")
-  end
-  if qData[2044].state == 1 then
-    if qData[2044].killMonster[qt[2044].goal.killMonster[1].id] >= qt[2044].goal.killMonster[1].count then
-      SET_QUEST_STATE(2044, 2)
-      NPC_SAY("你解决的很好啊~猪大长的故乡就是地狱，所以怎么击退还是会再出现的。你问我该怎么办？只能是一直击退了。有的人想找人发泄的时候就来猪大长的，哈哈！")
-    else
-      NPC_SAY("还没走吗？领取我给的另一个任务[霸主地狱-逃亡者猪大长]后通过旁边的承宪道僧进入霸主地狱吧。去那儿击退猪大长就可以了，快去吧~")
-    end
-  end
-  if qData[2045].state == 1 then
-    NPC_SAY("[佣兵领袖]在找你呢，快去看看吧~")
-  end
-  if qData[3623].state == 1 then
-    NPC_SAY("他可是我们家族的大恩人，你去帮我把他附近的妖怪清除吧")
-  end
-  if qData[3653].state == 1 then
-    NPC_SAY("去土谷桃园击退兔女郎。期间我去找回我的东西")
-  end
-  ADD_NEW_SHOP_BTN(id, 10036)
-  if qData[912].state == 0 then
-    ADD_QUEST_BTN(qt[912].id, qt[912].name)
-  end
-  if qData[914].state == 0 then
-    ADD_QUEST_BTN(qt[914].id, qt[914].name)
-  end
-  if qData[916].state == 0 then
-    ADD_QUEST_BTN(qt[916].id, qt[916].name)
-  end
-  if qData[676].state == 2 and qData[802].state == 0 then
-    ADD_QUEST_BTN(qt[802].id, qt[802].name)
-  end
-  if qData[676].state == 2 and qData[803].state == 0 then
-    ADD_QUEST_BTN(qt[803].id, qt[803].name)
-  end
-  if qData[676].state == 2 and qData[804].state == 0 then
-    ADD_QUEST_BTN(qt[804].id, qt[804].name)
-  end
-  if qData[676].state == 2 and qData[806].state == 0 then
-    ADD_QUEST_BTN(qt[806].id, qt[806].name)
-  end
-  if qData[855].state == 0 and GET_PLAYER_LEVEL() >= qt[855].needLevel then
-    ADD_QUEST_BTN(qt[855].id, qt[855].name)
-  end
-  if qData[856].state == 0 and GET_PLAYER_LEVEL() >= qt[856].needLevel then
-    ADD_QUEST_BTN(qt[856].id, qt[856].name)
-  end
-  if qData[857].state == 0 and GET_PLAYER_LEVEL() >= qt[857].needLevel then
-    ADD_QUEST_BTN(qt[857].id, qt[857].name)
-  end
-  if qData[870].state == 0 and GET_PLAYER_LEVEL() >= qt[870].needLevel then
-    ADD_QUEST_BTN(qt[870].id, qt[870].name)
-  end
-  if qData[872].state == 0 and GET_PLAYER_LEVEL() >= qt[872].needLevel then
-    ADD_QUEST_BTN(qt[872].id, qt[872].name)
-  end
-  if qData[1459].state == 0 and qData[1458].state == 2 then
-    ADD_QUEST_BTN(qt[1459].id, qt[1459].name)
-  end
-  if qData[1460].state == 0 and qData[1459].state == 2 then
-    ADD_QUEST_BTN(qt[1460].id, qt[1460].name)
-  end
-  if qData[2033].state == 0 and qData[2032].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2033].id, qt[2033].name)
-  end
-  if qData[2044].state == 0 and qData[2043].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2044].id, qt[2044].name)
-  end
-  if qData[2045].state == 0 and qData[2044].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2045].id, qt[2045].name)
-  end
-  if qData[3623].state == 0 and GET_PLAYER_LEVEL() >= qt[3623].needLevel then
-    ADD_QUEST_BTN(qt[3623].id, qt[3623].name)
-  end
-  if qData[3653].state == 0 and GET_PLAYER_LEVEL() >= qt[3653].needLevel then
-    ADD_QUEST_BTN(qt[3653].id, qt[3653].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_218008.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1525].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[676].state == 2 and qData[802].state ~= 2 and GET_PLAYER_LEVEL() >= qt[110].needLevel then
-    if qData[802].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[676].state == 2 and qData[803].state ~= 2 and GET_PLAYER_LEVEL() >= qt[110].needLevel then
-    if qData[803].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[676].state == 2 and qData[804].state ~= 2 and GET_PLAYER_LEVEL() >= qt[110].needLevel then
-    if qData[804].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[676].state == 2 and qData[806].state ~= 2 and GET_PLAYER_LEVEL() >= qt[110].needLevel then
-    if qData[806].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[855].state ~= 2 and GET_PLAYER_LEVEL() >= qt[855].needLevel then
-    if qData[855].state == 0 then
-      QSTATE(id, 0)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[856].state ~= 2 and GET_PLAYER_LEVEL() >= qt[856].needLevel then
-    if qData[856].state == 0 then
-      QSTATE(id, 0)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[857].state ~= 2 and GET_PLAYER_LEVEL() >= qt[857].needLevel then
-    if qData[857].state == 0 then
-      QSTATE(id, 0)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[870].state ~= 2 and GET_PLAYER_LEVEL() >= qt[870].needLevel then
-    if qData[870].state == 0 then
-      QSTATE(id, 0)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[871].state ~= 2 and GET_PLAYER_LEVEL() >= qt[871].needLevel then
-    if qData[871].state == 0 then
-      QSTATE(id, 0)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1458].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1459].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1459].needLevel and qData[1458].state == 2 then
-    if qData[1459].state == 1 then
-      if CHECK_ITEM_CNT(qt[1459].goal.getItem[1].id) >= qt[1459].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1460].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1460].needLevel and qData[1459].state == 2 then
-    if qData[1460].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2032].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2033].state ~= 2 and qData[2032].state == 2 and GET_PLAYER_LEVEL() >= qt[2033].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2033].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2043].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2044].state ~= 2 and qData[2043].state == 2 and GET_PLAYER_LEVEL() >= qt[2044].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2044].state == 1 then
-      if qData[2044].killMonster[qt[2044].goal.killMonster[1].id] >= qt[2044].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2045].state ~= 2 and qData[2044].state == 2 and GET_PLAYER_LEVEL() >= qt[2045].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2045].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[676].state == 2 and qData[3623].state == 0 and GET_PLAYER_LEVEL() >= qt[3623].needLevel then
-    if qData[3623].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3653].state == 0 and qData[676].state == 2 and GET_PLAYER_LEVEL() >= qt[3653].needLevel then
-    if qData[3653].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_218008"
+  local refs = {}
+  refs[110] = {
+    name = "[每晚都传来的怪声]",
+    content0 = "欢迎光临。看着没什么精神？是因为最近每晚都传来的怪声，晚上无法入睡才这样的。",
+    reward0_count = 0,
+    needLevel = 61,
+    bQLoop = 0
+  }
+  refs[676] = {
+    name = "[ 开启新的黄泉（2） ]",
+    content0 = "邪派那些家伙不但不会告诉你，还会拿你逗乐子，不过我们正派就算再累也会秉持正义。因此清阴胡须张才让你来找我的吧。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[802] = {
+    name = "[ 怪林地狱-磷火的盛宴 ]",
+    content0 = "我的记忆力不是很好，你是不是说过要拯救百姓于水火之中？那么我给你分配一个任务。对你来说不会很难。",
+    reward0_count = 1,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  refs[803] = {
+    name = "[ 暗血地狱-太和老君的教诲 ]",
+    content0 = "嗯？为什么找我？不过你看起来好眼熟啊…无所谓啦，你在找需要你帮助的人吗？那你愿意去帮助陷入困境的冥珠城父母官吗？",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[804] = {
+    name = "[ 巨大鬼怪-炫耀实力 ]",
+    content0 = "糟糕。头一次看到那么无知的家伙，连封印结界也吃掉了。嗯？干嘛目不转睛的看着我。你认识我吗？哼。虽然不记得你了，但是你还得给我帮个忙。可以吧？",
+    reward0_count = 1,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[806] = {
+    name = "[ 八豆妖地狱-贪婪的猪大长 ]",
+    content0 = "哎呦，减寿十年啊。喂，你知道吗？前不久清野江对面的清江村里发生了一件大事儿。",
+    reward0_count = 1,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  refs[855] = {
+    name = "[ 霸主地狱-逃亡者猪大长 ]",
+    content0 = "喂，你知道吗？最近白血鬼谷林里出现了黄泉裂缝，鬼舞蛇魔眼找我帮忙。所以我去帮他们封印了。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[856] = {
+    name = "[ 杀气地狱-邪恶恶魂天鬼 ]",
+    content0 = "你认识鬼谷村的带花女吗？精神稍微有点异常。据说她总在村子里吵嚷着看到黄泉的裂缝。",
+    reward0_count = 0,
+    needLevel = 29,
+    bQLoop = 0
+  }
+  refs[857] = {
+    name = "[ 凶徒地狱-邪恶魔王犬 ]",
+    content0 = "到底是鬼谷村？鬼谷村这个地方果然和地狱很近。又出现裂缝了。吓坏的仆人告诉我这件事，我才去的…",
+    reward0_count = 0,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[870] = {
+    name = "[ 皲裂地狱-暴走的火车轮怪 ]",
+    content0 = "这次皲裂好像非常严重！好像有人用巨大的结界在阻挡，但是怪物依旧存在！",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[871] = {
+    name = "[ ??? ??? ?? ]",
+    content0 = "??? ??? ???? ???? ??? ??? ?????. [?????]? ???? ????",
+    reward0_count = 6,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[872] = {
+    name = "[ 击退超火车轮怪! ]",
+    content0 = "你知道吗？血魔深窟的皲裂导致超火车轮怪又出现了。竹统泛和菊花碴正在找你呢",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[912] = {
+    name = "{0xFFFFB4B4}[ 什么是黄泉？ ]{END}",
+    content0 = "什么？你不知道什么是黄泉吗？那你知道地狱吗？是的，没错。生前作恶的人死后就会下地狱的。你就把黄泉当成地狱的前院儿就可以了。这里又叫冥府，生活着各种各样的怪物和鬼魂。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[914] = {
+    name = "{0xFFFFB4B4}[ 如何进入黄泉的裂缝？ ]{END}",
+    content0 = "嗯？要进那里？疯了吧。啊！不过非要进去的话带着指引用的灯火一起去吧。当然没有免费的啦。千万别觉得人心险恶哦。不管怎样把灯火扔进封印的入口，路就打开了。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[916] = {
+    name = "{0xFFFFB4B4}[ 现在还有人因为黄泉的裂缝而受苦吗？ ]{END}",
+    content0 = "嗯…我最后封印的黄泉裂缝是芦苇林中的某个农田，好像是清阴关里面露难色的农夫的地。人们称他为钱难赚。裂缝那边的地狱是怪林地狱，亦称磷火地狱，",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1458] = {
+    name = "[化境-火器痕迹]",
+    content0 = "古老的渡头原本水资源丰富，怪异的是这里烈火旺盛起来，我也觉得奇怪",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1459] = {
+    name = "[化境-市场调查]",
+    content0 = "等等！等等！看你不像来买东西的，如果不是客人恕不招待！",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1460] = {
+    name = "[化境-隔海消息]",
+    content0 = "什么？黑暗的坑？那个不祥之地怎么了？",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1525] = {
+    name = "[ 生存教育-黄泉 ]",
+    content0 = "我们这个地方叫做现世，相反，其他异界的空间称作黄泉",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2032] = {
+    name = "[ 军士 - 佣兵团的秘密任务 ]",
+    content0 = "之前也跟你说过，我们为了重新崛起正在储备粮食和资金！",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[2033] = {
+    name = "[ 军士 - 黄泉的存在 ]",
+    content0 = "什么？想在黄泉扎营？哈哈…哈哈哈！我的肚子啊~你知道黄泉是什么地方吗？地狱你听说过吧？黄泉是地狱的前院~你要在那儿做什么？卡哈哈！",
+    reward0_count = 0,
+    needLevel = 21,
+    bQLoop = 0
+  }
+  refs[2043] = {
+    name = "[ 军士 - 十二妖怪们 ]",
+    content0 = "你有见过十二妖怪吗？外形像庞大的猪或狗，但是身体像人类的会飞的怪物",
+    reward0_count = 0,
+    needLevel = 29,
+    bQLoop = 0
+  }
+  refs[2044] = {
+    name = "[ 军士 - 击退猪大长 ]",
+    content0 = "也不是什么大事。猪大长总想破坏通往霸主地狱的黄泉封印，你去制服吧",
+    reward0_count = 0,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  refs[2045] = {
+    name = "[ 军士 - 佣兵领袖的召唤 ]",
+    content0 = "除了霸主地狱，还有很多地狱的。如果有实力的话也试着挑战其他地狱吧。奖励少不了你的！",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[3623] = {
+    name = "[ 第一寺地下-千手妖女的手下们 ]",
+    content0 = "听说最近第一寺附近出现了很多千手妖女的手下们…",
+    reward0_count = 0,
+    needLevel = 110,
+    bQLoop = 0
+  }
+  refs[3653] = {
+    name = "[ 土谷桃园-帮我找回东西 ]",
+    content0 = "啊，来得正好.",
+    reward0_count = 0,
+    needLevel = 120,
+    bQLoop = 0
+  }
+  return refs
 end

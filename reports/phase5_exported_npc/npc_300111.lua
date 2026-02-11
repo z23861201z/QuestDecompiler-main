@@ -1,172 +1,67 @@
-function npcsay(id)
-  if id ~= 4300111 then
-    return
-  end
-  clickNPCid = id
-  if qData[1114].state == 1 then
-    NPC_SAY("哦哦哦！你，你就是…新，新来的团员，没错吧？")
-    SET_QUEST_STATE(1114, 2)
-  end
-  if qData[1338].state == 1 then
-    if qData[1338].killMonster[qt[1338].goal.killMonster[1].id] >= qt[1338].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("了不起。从今起你就是清阴关自警团的一员了。")
-        SET_QUEST_STATE(1338, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-        return
-      end
-    else
-      NPC_SAY("只有击退{0xFFFFFF00}清阴谷的8只蝎角亭{END}，才能进入自警团。")
-    end
-  end
-  if qData[1339].state == 1 then
-    if CHECK_ITEM_CNT(qt[1339].goal.getItem[1].id) >= qt[1339].goal.getItem[1].count then
-      NPC_SAY("辛苦了。不要忘记，我们自警团向来都怀着为清阴关居民们牺牲和服务的心。")
-      SET_QUEST_STATE(1339, 2)
-      return
-    else
-      NPC_SAY("击退{0xFFFFFF00}清阴谷的小星星{END}，收集{0xFFFFFF00}4个小星星的毛{END}。用它做成衣服送给难民。")
-    end
-  end
-  if qData[1340].state == 1 then
-    if CHECK_ITEM_CNT(qt[1340].goal.getItem[1].id) >= qt[1340].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("迈出了宝贵的第一步。希望难民们的心情会因此稍微舒服一些。")
-        SET_QUEST_STATE(1340, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-        return
-      end
-    else
-      NPC_SAY("去{0xFFFFFF00}南清阴平原{END}，击退{0xFFFFFF00}三只手{END}，收集{0xFFFFFF00}6个三只手手骨{END}！")
-    end
-  end
-  if qData[1341].state == 1 then
-    NPC_SAY("击退{0xFFFFFF00}清阴谷的毛毛{END}，带{0xFFFFFF00}4个药草{END}给{0xFFFFFF00}清阴关宝芝林{END}后，他会给你药的。")
-  end
-  if qData[1342].state == 1 then
-    if CHECK_ITEM_CNT(qt[1342].goal.getItem[1].id) >= qt[1342].goal.getItem[1].count then
-      NPC_SAY("辛苦了。不过还不够。")
-      SET_QUEST_STATE(1342, 2)
-      return
-    else
-      NPC_SAY("击退{0xFFFFFF00}清阴谷的螳螂勇勇{END}，收集{0xFFFFFF00}3个勇勇的前脚{END}。")
-    end
-  end
-  if qData[1343].state == 1 then
-    if qData[1343].killMonster[qt[1343].goal.killMonster[1].id] >= qt[1343].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("由此承认PLAYERNAME团员退团。")
-        SET_QUEST_STATE(1343, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-        return
-      end
-    else
-      NPC_SAY("去击退{0xFFFFFF00}5只清阴谷的螳螂勇勇{END}！")
-    end
-  end
-  if qData[1344].state == 1 then
-    NPC_SAY("去找清阴镖局的清阴银行吧。这段时间辛苦你了。")
-  end
-  if qData[1338].state == 0 and qData[1114].state == 2 and GET_PLAYER_LEVEL() >= qt[1338].needLevel then
-    ADD_QUEST_BTN(qt[1338].id, qt[1338].name)
-  end
-  if qData[1339].state == 0 and qData[1338].state == 2 and GET_PLAYER_LEVEL() >= qt[1339].needLevel then
-    ADD_QUEST_BTN(qt[1339].id, qt[1339].name)
-  end
-  if qData[1340].state == 0 and qData[1339].state == 2 and GET_PLAYER_LEVEL() >= qt[1340].needLevel then
-    ADD_QUEST_BTN(qt[1340].id, qt[1340].name)
-  end
-  if qData[1341].state == 0 and qData[1340].state == 2 and GET_PLAYER_LEVEL() >= qt[1341].needLevel then
-    ADD_QUEST_BTN(qt[1341].id, qt[1341].name)
-  end
-  if qData[1342].state == 0 and qData[1341].state == 2 and GET_PLAYER_LEVEL() >= qt[1342].needLevel then
-    ADD_QUEST_BTN(qt[1342].id, qt[1342].name)
-  end
-  if qData[1343].state == 0 and qData[1342].state == 2 and GET_PLAYER_LEVEL() >= qt[1343].needLevel then
-    ADD_QUEST_BTN(qt[1343].id, qt[1343].name)
-  end
-  if qData[1344].state == 0 and qData[1343].state == 2 and GET_PLAYER_LEVEL() >= qt[1344].needLevel then
-    ADD_QUEST_BTN(qt[1344].id, qt[1344].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_300111.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1114].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1338].state ~= 2 and qData[1114].state == 2 and GET_PLAYER_LEVEL() >= qt[1338].needLevel then
-    if qData[1338].state == 1 then
-      if qData[1338].killMonster[qt[1338].goal.killMonster[1].id] >= qt[1338].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1339].state ~= 2 and qData[1338].state == 2 and GET_PLAYER_LEVEL() >= qt[1339].needLevel then
-    if qData[1339].state == 1 then
-      if CHECK_ITEM_CNT(qt[1339].goal.getItem[1].id) >= qt[1339].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1340].state ~= 2 and qData[1339].state == 2 and GET_PLAYER_LEVEL() >= qt[1340].needLevel then
-    if qData[1340].state == 1 then
-      if CHECK_ITEM_CNT(qt[1340].goal.getItem[1].id) >= qt[1340].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1341].state ~= 2 and qData[1340].state == 2 and GET_PLAYER_LEVEL() >= qt[1341].needLevel then
-    if qData[1341].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1342].state ~= 2 and qData[1341].state == 2 and GET_PLAYER_LEVEL() >= qt[1342].needLevel then
-    if qData[1342].state == 1 then
-      if CHECK_ITEM_CNT(qt[1342].goal.getItem[1].id) >= qt[1342].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1343].state ~= 2 and qData[1342].state == 2 and GET_PLAYER_LEVEL() >= qt[1343].needLevel then
-    if qData[1343].state == 1 then
-      if qData[1343].killMonster[qt[1343].goal.killMonster[1].id] >= qt[1343].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1344].state ~= 2 and qData[1343].state == 2 and GET_PLAYER_LEVEL() >= qt[1344].needLevel then
-    if qData[1344].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_300111"
+  local refs = {}
+  refs[1114] = {
+    name = "[ 找回记忆的方法 ]",
+    content0 = "针灸术好像对你没什么作用，那么就只能让你施展一下你的能力了。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1338] = {
+    name = "[ 为了加盟的考验 ]",
+    content0 = "首先清阴关自警团可不能就靠着一张推荐书说进就进说出就出。只有通过考核才能入团。",
+    reward0_count = 5,
+    needLevel = 11,
+    bQLoop = 0
+  }
+  refs[1339] = {
+    name = "[ 为难民准备的救灾物品 ]",
+    content0 = "自从怪物出现之后，受灾最严重地区之一就是清阴谷下面的南清阴平原地区。直到现在清阴关里还都是从南平原逃难出来的人。",
+    reward0_count = 0,
+    needLevel = 11,
+    bQLoop = 0
+  }
+  refs[1340] = {
+    name = "[ 重建的第一步 ]",
+    content0 = "你知道三只手吗？",
+    reward0_count = 5,
+    needLevel = 12,
+    bQLoop = 0
+  }
+  refs[1341] = {
+    name = "[ 以防万一 ]",
+    content0 = "最近怎么样？没有因为打怪受伤什么的吧？",
+    reward0_count = 20,
+    needLevel = 12,
+    bQLoop = 0
+  }
+  refs[1342] = {
+    name = "[ 定居支援 ]",
+    content0 = "难民也基本上定居了…只不过耕种的时候农具好像不太够用。",
+    reward0_count = 0,
+    needLevel = 13,
+    bQLoop = 0
+  }
+  refs[1343] = {
+    name = "[ 退出的念头 ]",
+    content0 = "这段时间辛苦了。但是记忆还是没有恢复吧？",
+    reward0_count = 5,
+    needLevel = 13,
+    bQLoop = 0
+  }
+  refs[1344] = {
+    name = "[ 武功研究NPC的建议 ]",
+    content0 = "首先，能知道你的人，就只有清阴关里社交面最广的清阴银行了。",
+    reward0_count = 0,
+    needLevel = 13,
+    bQLoop = 0
+  }
+  return refs
 end

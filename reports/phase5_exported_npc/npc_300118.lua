@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4300118 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("?????? ?? ?????? ??? ?? ??? ??? ?????.")
-  NECO_HEART_RETURN(id)
-  NECO_HEART_SHOW(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_300118.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300118"
+  local refs = {}
+  return refs
 end

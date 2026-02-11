@@ -1,105 +1,88 @@
-function npcsay(id)
-  if id ~= 4215002 then
-    return
-  end
-  clickNPCid = id
-  if qData[153].state == 1 then
-    if CHECK_ITEM_CNT(qt[153].goal.getItem[1].id) >= qt[153].goal.getItem[1].count then
-      NPC_SAY("我就知道你可以的，现在重感冒可以缓解了，真的很谢谢！")
-      SET_QUEST_STATE(153, 2)
-    else
-      NPC_SAY("{0xFFFFFF00}40个白灰粉{END}还没收集完吗？得重感冒的患者越来越多了！")
-    end
-  end
-  if qData[154].state == 1 then
-    NPC_SAY("冥珠城百姓中得重感冒的患者越来越多了，快去分给大家吧！")
-  end
-  if qData[1280].state == 1 then
-    NPC_SAY("嗯？来找我什么事啊？")
-    SET_QUEST_STATE(1280, 2)
-  end
-  if qData[1281].state == 1 then
-    if CHECK_ITEM_CNT(qt[1281].goal.getItem[1].id) >= qt[1281].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("弄回来了？以后人们不用因为感冒受苦了。")
-        SET_QUEST_STATE(1281, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退铁腕山的白发老妖，收集30个白灰粉回来吧。")
-    end
-  end
-  if qData[1095].state == 1 then
-    if CHECK_ITEM_CNT(qt[1095].goal.getItem[1].id) >= qt[1095].goal.getItem[1].count then
-      if CHECK_INVENTORY_CNT(3) > 0 then
-        NPC_SAY("这是装有我的心意的糖果，只要有材料，我就可以给你制作，我就是这样慷慨的人。哈哈~")
-        SET_QUEST_STATE(1095, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("是10个糖块，要速度啊！")
-    end
-  end
-  if qData[1580].state == 1 then
-    NPC_SAY("给龙林客栈的最强舞者郑贤、送外送的女人、来坐老板娘送去开学礼物吧！")
-  end
-  ADD_NEW_SHOP_BTN(id, 10014)
-  GIVE_DONATION_BUFF(id)
-  if qData[153].state == 0 and GET_PLAYER_FAME() >= 60 then
-    ADD_QUEST_BTN(qt[153].id, qt[153].name)
-  end
-  if qData[154].state == 0 and qData[153].state == 2 then
-    ADD_QUEST_BTN(qt[154].id, qt[154].name)
-  end
-  if qData[239].state == 0 then
-    ADD_QUEST_BTN(qt[239].id, qt[239].name)
-  end
-  if qData[481].state == 0 and qData[480].state == 2 then
-    ADD_QUEST_BTN(qt[481].id, qt[481].name)
-  end
-  if qData[1281].state == 0 and qData[1280].state == 2 and GET_PLAYER_LEVEL() >= qt[1281].needLevel then
-    ADD_QUEST_BTN(qt[1281].id, qt[1281].name)
-  end
-  if qData[1091].state == 0 then
-    ADD_QUEST_BTN(qt[1091].id, qt[1091].name)
-  end
-  if qData[1095].state == 0 then
-    ADD_QUEST_BTN(qt[1095].id, qt[1095].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_215002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1280].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1281].state ~= 2 and qData[1280].state == 2 and GET_PLAYER_LEVEL() >= qt[1281].needLevel then
-    if qData[1281].state == 1 then
-      if CHECK_ITEM_CNT(qt[1281].goal.getItem[1].id) >= qt[1281].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1087].state == 1 and GET_PLAYER_LEVEL() >= qt[1087].needLevel then
-    if CHECK_ITEM_CNT(qt[1087].goal.getItem[1].id) >= qt[1087].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  else
-    QSTATE(id, 0)
-  end
-  if qData[1580].state ~= 1 and qData[1580].state ~= 2 then
-    if qData[1580].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_215002"
+  local refs = {}
+  refs[153] = {
+    name = "[ ???? ?? ]",
+    content0 = "?? ???? ??? ? ????…. ?? 10??? ??? ????…. ????~ ??",
+    reward0_count = 0,
+    needLevel = 63,
+    bQLoop = 0
+  }
+  refs[154] = {
+    name = "[ ????? ?? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END} ????. ???? ?? ?? ???. ??? ???? ????? ?? ????. ?? ?? ????.",
+    reward0_count = 1,
+    needLevel = 64,
+    bQLoop = 0
+  }
+  refs[239] = {
+    name = "[ ??? ?? ???? ]",
+    content0 = "??, ?? ?????. ???? ?? ?????? ? ??? ??????? ? ??? ?? ?? ????? ????",
+    reward0_count = 99,
+    needLevel = 89,
+    bQLoop = 0
+  }
+  refs[480] = {
+    name = "[ ????!(1) ]",
+    content0 = "? ?? ? ???? ??? ???? ?? ??? ?????. ????? ?? ???? ??? ?????? ? ??? ?????.",
+    reward0_count = 0,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[481] = {
+    name = "[ ????!(2) ]",
+    content0 = "? ?? ??, ???? ? ?? ?? ?? ?? ?? ?? ???.",
+    reward0_count = 0,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[1087] = {
+    name = "[ 龙林城的人气帅哥 ]",
+    content0 = "让我来看看啊...龙林客栈舞者、送外送的女人、害了了防具店、来坐老板娘、清阴关大娘...恩？连心情很坏的老媪也送来了？啧啧！今年的巧克力不怎么样嘛！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1091] = {
+    name = "[ 花花公子的情人节 ]",
+    content0 = "少侠，为了收集糖果忙得不可开交啊，暂时帮我个忙吧！",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1095] = {
+    name = "[ 龙林城人气帅哥的糖果 ]",
+    content0 = "你是…嗯，我记起来了，你是第一百六十五个给我巧克力的人，虽说我很有人气，但该给的还是要给的，稍等下…",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1280] = {
+    name = "[ 龙林派的自豪感 ]",
+    content0 = "那，然后是…（这个师弟比我还强，我要派他做什么呢？）",
+    reward0_count = 0,
+    needLevel = 64,
+    bQLoop = 0
+  }
+  refs[1281] = {
+    name = "[ 可以的伤寒 ]",
+    content0 = "你是来帮我的吗？",
+    reward0_count = 1,
+    needLevel = 65,
+    bQLoop = 0
+  }
+  refs[1580] = {
+    name = "[ 准备开学了！ ]",
+    content0 = "少侠，你能帮我个忙吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

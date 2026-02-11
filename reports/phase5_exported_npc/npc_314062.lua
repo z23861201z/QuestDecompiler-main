@@ -1,964 +1,410 @@
-function npcsay(id)
-  if id ~= 4314062 then
-    return
-  end
-  clickNPCid = id
-  if GET_PLAYER_JOB1() == 11 then
-    NPC_SAY("将我们佣兵团的名字告知天下吧！")
-  else
-    NPC_SAY("我就是佣兵领袖，你不是我们佣兵团的人，没事就赶紧走开吧~")
-  end
-  if qData[2018].state == 1 then
-    SET_QUEST_STATE(2018, 2)
-    NPC_SAY("来得正好，伤已经痊愈了？")
-  end
-  if qData[2019].state == 1 then
-    SET_QUEST_STATE(2019, 2)
-    NPC_SAY("叫[枪术精通]的内功是使用枪的基本能力。这个技能会使你的枪更加锋利")
-  end
-  if qData[2020].state == 1 then
-    SET_QUEST_STATE(2020, 2)
-    NPC_SAY("通过[血气印记]，你的血门能获得强大的力量。下面要教你的技能叫什么来着..")
-  end
-  if qData[2021].state == 1 then
-    if qData[2021].killMonster[qt[2021].goal.killMonster[1].id] >= qt[2021].goal.killMonster[1].count then
-      SET_QUEST_STATE(2021, 2)
-      NPC_SAY("辛苦了。这次要教你的技能是{0xFFFFFF00}[穿刺枪]{END}。以光靠肉体的力量是无法达到的速度快速刺2次的技能。这个技能可以累积血门")
-    else
-      NPC_SAY("还没完成吗？你去击退10个浑身是黑毛的[毛毛]吧。你完成任务期间我会准备要教你的武功")
-    end
-  end
-  if qData[2022].state == 1 then
-    if qData[2022].killMonster[qt[2022].goal.killMonster[1].id] >= qt[2022].goal.killMonster[1].count then
-      SET_QUEST_STATE(2022, 2)
-      NPC_SAY("辛苦了。{0xFFFFFF00}[冲击波]{END}是血门开放武功。血门开放武功可以直接使用，但是如果累积血门后使用的话变得更强大。特别是击退、定身等效果的成功率会提升")
-    else
-      NPC_SAY("没找到[螳螂勇勇]吗？你通过左边的传送点过去的话能看到长得像螳螂的怪物，你击退12个后回来吧。这期间我会准备下一个技能的")
-    end
-  end
-  if qData[2023].state == 1 then
-    NPC_SAY("关于北瓶押，胡须张比我更了解，我正好有事要向[胡须张]报告的，你去一趟吧。他在[清阴镖局]")
-  end
-  if qData[2027].state == 1 then
-    SET_QUEST_STATE(2027, 2)
-    NPC_SAY("怎么这么晚啊？有人在找你")
-  end
-  if qData[2028].state == 1 then
-    NPC_SAY("快去{0xFFFFFF00}[隐藏的清阴谷]{END}见{0xFFFFFF00}[北瓶押]{END}吧")
-  end
-  if qData[2029].state == 1 then
-    SET_QUEST_STATE(2029, 2)
-    NPC_SAY("怎么这么慢啊？总之来得正好~我刚好在找你呢")
-  end
-  if qData[2030].state == 1 then
-    if qData[2030].killMonster[qt[2030].goal.killMonster[1].id] >= qt[2030].goal.killMonster[1].count then
-      SET_QUEST_STATE(2030, 2)
-      NPC_SAY("做得好~人要想获得什么东西，就要付出相应的代价。来，我教你武功")
-    else
-      NPC_SAY("你击退[北清阴平原]的20个[触目仔]后回来吧，那我会教你技能的")
-    end
-  end
-  if qData[2031].state == 1 then
-    if qData[2031].killMonster[qt[2031].goal.killMonster[1].id] >= qt[2031].goal.killMonster[1].count then
-      SET_QUEST_STATE(2031, 2)
-      NPC_SAY("怎么样？现在应该可以来回更远的地方了，交给你更重要的任务吧~")
-    else
-      NPC_SAY("这次的佣兵任务是击退[北清阴平原]的[铜铃眼]。击退10个就可以了")
-    end
-  end
-  if qData[2032].state == 1 then
-    NPC_SAY("清阴关最西边有[黄泉结界高僧]，通过他进入异界门就可以了。在异界门见见[汉谟拉比商人]后回来吧")
-  end
-  if qData[2033].state == 1 then
-    SET_QUEST_STATE(2033, 2)
-    NPC_SAY("什么？黄泉是那种地方？危险不是问题，但是已经有人在管理了就不可能当成秘密营地使用了。总之辛苦了~")
-  end
-  if qData[2034].state == 1 then
-    if qData[2034].killMonster[qt[2034].goal.killMonster[1].id] >= qt[2034].goal.killMonster[1].count and CHECK_ITEM_CNT(qt[2034].goal.getItem[1].id) >= qt[2034].goal.getItem[1].count then
-      SET_QUEST_STATE(2034, 2)
-      NPC_SAY("能力确实比之前提高了不少啊，是该教你新的武功了吗？")
-    else
-      NPC_SAY("在芦苇林击退20个[怪老子]，收集10个[姜丝男的牙齿]回来吧")
-    end
-  end
-  if qData[2035].state == 1 then
-    NPC_SAY("进入市集入口能看到[委托销售]的很大的箱子，你点击查看巡视日记吧。后面的事情那里都写着呢")
-  end
-  if qData[2036].state == 1 then
-    SET_QUEST_STATE(2036, 2)
-    NPC_SAY("辛苦了。现在教你[碎云斩]。枪不仅仅刀刃是武器，风也具有威胁性。[碎云斩]是将锋部分向地面击打利用冲击的武功")
-  end
-  if qData[2037].state == 1 then
-    NPC_SAY("快去[无名湖]的建筑物说服[路边摊]吧")
-  end
-  if qData[2038].state == 1 then
-    SET_QUEST_STATE(2038, 2)
-    NPC_SAY("竹林里有李无极？HOHO..不错啊~")
-  end
-  if qData[2039].state == 1 then
-    if CHECK_ITEM_CNT(qt[2039].goal.getItem[1].id) >= qt[2039].goal.getItem[1].count then
-      SET_QUEST_STATE(2039, 2)
-      NPC_SAY("辛苦了。还有一件事要你帮忙，稍等一下")
-    else
-      NPC_SAY("你去芦苇林击退[红毛龟]，收集10个红毛龟的壳回来吧")
-    end
-  end
-  if qData[2040].state == 1 then
-    if CHECK_ITEM_CNT(qt[2040].goal.getItem[1].id) >= qt[2040].goal.getItem[1].count then
-      SET_QUEST_STATE(2040, 2)
-      NPC_SAY("很好~加上你带过来的，差不多够啦")
-    else
-      NPC_SAY("去芦苇林击退[背影杀手]，收集12个背影杀手的镜回来吧")
-    end
-  end
-  if qData[2041].state == 1 then
-    if CHECK_ITEM_CNT(qt[2041].goal.getItem[1].id) >= qt[2041].goal.getItem[1].count then
-      SET_QUEST_STATE(2041, 2)
-      NPC_SAY("肉质确实很好啊~辛苦了")
-    else
-      NPC_SAY("去清阴关找[云善道人]，他会把你送到[鬼谷村]的。你就去村子东边的[白血鬼谷林]击退[双头猪怪]，收集15个双头猪怪五花肉回来吧")
-    end
-  end
-  if qData[2042].state == 1 then
-    if CHECK_ITEM_CNT(qt[2042].goal.getItem[1].id) >= qt[2042].goal.getItem[1].count then
-      SET_QUEST_STATE(2042, 2)
-      NPC_SAY("这个武功一直以来都是未完成状态的，但是现在利用李无极的毒完成了。是制作毒雾使对方中毒的技能。收集血门释放的话效果更好")
-    else
-      NPC_SAY("你能帮忙完成这件事，我就教你很好用的武功。路过清江村去强悍巷道深处击退[蓝色大菜头]，收集10个蓝色的灯油回来吧")
-    end
-  end
-  if qData[2043].state == 1 then
-    NPC_SAY("还没去吗？去见[汉谟拉比商人]吧。她会告诉你你要做的事情")
-  end
-  if qData[2045].state == 1 then
-    SET_QUEST_STATE(2045, 2)
-    NPC_SAY("快过来吧，我给你准备了事情。先听我说")
-  end
-  if qData[2046].state == 1 then
-    if CHECK_ITEM_CNT(qt[2046].goal.getItem[1].id) >= qt[2046].goal.getItem[1].count then
-      SET_QUEST_STATE(2046, 2)
-      NPC_SAY("嗯..很好。这些足够了")
-    else
-      NPC_SAY("去竹林击退箭骨头，收集12个[受诅咒的骨头]回来吧")
-    end
-  end
-  if qData[2047].state == 1 then
-    if CHECK_ITEM_CNT(qt[2047].goal.getItem[1].id) >= qt[2047].goal.getItem[1].count then
-      SET_QUEST_STATE(2047, 2)
-      NPC_SAY("嗯..是这个啊。这些足够研究用了。辛苦了~")
-    else
-      NPC_SAY("需要调查蛇腹窟怪物中的[黄金猎犬]，你去击退黄金猎犬，收集10个[黄金猎犬的牙]回来吧")
-    end
-  end
-  if qData[2048].state == 1 then
-    if CHECK_ITEM_CNT(qt[2048].goal.getItem[1].id) >= qt[2048].goal.getItem[1].count then
-      SET_QUEST_STATE(2048, 2)
-      NPC_SAY("很好，这就是[太极护盾]。可以提升你的防御力，也提升你对各种状态异常的耐性")
-    else
-      NPC_SAY("你再去击退前不久你击退过的黄金猎犬，收集15个[黄金猎犬的牙]回来吧。我会用那个传授你武功~")
-    end
-  end
-  if qData[2049].state == 1 then
-    if CHECK_ITEM_CNT(qt[2049].goal.getItem[1].id) >= qt[2049].goal.getItem[1].count then
-      SET_QUEST_STATE(2049, 2)
-      NPC_SAY("现在比之前更熟练的使用武功了啊~辛苦你了！")
-    else
-      NPC_SAY("击退蛇腹窟的[糯米肠]，收集10个[糯米肠的蛋]回来吧")
-    end
-  end
-  if qData[2050].state == 1 then
-    if qData[2050].killMonster[qt[2050].goal.killMonster[1].id] >= qt[2050].goal.killMonster[1].count then
-      SET_QUEST_STATE(2050, 2)
-      NPC_SAY("实力提高了不少啊~做得好！怪物的头目以后还会出现的，那时候别的军士应该能解决，你就不用担心了")
-    else
-      NPC_SAY("去击退1个蛇腹窟深处的[狗骨头]吧。狗骨头很会藏身，要静等10分钟左右，注意观察才行。击退后马上回到我这边吧")
-    end
-  end
-  if qData[2051].state == 1 then
-    NPC_SAY("你去[清阴关]中央的[正派建筑]见见[白斩姬]吧")
-  end
-  if qData[2052].state == 1 then
-    SET_QUEST_STATE(2052, 2)
-    NPC_SAY("我刚刚也见了几名正派人。辛苦了~")
-  end
-  if qData[2053].state == 1 then
-    NPC_SAY("去[清阴关]西边的[邪派建筑]见[乌骨鸡]吧")
-  end
-  if qData[2054].state == 1 then
-    SET_QUEST_STATE(2054, 2)
-    NPC_SAY("辛苦了。你应该也听说过了吧，现在各派系为了补充实力，一直在招募新人。如果功力达到40或以上还没有选择派系的话，就有资格的")
-  end
-  if qData[2055].state == 1 then
-    if CHECK_ITEM_CNT(qt[2055].goal.getItem[1].id) >= qt[2055].goal.getItem[1].count then
-      SET_QUEST_STATE(2055, 2)
-      NPC_SAY("[横扫八方]是挥舞枪横扫周围的武功，被怪物围起来的时候能发挥很强大的力。当然，它的射程很远，普通时候也很有用。会对你的实力有帮助的")
-    else
-      NPC_SAY("击退出没于竹林西边的[双节龙]，收集15个双节龙的牙齿回来吧")
-    end
-  end
-  if qData[2056].state == 1 then
-    if qData[2056].killMonster[qt[2056].goal.killMonster[1].id] >= qt[2056].goal.killMonster[1].count then
-      SET_QUEST_STATE(2056, 2)
-      NPC_SAY("辛苦了。现在营地的安全在一定时间内能得到保障了~")
-    else
-      NPC_SAY("这次的任务是击退出没于竹林的[美丽人参]。击退50个后回来吧")
-    end
-  end
-  if qData[2057].state == 1 then
-    if GET_PLAYER_FACTION() == 0 or GET_PLAYER_FACTION() == 1 then
-      SET_QUEST_STATE(2057, 2)
-      NPC_SAY("哦..你选择的是那边啊？你选择哪边对我来说都无所谓。你军士的身份始终没变就行。我现在就能感觉得到你身上更强大的力量了~你把这个带到辅助装备上吧，佩戴盾牌你就变的更强大了。哈哈哈！")
-    else
-      NPC_SAY("你决定了要加入哪个派系的话，就去正派或邪派建筑找[白斩姬]或[乌骨鸡]加入派系吧~")
-    end
-  end
-  if qData[2058].state == 1 then
-    if qData[2058].killMonster[qt[2058].goal.killMonster[1].id] >= qt[2058].goal.killMonster[1].count then
-      SET_QUEST_STATE(2058, 2)
-      NPC_SAY("刚刚好~安全强化也刚结束。还获悉了新的情报")
-    else
-      NPC_SAY("你要能帮忙击退50个左右的[飞头鬼]，就能帮我们争取加强结界所需的时间。加油！")
-    end
-  end
-  if qData[2059].state == 1 then
-    NPC_SAY("快去[韩野都城]吧。那里有第9弟子冬混汤的孙子[高一燕]，你去告诉他进攻的阴谋吧~")
-  end
-  if qData[2060].state == 1 then
-    SET_QUEST_STATE(2060, 2)
-    NPC_SAY("以后会有请求他们帮助的时候，这次能建立有好的关系，你的功劳很大。我为你准备了武功。是使用血门的武功，能远距离攻击")
-  end
-  if qData[2061].state == 1 then
-    if CHECK_ITEM_CNT(qt[2061].goal.getItem[1].id) >= qt[2061].goal.getItem[1].count then
-      SET_QUEST_STATE(2061, 2)
-      NPC_SAY("佣兵事务虽然辛苦，但是为了储备军资还要认真的做事才行~再说帮助他们，也可以报恩")
-    else
-      NPC_SAY("胡须张派人来说需要[独角阿鲁巴巴]的[断掉的链子]，可能要用在运送装备上的。你去收集15个[断掉的链子]回来吧")
-    end
-  end
-  if qData[2062].state == 1 then
-    if CHECK_ITEM_CNT(qt[2062].goal.getItem[1].id) >= qt[2062].goal.getItem[1].count then
-      SET_QUEST_STATE(2062, 2)
-      NPC_SAY("辛苦了~虽然可以跟韩野城的少侠们一起进入，但是想要了解他们的阴谋，最好是悄悄潜入窃取情报。这些事会由以前跟随暗部团长的暗部们进行")
-    else
-      NPC_SAY("你帮我收集潜入鬼谷城所需的15个[飞头鬼]的[黑粉]吧")
-    end
-  end
-  if qData[2063].state == 1 then
-    if CHECK_ITEM_CNT(qt[2063].goal.getItem[1].id) >= qt[2063].goal.getItem[1].count then
-      SET_QUEST_STATE(2063, 2)
-      NPC_SAY("这就是大怪物的精髓啊~辛苦了")
-    else
-      NPC_SAY("击退任何怪物都有可能获得[大怪物的精髓]，击退怪物的过程中收集到了就送我1个吧")
-    end
-  end
-  if qData[2064].state == 1 then
-    if qData[2064].killMonster[qt[2064].goal.killMonster[1].id] >= qt[2064].goal.killMonster[1].count then
-      SET_QUEST_STATE(2064, 2)
-      NPC_SAY("每完成一次佣兵事务，你都能迅速成长。你果然是天生的武林人士啊~")
-    else
-      NPC_SAY("在冥珠平原击退60个变成妖怪的[大胡子]后再回来吧")
-    end
-  end
-  if qData[2065].state == 1 then
-    NPC_SAY("击退青岳秀洞的蓝蜗牛，收集15个[蓝蜗牛的壳]拿给[北瓶押]吧")
-  end
-  if qData[2071].state == 1 then
-    if CHECK_ITEM_CNT(qt[2071].goal.getItem[1].id) >= qt[2071].goal.getItem[1].count then
-      SET_QUEST_STATE(2071, 2)
-      NPC_SAY("哦！你来了？怎么这么晚啊")
-    else
-      NPC_SAY("让你带过来的拿来了吗？快去收集15个[绿蜗牛]的[绿蜗牛的壳]回来吧")
-    end
-  end
-  if qData[2072].state == 1 then
-    if CHECK_ITEM_CNT(qt[2072].goal.getItem[1].id) >= qt[2072].goal.getItem[1].count then
-      SET_QUEST_STATE(2072, 2)
-      NPC_SAY("果然还是你厉害，就知道你能马上完成！")
-    else
-      NPC_SAY("这次的佣兵业务是收集龙林山[黑熊]的15个熊胆，对你来说是小意思~")
-    end
-  end
-  if qData[2073].state == 1 then
-    NPC_SAY("去冥珠城的中心[冥珠都城]吧。那里会有[冥珠城父母官]迎接你的。对了，可别空手过去~击退龙林谷的[虾米狼]，收集15个[虾米狼的皮]拿过去吧！")
-  end
-  if qData[2076].state == 1 then
-    SET_QUEST_STATE(2076, 2)
-    NPC_SAY("什么？黄泉出现了皲裂？巨大鬼怪？知道了，我马上做准备~")
-  end
-  if qData[2077].state == 1 then
-    NPC_SAY("收集20个[肉块]后马上交给[冥珠城父母官]吧。时间紧迫，你快点行动吧~")
-  end
-  if qData[2079].state == 1 then
-    SET_QUEST_STATE(2079, 2)
-    NPC_SAY("这样啊..力量的必要性~知道有一天你会想进行2次转职，但没想到会这么快...")
-  end
-  if qData[2080].state == 1 then
-    if GET_PLAYER_JOB2() == 17 or GET_PLAYER_JOB2() == 18 then
-      SET_QUEST_STATE(2080, 2)
-      NPC_SAY("很棒！")
-    else
-      NPC_SAY("根据你选择的派系，去找[白斩姬]或[乌骨鸡]吧。他们会帮你完成2次转职的")
-    end
-  end
-  if qData[2081].state == 1 then
-    NPC_SAY("我已经跟龙林城的[龙林派师兄]打过招呼了，他会帮助你的~")
-  end
-  if qData[2102].state == 1 then
-    if GET_PLAYER_LEVEL() >= 20 then
-      SET_QUEST_STATE(2102, 2)
-      NPC_SAY("恭喜你达到20级！现在变得很威武了啊~")
-    else
-      NPC_SAY("你功力达到20级，我会送你特殊的礼物~")
-    end
-  end
-  if qData[3608].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(2) then
-      NPC_SAY("促矫 富阑 吧搁 {0xFFFFFF00}[厘固采]{END}甫 林摆匙. 辑滴福绰霸 亮阑 芭具.")
-      SET_QUEST_STATE(3608, 2)
-      return
-    else
-      NPC_SAY("青扯捞 呈公 公疤嚼聪促!")
-    end
-  end
-  if qData[2156].state == 1 then
-    if CHECK_ITEM_CNT(qt[2156].goal.getItem[1].id) >= qt[2156].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("太感谢了！托你的福，我们佣兵团的名誉挽回了不少。这是答应给你的{0xFFFFFF00}[佣兵团箱子]{END}。请好好使用吧")
-        SET_QUEST_STATE(2156, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("你找回10个{0xFFFFFF00}[金牌]{END}就送你我们准备的{0xFFFFFF00}[佣兵团箱子]{END}")
-    end
-  end
-  if qData[2157].state == 1 then
-    if CHECK_ITEM_CNT(qt[2157].goal.getItem[1].id) >= qt[2157].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("太感谢了！托你的福，我们佣兵团的名誉挽回了不少。这是答应给你的{0xFFFFFF00}[佣兵团箱子]{END}。请好好使用吧")
-        SET_QUEST_STATE(2157, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("你找回20个{0xFFFFFF00}[银牌]{END}就送你我们准备的{0xFFFFFF00}[佣兵团箱子]{END}")
-    end
-  end
-  if qData[2158].state == 1 then
-    if CHECK_ITEM_CNT(qt[2158].goal.getItem[1].id) >= qt[2158].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("太感谢了！托你的福，我们佣兵团的名誉挽回了不少。这是答应给你的{0xFFFFFF00}[佣兵团箱子]{END}。请好好使用吧")
-        SET_QUEST_STATE(2158, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("你找回30个{0xFFFFFF00}[铜牌]{END}就送你我们准备的{0xFFFFFF00}[佣兵团箱子]{END}")
-    end
-  end
-  if qData[2019].state == 0 and qData[2018].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2019].id, qt[2019].name)
-  end
-  if qData[2020].state == 0 and qData[2019].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2020].id, qt[2020].name)
-  end
-  if qData[2021].state == 0 and qData[2020].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2021].id, qt[2021].name)
-  end
-  if qData[2022].state == 0 and qData[2021].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2022].id, qt[2022].name)
-  end
-  if qData[2023].state == 0 and qData[2022].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2023].id, qt[2023].name)
-  end
-  if qData[2028].state == 0 and qData[2027].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2028].id, qt[2028].name)
-  end
-  if qData[2030].state == 0 and qData[2029].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2030].id, qt[2030].name)
-  end
-  if qData[2031].state == 0 and qData[2030].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2031].id, qt[2031].name)
-  end
-  if qData[2032].state == 0 and qData[2031].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2032].id, qt[2032].name)
-  end
-  if qData[2034].state == 0 and qData[2033].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2034].id, qt[2034].name)
-  end
-  if qData[2035].state == 0 and qData[2034].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2035].id, qt[2035].name)
-  end
-  if qData[2037].state == 0 and qData[2036].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2037].id, qt[2037].name)
-  end
-  if qData[2039].state == 0 and qData[2038].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2039].id, qt[2039].name)
-  end
-  if qData[2040].state == 0 and qData[2039].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2040].id, qt[2040].name)
-  end
-  if qData[2041].state == 0 and qData[2040].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2041].id, qt[2041].name)
-  end
-  if qData[2042].state == 0 and qData[2041].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2042].id, qt[2042].name)
-  end
-  if qData[2043].state == 0 and qData[2042].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2043].id, qt[2043].name)
-  end
-  if qData[2046].state == 0 and qData[2045].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2046].id, qt[2046].name)
-  end
-  if qData[2047].state == 0 and qData[2046].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2047].id, qt[2047].name)
-  end
-  if qData[2048].state == 0 and qData[2047].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2048].id, qt[2048].name)
-  end
-  if qData[2049].state == 0 and qData[2048].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2049].id, qt[2049].name)
-  end
-  if qData[2050].state == 0 and qData[2049].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2050].id, qt[2050].name)
-  end
-  if qData[2051].state == 0 and qData[2050].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2051].id, qt[2051].name)
-  end
-  if qData[2053].state == 0 and qData[2052].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2053].id, qt[2053].name)
-  end
-  if qData[2055].state == 0 and qData[2054].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2055].id, qt[2055].name)
-  end
-  if qData[2056].state == 0 and qData[2055].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2056].id, qt[2056].name)
-  end
-  if qData[2057].state == 0 and qData[2056].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2057].id, qt[2057].name)
-  end
-  if qData[2058].state == 0 and qData[2057].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2058].id, qt[2058].name)
-  end
-  if qData[2059].state == 0 and qData[2058].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2059].id, qt[2059].name)
-  end
-  if qData[2061].state == 0 and qData[2060].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2061].id, qt[2061].name)
-  end
-  if qData[2062].state == 0 and qData[2061].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2062].id, qt[2062].name)
-  end
-  if qData[2063].state == 0 and qData[2062].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2063].id, qt[2063].name)
-  end
-  if qData[2064].state == 0 and qData[2063].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2064].id, qt[2064].name)
-  end
-  if qData[2065].state == 0 and qData[2064].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2065].id, qt[2065].name)
-  end
-  if qData[2072].state == 0 and qData[2071].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2072].id, qt[2072].name)
-  end
-  if qData[2073].state == 0 and qData[2072].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2073].id, qt[2073].name)
-  end
-  if qData[2077].state == 0 and qData[2076].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2077].id, qt[2077].name)
-  end
-  if qData[2080].state == 0 and qData[2079].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2080].id, qt[2080].name)
-  end
-  if qData[2081].state == 0 and qData[2080].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2081].id, qt[2081].name)
-  end
-  if qData[2102].state == 0 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2102].id, qt[2102].name)
-  end
-  if qData[3608].state == 0 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[3608].id, qt[3608].name)
-  end
-  if qData[2156].state == 0 then
-    ADD_QUEST_BTN(qt[2156].id, qt[2156].name)
-  end
-  if qData[2157].state == 0 then
-    ADD_QUEST_BTN(qt[2157].id, qt[2157].name)
-  end
-  if qData[2158].state == 0 then
-    ADD_QUEST_BTN(qt[2158].id, qt[2158].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314062.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2018].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2019].state ~= 2 and qData[2018].state == 2 and GET_PLAYER_JOB1() == 11 then
-    if qData[2019].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2020].state ~= 2 and qData[2019].state == 2 and GET_PLAYER_JOB1() == 11 then
-    if qData[2020].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2021].state ~= 2 and qData[2020].state == 2 and GET_PLAYER_LEVEL() >= qt[2021].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2021].state == 1 then
-      if qData[2021].killMonster[qt[2021].goal.killMonster[1].id] >= qt[2021].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2022].state ~= 2 and qData[2021].state == 2 and GET_PLAYER_LEVEL() >= qt[2022].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2022].state == 1 then
-      if qData[2022].killMonster[qt[2022].goal.killMonster[1].id] >= qt[2022].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2023].state ~= 2 and qData[2022].state == 2 and GET_PLAYER_JOB1() == 11 then
-    if qData[2023].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2027].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2028].state ~= 2 and qData[2027].state == 2 and GET_PLAYER_JOB1() == 11 then
-    if qData[2028].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2029].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2030].state ~= 2 and qData[2029].state == 2 and GET_PLAYER_LEVEL() >= qt[2030].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2030].state == 1 then
-      if qData[2030].killMonster[qt[2030].goal.killMonster[1].id] >= qt[2030].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2031].state ~= 2 and qData[2030].state == 2 and GET_PLAYER_LEVEL() >= qt[2031].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2031].state == 1 then
-      if qData[2031].killMonster[qt[2031].goal.killMonster[1].id] >= qt[2031].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2032].state ~= 2 and qData[2031].state == 2 and GET_PLAYER_LEVEL() >= qt[2032].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2032].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2033].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2034].state ~= 2 and qData[2033].state == 2 and GET_PLAYER_LEVEL() >= qt[2034].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2034].state == 1 then
-      if qData[2034].killMonster[qt[2034].goal.killMonster[1].id] >= qt[2034].goal.killMonster[1].count and CHECK_ITEM_CNT(qt[2034].goal.getItem[1].id) >= qt[2034].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2035].state ~= 2 and qData[2034].state == 2 and GET_PLAYER_LEVEL() >= qt[2035].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2035].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2036].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2037].state ~= 2 and qData[2036].state == 2 and GET_PLAYER_LEVEL() >= qt[2037].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2037].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2038].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2039].state ~= 2 and qData[2038].state == 2 and GET_PLAYER_LEVEL() >= qt[2039].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2039].state == 1 then
-      if CHECK_ITEM_CNT(qt[2039].goal.getItem[1].id) >= qt[2039].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2040].state ~= 2 and qData[2039].state == 2 and GET_PLAYER_LEVEL() >= qt[2040].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2040].state == 1 then
-      if CHECK_ITEM_CNT(qt[2040].goal.getItem[1].id) >= qt[2040].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2041].state ~= 2 and qData[2040].state == 2 and GET_PLAYER_LEVEL() >= qt[2041].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2041].state == 1 then
-      if CHECK_ITEM_CNT(qt[2041].goal.getItem[1].id) >= qt[2041].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2042].state ~= 2 and qData[2041].state == 2 and GET_PLAYER_LEVEL() >= qt[2042].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2042].state == 1 then
-      if CHECK_ITEM_CNT(qt[2042].goal.getItem[1].id) >= qt[2042].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2043].state ~= 2 and qData[2042].state == 2 and GET_PLAYER_LEVEL() >= qt[2043].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2043].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2045].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2046].state ~= 2 and qData[2045].state == 2 and GET_PLAYER_LEVEL() >= qt[2046].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2046].state == 1 then
-      if CHECK_ITEM_CNT(qt[2046].goal.getItem[1].id) >= qt[2046].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2047].state ~= 2 and qData[2046].state == 2 and GET_PLAYER_LEVEL() >= qt[2047].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2047].state == 1 then
-      if CHECK_ITEM_CNT(qt[2047].goal.getItem[1].id) >= qt[2047].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2048].state ~= 2 and qData[2047].state == 2 and GET_PLAYER_LEVEL() >= qt[2048].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2048].state == 1 then
-      if CHECK_ITEM_CNT(qt[2048].goal.getItem[1].id) >= qt[2048].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2049].state ~= 2 and qData[2048].state == 2 and GET_PLAYER_LEVEL() >= qt[2049].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2049].state == 1 then
-      if CHECK_ITEM_CNT(qt[2049].goal.getItem[1].id) >= qt[2049].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2050].state ~= 2 and qData[2049].state == 2 and GET_PLAYER_LEVEL() >= qt[2050].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2050].state == 1 then
-      if qData[2050].killMonster[qt[2050].goal.killMonster[1].id] >= qt[2050].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2051].state ~= 2 and qData[2050].state == 2 and GET_PLAYER_LEVEL() >= qt[2051].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2051].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2052].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2053].state ~= 2 and qData[2052].state == 2 and GET_PLAYER_LEVEL() >= qt[2053].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2053].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2054].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2055].state ~= 2 and qData[2054].state == 2 and GET_PLAYER_LEVEL() >= qt[2055].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2055].state == 1 then
-      if CHECK_ITEM_CNT(qt[2055].goal.getItem[1].id) >= qt[2055].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2056].state ~= 2 and qData[2055].state == 2 and GET_PLAYER_LEVEL() >= qt[2056].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2056].state == 1 then
-      if qData[2056].killMonster[qt[2056].goal.killMonster[1].id] >= qt[2056].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2057].state ~= 2 and qData[2056].state == 2 and GET_PLAYER_LEVEL() >= qt[2057].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2057].state == 1 then
-      if GET_PLAYER_FACTION() == 0 or GET_PLAYER_FACTION() == 1 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2058].state ~= 2 and qData[2057].state == 2 and GET_PLAYER_LEVEL() >= qt[2058].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2058].state == 1 then
-      if qData[2058].killMonster[qt[2058].goal.killMonster[1].id] >= qt[2058].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2059].state ~= 2 and qData[2058].state == 2 and GET_PLAYER_LEVEL() >= qt[2059].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2059].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2060].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2061].state ~= 2 and qData[2060].state == 2 and GET_PLAYER_LEVEL() >= qt[2061].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2061].state == 1 then
-      if CHECK_ITEM_CNT(qt[2061].goal.getItem[1].id) >= qt[2061].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2062].state ~= 2 and qData[2061].state == 2 and GET_PLAYER_LEVEL() >= qt[2062].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2062].state == 1 then
-      if CHECK_ITEM_CNT(qt[2062].goal.getItem[1].id) >= qt[2062].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2063].state ~= 2 and qData[2062].state == 2 and GET_PLAYER_LEVEL() >= qt[2063].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2063].state == 1 then
-      if CHECK_ITEM_CNT(qt[2063].goal.getItem[1].id) >= qt[2063].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2064].state ~= 2 and qData[2063].state == 2 and GET_PLAYER_LEVEL() >= qt[2064].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2064].state == 1 then
-      if qData[2064].killMonster[qt[2064].goal.killMonster[1].id] >= qt[2064].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2065].state ~= 2 and qData[2064].state == 2 and GET_PLAYER_LEVEL() >= qt[2065].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2065].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2071].state == 1 then
-    if CHECK_ITEM_CNT(qt[2071].goal.getItem[1].id) >= qt[2071].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[2072].state ~= 2 and qData[2071].state == 2 and GET_PLAYER_LEVEL() >= qt[2072].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2072].state == 1 then
-      if CHECK_ITEM_CNT(qt[2072].goal.getItem[1].id) >= qt[2072].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2073].state ~= 2 and qData[2072].state == 2 and GET_PLAYER_LEVEL() >= qt[2073].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2073].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2076].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2077].state ~= 2 and qData[2076].state == 2 and GET_PLAYER_LEVEL() >= qt[2077].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2077].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2079].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2080].state ~= 2 and qData[2079].state == 2 and GET_PLAYER_LEVEL() >= qt[2080].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2080].state == 1 then
-      if GET_PLAYER_JOB2() == 17 or GET_PLAYER_JOB2() == 18 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2081].state ~= 2 and qData[2080].state == 2 and GET_PLAYER_LEVEL() >= qt[2081].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2081].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2102].state ~= 2 and GET_PLAYER_LEVEL() >= qt[2102].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2102].state == 1 then
-      if GET_PLAYER_LEVEL() >= 20 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3608].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3608].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[3608].state == 1 then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2156].state ~= 2 then
-    if qData[2156].state == 1 then
-      if CHECK_ITEM_CNT(qt[2156].goal.getItem[1].id) >= qt[2156].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2157].state ~= 2 then
-    if qData[2157].state == 1 then
-      if CHECK_ITEM_CNT(qt[2157].goal.getItem[1].id) >= qt[2157].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2158].state ~= 2 then
-    if qData[2158].state == 1 then
-      if CHECK_ITEM_CNT(qt[2158].goal.getItem[1].id) >= qt[2158].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314062"
+  local refs = {}
+  refs[2018] = {
+    name = "[ 军士 - 跟佣兵领袖的会面 ]",
+    content0 = "看起来恢复的不错啊！不过，还是什么都想不起来吗？",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2019] = {
+    name = "[军士-军士的第一个技能：枪术精通 ]",
+    content0 = "看你身体强壮、恢复力也很强、眼里还放出光彩，看来我没看错，你真的很适合军士这个职业",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2020] = {
+    name = "[ 军士 - 技能: 血气印记 ]",
+    content0 = "现在要教你的血门技能是证明军士职业存在的代表性技能",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2021] = {
+    name = "[ 军士 - 技能: 穿刺枪 ]",
+    content0 = "对了，我还没告诉你既然现在是佣兵团，为什么还说是军士、皇帝直属部队的原因。过去是皇帝直属部队没错，但现在是佣兵团，严格的说应该是伪装的佣兵团",
+    reward0_count = 0,
+    needLevel = 11,
+    bQLoop = 0
+  }
+  refs[2022] = {
+    name = "[ 军士 - 技能: 冲击波 ]",
+    content0 = "之前也跟你说过，我们是军士，是保护国家最高领导人的[皇帝直属部队的一员]。你千万不要忘记！",
+    reward0_count = 0,
+    needLevel = 12,
+    bQLoop = 0
+  }
+  refs[2023] = {
+    name = "[ 军士 - 清阴关和佣兵团的关系1 ]",
+    content0 = "我还没跟你说我们是怎么会来保护清阴关的，我简单说明一下",
+    reward0_count = 0,
+    needLevel = 13,
+    bQLoop = 0
+  }
+  refs[2027] = {
+    name = "[ 军士 - 新的帮手2 ]",
+    content0 = "北瓶押是太和老君的第12个弟子。很久以前怪物横行的时候太和老君领着12位弟子突然出现，经过3年的血战把怪物都击退了！",
+    reward0_count = 0,
+    needLevel = 16,
+    bQLoop = 0
+  }
+  refs[2028] = {
+    name = "[ 军士 - 北瓶押 ]",
+    content0 = "刚刚胡须张派人传话说北瓶押在找你呢",
+    reward0_count = 0,
+    needLevel = 16,
+    bQLoop = 0
+  }
+  refs[2029] = {
+    name = "[ 军士 - 战报任务 ]",
+    content0 = "嗯..失去记忆了？治愈武功我倒是懂一些，但是治疗失忆我也没办法。不过，有一个人应该可以治疗失忆，但是很久之前去了西域",
+    reward0_count = 0,
+    needLevel = 17,
+    bQLoop = 0
+  }
+  refs[2030] = {
+    name = "[ 军士 - 技能: 血气庇护 ]",
+    content0 = "击退怪物的过程中见过[魂]吗？",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[2031] = {
+    name = "[ 军士 - 村子间的来往方法 ]",
+    content0 = "你除了清阴关还去过别的村子吗？",
+    reward0_count = 0,
+    needLevel = 19,
+    bQLoop = 0
+  }
+  refs[2032] = {
+    name = "[ 军士 - 佣兵团的秘密任务 ]",
+    content0 = "之前也跟你说过，我们为了重新崛起正在储备粮食和资金！",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[2033] = {
+    name = "[ 军士 - 黄泉的存在 ]",
+    content0 = "什么？想在黄泉扎营？哈哈…哈哈哈！我的肚子啊~你知道黄泉是什么地方吗？地狱你听说过吧？黄泉是地狱的前院~你要在那儿做什么？卡哈哈！",
+    reward0_count = 0,
+    needLevel = 21,
+    bQLoop = 0
+  }
+  refs[2034] = {
+    name = "[ 军士 - 紧急的佣兵事务 ]",
+    content0 = "竟然没有可以当营地的没封印的黄泉，太可惜了！",
+    reward0_count = 0,
+    needLevel = 22,
+    bQLoop = 0
+  }
+  refs[2035] = {
+    name = "[ 军士 - 参观市集 ]",
+    content0 = "看着你迅速成长，让我想起了小时候的自己(暂时陷入回忆中)..那时候真好啊！",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[2036] = {
+    name = "[ 军士 - 技能: 碎云斩 ]",
+    content0 = "(巡视日记里有几个要确认的事项)",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[2037] = {
+    name = "[ 军士 - 向前进 ]",
+    content0 = "做为营地的备选，除了黄泉我还打听了几个地方。其中一个地方就是[无名湖]！",
+    reward0_count = 0,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[2038] = {
+    name = "[ 军士 - 旁敲侧击 ]",
+    content0 = "你这人~还没回去啊！我不会离开这里的",
+    reward0_count = 0,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[2039] = {
+    name = "[ 军士 - 建设秘密营的准备1 ]",
+    content0 = "李无极的地盘的话正好适合当我们军士的要塞，太合适了！哈哈哈！",
+    reward0_count = 0,
+    needLevel = 25,
+    bQLoop = 0
+  }
+  refs[2040] = {
+    name = "[ 军士 - 建设秘密营的准备2 ]",
+    content0 = "这次需要背影杀手的镜。要用那个制作结界，你去收集回来吧",
+    reward0_count = 0,
+    needLevel = 26,
+    bQLoop = 0
+  }
+  refs[2041] = {
+    name = "[ 军士 - 确保营地的军粮 ]",
+    content0 = "建设营地的时候军费用得差不多了..现在重新开始了佣兵业务储备资金呢，但是现在急需军粮！我们之前已经受过太多清阴关的恩惠，不好意思再麻烦他们了..",
+    reward0_count = 0,
+    needLevel = 27,
+    bQLoop = 0
+  }
+  refs[2042] = {
+    name = "[ 军士 - 技能: 剧毒喷雾 ]",
+    content0 = "这次需要当料理材料的蓝色的灯油",
+    reward0_count = 0,
+    needLevel = 28,
+    bQLoop = 0
+  }
+  refs[2043] = {
+    name = "[ 军士 - 十二妖怪们 ]",
+    content0 = "你有见过十二妖怪吗？外形像庞大的猪或狗，但是身体像人类的会飞的怪物",
+    reward0_count = 0,
+    needLevel = 29,
+    bQLoop = 0
+  }
+  refs[2045] = {
+    name = "[ 军士 - 佣兵领袖的召唤 ]",
+    content0 = "除了霸主地狱，还有很多地狱的。如果有实力的话也试着挑战其他地狱吧。奖励少不了你的！",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[2046] = {
+    name = "[ 军士 - 防患于未然 ]",
+    content0 = "你离开后我给剩下的军士安排了任务，是了解新的秘密营地的任务。但是有一个地方是我亲自去的",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[2047] = {
+    name = "[ 军士 - 第一次调查 ]",
+    content0 = "你去收集骨头的时候，我调查了蛇腹窟",
+    reward0_count = 0,
+    needLevel = 32,
+    bQLoop = 0
+  }
+  refs[2048] = {
+    name = "[ 军士 - 技能: 太极护盾 ]",
+    content0 = "跟我预测的一样，黄金猎犬的牙有很强的毒性。我之前也跟你说过军士的武功是利用血的吧？对于我们的武功来说，中毒是致命的！",
+    reward0_count = 0,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  refs[2049] = {
+    name = "[ 军士 - 为了伪装营地 ]",
+    content0 = "对蛇腹窟的调查也差不多了，现在为了保护营地把营地伪装起来吧。听结界师说，大部分都可以用结界击退的，但是不能防止虫子",
+    reward0_count = 0,
+    needLevel = 34,
+    bQLoop = 0
+  }
+  refs[2050] = {
+    name = "[ 军士 - 击退狗骨头 ]",
+    content0 = "刚才有个军士在蛇腹窟看到了狗骨头，感觉比之前发现的怪物妖气更强。谁想到会有这种家伙藏在里面啊！以为是李无极的妖气呢",
+    reward0_count = 0,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[2051] = {
+    name = "[ 军士 - 派系与中原 ]",
+    content0 = "现在营地已经整理好了，要开始修复跟各派系领导者之间的联系方式了",
+    reward0_count = 0,
+    needLevel = 36,
+    bQLoop = 0
+  }
+  refs[2052] = {
+    name = "[ 军士 - 有力无处使 ]",
+    content0 = "正派就是正义。重视仁义和道德，绝不容许恶。在军士有难的时候也毫不犹豫的赶去支援，也正是因为我们是正派",
+    reward0_count = 0,
+    needLevel = 36,
+    bQLoop = 0
+  }
+  refs[2053] = {
+    name = "[ 军士 - 派系的劝诱1 ]",
+    content0 = "这次要去见邪派的人，这次你也辛苦一下吧~",
+    reward0_count = 0,
+    needLevel = 37,
+    bQLoop = 0
+  }
+  refs[2054] = {
+    name = "[ 军士 - 派系的劝诱2 ]",
+    content0 = "邪派就是力量。力量可以证明自己，坚持正义。从这方面来说你还很弱，达到40功力后加入邪派吧。我会让你更加强壮的成长的！",
+    reward0_count = 0,
+    needLevel = 37,
+    bQLoop = 0
+  }
+  refs[2055] = {
+    name = "[ 军士 - 技能: 横扫八方 ]",
+    content0 = "不久之前中原还只有正派和邪派两个派系的。但是自从龙林客栈里出现了归属魔教的队伍后，现在时不时的能看到魔教派系的人",
+    reward0_count = 0,
+    needLevel = 38,
+    bQLoop = 0
+  }
+  refs[2056] = {
+    name = "[ 军士 - 斗争中的冥珠城 ]",
+    content0 = "你来回的时候应该见过竹林西边有个很大的城和村子的吧？那个城是冥珠城，是很有意思的地方",
+    reward0_count = 0,
+    needLevel = 39,
+    bQLoop = 0
+  }
+  refs[2057] = {
+    name = "[ 军士 - 加入派系 ]",
+    content0 = "前段时间见派系上级的时候让你参加派系了吧？你现在功力也达到40了，也该选择正派或邪派，修炼的更强大了！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2058] = {
+    name = "[ 军士 - 兰霉匠的消息 ]",
+    content0 = "你去选择派系的时候情报网传来消息说，兰霉匠开始行动了。其实之前是我们不知道而已，据说已经行动有段时间了",
+    reward0_count = 0,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[2059] = {
+    name = "[ 军士 - 韩野城的危机 ]",
+    content0 = "攻击韩野城的兰霉匠军队的目的不一定是破坏韩野城。有情报说是为了诱导12位弟子的出现",
+    reward0_count = 0,
+    needLevel = 42,
+    bQLoop = 0
+  }
+  refs[2060] = {
+    name = "[ 军士 - 技能: 游龙枪 ]",
+    content0 = "军士..原是皇宫里最优秀的精英，兰霉匠真是罪恶滔天啊！谢谢你的情报，不过请放心吧。我们韩野城的军队有很可靠的少侠们的支援",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[2061] = {
+    name = "[ 大怪物的存在 ]",
+    content0 = "我跟你说过怪物的来源了吗？是兰霉匠打开了这世界尽头的地狱之门~那时候开始这个世界变成了到处是恶鬼和怪物的地狱！",
+    reward0_count = 0,
+    needLevel = 44,
+    bQLoop = 0
+  }
+  refs[2062] = {
+    name = "[ 人工怪物鬼谷城 ]",
+    content0 = "你出去的这段时间我对兰霉匠的军队带过来的奇怪的城做了调查…在调查的过程中知道了是和魔教有关",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[2063] = {
+    name = "[ 军士 - 大怪物的低吟 ]",
+    content0 = "你知道[大怪物的精髓]吗？最近听说少侠们通过那个东西做了很奇怪的梦，所以我也想试试，不过没有找到大怪物的精髓",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[2064] = {
+    name = "[ 军士 - 鬼谷城的实体 ]",
+    content0 = "多亏了前暗部团长的帮忙，终于掌握了鬼谷城的结构。鬼谷城一共有10层，最底层和中间有一层没有怪物，可以当成休息地",
+    reward0_count = 0,
+    needLevel = 47,
+    bQLoop = 0
+  }
+  refs[2065] = {
+    name = "[ 军士 - 寻找太和老君 ]",
+    content0 = "先把韩野城的事情放一放，现在中原需要的是可以管治兰霉匠的[太和老君]。不仅仅是中原，连皇宫也是.. 如果能见到他的话，有很多问题要请教的",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[2071] = {
+    name = "[ 军士 - 没有我不行？ ]",
+    content0 = "连兰霉匠的左右手证明管理人也能上当的程度的话，我就不怕被发现了！对了，你不在的时候佣兵领袖派人来找过你，还让你在回去的路上完成一些事",
+    reward0_count = 0,
+    needLevel = 53,
+    bQLoop = 0
+  }
+  refs[2072] = {
+    name = "[ 军士 - 都城战的权力斗争 ]",
+    content0 = "嗯..原来冥珠城的设施还有那种隐情啊~这样说来我之前也听过关于都城战的事情。以佣兵团的身份活动的时候还收到过让参加都城战的邀请",
+    reward0_count = 0,
+    needLevel = 54,
+    bQLoop = 0
+  }
+  refs[2073] = {
+    name = "[ 军士 - 派遣到冥珠城 ]",
+    content0 = "将营地转移到竹林的时候开始和冥珠城的官员们有了接触。万幸的是，兰霉匠的魔掌还没有伸向冥珠城的官员们",
+    reward0_count = 0,
+    needLevel = 55,
+    bQLoop = 0
+  }
+  refs[2076] = {
+    name = "[ 军士 - 巨大鬼怪的出现 ]",
+    content0 = "出大事了！因为把注意力都放在皇宫那边，所以都没发现黄泉产生了皲裂！现在因为从那个皲裂钻出了巨大鬼怪，冥珠城的仓库受到了攻击",
+    reward0_count = 0,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[2077] = {
+    name = "[ 军士 - 巨大鬼怪横行 ]",
+    content0 = "我已经向冥珠城派去了精英，不过有些事要你来做才行",
+    reward0_count = 0,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[2079] = {
+    name = "[ 军士 - 2次转职的必要性 ]",
+    content0 = "果然很有效果啊，巨大鬼怪逃到了黄泉里了。但现在放松还太早",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2080] = {
+    name = "[ 军士 - 2次转职 ]",
+    content0 = "军士的2次转职可以让你拥有更强的力量。还可以拥有其他的",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2081] = {
+    name = "[ 军士 - 离别 ]",
+    content0 = "现在你成长成可以独自行动的境地了~你已经选择了2次转职，那就该说再见了~",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2102] = {
+    name = "[ 军士 - 佣兵领袖的礼物 ]",
+    content0 = "现在才10级啊…只要按照我的指示行事，升级就容易得多了",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2156] = {
+    name = "[ 佣兵团的名誉(金牌) ]",
+    content0 = "你来的正好，我正在找你呢！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2157] = {
+    name = "[ 佣兵团的名誉(银牌) ]",
+    content0 = "你来的正好，我正在找你呢！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2158] = {
+    name = "[ 佣兵团的名誉(铜牌) ]",
+    content0 = "你来的正好，我正在找你呢！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[3608] = {
+    name = "[ 胶铰丛膊 巩救 牢荤 靛府扁[焙荤] ]",
+    content0 = "坷阀悼救 磊匙甫 扁促啡促匙.",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

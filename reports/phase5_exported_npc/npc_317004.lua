@@ -1,178 +1,88 @@
-function npcsay(id)
-  if id ~= 4317004 then
-    return
-  end
-  clickNPCid = id
-  if qData[1138].state == 1 then
-    if CHECK_ITEM_CNT(qt[1138].goal.getItem[1].id) >= qt[1138].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢。现在可以完成新鲜的料理了。这是我的诚意，请收下。")
-        SET_QUEST_STATE(1138, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("制作料理需要媚惑之花的10个[红果子]。媚惑之花在旁边的强悍巷道能见到。")
-    end
-  end
-  if qData[1153].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("啊，来的正好。走了这么远的路，辛苦了。吃饭了吗？")
-      SET_QUEST_STATE(1153, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1155].state == 1 then
-    NPC_SAY("功力还没达31吗？先去找收获的农夫吧。")
-  end
-  if qData[1160].state == 1 then
-    if CHECK_ITEM_CNT(qt[1160].goal.getItem[1].id) >= qt[1160].goal.getItem[1].count then
-      NPC_SAY("拿来了啊，太好了。稍等一下。啊！这… 料理失败了。那我给你这个吧。到底是哪里出了错啊？")
-      SET_QUEST_STATE(1160, 2)
-    else
-      NPC_SAY("15个[车轮残片]。别忘了，没有那些也就没有料理。去强悍巷道击退车轮怪收集15个[车轮残片]回来吧。")
-    end
-  end
-  if qData[1166].state == 1 then
-    if CHECK_ITEM_CNT(qt[1166].goal.getItem[1].id) >= qt[1166].goal.getItem[1].count then
-      NPC_SAY("谢谢。料理做好了就叫你。")
-      SET_QUEST_STATE(1166, 2)
-    else
-      NPC_SAY("还没去吗？需要15个[鼠须]。")
-    end
-  end
-  if qData[1173].state == 1 then
-    if CHECK_ITEM_CNT(qt[1173].goal.getItem[1].id) >= qt[1173].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真的很快啊。确实知道了你攻击已经达31了。哈哈哈（看脸色）不是生气了吧？")
-        SET_QUEST_STATE(1173, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去强悍巷道击退蓝色大菜头，收集20个[蓝色的灯油]回来吧。这样就可以制作料理了。")
-    end
-  end
-  if qData[1175].state == 1 then
-    if CHECK_ITEM_CNT(qt[1175].goal.getItem[1].id) >= qt[1175].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。这是邪派嘉奖你的，不要拒绝。")
-        SET_QUEST_STATE(1175, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去强悍巷道击退矿工僵尸收集20个[破烂的灯]回来吧。")
-    end
-  end
-  if qData[1177].state == 1 then
-    NPC_SAY("送10个[破旧的铲柄]给乌骨鸡大侠吧。鬼铲在强悍巷道里。")
-  end
-  if qData[1400].state == 1 then
-    NPC_SAY("?????. ???… ??…")
-    SET_QUEST_STATE(1400, 2)
-  end
-  if qData[1401].state == 1 then
-    NPC_SAY("???? ??? ?? ??????? ??! ?? ??? ??? ????!")
-  end
-  if qData[1138].state == 0 then
-    ADD_QUEST_BTN(qt[1138].id, qt[1138].name)
-  end
-  if qData[1153].state == 2 and qData[1155].state == 0 then
-    ADD_QUEST_BTN(qt[1155].id, qt[1155].name)
-  end
-  if qData[1160].state == 0 then
-    ADD_QUEST_BTN(qt[1160].id, qt[1160].name)
-  end
-  if qData[1166].state == 0 then
-    ADD_QUEST_BTN(qt[1166].id, qt[1166].name)
-  end
-  if qData[1155].state == 2 and qData[1173].state == 0 then
-    ADD_QUEST_BTN(qt[1173].id, qt[1173].name)
-  end
-  if qData[1173].state == 2 and qData[1175].state == 0 then
-    ADD_QUEST_BTN(qt[1175].id, qt[1175].name)
-  end
-  if qData[1175].state == 2 and qData[1177].state == 0 then
-    ADD_QUEST_BTN(qt[1177].id, qt[1177].name)
-  end
-  if qData[1401].state == 0 and qData[1400].state == 2 then
-    ADD_QUEST_BTN(qt[1401].id, qt[1401].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_317004.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1138].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1138].needLevel then
-    if qData[1138].state == 1 then
-      if CHECK_ITEM_CNT(qt[1138].goal.getItem[1].id) >= qt[1138].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1151].state == 2 and qData[1153].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1153].needLevel and qData[1153].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1153].state == 2 and qData[1155].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1155].needLevel then
-    if qData[1155].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1160].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1160].needLevel then
-    if qData[1160].state == 1 then
-      if CHECK_ITEM_CNT(qt[1160].goal.getItem[1].id) >= qt[1160].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1166].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1166].needLevel then
-    if qData[1166].state == 1 then
-      if CHECK_ITEM_CNT(qt[1166].goal.getItem[1].id) >= qt[1166].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1155].state == 2 and qData[1173].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1173].needLevel then
-    if qData[1173].state == 1 then
-      if CHECK_ITEM_CNT(qt[1173].goal.getItem[1].id) >= qt[1173].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1173].state == 2 and qData[1175].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1175].needLevel then
-    if qData[1175].state == 1 then
-      if CHECK_ITEM_CNT(qt[1175].goal.getItem[1].id) >= qt[1175].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1175].state == 2 and qData[1177].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1177].needLevel then
-    if qData[1177].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_317004"
+  local refs = {}
+  refs[1138] = {
+    name = "[ 新鲜的食材 ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}，我有个请求。",
+    reward0_count = 1,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1151] = {
+    name = "[ 要挟请求2 ]",
+    content0 = "我小的时候嘴角被鸟啄，留下了伤疤。这胡须其实也是为了伤疤才留的。",
+    reward0_count = 0,
+    needLevel = 22,
+    bQLoop = 0
+  }
+  refs[1153] = {
+    name = "[ 乌骨鸡的性急 ]",
+    content0 = "嗯，去见路边摊了？",
+    reward0_count = 1,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1155] = {
+    name = "[ 厨师的疑心 ]",
+    content0 = "您是之前见过的？是乌骨鸡让你来的？（语气变了）哼，就你一个人能干什么事啊？我也是邪派的武人呢。我们邪派的武人平时就这样隐藏着身份。",
+    reward0_count = 1,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1160] = {
+    name = "[ 新的料理 ]",
+    content0 = "你得帮帮我。",
+    reward0_count = 0,
+    needLevel = 25,
+    bQLoop = 0
+  }
+  refs[1166] = {
+    name = "[ 厨师的魂 ]",
+    content0 = "你看，再次深刻体会到新的料理材料很正要。",
+    reward0_count = 0,
+    needLevel = 28,
+    bQLoop = 0
+  }
+  refs[1173] = {
+    name = "[ 厨师的失误 ]",
+    content0 = "油到底去哪儿了啊？",
+    reward0_count = 20,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[1175] = {
+    name = "[ 厨师的情报 ]",
+    content0 = "据逃离强悍巷道的矿工们说，巨大的猪头怪物控制着其他怪物，使用各种邪恶的法术掌控着巷道。",
+    reward0_count = 50,
+    needLevel = 32,
+    bQLoop = 0
+  }
+  refs[1177] = {
+    name = "[ 给乌骨鸡的礼物 ]",
+    content0 = "和预计的一样，你收集来的{0xFFFFFF00}[ 破烂的灯 ]{END}一直朝向芦苇林亮着。快把这件事情告诉乌骨鸡大侠吧。",
+    reward0_count = 20,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  refs[1400] = {
+    name = "[ ???? ????! ]",
+    content0 = "????! ? ??? ??? ????!",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1401] = {
+    name = "[ ??? ??! ]",
+    content0 = "?? ?? ????? ??? ?? ??? ?? ???. ?? ?? ??? ? ????, ???? ??? ????",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,113 +1,95 @@
-function npcsay(id)
-  if id ~= 4314009 then
-    return
-  end
-  clickNPCid = id
-  if qData[22].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(22, 2)
-    return
-  elseif qData[23].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(23, 2)
-    return
-  elseif qData[24].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(24, 2)
-    return
-  elseif qData[25].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(25, 2)
-    return
-  elseif qData[26].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(26, 2)
-    return
-  elseif qData[27].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(27, 2)
-    return
-  elseif qData[28].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(28, 2)
-    return
-  elseif qData[29].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(29, 2)
-    return
-  elseif qData[30].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(30, 2)
-    return
-  elseif qData[31].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(31, 2)
-    return
-  elseif qData[678].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(678, 2)
-    return
-  elseif qData[679].state == 1 then
-    NPC_SAY("你好像已经决定了。那我就教你武功了。")
-    SET_QUEST_STATE(679, 2)
-    return
-  else
-    NPC_SAY("我是武士技能传授NPC。你有什么想问我的吗？")
-    ADD_EX_BTN(id)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314009.lua
+function npcsay(msg)
+  return msg
 end
-function saychjob(id)
-  if GET_PLAYER_JOB1() ~= 0 then
-    NPC_SAY("已经拥有职业了啊。")
-    return
-  end
-end
-function saycanleanskill(id)
-  if GET_PLAYER_JOB1() ~= 1 then
-    NPC_SAY("没有可以教你的武功")
-    return
-  end
-  if qData[22].state == 1 or qData[23].state == 1 or qData[24].state == 1 or qData[25].state == 1 or qData[26].state == 1 or qData[27].state == 1 or qData[28].state == 1 or qData[29].state == 1 or qData[30].state == 1 or qData[31].state == 1 then
-    NPC_SAY("武功任务不能重复进行 ")
-    return
-  end
-  if CHECK_SKILL(qt[22].reward.getSkill[1]) == false and qData[22].state == 0 then
-    ADD_QUEST_BTN(qt[22].id, qt[22].name)
-  end
-  if CHECK_SKILL(qt[23].reward.getSkill[1]) == false and qData[23].state == 0 then
-    ADD_QUEST_BTN(qt[23].id, qt[23].name)
-  end
-  if CHECK_SKILL(qt[24].reward.getSkill[1]) == false and qData[24].state == 0 then
-    ADD_QUEST_BTN(qt[24].id, qt[24].name)
-  end
-  if CHECK_SKILL(qt[25].reward.getSkill[1]) == false and qData[25].state == 0 then
-    ADD_QUEST_BTN(qt[25].id, qt[25].name)
-  end
-  if CHECK_SKILL(qt[26].reward.getSkill[1]) == false and qData[26].state == 0 then
-    ADD_QUEST_BTN(qt[26].id, qt[26].name)
-  end
-  if CHECK_SKILL(qt[27].reward.getSkill[1]) == false and qData[27].state == 0 then
-    ADD_QUEST_BTN(qt[27].id, qt[27].name)
-  end
-  if CHECK_SKILL(qt[28].reward.getSkill[1]) == false and qData[28].state == 0 then
-    ADD_QUEST_BTN(qt[28].id, qt[28].name)
-  end
-  if CHECK_SKILL(qt[29].reward.getSkill[1]) == false and qData[29].state == 0 then
-    ADD_QUEST_BTN(qt[29].id, qt[29].name)
-  end
-  if CHECK_SKILL(qt[30].reward.getSkill[1]) == false and qData[30].state == 0 then
-    ADD_QUEST_BTN(qt[30].id, qt[30].name)
-  end
-  if CHECK_SKILL(qt[31].reward.getSkill[1]) == false and qData[31].state == 0 then
-    ADD_QUEST_BTN(qt[31].id, qt[31].name)
-  end
-  if CHECK_SKILL(qt[678].reward.getSkill[1]) == false and qData[678].state == 0 then
-    ADD_QUEST_BTN(qt[678].id, qt[678].name)
-  end
-  if CHECK_SKILL(qt[679].reward.getSkill[1]) == false and qData[679].state == 0 then
-    ADD_QUEST_BTN(qt[679].id, qt[679].name)
-  end
-end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_314009"
+  local refs = {}
+  refs[22] = {
+    name = "[ 剑-利刃术 ]",
+    content0 = "利刃术，装备剑时，能使攻击力自动上升的内功武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[23] = {
+    name = "[ 刀-霸刀术 ]",
+    content0 = "{0xFFFFFF00}霸刀术，装备刀时，能使攻击力自动上升的内功技能{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[24] = {
+    name = "[ 剑-剑气穿心 ]",
+    content0 = "{0xFFFFFF00}剑气穿心，此武功可以举剑贯穿攻击前方的敌人{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[25] = {
+    name = "[ 刀-裂空斩 ]",
+    content0 = "{0xFFFFFF00}裂空斩，提刀会给前方敌人造成额外伤害的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[26] = {
+    name = "[ 剑-开山突击 ]",
+    content0 = "{0xFFFFFF00}开山突击，举剑后可以连续两次攻击前方敌人的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[27] = {
+    name = "[ 刀-点穴定身 ]",
+    content0 = "{0xFFFFFF00}点穴定身，是提刀攻击时有一定几率使对手定身的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[28] = {
+    name = "[ 共同-狂暴怒气 ]",
+    content0 = "狂暴怒气，降低自己的防御力，同时提升攻击力的武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[29] = {
+    name = "[ 共同-气力转换 ]",
+    content0 = "{0xFFFFFF00}气力转换，使用自己的体力来恢复鬼力的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 28,
+    bQLoop = 0
+  }
+  refs[30] = {
+    name = "[ 共同-强气护体 ]",
+    content0 = "{0xFFFFFF00}强气护体，可以将自己的防御力提升到最高值的武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  refs[31] = {
+    name = "[ 共同-强化格挡 ]",
+    content0 = "{0xFFFFFF00}强化格挡是在防御时增加格挡数值的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 38,
+    bQLoop = 0
+  }
+  refs[678] = {
+    name = "[ 剑-梅花幻剑 ]",
+    content0 = "{0xFFFFFF00}梅花幻剑，是用剑武士的最高等级武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[679] = {
+    name = "[ 刀-破天灭 ]",
+    content0 = "破天灭，是用刀武士的最高等级武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4300134 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("请帮忙收集8周年纪念币吧。8周年石像燃烧起来的话，{0xFFFFFF00}1小时内怪物伤害增加100%，鬼力消耗量减少50%{END}。")
-  BTN_8YEAR_RETURN(id)
-  BTN_8YEAR_SHOW(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_300134.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300134"
+  local refs = {}
+  return refs
 end

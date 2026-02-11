@@ -1,20 +1,18 @@
-function npcsay(id)
-  if id ~= 4316008 then
-    return
-  end
-  clickNPCid = id
-  if qData[292].state == 1 then
-    if CHECK_ITEM_CNT(qt[292].goal.getItem[1].id) >= qt[292].goal.getItem[1].count then
-      NPC_SAY("呼…还是不行啊。不管怎么说是我家小姐…谢谢你的帮忙。这是一点心意")
-      SET_QUEST_STATE(292, 2)
-    else
-      NPC_SAY("帮我收集回来{0xFFFFFF00}80个腐烂的豆腐{END}吧")
-    end
-  end
-  if qData[292].state == 0 then
-    ADD_QUEST_BTN(qt[292].id, qt[292].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_316008.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_316008"
+  local refs = {}
+  refs[292] = {
+    name = "[ ? ? ]",
+    content0 = "??...",
+    reward0_count = 0,
+    needLevel = 83,
+    bQLoop = 0
+  }
+  return refs
 end

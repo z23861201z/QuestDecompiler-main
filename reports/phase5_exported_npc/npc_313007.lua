@@ -1,274 +1,151 @@
-function npcsay(id)
-  if id ~= 4313007 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("我负责管理{0xFFFFFF00}都城战{END}和{0xFFFFFF00}同盟联合{END}。")
-  if qData[804].state == 1 then
-    if qData[804].meetNpc[1] ~= qt[804].goal.meetNpc[1] then
-      NPC_QSAY(804, 1)
-      SET_MEETNPC(804, 1, id)
-      SET_INFO(804, 2)
-    else
-      NPC_SAY("通过{0xFFFFFF00}左侧红色的时空世界{END}可以到达通往巨大鬼怪的小胡同。和从黄泉进入一样，把灯火放入巨大的传送点后便可和队友一起入场")
-    end
-  end
-  if qData[1229].state == 1 and CHECK_ITEM_CNT(qt[1229].goal.getItem[1].id) >= qt[1229].goal.getItem[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(2) then
-      NPC_SAY("少侠击退了大胡子吗？真是帮我去除了一个心病。谢谢了。")
-      SET_QUEST_STATE(1229, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1230].state == 1 then
-    NPC_SAY("击退{0xFFFFFF00}夺命鬼萝莉{END}，收集{0xFFFFFF00}20个夺命鬼萝莉的舌头{END}拿给{0xFFFFFF00}皇宫武士魏朗{END}，讨他欢心吧。")
-  end
-  if qData[1231].state == 1 and CHECK_ITEM_CNT(qt[1231].goal.getItem[1].id) >= qt[1231].goal.getItem[1].count then
-    NPC_SAY("好了！现在把这件事告诉冥珠城的武林人，那他们间的争斗也会缓和很多。")
-    SET_QUEST_STATE(1231, 2)
-  end
-  if qData[1232].state == 1 then
-    if CHECK_ITEM_CNT(qt[1232].goal.getItem[1].id) >= qt[1232].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。现在可以正式的做准备了。")
-        SET_QUEST_STATE(1232, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("通过{0xFFFFFF00}冥珠城井台{END}去{0xFFFFFF00}青岳秀洞{END}击退{0xFFFFFF00}黄蜗牛{END}，收集{0xFFFFFF00}25个黄蜗牛的壳{END}回来吧。")
-    end
-  end
-  if qData[1233].state == 1 then
-    NPC_SAY("快去{0xFFFFFF00}冥珠城东边{END}的{0xFFFFFF00}哭泣美眉{END}那儿看看吧。")
-  end
-  if qData[1238].state == 1 then
-    NPC_SAY("来了啊。正在等你呢。")
-    SET_QUEST_STATE(1238, 2)
-  end
-  if qData[1239].state == 1 then
-    if CHECK_ITEM_CNT(qt[1239].goal.getItem[1].id) >= qt[1239].goal.getItem[1].count then
-      NPC_SAY("托你的福，高官贵爵马上就下命令了。以后皇宫武士该消停了。真是辛苦你了。")
-      SET_QUEST_STATE(1239, 2)
-    else
-      NPC_SAY("通过{0xFFFFFF00}冥珠城井台{END}去{0xFFFFFF00}青岳秀洞{END}就能找到{0xFFFFFF00}蓝蜗牛{END}。击退蓝蜗牛收集{0xFFFFFF00}25个蓝蜗牛的壳{END}回来吧。")
-    end
-  end
-  if qData[1240].state == 1 then
-    NPC_SAY("击退{0xFFFFFF00}龙林山的黑熊{END}收集{0xFFFFFF00}20个熊胆{END}，给{0xFFFFFF00}龙林客栈的来坐老板娘{END}送去吧。")
-  end
-  if qData[869].state == 1 then
-    NPC_SAY("经过{0xFFFFFF00}冥珠城小胡同{END}进入{0xFFFFFF00}鬼怪战场入口{END}击退{0xFFFFFF00}愤怒的巨大鬼怪{END}吧")
-  end
-  if qData[2073].state == 1 and CHECK_ITEM_CNT(qt[2073].goal.getItem[1].id) >= qt[2073].goal.getItem[1].count then
-    SET_QUEST_STATE(2073, 2)
-    NPC_SAY("欢迎光临！你就是PLAYERNAME啊~")
-  end
-  if qData[2074].state == 1 then
-    if CHECK_ITEM_CNT(qt[2074].goal.getItem[1].id) >= qt[2074].goal.getItem[1].count then
-      SET_QUEST_STATE(2074, 2)
-      NPC_SAY("辛苦了~总算在最后期限之前凑够了。可气的是这么辛苦集齐的税收要用到培养兰霉匠的军队上。虽然怒火中烧，但现在是没什么办法啊~")
-    else
-      NPC_SAY("你去龙林谷击退[大菜头]，收集20个[电碳]回来吧。只有龙林谷才有电碳，所以在国外能卖出高价")
-    end
-  end
-  if qData[2075].state == 1 then
-    if CHECK_ITEM_CNT(qt[2075].goal.getItem[1].id) >= qt[2075].goal.getItem[1].count then
-      SET_QUEST_STATE(2075, 2)
-      NPC_SAY("这些足够应付一段时间了。管理文件也筛选了一些无关紧要的，应该没什么问题")
-    else
-      NPC_SAY("[红蜗牛的壳]可以从[红蜗牛]身上获得。[红蜗牛]在[黄岳秀洞]的深处出没。收集20个[红蜗牛的壳]回来吧")
-    end
-  end
-  if qData[2076].state == 1 then
-    NPC_SAY("快回到佣兵团请求帮助吧。以佣兵团的能力应该可以抵挡的了的，你快点吧！")
-  end
-  if qData[2077].state == 1 then
-    if CHECK_ITEM_CNT(qt[2077].goal.getItem[1].id) >= qt[2077].goal.getItem[1].count then
-      SET_QUEST_STATE(2077, 2)
-      NPC_SAY("你来了啊~现在佣兵团成员们正在跟巨大鬼怪战斗呢。稍微晚一点的话，别说是粮食了，连人都要被吃掉了！")
-    else
-      NPC_SAY("听说会收集粮食回来的。听说是击退[铁牛运功散]，收集20个[肉块]回来的")
-    end
-  end
-  if qData[2078].state == 1 then
-    if CHECK_ITEM_CNT(qt[2078].goal.getItem[1].id) >= qt[2078].goal.getItem[1].count then
-      SET_QUEST_STATE(2078, 2)
-      NPC_SAY("这些应该足够解决了~")
-    else
-      NPC_SAY("可以从栖息在黄岳秀洞深处的[变异毛毛虫]身上获得[变异毛毛的卵]。要给巨大鬼怪用的，所以要收集25个")
-    end
-  end
-  if qData[2079].state == 1 then
-    NPC_SAY("如果对2次转职有兴趣的话，去见[佣兵领袖]吧")
-  end
-  if qData[925].state == 0 then
-    ADD_QUEST_BTN(qt[925].id, qt[925].name)
-  end
-  CW_PROCLAMATION(id)
-  CW_REQUEST(id)
-  CW_ENTER(id)
-  ALLI_CREATE(id)
-  ALLI_QUEST(id)
-  ALLI_LISTVIEW(id)
-  ALLI_DEFENSE_SIDE(id)
-  ALLI_ATTACK_PROPOSE(id)
-  if qData[1239].state == 0 and qData[1237].state == 2 and GET_PLAYER_LEVEL() >= qt[1239].needLevel then
-    ADD_QUEST_BTN(qt[1239].id, qt[1239].name)
-  end
-  if qData[1240].state == 0 and qData[1239].state == 2 and GET_PLAYER_LEVEL() >= qt[1240].needLevel then
-    ADD_QUEST_BTN(qt[1240].id, qt[1240].name)
-  end
-  if qData[1230].state == 0 and qData[1229].state == 2 and GET_PLAYER_LEVEL() >= qt[1230].needLevel then
-    ADD_QUEST_BTN(qt[1230].id, qt[1230].name)
-  end
-  if qData[1232].state == 0 and qData[1231].state == 2 and GET_PLAYER_LEVEL() >= qt[1232].needLevel then
-    ADD_QUEST_BTN(qt[1232].id, qt[1232].name)
-  end
-  if qData[1233].state == 0 and qData[1232].state == 2 and GET_PLAYER_LEVEL() >= qt[1233].needLevel then
-    ADD_QUEST_BTN(qt[1233].id, qt[1233].name)
-  end
-  if qData[869].state == 0 then
-    ADD_QUEST_BTN(qt[869].id, qt[869].name)
-  end
-  if qData[2074].state == 0 and qData[2073].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2074].id, qt[2074].name)
-  end
-  if qData[2075].state == 0 and qData[2074].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2075].id, qt[2075].name)
-  end
-  if qData[2076].state == 0 and qData[2075].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2076].id, qt[2076].name)
-  end
-  if qData[2078].state == 0 and qData[2077].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2078].id, qt[2078].name)
-  end
-  if qData[2079].state == 0 and qData[2078].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2079].id, qt[2079].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_313007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[676].state == 2 and qData[804].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1229].state == 1 and CHECK_ITEM_CNT(qt[1229].goal.getItem[1].id) >= qt[1229].goal.getItem[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(2) then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1230].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1230].state == 0 and qData[1229].state == 2 and GET_PLAYER_LEVEL() >= qt[1230].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1231].state == 1 then
-    if CHECK_ITEM_CNT(qt[1231].goal.getItem[1].id) >= qt[1231].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1232].state == 1 then
-    if CHECK_ITEM_CNT(qt[1232].goal.getItem[1].id) >= qt[1232].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1232].state == 0 and qData[1231].state == 2 and GET_PLAYER_LEVEL() >= qt[1232].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1233].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1233].state == 0 and qData[1232].state == 2 and GET_PLAYER_LEVEL() >= qt[1233].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1238].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1239].state == 1 then
-    if CHECK_ITEM_CNT(qt[1239].goal.getItem[1].id) >= qt[1239].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1232].state == 0 and qData[1231].state == 2 and GET_PLAYER_LEVEL() >= qt[1232].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1239].state == 0 and qData[1237].state == 2 and GET_PLAYER_LEVEL() >= qt[1239].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1240].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1240].state == 0 and qData[1239].state == 2 and GET_PLAYER_LEVEL() >= qt[1240].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[869].state == 0 and GET_PLAYER_LEVEL() >= qt[869].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[2073].state == 1 and CHECK_ITEM_CNT(qt[2073].goal.getItem[1].id) >= qt[2073].goal.getItem[1].count then
-    QSTATE(id, 2)
-  end
-  if qData[2074].state ~= 2 and qData[2073].state == 2 and GET_PLAYER_LEVEL() >= qt[2074].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2074].state == 1 then
-      if CHECK_ITEM_CNT(qt[2074].goal.getItem[1].id) >= qt[2074].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2075].state ~= 2 and qData[2074].state == 2 and GET_PLAYER_LEVEL() >= qt[2075].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2075].state == 1 then
-      if CHECK_ITEM_CNT(qt[2075].goal.getItem[1].id) >= qt[2075].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2076].state ~= 2 and qData[2075].state == 2 and GET_PLAYER_LEVEL() >= qt[2076].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2076].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2077].state == 1 then
-    if CHECK_ITEM_CNT(qt[2077].goal.getItem[1].id) >= qt[2077].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[2078].state ~= 2 and qData[2077].state == 2 and GET_PLAYER_LEVEL() >= qt[2078].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2078].state == 1 then
-      if CHECK_ITEM_CNT(qt[2078].goal.getItem[1].id) >= qt[2078].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2079].state ~= 2 and qData[2078].state == 2 and GET_PLAYER_LEVEL() >= qt[2079].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2079].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_313007"
+  local refs = {}
+  refs[676] = {
+    name = "[ 开启新的黄泉（2） ]",
+    content0 = "邪派那些家伙不但不会告诉你，还会拿你逗乐子，不过我们正派就算再累也会秉持正义。因此清阴胡须张才让你来找我的吧。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[804] = {
+    name = "[ 巨大鬼怪-炫耀实力 ]",
+    content0 = "糟糕。头一次看到那么无知的家伙，连封印结界也吃掉了。嗯？干嘛目不转睛的看着我。你认识我吗？哼。虽然不记得你了，但是你还得给我帮个忙。可以吧？",
+    reward0_count = 1,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[869] = {
+    name = "[ 愤怒的巨大鬼怪! ]",
+    content0 = "PLAYERNAME！大事不妙了。之前出现的巨大鬼怪变得更加残暴，又开始捣乱了",
+    reward0_count = 2,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[925] = {
+    name = "{0xFFFFB4B4}[ 冥珠都城巨大鬼怪 ]{END}",
+    content0 = "冥珠城巨大鬼怪黄泉总共分为3阶段。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1229] = {
+    name = "[ 冥珠城秘闻的真相 ]",
+    content0 = "托少侠的福富翁们的横暴稍有好转，但是冥珠城的混乱仍在继续。富翁们的气势减弱了很多，但冥珠城武林人间的矛盾依然。",
+    reward0_count = 1,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[1230] = {
+    name = "[ 皇宫的阴谋 ]",
+    content0 = "冥珠城银行跟少侠说了那样的话吗？是的。我也是这么想的。虽然说是拿着皇宫的俸禄，但我也是为这卑劣的阴谋很气愤啊。",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[1231] = {
+    name = "[ 快嘴 ]",
+    content0 = "你对我有什么所求吗？",
+    reward0_count = 0,
+    needLevel = 46,
+    bQLoop = 0
+  }
+  refs[1232] = {
+    name = "[ 为布告做准备 ]",
+    content0 = "我计划把少侠偷取来的圣旨抄写数百份，在冥珠城全域散布。但是得秘密进行所以有点难度。",
+    reward0_count = 1,
+    needLevel = 47,
+    bQLoop = 0
+  }
+  refs[1233] = {
+    name = "[ 皇宫的愤怒 ]",
+    content0 = "出事了。皇宫武士们为了找回圣旨折腾无辜的居民。哭泣美眉的父母因被怀疑是窃贼抓去，受到严刑拷打之后放回来了。",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[1237] = {
+    name = "[ 为了美人计做准备2 ]",
+    content0 = "头发是解决了，但衣服是个问题。少侠能再帮我一次吗？",
+    reward0_count = 1,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[1238] = {
+    name = "[ 宴会的成功 ]",
+    content0 = "不知道衫菜表现的怎么样？计划成功了吧？少侠去冥珠都城找冥珠城父母官了解一下结果吧。",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[1239] = {
+    name = "[ 宴会的成功2 ]",
+    content0 = "来了？",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[1240] = {
+    name = "[ 支付宴会费用 ]",
+    content0 = "武林人之间的矛盾缓和了不少，皇宫武士也消停了。虽不能说很完美，但冥珠城以后也可以恢复平静了。",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[2073] = {
+    name = "[ 军士 - 派遣到冥珠城 ]",
+    content0 = "将营地转移到竹林的时候开始和冥珠城的官员们有了接触。万幸的是，兰霉匠的魔掌还没有伸向冥珠城的官员们",
+    reward0_count = 0,
+    needLevel = 55,
+    bQLoop = 0
+  }
+  refs[2074] = {
+    name = "[ 军士 - 兰霉匠的压迫 ]",
+    content0 = "事情变得复杂了~跟佣兵团达成协议没多久，从皇宫传来了消息。到现在为止是除了像皇宫进贡土特产之外没有任何要求的..",
+    reward0_count = 0,
+    needLevel = 56,
+    bQLoop = 0
+  }
+  refs[2075] = {
+    name = "[ 军士 - 对于压迫的对策 ]",
+    content0 = "得先把下次的税收也准备好。这次需要红蜗牛的壳。充一次电能长时间散发热气，所以在天寒地冻的国家很受欢迎",
+    reward0_count = 0,
+    needLevel = 57,
+    bQLoop = 0
+  }
+  refs[2076] = {
+    name = "[ 军士 - 巨大鬼怪的出现 ]",
+    content0 = "出大事了！因为把注意力都放在皇宫那边，所以都没发现黄泉产生了皲裂！现在因为从那个皲裂钻出了巨大鬼怪，冥珠城的仓库受到了攻击",
+    reward0_count = 0,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[2077] = {
+    name = "[ 军士 - 巨大鬼怪横行 ]",
+    content0 = "我已经向冥珠城派去了精英，不过有些事要你来做才行",
+    reward0_count = 0,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[2078] = {
+    name = "[ 军士 - 防御巨大鬼怪 ]",
+    content0 = "虽然佣兵团成员在抵挡，但也是一场苦战啊！我也不能就这么干坐着，所以一直在研究击退方法，这一想还真让我想到了",
+    reward0_count = 0,
+    needLevel = 59,
+    bQLoop = 0
+  }
+  refs[2079] = {
+    name = "[ 军士 - 2次转职的必要性 ]",
+    content0 = "果然很有效果啊，巨大鬼怪逃到了黄泉里了。但现在放松还太早",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

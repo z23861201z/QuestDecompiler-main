@@ -1,136 +1,81 @@
-function npcsay(id)
-  if id ~= 4317001 then
-    return
-  end
-  clickNPCid = id
-  if qData[332].state == 1 then
-    if qData[332].killMonster[qt[332].goal.killMonster[1].id] >= qt[332].goal.killMonster[1].count then
-      NPC_SAY("?????. ?? ???? ?? ??? ???…")
-      SET_QUEST_STATE(332, 2)
-      return
-    else
-      NPC_SAY("??... {0xFFFFFF00}[????] 20??{END}? ????? ???? ?? ?????.")
-    end
-  end
-  if qData[334].state == 1 then
-    if qData[334].killMonster[qt[334].goal.killMonster[1].id] >= qt[334].goal.killMonster[1].count then
-      NPC_SAY("?? ?????. ?? ?? ?? ?? ??? ???? ?????.")
-      SET_QUEST_STATE(334, 2)
-    else
-      NPC_SAY("?????? ? ? ?????... {0xFFFFFF00}[????]? 15??{END} ??????.")
-    end
-  end
-  if qData[1137].state == 1 and qData[1137].meetNpc[1] == qt[1137].goal.meetNpc[1] and qData[1137].meetNpc[2] == qt[1137].goal.meetNpc[2] and qData[1137].meetNpc[3] ~= id and CHECK_ITEM_CNT(8990012) > 0 then
-    NPC_SAY("啊！真的太谢谢了。看到这个真是勇气倍增啊。")
-    SET_MEETNPC(1137, 3, id)
-  end
-  if qData[1152].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("嗯？只有一个人？我是申请了支援兵力的啊！没办法了，先听我说。")
-      SET_QUEST_STATE(1152, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1154].state == 1 then
-    NPC_SAY("快把功力提升至31级吧。先去找清江银行。")
-  end
-  if qData[1167].state == 1 then
-    if CHECK_ITEM_CNT(qt[1167].goal.getItem[1].id) >= qt[1167].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1167].goal.getItem[2].id) >= qt[1167].goal.getItem[2].count and CHECK_ITEM_CNT(qt[1167].goal.getItem[3].id) >= qt[1167].goal.getItem[3].count then
-      NPC_SAY("辛苦了。现在功力快达31了吧？在做些努力吧。")
-      SET_QUEST_STATE(1167, 2)
-    else
-      NPC_SAY("听好了。击退强悍巷道里的怪物，作为证据收集5个[鼠须]，4个[红色胶皮鞋]，3个[车轮残片]回来吧。这些程度应该能让怪物们安分点的。")
-    end
-  end
-  if qData[1172].state == 1 then
-    if CHECK_ITEM_CNT(qt[1172].goal.getItem[1].id) >= qt[1172].goal.getItem[1].count then
-      NPC_SAY("谢谢…真的很感谢…")
-      SET_QUEST_STATE(1172, 2)
-    else
-      NPC_SAY("为了转给遗属，去帮我收集变成矿工僵尸的我同僚的遗物回来吧。击退矿工僵尸收集20个[破烂的灯]。")
-    end
-  end
-  if qData[1174].state == 1 then
-    if qData[1174].killMonster[qt[1174].goal.killMonster[1].id] >= qt[1174].goal.killMonster[1].count then
-      NPC_SAY("真，真的击退了猪大长？虽然说是分身，你真的是个了不起的人啊。")
-      SET_QUEST_STATE(1174, 2)
-    else
-      NPC_SAY("去击退1只猪大长吧。应该是在隐藏的强悍巷道里。")
-    end
-  end
-  if qData[1176].state == 1 then
-    NPC_SAY("击退强悍巷道里的15只鬼铲之后回到白斩姬那边吧。")
-  end
-  if qData[1152].state == 2 and qData[1154].state == 0 then
-    ADD_QUEST_BTN(qt[1154].id, qt[1154].name)
-  end
-  if qData[1167].state == 0 then
-    ADD_QUEST_BTN(qt[1167].id, qt[1167].name)
-  end
-  if qData[1167].state == 2 and qData[1172].state == 0 then
-    ADD_QUEST_BTN(qt[1172].id, qt[1172].name)
-  end
-  if qData[1172].state == 2 and qData[1174].state == 0 then
-    ADD_QUEST_BTN(qt[1174].id, qt[1174].name)
-  end
-  if qData[1174].state == 2 and qData[1176].state == 0 then
-    ADD_QUEST_BTN(qt[1176].id, qt[1176].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_317001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1137].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1137].needLevel and qData[1137].state == 1 and qData[1137].meetNpc[1] == qt[1137].goal.meetNpc[1] and qData[1137].meetNpc[2] == qt[1137].goal.meetNpc[2] and qData[1137].meetNpc[3] ~= id then
-    QSTATE(id, 1)
-  end
-  if qData[1150].state == 2 and qData[1152].state ~= 2 and qData[1152].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1152].state == 2 and qData[1154].state ~= 2 then
-    if qData[1154].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1167].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1167].needLevel then
-    if qData[1167].state == 1 then
-      if CHECK_ITEM_CNT(qt[1167].goal.getItem[1].id) >= qt[1167].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1167].goal.getItem[2].id) >= qt[1167].goal.getItem[2].count and CHECK_ITEM_CNT(qt[1167].goal.getItem[3].id) >= qt[1167].goal.getItem[3].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1167].state == 2 and qData[1172].state ~= 2 then
-    if qData[1172].state == 1 then
-      if CHECK_ITEM_CNT(qt[1172].goal.getItem[1].id) >= qt[1172].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1172].state == 2 and qData[1174].state ~= 2 then
-    if qData[1174].state == 1 then
-      if qData[1174].killMonster[qt[1174].goal.killMonster[1].id] >= qt[1174].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1174].state == 2 and qData[1176].state ~= 2 then
-    if qData[1176].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_317001"
+  local refs = {}
+  refs[332] = {
+    name = "[ ?? ???? ?? ]",
+    content0 = "?~ ??? ??? ??? ????…. ??? ?? ??….",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[334] = {
+    name = "[ ??? ??? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}? ????. ????? ??? ?? ???.",
+    reward0_count = 0,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  refs[1137] = {
+    name = "[ 往清江村 ]",
+    content0 = "少侠来得正好。刚接到消息说现在清江村的强悍巷道出没怪物，清江村村民生活很困难。",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1150] = {
+    name = "[ 谍报活动2 ]",
+    content0 = "嗯，制作精灵的时候最重要的应该是材料对吧？但这材料有时候很难收集到。",
+    reward0_count = 20,
+    needLevel = 22,
+    bQLoop = 0
+  }
+  refs[1152] = {
+    name = "[ 白斩姬的失策 ]",
+    content0 = "可能情报出错了。应该是因为邪派的妨碍工作才会发生这种事情的。但也不是一无所获。",
+    reward0_count = 1,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1154] = {
+    name = "[ 矿工的担心 ]",
+    content0 = "从懂事起开始就在强悍巷道做起了矿工，但没见过现在这样怪物泛滥呢。",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1167] = {
+    name = "[ 矿工的担忧 ]",
+    content0 = "还是很担心啊。我进不去巷道期间，怕土拨鼠或其他怪物弄塌了巷道。",
+    reward0_count = 0,
+    needLevel = 28,
+    bQLoop = 0
+  }
+  refs[1172] = {
+    name = "[ 矿工的痛苦 ]",
+    content0 = "没想到这么快就把功力提升至31级，清江村居民对你夸不停口啊。你使什么妖术了啊？",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[1174] = {
+    name = "[ 证据 ]",
+    content0 = "其实具体的我也不清楚。只是在巷道逃跑的时候向后看了一眼，看到了巨大的怪物。",
+    reward0_count = 0,
+    needLevel = 32,
+    bQLoop = 0
+  }
+  refs[1176] = {
+    name = "[ 回到白斩姬处 ]",
+    content0 = "白斩姬捎来一封信让你回去呢。看样子时你击退猪大长分身的瞬间，邪恶的灵魂飞到了芦苇林。所以马上叫你过去想了解情况。",
+    reward0_count = 0,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  return refs
 end

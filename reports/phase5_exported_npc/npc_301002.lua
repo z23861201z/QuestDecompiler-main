@@ -1,22 +1,18 @@
-function npcsay(id)
-  if id ~= 4301002 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("好饿啊~谁要是能给我鱼就好了~")
-  if qData[1078].state == 1 and CHECK_ITEM_CNT(qt[1078].goal.getItem[1].id) >= qt[1078].goal.getItem[1].count then
-    NPC_SAY("喵？让我把娃娃分给孩子们？谢谢 喵~这样我的人气会更高的 喵~")
-    SET_QUEST_STATE(1078, 2)
-    return
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_301002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1078].state == 1 then
-    if CHECK_ITEM_CNT(qt[1078].goal.getItem[1].id) >= qt[1078].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_301002"
+  local refs = {}
+  refs[1078] = {
+    name = "[ 分发新春娃娃2 ]",
+    content0 = "幸亏有你帮忙，现在兔娃娃制作的很顺利。我给你的娃娃都收好了吗？",
+    reward0_count = 1,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  return refs
 end

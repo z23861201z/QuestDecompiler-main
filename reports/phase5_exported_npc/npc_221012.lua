@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4221012 then
-    return
-  end
-  clickNPCid = id
-  ADD_NEW_SHOP_BTN(id, 10046)
-  GIHON_MIXTURE(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_221012.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_221012"
+  local refs = {}
+  return refs
 end

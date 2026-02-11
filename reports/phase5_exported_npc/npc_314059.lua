@@ -1,117 +1,74 @@
-function npcsay(id)
-  if id ~= 4314059 then
-    return
-  end
-  clickNPCid = id
-  if qData[1106].state == 1 then
-    if CHECK_INVENTORY_CNT(3) > 0 then
-      NPC_SAY("额？之前还在垂死边缘，现在已经活蹦乱跳的了？太好了。自我介绍一下。如你所见，我就是可以让像你这样的弱者变强的…咳咳…训练所长广柱。")
-      SET_QUEST_STATE(1106, 2)
-    else
-      NPC_SAY("行囊已满。")
-    end
-  end
-  if qData[1107].state == 1 then
-    if 1 <= GET_SEAL_BOX_SOUL_PERSENT(8510011) then
-      SET_QUEST_STATE(1107, 2)
-      NPC_SAY("封印箱从1级到10级。封印箱被填满后可以用在许多地方，所以打怪的时候别忘记收集魂魄，好好利用。咳…咳咳。这是奖励给你的礼物。")
-    else
-      NPC_SAY("击退小菜头和大目仔，在封印箱里装一个怪物的紫色魂回来。长得像火苗一样的叫小菜头，绿色独眼的就是大目仔。咳咳。")
-    end
-  end
-  if qData[1108].state == 1 then
-    NPC_SAY("代我向小甜甜妈妈说谢谢。不管你是鬼魂者还是什么，虽然可怕但还是想再见一面。")
-  end
-  if qData[1111].state == 1 then
-    if CHECK_ITEM_CNT(qt[1111].goal.getItem[1].id) >= qt[1111].goal.getItem[1].count then
-      NPC_SAY("干得好。只有我健康了才能保卫村子的和平。咳咳。")
-      SET_QUEST_STATE(1111, 2)
-    else
-      NPC_SAY("从这儿上去就有毛毛了。使用凌空虚步可以很快上去。拿来1个药草。")
-    end
-  end
-  if qData[1202].state == 1 then
-    NPC_SAY("长老好像在找你…好像知道找回你记忆的方法了。咳咳。咳咳。")
-  end
-  if qData[1201].state == 1 then
-    NPC_SAY("咳咳…等下，等我咳完再说，你先喝这个。")
-    SET_QUEST_STATE(1201, 2)
-  end
-  if qData[1466].state == 1 then
-    if CHECK_INVENTORY_CNT(3) > 0 then
-      NPC_SAY("书的材质特殊，看了一次就会消失，所以多给你几本。")
-      SET_QUEST_STATE(1466, 2)
-    else
-      NPC_SAY("行囊已满。")
-    end
-  end
-  if qData[1106].state == 2 and qData[1107].state == 0 then
-    ADD_QUEST_BTN(qt[1107].id, qt[1107].name)
-  end
-  if qData[1107].state == 2 and qData[1108].state == 0 then
-    ADD_QUEST_BTN(qt[1108].id, qt[1108].name)
-  end
-  if qData[1201].state == 2 and qData[1111].state == 0 then
-    ADD_QUEST_BTN(qt[1111].id, qt[1111].name)
-  end
-  if qData[1111].state == 2 and qData[1202].state == 0 then
-    ADD_QUEST_BTN(qt[1202].id, qt[1202].name)
-  end
-  if GET_PLAYER_LEVEL() >= qt[1466].needLevel and qData[1466].state == 0 then
-    ADD_QUEST_BTN(qt[1466].id, qt[1466].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314059.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1105].state == 2 and qData[1106].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1106].state == 2 and qData[1107].state ~= 2 then
-    if qData[1107].state == 1 then
-      if 1 <= GET_SEAL_BOX_SOUL_PERSENT(8510011) then
-        QSTATE(id, 2)
-      elseif 1 > GET_SEAL_BOX_SOUL_PERSENT(8510011) then
-        QSTATE(id, 1)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1107].state == 2 and qData[1108].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1108].needLevel then
-    if qData[1108].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1201].state == 2 and qData[1111].state ~= 2 then
-    if qData[1111].state == 1 then
-      if CHECK_ITEM_CNT(qt[1111].goal.getItem[1].id) >= qt[1111].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1201].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1110].state == 2 and qData[1202].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1202].needLevel then
-    if qData[1202].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1466].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1466].needLevel then
-    if qData[1466].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314059"
+  local refs = {}
+  refs[1105] = {
+    name = "[ 小甜甜妈妈的请求1 ]",
+    content0 = "说了这么多话，好累啊。我要休息了。嗯…你也不要闲着，干点什么怎么样？",
+    reward0_count = 0,
+    needLevel = 4,
+    bQLoop = 0
+  }
+  refs[1106] = {
+    name = "[ 小甜甜妈妈的请求2 ]",
+    content0 = "是训练所长广柱将昏迷中的你背到长老那里，你见过他了吗？",
+    reward0_count = 20,
+    needLevel = 4,
+    bQLoop = 0
+  }
+  refs[1107] = {
+    name = "[ 变强（魂） ]",
+    content0 = "你还在那里吗？该不是你想变得像我这样强吧？看来你是想知道我强大的秘密啊。吼吼。",
+    reward0_count = 1,
+    needLevel = 5,
+    bQLoop = 0
+  }
+  refs[1108] = {
+    name = "[ 黑暗的力量-鬼魂者 ]",
+    content0 = "话说回来。我刚发现你的时候你的样子很奇怪。神智昏迷，身体变成黑色了。咳…",
+    reward0_count = 0,
+    needLevel = 6,
+    bQLoop = 0
+  }
+  refs[1110] = {
+    name = "[ 修栅栏 ]",
+    content0 = "哎呦，怎么这么晚？从刚才开始小菜头就跑到村子来闹了。",
+    reward0_count = 0,
+    needLevel = 8,
+    bQLoop = 0
+  }
+  refs[1111] = {
+    name = "[ 广柱的健康状态 ]",
+    content0 = "咳，咳咳！这么快就来了？托我的福你现在变得又聪明又敏捷呢。",
+    reward0_count = 0,
+    needLevel = 9,
+    bQLoop = 0
+  }
+  refs[1201] = {
+    name = "[ 广柱的事情 ]",
+    content0 = "训练所长广柱的身体不知如何了…话说回来训练所长广柱好像在找{0xFF99ff99}PLAYERNAME{END}。在他跌到之前快点去看看吧。",
+    reward0_count = 1,
+    needLevel = 9,
+    bQLoop = 0
+  }
+  refs[1202] = {
+    name = "[ 长老的想法 ]",
+    content0 = "长老好像在找你…好像知道找回你记忆的方法了。咳咳。咳咳。",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1466] = {
+    name = "[ 青出于蓝啊 ]",
+    content0 = "好久不见。看到你成长的样子，我无比高兴啊。作为我的弟子，能成长成这样，真是青出于蓝啊",
+    reward0_count = 1,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  return refs
 end

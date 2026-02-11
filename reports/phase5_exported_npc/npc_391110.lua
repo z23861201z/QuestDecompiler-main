@@ -1,31 +1,25 @@
-function npcsay(id)
-  if id ~= 4391110 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("不能在这个地方逗留太久，快逃出去吧！")
-  if qData[2162].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(4) then
-      NPC_SAY("谢谢你的帮忙！这是你想要的东西")
-      SET_QUEST_STATE(2162, 2)
-      return
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[3623].state == 1 then
-    NPC_SAY("谢谢你的帮忙！")
-    SET_QUEST_STATE(3623, 2)
-    return
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391110.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2162].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[3623].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391110"
+  local refs = {}
+  refs[2162] = {
+    name = "[ 四天王碑的精气 ]",
+    content0 = "我已经跟四天王碑说好了。四天王碑说不知道为什么这附近的妖怪突然聚集到了他身边，如果有人能帮他的话就把自己的精气当成谢礼送出",
+    reward0_count = 1,
+    needLevel = 110,
+    bQLoop = 0
+  }
+  refs[3623] = {
+    name = "[ 第一寺地下-千手妖女的手下们 ]",
+    content0 = "听说最近第一寺附近出现了很多千手妖女的手下们…",
+    reward0_count = 0,
+    needLevel = 110,
+    bQLoop = 0
+  }
+  return refs
 end

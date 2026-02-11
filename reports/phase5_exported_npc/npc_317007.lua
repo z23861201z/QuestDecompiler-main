@@ -1,89 +1,46 @@
-function npcsay(id)
-  if id ~= 4317007 then
-    return
-  end
-  clickNPCid = id
-  if qData[330].state == 1 then
-    if CHECK_ITEM_CNT(qt[330].goal.getItem[1].id) >= qt[330].goal.getItem[1].count then
-      NPC_SAY("这么快就收集回来了啊。辛苦了。马上就让你见识一下。怎么样？神奇吧？")
-      SET_QUEST_STATE(330, 2)
-    else
-      NPC_SAY("那种场景不是很容易就能见到的。10个[红色胶皮鞋]还没收集好吗？吸血鬼在强悍巷道里面。")
-    end
-  end
-  if qData[1139].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("啊！是清江银行派过来的少侠啊。这是清阴符。")
-      SET_QUEST_STATE(1139, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1140].state == 1 then
-    NPC_SAY("快点使用清阴符去找胡须张吧。")
-  end
-  if qData[1164].state == 1 then
-    if CHECK_ITEM_CNT(qt[1164].goal.getItem[1].id) >= qt[1164].goal.getItem[1].count then
-      NPC_SAY("这么快就收集回来了啊。辛苦了。马上就让你见识一下。怎么样？神奇吧？")
-      SET_QUEST_STATE(1164, 2)
-    else
-      NPC_SAY("那种场景不是很容易就能见到的。10个[红色胶皮鞋]还没收集好吗？吸血鬼在强悍巷道里面。")
-    end
-  end
-  if qData[1171].state == 1 then
-    if CHECK_ITEM_CNT(qt[1171].goal.getItem[1].id) >= qt[1171].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1171].goal.getItem[2].id) >= qt[1171].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真的完成了啊？谢谢。虽然微不足道但是请收下吧。")
-        SET_QUEST_STATE(1171, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("帮我收集强悍巷道里的蓝色大菜头的3个[蓝色的灯油]和土拨鼠的5个[鼠须]吧。那些程度应该就能安心了。")
-    end
-  end
-  if qData[1139].state == 2 and qData[1140].state == 0 then
-    ADD_QUEST_BTN(qt[1140].id, qt[1140].name)
-  end
-  if qData[1164].state == 0 then
-    ADD_QUEST_BTN(qt[1164].id, qt[1164].name)
-  end
-  if qData[1171].state == 0 then
-    ADD_QUEST_BTN(qt[1171].id, qt[1171].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_317007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1139].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1139].needLevel and qData[1139].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1139].state == 2 and qData[1140].state ~= 2 then
-    if qData[1140].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1164].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1164].needLevel then
-    if qData[1164].state == 1 then
-      if CHECK_ITEM_CNT(qt[1164].goal.getItem[1].id) >= qt[1164].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1171].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1171].needLevel then
-    if qData[1171].state == 1 then
-      if CHECK_ITEM_CNT(qt[1171].goal.getItem[1].id) >= qt[1171].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1171].goal.getItem[2].id) >= qt[1171].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_317007"
+  local refs = {}
+  refs[330] = {
+    name = "[ 愉快的舞蹈的秘密 ]",
+    content0 = "啦啦啦 愉快的跳舞~",
+    reward0_count = 0,
+    needLevel = 27,
+    bQLoop = 0
+  }
+  refs[1139] = {
+    name = "[ 胡须张的召唤 ]",
+    content0 = "{0xFF99ff99}PLAYERNAME{END}？清阴关的胡须张送来一封信说想马上见到您？",
+    reward0_count = 1,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1140] = {
+    name = "[ 胡须张的召唤（2） ]",
+    content0 = "快使用{0xFFFFFF00}清阴符{END}去找清阴镖局的{0xFFFFFF00}胡须张{END}吧。",
+    reward0_count = 1,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1164] = {
+    name = "[ 愉快的舞蹈的秘密 ]",
+    content0 = "啦啦啦 愉快的跳舞~",
+    reward0_count = 0,
+    needLevel = 27,
+    bQLoop = 0
+  }
+  refs[1171] = {
+    name = "[ 居民们的不安 ]",
+    content0 = "托{0xFF99ff99}PLAYERNAME{END}的福最近怪物少了很多。但现在强悍巷道还有很多怪物吧？",
+    reward0_count = 30,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  return refs
 end

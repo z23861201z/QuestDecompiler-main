@@ -1,14 +1,11 @@
-function npcsay(id)
-  if id ~= 4241005 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("交给我的东西，我一定会保管好。")
-  ADD_STORE_BTN(id)
-  ADD_EVENT_BTN_JEWEL(id)
-  GIVE_DONATION_ITEM(id)
-  ADD_PARCEL_SERVICE_BTN(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_241005.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_241005"
+  local refs = {}
+  return refs
 end

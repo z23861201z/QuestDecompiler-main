@@ -1,81 +1,32 @@
-function npcsay(id)
-  if id ~= 4240002 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("被我的话吸引忘了购买物品可不行啊。")
-  if qData[2181].state == 1 then
-    if CHECK_ITEM_CNT(qt[2181].goal.getItem[1].id) >= qt[2181].goal.getItem[1].count then
-      NPC_SAY("谢谢！这下我的手指能少受点罪了~")
-      SET_QUEST_STATE(2181, 2)
-      return
-    else
-      NPC_SAY("从古龙山的灰色大脚怪身上收集50个大脚怪的指甲回来吧")
-    end
-  end
-  if qData[3644].state == 1 then
-    if CHECK_ITEM_CNT(qt[3644].goal.getItem[1].id) >= qt[3644].goal.getItem[1].count then
-      NPC_SAY("谢谢！这下我的手指能少受点罪了~")
-      SET_QUEST_STATE(3644, 2)
-      return
-    else
-      NPC_SAY("击退古龙山的灰色大脚怪，收集50个大脚怪的指甲交给莎莉吧")
-    end
-  end
-  if qData[3702].state == 1 then
-    if CHECK_ITEM_CNT(qt[3702].goal.getItem[1].id) >= qt[3702].goal.getItem[1].count then
-      NPC_SAY("谢谢！这是我给你的报酬。")
-      SET_QUEST_STATE(3702, 2)
-      return
-    else
-      NPC_SAY("击退黑色丘陵的{0xFFFFFF00}[恶灵巫师]{END}，收集回来{0xFFFFFF00}50个旧的黑色披风{END}就可以了~")
-    end
-  end
-  ADD_NEW_SHOP_BTN(id, 10062)
-  GIHON_MIXTURE(id)
-  if qData[2181].state == 0 then
-    ADD_QUEST_BTN(qt[2181].id, qt[2181].name)
-  end
-  if qData[3644].state == 0 and qData[2181].state == 2 then
-    ADD_QUEST_BTN(qt[3644].id, qt[3644].name)
-  end
-  if qData[3702].state == 0 and GET_PLAYER_LEVEL() >= qt[3702].needLevel then
-    ADD_QUEST_BTN(qt[3702].id, qt[3702].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_240002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2181].state ~= 2 and GET_PLAYER_LEVEL() >= qt[2181].needLevel then
-    if qData[2181].state == 1 then
-      if CHECK_ITEM_CNT(qt[2181].goal.getItem[1].id) >= qt[2181].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3644].state ~= 2 and qData[2181].state == 2 and GET_PLAYER_LEVEL() >= qt[3644].needLevel then
-    if qData[3644].state == 1 then
-      if CHECK_ITEM_CNT(qt[3644].goal.getItem[1].id) >= qt[3644].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3702].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3702].needLevel then
-    if qData[3702].state == 1 then
-      if CHECK_ITEM_CNT(qt[3702].goal.getItem[1].id) >= qt[3702].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_240002"
+  local refs = {}
+  refs[2181] = {
+    name = "[ 针线活必需品 ]",
+    content0 = "哎呀...",
+    reward0_count = 0,
+    needLevel = 175,
+    bQLoop = 0
+  }
+  refs[3644] = {
+    name = "[ 顶针材料 ]",
+    content0 = "{0xFF99ff99}PLAYERNAME{END}，你好啊",
+    reward0_count = 0,
+    needLevel = 175,
+    bQLoop = 0
+  }
+  refs[3702] = {
+    name = "[ 巫师的旧披风 ]",
+    content0 = "嗯..订单很多，但是材料不够可怎么办啊？",
+    reward0_count = 0,
+    needLevel = 184,
+    bQLoop = 0
+  }
+  return refs
 end

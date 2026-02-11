@@ -1,31 +1,25 @@
-function npcsay(id)
-  if id ~= 4314061 then
-    return
-  end
-  clickNPCid = id
-  if qData[1109].state == 1 then
-    if CHECK_ITEM_CNT(qt[1109].goal.getItem[1].id) >= qt[1109].goal.getItem[1].count then
-      SET_QUEST_STATE(1109, 2)
-      NPC_SAY("哇。谢谢你。我的朋友幼恩一定会很开心的。哦对了！如果没事儿的话可以帮帮我妈妈吗？")
-    else
-      NPC_SAY("5个啐花的叶子。可以在左侧外形如花的怪物身上获取。")
-    end
-  end
-  if qData[1108].state == 2 and qData[1109].state == 0 then
-    ADD_QUEST_BTN(qt[1109].id, qt[1109].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314061.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1108].state == 2 and qData[1109].state ~= 2 then
-    if qData[1109].state == 1 then
-      if CHECK_ITEM_CNT(qt[1109].goal.getItem[1].id) >= qt[1109].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314061"
+  local refs = {}
+  refs[1108] = {
+    name = "[ 黑暗的力量-鬼魂者 ]",
+    content0 = "话说回来。我刚发现你的时候你的样子很奇怪。神智昏迷，身体变成黑色了。咳…",
+    reward0_count = 0,
+    needLevel = 6,
+    bQLoop = 0
+  }
+  refs[1109] = {
+    name = "[ 小甜甜的花冠 ]",
+    content0 = "知道吗？我们村来客人了！听大人们说那人失去记忆了…失忆真是太神奇了！\n…咦？你是谁？",
+    reward0_count = 0,
+    needLevel = 7,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,29 +1,18 @@
-function npcsay(id)
-  if id ~= 4300133 then
-    return
-  end
-  clickNPCid = id
-  if qData[894].state == 1 then
-    if qData[894].killMonster[qt[894].goal.killMonster[1].id] >= qt[894].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("???, ???? ??? ?? ???. ??? ????.")
-        SET_QUEST_STATE(894, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("?? ???? ???? ???.")
-    end
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_300133.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[894].state == 1 then
-    if qData[894].killMonster[qt[894].goal.killMonster[1].id] >= qt[894].goal.killMonster[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_300133"
+  local refs = {}
+  refs[894] = {
+    name = "[ 7周年赛跑！ ]",
+    content0 = "?? 7??? ???? ??? 7??????? ??????.",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

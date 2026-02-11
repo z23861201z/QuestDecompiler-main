@@ -1,19 +1,18 @@
-function npcsay(id)
-  if id ~= 4315016 then
-    return
-  end
-  clickNPCid = id
-  if qData[143].state == 1 then
-    NPC_SAY("{0xFFFFFF00}[?????]{END}? ??? ??? ????.")
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315016.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[143].state ~= 2 and GET_PLAYER_LEVEL() >= qt[143].needLevel then
-    if qData[143].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315016"
+  local refs = {}
+  refs[143] = {
+    name = "[ ??? ]",
+    content0 = "??…?! ?? ?? ?? ?????? ?… ?? ????. ??… ??? ??? ???? ???? ??? ??? ?? ????? ?? ???….",
+    reward0_count = 5,
+    needLevel = 59,
+    bQLoop = 0
+  }
+  return refs
 end

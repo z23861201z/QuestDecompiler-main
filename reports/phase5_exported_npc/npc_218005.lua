@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4218005 then
-    return
-  end
-  clickNPCid = id
-  ADD_STORE_BTN(id)
-  ADD_SOULALCOHOL_CHANGE_BTN(id)
-  ADD_PARCEL_SERVICE_BTN(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_218005.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_218005"
+  local refs = {}
+  return refs
 end

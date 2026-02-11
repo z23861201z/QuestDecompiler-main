@@ -1,46 +1,39 @@
-function npcsay(id)
-  if id ~= 4324007 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("绝对不要放弃")
-  if qData[2261].state == 1 then
-    NPC_SAY("被暗算了...")
-    SET_QUEST_STATE(2261, 2)
-    return
-  end
-  if qData[2266].state == 1 then
-    NPC_SAY("被暗算了...")
-    SET_QUEST_STATE(2266, 2)
-    return
-  end
-  if qData[2262].state == 0 and qData[2261].state == 2 and SET_PLAYER_SEX() == 1 then
-    ADD_QUEST_BTN(qt[2262].id, qt[2262].name)
-  end
-  if qData[2267].state == 0 and qData[2266].state == 2 and SET_PLAYER_SEX() == 2 then
-    ADD_QUEST_BTN(qt[2267].id, qt[2267].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_324007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2261].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2262].state ~= 2 and qData[2261].state == 2 then
-    if qData[2262].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2266].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2267].state ~= 2 and qData[2266].state == 2 then
-    if qData[2267].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_324007"
+  local refs = {}
+  refs[2261] = {
+    name = "[ 纳扎尔-危机中的策士 ]",
+    content0 = "大家辛苦了。应该口渴了吧，快喝水吧。我已经喝过了",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2262] = {
+    name = "[ 纳扎尔-去往中原 ]",
+    content0 = "赶快把这解毒药吃了！",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2266] = {
+    name = "[ 娜迪亚-危机中的策士 ]",
+    content0 = "大家辛苦了。应该口渴了吧，快喝水吧。我已经喝过了",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[2267] = {
+    name = "[ 娜迪亚-去往中原 ]",
+    content0 = "赶快把这解毒药吃了！",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

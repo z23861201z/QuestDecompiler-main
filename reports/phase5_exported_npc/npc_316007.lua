@@ -1,82 +1,88 @@
-function npcsay(id)
-  if id ~= 4316007 then
-    return
-  end
-  clickNPCid = id
-  if qData[1561].state == 1 then
-    NPC_SAY("去帮我转告{0xFFFFFF00}老长老{END}结果吧。他就在{0xFFFFFF00}古乐村南{END}")
-    return
-  end
-  if qData[1554].state == 1 then
-    if qData[1555].state == 2 and qData[1556].state == 2 and qData[1557].state == 2 and qData[1558].state == 2 and qData[1559].state == 2 and qData[1560].state == 2 then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("都解决完回来的？太厉害了！")
-        SET_QUEST_STATE(1554, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-        return
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}功力103时解决古乐村宝芝林和古乐村服装店的委托，功力104时解决年轻书生和年老书生的委托，功力105时解决心情很坏的老媪{END}的委托怎么样？")
-      return
-    end
-  end
-  if qData[1553].state == 1 then
-    NPC_SAY("HOHO，又来了啊？")
-    SET_QUEST_STATE(1553, 2)
-    return
-  end
-  if qData[1550].state == 1 then
-    NPC_SAY("击退{0xFFFFFF00}第一阶梯{END}的{0xFFFFFF00}骷髅鸟，收集{0xFFFFFF00}40个骷髅鸟碎片{END}，交给{0xFFFFFF00}古乐村南额古乐村宝芝林{END}吧")
-    return
-  end
-  if qData[1549].state == 1 then
-    NPC_SAY("你说什么？爷爷？哎呀 怎么又要那样啊？")
-    SET_QUEST_STATE(1549, 2)
-    return
-  end
-  if qData[1561].state == 0 and qData[1554].state == 2 then
-    ADD_QUEST_BTN(qt[1561].id, qt[1561].name)
-  end
-  if qData[1554].state == 0 and qData[1553].state == 2 then
-    ADD_QUEST_BTN(qt[1554].id, qt[1554].name)
-  end
-  if qData[1550].state == 0 and qData[1549].state == 2 then
-    ADD_QUEST_BTN(qt[1550].id, qt[1550].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_316007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1561].state ~= 2 and qData[1554].state == 2 then
-    if qData[1561].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1554].state ~= 2 and qData[1553].state == 2 and GET_PLAYER_LEVEL() >= qt[1554].needLevel then
-    if qData[1554].state == 1 then
-      if qData[1555].state == 2 and qData[1556].state == 2 and qData[1557].state == 2 and qData[1558].state == 2 and qData[1559].state == 2 and qData[1560].state == 2 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1553].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1550].state ~= 2 and qData[1549].state == 2 then
-    if qData[1550].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1549].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_316007"
+  local refs = {}
+  refs[1549] = {
+    name = "[长老装病]",
+    content0 = "虽然少侠千方百计地帮助我，但是我可能再也撑不下去了。咳咳。",
+    reward0_count = 0,
+    needLevel = 102,
+    bQLoop = 0
+  }
+  refs[1550] = {
+    name = "[劝解的办法]",
+    content0 = "呵呵。老长老装病把您骗了。",
+    reward0_count = 3,
+    needLevel = 102,
+    bQLoop = 0
+  }
+  refs[1553] = {
+    name = "[ 永不放弃! ]",
+    content0 = "现在我就实话实说了吧。事实上我们家族就好像古乐村的土地爷，长老职位代代相传。",
+    reward0_count = 0,
+    needLevel = 103,
+    bQLoop = 0
+  }
+  refs[1554] = {
+    name = "[长老候补-寻找候补的方法]",
+    content0 = "我担心爷爷给少侠添了太多麻烦。",
+    reward0_count = 3,
+    needLevel = 103,
+    bQLoop = 0
+  }
+  refs[1555] = {
+    name = "[长老候补-古乐村宝芝林篇]",
+    content0 = "要帮助我吗？谢谢。我正好需要帮助。",
+    reward0_count = 0,
+    needLevel = 103,
+    bQLoop = 0
+  }
+  refs[1556] = {
+    name = "[长老候补-古乐村服装店篇]",
+    content0 = "最近的问题？无非就是缺少抗寒的好布料啊。",
+    reward0_count = 0,
+    needLevel = 103,
+    bQLoop = 0
+  }
+  refs[1557] = {
+    name = "[长老候补-年老书生]",
+    content0 = "担忧吗？肯定就是怪物了。",
+    reward0_count = 1,
+    needLevel = 104,
+    bQLoop = 0
+  }
+  refs[1558] = {
+    name = "[长老候补-年轻书生]",
+    content0 = "我很担心年迈母亲的病…",
+    reward0_count = 0,
+    needLevel = 104,
+    bQLoop = 0
+  }
+  refs[1559] = {
+    name = "[长老候补-心情很坏的老媪(1)]",
+    content0 = "哎呦…我的腰啊。年纪大了，浑身没一个地方是好的。",
+    reward0_count = 0,
+    needLevel = 105,
+    bQLoop = 0
+  }
+  refs[1560] = {
+    name = "[长老候补-心情很坏的老媪(2)]",
+    content0 = "还是不太信，但也没办法。就当相信你，去第一阶梯击退幽灵使者，收集40个幽灵帽子吧。",
+    reward0_count = 30,
+    needLevel = 105,
+    bQLoop = 0
+  }
+  refs[1561] = {
+    name = "[长老候补-候补评价]",
+    content0 = "少侠。回来了啊。和长老候补们见面后感觉如何？",
+    reward0_count = 0,
+    needLevel = 105,
+    bQLoop = 0
+  }
+  return refs
 end

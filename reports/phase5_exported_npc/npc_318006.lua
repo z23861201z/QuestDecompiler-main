@@ -1,47 +1,39 @@
-function npcsay(id)
-  if id ~= 4318006 then
-    return
-  end
-  clickNPCid = id
-  if qData[1287].state == 1 then
-    NPC_SAY("爸爸给我送来了这个？什么意思呢？总之我先收下。")
-    SET_QUEST_STATE(1287, 2)
-    return
-  end
-  if qData[1288].state == 1 then
-    NPC_SAY("我父亲是土著民副族长，现在在韩野村南边的宝芝林内部。")
-  end
-  if qData[1290].state == 1 and CHECK_ITEM_CNT(qt[1290].goal.getItem[1].id) >= qt[1290].goal.getItem[1].count then
-    NPC_SAY("嗯？为什么要让我看这个呢？")
-    SET_QUEST_STATE(1290, 2)
-  end
-  if qData[1291].state == 1 then
-    NPC_SAY("在我们还没有到之前去见韩野村码头的研究船的人，提前做好准备吧。")
-  end
-  if qData[1288].state == 0 and qData[1287].state == 2 and GET_PLAYER_LEVEL() >= qt[1288].needLevel then
-    ADD_QUEST_BTN(qt[1288].id, qt[1288].name)
-  end
-  if qData[1291].state == 0 and qData[1290].state == 2 and GET_PLAYER_LEVEL() >= qt[1291].needLevel then
-    ADD_QUEST_BTN(qt[1291].id, qt[1291].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_318006.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1287].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1288].state ~= 2 and qData[1287].state == 2 and GET_PLAYER_LEVEL() >= qt[1288].needLevel then
-    if qData[1288].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1291].state ~= 2 and qData[1290].state == 2 and GET_PLAYER_LEVEL() >= qt[1291].needLevel then
-    if qData[1291].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_318006"
+  local refs = {}
+  refs[1287] = {
+    name = "[ 暴风前夜3 ]",
+    content0 = "既然如此我们也应该准备一下战船。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1288] = {
+    name = "[ 暴风前夜4 ]",
+    content0 = "什么？包围韩野城码头？造船？哼！太好笑了。让他们自己看着办。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1290] = {
+    name = "[ 暴风前夜6 ]",
+    content0 = "辛苦了。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1291] = {
+    name = "[ 暴风前夜7 ]",
+    content0 = "这是什么意思？这个皇宫武士柳江在哪里？",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  return refs
 end

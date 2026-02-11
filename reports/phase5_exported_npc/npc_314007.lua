@@ -1,50 +1,25 @@
-function npcsay(id)
-  if id ~= 4314007 then
-    return
-  end
-  clickNPCid = id
-  if qData[1116].state == 1 and CHECK_ITEM_CNT(qt[1116].goal.getItem[1].id) >= qt[1116].goal.getItem[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("啊！谢谢。可是你怎么会知道？哞读册吗？这家伙！以为这样我就会答应他和我姐姐交往吗？但是先谢谢少侠了。")
-      SET_QUEST_STATE(1116, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1143].state == 1 then
-    if CHECK_ITEM_CNT(qt[1143].goal.getItem[1].id) >= qt[1143].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("终于！可以赶走鸟群了。现在不用担心今年的收成了。哈哈哈，太感谢了。")
-        SET_QUEST_STATE(1143, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("触目仔在被清阴平原。快去收集10个[ 触目仔的眼珠 ]回来吧。")
-    end
-  end
-  if qData[1143].state == 0 then
-    ADD_QUEST_BTN(qt[1143].id, qt[1143].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1116].state == 1 then
-    if CHECK_ITEM_CNT(qt[1116].goal.getItem[1].id) >= qt[1116].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1143].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1143].needLevel then
-    if qData[1143].state == 1 then
-      if CHECK_ITEM_CNT(qt[1143].goal.getItem[1].id) >= qt[1143].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314007"
+  local refs = {}
+  refs[1116] = {
+    name = "[ 哞读册的友情？ ]",
+    content0 = "少侠就是宝芝林说的那个人啊。可以帮下我吗？",
+    reward0_count = 5,
+    needLevel = 12,
+    bQLoop = 0
+  }
+  refs[1143] = {
+    name = "[ 稻草人 ]",
+    content0 = "哎哟，少侠你帮帮我吧。",
+    reward0_count = 30,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  return refs
 end

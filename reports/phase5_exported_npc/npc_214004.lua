@@ -1,117 +1,67 @@
-function npcsay(id)
-  if id ~= 4214004 then
-    return
-  end
-  clickNPCid = id
-  if qData[1085].state == 1 then
-    if CHECK_ITEM_CNT(qt[1085].goal.getItem[1].id) >= qt[1085].goal.getItem[1].count then
-      if CHECK_INVENTORY_CNT(3) > 0 then
-        NPC_SAY("真好吃啊！像这样的，你有多少给我拿来多少吧！这是作为对巧克力的报答，希望你能够喜欢，下次再见吧！")
-        SET_QUEST_STATE(1085, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("不是说要给我巧克力礼盒的吗？难道只是拿我寻开心的吗？")
-    end
-  end
-  if qData[1093].state == 1 then
-    if CHECK_ITEM_CNT(qt[1093].goal.getItem[1].id) >= qt[1093].goal.getItem[1].count then
-      if CHECK_INVENTORY_CNT(3) > 0 then
-        NPC_SAY("请收下这些糖吧！哈哈哈~只要你收集足够的材料回来就再给你制作，我就是这样豪爽的人，呵呵~")
-        SET_QUEST_STATE(1093, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("是10个糖块，你要的不是糖吗？")
-    end
-  end
-  if qData[1115].state == 1 and qData[1115].meetNpc[1] == qt[1115].goal.meetNpc[1] and qData[1115].meetNpc[2] ~= id and 0 < CHECK_ITEM_CNT(8990012) then
-    NPC_SAY("啊！是简讯。谢谢。")
-    SET_MEETNPC(1115, 2, id)
-  end
-  if qData[1118].state == 1 then
-    if CHECK_ITEM_CNT(qt[1118].goal.getItem[1].id) >= qt[1118].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。光是想想那些孩子们的笑脸，什么疲劳都消除了。")
-        SET_QUEST_STATE(1118, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("干什么呢？快去北清阴平原击退雨伞标收集5个[ 破烂的雨伞 ]回来吧。")
-    end
-  end
-  if qData[1136].state == 1 then
-    if CHECK_ITEM_CNT(qt[1136].goal.getItem[1].id) >= qt[1136].goal.getItem[1].count then
-      NPC_SAY("谢谢了。正邪间的事端得尽快解决才行啊。")
-      SET_QUEST_STATE(1136, 2)
-    else
-      NPC_SAY("忙呀，真忙！还没找来3个[ 铁块 ]啊。快去北清阴平原击退铜铃眼，收集3个[ 铁块 ]拿来给我吧。")
-    end
-  end
-  ADD_NEW_SHOP_BTN(id, 10004)
-  ADD_UPGRADE_ITEM_BTN(id)
-  ADD_EQUIP_REFINE_BTN(id)
-  ADD_REPAIR_EQUIPMENT(id)
-  RARE_BOX_OPEN(id)
-  RARE_BOX_MIXTURE(id)
-  if qData[1093].state == 0 then
-    ADD_QUEST_BTN(qt[1093].id, qt[1093].name)
-  end
-  if qData[1118].state == 0 then
-    ADD_QUEST_BTN(qt[1118].id, qt[1118].name)
-  end
-  if qData[1136].state == 0 then
-    ADD_QUEST_BTN(qt[1136].id, qt[1136].name)
-  end
-  if qData[901].state == 0 then
-    ADD_QUEST_BTN(qt[901].id, qt[901].name)
-  end
-  if qData[902].state == 0 then
-    ADD_QUEST_BTN(qt[902].id, qt[902].name)
-  end
-  if qData[903].state == 0 then
-    ADD_QUEST_BTN(qt[903].id, qt[903].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_214004.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1085].state == 1 and GET_PLAYER_LEVEL() >= qt[1085].needLevel then
-    if CHECK_ITEM_CNT(qt[1085].goal.getItem[1].id) >= qt[1085].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  else
-    QSTATE(id, 0)
-  end
-  if qData[1115].state ~= 2 and qData[1115].state == 1 and qData[1115].meetNpc[1] == qt[1115].goal.meetNpc[1] and qData[1115].meetNpc[2] ~= id then
-    QSTATE(id, 1)
-  end
-  if qData[1118].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1118].needLevel then
-    if qData[1118].state == 1 then
-      if CHECK_ITEM_CNT(qt[1118].goal.getItem[1].id) >= qt[1118].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1136].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1136].needLevel then
-    if qData[1136].state == 1 then
-      if CHECK_ITEM_CNT(qt[1136].goal.getItem[1].id) >= qt[1136].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_214004"
+  local refs = {}
+  refs[901] = {
+    name = "{0xFFFFB4B4}[ 什么是装备修理？ ]{END}",
+    content0 = "{0xFFFFFF00}修理方法{END}很简单。首先带着{0xFFFFFF00}缺损的道具{END}以及{0xFFFFFF00}和装备等级相符的加工石{END}",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[902] = {
+    name = "{0xFFFFB4B4}[ 如何知道装备等级？ ]{END}",
+    content0 = "根据功力的不同{0xFFFFFF00}装备的等级{END}也不同，参照下表可知。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[903] = {
+    name = "{0xFFFFB4B4}[ 装备修理成功时？ ]{END}",
+    content0 = "成功完成修理后会像{0xFFFFFF00}鬼魂合成{END}一样，能力值得到提升。能力值最大提升到{0xFFFFFF00}封印符咒{END}的能力值。相应的剩余{0xFFFFFF00}合成次数会减少1次{END}。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1085] = {
+    name = "[ 清阴关的人气帅哥 ]",
+    content0 = "呼~好热！大冬天的还汗流浃背啊！",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1093] = {
+    name = "[ 清阴关人气帅哥的糖果 ]",
+    content0 = "欢迎光临！嗯？那手势是什么意思？是要什么东西吗？",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1115] = {
+    name = "[ 派报员的小聪明 ]",
+    content0 = "刚好我有要给商人转达的简讯，一边送简讯一边见到人，没准能遇到少侠记得的人或记得少侠的人，不是吗？",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1118] = {
+    name = "[ 金系系武器店的服务 ]",
+    content0 = "年轻的朋友，过来一下。",
+    reward0_count = 20,
+    needLevel = 13,
+    bQLoop = 0
+  }
+  refs[1136] = {
+    name = "[ 正邪间的纠葛 ]",
+    content0 = "啊！过来这边吧。上次真是谢谢了。忙得不可开交连声谢谢都来不及说呢。",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  return refs
 end

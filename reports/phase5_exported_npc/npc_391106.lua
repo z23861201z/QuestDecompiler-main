@@ -1,26 +1,25 @@
-function npcsay(id)
-  if id ~= 4391106 then
-    return
-  end
-  clickNPCid = id
-  if qData[1435].state == 1 then
-    NPC_SAY("不要惊慌！是超火车轮怪啊......嗯，很符合我这大天才军师登场的敌人啊。你先逃离此处，重新回到我身边吧 ")
-    SET_QUEST_STATE(1435, 2)
-    return
-  end
-  if qData[870].state == 1 then
-    NPC_SAY("辛苦了，请收下奖励吧 ")
-    SET_QUEST_STATE(870, 2)
-    return
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391106.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1435].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[870].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391106"
+  local refs = {}
+  refs[870] = {
+    name = "[ 皲裂地狱-暴走的火车轮怪 ]",
+    content0 = "这次皲裂好像非常严重！好像有人用巨大的结界在阻挡，但是怪物依旧存在！",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1435] = {
+    name = "[化境-结界的位置]",
+    content0 = "要找到结界的位置？你不说我也已经差人把疯癫的老人抓起来搜查了",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  return refs
 end

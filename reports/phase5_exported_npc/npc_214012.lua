@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4214012 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("试着换一下发型吧~也可以进行眼形整容和皮肤美容")
-  ADD_BEAUTYSHOP_BTN(id)
-  ADD_PREMIUM_BEAUTYSHOP_BTN(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_214012.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_214012"
+  local refs = {}
+  return refs
 end

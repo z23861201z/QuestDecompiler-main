@@ -1,71 +1,39 @@
-function npcsay(id)
-  if id ~= 4314001 then
-    return
-  end
-  clickNPCid = id
-  if qData[1130].state == 1 then
-    if CHECK_ITEM_CNT(qt[1130].goal.getItem[1].id) >= qt[1130].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1130].goal.getItem[2].id) >= qt[1130].goal.getItem[2].count then
-      NPC_SAY("谢谢了，现在长长的押镖之路也不用担心了。")
-      SET_QUEST_STATE(1130, 2)
-    else
-      NPC_SAY("拜托你收集10个[ 蝎脚亭的尾巴 ]，10个[ 破烂的雨伞 ]。")
-    end
-  end
-  if qData[1145].state == 1 then
-    if qData[1145].meetNpc[1] == qt[1145].goal.meetNpc[1] and qData[1145].meetNpc[2] == qt[1145].goal.meetNpc[2] and qData[1145].meetNpc[3] ~= id then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("什么？说忙都不见你？没办法了。让你再去找你就快点去吧。总之谢谢了。")
-        SET_MEETNPC(1145, 3, id)
-        SET_QUEST_STATE(1145, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去见见白斩姬和乌骨鸡了解一下情况吧。")
-    end
-  end
-  if qData[1183].state == 1 then
-    NPC_SAY("替无名湖的精灵匠人去竹林击退箭骨头，收集20个[ 受诅咒的骨头 ]回来吧。")
-  end
-  if qData[1130].state == 0 and GET_PLAYER_LEVEL() >= qt[1130].needLevel then
-    ADD_QUEST_BTN(qt[1130].id, qt[1130].name)
-  end
-  if qData[1145].state == 0 and GET_PLAYER_LEVEL() >= qt[1145].needLevel then
-    ADD_QUEST_BTN(qt[1145].id, qt[1145].name)
-  end
-  if qData[1183].state == 0 and GET_PLAYER_LEVEL() >= qt[1183].needLevel then
-    ADD_QUEST_BTN(qt[1183].id, qt[1183].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1130].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1130].needLevel then
-    if qData[1130].state == 1 then
-      if CHECK_ITEM_CNT(qt[1130].goal.getItem[1].id) >= qt[1130].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1130].goal.getItem[2].id) >= qt[1130].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1121].state == 2 and qData[1145].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1145].needLevel then
-    if qData[1145].state == 1 then
-      if qData[1145].meetNpc[1] == qt[1145].goal.meetNpc[1] and qData[1145].meetNpc[2] == qt[1145].goal.meetNpc[2] and qData[1145].meetNpc[3] ~= id then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1183].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1183].needLevel then
-    if qData[1183].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314001"
+  local refs = {}
+  refs[1121] = {
+    name = "[ 名声(1) ]",
+    content0 = "失去了记忆？可惜我也是第一次见到少侠。但是想推荐一个能找到认识少侠的人的方法。只要少侠出了名，不是自然就会有认识少侠的人出现了吗？",
+    reward0_count = 1,
+    needLevel = 14,
+    bQLoop = 0
+  }
+  refs[1130] = {
+    name = "[ 押镖准备 ]",
+    content0 = "现在不像以前，怪物数量增多了不少，押镖的路上很不安全。所以需要更彻底的准备。",
+    reward0_count = 0,
+    needLevel = 16,
+    bQLoop = 0
+  }
+  refs[1145] = {
+    name = "[ 不明身份的袭击者 ]",
+    content0 = "最近去往冥珠城的押镖之路每次都被不知名的敌人袭击。在这样下去，连清阴关的生活必需品也不够。",
+    reward0_count = 20,
+    needLevel = 21,
+    bQLoop = 0
+  }
+  refs[1183] = {
+    name = "[ 艰难的人们 ]",
+    content0 = "听说{0xFF99ff99}PLAYERNAME{END}为了清阴关做了件大事。但现在还是有很艰难的人们啊。",
+    reward0_count = 1,
+    needLevel = 36,
+    bQLoop = 0
+  }
+  return refs
 end

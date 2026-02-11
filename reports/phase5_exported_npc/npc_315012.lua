@@ -1,111 +1,53 @@
-function npcsay(id)
-  if id ~= 4315012 then
-    return
-  end
-  clickNPCid = id
-  if qData[109].state == 1 then
-    if qData[109].meetNpc[1] ~= qt[109].goal.meetNpc[1] then
-      NPC_SAY("不要误会我的话，好好听着~只是觉得仙女的处境很为难，快去{0xFFFFFF00}[樵夫]{END}那儿把衣服拿来吧。")
-    elseif qData[109].killMonster[qt[109].goal.killMonster[1].id] >= qt[109].goal.killMonster[1].count then
-      NPC_SAY("不要误会我的话，好好听着~只是觉得仙女的处境很为难，快去{0xFFFFFF00}[樵夫]{END}那儿把衣服拿来吧。")
-    end
-  end
-  if qData[107].state == 1 then
-    if qData[107].meetNpc[1] == qt[107].goal.meetNpc[1] then
-      NPC_SAY("什么啊！说我每天都在偷看仙女！可恶的家伙…要好好教训一下。")
-      SET_QUEST_STATE(107, 2)
-    else
-      NPC_SAY("你问{0xFFFFFF00}[樵夫]{END}在哪儿？是啊..在通往龙林谷的路上见过一次。")
-    end
-  end
-  if qData[107].state == 2 and qData[109].state ~= 1 then
-    NPC_SAY("什么啊！说我每天都在偷看仙女！可恶的家伙…要好好教训一下。")
-    ADD_NPC_WARP_A(id)
-  end
-  if qData[1247].state == 1 then
-    NPC_SAY("呵呵呵呵呵呵…啊！恩恩…什么事啊？")
-    SET_QUEST_STATE(1247, 2)
-  end
-  if qData[1248].state == 1 then
-    if qData[1248].killMonster[qt[1248].goal.killMonster[1].id] >= qt[1248].goal.killMonster[1].count then
-      NPC_SAY("啊！这么快就完成了？好吧。虽然烦但约定就是约定…。")
-      SET_QUEST_STATE(1248, 2)
-    else
-      NPC_SAY("击退了{0xFFFFFF00}40只黑熊{END}才能告诉你东泼肉的行踪。")
-    end
-  end
-  if qData[1249].state == 1 then
-    NPC_SAY("我能告诉你的就这些。（告诉龙林客栈的南呱湃这消息吧。）")
-  end
-  if qData[1250].state == 1 then
-    NPC_SAY("击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}大菜头{END}收集{0xFFFFFF00}20个电碳{END}拿给{0xFFFFFF00}来坐老板娘{END}吧。")
-  end
-  if qData[107].state == 0 then
-    ADD_QUEST_BTN(qt[107].id, qt[107].name)
-  end
-  if qData[107].state == 2 and qData[109].state == 0 then
-    ADD_QUEST_BTN(qt[109].id, qt[109].name)
-  end
-  if qData[1248].state == 0 and qData[1247].state == 2 and GET_PLAYER_LEVEL() >= qt[1248].needLevel then
-    ADD_QUEST_BTN(qt[1248].id, qt[1248].name)
-  end
-  if qData[1249].state == 0 and qData[1248].state == 2 and GET_PLAYER_LEVEL() >= qt[1249].needLevel then
-    ADD_QUEST_BTN(qt[1249].id, qt[1249].name)
-  end
-  if qData[1250].state == 0 and qData[1249].state == 2 and GET_PLAYER_LEVEL() >= qt[1250].needLevel then
-    ADD_QUEST_BTN(qt[1250].id, qt[1250].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315012.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[107].state ~= 2 and GET_PLAYER_LEVEL() >= qt[107].needLevel then
-    if qData[107].state == 1 then
-      if qData[107].meetNpc[1] == qt[107].goal.meetNpc[1] then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[107].state == 2 and qData[109].state ~= 2 and GET_PLAYER_LEVEL() >= qt[109].needLevel then
-    if qData[109].state == 1 then
-      if qData[109].killMonster[qt[109].goal.killMonster[1].id] >= qt[109].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1247].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1248].state ~= 2 and qData[1247].state == 2 and GET_PLAYER_LEVEL() >= qt[1248].needLevel then
-    if qData[1248].state == 1 then
-      if qData[1248].killMonster[qt[1248].goal.killMonster[1].id] >= qt[1248].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1249].state ~= 2 and qData[1248].state == 2 and GET_PLAYER_LEVEL() >= qt[1249].needLevel then
-    if qData[1249].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1250].state ~= 2 and qData[1249].state == 2 and GET_PLAYER_LEVEL() >= qt[1250].needLevel then
-    if qData[1250].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315012"
+  local refs = {}
+  refs[107] = {
+    name = "[ 龙林山隐藏的地区 ]",
+    content0 = "呵呵呵呵呵呵…啊！恩恩…什么事啊？",
+    reward0_count = 0,
+    needLevel = 54,
+    bQLoop = 0
+  }
+  refs[109] = {
+    name = "[ 丢失的仙女衣 ]",
+    content0 = "别害怕…今天我不会让你去太远的。还记得上次见过的{0xFFFFFF00}樵夫{END}吗？你去他那里把{0xFFFFFF00}仙女衣{END}拿来吧。",
+    reward0_count = 0,
+    needLevel = 55,
+    bQLoop = 0
+  }
+  refs[1247] = {
+    name = "[ 鹿的指点 ]",
+    content0 = "东泼肉的行踪吗？很遗憾，我也不是很清楚。但是…。",
+    reward0_count = 0,
+    needLevel = 55,
+    bQLoop = 0
+  }
+  refs[1248] = {
+    name = "[ 土地公的法力 ]",
+    content0 = "你有什么事情打扰我重要的时刻…，不是，应该是我深思的时间？",
+    reward0_count = 0,
+    needLevel = 56,
+    bQLoop = 0
+  }
+  refs[1249] = {
+    name = "[ 土地公的法力2 ]",
+    content0 = "看看啊…。好像东泼肉之前说过要去哪儿的…。为了让自己变得更强大要去哪里来着？",
+    reward0_count = 0,
+    needLevel = 57,
+    bQLoop = 0
+  }
+  refs[1250] = {
+    name = "[ 不容易的事 ]",
+    content0 = "龙林派师兄可以说是现武林最具名望的人物之一。就是想见一面也很难。",
+    reward0_count = 1,
+    needLevel = 57,
+    bQLoop = 0
+  }
+  return refs
 end

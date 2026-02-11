@@ -1,235 +1,172 @@
-function npcsay(id)
-  if id ~= 4315011 then
-    return
-  end
-  clickNPCid = id
-  if qData[108].state == 1 and qData[108].meetNpc[1] == qt[108].goal.meetNpc[1] then
-    if qData[108].meetNpc[2] ~= id then
-      if CHECK_ITEM_CNT(8820031) >= 100 then
-        SET_INFO(108, 2)
-        NPC_QSAY(108, 3)
-        SET_MEETNPC(108, 2, id)
-      end
-    else
-      NPC_SAY("???  ?? ?? ? ??? ?? ??? ????? ??? ????? ?? ????.")
-    end
-  end
-  if qData[121].state == 1 then
-    if CHECK_ITEM_CNT(qt[121].goal.getItem[1].id) >= qt[121].goal.getItem[1].count and CHECK_ITEM_CNT(qt[121].goal.getItem[2].id) >= qt[121].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("谢谢。真的拿来了啊。请收下这个{0xFFFFFF00}证书{END}吧。")
-        SET_QUEST_STATE(121, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("帮我收集{0xFFFFFF00}40个[冥珠符]和40个[肉干]{END}吧。")
-    end
-  end
-  if qData[126].state == 1 then
-    if CHECK_ITEM_CNT(qt[126].goal.getItem[1].id) >= qt[126].goal.getItem[1].count and CHECK_ITEM_CNT(qt[126].goal.getItem[2].id) >= qt[126].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("哦…要重新看看？总之谢谢你帮了我。请收下这个{0xFFFFFF00}证书{END}吧。")
-        SET_QUEST_STATE(126, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("帮我收集{0xFFFFFF00}40个[冥珠符]和40个[肉干]{END}吧。")
-    end
-  end
-  if qData[156].state == 1 then
-    if qData[156].meetNpc[2] ~= qt[156].goal.meetNpc[2] then
-      NPC_QSAY(156, 5)
-      SET_INFO(156, 2)
-      SET_MEETNPC(156, 2, id)
-      return
-    else
-      NPC_SAY("??????? ???? ??? ?? ?? ?? ??? ??? ??? ??? ??? ???? ? ?? ???.")
-    end
-  end
-  if qData[1256].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("现在…。我不能就这样自己逃出龙林谷…。")
-      SET_QUEST_STATE(1256, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1257].state == 1 then
-    if CHECK_ITEM_CNT(qt[1257].goal.getItem[1].id) >= qt[1257].goal.getItem[1].count then
-      NPC_SAY("托您的福，藏起来的同僚应该是安全了。")
-      SET_QUEST_STATE(1257, 2)
-    else
-      NPC_SAY("击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}虾米狼{END}，作为证据收集{0xFFFFFF00}20张虾米狼的皮{END}回来吧。")
-    end
-  end
-  if qData[1258].state == 1 then
-    if CHECK_ITEM_CNT(qt[1258].goal.getItem[1].id) >= qt[1258].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢。呜呜…。现在还是不敢相信。")
-        SET_QUEST_STATE(1258, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}八豆妖{END}，收集{0xFFFFFF00}30个八豆妖的烂衣{END}回来吧。")
-    end
-  end
-  if qData[1259].state == 1 then
-    if CHECK_ITEM_CNT(qt[1259].goal.getItem[1].id) >= qt[1259].goal.getItem[1].count then
-      NPC_SAY("谢谢。托您的福工人们在安全的逃离。")
-      SET_QUEST_STATE(1259, 2)
-    else
-      NPC_SAY("为了确保脱离口的通畅，击退{0xFFFFFF00}龙林谷{END}的{0xFFFFFF00}大菜头{END}并收集{0xFFFFFF00}20个电碳{END}回来吧。")
-    end
-  end
-  if qData[1260].state == 1 then
-    if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then
-      NPC_SAY("托您的福，脱离口现在应该是安全了、")
-      SET_QUEST_STATE(1260, 2)
-    else
-      NPC_SAY("击退{0xFFFFFF00}八豆妖和虾米狼{END}之后，收集{0xFFFFFF00}10个八豆妖的烂衣和10张虾米狼的皮{END}回来吧。")
-    end
-  end
-  if qData[1261].state == 1 then
-    if CHECK_ITEM_CNT(qt[1261].goal.getItem[1].id) >= qt[1261].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢。这都是托少侠的福。")
-        SET_QUEST_STATE(1261, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("为了救援工作，希望少侠去击退{0xFFFFFF00}铁牛运功散{END}并收集回来{0xFFFFFF00}20个肉块{END}。")
-    end
-  end
-  if qData[1262].state == 1 then
-    NPC_SAY("希望少侠去找{0xFFFFFF00}龙林城北边{END}的{0xFFFFFF00}龙林城父母官{END}请求兵力支援。")
-  end
-  ADD_NPC_WARP_B(id)
-  if (qData[118].state == 1 or qData[119].state == 1 or qData[120].state == 1 or qData[381].state == 1 or qData[627].state == 1 or qData[2083].state == 1) and qData[121].state == 0 then
-    ADD_QUEST_BTN(qt[121].id, qt[121].name)
-  end
-  if (qData[123].state == 1 or qData[124].state == 1 or qData[125].state == 1 or qData[382].state == 1 or qData[631].state == 1 or qData[2087].state == 1) and qData[126].state == 0 then
-    ADD_QUEST_BTN(qt[126].id, qt[126].name)
-  end
-  if qData[1257].state == 0 and qData[1256].state == 2 and GET_PLAYER_LEVEL() >= qt[1257].needLevel then
-    ADD_QUEST_BTN(qt[1257].id, qt[1257].name)
-  end
-  if qData[1258].state == 0 and qData[1257].state == 2 and GET_PLAYER_LEVEL() >= qt[1258].needLevel then
-    ADD_QUEST_BTN(qt[1258].id, qt[1258].name)
-  end
-  if qData[1259].state == 0 and qData[1258].state == 2 and GET_PLAYER_LEVEL() >= qt[1259].needLevel then
-    ADD_QUEST_BTN(qt[1259].id, qt[1259].name)
-  end
-  if qData[1260].state == 0 and qData[1259].state == 2 and GET_PLAYER_LEVEL() >= qt[1260].needLevel then
-    ADD_QUEST_BTN(qt[1260].id, qt[1260].name)
-  end
-  if qData[1261].state == 0 and qData[1260].state == 2 and GET_PLAYER_LEVEL() >= qt[1261].needLevel then
-    ADD_QUEST_BTN(qt[1261].id, qt[1261].name)
-  end
-  if qData[1262].state == 0 and qData[1261].state == 2 and GET_PLAYER_LEVEL() >= qt[1262].needLevel then
-    ADD_QUEST_BTN(qt[1262].id, qt[1262].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315011.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[108].state == 1 and GET_PLAYER_LEVEL() >= qt[108].needLevel then
-    if qData[108].meetNpc[1] == qt[108].goal.meetNpc[1] and CHECK_ITEM_CNT(8820031) >= 100 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if (qData[118].state == 1 or qData[119].state == 1 or qData[120].state == 1 or qData[381].state == 1 or qData[627].state == 1 or qData[2083].state == 1) and qData[121].state ~= 2 and GET_PLAYER_LEVEL() >= qt[121].needLevel then
-    if qData[121].state == 1 then
-      if CHECK_ITEM_CNT(qt[121].goal.getItem[1].id) >= qt[121].goal.getItem[1].count and CHECK_ITEM_CNT(qt[121].goal.getItem[2].id) >= qt[121].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if (qData[123].state == 1 or qData[124].state == 1 or qData[125].state == 1 or qData[382].state == 1 or qData[631].state == 1 or qData[2087].state == 1) and qData[126].state ~= 2 and GET_PLAYER_LEVEL() >= qt[126].needLevel then
-    if qData[126].state == 1 then
-      if CHECK_ITEM_CNT(qt[126].goal.getItem[1].id) >= qt[126].goal.getItem[1].count and CHECK_ITEM_CNT(qt[126].goal.getItem[2].id) >= qt[126].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[156].state == 1 and GET_PLAYER_LEVEL() >= qt[156].needLevel then
-    QSTATE(id, 1)
-  end
-  if qData[1261].state == 1 then
-    if CHECK_ITEM_CNT(qt[1261].goal.getItem[1].id) >= qt[1261].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        QSTATE(id, 2)
-      end
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1256].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1257].state == 1 then
-    if CHECK_ITEM_CNT(qt[1257].goal.getItem[1].id) >= qt[1257].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1258].state == 1 then
-    if CHECK_ITEM_CNT(qt[1258].goal.getItem[1].id) >= qt[1258].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1259].state == 1 then
-    if CHECK_ITEM_CNT(qt[1259].goal.getItem[1].id) >= qt[1259].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1260].state == 1 then
-    if CHECK_ITEM_CNT(qt[1260].goal.getItem[1].id) >= qt[1260].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1260].goal.getItem[2].id) >= qt[1260].goal.getItem[2].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1257].state == 0 and qData[1256].state == 2 and GET_PLAYER_LEVEL() >= qt[1257].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1258].state == 0 and qData[1257].state == 2 and GET_PLAYER_LEVEL() >= qt[1258].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1259].state == 0 and qData[1258].state == 2 and GET_PLAYER_LEVEL() >= qt[1259].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1260].state == 0 and qData[1259].state == 2 and GET_PLAYER_LEVEL() >= qt[1260].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1261].state == 0 and qData[1260].state == 2 and GET_PLAYER_LEVEL() >= qt[1261].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1262].state == 0 and qData[1261].state == 2 and GET_PLAYER_LEVEL() >= qt[1262].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1262].state == 1 then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315011"
+  local refs = {}
+  refs[108] = {
+    name = "[ ???? ?? ???? ]",
+    content0 = "?? ? ???. ?? ???…?..",
+    reward0_count = 0,
+    needLevel = 54,
+    bQLoop = 0
+  }
+  refs[118] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[119] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[120] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[121] = {
+    name = "[ 侠义之心1 ]",
+    content0 = "什么？是正派人吗？都邀请了很久了，终于来了啊。现在因为到处都是怪物，别说是干活了，都受伤了。",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[123] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[124] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[125] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[126] = {
+    name = "[ 愤怒的治理1 ]",
+    content0 = "什么？是邪派人吗？虽然邀请了但没想到真回来。看着不是很厉害，邪派没有人了吗？",
+    reward0_count = 1,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[156] = {
+    name = "[ ???? ?? ]",
+    content0 = "???? ??? ? ??? ???. ??…. ?? ? ??? ???? ???? ??! ??? ??? ??? ??????….",
+    reward0_count = 0,
+    needLevel = 66,
+    bQLoop = 0
+  }
+  refs[381] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[382] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[627] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[631] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "正义就是力量。只有强者才有发言权，能引领时代。但是…要知道拳头的力量不是全部。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[1256] = {
+    name = "[ 真正的理由2 ]",
+    content0 = "我没想过你能帮她解决心事。再次感谢。",
+    reward0_count = 0,
+    needLevel = 53,
+    bQLoop = 0
+  }
+  refs[1257] = {
+    name = "[ 不能逃走的理由 ]",
+    content0 = "来坐老板娘？是的，她是我的姐姐。",
+    reward0_count = 0,
+    needLevel = 54,
+    bQLoop = 0
+  }
+  refs[1258] = {
+    name = "[ 反复的噩梦 ]",
+    content0 = "托少侠的福，暂时可以放心了。",
+    reward0_count = 1,
+    needLevel = 55,
+    bQLoop = 0
+  }
+  refs[1259] = {
+    name = "[ 确保脱离口 ]",
+    content0 = "出事了，少侠。刚要逃出的工人因为横阻狭窄通路的大菜头不能出来。那火烫的热气能让人晕厥。",
+    reward0_count = 0,
+    needLevel = 56,
+    bQLoop = 0
+  }
+  refs[1260] = {
+    name = "[ 不断涌出的怪物 ]",
+    content0 = "少侠刚击退了那么多怪物，现在又有很多怪物涌出来了。要想确保脱离口的通畅，还得再次帮我们击退怪物。",
+    reward0_count = 0,
+    needLevel = 57,
+    bQLoop = 0
+  }
+  refs[1261] = {
+    name = "[ 获得勇气的工人们 ]",
+    content0 = "托少侠的福怪物数量减少了，获得勇气的工人正在营救还困在龙通路的同僚呢。",
+    reward0_count = 20,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[1262] = {
+    name = "[ 请求支援 ]",
+    content0 = "救援工作差不多完成了，下面该向龙林城请求支援，正式的击退怪物了。",
+    reward0_count = 1,
+    needLevel = 59,
+    bQLoop = 0
+  }
+  refs[2083] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[2087] = {
+    name = "[ 飞龙掌 ]",
+    content0 = "所谓正义指的不完全是大义。守护并帮助被恶徒和怪物迫害的弱者也是正义的一种。",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  return refs
 end

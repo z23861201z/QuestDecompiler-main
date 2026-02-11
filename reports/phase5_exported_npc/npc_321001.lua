@@ -1,36 +1,18 @@
-function npcsay(id)
-  if id ~= 4321001 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("南丰馆由我来守护!")
-  if qData[3657].state == 1 then
-    if CHECK_ITEM_CNT(qt[3657].goal.getItem[1].id) >= qt[3657].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3657].goal.getItem[2].id) >= qt[3657].goal.getItem[2].count and CHECK_ITEM_CNT(qt[3657].goal.getItem[3].id) >= qt[3657].goal.getItem[3].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("谢谢。明天也拜托了！")
-        SET_QUEST_STATE(3657, 2)
-      else
-        NPC_SAY("行囊空间不足")
-      end
-    else
-      NPC_SAY("收集赤灵甲的灵魂头盔，山贼王的山贼王的王冠，黑岩石怪的黑岩石碎片各10回来就可以了")
-    end
-  end
-  if qData[3657].state == 0 then
-    ADD_QUEST_BTN(qt[3657].id, qt[3657].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_321001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[3657].state ~= 2 then
-    if qData[3657].state == 1 then
-      if CHECK_ITEM_CNT(qt[3657].goal.getItem[1].id) >= qt[3657].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3657].goal.getItem[2].id) >= qt[3657].goal.getItem[2].count and CHECK_ITEM_CNT(qt[3657].goal.getItem[3].id) >= qt[3657].goal.getItem[3].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_321001"
+  local refs = {}
+  refs[3657] = {
+    name = "[ 守护南丰馆2 ]",
+    content0 = "南丰馆还是在受到亡者的山谷的怪物们的威胁",
+    reward0_count = 1,
+    needLevel = 146,
+    bQLoop = 0
+  }
+  return refs
 end

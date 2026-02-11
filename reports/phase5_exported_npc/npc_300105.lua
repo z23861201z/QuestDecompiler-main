@@ -1,10 +1,11 @@
-function npcsay(id)
-  if id ~= 4300105 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("请帮我收集散落各处的大目仔的心吧。大目仔的心收集100%，{0xFFFFFF00}1小时内经验值变成双倍{END} ")
+-- DB_DRIVEN_EXPORT
+-- source: npc_300105.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300105"
+  local refs = {}
+  return refs
 end

@@ -1,247 +1,137 @@
-function npcsay(id)
-  if id ~= 4213006 then
-    return
-  end
-  clickNPCid = id
-  if qData[57].state == 1 then
-    if qData[57].killMonster[qt[57].goal.killMonster[1].id] >= qt[57].goal.killMonster[1].count then
-      NPC_SAY("{0xFFFFFF00}PLAYERNAME{END}???? ????? ??? ????? ??????. ?? ? ??? ?????. ?.. ??? ?? ?? ??? ??? ???? ??????.")
-      SET_QUEST_STATE(57, 2)
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 20??{END}? ??????")
-    end
-  end
-  if qData[132].state == 1 then
-    if qData[132].meetNpc[1] ~= id then
-      SET_INFO(132, 2)
-      SET_MEETNPC(132, 1, id)
-      NPC_QSAY(132, 1)
-      return
-    elseif CHECK_ITEM_CNT(qt[132].goal.getItem[1].id) >= qt[132].goal.getItem[1].count and CHECK_ITEM_CNT(qt[132].goal.getItem[2].id) >= qt[132].goal.getItem[2].count and CHECK_ITEM_CNT(qt[132].goal.getItem[3].id) >= qt[132].goal.getItem[3].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("?? ???????. ??? ??? ???? ?? ?? ?? ?? ??? ????, {0xFFFFFF00}'???'?{END}? ??? ?? ?? ????????.")
-        SET_QUEST_STATE(132, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("??? ???? {0xFFFFFF00}?? ???{END}? ?? ??? {0xFFFFFF00}???{END}? ?? ??? ?? ??? ???? ?? ?????.")
-    end
-  end
-  if qData[133].state == 1 then
-    NPC_SAY("{0xFFFFFF00}??{END}? {0xFFFFFF00}????{END}??? ?? ? ??? ???.")
-  end
-  if qData[338].state == 1 then
-    if qData[338].meetNpc[1] ~= id then
-      SET_INFO(338, 1)
-      SET_MEETNPC(338, 1, id)
-      NPC_QSAY(338, 1)
-      return
-    else
-      NPC_SAY("??? ??? ??? ????. ?? ?? ?? ?????.")
-    end
-  end
-  if qData[429].state == 1 then
-    if CHECK_ITEM_CNT(qt[429].goal.getItem[1].id) >= qt[429].goal.getItem[1].count and CHECK_ITEM_CNT(qt[429].goal.getItem[2].id) >= qt[429].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("?????. ?????. ? ???? ?? ???.")
-        SET_QUEST_STATE(429, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.")
-    end
-  end
-  if qData[430].state == 1 then
-    if CHECK_ITEM_CNT(qt[430].goal.getItem[1].id) >= qt[430].goal.getItem[1].count and CHECK_ITEM_CNT(qt[430].goal.getItem[2].id) >= qt[430].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("?????. ?????. ? ???? ?? ???.")
-        SET_QUEST_STATE(430, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.")
-    end
-  end
-  if qData[431].state == 1 then
-    if CHECK_ITEM_CNT(qt[431].goal.getItem[1].id) >= qt[431].goal.getItem[1].count and CHECK_ITEM_CNT(qt[431].goal.getItem[2].id) >= qt[431].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("?????. ?????. ? ???? ?? ???.")
-        SET_QUEST_STATE(431, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.")
-    end
-  end
-  if qData[432].state == 1 then
-    if CHECK_ITEM_CNT(qt[432].goal.getItem[1].id) >= qt[432].goal.getItem[1].count and CHECK_ITEM_CNT(qt[432].goal.getItem[2].id) >= qt[432].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("?????. ?????. ? ???? ?? ???.")
-        SET_QUEST_STATE(432, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.")
-    end
-  end
-  if qData[687].state == 1 then
-    if CHECK_ITEM_CNT(qt[687].goal.getItem[1].id) >= qt[687].goal.getItem[1].count and CHECK_ITEM_CNT(qt[687].goal.getItem[2].id) >= qt[687].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("?????. ?????. ? ???? ?? ???.")
-        SET_QUEST_STATE(687, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[????] 10?{END}? {0xFFFFFF00}[??????] 10?{END}?  ?? ?? ????.")
-    end
-  end
-  if qData[437].state == 1 and CHECK_ITEM_CNT(qt[437].goal.getItem[1].id) >= qt[437].goal.getItem[1].count then
-    NPC_SAY(" ?? ??? ??? ? ??? ???? ??? ?? ?????? ?? ?????.")
-    SET_QUEST_STATE(437, 2)
-    return
-  end
-  if qData[447].state == 1 then
-    if CHECK_ITEM_CNT(qt[447].goal.getItem[1].id) >= qt[447].goal.getItem[1].count and CHECK_ITEM_CNT(qt[447].goal.getItem[2].id) >= qt[447].goal.getItem[2].count and CHECK_ITEM_CNT(qt[447].goal.getItem[3].id) >= qt[447].goal.getItem[3].count then
-      NPC_SAY(qt[447].npcsay[2])
-      SET_QUEST_STATE(447, 2)
-      return
-    else
-      NPC_SAY(qt[447].npcsay[1])
-    end
-  end
-  if qData[1149].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("欢迎光临。哈哈哈，你说我的胡子很帅气？哈哈 其实真是小时候… 啊！对我的故事感兴趣吗？")
-      SET_QUEST_STATE(1149, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1151].state == 1 then
-    if CHECK_ITEM_CNT(qt[1151].goal.getItem[1].id) >= qt[1151].goal.getItem[1].count then
-      NPC_SAY("啊！那不是[ 鸟人的蛋 ]吗？啊！你想要知道什么？被袭击当时的情况？听乌骨鸡大侠说的？我什么都不知道。应该是个错误的情报。去跟乌骨鸡大侠再次确认一下吧。")
-      SET_QUEST_STATE(1151, 2)
-    else
-      NPC_SAY("我看到15个[ 鸟人的蛋 ]也会浑身起鸡皮疙瘩。")
-    end
-  end
-  if qData[1185].state == 1 then
-    if CHECK_ITEM_CNT(qt[1185].goal.getItem[1].id) >= qt[1185].goal.getItem[1].count then
-      NPC_SAY("咕咚！啊~你也要来一个吗？嗯…很好吃的啊…总之过去的事情就忘掉吧。")
-      SET_QUEST_STATE(1185, 2)
-    else
-      NPC_SAY("你只要拿来20个[ 糯米肠的蛋 ]我们就是朋友了。击退蛇腹窟的糯米肠收集20个[ 糯米肠的蛋 ]回来吧。")
-    end
-  end
-  if qData[1186].state == 1 then
-    if CHECK_ITEM_CNT(qt[1186].goal.getItem[1].id) >= qt[1186].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢。啊，这脆脆的口感！你真的不吃也没关系吗？")
-        SET_QUEST_STATE(1186, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("帮我收集15个[ 蛛蛛人的脚 ]吧。光是想想也会流口,呵呵呵…蜘蛛人在蛇腹窟。")
-    end
-  end
-  if qData[1188].state == 1 then
-    NPC_SAY("收集竹林的5个[ 独脚天狗仙的角 ]和7个[ 双节龙的牙齿 ]，去冥珠城银行换取奖励吧。")
-  end
-  if qData[2037].state == 1 then
-    SET_QUEST_STATE(2037, 2)
-    NPC_SAY("什么？要我离开这里？你开玩笑呢？我虽然是货郎，但这里却是像我们这种货郎的安乐窝。你从哪儿来就滚回哪里去！")
-  end
-  if qData[2038].state == 1 then
-    NPC_SAY("李无极应该是死了，如果还活着的话，我不可能还在这里（向佣兵领袖报告李无极和那一带的事情吧）")
-  end
-  ADD_NEW_SHOP_BTN(id, 10009)
-  if qData[132].state == 2 and qData[133].state == 0 then
-    ADD_QUEST_BTN(qt[133].id, qt[133].name)
-  end
-  if qData[1149].state == 2 and qData[1151].state == 0 then
-    ADD_QUEST_BTN(qt[1151].id, qt[1151].name)
-  end
-  if qData[1185].state == 0 then
-    ADD_QUEST_BTN(qt[1185].id, qt[1185].name)
-  end
-  if qData[1186].state == 0 and qData[1185].state == 2 then
-    ADD_QUEST_BTN(qt[1186].id, qt[1186].name)
-  end
-  if qData[1188].state == 0 then
-    ADD_QUEST_BTN(qt[1188].id, qt[1188].name)
-  end
-  if qData[2038].state == 0 and qData[2037].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2038].id, qt[2038].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_213006.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[338].state == 1 and GET_PLAYER_LEVEL() >= qt[338].needLevel then
-    QSTATE(id, 1)
-  end
-  if qData[1149].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1149].state == 2 and qData[1151].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1151].needLevel then
-    if qData[1151].state == 1 then
-      if CHECK_ITEM_CNT(qt[1151].goal.getItem[1].id) >= qt[1151].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1185].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1185].needLevel then
-    if qData[1185].state == 1 then
-      if CHECK_ITEM_CNT(qt[1185].goal.getItem[1].id) >= qt[1185].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1185].state == 2 and qData[1186].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1186].needLevel then
-    if qData[1186].state == 1 then
-      if CHECK_ITEM_CNT(qt[1186].goal.getItem[1].id) >= qt[1186].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1188].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1188].needLevel then
-    if qData[1188].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2037].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2038].state ~= 2 and qData[2037].state == 2 and GET_PLAYER_LEVEL() >= qt[2038].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2038].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_213006"
+  local refs = {}
+  refs[57] = {
+    name = "[ ?????? ?? ]",
+    content0 = "???? ??? ??? ?? ??? ????? ???.? ????? ??? ??? ????? ????? ??? ?????? ??? ???. ?? ???? ?? ?????? ???? ?? ?? ????.",
+    reward0_count = 0,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[132] = {
+    name = "[ ???? ??1 ]",
+    content0 = "??, ?? ??? ?? ???? ??? ?? ????",
+    reward0_count = 1,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[133] = {
+    name = "[ ???? ??2 ]",
+    content0 = "??? ???? ?????? {0xFFFFFF00}??? 100?{END}? ??? ???? ?? {0xFFFFFF00}'???'{END}?? ??? ???????. ? ?? ??? ?????.",
+    reward0_count = 1,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[338] = {
+    name = "[ ?????(4) ]",
+    content0 = "??? ????? ?? ???? {0xFFFFFF00}??? ??? ???? ?? ?????{END}? ??? ??? ????. ??????? {0xFFFFFF00}?????{END}?? ?? ??? ??????",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[429] = {
+    name = "[ ????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?. ??? ????.",
+    reward0_count = 1,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[430] = {
+    name = "[ ????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?. ??? ????.",
+    reward0_count = 1,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[431] = {
+    name = "[ ????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?. ??? ????.",
+    reward0_count = 1,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[432] = {
+    name = "[ ????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?. ??? ????.",
+    reward0_count = 1,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[437] = {
+    name = "[ ?????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}，我有个请求。",
+    reward0_count = 0,
+    needLevel = 22,
+    bQLoop = 0
+  }
+  refs[447] = {
+    name = "[ ??? ? ]",
+    content0 = "??… ??? ???? ???…",
+    reward0_count = 0,
+    needLevel = 29,
+    bQLoop = 0
+  }
+  refs[687] = {
+    name = "[ ????? ?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?. ??? ????.",
+    reward0_count = 1,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[1149] = {
+    name = "[ 要挟请求 ]",
+    content0 = "刚收到谍报，发现了袭击事件的嫌疑人。{0xFFFFFF00}无名湖的路边摊{END}好像就是那个嫌疑人。",
+    reward0_count = 20,
+    needLevel = 21,
+    bQLoop = 0
+  }
+  refs[1151] = {
+    name = "[ 要挟请求2 ]",
+    content0 = "我小的时候嘴角被鸟啄，留下了伤疤。这胡须其实也是为了伤疤才留的。",
+    reward0_count = 0,
+    needLevel = 22,
+    bQLoop = 0
+  }
+  refs[1185] = {
+    name = "[ 以牙还牙 ]",
+    content0 = "呵！又，又有什么事情啊？道歉？哼，我不会相信。那不就是又想欺负我吗？",
+    reward0_count = 0,
+    needLevel = 37,
+    bQLoop = 0
+  }
+  refs[1186] = {
+    name = "[ 另一种美味 ]",
+    content0 = "还是糯米肠的蛋最美味啊。但你知道吗？蛛蛛人的脚烤来吃味道也很特别的。",
+    reward0_count = 1,
+    needLevel = 37,
+    bQLoop = 0
+  }
+  refs[1188] = {
+    name = "[ 扫清道路 ]",
+    content0 = "你要去冥珠城吗？",
+    reward0_count = 0,
+    needLevel = 38,
+    bQLoop = 0
+  }
+  refs[2037] = {
+    name = "[ 军士 - 向前进 ]",
+    content0 = "做为营地的备选，除了黄泉我还打听了几个地方。其中一个地方就是[无名湖]！",
+    reward0_count = 0,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  refs[2038] = {
+    name = "[ 军士 - 旁敲侧击 ]",
+    content0 = "你这人~还没回去啊！我不会离开这里的",
+    reward0_count = 0,
+    needLevel = 24,
+    bQLoop = 0
+  }
+  return refs
 end

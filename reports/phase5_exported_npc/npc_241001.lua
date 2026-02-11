@@ -1,35 +1,18 @@
-function npcsay(id)
-  if id ~= 4241001 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("卫生和清洁是治疗的第一步。")
-  if qData[3736].state == 1 then
-    if CHECK_ITEM_CNT(qt[3736].goal.getItem[1].id) >= qt[3736].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3736].goal.getItem[2].id) >= qt[3736].goal.getItem[2].count then
-      NPC_SAY("谢谢。下次再拜托你。")
-      SET_QUEST_STATE(3736, 2)
-      return
-    else
-      NPC_SAY("你帮忙收集30个地龙的皮肤和20个巨翅鸭嘴兽的腿吧。")
-    end
-  end
-  if qData[3736].state == 0 and GET_PLAYER_LEVEL() >= qt[3736].needLevel then
-    ADD_QUEST_BTN(qt[3736].id, qt[3736].name)
-  end
-  ADD_NEW_SHOP_BTN(id, 10086)
-  GIVE_DONATION_BUFF(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_241001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[3736].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3736].needLevel then
-    if qData[3736].state == 1 then
-      if CHECK_ITEM_CNT(qt[3736].goal.getItem[1].id) >= qt[3736].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3736].goal.getItem[2].id) >= qt[3736].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_241001"
+  local refs = {}
+  refs[3736] = {
+    name = "[ 研究材料 ]",
+    content0 = "下层居民中流浪者很多，所以生病的患者也很多。特别是高热和营养不良引发的症状居多。",
+    reward0_count = 2,
+    needLevel = 187,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4315017 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("在生死之塔关门通往悲伤之房的路已被封印，一边有插入{0xFF36B8C2}钥匙{END}之类的\n缝隙。")
-  ADD_USE_KEY_BTN(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_315017.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_315017"
+  local refs = {}
+  return refs
 end

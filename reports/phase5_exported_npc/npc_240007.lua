@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4240007 then
-    return
-  end
-  NPC_SAY("在此可以购买PVP过程中使用的恢复药水。")
-  clickNPCid = id
-  ADD_NEW_SHOP_BTN(id, 10074)
+-- DB_DRIVEN_EXPORT
+-- source: npc_240007.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_240007"
+  local refs = {}
+  return refs
 end

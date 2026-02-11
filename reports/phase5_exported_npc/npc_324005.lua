@@ -1,26 +1,25 @@
-function npcsay(id)
-  if id ~= 4324005 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("嗷呜..")
-  if qData[1912].state == 1 then
-    NPC_SAY("嗷呜..。（拥有强大力量的不祥的怪物正在威胁着受伤的老人）")
-    SET_QUEST_STATE(1912, 2)
-    return
-  end
-  if qData[1918].state == 1 then
-    NPC_SAY("嗷呜..。（拥有强大力量的不祥的怪物正在威胁着受伤的老人）�")
-    SET_QUEST_STATE(1918, 2)
-    return
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_324005.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1912].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1918].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_324005"
+  local refs = {}
+  refs[1912] = {
+    name = "[ 兰德-大冲击! ]",
+    content0 = "虽然不知道是谁，但听他在提到春水糖的名字时，总感觉有点不怀好意！希望春水糖那边别出什么事才好...",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1918] = {
+    name = "[ 力魔-大冲击！ ]",
+    content0 = "虽然不知道是谁，但听他在提到春水糖的名字时，总感觉有点不怀好意！希望春水糖那边别出什么事才好...",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

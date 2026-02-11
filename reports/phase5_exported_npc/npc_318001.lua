@@ -1,211 +1,179 @@
-function npcsay(id)
-  if id ~= 4318001 then
-    return
-  end
-  clickNPCid = id
-  if qData[611].state == 1 then
-    NPC_SAY("什么事啊？")
-    SET_MEETNPC(611, 1, id)
-    SET_QUEST_STATE(611, 2)
-  end
-  if qData[612].state == 1 then
-    NPC_SAY("??????? ?????. ??? ?? ?? ???? ????.")
-  end
-  if qData[1045].state == 1 then
-    NPC_SAY("从兰霉匠部下那儿得到了暗号文？")
-    SET_QUEST_STATE(1045, 2)
-    return
-  end
-  if qData[1046].state == 1 then
-    NPC_SAY("快点转达吧。以免受到怀疑。")
-    return
-  end
-  if qData[1286].state == 1 then
-    NPC_SAY("你是说敌人盯上了韩野村码头？")
-    SET_QUEST_STATE(1286, 2)
-    return
-  end
-  if qData[1287].state == 1 then
-    NPC_SAY("土著民沈叶浪在韩野村南边。如果你能说服他，那我会很感谢你的。")
-    return
-  end
-  if qData[1293].state == 1 and GET_PLAYER_LEVEL() >= 68 then
-    NPC_SAY("来得正好。")
-    SET_QUEST_STATE(1293, 2)
-    return
-  end
-  if qData[1294].state == 1 then
-    NPC_SAY("听说皇宫武士陈调依然在龙林城南边。")
-    return
-  end
-  if qData[2059].state == 1 then
-    SET_QUEST_STATE(2059, 2)
-    NPC_SAY("什么？那个我已经知道了。已经早早的通过所有的联系体系通知了12弟子不要出现了。那些兰霉匠的军队，我们韩野城的优秀军队足以抵挡的~")
-  end
-  if qData[2060].state == 1 then
-    NPC_SAY("这样特意找过来关心我们，我们就更加有信心了！(回到[佣兵领袖]处)")
-  end
-  if qData[3659].state == 1 then
-    if CHECK_ITEM_CNT(qt[3659].goal.getItem[1].id) >= qt[3659].goal.getItem[1].count then
-      NPC_SAY("收集回来了啊，那我给你讲讲我的事情")
-      SET_QUEST_STATE(3659, 2)
-      return
-    else
-      NPC_SAY("去{0xFFFFFF00}西危峡谷{END}收集{0xFFFFFF00}50个寿衣{END}后，给高一燕送去吧")
-    end
-  end
-  if qData[3660].state == 1 then
-    if CHECK_ITEM_CNT(qt[3660].goal.getItem[1].id) >= qt[3660].goal.getItem[1].count then
-      NPC_SAY("收集回来了啊，那我给你讲讲我的事情")
-      SET_QUEST_STATE(3660, 2)
-      return
-    else
-      NPC_SAY("去{0xFFFFFF00}西危峡谷{END}收集{0xFFFFFF00}50个突眼怪的尾巴{END}后，给高一燕送去吧")
-    end
-  end
-  if qData[3661].state == 1 then
-    if CHECK_ITEM_CNT(qt[3661].goal.getItem[1].id) >= qt[3661].goal.getItem[1].count then
-      NPC_SAY("收集回来了啊，那我给你讲讲我的事情")
-      SET_QUEST_STATE(3661, 2)
-      return
-    else
-      NPC_SAY("去{0xFFFFFF00}古老的渡头{END}收集{0xFFFFFF00}50个野蛮族的宝珠{END}后，给高一燕送去吧")
-    end
-  end
-  if qData[862].state == 1 and qData[862].meetNpc[1] == qt[862].goal.meetNpc[1] and qData[862].meetNpc[2] == qt[862].goal.meetNpc[2] and qData[862].meetNpc[3] == qt[862].goal.meetNpc[3] and qData[862].meetNpc[4] ~= id then
-    NPC_QSAY(862, 13)
-    SET_INFO(862, 4)
-    SET_MEETNPC(862, 4, id)
-    return
-  end
-  ADD_BTN_GEMBLE(id)
-  ADD_EQUIP_DELIVERY(id)
-  ADD_EQUIP_DELIVERY_CURRENT(id)
-  if qData[944].state == 0 then
-    ADD_QUEST_BTN(qt[944].id, qt[944].name)
-  end
-  if qData[983].state == 0 then
-    ADD_QUEST_BTN(qt[983].id, qt[983].name)
-  end
-  if qData[945].state == 0 then
-    ADD_QUEST_BTN(qt[945].id, qt[945].name)
-  end
-  if qData[946].state == 0 then
-    ADD_QUEST_BTN(qt[946].id, qt[946].name)
-  end
-  if qData[947].state == 0 then
-    ADD_QUEST_BTN(qt[947].id, qt[947].name)
-  end
-  if qData[948].state == 0 then
-    ADD_QUEST_BTN(qt[948].id, qt[948].name)
-  end
-  if qData[949].state == 0 then
-    ADD_QUEST_BTN(qt[949].id, qt[949].name)
-  end
-  if qData[950].state == 0 then
-    ADD_QUEST_BTN(qt[950].id, qt[950].name)
-  end
-  if qData[951].state == 0 then
-    ADD_QUEST_BTN(qt[951].id, qt[951].name)
-  end
-  if qData[952].state == 0 then
-    ADD_QUEST_BTN(qt[952].id, qt[952].name)
-  end
-  if qData[1045].state == 2 and qData[1046].state == 0 then
-    ADD_QUEST_BTN(qt[1046].id, qt[1046].name)
-  end
-  if qData[1287].state == 0 and qData[1286].state == 2 and GET_PLAYER_LEVEL() >= qt[1287].needLevel then
-    ADD_QUEST_BTN(qt[1287].id, qt[1287].name)
-  end
-  if qData[1294].state == 0 and qData[1293].state == 2 and GET_PLAYER_LEVEL() >= qt[1294].needLevel then
-    ADD_QUEST_BTN(qt[1294].id, qt[1294].name)
-  end
-  if qData[2060].state == 0 and qData[2059].state == 2 and GET_PLAYER_JOB1() == 11 then
-    ADD_QUEST_BTN(qt[2060].id, qt[2060].name)
-  end
-  if qData[3659].state == 0 and GET_PLAYER_LEVEL() >= qt[3659].needLevel then
-    ADD_QUEST_BTN(qt[3659].id, qt[3659].name)
-  end
-  if qData[3660].state == 0 and GET_PLAYER_LEVEL() >= qt[3660].needLevel then
-    ADD_QUEST_BTN(qt[3660].id, qt[3660].name)
-  end
-  if qData[3661].state == 0 and GET_PLAYER_LEVEL() >= qt[3661].needLevel then
-    ADD_QUEST_BTN(qt[3661].id, qt[3661].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_318001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1045].state == 2 and qData[1046].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1046].needLevel then
-    if qData[1045].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1286].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1293].state == 1 and GET_PLAYER_LEVEL() >= 68 then
-    QSTATE(id, 2)
-  end
-  if qData[1287].state ~= 2 and qData[1286].state == 2 and GET_PLAYER_LEVEL() >= qt[1287].needLevel then
-    if qData[1287].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1294].state ~= 2 and qData[1293].state == 2 and GET_PLAYER_LEVEL() >= qt[1294].needLevel then
-    if qData[1294].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[862].state == 1 and GET_PLAYER_LEVEL() >= qt[862].needLevel then
-    QSTATE(id, 1)
-  end
-  if qData[2059].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2060].state ~= 2 and qData[2059].state == 2 and GET_PLAYER_LEVEL() >= qt[2060].needLevel and GET_PLAYER_JOB1() == 11 then
-    if qData[2060].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3659].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3659].needLevel then
-    if qData[3659].state == 1 then
-      if CHECK_ITEM_CNT(qt[3659].goal.getItem[1].id) >= qt[3659].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3660].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3660].needLevel then
-    if qData[3660].state == 1 then
-      if CHECK_ITEM_CNT(qt[3660].goal.getItem[1].id) >= qt[3660].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3661].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3661].needLevel then
-    if qData[3661].state == 1 then
-      if CHECK_ITEM_CNT(qt[3661].goal.getItem[1].id) >= qt[3661].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_318001"
+  local refs = {}
+  refs[611] = {
+    name = "[ ???? 1?? ]",
+    content0 = "???????? ?? ????.",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[612] = {
+    name = "[ 射手转职 ]",
+    content0 = "??? ?? ??????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[862] = {
+    name = "[ ???? ??? ]",
+    content0 = "??? ?? ??? ??? ??? ? ????? ??? ???? ?????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[944] = {
+    name = "{0xFFFFB4B4}[ 什么是兰霉匠的进攻？ ]{END}",
+    content0 = "有人密报，兰霉匠找到韩野城，正在全面进攻。万幸的是兰霉匠没有显露真身，用分身来指挥战斗，因此韩野城的军队还能够抵挡他们的攻击。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[945] = {
+    name = "{0xFFFFB4B4}[ 什么是鬼谷城？ ]{END}",
+    content0 = "鬼谷城是兰霉匠的战斗主力怪物。飘在空中奇怪的东西便是鬼谷城了。真不知道怎么会有这种东西存在，它是活着的，兰霉匠手下操纵着无数的鬼谷城朝这里进军。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[946] = {
+    name = "{0xFFFFB4B4}[ 鬼谷城的入侵和击退 ]{END}",
+    content0 = "虽说鬼谷城是活着的巨大怪物，如果没有兰霉匠的手下在其内部操纵，它只是单纯的一个大块头而已。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[947] = {
+    name = "{0xFFFFB4B4}[ 给我们的时间是？ ]{END}",
+    content0 = "韩野城军队可以抵挡鬼谷城进攻的时间是30分钟。这也正是各位可以在鬼谷城内部停留的时间。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[948] = {
+    name = "{0xFFFFB4B4}[ 所谓兰霉匠的手下？ ]{END}",
+    content0 = "据情报员传来的消息，兰霉匠的直属下属精锐部队中有金冠怪和银冠怪的职位。还有，现在进攻的鬼谷城中各有一名金冠怪和银冠怪在指挥。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[949] = {
+    name = "{0xFFFFB4B4}[ 击退之后呢？ ]{END}",
+    content0 = "各位击退兰霉匠的手下之后，我将重新启动符咒阵将各位带回韩野城。还有，韩野城的咒师们会用千里眼观察你们在鬼谷城的战斗情况，根据各位的表现评分后奖励[ 积分 ]。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[950] = {
+    name = "{0xFFFFB4B4}[ 什么是提交军需物品？ ]{END}",
+    content0 = "我接受的军需物品是武器和防具，是我们的士兵为了防御兰霉匠的进攻要使用的。当然质量越好防御的就更坚固，那样你们就可以赚取进攻鬼谷城时的时间。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[951] = {
+    name = "{0xFFFFB4B4}[ 什么是宝玉？ ]{END}",
+    content0 = "在鬼谷城可以获得红宝玉或黄宝玉之类的宝玉。那是皇宫的宝物，佩戴在武器或防具等多种装备上可以使装备变强的神奇的玉珠。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[952] = {
+    name = "{0xFFFFB4B4}[ 鬼谷城的妖怪们 ]{END}",
+    content0 = "鬼谷城的妖怪可不是普通的妖怪。是兰霉匠使用邪恶的法术制作的人工妖怪。所以听先前入侵过的侠客们说，跟普通妖怪不同，对普通物攻有很强的防御力。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[983] = {
+    name = "{0xFFFFB4B4}[ 新的鬼谷城和金冠怪的登场 ]{END}",
+    content0 = "被接二连三的失败愤怒的兰霉匠投入了由金冠怪领导的新的鬼谷城。所以每次进攻时会出现2个鬼谷城。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1045] = {
+    name = "[ 解读暗号 ]",
+    content0 = "天下第一鬼谷城，天下太平兰霉匠’？嗯，像是某种暗号，不过不知道它具体的意思。",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1046] = {
+    name = "[ 剧变开始 ]",
+    content0 = "内容说的是兰霉匠带领着鬼谷城，即将开始进攻，做好准备。",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1286] = {
+    name = "[ 暴风前夜2 ]",
+    content0 = "你帮忙造的战船聚集在鬼谷林渡头，由皇宫武士柳江指挥，打算包围韩野城码头。嘿嘿。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1287] = {
+    name = "[ 暴风前夜3 ]",
+    content0 = "既然如此我们也应该准备一下战船。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1293] = {
+    name = "[ 暴风前夜9 ]",
+    content0 = "高一燕好像在找您呢。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1294] = {
+    name = "[ 团结力量 ]",
+    content0 = "多亏PLAYERNAME，我们冬混汤一族和土著民们才能团结起来。感激之情无以言表…",
+    reward0_count = 0,
+    needLevel = 68,
+    bQLoop = 0
+  }
+  refs[2059] = {
+    name = "[ 军士 - 韩野城的危机 ]",
+    content0 = "攻击韩野城的兰霉匠军队的目的不一定是破坏韩野城。有情报说是为了诱导12位弟子的出现",
+    reward0_count = 0,
+    needLevel = 42,
+    bQLoop = 0
+  }
+  refs[2060] = {
+    name = "[ 军士 - 技能: 游龙枪 ]",
+    content0 = "军士..原是皇宫里最优秀的精英，兰霉匠真是罪恶滔天啊！谢谢你的情报，不过请放心吧。我们韩野城的军队有很可靠的少侠们的支援",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[3659] = {
+    name = "[ 韩野城的物资储备：寿衣(每日) ]",
+    content0 = "韩野城是进行和兰霉匠战斗的战争村",
+    reward0_count = 0,
+    needLevel = 121,
+    bQLoop = 0
+  }
+  refs[3660] = {
+    name = "[ 韩野城的物资储备：突眼怪的尾巴(每日) ]",
+    content0 = "韩野城是进行和兰霉匠战斗的战争村",
+    reward0_count = 0,
+    needLevel = 123,
+    bQLoop = 0
+  }
+  refs[3661] = {
+    name = "[ 韩野城的物资储备：野蛮族的宝珠(每日) ]",
+    content0 = "韩野城是进行和兰霉匠战斗的战争村",
+    reward0_count = 0,
+    needLevel = 125,
+    bQLoop = 0
+  }
+  return refs
 end

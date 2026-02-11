@@ -1,23 +1,18 @@
-function npcsay(id)
-  if id ~= 4391012 then
-    return
-  end
-  clickNPCid = id
-  if qData[802].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) and 1 <= CHECK_INVENTORY_CNT(4) then
-      NPC_SAY("谢谢。谢谢。我在这儿谢谢您了。有大侠出手，那些怪物暂时不敢来了。那明天也拜托您了。")
-      SET_MEETNPC(802, 1, id)
-      SET_QUEST_STATE(802, 2)
-    else
-      NPC_SAY("行囊太沉。")
-      return
-    end
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391012.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[802].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391012"
+  local refs = {}
+  refs[802] = {
+    name = "[ 怪林地狱-磷火的盛宴 ]",
+    content0 = "我的记忆力不是很好，你是不是说过要拯救百姓于水火之中？那么我给你分配一个任务。对你来说不会很难。",
+    reward0_count = 1,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  return refs
 end

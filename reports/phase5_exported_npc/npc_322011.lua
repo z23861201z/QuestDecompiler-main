@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4322011 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("此地是巨木重林的边界，可以到达遥远的仙游谷的天柱。怪物的邪气消失了不少，现在可以来回于仙游谷和西域两地了！")
-  NPC_WARP_THEME_51_19(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_322011.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_322011"
+  local refs = {}
+  return refs
 end

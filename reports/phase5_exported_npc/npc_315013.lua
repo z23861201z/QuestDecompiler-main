@@ -1,81 +1,46 @@
-function npcsay(id)
-  if id ~= 4315013 then
-    return
-  end
-  clickNPCid = id
-  if qData[1317].state == 1 then
-    NPC_SAY("好久不见。")
-    SET_QUEST_STATE(1317, 2)
-    return
-  end
-  if qData[1318].state == 1 then
-    NPC_SAY("（回到冥珠城南边的偷笔怪盗那儿吧。）")
-  end
-  if qData[1386].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(1) then
-      NPC_SAY("又来了？这次是为了血玉髓，那孩子而来的吧？")
-      SET_QUEST_STATE(1386, 2)
-      return
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1387].state == 1 then
-    if qData[1387].killMonster[qt[1387].goal.killMonster[1].id] >= qt[1387].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("来得很快啊，总是让我很惊讶。但跟以前的你比起来，差距还是很大的。")
-        SET_QUEST_STATE(1387, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退50个生死之房的侵蚀红树妖之后回来吧。之后才可以告诉你方法。")
-    end
-  end
-  if qData[1388].state == 1 then
-    NPC_SAY("……。（又没有回应了。得去生死之塔入口见见武艺僧长经。）")
-  end
-  if qData[1318].state == 0 and qData[1317].state == 2 and GET_PLAYER_LEVEL() >= qt[1318].needLevel then
-    ADD_QUEST_BTN(qt[1318].id, qt[1318].name)
-  end
-  if qData[1387].state == 0 and qData[1386].state == 2 and GET_PLAYER_LEVEL() >= qt[1387].needLevel then
-    ADD_QUEST_BTN(qt[1387].id, qt[1387].name)
-  end
-  if qData[1388].state == 0 and qData[1387].state == 2 and GET_PLAYER_LEVEL() >= qt[1388].needLevel then
-    ADD_QUEST_BTN(qt[1388].id, qt[1388].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315013.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1317].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1318].state ~= 2 and qData[1317].state == 2 and GET_PLAYER_LEVEL() >= qt[1318].needLevel then
-    if qData[1318].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1386].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1387].state ~= 2 and qData[1386].state == 2 and GET_PLAYER_LEVEL() >= qt[1387].needLevel then
-    if qData[1387].state == 1 then
-      if qData[1387].killMonster[qt[1387].goal.killMonster[1].id] >= qt[1387].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1388].state ~= 2 and qData[1387].state == 2 and GET_PLAYER_LEVEL() >= qt[1388].needLevel then
-    if qData[1388].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315013"
+  local refs = {}
+  refs[1317] = {
+    name = "[ 秘密浮出水面2 ]",
+    content0 = "神檀树？十二妖怪的目标？原来如此。少侠已经知道了啊。",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[1318] = {
+    name = "[ 秘密浮出水面3 ]",
+    content0 = "好久不见。",
+    reward0_count = 0,
+    needLevel = 77,
+    bQLoop = 0
+  }
+  refs[1386] = {
+    name = "[血玉髓的来历（2）]",
+    content0 = "所有的事情都连在一起了。所有的事…。凶徒匪人把第一寺的视线引到这里来的，东泼肉施主冒着危险前往生死地狱的事等等…。",
+    reward0_count = 1,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1387] = {
+    name = "[要经过的顺序(1) ]",
+    content0 = "东泼肉？凶徒匪人？那些人分明是在等着你呢吧。自己不知道在等的人是谁，但确实是你。",
+    reward0_count = 3,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1388] = {
+    name = "[要经过的顺序(2) ]",
+    content0 = "其实所有的方法武艺僧长经那孩子都知道。只是在担心可不可以击退像我子女一样的血玉髓，对我会不会有影响。",
+    reward0_count = 0,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  return refs
 end

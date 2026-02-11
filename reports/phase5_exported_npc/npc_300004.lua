@@ -1,10 +1,11 @@
-function npcsay(id)
-  if id ~= 4300004 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("虽然失去了胳膊，但绝对不能就这样放弃。")
+-- DB_DRIVEN_EXPORT
+-- source: npc_300004.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300004"
+  local refs = {}
+  return refs
 end

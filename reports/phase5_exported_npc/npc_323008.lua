@@ -1,241 +1,130 @@
-function npcsay(id)
-  if id ~= 4323008 then
-    return
-  end
-  NPC_SAY("......")
-  clickNPCid = id
-  if qData[1475].state == 1 then
-    NPC_SAY("去{0xFFFFFF00}安哥拉王宫{END}见{0xFFFFFF00}近卫兵降落伞{END}吧。得在他那儿得到旅行许可")
-  end
-  if qData[2821].state == 1 and qData[2821].killMonster[qt[2821].goal.killMonster[1].id] >= qt[2821].goal.killMonster[1].count then
-    NPC_SAY("这里是{0xFFFFFF00}安哥拉王国{END}。")
-    SET_QUEST_STATE(2821, 2)
-    return
-  end
-  if qData[2857].state == 1 then
-    NPC_SAY("{0xFFFFFF00}银行员辛巴达{END}在{0xFFFFFF00}安哥拉市商家{END}。")
-  end
-  if qData[2865].state == 1 then
-    NPC_SAY("我现在还不能相信你！")
-    SET_QUEST_STATE(2865, 2)
-    return
-  end
-  if qData[2866].state == 1 then
-    if qData[2866].killMonster[qt[2866].goal.killMonster[1].id] >= qt[2866].goal.killMonster[1].count then
-      NPC_SAY("回来了？没受伤吧？")
-      SET_QUEST_STATE(2866, 2)
-      return
-    else
-      NPC_SAY("我相信你。在{0xFFFFFF00}吕墩平原[1]{END}击退60个{0xFFFFFF00}甲山女鬼{END}吧。")
-    end
-  end
-  if qData[2867].state == 1 then
-    if qData[2867].killMonster[qt[2867].goal.killMonster[1].id] >= qt[2867].goal.killMonster[1].count then
-      NPC_SAY("都击退了啊。辛苦了！先缓一下，等达到{0xFFFFFF00}172功力{END}再见吧。")
-      SET_QUEST_STATE(2867, 2)
-      return
-    else
-      NPC_SAY("我相信你。帮忙击退60个{0xFFFFFF00}吕墩平原{END}的{0xFFFFFF00}狂豚魔人{END}吧。")
-    end
-  end
-  if qData[2868].state == 1 then
-    if qData[2868].killMonster[qt[2868].goal.killMonster[1].id] >= qt[2868].goal.killMonster[1].count then
-      NPC_SAY("{0xFFFFCCCC}(用手捂住伤口){END}我有个请求。能去{0xFFFFFF00}医生八字胡老头{END}帮我拿点治疗剂吗？")
-      SET_QUEST_STATE(2868, 2)
-      return
-    else
-      NPC_SAY("这是最后一次！你追到{0xFFFFFF00}吕墩平原{END}击退60个{0xFFFFFF00}咸兴魔灵{END}吧。")
-    end
-  end
-  if qData[2870].state == 1 then
-    NPC_SAY("{0xFFFFFF00}医生八字胡老头{END}能在{0xFFFFFF00}安哥拉市广场{END}见到。他看起来凶，但其实是位很好的人。")
-  end
-  if qData[3776].state == 1 then
-    if qData[3776].killMonster[qt[3776].goal.killMonster[1].id] >= qt[3776].goal.killMonster[1].count then
-      NPC_SAY("大家都辛苦了。解散！")
-      SET_QUEST_STATE(3776, 2)
-      return
-    else
-      NPC_SAY("今天的目标是击退50个{0xFFFFFF00}甲山女鬼{END}！")
-    end
-  end
-  if qData[3777].state == 1 then
-    if qData[3777].killMonster[qt[3777].goal.killMonster[1].id] >= qt[3777].goal.killMonster[1].count then
-      NPC_SAY("大家都辛苦了。解散！")
-      SET_QUEST_STATE(3777, 2)
-      return
-    else
-      NPC_SAY("今天的目标是击退50个{0xFFFFFF00}狂豚魔人{END}！")
-    end
-  end
-  if qData[3780].state == 1 then
-    if qData[3780].killMonster[qt[3780].goal.killMonster[1].id] >= qt[3780].goal.killMonster[1].count then
-      NPC_SAY("大家都辛苦了。解散！")
-      SET_QUEST_STATE(3780, 2)
-      return
-    else
-      NPC_SAY("今天的目标是50个{0xFFFFFF00}咸兴魔灵{END}！")
-    end
-  end
-  if qData[3781].state == 1 then
-    if qData[3781].killMonster[qt[3781].goal.killMonster[1].id] >= qt[3781].goal.killMonster[1].count then
-      NPC_SAY("大家都辛苦了。解散！")
-      SET_QUEST_STATE(3781, 2)
-      return
-    else
-      NPC_SAY("今天的目标是50个{0xFFFFFF00}马面人鬼{END}！")
-    end
-  end
-  if qData[1475].state == 0 and GET_PLAYER_LEVEL() >= qt[1475].needLevel then
-    ADD_QUEST_BTN(qt[1475].id, qt[1475].name)
-  end
-  if qData[2857].state == 0 and qData[2821].state == 2 and GET_PLAYER_LEVEL() >= qt[2857].needLevel then
-    ADD_QUEST_BTN(qt[2857].id, qt[2857].name)
-  end
-  if qData[2865].state == 0 and qData[2864].state == 2 and GET_PLAYER_LEVEL() >= qt[2865].needLevel then
-    ADD_QUEST_BTN(qt[2865].id, qt[2865].name)
-  end
-  if qData[2866].state == 0 and qData[2865].state == 2 and GET_PLAYER_LEVEL() >= qt[2866].needLevel then
-    ADD_QUEST_BTN(qt[2866].id, qt[2866].name)
-  end
-  if qData[2867].state == 0 and qData[2866].state == 2 and GET_PLAYER_LEVEL() >= qt[2867].needLevel then
-    ADD_QUEST_BTN(qt[2867].id, qt[2867].name)
-  end
-  if qData[2868].state == 0 and qData[2867].state == 2 and GET_PLAYER_LEVEL() >= qt[2868].needLevel then
-    ADD_QUEST_BTN(qt[2868].id, qt[2868].name)
-  end
-  if qData[2870].state == 0 and qData[2869].state == 2 and GET_PLAYER_LEVEL() >= qt[2870].needLevel then
-    ADD_QUEST_BTN(qt[2870].id, qt[2870].name)
-  end
-  if qData[3776].state == 0 and qData[2866].state == 2 and GET_PLAYER_LEVEL() >= qt[3776].needLevel then
-    ADD_QUEST_BTN(qt[3776].id, qt[3776].name)
-  end
-  if qData[3777].state == 0 and qData[2867].state == 2 and GET_PLAYER_LEVEL() >= qt[3777].needLevel then
-    ADD_QUEST_BTN(qt[3777].id, qt[3777].name)
-  end
-  if qData[3780].state == 0 and qData[2885].state == 2 and GET_PLAYER_LEVEL() >= qt[3780].needLevel then
-    ADD_QUEST_BTN(qt[3780].id, qt[3780].name)
-  end
-  if qData[3781].state == 0 and qData[2896].state == 2 and GET_PLAYER_LEVEL() >= qt[3781].needLevel then
-    ADD_QUEST_BTN(qt[3781].id, qt[3781].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_323008.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1475].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1475].needLevel then
-    if qData[1475].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2821].state ~= 2 and qData[2820].state == 2 and GET_PLAYER_LEVEL() >= qt[2821].needLevel then
-    if qData[2821].state == 1 then
-      if qData[2821].killMonster[qt[2821].goal.killMonster[1].id] >= qt[2821].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2857].state ~= 2 and qData[2821].state == 2 and GET_PLAYER_LEVEL() >= qt[2857].needLevel then
-    if qData[2857].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2865].state ~= 2 and qData[2864].state == 2 and GET_PLAYER_LEVEL() >= qt[2865].needLevel then
-    if qData[2865].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2866].state ~= 2 and qData[2865].state == 2 and GET_PLAYER_LEVEL() >= qt[2866].needLevel then
-    if qData[2866].state == 1 then
-      if qData[2866].killMonster[qt[2866].goal.killMonster[1].id] >= qt[2866].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2867].state ~= 2 and qData[2866].state == 2 and GET_PLAYER_LEVEL() >= qt[2867].needLevel then
-    if qData[2867].state == 1 then
-      if qData[2867].killMonster[qt[2867].goal.killMonster[1].id] >= qt[2867].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2868].state ~= 2 and qData[2867].state == 2 and GET_PLAYER_LEVEL() >= qt[2868].needLevel then
-    if qData[2868].state == 1 then
-      if qData[2868].killMonster[qt[2868].goal.killMonster[1].id] >= qt[2868].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2870].state ~= 2 and qData[2869].state == 2 and GET_PLAYER_LEVEL() >= qt[2870].needLevel then
-    if qData[2870].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3776].state ~= 2 and qData[2866].state == 2 and GET_PLAYER_LEVEL() >= qt[3776].needLevel then
-    if qData[3776].state == 1 then
-      if qData[3776].killMonster[qt[3776].goal.killMonster[1].id] >= qt[3776].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3777].state ~= 2 and qData[2867].state == 2 and GET_PLAYER_LEVEL() >= qt[3777].needLevel then
-    if qData[3777].state == 1 then
-      if qData[3777].killMonster[qt[3777].goal.killMonster[1].id] >= qt[3777].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3780].state ~= 2 and qData[2885].state == 2 and GET_PLAYER_LEVEL() >= qt[3780].needLevel then
-    if qData[3780].state == 1 then
-      if qData[3780].killMonster[qt[3780].goal.killMonster[1].id] >= qt[3780].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3781].state ~= 2 and qData[2896].state == 2 and GET_PLAYER_LEVEL() >= qt[3781].needLevel then
-    if qData[3781].state == 1 then
-      if qData[3781].killMonster[qt[3781].goal.killMonster[1].id] >= qt[3781].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_323008"
+  local refs = {}
+  refs[1475] = {
+    name = "[ 陌生的旅行者 ]",
+    content0 = "嗯…暂停脚步。看来你不像是这里的人啊，你从哪里来啊？",
+    reward0_count = 0,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  refs[2820] = {
+    name = "[ 春水糖去哪儿了？ ]",
+    content0 = "{0xFFFFCCCC}(大家一起集中精神看着那本书。){END}",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2821] = {
+    name = "[ 去往安哥拉王国 ]",
+    content0 = "想去安哥拉王国？",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2857] = {
+    name = "[ 找到安哥拉王国的异乡人 ]",
+    content0 = "已经很久没有异乡人来到此处了。",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[2864] = {
+    name = "[ 哈玛特的决心？ ]",
+    content0 = "{0xFFFFCCCC}(哈玛特赶紧喝下解酒剂。){END}呼，终于活过来了~",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[2865] = {
+    name = "[ 亚夫担心哈玛特 ]",
+    content0 = "嗯，是最近才来此的异乡人啊。",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[2866] = {
+    name = "[ 无止境的战斗1 ]",
+    content0 = "{0xFFFFCCCC}(突然从吕墩平原传来吵闹的声音。){END}这是什么声音？",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[2867] = {
+    name = "[ 无止境的战斗2 ]",
+    content0 = "你叫什么来着？是叫{0xFF99ff99}PLAYERNAME{END}吗？",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[2868] = {
+    name = "[ 无止境的战斗3 ]",
+    content0 = "已经达到{0xFFFFFF00}172功力{END}了啊~",
+    reward0_count = 0,
+    needLevel = 172,
+    bQLoop = 0
+  }
+  refs[2869] = {
+    name = "[ 亚夫的治疗剂 ]",
+    content0 = "有话快说。",
+    reward0_count = 0,
+    needLevel = 172,
+    bQLoop = 0
+  }
+  refs[2870] = {
+    name = "[ 亚夫见到的春水糖 ]",
+    content0 = "哎呀..",
+    reward0_count = 0,
+    needLevel = 172,
+    bQLoop = 0
+  }
+  refs[2885] = {
+    name = "[ 可心的药2 ]",
+    content0 = "所以说，不让早退，给了这{0xFFFFFF00}腹痛药{END}是吗？",
+    reward0_count = 0,
+    needLevel = 173,
+    bQLoop = 0
+  }
+  refs[2896] = {
+    name = "[ 大世子的下一个目标 ]",
+    content0 = "{0xFFFFCCCC}(大世子认真听取关于马面人鬼的说明并记录){END}。真厉害，拖亏了你，我知道了很多事情。",
+    reward0_count = 0,
+    needLevel = 174,
+    bQLoop = 0
+  }
+  refs[3776] = {
+    name = "[ 紧急讨伐：击退甲山女鬼 ]",
+    content0 = "我们上次的战斗很成功。",
+    reward0_count = 0,
+    needLevel = 171,
+    bQLoop = 0
+  }
+  refs[3777] = {
+    name = "[ 紧急讨伐：击退狂豚魔人 ]",
+    content0 = "我们上次的战斗很成功。",
+    reward0_count = 0,
+    needLevel = 172,
+    bQLoop = 0
+  }
+  refs[3780] = {
+    name = "[ 紧急讨伐：讨伐咸兴魔灵 ]",
+    content0 = "我们上次的战斗很成功。",
+    reward0_count = 0,
+    needLevel = 173,
+    bQLoop = 0
+  }
+  refs[3781] = {
+    name = "[ 紧急讨伐：讨伐马面人鬼 ]",
+    content0 = "我们上次的战斗很成功。",
+    reward0_count = 0,
+    needLevel = 174,
+    bQLoop = 0
+  }
+  return refs
 end

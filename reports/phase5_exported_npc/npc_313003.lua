@@ -1,77 +1,46 @@
-function npcsay(id)
-  if id ~= 4313003 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("那边的年轻人，要不要测测今天的{0xFFFFFF00}运势{END}啊？机会{0xFFFFFF00}一天只有一次{END}的。")
-  if qData[1505].state == 1 and qData[1505].meetNpc[3] == qt[1505].goal.meetNpc[3] then
-    SET_INFO(1505, 4)
-    NPC_SAY("欢迎光临。第五个问题了。离冥珠城很近的地方有着藏有龙之力量的地方。代表那个地方的门派的首长是谁？")
-    SET_MEETNPC(1505, 4, id)
-  end
-  if qData[1501].state == 1 then
-    if CHECK_ITEM_CNT(qt[1501].goal.getItem[1].id) >= qt[1501].goal.getItem[1].count and SET_ITEM_PERCENT(8590001) == 300 then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("?? ? ???????? ??…?. ???. ?? ? ??? ????.?? ??? ?????? ??? ??????. ?? ?????. PLAYERNAME?? ???? ??? ???? ??? ?? ????.")
-        SET_QUEST_STATE(1501, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("????? ????? ?? ?? ??? ??? ????. ????? ? ??? ? ??? ?? ???.")
-    end
-  end
-  if qData[78].state == 1 then
-    NPC_SAY("? [??????]? ??? ??? ????.")
-  end
-  if qData[80].state == 1 then
-    if qData[80].meetNpc[1] == qt[80].goal.meetNpc[1] and qData[80].meetNpc[2] == qt[80].goal.meetNpc[2] and qData[80].meetNpc[3] ~= id then
-      NPC_SAY("谢谢。这是老人因为感谢才给的，不要拒绝。")
-      SET_MEETNPC(80, 3, id)
-      SET_QUEST_STATE(80, 2)
-      return
-    else
-      NPC_SAY("哎呦..还没去吗？[ 冥珠城宝芝林 ]在冥珠城东边。")
-    end
-  end
-  if qData[81].state == 1 and qData[81].meetNpc[1] == qt[81].goal.meetNpc[1] and qData[81].meetNpc[2] == qt[81].goal.meetNpc[2] and qData[81].meetNpc[3] ~= id then
-    SET_MEETNPC(81, 3, id)
-    NPC_QSAY(81, 10)
-    SET_QUEST_STATE(81, 2)
-    return
-  end
-  if qData[80].state == 0 then
-    ADD_QUEST_BTN(qt[80].id, qt[80].name)
-  end
-  ADD_NPC_CARD_DIVINE(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_313003.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1501].state == 1 then
-    if CHECK_ITEM_CNT(qt[1501].goal.getItem[1].id) >= qt[1501].goal.getItem[1].count and SET_ITEM_PERCENT(8590001) == 300 then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        QSTATE(id, 2)
-      end
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[80].state ~= 2 and GET_PLAYER_LEVEL() >= qt[80].needLevel then
-    if qData[80].state == 1 then
-      if qData[80].meetNpc[1] == qt[80].goal.meetNpc[1] and qData[80].meetNpc[2] == qt[80].goal.meetNpc[2] and qData[80].meetNpc[3] ~= id then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[81].state == 1 and GET_PLAYER_LEVEL() >= qt[81].needLevel then
-    if qData[81].meetNpc[1] == qt[81].goal.meetNpc[1] and qData[81].meetNpc[2] == qt[81].goal.meetNpc[2] and qData[81].meetNpc[3] ~= id then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_313003"
+  local refs = {}
+  refs[78] = {
+    name = "[ ????? 1?? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?, ??? ??? ?? ???? ?? ?? ? ??? ???, ? ??? ?? ??? ????? ??? ????.. ??",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[80] = {
+    name = "[ 老婆婆的腰 ]",
+    content0 = "哎哟 我的腰..最近腰疼得越发厉害，都不能动了..如果我那帅气的儿子在..还可以帮我跑跑腿买来药",
+    reward0_count = 0,
+    needLevel = 48,
+    bQLoop = 0
+  }
+  refs[81] = {
+    name = "[ 道名寺的秘密 ]",
+    content0 = "看着{0xFFFFFF00}樱花{END}飘落想念妈妈了..不是..我在想什么啊..",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[1501] = {
+    name = "[ ???-?????? ?? ]",
+    content0 = "PLAYERNAME?, ??????. ??..????? ?? ????? ??? ?? ?? ??? ???? ?? ??? ? ??? ????. ",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1505] = {
+    name = "[ 灵游记期末考 ]",
+    content0 = "在假期开始之前来个灵游记期末考。听好考官出的题目，自己去找正解之后接受下一题，继续去寻找正解的接力式考试。要开始吗？",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

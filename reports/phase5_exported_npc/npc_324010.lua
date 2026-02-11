@@ -1,49 +1,39 @@
-function npcsay(id)
-  if id ~= 4324010 then
-    return
-  end
-  clickNPCid = id
-  if qData[2612].state == 1 then
-    NPC_SAY("这是？？")
-    SET_QUEST_STATE(2612, 2)
-  end
-  if qData[2613].state == 1 then
-    NPC_SAY("这里没有可查探得了。")
-  end
-  if qData[2618].state == 1 then
-    NPC_SAY("这是？？")
-    SET_QUEST_STATE(2618, 2)
-  end
-  if qData[2619].state == 1 then
-    NPC_SAY("这里没有可查探得了。")
-  end
-  if qData[2613].state == 0 and qData[2612].state == 2 then
-    ADD_QUEST_BTN(qt[2613].id, qt[2613].name)
-  end
-  if qData[2619].state == 0 and qData[2618].state == 2 then
-    ADD_QUEST_BTN(qt[2619].id, qt[2619].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_324010.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2612].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2613].state ~= 2 and qData[2612].state == 2 then
-    if qData[2613].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2618].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2619].state ~= 2 and qData[2618].state == 2 then
-    if qData[2619].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_324010"
+  local refs = {}
+  refs[2612] = {
+    name = "[ 魔布加-可疑的羊皮纸 ]",
+    content0 = "六长…，永健… … ..元凶是…。暗杀者…。中原…",
+    reward0_count = 15,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2613] = {
+    name = "[ 魔布加-结束探索 ]",
+    content0 = "（这是..邪教制作的毒药啊…是把这个混进策士们的补给品里了吗？…)",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2618] = {
+    name = "[ 耶单-可疑的羊皮纸 ]",
+    content0 = "六长…，永健… … ..元凶是…。暗杀者…。中原…",
+    reward0_count = 15,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2619] = {
+    name = "[ 耶单-结束探索 ]",
+    content0 = "（这是..邪教制作的毒药啊…是把这个混进策士们的补给品里了吗？…)",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,40 +1,25 @@
-function npcsay(id)
-  if id ~= 4300164 then
-    return
-  end
-  clickNPCid = id
-  if qData[3744].state == 1 then
-    if qData[3745].state ~= 2 then
-      if CHECK_ITEM_CNT(qt[3744].goal.getItem[1].id) >= qt[3744].goal.getItem[1].count then
-        if 1 <= CHECK_INVENTORY_CNT(2) then
-          NPC_SAY("拿来了吗？来，好好使用吧~跟我借了就不能再跟乌龟借了。")
-          SET_QUEST_STATE(3744, 2)
-          return
-        else
-          NPC_SAY("行囊太沉")
-        end
-      else
-        NPC_SAY("这个腰带可以将经验值增加400%，达到5倍效果呢！但是只能使用1小时，每天能租赁1次。要租赁吗？还要注意的是，借了我的腰带，就不能再跟旁边的乌龟借了。快拿来15个8周年纪念币吧。")
-      end
-    else
-      NPC_SAY("领取了乌龟的腰带就不能领取我的...")
-    end
-  end
-  if qData[3744].state == 0 and qData[3745].state ~= 2 then
-    ADD_QUEST_BTN(qt[3744].id, qt[3744].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_300164.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[3744].state ~= 2 then
-    if qData[3744].state == 1 then
-      if CHECK_ITEM_CNT(qt[3744].goal.getItem[1].id) >= qt[3744].goal.getItem[1].count and qData[3745].state ~= 2 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_300164"
+  local refs = {}
+  refs[3744] = {
+    name = "[ 兔子的8周年腰带 ]",
+    content0 = "你好，我是兔子。",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[3745] = {
+    name = "[ 乌龟的8周年腰带 ]",
+    content0 = "你好，我是乌龟。",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

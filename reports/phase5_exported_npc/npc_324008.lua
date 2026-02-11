@@ -1,32 +1,25 @@
-function npcsay(id)
-  if id ~= 4324008 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("...")
-  if qData[2610].state == 1 and qData[2610].killMonster[qt[2610].goal.killMonster[1].id] >= qt[2610].goal.killMonster[1].count then
-    NPC_SAY("牟永健有话要说，来这边吧。")
-    SET_QUEST_STATE(2610, 2)
-  end
-  if qData[2616].state == 1 and qData[2616].killMonster[qt[2616].goal.killMonster[1].id] >= qt[2616].goal.killMonster[1].count then
-    NPC_SAY("牟永健有话要说，来这边吧。")
-    SET_QUEST_STATE(2616, 2)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_324008.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2610].state == 1 then
-    if qData[2610].killMonster[qt[2610].goal.killMonster[1].id] >= qt[2610].goal.killMonster[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[2616].state == 1 then
-    if qData[2616].killMonster[qt[2616].goal.killMonster[1].id] >= qt[2616].goal.killMonster[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_324008"
+  local refs = {}
+  refs[2610] = {
+    name = "[ 魔布加-往更深处探索 ]",
+    content0 = "得去更深处看看才行啊~",
+    reward0_count = 15,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[2616] = {
+    name = "[ 耶单-往更深处探索 ]",
+    content0 = "得去更深处看看才行啊~",
+    reward0_count = 15,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

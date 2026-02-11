@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4391911 then
-    return
-  end
-  clickNPCid = id
-  ADD_NPC_WARP_INDUN(id)
-  ADD_NPC_WARP_INDUN_GHOST(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391911.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_391911"
+  local refs = {}
+  return refs
 end

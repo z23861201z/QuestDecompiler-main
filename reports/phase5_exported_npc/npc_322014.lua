@@ -1,161 +1,95 @@
-function npcsay(id)
-  if id ~= 4322014 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("久违的阳光...")
-  if qData[2733].state == 1 then
-    NPC_SAY("你来这里是有什么事吗？什么？问我知不知道{0xFFFFFF00}獐子潭{END}？")
-    SET_QUEST_STATE(2733, 2)
-    return
-  end
-  if qData[2734].state == 1 then
-    NPC_SAY("{0xFFFFFF00}獐子潭洞穴[1]{END}里有很强的怪物。请一定要小心。那个人的名字叫{0xFFFFFF00}辛巴达{END}。")
-  end
-  if qData[2736].state == 1 then
-    NPC_SAY("在{0xFFFFFF00}干涸的沼泽{END}击退70个{0xFFFFFF00}志鬼心火{END}后，去找{0xFFFFFF00}巨木重林中心地{END}的{0xFFFFFF00}[巨木守护者]{END}吧。")
-  end
-  if qData[2813].state == 1 then
-    NPC_SAY("原来攻击怪物们后方的人是{0xFF99ff99}PLAYERNAME{END}啊！真的很感谢。")
-    SET_QUEST_STATE(2813, 2)
-    return
-  end
-  if qData[2814].state == 1 then
-    NPC_SAY("在{0xFFFFFF00}獐子潭洞穴[1]{END}击退30个{0xFFFFFF00}原虫{END}后，去{0xFFFFFF00}银行员辛巴达{END}那儿吧。")
-  end
-  if qData[2815].state == 1 then
-    NPC_SAY("这么快就回来了啊。那{0xFFFFFF00}奇怪的纸条{END}到底是什么啊？")
-    SET_QUEST_STATE(2815, 2)
-    return
-  end
-  if qData[2816].state == 1 then
-    if CHECK_ITEM_CNT(qt[2816].goal.getItem[1].id) >= qt[2816].goal.getItem[1].count then
-      NPC_SAY("辛苦了。收集纸条来确认一下有什么样的内容吧。")
-      SET_QUEST_STATE(2816, 2)
-      return
-    else
-      NPC_SAY("在{0xFFFFFF00}獐子潭洞穴{END}边击退{0xFFFFFF00}原虫{END}，边收集30个{0xFFFFFF00}春水糖的纸条{END}后，去找{0xFFFFFF00}[封印之石]{END}的{0xFFFFFF00}[菊花碴]{END}吧。")
-    end
-  end
-  if qData[2817].state == 1 then
-    NPC_SAY("在{0xFFFFFF00}獐子潭洞穴{END}找找{0xFFFFFF00}春水糖的住处{END}吧。")
-  end
-  if qData[2818].state == 1 then
-    NPC_SAY("找到什么东西了吗？")
-    SET_QUEST_STATE(2818, 2)
-    return
-  end
-  if qData[2819].state == 1 then
-    if CHECK_ITEM_CNT(qt[2819].goal.getItem[1].id) >= qt[2819].goal.getItem[1].count then
-      NPC_SAY("我们快点拼一下看看吧。")
-      SET_QUEST_STATE(2819, 2)
-      return
-    else
-      NPC_SAY("在{0xFFFFFF00}獐子潭洞穴{END}击退{0xFFFFFF00}曲怪人{END}，收集10个{0xFFFFFF00}春水糖的日志{END}回来吧。")
-    end
-  end
-  if qData[2820].state == 1 then
-    NPC_SAY("{0xFFFFFF00}银行员辛巴达{END}在{0xFFFFFF00}獐子潭洞穴[1]{END}。")
-  end
-  if qData[2734].state == 0 and qData[2733].state == 2 and GET_PLAYER_LEVEL() >= qt[2734].needLevel then
-    ADD_QUEST_BTN(qt[2734].id, qt[2734].name)
-  end
-  if qData[2736].state == 0 and qData[2735].state == 2 and GET_PLAYER_LEVEL() >= qt[2736].needLevel then
-    ADD_QUEST_BTN(qt[2736].id, qt[2736].name)
-  end
-  if qData[2814].state == 0 and qData[2813].state == 2 and GET_PLAYER_LEVEL() >= qt[2814].needLevel then
-    ADD_QUEST_BTN(qt[2814].id, qt[2814].name)
-  end
-  if qData[2816].state == 0 and qData[2815].state == 2 and GET_PLAYER_LEVEL() >= qt[2816].needLevel then
-    ADD_QUEST_BTN(qt[2816].id, qt[2816].name)
-  end
-  if qData[2817].state == 0 and qData[2816].state == 2 and GET_PLAYER_LEVEL() >= qt[2817].needLevel then
-    ADD_QUEST_BTN(qt[2817].id, qt[2817].name)
-  end
-  if qData[2819].state == 0 and qData[2818].state == 2 and GET_PLAYER_LEVEL() >= qt[2819].needLevel then
-    ADD_QUEST_BTN(qt[2819].id, qt[2819].name)
-  end
-  if qData[2820].state == 0 and qData[2819].state == 2 and GET_PLAYER_LEVEL() >= qt[2820].needLevel then
-    ADD_QUEST_BTN(qt[2820].id, qt[2820].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_322014.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2733].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2734].state ~= 2 and qData[2733].state == 2 and GET_PLAYER_LEVEL() >= qt[2734].needLevel then
-    if qData[2734].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2736].state ~= 2 and qData[2735].state == 2 and GET_PLAYER_LEVEL() >= qt[2736].needLevel then
-    if qData[2736].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2813].state ~= 2 and GET_PLAYER_LEVEL() >= qt[2813].needLevel then
-    if qData[2813].state == 1 then
-      if qData[2813].killMonster[qt[2813].goal.killMonster[1].id] >= qt[2813].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2814].state ~= 2 and qData[2813].state == 2 and GET_PLAYER_LEVEL() >= qt[2814].needLevel then
-    if qData[2814].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2815].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2816].state ~= 2 and qData[2815].state == 2 and GET_PLAYER_LEVEL() >= qt[2816].needLevel then
-    if qData[2816].state == 1 then
-      if CHECK_ITEM_CNT(qt[2816].goal.getItem[1].id) >= qt[2816].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2817].state ~= 2 and qData[2816].state == 2 and GET_PLAYER_LEVEL() >= qt[2817].needLevel then
-    if qData[2817].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2818].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2819].state ~= 2 and qData[2814].state == 2 and GET_PLAYER_LEVEL() >= qt[2819].needLevel then
-    if qData[2819].state == 1 then
-      if CHECK_ITEM_CNT(qt[2819].goal.getItem[1].id) >= qt[2819].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2820].state ~= 2 and qData[2819].state == 2 and GET_PLAYER_LEVEL() >= qt[2820].needLevel then
-    if qData[2820].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_322014"
+  local refs = {}
+  refs[2733] = {
+    name = "[ 寻找传说中的药 ]",
+    content0 = "巨木神问，想知道什么？",
+    reward0_count = 0,
+    needLevel = 166,
+    bQLoop = 0
+  }
+  refs[2734] = {
+    name = "[ 寻找獐子潭[1] ]",
+    content0 = "过了{0xFFFFFF00}封印之石{END}就是{0xFFFFFF00}獐子潭{END}。我现在也在那里修炼。但是，你找{0xFFFFFF00}獐子潭{END}干什么？",
+    reward0_count = 0,
+    needLevel = 166,
+    bQLoop = 0
+  }
+  refs[2735] = {
+    name = "[ 寻找獐子潭[2] ]",
+    content0 = "你好，我是来自安哥拉王国的辛巴达。你是从哪里来的啊？",
+    reward0_count = 1,
+    needLevel = 166,
+    bQLoop = 0
+  }
+  refs[2736] = {
+    name = "[ 寻找獐子潭[3] ]",
+    content0 = "那里面还有这种{0xFFFFFF00}水晶碎片{END}啊，之前集中修炼都没发现。",
+    reward0_count = 0,
+    needLevel = 166,
+    bQLoop = 0
+  }
+  refs[2813] = {
+    name = "[ 再去獐子潭2 ]",
+    content0 = "说服老婆婆了吗？",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2814] = {
+    name = "[ 再去獐子潭3 ]",
+    content0 = "关于石板，有了解到什么吗？",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2815] = {
+    name = "[ 奇怪的纸条 ]",
+    content0 = "掌握了石板内容了吗？",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2816] = {
+    name = "[ 纸条的来历 ]",
+    content0 = "这{0xFFFFFF00}奇怪的纸条{END}的笔迹肯定是{0xFFFFFF00}春水糖{END}的。",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2817] = {
+    name = "[ 春水糖留下的 ]",
+    content0 = "我收集了纸条，发现{0xFFFFFF00}春水糖{END}分明在此处逗留了很久。",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2818] = {
+    name = "[ 最后的獐子潭人 ]",
+    content0 = "别..过..",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2819] = {
+    name = "[ 春水糖做了什么？ ]",
+    content0 = "所以说，是长得像曲怪人的人拿着这本书了是吧。",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  refs[2820] = {
+    name = "[ 春水糖去哪儿了？ ]",
+    content0 = "{0xFFFFCCCC}(大家一起集中精神看着那本书。){END}",
+    reward0_count = 0,
+    needLevel = 170,
+    bQLoop = 0
+  }
+  return refs
 end

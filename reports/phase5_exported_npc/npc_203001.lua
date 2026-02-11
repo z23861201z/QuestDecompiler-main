@@ -1,94 +1,39 @@
-function npcsay(id)
-  if id ~= 4203001 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("哈哈哈.想要挖矿的话得先要有锄头哦.")
-  if qData[1190].state == 1 then
-    if CHECK_ITEM_CNT(qt[1190].goal.getItem[1].id) >= qt[1190].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("呵呵，收集了[ 灰煤 ]啊。谢谢。这是我的小小心意，收下吧。")
-        SET_QUEST_STATE(1190, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去矿山采矿，帮我收集1个[ 灰煤 ]吧。")
-    end
-  end
-  if qData[1191].state == 1 then
-    if CHECK_ITEM_CNT(qt[1191].goal.getItem[1].id) >= qt[1191].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("呵呵  用蓝水晶块提炼了啊。这是你接受我提议的奖励。")
-        SET_QUEST_STATE(1191, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("用100个蓝水晶块提炼试试怎么样？")
-    end
-  end
-  if qData[1192].state == 1 then
-    NPC_SAY("对矿物和装备强化有什么疑问可以随时来找我。")
-    SET_QUEST_STATE(1192, 2)
-  end
-  if qData[1193].state == 1 then
-    NPC_SAY("对矿物和装备强化有什么疑问可以随时来找我。")
-    SET_QUEST_STATE(1193, 2)
-  end
-  ADD_NEW_SHOP_BTN(id, 10016)
-  ADD_EVENT_BTN_H(id)
-  ADD_ENCHANTEQUIP_BTN(id)
-  ADD_ENCHANTEACCESSORY_BTN(id)
-  if qData[1190].state == 0 then
-    ADD_QUEST_BTN(qt[1190].id, qt[1190].name)
-  end
-  if qData[1190].state == 2 and qData[1191].state == 0 then
-    ADD_QUEST_BTN(qt[1191].id, qt[1191].name)
-  end
-  if qData[1191].state == 2 and qData[1192].state == 0 then
-    ADD_QUEST_BTN(qt[1192].id, qt[1192].name)
-  end
-  if qData[1192].state == 2 and qData[1193].state == 0 then
-    ADD_QUEST_BTN(qt[1193].id, qt[1193].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_203001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1190].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1190].needLevel then
-    if qData[1190].state == 1 then
-      if CHECK_ITEM_CNT(qt[1190].goal.getItem[1].id) >= qt[1190].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1191].state ~= 2 and qData[1190].state == 2 and GET_PLAYER_LEVEL() >= qt[1190].needLevel then
-    if qData[1191].state == 1 then
-      if CHECK_ITEM_CNT(qt[1191].goal.getItem[1].id) >= qt[1191].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1192].state ~= 2 and qData[1191].state == 2 and GET_PLAYER_LEVEL() >= qt[1190].needLevel then
-    if qData[1192].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1193].state ~= 2 and qData[1192].state == 2 and GET_PLAYER_LEVEL() >= qt[1190].needLevel then
-    if qData[1193].state == 1 then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_203001"
+  local refs = {}
+  refs[1190] = {
+    name = "[ 什么是采矿？ ]",
+    content0 = "你也是来采矿的吗？那能接受我一个请求吗？",
+    reward0_count = 99,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[1191] = {
+    name = "[ 什么是矿物冶炼？ ]",
+    content0 = "你知道提炼矿物的方法吗？",
+    reward0_count = 1,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[1192] = {
+    name = "[ 什么是装备强化？ ]",
+    content0 = "有没有强化装备的意向？",
+    reward0_count = 0,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[1193] = {
+    name = "[ 什么是饰品强化？ ]",
+    content0 = "有没有强化首饰的想法？",
+    reward0_count = 0,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  return refs
 end

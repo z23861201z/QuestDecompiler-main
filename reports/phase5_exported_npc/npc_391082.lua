@@ -1,18 +1,18 @@
-function npcsay(id)
-  if id ~= 4391082 then
-    return
-  end
-  clickNPCid = id
-  if qData[856].state == 1 then
-    NPC_SAY("真的很谢谢…但是不知道什么时候还会再来…还是很感谢。来，这是礼物。")
-    SET_MEETNPC(856, 1, id)
-    SET_QUEST_STATE(856, 2)
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391082.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[856].state == 1 and GET_PLAYER_LEVEL() >= qt[856].needLevel then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391082"
+  local refs = {}
+  refs[856] = {
+    name = "[ 杀气地狱-邪恶恶魂天鬼 ]",
+    content0 = "你认识鬼谷村的带花女吗？精神稍微有点异常。据说她总在村子里吵嚷着看到黄泉的裂缝。",
+    reward0_count = 0,
+    needLevel = 29,
+    bQLoop = 0
+  }
+  return refs
 end

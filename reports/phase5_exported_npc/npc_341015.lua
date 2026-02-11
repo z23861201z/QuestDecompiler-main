@@ -1,10 +1,11 @@
-function npcsay(id)
-  if id ~= 4341015 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("想把这个孩子养的阳光一点。")
+-- DB_DRIVEN_EXPORT
+-- source: npc_341015.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_341015"
+  local refs = {}
+  return refs
 end

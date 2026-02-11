@@ -1,90 +1,46 @@
-function npcsay(id)
-  if id ~= 4217005 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("欢迎光临。信誉保证服务至上。")
-  if qData[347].state == 1 then
-    if qData[347].killMonster[qt[347].goal.killMonster[1].id] >= qt[347].goal.killMonster[1].count and CHECK_ITEM_CNT(qt[347].goal.getItem[1].id) >= qt[347].goal.getItem[1].count then
-      NPC_SAY("?? ?????. ?? ?? ????. ?? ?????.")
-      SET_QUEST_STATE(347, 2)
-      return
-    else
-      NPC_SAY("?????? ?, ????. ?? ? ??? ???... ????? ?????? ???? ?? {0xFFFFFF00}[????]? 1?? ?? ? [??????] 1?{END}? ??? ???.")
-    end
-  end
-  if qData[1139].state == 1 then
-    NPC_SAY("在跳舞的居民处领取清阴符回来吧。")
-  end
-  if qData[1154].state == 1 then
-    NPC_SAY("疲惫的矿工让你来的？来的正好。")
-    SET_QUEST_STATE(1154, 2)
-  end
-  if qData[1156].state == 1 then
-    if CHECK_ITEM_CNT(qt[1156].goal.getItem[1].id) >= qt[1156].goal.getItem[1].count then
-      NPC_SAY("谢谢了。现在可以用这些制作衣服发给居民了。")
-      SET_QUEST_STATE(1156, 2)
-    else
-      NPC_SAY("去击退强悍巷道的蓝舌跳跳鬼，收集10个[ 破旧的衣角 ]回来吧。")
-    end
-  end
-  if qData[1163].state == 1 then
-    if CHECK_ITEM_CNT(qt[1163].goal.getItem[1].id) >= qt[1163].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真的很感谢。现在可以给全村的人发放礼物了。")
-        SET_QUEST_STATE(1163, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退强悍巷道的吸血鬼收集15个[ 红色胶皮鞋 ]拿来吧。")
-    end
-  end
-  ADD_STORE_BTN(id)
-  GIVE_DONATION_ITEM(id)
-  ADD_PARCEL_SERVICE_BTN(id)
-  if qData[1139].state == 0 then
-    ADD_QUEST_BTN(qt[1139].id, qt[1139].name)
-  end
-  if qData[1154].state == 2 and qData[1156].state == 0 then
-    ADD_QUEST_BTN(qt[1156].id, qt[1156].name)
-  end
-  if qData[1163].state == 0 then
-    ADD_QUEST_BTN(qt[1163].id, qt[1163].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_217005.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1139].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1139].neetLevel then
-    if qData[1139].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1154].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1154].state == 2 and qData[1156].state ~= 2 then
-    if qData[1156].state == 1 then
-      if CHECK_ITEM_CNT(qt[1156].goal.getItem[1].id) >= qt[1156].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1163].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1163].needLevel then
-    if qData[1163].state == 1 then
-      if CHECK_ITEM_CNT(qt[1163].goal.getItem[1].id) >= qt[1163].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_217005"
+  local refs = {}
+  refs[347] = {
+    name = "[ ???? ?? ]",
+    content0 = "??? ?? ??? ?? ???? ?? ??? ???? ??? ???. ?? ???? ?? ?? ????…",
+    reward0_count = 0,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  refs[1139] = {
+    name = "[ 胡须张的召唤 ]",
+    content0 = "{0xFF99ff99}PLAYERNAME{END}？清阴关的胡须张送来一封信说想马上见到您？",
+    reward0_count = 1,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1154] = {
+    name = "[ 矿工的担心 ]",
+    content0 = "从懂事起开始就在强悍巷道做起了矿工，但没见过现在这样怪物泛滥呢。",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1156] = {
+    name = "[ 清江银行的指点 ]",
+    content0 = "疲惫的矿工说的？他本人应该最困难才是啊… 好吧，我给清江村居民转达这一消息。现在开始清江村居民会拜托少侠一些事情的。解决了那些功力马上就能达到{0xFFFFFF00}31级{END}的。",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1163] = {
+    name = "[ 不足的衣料 ]",
+    content0 = "少侠，帮帮我吧。上次为了做衣服帮我收集了衣料，但是衣料不够啊。",
+    reward0_count = 20,
+    needLevel = 26,
+    bQLoop = 0
+  }
+  return refs
 end

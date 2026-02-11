@@ -1,19 +1,18 @@
-function npcsay(id)
-  if id ~= 4391108 then
-    return
-  end
-  NPC_SAY("近卫兵亚夫过来了！你先从后面绕过去，一会儿再回来！")
-  clickNPCid = id
-  if qData[877].state == 1 then
-    NPC_SAY("辛苦了，你要抓紧行动了，{0xFFFFFF00}近卫兵亚夫{END}正在过来呢！我们稍后再见")
-    SET_QUEST_STATE(877, 2)
-    return
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391108.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[877].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391108"
+  local refs = {}
+  refs[877] = {
+    name = "[ 安哥拉暗黑路登场 ]",
+    content0 = "你要去安哥拉暗黑路？那，那可不行！很危险的！也不知道近卫兵亚夫会什么时候来呢！",
+    reward0_count = 1,
+    needLevel = 160,
+    bQLoop = 0
+  }
+  return refs
 end

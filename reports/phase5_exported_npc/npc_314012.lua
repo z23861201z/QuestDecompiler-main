@@ -1,159 +1,144 @@
-function npcsay(id)
-  if id ~= 4314012 then
-    return
-  end
-  clickNPCid = id
-  if qData[351].state == 1 then
-    if qData[351].meetNpc[1] == qt[351].goal.meetNpc[1] then
-      NPC_SAY([[
-?? ?? ??? ????!
-??? ??? ??? ? ?? ??? ??? ????.
-??? ?? ??? {0xFFFF8C00}???? ??? ??? ????.{END}
-?? ???.]])
-      SET_QUEST_STATE(351, 2)
-    else
-      SET_MEETNPC(351, 1, id)
-    end
-    return
-  elseif qData[352].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(352, 2)
-    return
-  elseif qData[353].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(353, 2)
-    return
-  elseif qData[354].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(354, 2)
-    return
-  elseif qData[355].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(355, 2)
-    return
-  elseif qData[356].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(356, 2)
-    return
-  elseif qData[357].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(357, 2)
-    return
-  elseif qData[358].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(358, 2)
-    return
-  elseif qData[359].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(359, 2)
-    return
-  elseif qData[360].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(360, 2)
-    return
-  elseif qData[361].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(361, 2)
-    return
-  elseif qData[684].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(684, 2)
-    return
-  elseif qData[685].state == 1 then
-    NPC_SAY("您好像已经决定了。那我就教您武功了。")
-    SET_QUEST_STATE(685, 2)
-    return
-  else
-    NPC_SAY("我是力士技能传授NPC。怎么了？有什么疑问就问吧。")
-    ADD_EX_BTN(id)
-  end
-  if qData[362].state == 1 and CHECK_ITEM_CNT(8990031) > 0 then
-    NPC_SAY("{0xFFFFFF00}????? ???{END} ???? ????.")
-    return
-  end
-  if qData[1418].state == 1 then
-    if CHECK_ITEM_CNT(qt[1418].goal.getItem[1].id) >= qt[1418].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("???? ???. ?? ??? ? ??? ?? ??? ??. ?, ?? ? ??? ??? ???. ? ? ??? ??? ???. ? ? ??? ?? ??? ? ??.")
-        SET_QUEST_STATE(1418, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("[6????] 300?? ?? ???? ? ??? ??? ?? ????.")
-    end
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314012.lua
+function npcsay(msg)
+  return msg
 end
-function saychjob(id)
-  if GET_PLAYER_JOB1() ~= 0 then
-    NPC_SAY("已经拥有职业了啊。")
-    return
-  end
-  if GET_PLAYER_LEVEL() >= qt[351].needLevel then
-    if qData[351].state == 0 then
-      if qData[16].state ~= 0 or qData[19].state ~= 0 or qData[21].state ~= 0 or qData[612].state ~= 0 then
-        NPC_SAY("????? ???? ??? ? ???.")
-      elseif GET_PLAYER_USESKILLPOINT_C() < 18 then
-        NPC_SAY([[
-?? ?? 10??? ?? ???? ?? ???? ??? ?? ??. 
-{0xFFFF8C00}[D]?? ??? ?? ???? ??? ?????.{END} ?? ???? ?? ???? [Shift]?? ??? ?? ???? ????.]])
-      else
-        ADD_QUEST_BTN(qt[351].id, qt[351].name)
-      end
-    end
-  else
-    NPC_SAY([[
-?? ??????.
-??? ??? {0xFFFF8C00}???{END}?? ??? ? ?? {0xFFFFFF00}?? 10{END}?
-??? ?????.]])
-  end
-end
-function saycanleanskill(id)
-  if GET_PLAYER_JOB1() ~= 4 then
-    NPC_SAY("没有可以教你的武功")
-    return
-  end
-  if qData[352].state == 1 or qData[353].state == 1 or qData[354].state == 1 or qData[355].state == 1 or qData[356].state == 1 or qData[357].state == 1 or qData[358].state == 1 or qData[359].state == 1 or qData[360].state == 1 or qData[361].state == 1 then
-    NPC_SAY("武功任务不能重复进行 ")
-    return
-  end
-  if CHECK_SKILL(qt[352].reward.getSkill[1]) == false and qData[352].state == 0 then
-    ADD_QUEST_BTN(qt[352].id, qt[352].name)
-  end
-  if CHECK_SKILL(qt[353].reward.getSkill[1]) == false and qData[353].state == 0 then
-    ADD_QUEST_BTN(qt[353].id, qt[353].name)
-  end
-  if CHECK_SKILL(qt[354].reward.getSkill[1]) == false and qData[354].state == 0 then
-    ADD_QUEST_BTN(qt[354].id, qt[354].name)
-  end
-  if CHECK_SKILL(qt[355].reward.getSkill[1]) == false and qData[355].state == 0 then
-    ADD_QUEST_BTN(qt[355].id, qt[355].name)
-  end
-  if CHECK_SKILL(qt[356].reward.getSkill[1]) == false and qData[356].state == 0 then
-    ADD_QUEST_BTN(qt[356].id, qt[356].name)
-  end
-  if CHECK_SKILL(qt[357].reward.getSkill[1]) == false and qData[357].state == 0 then
-    ADD_QUEST_BTN(qt[357].id, qt[357].name)
-  end
-  if CHECK_SKILL(qt[358].reward.getSkill[1]) == false and qData[358].state == 0 then
-    ADD_QUEST_BTN(qt[358].id, qt[358].name)
-  end
-  if CHECK_SKILL(qt[359].reward.getSkill[1]) == false and qData[359].state == 0 then
-    ADD_QUEST_BTN(qt[359].id, qt[359].name)
-  end
-  if CHECK_SKILL(qt[360].reward.getSkill[1]) == false and qData[360].state == 0 then
-    ADD_QUEST_BTN(qt[360].id, qt[360].name)
-  end
-  if CHECK_SKILL(qt[361].reward.getSkill[1]) == false and qData[361].state == 0 then
-    ADD_QUEST_BTN(qt[361].id, qt[361].name)
-  end
-  if CHECK_SKILL(qt[684].reward.getSkill[1]) == false and qData[684].state == 0 then
-    ADD_QUEST_BTN(qt[684].id, qt[684].name)
-  end
-  if CHECK_SKILL(qt[685].reward.getSkill[1]) == false and qData[685].state == 0 then
-    ADD_QUEST_BTN(qt[685].id, qt[685].name)
-  end
-end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_314012"
+  local refs = {}
+  refs[16] = {
+    name = "[ 武士转职 ]",
+    content0 = "??? ?? ????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[19] = {
+    name = "[ 刺客转职 ]",
+    content0 = "??? ?? ?????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[21] = {
+    name = "[ 道士转职 ]",
+    content0 = "??? ?? ?????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[351] = {
+    name = "[ 力士转职 ]",
+    content0 = "??? ?? ??!?",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[352] = {
+    name = "[ 斧-狂烈符 ]",
+    content0 = "{0xFFFFFF00}狂烈符，装备斧时可以使攻击力自动上升的内功武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[353] = {
+    name = "[ 轮-强轮 ]",
+    content0 = "{0xFFFFFF00}强轮，装备轮时可以使攻击力自动上升的内功武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[354] = {
+    name = "[ 斧-太斧出击 ]",
+    content0 = "{0xFFFFFF00}太斧出击，连带斧子的重量一起，强力攻击的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[355] = {
+    name = "[ 轮-横轮抛 ]",
+    content0 = "{0xFFFFFF00}横轮抛，利用肌肉的爆发力，以极快的速度瞬间连挥3次的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[356] = {
+    name = "[ 斧-斧头斩 ]",
+    content0 = "{0xFFFFFF00}斧头斩，利用斧头的侧面，像挥舞锤头一样攻击的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[357] = {
+    name = "[ 轮-天轮仙器 ]",
+    content0 = "{0xFFFFFF00}天轮仙器，使用强力挥舞天轮，给对手伤害的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[358] = {
+    name = "[ 共同-碧波雷 ]",
+    content0 = "{0xFFFFFF00}碧波雷，用强气包围身体，受到攻击时可以将一定比例的伤害吸收为鬼力的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[359] = {
+    name = "[ 共同-真功护体 ]",
+    content0 = "{0xFFFFFF00}真功护体，原地变成一个柱子，拥有铁壁般的防御力的武功{END}。不过无法使用其他武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 28,
+    bQLoop = 0
+  }
+  refs[360] = {
+    name = "[ 共同-无限真气 ]",
+    content0 = "{0xFFFFFF00}无限真气，接受月亮的气息，慢慢治疗外伤的恢复武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 33,
+    bQLoop = 0
+  }
+  refs[361] = {
+    name = "[ 共同-猛龙胜出 ]",
+    content0 = "{0xFFFFFF00}猛龙胜出，劲力被呼唤出一次后就会像老虎一样勇猛起来的武功{END}。缺点是容易疲倦…要学吗？",
+    reward0_count = 0,
+    needLevel = 38,
+    bQLoop = 0
+  }
+  refs[362] = {
+    name = "[ 太和老君的第12个弟子 ]",
+    content0 = "? ???? ??? ?? ??? ?????",
+    reward0_count = 0,
+    needLevel = 15,
+    bQLoop = 0
+  }
+  refs[612] = {
+    name = "[ 射手转职 ]",
+    content0 = "??? ?? ??????",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[684] = {
+    name = "[ 斧-灭绝拳 ]",
+    content0 = "{0xFFFFFF00}灭绝拳是用斧力士的最高等级武功。瞬间跳起然后向地面砍去的武功{END}。要学吗？",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[685] = {
+    name = "[ 轮-分光无痕 ]",
+    content0 = "{0xFFFFFF00}分光无痕是用轮力士的最高等级武功{END}。高度旋转轮，只要对手擦过，便会受致命伤的武功。要学吗？",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[1418] = {
+    name = "[ 6?? ?? ??! ]",
+    content0 = "?? 6??? ???? ???? ??? ??? ???? ??. ?? ??? ?? ? ?? ????.",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

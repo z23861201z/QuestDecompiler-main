@@ -1,27 +1,25 @@
-function npcsay(id)
-  if id ~= 4391010 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("去异界门帮助正在封印黄泉裂缝的承宪道僧吧。只有我才能把你送到异界门。想去的时候跟我对话吧。")
-  if qData[1195].state == 1 then
-    NPC_SAY("快去异界门，传话给承宪道僧吧。")
-  end
-  BTN_HWANGCHUN_ENTER(id)
-  if qData[1195].state == 0 then
-    ADD_QUEST_BTN(qt[1195].id, qt[1195].name)
-  end
-  if qData[961].state == 0 then
-    ADD_QUEST_BTN(qt[961].id, qt[961].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_391010.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1195].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1195].needLevel then
-    if qData[1195].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391010"
+  local refs = {}
+  refs[961] = {
+    name = "{0xFFFFB4B4}[ 什么是异界门？ ]{END}",
+    content0 = "前不久出现了浓眉的承宪道僧，管理世界各地的黄泉的裂缝。因此之前的异界门是消失了，关在此处的武士也可以平安回去了。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1195] = {
+    name = "[ 黄泉？ ]",
+    content0 = "喂。等一等。",
+    reward0_count = 1,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  return refs
 end

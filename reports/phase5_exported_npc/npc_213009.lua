@@ -1,43 +1,32 @@
-function npcsay(id)
-  if id ~= 4213009 then
-    return
-  end
-  clickNPCid = id
-  if qData[802].state == 1 then
-    NPC_SAY("韩野城的{0xFFFFFF00}汉谟拉比商人{END}掌管阻挡巨大鬼怪食欲的灯火，{0xFFFFFF00}冥珠城父母官{END}知道如何找到巨大鬼怪。我会保护好居民，并看准打怪时机出现的。")
-  else
-    NPC_SAY("我是冥珠都城的{0xFFFFFF00}内部管理人{END}。请问需要什么？")
-  end
-  ADD_NEW_SHOP_BTN(id, 10032)
-  if qData[676].state == 2 and qData[805].state == 0 then
-    ADD_QUEST_BTN(qt[805].id, qt[805].name)
-  end
-  GIVE_REPAY(id)
-  NPC_WARP_TO_CHUNGUM_MARKET_PLACE(id)
-  NPC_WARP_THEME_1(id)
-  NPC_WARP_THEME_27(id)
-  NPC_WARP_THEME_16(id)
-  NPC_WARP_THEME_10(id)
-  NPC_WARP_THEME_46(id)
-  NPC_WARP_THEME_20(id)
-  NPC_WARP_THEME_12(id)
-  NPC_WARP_THEME_15(id)
-  NPC_WARP_THEME_18(id)
-  NPC_WARP_THEME_25(id)
-  NPC_WARP_THEME_26(id)
-  NPC_WARP_THEME_34_6(id)
-  NPC_WARP_THEME_39(id)
-  NPC_WARP_THEME_41(id)
-  NPC_WARP_THEME_50(id)
-  NPC_WARP_THEME_53(id)
-  NPC_WARP_THEME_55(id)
-  NPC_WARP_THEME_56(id)
-  NPC_WARP_THEME_63(id)
-  NPC_WARP_THEME_67(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_213009.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[676].state == 2 and qData[805].state == 0 then
-    QSTATE(id, true)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_213009"
+  local refs = {}
+  refs[676] = {
+    name = "[ 开启新的黄泉（2） ]",
+    content0 = "邪派那些家伙不但不会告诉你，还会拿你逗乐子，不过我们正派就算再累也会秉持正义。因此清阴胡须张才让你来找我的吧。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[802] = {
+    name = "[ 怪林地狱-磷火的盛宴 ]",
+    content0 = "我的记忆力不是很好，你是不是说过要拯救百姓于水火之中？那么我给你分配一个任务。对你来说不会很难。",
+    reward0_count = 1,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  refs[805] = {
+    name = "[ 巨大鬼怪-守护冥珠 ]",
+    content0 = "你来得正好。巨大鬼怪此时正在冥珠城外围捣乱。大侠你作为冥珠城的主人，一定要去阻止它。",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,34 +1,25 @@
-function npcsay(id)
-  if id ~= 4391102 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("辛苦了。要不是少侠真不敢想象…")
-  if qData[1263].state == 1 and qData[1263].killMonster[qt[1263].goal.killMonster[1].id] >= qt[1263].goal.killMonster[1].count then
-    if 1 <= CHECK_INVENTORY_CNT(2) then
-      NPC_SAY("以为都结束了的。少侠继清阴关又救了冥珠城。这是冥珠城居民们的谢礼。")
-      SET_QUEST_STATE(1263, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[803].state == 1 then
-    NPC_SAY("非常感谢。您是真正的武林侠客。")
-    SET_QUEST_STATE(803, 2)
-    return
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391102.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1263].state == 1 then
-    if qData[1263].killMonster[qt[1263].goal.killMonster[1].id] >= qt[1263].goal.killMonster[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[803].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391102"
+  local refs = {}
+  refs[803] = {
+    name = "[ 暗血地狱-太和老君的教诲 ]",
+    content0 = "嗯？为什么找我？不过你看起来好眼熟啊…无所谓啦，你在找需要你帮助的人吗？那你愿意去帮助陷入困境的冥珠城父母官吗？",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1263] = {
+    name = "[ 营救冥珠城！ ]",
+    content0 = "咳咳，不能磨蹭了，得像皇宫禀明情况获得允许后，得召集武人了。",
+    reward0_count = 1,
+    needLevel = 59,
+    bQLoop = 0
+  }
+  return refs
 end

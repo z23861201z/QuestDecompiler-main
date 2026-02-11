@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4300136 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("辛苦了.")
-  BTN_SNOWMAN_OUT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_300136.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300136"
+  local refs = {}
+  return refs
 end

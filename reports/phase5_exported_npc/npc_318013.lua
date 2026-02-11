@@ -1,101 +1,53 @@
-function npcsay(id)
-  if id ~= 4318013 then
-    return
-  end
-  clickNPCid = id
-  if qData[1291].state == 1 then
-    NPC_SAY("真的吗？土著民真的答应帮忙了吗？")
-    SET_QUEST_STATE(1291, 2)
-  end
-  if qData[1292].state == 1 then
-    if CHECK_ITEM_CNT(qt[1292].goal.getItem[1].id) >= qt[1292].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1292].goal.getItem[2].id) >= qt[1292].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢。现在可以正式进行战斗了。")
-        SET_QUEST_STATE(1292, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退铁腕山的石碑怪和饿死鬼，收集石碑碎片和水瓢各20个回来吧。")
-    end
-  end
-  if qData[1293].state == 1 then
-    NPC_SAY("高一燕在韩野都城。功力达68之后，去见高一燕就可以了。")
-  end
-  if qData[1379].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("又有什么事情啊？这，这是？")
-      SET_QUEST_STATE(1379, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1380].state == 1 then
-    if CHECK_ITEM_CNT(qt[1380].goal.getItem[1].id) >= qt[1380].goal.getItem[1].count then
-      NPC_SAY("谢谢。韩野岛地带的海上权就要属于即将完成的龟船了。当然！肯定会是这样的！")
-      SET_QUEST_STATE(1380, 2)
-    else
-      NPC_SAY("击退生死之房的黑树妖，收集35个黑树妖皮回来吧。")
-    end
-  end
-  if qData[1381].state == 1 then
-    NPC_SAY("要回到生死之塔入口的武艺僧长经处？好可惜啊。想好好的招待你一下…")
-  end
-  if qData[1292].state == 0 and qData[1291].state == 2 and GET_PLAYER_LEVEL() >= qt[1292].needLevel then
-    ADD_QUEST_BTN(qt[1292].id, qt[1292].name)
-  end
-  if qData[1293].state == 0 and qData[1292].state == 2 and GET_PLAYER_LEVEL() >= qt[1293].needLevel then
-    ADD_QUEST_BTN(qt[1293].id, qt[1293].name)
-  end
-  if qData[1380].state == 0 and qData[1379].state == 2 and GET_PLAYER_LEVEL() >= qt[1380].needLevel then
-    ADD_QUEST_BTN(qt[1380].id, qt[1380].name)
-  end
-  if qData[1381].state == 0 and qData[1380].state == 2 and GET_PLAYER_LEVEL() >= qt[1381].needLevel then
-    ADD_QUEST_BTN(qt[1381].id, qt[1381].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_318013.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, false)
-  if qData[1291].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1292].state ~= 2 and qData[1291].state == 2 and GET_PLAYER_LEVEL() >= qt[1292].needLevel then
-    if qData[1292].state == 1 then
-      if CHECK_ITEM_CNT(qt[1292].goal.getItem[1].id) >= qt[1292].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1292].goal.getItem[2].id) >= qt[1292].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1293].state ~= 2 and qData[1292].state == 2 and GET_PLAYER_LEVEL() >= qt[1293].needLevel then
-    if qData[1293].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1379].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1380].state ~= 2 and qData[1379].state == 2 and GET_PLAYER_LEVEL() >= qt[1380].needLevel then
-    if qData[1380].state == 1 then
-      if CHECK_ITEM_CNT(qt[1380].goal.getItem[1].id) >= qt[1380].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1381].state ~= 2 and qData[1380].state == 2 and GET_PLAYER_LEVEL() >= qt[1381].needLevel then
-    if qData[1381].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_318013"
+  local refs = {}
+  refs[1291] = {
+    name = "[ 暴风前夜7 ]",
+    content0 = "这是什么意思？这个皇宫武士柳江在哪里？",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1292] = {
+    name = "[ 暴风前夜8 ]",
+    content0 = "我们不仅需要战船。还需要加强韩野码头自身来抵抗敌人们的攻击。",
+    reward0_count = 3,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1293] = {
+    name = "[ 暴风前夜9 ]",
+    content0 = "高一燕好像在找您呢。",
+    reward0_count = 0,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1379] = {
+    name = "[一定会被需要]",
+    content0 = "我研究了黑树妖皮，得到了惊人的事实。",
+    reward0_count = 30,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[1380] = {
+    name = "[预告新时代的材料]",
+    content0 = "这就是黑树妖皮？天啊，用这个制造船的话，就可以制造出我梦寐以求的龟船了。",
+    reward0_count = 0,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[1381] = {
+    name = "[回到生死之塔(2)]",
+    content0 = "不知道该怎么报答这恩惠啊。但是少侠为什么回来生死之塔？",
+    reward0_count = 0,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  return refs
 end

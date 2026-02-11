@@ -1,71 +1,67 @@
-function npcsay(id)
-  if id ~= 4314060 then
-    return
-  end
-  clickNPCid = id
-  if qData[1105].state == 1 then
-    NPC_SAY("啊，你是长老捡来…不，救回来的PLAYERNAME吧。气色看起来好多了。训练所长广柱知道的话该高兴了。我有事情拜托你，再来和我对话吧。")
-    SET_QUEST_STATE(1105, 2)
-  end
-  if qData[1106].state == 1 then
-    NPC_SAY("使用寻路功能去见见训练所长广柱吧。")
-  end
-  if qData[1108].state == 1 then
-    NPC_SAY("训练所长广柱收到了啊。辛苦了。哎呦，我们家小甜甜到底在做什么呢？")
-    SET_QUEST_STATE(1108, 2)
-  end
-  if qData[1110].state == 1 then
-    if CHECK_ITEM_CNT(qt[1110].goal.getItem[1].id) >= qt[1110].goal.getItem[1].count then
-      NPC_SAY("谢谢你。真是村子的好帮手。如果能定居在我们村就好了。")
-      SET_QUEST_STATE(1110, 2)
-    else
-      NPC_SAY("5个绊脚石绳。在大目仔来到之前快点行动。")
-    end
-  end
-  if qData[1201].state == 1 then
-    NPC_SAY("训练所长广柱的身体不知如何了…话说回来训练所长广柱好像在找{0xFF99ff99}PLAYERNAME{END}。在他跌到之前快点去看看吧。")
-  end
-  if qData[1106].state == 0 and qData[1105].state == 2 then
-    ADD_QUEST_BTN(qt[1106].id, qt[1106].name)
-  end
-  if qData[1109].state == 2 and qData[1110].state == 0 then
-    ADD_QUEST_BTN(qt[1110].id, qt[1110].name)
-  end
-  if qData[1201].state == 0 and qData[1110].state == 2 then
-    ADD_QUEST_BTN(qt[1201].id, qt[1201].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314060.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1104].state == 2 and qData[1105].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1105].state == 2 and qData[1106].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1105].needLevel then
-    if qData[1106].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1107].state == 2 and qData[1108].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1109].state == 2 and qData[1110].state ~= 2 then
-    if qData[1110].state == 1 then
-      if CHECK_ITEM_CNT(qt[1110].goal.getItem[1].id) >= qt[1110].goal.getItem[1].id then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1110].state == 2 and qData[1201].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1201].needLevel then
-    if qData[1201].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_314060"
+  local refs = {}
+  refs[1104] = {
+    name = "[ 吃了才有力气 ]",
+    content0 = "说了好半天，嗓子又干了…",
+    reward0_count = 20,
+    needLevel = 3,
+    bQLoop = 0
+  }
+  refs[1105] = {
+    name = "[ 小甜甜妈妈的请求1 ]",
+    content0 = "说了这么多话，好累啊。我要休息了。嗯…你也不要闲着，干点什么怎么样？",
+    reward0_count = 0,
+    needLevel = 4,
+    bQLoop = 0
+  }
+  refs[1106] = {
+    name = "[ 小甜甜妈妈的请求2 ]",
+    content0 = "是训练所长广柱将昏迷中的你背到长老那里，你见过他了吗？",
+    reward0_count = 20,
+    needLevel = 4,
+    bQLoop = 0
+  }
+  refs[1107] = {
+    name = "[ 变强（魂） ]",
+    content0 = "你还在那里吗？该不是你想变得像我这样强吧？看来你是想知道我强大的秘密啊。吼吼。",
+    reward0_count = 1,
+    needLevel = 5,
+    bQLoop = 0
+  }
+  refs[1108] = {
+    name = "[ 黑暗的力量-鬼魂者 ]",
+    content0 = "话说回来。我刚发现你的时候你的样子很奇怪。神智昏迷，身体变成黑色了。咳…",
+    reward0_count = 0,
+    needLevel = 6,
+    bQLoop = 0
+  }
+  refs[1109] = {
+    name = "[ 小甜甜的花冠 ]",
+    content0 = "知道吗？我们村来客人了！听大人们说那人失去记忆了…失忆真是太神奇了！\n…咦？你是谁？",
+    reward0_count = 0,
+    needLevel = 7,
+    bQLoop = 0
+  }
+  refs[1110] = {
+    name = "[ 修栅栏 ]",
+    content0 = "哎呦，怎么这么晚？从刚才开始小菜头就跑到村子来闹了。",
+    reward0_count = 0,
+    needLevel = 8,
+    bQLoop = 0
+  }
+  refs[1201] = {
+    name = "[ 广柱的事情 ]",
+    content0 = "训练所长广柱的身体不知如何了…话说回来训练所长广柱好像在找{0xFF99ff99}PLAYERNAME{END}。在他跌到之前快点去看看吧。",
+    reward0_count = 1,
+    needLevel = 9,
+    bQLoop = 0
+  }
+  return refs
 end

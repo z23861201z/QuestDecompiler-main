@@ -1,125 +1,74 @@
-function npcsay(id)
-  if id ~= 4322006 then
-    return
-  end
-  clickNPCid = id
-  if qData[1048].state == 1 then
-    if qData[1048].killMonster[qt[1048].goal.killMonster[1].id] >= qt[1048].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("嗯~你怎么会有我的杖啊？竟然能主动帮我找回来，太感谢了。我没什么可给你的，就拿着这个吧！")
-        SET_QUEST_STATE(1048, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("以为我老了，就想耍我啊~连10个都没办法击退，就干脆放弃吧！")
-      return
-    end
-  end
-  if qData[2679].state == 1 then
-    if CHECK_ITEM_CNT(qt[2679].goal.getItem[1].id) >= qt[2679].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2679].goal.getItem[2].id) >= qt[2679].goal.getItem[2].count then
-      NPC_SAY("谢谢~之后的事情我会看着办的。")
-      SET_QUEST_STATE(2679, 2)
-      return
-    else
-      NPC_SAY("应该是在{0xFFFFFF00}干涸的沼泽{END}那边。")
-    end
-  end
-  if qData[2793].state == 1 then
-    NPC_SAY("那个石板是！")
-    SET_QUEST_STATE(2793, 2)
-    return
-  end
-  if qData[2794].state == 1 then
-    NPC_SAY("绝对不能靠近獐子潭。")
-  end
-  if qData[2795].state == 1 then
-    NPC_SAY("怎么又来了？")
-    SET_QUEST_STATE(2795, 2)
-    return
-  end
-  if qData[2796].state == 1 then
-    NPC_SAY("带着{0xFFFFFF00}吕林城南{END}的{0xFFFFFF00}治疗中的秋叨鱼{END}离开这里吧。")
-  end
-  if qData[2799].state == 1 then
-    if CHECK_ITEM_CNT(qt[2799].goal.getItem[1].id) >= qt[2799].goal.getItem[1].count then
-      NPC_SAY("还是..得到了大家的认可啊。那就按照你的意思办吧。")
-      SET_QUEST_STATE(2799, 2)
-      return
-    else
-      NPC_SAY("去找{0xFFFFFF00}厨师，宝芝林，银行{END}拿到调查獐子潭许可证吧。")
-    end
-  end
-  if qData[1048].state == 0 then
-    ADD_QUEST_BTN(qt[1048].id, qt[1048].name)
-  end
-  if qData[2679].state == 0 and qData[2678].state == 2 and GET_PLAYER_LEVEL() >= qt[2679].needLevel then
-    ADD_QUEST_BTN(qt[2679].id, qt[2679].name)
-  end
-  if qData[2794].state == 0 and qData[2793].state == 2 and GET_PLAYER_LEVEL() >= qt[2794].needLevel then
-    ADD_QUEST_BTN(qt[2794].id, qt[2794].name)
-  end
-  if qData[2796].state == 0 and qData[2795].state == 2 and GET_PLAYER_LEVEL() >= qt[2796].needLevel then
-    ADD_QUEST_BTN(qt[2796].id, qt[2796].name)
-  end
-  if qData[2799].state == 0 and qData[2798].state == 2 and GET_PLAYER_LEVEL() >= qt[2799].needLevel then
-    ADD_QUEST_BTN(qt[2799].id, qt[2799].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_322006.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1048].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1048].needLevel then
-    if qData[1048].state == 1 then
-      if qData[1048].killMonster[qt[1048].goal.killMonster[1].id] >= qt[1048].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, qData[1048].state)
-      end
-    else
-      QSTATE(id, qData[1048].state)
-    end
-  end
-  if qData[2679].state ~= 2 and qData[2678].state == 2 and GET_PLAYER_LEVEL() >= qt[2679].needLevel then
-    if qData[2679].state == 1 then
-      if CHECK_ITEM_CNT(qt[2679].goal.getItem[1].id) >= qt[2679].goal.getItem[1].count and CHECK_ITEM_CNT(qt[2679].goal.getItem[2].id) >= qt[2679].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2793].state == 1 and CHECK_ITEM_CNT(qt[2793].goal.getItem[1].id) >= qt[2793].goal.getItem[1].count then
-    QSTATE(id, 2)
-  end
-  if qData[2794].state ~= 2 and qData[2793].state == 2 and GET_PLAYER_LEVEL() >= qt[2794].needLevel then
-    if qData[2794].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2795].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[2796].state ~= 2 and qData[2795].state == 2 and GET_PLAYER_LEVEL() >= qt[2796].needLevel then
-    if qData[2796].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2799].state ~= 2 and qData[2798].state == 2 and GET_PLAYER_LEVEL() >= qt[2799].needLevel then
-    if qData[2799].state == 1 then
-      if CHECK_ITEM_CNT(qt[2799].goal.getItem[1].id) >= qt[2799].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_322006"
+  local refs = {}
+  refs[1048] = {
+    name = "[ 拐杖的主人 ]",
+    content0 = "那个，你现在很闲是吧？",
+    reward0_count = 5,
+    needLevel = 152,
+    bQLoop = 0
+  }
+  refs[2678] = {
+    name = "[ 为妈妈准备药 ]",
+    content0 = "你来的正好。我有事要请你帮忙？",
+    reward0_count = 0,
+    needLevel = 161,
+    bQLoop = 0
+  }
+  refs[2679] = {
+    name = "[ 为孙女和女儿准备的礼物 ]",
+    content0 = "你好，年轻人。",
+    reward0_count = 0,
+    needLevel = 162,
+    bQLoop = 0
+  }
+  refs[2793] = {
+    name = "[ 石板的警告(1) ]",
+    content0 = "{0xFFFFCCCC}(仔细听这段时间发生的事情。){END}太意外了，竟然能发现这个..",
+    reward0_count = 0,
+    needLevel = 168,
+    bQLoop = 0
+  }
+  refs[2794] = {
+    name = "[ 石板的警告(2) ]",
+    content0 = "在哪里找到那个石板的！",
+    reward0_count = 0,
+    needLevel = 168,
+    bQLoop = 0
+  }
+  refs[2795] = {
+    name = "[ 石板的警告(3) ]",
+    content0 = "突然说是诅咒，有点慌乱啊~",
+    reward0_count = 0,
+    needLevel = 168,
+    bQLoop = 0
+  }
+  refs[2796] = {
+    name = "[ 请离开村庄 ]",
+    content0 = "{0xFFFFCCCC}(转达公主的意思。){END}调查？调查？！要调查那么危险的地方吗？",
+    reward0_count = 0,
+    needLevel = 168,
+    bQLoop = 0
+  }
+  refs[2798] = {
+    name = "[ 孤独的清丽公主 ]",
+    content0 = "{0xFFFFFF00}吕林城老婆婆{END}为什么会这么强烈的反对呢？",
+    reward0_count = 0,
+    needLevel = 168,
+    bQLoop = 0
+  }
+  refs[2799] = {
+    name = "[ 吕林城老婆婆的条件 ]",
+    content0 = "{0xFFFFFF00}清丽公主{END}还没有放弃吗？",
+    reward0_count = 0,
+    needLevel = 169,
+    bQLoop = 0
+  }
+  return refs
 end

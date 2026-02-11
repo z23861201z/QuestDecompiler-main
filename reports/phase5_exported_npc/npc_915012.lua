@@ -1,9 +1,11 @@
-function npcsay(id)
-  if id ~= 4915012 then
-    return
-  end
-  clickNPCid = id
+-- DB_DRIVEN_EXPORT
+-- source: npc_915012.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_915012"
+  local refs = {}
+  return refs
 end

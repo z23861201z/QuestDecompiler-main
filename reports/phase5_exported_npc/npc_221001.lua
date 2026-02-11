@@ -1,28 +1,46 @@
-function npcsay(id)
-  if id ~= 4221001 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("这里是仙游谷的边防地区，可以去往遥远的西域的天柱。现在因为怪物们的邪恶之气不能去西域，仙游谷充斥着毒雾，只有拥有很强的力量的人才可以服用清明丹之后进入。")
-  ADD_NEW_SHOP_BTN(id, 10044)
-  NPC_WARP_SUNYOOGOK(id)
-  NPC_WARP_THEME_52_19(id)
-  if qData[937].state == 0 then
-    ADD_QUEST_BTN(qt[937].id, qt[937].name)
-  end
-  if qData[938].state == 0 then
-    ADD_QUEST_BTN(qt[938].id, qt[938].name)
-  end
-  if qData[939].state == 0 then
-    ADD_QUEST_BTN(qt[939].id, qt[939].name)
-  end
-  if qData[940].state == 0 then
-    ADD_QUEST_BTN(qt[940].id, qt[940].name)
-  end
-  if qData[941].state == 0 then
-    ADD_QUEST_BTN(qt[941].id, qt[941].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_221001.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_221001"
+  local refs = {}
+  refs[937] = {
+    name = "{0xFFFFB4B4}[ 天女云萧是谁？ ]{END}",
+    content0 = "我从天柱出现的那时起就在这里了。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[938] = {
+    name = "{0xFFFFB4B4}[ 天柱是什么？ ]{END}",
+    content0 = "天柱与遥远的西域连接，使两地可以互相往来，起着桥梁作用。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[939] = {
+    name = "{0xFFFFB4B4}[ 仙游谷是什么？ ]{END}",
+    content0 = "很久以前是神仙住的地方。不过现在他们都变成了可怕的怪物，受他们的妖气影响，整个仙游谷都被雾毒污染。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[940] = {
+    name = "{0xFFFFB4B4}[ 仙游谷里有人吗？ ]{END}",
+    content0 = "以前住在仙游谷的神仙们如今变成了葫芦怪、琵琶妖女、老妖怪，牛犄角支配着他们。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[941] = {
+    name = "{0xFFFFB4B4}[ 清明丹是什么？ ]{END}",
+    content0 = "清明丹可以解仙游谷的雾毒，是那些去仙游谷的人必备灵药。可以在南丰馆南边的医生爱仕达那里购买清明丹。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  return refs
 end

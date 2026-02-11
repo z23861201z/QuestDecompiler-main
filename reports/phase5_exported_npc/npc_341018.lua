@@ -1,10 +1,11 @@
-function npcsay(id)
-  if id ~= 4341018 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("已经没有配给了吗？")
+-- DB_DRIVEN_EXPORT
+-- source: npc_341018.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_341018"
+  local refs = {}
+  return refs
 end

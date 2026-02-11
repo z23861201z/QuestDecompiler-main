@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4300154 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("请捐赠12周年纪念品，完成12周年铜像。")
-  ADD_12THANIVERSARY_SOUVENIR_EVENT_GIVE(id)
-  ADD_12THANIVERSARY_SOUVENIR_EVENT_SHOW(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_300154.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_300154"
+  local refs = {}
+  return refs
 end

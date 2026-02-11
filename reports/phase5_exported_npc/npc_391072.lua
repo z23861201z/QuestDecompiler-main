@@ -1,18 +1,18 @@
-function npcsay(id)
-  if id ~= 4391072 then
-    return
-  end
-  clickNPCid = id
-  if qData[855].state == 1 then
-    NPC_SAY("哈哈，做得好。怎么样，击退猪大长易如反掌吧？来，现在我给你点谢礼。")
-    SET_MEETNPC(855, 1, id)
-    SET_QUEST_STATE(855, 2)
-  end
-  ADD_NPC_WARP_INDUN_EXIT(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_391072.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[855].state == 1 and GET_PLAYER_LEVEL() >= qt[855].needLevel then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391072"
+  local refs = {}
+  refs[855] = {
+    name = "[ 霸主地狱-逃亡者猪大长 ]",
+    content0 = "喂，你知道吗？最近白血鬼谷林里出现了黄泉裂缝，鬼舞蛇魔眼找我帮忙。所以我去帮他们封印了。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  return refs
 end

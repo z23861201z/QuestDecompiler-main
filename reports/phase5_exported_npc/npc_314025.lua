@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4314025 then
-    return
-  end
-  clickNPCid = id
-  if EVENT_OX_STATE() == 1 then
-    EVENT_OX_QUIZ(id)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_314025.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_314025"
+  local refs = {}
+  return refs
 end

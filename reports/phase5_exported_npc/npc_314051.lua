@@ -1,11 +1,11 @@
-function npcsay(id)
-  if id ~= 4314051 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("大家好。可以给这对新人祝福的客人都到齐了。要开始举办婚礼吗？{0xFFFFFF00}(婚礼结束之后自动移动到宴会厅。){END}")
-  ADD_BTN_WEDDING_MESSGE(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_314051.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_314051"
+  local refs = {}
+  return refs
 end

@@ -1,89 +1,53 @@
-function npcsay(id)
-  if id ~= 4317002 then
-    return
-  end
-  clickNPCid = id
-  if qData[346].state == 1 then
-    if qData[346].killMonster[qt[346].goal.killMonster[1].id] >= qt[346].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真是太谢谢了。这下可以重新种地了。这些虽然微不足道但是我的诚意。")
-        SET_QUEST_STATE(346, 2)
-        return
-      else
-        NPC_SAY("??? ?????.")
-      end
-    else
-      NPC_SAY("??? ????? ???? ?? ?? ?????... {0xFFFFFF00}[???] 15??{END}? ? ??? ????.")
-    end
-  end
-  if qData[1137].state == 1 and qData[1137].meetNpc[1] == qt[1137].goal.meetNpc[1] and qData[1137].meetNpc[2] == qt[1137].goal.meetNpc[2] and qData[1137].meetNpc[3] == qt[1137].goal.meetNpc[3] and qData[1137].meetNpc[4] ~= id and CHECK_ITEM_CNT(8990012) > 0 then
-    NPC_SAY("幸亏你传去了简讯，大家都重拾了信心。真的很感谢。")
-    SET_MEETNPC(1137, 4, id)
-    SET_QUEST_STATE(1137, 2)
-  end
-  if qData[1155].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) then
-      NPC_SAY("嗯？什么事情啊？")
-      SET_QUEST_STATE(1155, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[1157].state == 1 then
-    if CHECK_ITEM_CNT(qt[1157].goal.getItem[1].id) >= qt[1157].goal.getItem[1].count then
-      NPC_SAY("谢谢。可以用这个修理车轮了。虽然不多但表我谢意。")
-      SET_QUEST_STATE(1157, 2)
-    else
-      NPC_SAY("修理车轮需要10个[车轮残片]。在强悍巷道击退叫车轮怪的怪物吧。")
-    end
-  end
-  if qData[1165].state == 1 then
-    if qData[1165].killMonster[qt[1165].goal.killMonster[1].id] >= qt[1165].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真是太谢谢了。这下可以重新种地了。这些虽然微不足道但是我的诚意。")
-        SET_QUEST_STATE(1165, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("还没好吗？这些家伙一直在毁掉田地呢… 一定要击退15只土拨鼠。土拨鼠在强悍巷道里。")
-    end
-  end
-  if qData[1157].state == 0 and qData[1155].state == 2 then
-    ADD_QUEST_BTN(qt[1157].id, qt[1157].name)
-  end
-  if qData[1165].state == 0 then
-    ADD_QUEST_BTN(qt[1165].id, qt[1165].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_317002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1137].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1137].needLevel and qData[1137].state == 1 and qData[1137].meetNpc[1] == qt[1137].goal.meetNpc[1] and qData[1137].meetNpc[2] == qt[1137].goal.meetNpc[2] and qData[1137].meetNpc[3] == qt[1137].goal.meetNpc[3] and qData[1137].meetNpc[4] ~= id then
-    QSTATE(id, 2)
-  end
-  if qData[1153].state == 2 and qData[1155].state ~= 2 and qData[1155].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1155].state == 2 and qData[1157].state ~= 2 then
-    if qData[1157].state == 1 then
-      if CHECK_ITEM_CNT(qt[1157].goal.getItem[1].id) >= qt[1157].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1165].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1165].needLevel then
-    if qData[1165].state == 1 then
-      if qData[1165].killMonster[qt[1165].goal.killMonster[1].id] >= qt[1165].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_317002"
+  local refs = {}
+  refs[346] = {
+    name = "[ 碍事的怪物 ]",
+    content0 = "??? ??? ??? ????… ?…",
+    reward0_count = 1,
+    needLevel = 27,
+    bQLoop = 0
+  }
+  refs[1137] = {
+    name = "[ 往清江村 ]",
+    content0 = "少侠来得正好。刚接到消息说现在清江村的强悍巷道出没怪物，清江村村民生活很困难。",
+    reward0_count = 0,
+    needLevel = 18,
+    bQLoop = 0
+  }
+  refs[1153] = {
+    name = "[ 乌骨鸡的性急 ]",
+    content0 = "嗯，去见路边摊了？",
+    reward0_count = 1,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1155] = {
+    name = "[ 厨师的疑心 ]",
+    content0 = "您是之前见过的？是乌骨鸡让你来的？（语气变了）哼，就你一个人能干什么事啊？我也是邪派的武人呢。我们邪派的武人平时就这样隐藏着身份。",
+    reward0_count = 1,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1157] = {
+    name = "[ 农夫的希望 ]",
+    content0 = "有什么事吗？",
+    reward0_count = 0,
+    needLevel = 23,
+    bQLoop = 0
+  }
+  refs[1165] = {
+    name = "[ 碍事的怪物 ]",
+    content0 = "我要怎么教训一下这些混蛋怪物呢…",
+    reward0_count = 1,
+    needLevel = 27,
+    bQLoop = 0
+  }
+  return refs
 end

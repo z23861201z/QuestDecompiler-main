@@ -1,56 +1,25 @@
-function npcsay(id)
-  if id ~= 4323013 then
-    return
-  end
-  NPC_SAY("竟然随便接近小孩儿和女子，太无礼了。")
-  clickNPCid = id
-  if qData[2587].state == 1 then
-    if CHECK_ITEM_CNT(qt[2587].goal.getItem[1].id) >= qt[2587].goal.getItem[1].count then
-      NPC_SAY("谢谢，这是我的一点心意~")
-      SET_QUEST_STATE(2587, 2)
-      return
-    else
-      NPC_SAY("击退黑色阿佩普，收集回来50个黑色阿佩普的鳞就可以了。要质量好的鳞~")
-    end
-  end
-  if qData[2591].state == 1 then
-    if CHECK_ITEM_CNT(qt[2591].goal.getItem[1].id) >= qt[2591].goal.getItem[1].count then
-      NPC_SAY("谢谢。我也可以舒服的度过一夏了~")
-      SET_QUEST_STATE(2591, 2)
-      return
-    else
-      NPC_SAY("帮我击退{0xFFFFFF00}[黑色英招]{END}，收集{0xFFFFFF00}50个黑色英招的羽毛{END}回来吧。{0xFFFFFF00}[黑色英招]{END}栖息在黑色丘陵。")
-    end
-  end
-  if qData[2587].state == 0 and GET_PLAYER_LEVEL() >= qt[2587].needLevel then
-    ADD_QUEST_BTN(qt[2587].id, qt[2587].name)
-  end
-  if qData[2591].state == 0 and qData[2587].state == 2 and GET_PLAYER_LEVEL() >= qt[2591].needLevel then
-    ADD_QUEST_BTN(qt[2591].id, qt[2591].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_323013.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[2587].state ~= 2 and GET_PLAYER_LEVEL() >= qt[2587].needLevel then
-    if qData[2587].state == 1 then
-      if CHECK_ITEM_CNT(qt[2587].goal.getItem[1].id) >= qt[2587].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[2591].state ~= 2 and qData[2587].state == 2 and GET_PLAYER_LEVEL() >= qt[2591].needLevel then
-    if qData[2591].state == 1 then
-      if CHECK_ITEM_CNT(qt[2591].goal.getItem[1].id) >= qt[2591].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_323013"
+  local refs = {}
+  refs[2587] = {
+    name = "[ 蛇鳞饰品 ]",
+    content0 = "最近用蛇鳞制作的饰品在安哥拉很流行。",
+    reward0_count = 0,
+    needLevel = 180,
+    bQLoop = 0
+  }
+  refs[2591] = {
+    name = "[ 制作凉爽的扇子 ]",
+    content0 = "你好，我们又见面了。天气很热吧？",
+    reward0_count = 0,
+    needLevel = 182,
+    bQLoop = 0
+  }
+  return refs
 end

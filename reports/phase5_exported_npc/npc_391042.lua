@@ -1,17 +1,18 @@
-function npcsay(id)
-  if id ~= 4391042 then
-    return
-  end
-  clickNPCid = id
-  if qData[803].state == 1 then
-    NPC_SAY("非常感谢。您是真正的武林侠客。")
-    SET_QUEST_STATE(803, 2)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_391042.lua
+function npcsay(msg)
+  return msg
 end
-ADD_NPC_WARP_INDUN_EXIT(id)
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[803].state == 1 then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391042"
+  local refs = {}
+  refs[803] = {
+    name = "[ 暗血地狱-太和老君的教诲 ]",
+    content0 = "嗯？为什么找我？不过你看起来好眼熟啊…无所谓啦，你在找需要你帮助的人吗？那你愿意去帮助陷入困境的冥珠城父母官吗？",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  return refs
 end

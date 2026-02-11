@@ -1,129 +1,74 @@
-function npcsay(id)
-  if id ~= 4213004 then
-    return
-  end
-  clickNPCid = id
-  if qData[77].state == 1 then
-    if qData[77].meetNpc[1] ~= id then
-      NPC_QSAY(77, 1)
-      SET_MEETNPC(77, 1, id)
-      return
-    elseif qData[77].meetNpc[1] == qt[77].goal.meetNpc[1] then
-      NPC_SAY("???? ?? ???? ??? ????. ??? ?? {0xFFFFFF00}[?????]{END}? ? ?? ???? ??? ?? ???.")
-    end
-  end
-  if qData[81].state == 1 and qData[81].meetNpc[1] ~= id then
-    NPC_QSAY(81, 1)
-    SET_INFO(81, 1)
-    SET_MEETNPC(81, 1, id)
-    return
-  end
-  if qData[441].state == 1 then
-    if CHECK_ITEM_CNT(qt[441].goal.getItem[1].id) >= qt[441].goal.getItem[1].count and CHECK_ITEM_CNT(qt[441].goal.getItem[2].id) >= qt[441].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("??! ??? ? ????? ???. ?? ? ??? ????.")
-        SET_QUEST_STATE(441, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[??????]? [?????]{END}? ???? ?? ??? ? ?? ??????{0xFFFFFF00}?? 10?{END}? ??? ???.")
-    end
-  end
-  if qData[197].state == 1 then
-    if CHECK_ITEM_CNT(qt[197].goal.getItem[1].id) >= qt[197].goal.getItem[1].count then
-      NPC_SAY("??? ? ???? ??? ?? ??????. ?? ?? ?? ?? ?? ?? ???. ?? ???? ??????.")
-      SET_QUEST_STATE(197, 2)
-      return
-    else
-      NPC_SAY("????? ???????  {0xFFFFFF00}[??????] 15?{END}? ???. ")
-    end
-  end
-  if qData[554].state == 1 then
-    if CHECK_ITEM_CNT(qt[554].goal.getItem[1].id) >= qt[554].goal.getItem[1].count then
-      NPC_SAY("??????~ ?? ?? ??? ??? ? ?? ??????. ???? ?? ??? ???? PLAYERNAME??? ? ?????????~")
-      SET_QUEST_STATE(554, 2)
-      return
-    else
-      NPC_SAY("?? ????? ??????. ????? ???? ???? ?? ? ?????. ??? ?? ???? {0xFFFFFF00}[???] 15?{END}? ??????~")
-    end
-  end
-  if qData[1215].state == 1 then
-    NPC_SAY("欢迎光临。冥珠城最好的武器都在此。什么？不是客人？")
-    SET_QUEST_STATE(1215, 2)
-  end
-  if qData[1216].state == 1 then
-    if qData[1216].killMonster[qt[1216].goal.killMonster[1].id] >= qt[1216].goal.killMonster[1].count then
-      NPC_SAY("谢谢。这下还清债务有希望了。")
-      SET_QUEST_STATE(1216, 2)
-    else
-      NPC_SAY("通过{0xFFFFFF00}冥珠城南边{END}的{0xFFFFFF00}冥珠城井台{END}可以移动到{0xFFFFFF00}青岳秀洞{END}。击退那里的{0xFFFFFF00}40只飞头鬼{END}吧。")
-    end
-  end
-  if qData[1217].state == 1 then
-    NPC_SAY("首先帮冥珠城哞读册吧？他在冥珠城西边。")
-  end
-  ADD_NEW_SHOP_BTN(id, 10007)
-  if qData[1216].state == 0 and qData[1214].state == 2 and GET_PLAYER_LEVEL() >= qt[1216].needLevel then
-    ADD_QUEST_BTN(qt[1216].id, qt[1216].name)
-  end
-  if qData[1217].state == 0 and qData[1216].state == 2 and GET_PLAYER_LEVEL() >= qt[1217].needLevel then
-    ADD_QUEST_BTN(qt[1217].id, qt[1217].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_213004.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[77].state == 1 and GET_PLAYER_LEVEL() >= qt[77].needLevel and qData[77].meetNpc[1] == qt[77].goal.meetNpc[1] then
-    QSTATE(id, 1)
-  end
-  if qData[81].state == 1 and GET_PLAYER_LEVEL() >= qt[81].needLevel and qData[81].meetNpc[1] ~= id then
-    QSTATE(id, 1)
-  end
-  if qData[441].state ~= 2 and GET_PLAYER_LEVEL() >= qt[441].needLevel then
-    if qData[441].state == 1 then
-      if CHECK_ITEM_CNT(qt[441].goal.getItem[1].id) >= qt[441].goal.getItem[1].count and CHECK_ITEM_CNT(qt[441].goal.getItem[2].id) >= qt[441].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[197].state ~= 2 and GET_PLAYER_LEVEL() >= qt[197].needLevel then
-    if qData[197].state == 1 then
-      if CHECK_ITEM_CNT(qt[197].goal.getItem[1].id) >= qt[197].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[554].state ~= 2 and GET_PLAYER_LEVEL() >= qt[554].needLevel then
-    if qData[554].state == 1 then
-      if CHECK_ITEM_CNT(qt[554].goal.getItem[1].id) >= qt[554].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1215].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1216].state == 1 then
-    if qData[1216].killMonster[qt[1216].goal.killMonster[1].id] >= qt[1216].goal.killMonster[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1217].state == 1 then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_213004"
+  local refs = {}
+  refs[77] = {
+    name = "[ ??? ? ??? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?, ????? ???? ?? ?? ??? ???? ?? ?? ??????. ??? ??? ??? ?? ??? ?????.",
+    reward0_count = 0,
+    needLevel = 43,
+    bQLoop = 0
+  }
+  refs[81] = {
+    name = "[ 道名寺的秘密 ]",
+    content0 = "看着{0xFFFFFF00}樱花{END}飘落想念妈妈了..不是..我在想什么啊..",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[197] = {
+    name = "[ ???? ]",
+    content0 = "??~ ???? ??? ???? ?? ?????. ????? ????, ??? ?? ?? ????.",
+    reward0_count = 0,
+    needLevel = 47,
+    bQLoop = 0
+  }
+  refs[441] = {
+    name = "[ ???? ?? ]",
+    content0 = "????? ??? ???? ??? ?? ??? ??????.",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[554] = {
+    name = "[ ???? ]",
+    content0 = "?? ?? ??? ?? ????? ??? ???? ?? ? ?? ????, ?? ? ??? ??? ??? ???? ?????~",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[1214] = {
+    name = "[ 祖传调料的秘密 ]",
+    content0 = "最近怪物开始泛滥之后，食材怎么也收集不到。这样下去食堂早晚得关门大吉。这种情况下武林人士还分成派系互相争斗…",
+    reward0_count = 1,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[1215] = {
+    name = "[ 商人们的苦衷 ]",
+    content0 = "食材找到了，现在继续营业不是问题，但还是担心啊。",
+    reward0_count = 0,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[1216] = {
+    name = "[ 消极的方法 ]",
+    content0 = "不是客人那是…。额！不会是来收债的吧？今天不是还款日啊… 。",
+    reward0_count = 20,
+    needLevel = 42,
+    bQLoop = 0
+  }
+  refs[1217] = {
+    name = "[ 消极的方法2 ]",
+    content0 = "有了少侠的帮助我是有希望了，但还有很多商人过的很辛苦啊。特别是冥珠城哞读册还跟我诉苦了呢。",
+    reward0_count = 0,
+    needLevel = 42,
+    bQLoop = 0
+  }
+  return refs
 end

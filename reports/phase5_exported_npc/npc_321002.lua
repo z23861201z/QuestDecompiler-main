@@ -1,46 +1,39 @@
-function npcsay(id)
-  if id ~= 4321002 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("因仙游谷的毒雾分散开，通往仙游谷的路被封锁了。想去仙游谷就跟我说。啊！还有，想要去仙游谷，就先去{0xFFFFFF00}南丰馆南边的医生爱仕达{END}处购买清明丹吧。可以保护你不受毒雾的伤害。")
-  if qData[3656].state == 1 then
-    if CHECK_ITEM_CNT(qt[3656].goal.getItem[1].id) >= qt[3656].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[2].id) >= qt[3656].goal.getItem[2].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[3].id) >= qt[3656].goal.getItem[3].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[4].id) >= qt[3656].goal.getItem[4].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("谢谢。明天也拜托了！")
-        SET_QUEST_STATE(3656, 2)
-      else
-        NPC_SAY("行囊空间不足")
-      end
-    else
-      NPC_SAY("收集白毛毛掉落的发霉的药草，蓝色无眼怪掉落的粘稠的蓝色液体，恶魂黑鬼掉落的黑鬼的喙，赤影魔掉落的掉了尖儿的影魔刀各10个回来就可以了")
-    end
-  end
-  NPC_WARP_GUARD_TO_SUNYOOGOK(id)
-  if qData[939].state == 0 then
-    ADD_QUEST_BTN(qt[939].id, qt[939].name)
-  end
-  if qData[940].state == 0 then
-    ADD_QUEST_BTN(qt[940].id, qt[940].name)
-  end
-  if qData[941].state == 0 then
-    ADD_QUEST_BTN(qt[941].id, qt[941].name)
-  end
-  if qData[3656].state == 0 then
-    ADD_QUEST_BTN(qt[3656].id, qt[3656].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_321002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[3656].state ~= 2 then
-    if qData[3656].state == 1 then
-      if CHECK_ITEM_CNT(qt[3656].goal.getItem[1].id) >= qt[3656].goal.getItem[1].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[2].id) >= qt[3656].goal.getItem[2].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[3].id) >= qt[3656].goal.getItem[3].count and CHECK_ITEM_CNT(qt[3656].goal.getItem[4].id) >= qt[3656].goal.getItem[4].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_321002"
+  local refs = {}
+  refs[939] = {
+    name = "{0xFFFFB4B4}[ 仙游谷是什么？ ]{END}",
+    content0 = "很久以前是神仙住的地方。不过现在他们都变成了可怕的怪物，受他们的妖气影响，整个仙游谷都被雾毒污染。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[940] = {
+    name = "{0xFFFFB4B4}[ 仙游谷里有人吗？ ]{END}",
+    content0 = "以前住在仙游谷的神仙们如今变成了葫芦怪、琵琶妖女、老妖怪，牛犄角支配着他们。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[941] = {
+    name = "{0xFFFFB4B4}[ 清明丹是什么？ ]{END}",
+    content0 = "清明丹可以解仙游谷的雾毒，是那些去仙游谷的人必备灵药。可以在南丰馆南边的医生爱仕达那里购买清明丹。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[3656] = {
+    name = "[ 守护南丰馆1 ]",
+    content0 = "为了守护南丰馆，需要大侠的帮助",
+    reward0_count = 1,
+    needLevel = 146,
+    bQLoop = 0
+  }
+  return refs
 end

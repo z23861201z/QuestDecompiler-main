@@ -1,159 +1,95 @@
-function npcsay(id)
-  if id ~= 4315018 then
-    return
-  end
-  clickNPCid = id
-  if qData[1270].state == 1 then
-    if CHECK_ITEM_CNT(qt[1270].goal.getItem[1].id) >= qt[1270].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。但还没有结束。")
-        SET_QUEST_STATE(1270, 2)
-        return
-      else
-        NPC_SAY("行囊太沉。")
-        return
-      end
-    else
-      NPC_SAY("击退铁腕川的歇顶龟龟，收集30个歇顶龟龟壳回来吧。")
-      return
-    end
-  end
-  if qData[1043].state == 1 and CHECK_ITEM_CNT(qt[1043].goal.getItem[1].id) >= qt[1043].goal.getItem[1].count then
-    NPC_SAY("这么快就到时候了吗..可是那家伙好像是第一次见到。")
-    SET_QUEST_STATE(1043, 2)
-    return
-  end
-  if qData[1044].state == 1 then
-    NPC_SAY("怎么现在还在这里！")
-    return
-  end
-  if qData[1269].state == 1 then
-    NPC_SAY("盲目的走进我不会客气的。")
-    SET_QUEST_STATE(1269, 2)
-  end
-  if qData[1271].state == 1 then
-    if CHECK_ITEM_CNT(qt[1271].goal.getItem[1].id) >= qt[1271].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。但还没有结束。先等一下。")
-        SET_QUEST_STATE(1271, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退铁腕川的鬼新娘，收集30个彩缎回来吧。")
-    end
-  end
-  if qData[1272].state == 1 then
-    NPC_SAY("去龙林城南边的龙林城害了了防具店帮助她吧。")
-  end
-  if qData[1276].state == 1 then
-    NPC_SAY("（没有再问的了，去龙林城南边找懒惰鬼商量吧。）")
-  end
-  if qData[1285].state == 1 then
-    NPC_SAY("希望你这次也可以顺利的处理掉。")
-  end
-  if qData[1294].state == 1 then
-    NPC_SAY("来了？比想象的晚了很多。")
-    SET_QUEST_STATE(1294, 2)
-  end
-  if qData[1295].state == 1 then
-    NPC_SAY("去龙林城南边的龙林派师弟那儿看看吧。")
-  end
-  if qData[1044].state == 0 and qData[1043].state == 2 then
-    ADD_QUEST_BTN(qt[1044].id, qt[1044].name)
-  end
-  if qData[1270].state == 0 and qData[1269].state == 2 and GET_PLAYER_LEVEL() >= qt[1270].needLevel then
-    ADD_QUEST_BTN(qt[1270].id, qt[1270].name)
-  end
-  if qData[1271].state == 0 and qData[1270].state == 2 and GET_PLAYER_LEVEL() >= qt[1271].needLevel then
-    ADD_QUEST_BTN(qt[1271].id, qt[1271].name)
-  end
-  if qData[1272].state == 0 and qData[1271].state == 2 and GET_PLAYER_LEVEL() >= qt[1272].needLevel then
-    ADD_QUEST_BTN(qt[1272].id, qt[1272].name)
-  end
-  if qData[1276].state == 0 and qData[1275].state == 2 and GET_PLAYER_LEVEL() >= qt[1276].needLevel then
-    ADD_QUEST_BTN(qt[1276].id, qt[1276].name)
-  end
-  if qData[1285].state == 0 and qData[1280].state == 2 and GET_PLAYER_LEVEL() >= qt[1285].needLevel then
-    ADD_QUEST_BTN(qt[1285].id, qt[1285].name)
-  end
-  if qData[1295].state == 0 and qData[1294].state == 2 and GET_PLAYER_LEVEL() >= qt[1295].needLevel then
-    ADD_QUEST_BTN(qt[1295].id, qt[1295].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315018.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1043].state == 1 and GET_PLAYER_LEVEL() >= qt[1043].needLevel then
-    if CHECK_ITEM_CNT(qt[1043].goal.getItem[1].id) >= qt[1043].goal.getItem[1].count then
-      QSTATE(id, 2)
-    else
-      QSTATE(id, 1)
-    end
-  end
-  if qData[1044].state ~= 2 and qData[1043].state == 2 then
-    if qData[1044].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1269].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1270].state ~= 2 and qData[1269].state == 2 and GET_PLAYER_LEVEL() >= qt[1270].needLevel then
-    if qData[1270].state == 1 then
-      if CHECK_ITEM_CNT(qt[1270].goal.getItem[1].id) >= qt[1270].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1271].state ~= 2 and qData[1270].state == 2 and GET_PLAYER_LEVEL() >= qt[1271].needLevel then
-    if qData[1271].state == 1 then
-      if CHECK_ITEM_CNT(qt[1271].goal.getItem[1].id) >= qt[1271].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1272].state ~= 2 and qData[1271].state == 2 and GET_PLAYER_LEVEL() >= qt[1272].needLevel then
-    if qData[1272].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1276].state ~= 2 and qData[1275].state == 2 and GET_PLAYER_LEVEL() >= qt[1276].needLevel then
-    if qData[1276].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1285].state ~= 2 and qData[1280].state == 2 and GET_PLAYER_LEVEL() >= qt[1285].needLevel then
-    if qData[1285].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1285].state == 1 then
-    QSTATE(id, 1)
-  end
-  if qData[1294].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1295].state ~= 2 and qData[1294].state == 2 and GET_PLAYER_LEVEL() >= qt[1295].needLevel then
-    if qData[1295].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315018"
+  local refs = {}
+  refs[1043] = {
+    name = "[ 支援皇宫武士 ]",
+    content0 = "你这家伙是谁？",
+    reward0_count = 0,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[1044] = {
+    name = "[ 混沌的进攻 ]",
+    content0 = "我在龙林城还有没完成的事情，你把我的话再次转达给柳江。",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1269] = {
+    name = "[ 懒惰鬼的小聪明 ]",
+    content0 = "希望不要太烦我。嘿嘿。",
+    reward0_count = 0,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1270] = {
+    name = "[ 完全不一样的感觉 ]",
+    content0 = "如果我没有看错的话，比上次见到的时候能力强了一倍啊",
+    reward0_count = 5,
+    needLevel = 60,
+    bQLoop = 0
+  }
+  refs[1271] = {
+    name = "[ 不断的考验1 ]",
+    content0 = "造船还需要很多的材料。这回得收集制造船帆的材料了。",
+    reward0_count = 5,
+    needLevel = 61,
+    bQLoop = 0
+  }
+  refs[1272] = {
+    name = "[ 不断的考验2 ]",
+    content0 = "帮我们做船帆的防具店好像有什么困难。如果船帆不能按时做好的话会耽误计划。",
+    reward0_count = 0,
+    needLevel = 61,
+    bQLoop = 0
+  }
+  refs[1275] = {
+    name = "[ 新娘的悲伤 ]",
+    content0 = "现在皇宫武士们为了与韩野城的战争正在征收军需品。再这样下去将无法举办婚礼。",
+    reward0_count = 1,
+    needLevel = 62,
+    bQLoop = 0
+  }
+  refs[1276] = {
+    name = "[ 双重间谍 ]",
+    content0 = "我已经听过报告。多亏有你，一切都在顺利进行当中。辛苦了。",
+    reward0_count = 0,
+    needLevel = 63,
+    bQLoop = 0
+  }
+  refs[1280] = {
+    name = "[ 龙林派的自豪感 ]",
+    content0 = "那，然后是…（这个师弟比我还强，我要派他做什么呢？）",
+    reward0_count = 0,
+    needLevel = 64,
+    bQLoop = 0
+  }
+  refs[1285] = {
+    name = "[ 暴风前夜 ]",
+    content0 = "听说你在龙林派过得还可以。",
+    reward0_count = 1,
+    needLevel = 67,
+    bQLoop = 0
+  }
+  refs[1294] = {
+    name = "[ 团结力量 ]",
+    content0 = "多亏PLAYERNAME，我们冬混汤一族和土著民们才能团结起来。感激之情无以言表…",
+    reward0_count = 0,
+    needLevel = 68,
+    bQLoop = 0
+  }
+  refs[1295] = {
+    name = "[ 连连不断 ]",
+    content0 = "你不在的这段时间，清阴关和冥珠城一直流传着有关一位少侠的消息。",
+    reward0_count = 0,
+    needLevel = 68,
+    bQLoop = 0
+  }
+  return refs
 end

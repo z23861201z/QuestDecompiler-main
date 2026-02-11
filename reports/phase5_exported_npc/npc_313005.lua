@@ -1,82 +1,74 @@
-function npcsay(id)
-  if id ~= 4313005 then
-    return
-  end
-  clickNPCid = id
-  if qData[1501].state == 1 then
-    NPC_SAY("{0xFFFFFF00}??????{END}? {0xFFFFFF00}?? 100%{END} ??? {0xFFFFFF00}??????{END} ??????.")
-  end
-  if qData[81].state == 1 then
-    NPC_SAY("要下雨了吗…下雨的话腰会疼的啊…")
-  end
-  if qData[336].state == 1 and CHECK_ITEM_CNT(qt[336].goal.getItem[1].id) >= qt[336].goal.getItem[1].count then
-    NPC_SAY("?? ????? ? ???…. ????. ?? ?? ??? ??? ? ??? ?? ??? ???? ?????.")
-    SET_QUEST_STATE(336, 2)
-    return
-  end
-  if qData[337].state == 1 then
-    NPC_SAY("? ?? ??? ?? ?? ??? ??? ??? ?? ?? ?? ????? ?? ???.")
-  end
-  if qData[1189].state == 1 then
-    if qData[857].state == 2 then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("真是快的惊人啊。我有可能看错了少侠。按照约定我已经在冥珠城传开了消息。大家都会找少侠帮忙的。")
-        SET_QUEST_STATE(1189, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("跟下面的黄泉结界高僧对话进入到异界门看看吧。跟在那里的汉谟拉比商人领取[ 凶徒地狱-邪恶魔王犬 ]来完成之后回到我这边就可以了。")
-    end
-  end
-  if qData[450].state == 1 then
-    NPC_SAY(qt[450].npcsay[3])
-  end
-  if qData[451].state == 1 then
-    NPC_SAY(qt[451].npcsay[3])
-  end
-  if qData[337].state == 0 and qData[336].state == 2 then
-    ADD_QUEST_BTN(qt[337].id, qt[337].name)
-  end
-  if qData[81].state == 0 then
-    ADD_QUEST_BTN(qt[81].id, qt[81].name)
-  end
-  if qData[1501].state == 0 then
-    ADD_QUEST_BTN(qt[1501].id, qt[1501].name)
-  end
-  if qData[1189].state == 0 then
-    ADD_QUEST_BTN(qt[1189].id, qt[1189].name)
-  end
-  if qData[1209].state == 0 and qData[1189].state == 2 and GET_PLAYER_LEVEL() >= qt[1209].needLevel then
-    ADD_QUEST_BTN(qt[1209].id, qt[1209].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_313005.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1501].state == 1 then
-    QSTATE(id, 1)
-  else
-    QSTATE(id, 0)
-  end
-  if qData[81].state ~= 2 and GET_PLAYER_LEVEL() >= qt[81].needLevel then
-    if qData[81].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1189].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1189].needLevel then
-    if qData[1189].state == 1 then
-      if qData[857].state == 2 then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1209].state == 0 and qData[1189].state == 2 and GET_PLAYER_LEVEL() >= qt[1209].needLevel then
-    QSTATE(id, 0)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_313005"
+  local refs = {}
+  refs[81] = {
+    name = "[ 道名寺的秘密 ]",
+    content0 = "看着{0xFFFFFF00}樱花{END}飘落想念妈妈了..不是..我在想什么啊..",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[336] = {
+    name = "[ ?????(2) ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?? ????? ?? ??????? ????? ??? ?????. ?? ??? ???? ????.",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[337] = {
+    name = "[ ?????(3) ]",
+    content0 = "? ?????. ?? ??? ??? ???? ?? ???????? ?? ??????. ?? ??? ?????. ? ?? ??? ?? ?? ??? ????.",
+    reward0_count = 0,
+    needLevel = 50,
+    bQLoop = 0
+  }
+  refs[450] = {
+    name = "[ ? ??(1) ]",
+    content0 = "???! ? ?? ?? ?????",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[451] = {
+    name = "[ ? ??(2) ]",
+    content0 = "?! ?? ??? {0xFF99FF99}PLAYERNAME{END}? ????.",
+    reward0_count = 0,
+    needLevel = 31,
+    bQLoop = 0
+  }
+  refs[857] = {
+    name = "[ 凶徒地狱-邪恶魔王犬 ]",
+    content0 = "到底是鬼谷村？鬼谷村这个地方果然和地狱很近。又出现裂缝了。吓坏的仆人告诉我这件事，我才去的…",
+    reward0_count = 0,
+    needLevel = 35,
+    bQLoop = 0
+  }
+  refs[1189] = {
+    name = "[ 令人不安的实力 ]",
+    content0 = "之前没见过你。头一次来冥珠城吗？",
+    reward0_count = 20,
+    needLevel = 39,
+    bQLoop = 0
+  }
+  refs[1209] = {
+    name = "[ 正邪间的纠葛2 ]",
+    content0 = "我按照约定把少侠的事情跟冥珠城居民说了，他们都很高兴。说是好不容易才出现的有侠义心肠的侠客。",
+    reward0_count = 0,
+    needLevel = 39,
+    bQLoop = 0
+  }
+  refs[1501] = {
+    name = "[ ???-?????? ?? ]",
+    content0 = "PLAYERNAME?, ??????. ??..????? ?? ????? ??? ?? ?? ??? ???? ?? ??? ? ??? ????. ",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

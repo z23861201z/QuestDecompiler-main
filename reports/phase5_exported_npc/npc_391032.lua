@@ -1,24 +1,25 @@
-function npcsay(id)
-  if id ~= 4391032 then
-    return
-  end
-  clickNPCid = id
-  if qData[806].state == 1 then
-    if 1 <= CHECK_INVENTORY_CNT(3) and 1 <= CHECK_INVENTORY_CNT(4) then
-      NPC_SAY("对不起~对不起~我再也不这样了。就算再饿我也会忍着的。以后我再也不抢人类的食物了")
-      SET_QUEST_STATE(806, 2)
-    else
-      NPC_SAY("行囊太沉。")
-    end
-  end
-  if qData[806].state ~= 1 then
-    NPC_SAY("哈哈，地狱的钱都是我的~")
-    ADD_NPC_WARP_INDUN_EXIT(id)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_391032.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[676].state == 2 and qData[806].state == 1 and GET_PLAYER_LEVEL() >= qt[806].needLevel then
-    QSTATE(id, 2)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_391032"
+  local refs = {}
+  refs[676] = {
+    name = "[ 开启新的黄泉（2） ]",
+    content0 = "邪派那些家伙不但不会告诉你，还会拿你逗乐子，不过我们正派就算再累也会秉持正义。因此清阴胡须张才让你来找我的吧。",
+    reward0_count = 0,
+    needLevel = 20,
+    bQLoop = 0
+  }
+  refs[806] = {
+    name = "[ 八豆妖地狱-贪婪的猪大长 ]",
+    content0 = "哎呦，减寿十年啊。喂，你知道吗？前不久清野江对面的清江村里发生了一件大事儿。",
+    reward0_count = 1,
+    needLevel = 30,
+    bQLoop = 0
+  }
+  return refs
 end

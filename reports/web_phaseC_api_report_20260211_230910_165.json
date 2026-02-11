@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-02-11T23:09:10.166+08:00",
+  "endpoint": "/api/pipeline/full",
+  "finalStatus": "SAFE",
+  "resultCount": 5,
+  "results": [
+    {
+      "phaseName": "Phase2",
+      "status": "SUCCESS",
+      "elapsedMs": 795,
+      "artifacts": {"phase2QuestJson":"D:\\github\\QuestDecompiler-main\\reports\\phase2_quest_data.json","phase2NpcIndexJson":"D:\\github\\QuestDecompiler-main\\reports\\phase2_npc_reference_index.json","phase2SummaryJson":"D:\\github\\QuestDecompiler-main\\reports\\phase2_scan_summary.json"},
+      "error": null
+    },
+    {
+      "phaseName": "Phase2.5",
+      "status": "SUCCESS",
+      "elapsedMs": 159,
+      "artifacts": {"phase25GraphJson":"D:\\github\\QuestDecompiler-main\\reports\\phase2_5_quest_npc_dependency_graph.json","phase25SummaryJson":"D:\\github\\QuestDecompiler-main\\reports\\phase2_5_dependency_summary.json"},
+      "error": null
+    },
+    {
+      "phaseName": "Phase3Write",
+      "status": "SUCCESS",
+      "elapsedMs": 2215,
+      "artifacts": {"phase3InsertSummaryJson":"D:\\github\\QuestDecompiler-main\\reports\\phase3_db_insert_summary.json"},
+      "error": null
+    },
+    {
+      "phaseName": "Phase4Export",
+      "status": "SUCCESS",
+      "elapsedMs": 123,
+      "artifacts": {"phase4ExportLua":"D:\\github\\QuestDecompiler-main\\reports\\phase4_exported_quest.lua"},
+      "error": null
+    },
+    {
+      "phaseName": "Phase5Export",
+      "status": "SUCCESS",
+      "elapsedMs": 280,
+      "artifacts": {"phase5OutputDir":"D:\\github\\QuestDecompiler-main\\reports\\phase5_exported_npc","phase5ExportSummaryJson":"D:\\github\\QuestDecompiler-main\\reports\\phase5_export_summary.json"},
+      "error": null
+    }
+  ]
+}

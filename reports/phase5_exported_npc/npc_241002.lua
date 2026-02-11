@@ -1,38 +1,18 @@
-function npcsay(id)
-  if id ~= 4241002 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("我无所不知，无所不能。")
-  if qData[3787].state == 1 then
-    if CHECK_ITEM_CNT(qt[3787].goal.getItem[1].id) >= qt[3787].goal.getItem[1].count then
-      NPC_SAY("1,2,3..49.50。刚好。这是答应你的谢礼。明天你有时间的话再帮我吧。")
-      SET_QUEST_STATE(3787, 2)
-      return
-    else
-      NPC_SAY("工程进行的时间会很长。今天去{0xFFFFFF00}大瀑布{END}击退{0xFFFFFF00}晶石矿工长{END}，收集回来50个{0xFFFFFF00}断了的镐头把{END}回来就可以了。")
-    end
-  end
-  ADD_NEW_SHOP_BTN(id, 10087)
-  ADD_MOVESOUL_BTN(id)
-  ADD_ENCHANT_BTN(id)
-  ADD_PURIFICATION_BTN(id)
-  ADD_NPC_CR_REWARD(id)
-  if qData[3787].state == 0 and GET_PLAYER_LEVEL() >= qt[3787].needLevel then
-    ADD_QUEST_BTN(qt[3787].id, qt[3787].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_241002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[3787].state ~= 2 and GET_PLAYER_LEVEL() >= qt[3787].needLevel then
-    if qData[3787].state == 1 then
-      if CHECK_ITEM_CNT(qt[3787].goal.getItem[1].id) >= qt[3787].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_241002"
+  local refs = {}
+  refs[3787] = {
+    name = "[ 图书馆工程 ]",
+    content0 = "你好{0xFF99ff99}PLAYERNAME{END}。能帮帮我吗？",
+    reward0_count = 0,
+    needLevel = 193,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,155 +1,102 @@
-function npcsay(id)
-  if id ~= 4313002 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("欢迎光临！这是鱼类料理菜单。只要拿来鱼就免费给制作料理。来，选选看吧。")
-  if qData[76].state == 1 then
-    if CHECK_ITEM_CNT(qt[76].goal.getItem[1].id) >= qt[76].goal.getItem[1].count then
-      NPC_SAY("收集回来山参了啊！这是谢礼")
-      SET_QUEST_STATE(76, 2)
-      return
-    else
-      NPC_SAY("收集回来{0xFFFFFF00}10个[山参]{END}就可以了，美丽人参经常在竹林出没，击退就可以获得山参")
-    end
-  end
-  if qData[95].state == 1 and qData[95].meetNpc[1] == qt[95].goal.meetNpc[1] then
-    if qData[95].meetNpc[2] ~= qt[95].goal.meetNpc[2] then
-      SET_MEETNPC(95, 2, id)
-      NPC_QSAY(95, 5)
-      return
-    else
-      NPC_SAY("{0xFFFFFF00}小狗{END}由我来送，请转告{0xFFFFFF00}[名田瞧]{END}，一定要按时喂饭")
-    end
-  end
-  if qData[106].state == 1 then
-    if qData[106].meetNpc[1] == qt[106].goal.meetNpc[1] then
-      if CHECK_ITEM_CNT(qt[106].goal.getItem[1].id) >= qt[106].goal.getItem[1].count then
-        NPC_SAY("如果用熊胆还赊账的钱，那我就不要了。但是，像他那样的人，帮也是白帮，他是不会感谢你的")
-        SET_QUEST_STATE(106, 2)
-      else
-        NPC_SAY("{0xFFFFFF00}赊账的钱{END}还没还吗？")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}赊账的钱{END}还没还吗？龙林客栈的醉客中的一人就是他")
-    end
-  end
-  if qData[198].state == 1 then
-    if CHECK_ITEM_CNT(qt[198].goal.getItem[1].id) >= qt[198].goal.getItem[1].count then
-      if 2 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("请收下天下第一的饼吧。吃了这个会有无穷无尽的力量的。")
-        SET_QUEST_STATE(198, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("{0xFFFFFF00}[ 蓝蜗牛的壳 ]{END}拿来了吗？拿来{0xFFFFFF00}15个{END}，我会帮忙制作天下第一的饼的。")
-    end
-  end
-  if qData[200].state == 1 then
-    if CHECK_ITEM_CNT(qt[200].goal.getItem[1].id) >= qt[200].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("HOHO…这就是那个很难得到的变异毛毛的卵啊！果然看起来很好吃的样子。请稍等~好了~这是糖醋里脊盖饭")
-        SET_QUEST_STATE(200, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("我想快点制作糖醋里脊盖饭，当然会让PLAYERNAME最先尝尝。快去收集{0xFFFFFF00}25个[变异毛毛的卵]{END}吧！")
-    end
-  end
-  if qData[1213].state == 1 and GET_PLAYER_FACTION() == 0 then
-    NPC_SAY("要帮我？天啊，从武林人士口中听到这么亲切的话都不知道是什么年代的事情了。")
-    SET_QUEST_STATE(1213, 2)
-  end
-  if qData[1264].state == 1 and GET_PLAYER_FACTION() == 1 then
-    NPC_SAY("要帮我？天啊，从武林人士口中听到这么亲切的话都不知道是什么年代的事情了。")
-    SET_QUEST_STATE(1264, 2)
-  end
-  if qData[1214].state == 1 then
-    if CHECK_ITEM_CNT(qt[1214].goal.getItem[1].id) >= qt[1214].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(2) then
-        NPC_SAY("哎呀，谢谢了。托少侠的福，短时间内是可以坚持一下了。之前觉得武林人士都很坏，今天真是眼前一亮啊。")
-        SET_QUEST_STATE(1214, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("先去竹林击退美丽人参收集20个山参回来吧。")
-    end
-  end
-  if qData[1215].state == 1 then
-    NPC_SAY("去找冥珠城武器店帮帮他吧。武器店在冥珠城北边。")
-  end
-  if qData[1396].state == 1 then
-    NPC_SAY("哎呦，少侠，好久不见了，最近也不怎么过来了啊！")
-    SET_QUEST_STATE(1396, 2)
-  end
-  if qData[1397].state == 1 then
-    NPC_SAY("击退怪物获得10个紫菜后，替我交给韩野村南的韩野村厨房长！")
-  end
-  if qData[1415].state == 1 then
-    if CHECK_ITEM_CNT(qt[1415].goal.getItem[1].id) >= qt[1415].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("谢谢，谢谢！来，请选择自己想要的包子吧！")
-        SET_QUEST_STATE(1415, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("收集3个小菜头的力量回来，就可以交换恢复原状的包子")
-    end
-  end
-  ADD_NEW_SHOP_BTN(id, 10029)
-  ADD_EVENT_BTN_E(id)
-  ADD_EVENT_BTN_F(id)
-  ADD_EVENT_BTN_G(id)
-  if qData[198].state == 0 then
-    ADD_QUEST_BTN(qt[198].id, qt[198].name)
-  end
-  if qData[1214].state == 0 and qData[1212].state == 2 and GET_PLAYER_LEVEL() >= qt[1214].needLevel then
-    ADD_QUEST_BTN(qt[1214].id, qt[1214].name)
-  end
-  if qData[1215].state == 0 and qData[1214].state == 2 and GET_PLAYER_LEVEL() >= qt[1215].needLevel then
-    ADD_QUEST_BTN(qt[1215].id, qt[1215].name)
-  end
-  if qData[1397].state == 0 and qData[1396].state == 2 then
-    ADD_QUEST_BTN(qt[1397].id, qt[1397].name)
-  end
-  if qData[1415].state == 0 then
-    ADD_QUEST_BTN(qt[1415].id, qt[1415].name)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_313002.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[198].state ~= 2 and GET_PLAYER_LEVEL() >= qt[198].needLevel then
-    if qData[198].state == 1 then
-      if CHECK_ITEM_CNT(qt[198].goal.getItem[1].id) >= qt[198].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1214].state == 0 and qData[1212].state == 2 and GET_PLAYER_LEVEL() >= qt[1214].needLevel then
-    if qData[1214].state == 1 then
-      if CHECK_ITEM_CNT(qt[1214].goal.getItem[1].id) >= qt[1214].goal.getItem[1].count then
-        if 1 <= CHECK_INVENTORY_CNT(2) then
-          QSTATE(id, 2)
-        end
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1215].state == 0 and qData[1214].state == 2 and GET_PLAYER_LEVEL() >= qt[1215].needLevel then
-    QSTATE(id, 0)
-  end
-  if qData[1215].state == 1 then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_313002"
+  local refs = {}
+  refs[76] = {
+    name = "[ ??? ????? ]",
+    content0 = "{0xFF99FF99}PLAYERNAME{END}?, ?????. ?? ?? ??? ??????",
+    reward0_count = 0,
+    needLevel = 42,
+    bQLoop = 0
+  }
+  refs[95] = {
+    name = "[ ???? ??? ]",
+    content0 = "???.. ???.. ??",
+    reward0_count = 0,
+    needLevel = 45,
+    bQLoop = 0
+  }
+  refs[106] = {
+    name = "[ ??? ???? ]",
+    content0 = "?? {0xFF99FF99}PLAYERNAME{END}? ???? ????? ??? ?? ??? ?? ???. ??..",
+    reward0_count = 0,
+    needLevel = 53,
+    bQLoop = 0
+  }
+  refs[198] = {
+    name = "[ 新鲜的材料 ]",
+    content0 = "爸爸说食材总是要用新鲜的…但是放在仓库里的材料很难保持新鲜啊。",
+    reward0_count = 0,
+    needLevel = 49,
+    bQLoop = 0
+  }
+  refs[200] = {
+    name = "[ ??? ?? ]",
+    content0 = "???? ??????. ?? ???? ??? ??? ?????. {0xFF99FF99}PLAYERNAME{END}? ??? ??? ? ???? ???? ????.",
+    reward0_count = 1,
+    needLevel = 58,
+    bQLoop = 0
+  }
+  refs[1212] = {
+    name = "[ 冥珠城的力士 ]",
+    content0 = "啊，是道名寺说了那事…。你听到的部分是对的。原来冥珠城是以连接中部和东部的交通要塞发展，积累了很多财富。",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1213] = {
+    name = "[ 正邪间的纠葛3 ]",
+    content0 = "我想获得冥珠城居民的信任才是优先级的。否则就因为深印在居民脑海里的对武林人士的不满就很难扭转局势。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1214] = {
+    name = "[ 祖传调料的秘密 ]",
+    content0 = "最近怪物开始泛滥之后，食材怎么也收集不到。这样下去食堂早晚得关门大吉。这种情况下武林人士还分成派系互相争斗…",
+    reward0_count = 1,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[1215] = {
+    name = "[ 商人们的苦衷 ]",
+    content0 = "食材找到了，现在继续营业不是问题，但还是担心啊。",
+    reward0_count = 0,
+    needLevel = 41,
+    bQLoop = 0
+  }
+  refs[1264] = {
+    name = "[ 正邪间的纠葛3 ]",
+    content0 = "我想获得冥珠城居民的信任才是优先级的。否则就因为深印在居民脑海里的对武林人士的不满就很难扭转局势。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1396] = {
+    name = "[ ??? ? ?? ]",
+    content0 = "???! ??? ????.",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1397] = {
+    name = "[ ?? ? ????? ]",
+    content0 = "???? ? ??? ?? ??????? ??? ???? ????.",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  refs[1415] = {
+    name = "[ ?????? ?? ]",
+    content0 = "???, ???! ? ? ??????.",
+    reward0_count = 1,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

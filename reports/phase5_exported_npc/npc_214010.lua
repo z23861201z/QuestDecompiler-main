@@ -1,19 +1,18 @@
-function npcsay(id)
-  if id ~= 4214010 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("尽情地挑吧。看着像杂物，却是干净又好的东西。")
-  if qData[1101].state == 1 and qData[1101].meetNpc[1] ~= id then
-    NPC_SAY("长老派你来的？你就是传说中的异邦人。很高兴见到你。点击{0xFFFFFF00}[ 商店 ]{END}，蓝水就在出现的物品之中。选择蓝水后点击购买即可。")
-    SET_INFO(1101, 1)
-    SET_MEETNPC(1101, 1, id)
-  end
-  ADD_NEW_SHOP_BTN(id, 10057)
+-- DB_DRIVEN_EXPORT
+-- source: npc_214010.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[1101].state == 1 and CHECK_ITEM_CNT(qt[1101].goal.getItem[1].id) < qt[1101].goal.getItem[1].count then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_214010"
+  local refs = {}
+  refs[1101] = {
+    name = "[ 长老的请求 ]",
+    content0 = "我们艾里村村民原本出生于大陆，被恶势力迫害来到这里定居。通过村子怪物来锻炼自己，准备回故乡的那一天。",
+    reward0_count = 0,
+    needLevel = 1,
+    bQLoop = 0
+  }
+  return refs
 end

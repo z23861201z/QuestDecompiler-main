@@ -1,21 +1,18 @@
-function npcsay(id)
-  if id ~= 4901026 then
-    return
-  end
-  clickNPCid = id
-  if qData[106].state == 1 then
-    if qData[106].meetNpc[1] ~= qt[106].goal.meetNpc[1] then
-      SET_INFO(106, 1)
-      NPC_QSAY(106, 1)
-      SET_MEETNPC(106, 1, id)
-    else
-      NPC_SAY("{0xFFFFFF00}[??]? ??{END}? ???? ???. {0xFFFFFF00}10?{END}? ? ?????")
-    end
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_901026.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[106].state == 1 and GET_PLAYER_LEVEL() >= qt[106].needLevel then
-    QSTATE(id, 1)
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_901026"
+  local refs = {}
+  refs[106] = {
+    name = "[ ??? ???? ]",
+    content0 = "?? {0xFF99FF99}PLAYERNAME{END}? ???? ????? ??? ?? ??? ?? ???. ??..",
+    reward0_count = 0,
+    needLevel = 53,
+    bQLoop = 0
+  }
+  return refs
 end

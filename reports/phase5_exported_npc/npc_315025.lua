@@ -1,1064 +1,375 @@
-function npcsay(id)
-  if id ~= 4315025 then
-    return
-  end
-  clickNPCid = id
-  if qData[889].state == 1 then
-    if qData[889].killMonster[qt[889].goal.killMonster[1].id] >= qt[889].goal.killMonster[1].count then
-      NPC_SAY("辛苦了。果然你就是可以继承英雄们的人才啊。")
-      SET_QUEST_STATE(889, 2)
-      return
-    else
-      NPC_SAY("击退{0xFFFFFF00}40个[影魔]{END}之后回来就给你{0xFFFFFF00}1个生死守护符{END}。记住了，这个任务{0xFFFFFF00}一天只能进行一次{END}..")
-    end
-  end
-  if qData[1348].state == 1 then
-    if CHECK_ITEM_CNT(qt[1348].goal.getItem[1].id) >= qt[1348].goal.getItem[1].count then
-      NPC_SAY("比想象的要快啊。辛苦了。")
-      SET_QUEST_STATE(1348, 2)
-    else
-      NPC_SAY("击退{0xFFFFFF00}忘却之房{END}的{0xFFFFFF00}幽冥忍者{END}，收集{0xFFFFFF00}35个黑色刀刃{END}回来吧。")
-    end
-  end
-  if qData[1349].state == 1 then
-    if CHECK_ITEM_CNT(qt[1349].goal.getItem[1].id) >= qt[1349].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。原来是那样啊。这下可以知道内部结构了。")
-        SET_QUEST_STATE(1349, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退忘却之房的幽冥忍者，收集35个黑色刀刃回来吧。")
-    end
-  end
-  if qData[1350].state == 1 then
-    if CHECK_ITEM_CNT(qt[1350].goal.getItem[1].id) >= qt[1350].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。先用这些调查侵蚀的原因吧。")
-        SET_QUEST_STATE(1350, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退忘却之房的侵蚀幽冥忍者，收集35个光泽修理剑回来吧。")
-    end
-  end
-  if qData[1351].state == 1 then
-    if CHECK_ITEM_CNT(qt[1351].goal.getItem[1].id) >= qt[1351].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("辛苦了。来看看…阿嚏！")
-        SET_QUEST_STATE(1351, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退忘却之房的影魔，收集35个影魔粉回来吧。")
-    end
-  end
-  if qData[1352].state == 1 then
-    if CHECK_ITEM_CNT(qt[1352].goal.getItem[1].id) >= qt[1352].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("这，这次我捂着鼻子呢。不用担心了。")
-        SET_QUEST_STATE(1352, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("再次去忘却之房击退影魔，收集35个影魔粉回来吧。")
-    end
-  end
-  if qData[1353].state == 1 then
-    if CHECK_ITEM_CNT(qt[1353].goal.getItem[1].id) >= qt[1353].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。现在对侵蚀幽冥忍者的研究会有所成就了吧。")
-        SET_QUEST_STATE(1353, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去击退侵蚀幽冥忍者，收集35个光泽修理剑回来吧。")
-    end
-  end
-  if qData[1354].state == 1 then
-    if CHECK_ITEM_CNT(qt[1354].goal.getItem[1].id) >= qt[1354].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1354].goal.getItem[2].id) >= qt[1354].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("下面的楼层确实安静了不少？")
-        SET_QUEST_STATE(1354, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去击退忘却之房的幽冥忍者和影魔，黑色刀刃和影魔粉各收集15个回来吧。")
-    end
-  end
-  if qData[1355].state == 1 then
-    if CHECK_ITEM_CNT(qt[1355].goal.getItem[1].id) >= qt[1355].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("好极了！就是用这个把那树藤烧掉！")
-        SET_QUEST_STATE(1355, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退在忘却之房徘徊的火焰怪，收集35个火焰碎片回来吧。用那个… 呵呵呵")
-    end
-  end
-  if qData[1356].state == 1 then
-    if CHECK_ITEM_CNT(qt[1356].goal.getItem[1].id) >= qt[1356].goal.getItem[1].count then
-      NPC_SAY("好！成功了！")
-      SET_QUEST_STATE(1356, 2)
-    else
-      NPC_SAY("击退忘却之房的火焰怪，收集35个火焰碎片回来吧。")
-    end
-  end
-  if qData[1357].state == 1 then
-    if qData[1357].killMonster[qt[1357].goal.killMonster[1].id] >= qt[1357].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。怎么样？比想象的要方便吧？")
-        SET_QUEST_STATE(1357, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("在苦痛之房击退1只火焰怪之后5分钟内回来吧。")
-    end
-  end
-  if qData[1358].state == 1 then
-    if CHECK_ITEM_CNT(qt[1358].goal.getItem[1].id) >= qt[1358].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。现在岩石怪是不用担心了。")
-        SET_QUEST_STATE(1358, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去苦痛之房击退岩石怪之后，收集35个鬼声符咒吧。")
-    end
-  end
-  if qData[1359].state == 1 then
-    if CHECK_ITEM_CNT(qt[1359].goal.getItem[1].id) >= qt[1359].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("我现在仿佛看到了住持和小童子僧们欢乐的笑容。")
-        SET_QUEST_STATE(1359, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退苦痛之房的火焰怪，收集35个火焰碎片回来吧。那些应该足够过完冬了。")
-    end
-  end
-  if qData[1360].state == 1 then
-    if CHECK_ITEM_CNT(qt[1360].goal.getItem[1].id) >= qt[1360].goal.getItem[1].count then
-      NPC_SAY("辛苦了。现在塔没有了倒塌的危险。")
-      SET_QUEST_STATE(1360, 2)
-    else
-      NPC_SAY("击退苦痛之房的魔眼，收集35个痛苦的粘液回来吧。")
-    end
-  end
-  if qData[1361].state == 1 then
-    if qData[1361].killMonster[qt[1361].goal.killMonster[1].id] >= qt[1361].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("辛苦了。这次可以正式的进行调查了。")
-        SET_QUEST_STATE(1361, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("能帮我击退苦痛之房的50个侵蚀岩石怪吗？")
-    end
-  end
-  if qData[1362].state == 1 then
-    if CHECK_ITEM_CNT(qt[1362].goal.getItem[1].id) >= qt[1362].goal.getItem[1].count then
-      NPC_SAY("辛苦了。现在该轮到我来努力了。")
-      SET_QUEST_STATE(1362, 2)
-    else
-      NPC_SAY("在苦痛之房击退侵蚀岩石怪，再收集35个侵蚀岩石怪的拳回来就感激不尽了。")
-    end
-  end
-  if qData[1363].state == 1 then
-    if CHECK_ITEM_CNT(qt[1363].goal.getItem[1].id) >= qt[1363].goal.getItem[1].count then
-      NPC_SAY("辛苦了。现在上悲伤之房看看吧。")
-      SET_QUEST_STATE(1363, 2)
-    else
-      NPC_SAY("一般是击退生死之塔内部的怪物可以获得，如果你收集35个痛苦的粘液回来的话，我可以给你制作。")
-    end
-  end
-  if qData[1364].state == 1 then
-    if CHECK_ITEM_CNT(qt[1364].goal.getItem[1].id) >= qt[1364].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("好了，来这边吧。我把你扔上去。")
-        SET_QUEST_STATE(1364, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("去苦痛之房击退魔眼，收集35个痛苦的粘液回来吧。")
-    end
-  end
-  if qData[1365].state == 1 then
-    if CHECK_ITEM_CNT(qt[1365].goal.getItem[1].id) >= qt[1365].goal.getItem[1].count then
-      NPC_SAY("辛苦了。现在可以稍微放心了。")
-      SET_QUEST_STATE(1365, 2)
-    else
-      NPC_SAY("击退悲伤之房的小穷鬼，收集35个穷鬼布袋回来吧。")
-    end
-  end
-  if qData[1366].state == 1 then
-    if CHECK_ITEM_CNT(qt[1366].goal.getItem[1].id) >= qt[1366].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。施主。但那是！")
-        SET_QUEST_STATE(1366, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退悲伤之房的小穷鬼并收集35个穷鬼布袋,让小穷鬼们不敢再制毒。")
-    end
-  end
-  if qData[1367].state == 1 then
-    if qData[1367].killMonster[qt[1367].goal.killMonster[1].id] >= qt[1367].goal.killMonster[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("一个人击退了那么大的怪物…不，不会施主就是最近很出名的PLAYERNAME大侠？")
-        SET_QUEST_STATE(1367, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("快去悲伤之房击退1个蛇吞象吧！")
-    end
-  end
-  if qData[1368].state == 1 then
-    if CHECK_ITEM_CNT(qt[1368].goal.getItem[1].id) >= qt[1368].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("好了！以后再也不能使用分身了。现在只要上去击退那家伙就可以了！")
-        SET_QUEST_STATE(1368, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退悲伤之房的蛇吞象，收集1张蛇吞象符咒回来吧。")
-    end
-  end
-  if qData[1369].state == 1 then
-    if CHECK_ITEM_CNT(qt[1369].goal.getItem[1].id) >= qt[1369].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。还是跟预想的一样…")
-        SET_QUEST_STATE(1369, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退悲伤之房的幽灵甲，收集35个幽灵魔珠回来吧。")
-    end
-  end
-  if qData[1370].state == 1 then
-    if CHECK_ITEM_CNT(qt[1370].goal.getItem[1].id) >= qt[1370].goal.getItem[1].count then
-      NPC_SAY("千万要去到好的地方…")
-      SET_QUEST_STATE(1370, 2)
-    else
-      NPC_SAY("击退悲伤之房的幽灵甲，收集35个幽灵魔珠回来吧。我会用那些祭祀，安慰一下灵魂的。")
-    end
-  end
-  if qData[1371].state == 1 then
-    NPC_SAY("住持在第一寺。去那里的路很险峻，但如果是施主的话，我相信可以平安来回的。")
-  end
-  if qData[1372].state == 1 then
-    NPC_SAY("辛苦了。现在他们也舒服多了吧。")
-    SET_QUEST_STATE(1372, 2)
-  end
-  if qData[1373].state == 1 then
-    if CHECK_ITEM_CNT(qt[1373].goal.getItem[1].id) >= qt[1373].goal.getItem[1].count then
-      NPC_SAY("辛苦了。但还有几件事情需要你帮忙。")
-      SET_QUEST_STATE(1373, 2)
-    else
-      NPC_SAY("击退悲伤之房的影妖，收集35个痛苦黑晶体回来吧。我会先准备术法的。")
-    end
-  end
-  if qData[1374].state == 1 then
-    if CHECK_ITEM_CNT(qt[1374].goal.getItem[1].id) >= qt[1374].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1374].goal.getItem[2].id) >= qt[1374].goal.getItem[2].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。现在试试看吧。")
-        SET_QUEST_STATE(1374, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退悲伤之房的影妖，收集35个痛苦黑晶体回来吧。快点吧！")
-    end
-  end
-  if qData[1375].state == 1 then
-    if CHECK_ITEM_CNT(qt[1375].goal.getItem[1].id) >= qt[1375].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("好了！这次成功了。但是把施主扔上去的事情等我喘口气之后再说吧。我现在也累了。")
-        SET_QUEST_STATE(1375, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退悲伤之房的幽灵甲和小穷鬼，收集幽灵魔珠和穷鬼布袋各15个回来就可以了。")
-    end
-  end
-  if qData[1376].state == 1 then
-    if CHECK_ITEM_CNT(qt[1376].goal.getItem[1].id) >= qt[1376].goal.getItem[1].count then
-      NPC_SAY("辛苦了。下面是…。")
-      SET_QUEST_STATE(1376, 2)
-    else
-      NPC_SAY("在悲伤之房击退侵蚀影妖，收集35个侵蚀影妖的油回来吧。")
-    end
-  end
-  if qData[1377].state == 1 then
-    if CHECK_ITEM_CNT(qt[1377].goal.getItem[1].id) >= qt[1377].goal.getItem[1].count then
-      NPC_SAY("辛苦了。稍微在努力就…")
-      SET_QUEST_STATE(1377, 2)
-    else
-      NPC_SAY("在生死之房击退黑树妖，收集35个黑树妖皮回来吧。")
-    end
-  end
-  if qData[1378].state == 1 then
-    if CHECK_ITEM_CNT(qt[1378].goal.getItem[1].id) >= qt[1378].goal.getItem[1].count then
-      NPC_SAY("辛苦了。恩恩。以后不会再犯相同的失误了。")
-      SET_QUEST_STATE(1378, 2)
-    else
-      NPC_SAY("击退生死之房的侵蚀影妖，收集35个侵蚀影妖的油回来吧。")
-    end
-  end
-  if qData[1379].state == 1 then
-    NPC_SAY("去，去哪里啊？（去韩野村码头见研究船的人！）")
-  end
-  if qData[1381].state == 1 then
-    NPC_SAY("嗯？施主，你去哪了了啊？")
-    SET_QUEST_STATE(1381, 2)
-  end
-  if qData[1382].state == 1 then
-    if CHECK_ITEM_CNT(qt[1382].goal.getItem[1].id) >= qt[1382].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("辛苦了。但是不知道这些够不够…")
-        SET_QUEST_STATE(1382, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退生死之房的侵蚀黑树妖，收集35个人面根回来吧。")
-    end
-  end
-  if qData[1383].state == 1 then
-    if CHECK_ITEM_CNT(qt[1383].goal.getItem[1].id) >= qt[1383].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(1) then
-        NPC_SAY("辛苦了。现在不用担心塔会坍塌了。")
-        SET_QUEST_STATE(1383, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退生死之房的侵蚀黑树妖，收集35个人面根回来吧。")
-    end
-  end
-  if qData[1384].state == 1 then
-    if CHECK_ITEM_CNT(qt[1384].goal.getItem[1].id) >= qt[1384].goal.getItem[1].count then
-      NPC_SAY("辛苦了。我这就出发。等我的好消息吧。")
-      SET_QUEST_STATE(1384, 2)
-    else
-      NPC_SAY("击退生死之房的红树妖，收集35个红树生死液回来吧。")
-    end
-  end
-  if qData[1385].state == 1 then
-    if CHECK_ITEM_CNT(qt[1385].goal.getItem[1].id) >= qt[1385].goal.getItem[1].count then
-      NPC_SAY("知，知道了！谁知道会隐藏着这，这样的秘密啊！")
-      SET_QUEST_STATE(1385, 2)
-    else
-      NPC_SAY("击退生死之房的红树妖，收集35个红树生死液回来吧。")
-    end
-  end
-  if qData[1386].state == 1 then
-    NPC_SAY("快去见铁腕谷（7）的神檀树，听取答案后回来吧。")
-  end
-  if qData[1388].state == 1 then
-    NPC_SAY("是那样说的吗？知道了。")
-    SET_QUEST_STATE(1388, 2)
-  end
-  if qData[1389].state == 1 then
-    if CHECK_ITEM_CNT(qt[1389].goal.getItem[1].id) >= qt[1389].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(3) then
-        NPC_SAY("现在一切都结束了。去吧。去面对围绕这个塔的所有真相吧。")
-        SET_QUEST_STATE(1389, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("击退生死之房的侵蚀红树妖，收集35个红树妖皮回来吧。")
-    end
-  end
-  if qData[1390].state == 1 then
-    NPC_SAY("去生死地狱见东泼肉吧。")
-  end
-  if qData[867].state == 1 then
-    if CHECK_ITEM_CNT(qt[867].goal.getItem[1].id) >= qt[867].goal.getItem[1].count then
-      if 1 <= CHECK_INVENTORY_CNT(4) then
-        NPC_SAY("来，这是嘉和符咒。希望你能成功击退血玉髓。")
-        SET_QUEST_STATE(867, 2)
-      else
-        NPC_SAY("行囊太沉。")
-      end
-    else
-      NPC_SAY("快去组队吧。也别忘了拿一个红树生死液回来。")
-    end
-  end
-  if qData[1391].state == 1 then
-    NPC_SAY("凶徒匪人在血玉髓房屋顶。")
-  end
-  if qData[1426].state == 1 then
-    NPC_SAY("去{0xFFFFFF00}古老的渡头(6){END}的受苦的导游那儿调查情况吧。")
-  end
-  if qData[1428].state == 1 then
-    NPC_SAY("回来了？到底怎么样？")
-    SET_QUEST_STATE(1428, 2)
-  end
-  if qData[1429].state == 1 then
-    NPC_SAY("去见{0xFFFFFF00}第一寺{END}的{0xFFFFFF00}主持{END}听听他的意见")
-  end
-  if qData[1434].state == 1 then
-    NPC_SAY("你来了？有好消息")
-    SET_QUEST_STATE(1434, 2)
-  end
-  if qData[1435].state == 1 then
-    NPC_SAY("通过龙林城南边的黄泉结界高僧进入皲裂地狱")
-  end
-  if qData[3630].state == 1 then
-    NPC_SAY("击退血玉髓后去见凶徒匪人吧")
-  end
-  ADD_NEW_SHOP_BTN(id, 10066)
-  if qData[973].state == 0 and GET_PLAYER_LEVEL() >= qt[973].needLevel and GET_PLAYER_JOB2() ~= 13 then
-    ADD_QUEST_BTN(qt[973].id, qt[973].name)
-  end
-  if qData[889].state == 0 and GET_PLAYER_LEVEL() >= qt[889].needLevel and GET_PLAYER_JOB2() ~= 13 then
-    ADD_QUEST_BTN(qt[889].id, qt[889].name)
-  end
-  if qData[1348].state == 0 and GET_PLAYER_LEVEL() >= qt[1348].needLevel then
-    ADD_QUEST_BTN(qt[1348].id, qt[1348].name)
-  end
-  if qData[1349].state == 0 and qData[1348].state == 2 and GET_PLAYER_LEVEL() >= qt[1349].needLevel then
-    ADD_QUEST_BTN(qt[1349].id, qt[1349].name)
-  end
-  if qData[1350].state == 0 and qData[1349].state == 2 and GET_PLAYER_LEVEL() >= qt[1350].needLevel then
-    ADD_QUEST_BTN(qt[1350].id, qt[1350].name)
-  end
-  if qData[1351].state == 0 and qData[1350].state == 2 and GET_PLAYER_LEVEL() >= qt[1351].needLevel then
-    ADD_QUEST_BTN(qt[1351].id, qt[1351].name)
-  end
-  if qData[1352].state == 0 and qData[1351].state == 2 and GET_PLAYER_LEVEL() >= qt[1352].needLevel then
-    ADD_QUEST_BTN(qt[1352].id, qt[1352].name)
-  end
-  if qData[1353].state == 0 and GET_PLAYER_LEVEL() >= qt[1353].needLevel then
-    ADD_QUEST_BTN(qt[1353].id, qt[1353].name)
-  end
-  if qData[1354].state == 0 and qData[1352].state == 2 and GET_PLAYER_LEVEL() >= qt[1354].needLevel then
-    ADD_QUEST_BTN(qt[1354].id, qt[1354].name)
-  end
-  if qData[1355].state == 0 and qData[1354].state == 2 and GET_PLAYER_LEVEL() >= qt[1355].needLevel then
-    ADD_QUEST_BTN(qt[1355].id, qt[1355].name)
-  end
-  if qData[1356].state == 0 and qData[1355].state == 2 and GET_PLAYER_LEVEL() >= qt[1356].needLevel then
-    ADD_QUEST_BTN(qt[1356].id, qt[1356].name)
-  end
-  if qData[1357].state == 0 and qData[1356].state == 2 and GET_PLAYER_LEVEL() >= qt[1357].needLevel then
-    ADD_QUEST_BTN(qt[1357].id, qt[1357].name)
-  end
-  if qData[1358].state == 0 and qData[1357].state == 2 and GET_PLAYER_LEVEL() >= qt[1358].needLevel then
-    ADD_QUEST_BTN(qt[1358].id, qt[1358].name)
-  end
-  if qData[1359].state == 0 and GET_PLAYER_LEVEL() >= qt[1359].needLevel then
-    ADD_QUEST_BTN(qt[1359].id, qt[1359].name)
-  end
-  if qData[1360].state == 0 and qData[1358].state == 2 and GET_PLAYER_LEVEL() >= qt[1360].needLevel then
-    ADD_QUEST_BTN(qt[1360].id, qt[1360].name)
-  end
-  if qData[1361].state == 0 and qData[1360].state == 2 and GET_PLAYER_LEVEL() >= qt[1361].needLevel then
-    ADD_QUEST_BTN(qt[1361].id, qt[1361].name)
-  end
-  if qData[1362].state == 0 and qData[1361].state == 2 and GET_PLAYER_LEVEL() >= qt[1362].needLevel then
-    ADD_QUEST_BTN(qt[1362].id, qt[1362].name)
-  end
-  if qData[1363].state == 0 and GET_PLAYER_LEVEL() >= qt[1363].needLevel then
-    ADD_QUEST_BTN(qt[1363].id, qt[1363].name)
-  end
-  if qData[1364].state == 0 and qData[1347].state == 2 and GET_PLAYER_LEVEL() >= qt[1364].needLevel then
-    ADD_QUEST_BTN(qt[1364].id, qt[1364].name)
-  end
-  if qData[1365].state == 0 and GET_PLAYER_LEVEL() >= qt[1365].needLevel then
-    ADD_QUEST_BTN(qt[1365].id, qt[1365].name)
-  end
-  if qData[1366].state == 0 and GET_PLAYER_LEVEL() >= qt[1366].needLevel then
-    ADD_QUEST_BTN(qt[1366].id, qt[1366].name)
-  end
-  if qData[1367].state == 0 and qData[1366].state == 2 and GET_PLAYER_LEVEL() >= qt[1367].needLevel then
-    ADD_QUEST_BTN(qt[1367].id, qt[1367].name)
-  end
-  if qData[1368].state == 0 and qData[1367].state == 2 and GET_PLAYER_LEVEL() >= qt[1368].needLevel then
-    ADD_QUEST_BTN(qt[1368].id, qt[1368].name)
-  end
-  if qData[1369].state == 0 and qData[1368].state == 2 and GET_PLAYER_LEVEL() >= qt[1369].needLevel then
-    ADD_QUEST_BTN(qt[1369].id, qt[1369].name)
-  end
-  if qData[1370].state == 0 and qData[1369].state == 2 and GET_PLAYER_LEVEL() >= qt[1370].needLevel then
-    ADD_QUEST_BTN(qt[1370].id, qt[1370].name)
-  end
-  if qData[1371].state == 0 and qData[1370].state == 2 and GET_PLAYER_LEVEL() >= qt[1371].needLevel then
-    ADD_QUEST_BTN(qt[1371].id, qt[1371].name)
-  end
-  if qData[1373].state == 0 and qData[1372].state == 2 and GET_PLAYER_LEVEL() >= qt[1373].needLevel then
-    ADD_QUEST_BTN(qt[1373].id, qt[1373].name)
-  end
-  if qData[1374].state == 0 and qData[1373].state == 2 and GET_PLAYER_LEVEL() >= qt[1374].needLevel then
-    ADD_QUEST_BTN(qt[1374].id, qt[1374].name)
-  end
-  if qData[1375].state == 0 and qData[1374].state == 2 and GET_PLAYER_LEVEL() >= qt[1375].needLevel then
-    ADD_QUEST_BTN(qt[1375].id, qt[1375].name)
-  end
-  if qData[1376].state == 0 and qData[1375].state == 2 and GET_PLAYER_LEVEL() >= qt[1376].needLevel then
-    ADD_QUEST_BTN(qt[1376].id, qt[1376].name)
-  end
-  if qData[1377].state == 0 and qData[1376].state == 2 and GET_PLAYER_LEVEL() >= qt[1377].needLevel then
-    ADD_QUEST_BTN(qt[1377].id, qt[1377].name)
-  end
-  if qData[1378].state == 0 and qData[1377].state == 2 and GET_PLAYER_LEVEL() >= qt[1378].needLevel then
-    ADD_QUEST_BTN(qt[1378].id, qt[1378].name)
-  end
-  if qData[1379].state == 0 and qData[1378].state == 2 and GET_PLAYER_LEVEL() >= qt[1379].needLevel then
-    ADD_QUEST_BTN(qt[1379].id, qt[1379].name)
-  end
-  if qData[1382].state == 0 and qData[1381].state == 2 and GET_PLAYER_LEVEL() >= qt[1382].needLevel then
-    ADD_QUEST_BTN(qt[1382].id, qt[1382].name)
-  end
-  if qData[1383].state == 0 and qData[1382].state == 2 and GET_PLAYER_LEVEL() >= qt[1383].needLevel then
-    ADD_QUEST_BTN(qt[1383].id, qt[1383].name)
-  end
-  if qData[1384].state == 0 and qData[1383].state == 2 and GET_PLAYER_LEVEL() >= qt[1384].needLevel then
-    ADD_QUEST_BTN(qt[1384].id, qt[1384].name)
-  end
-  if qData[1385].state == 0 and qData[1384].state == 2 and GET_PLAYER_LEVEL() >= qt[1385].needLevel then
-    ADD_QUEST_BTN(qt[1385].id, qt[1385].name)
-  end
-  if qData[1386].state == 0 and qData[1385].state == 2 and GET_PLAYER_LEVEL() >= qt[1386].needLevel then
-    ADD_QUEST_BTN(qt[1386].id, qt[1386].name)
-  end
-  if qData[1389].state == 0 and qData[1388].state == 2 and GET_PLAYER_LEVEL() >= qt[1389].needLevel then
-    ADD_QUEST_BTN(qt[1389].id, qt[1389].name)
-  end
-  if qData[1390].state == 0 and qData[1389].state == 2 and GET_PLAYER_LEVEL() >= qt[1390].needLevel then
-    ADD_QUEST_BTN(qt[1390].id, qt[1390].name)
-  end
-  if qData[867].state == 0 and GET_PLAYER_LEVEL() >= qt[867].needLevel then
-    ADD_QUEST_BTN(qt[867].id, qt[867].name)
-  end
-  if qData[1391].state == 0 and qData[1390].state == 2 and GET_PLAYER_LEVEL() >= qt[1391].needLevel then
-    ADD_QUEST_BTN(qt[1391].id, qt[1391].name)
-  end
-  if qData[1426].state == 0 and GET_PLAYER_LEVEL() >= qt[1426].needLevel and GET_PLAYER_JOB2() then
-    ADD_QUEST_BTN(qt[1426].id, qt[1426].name)
-  end
-  if qData[1429].state == 0 and qData[1428].state == 2 and GET_PLAYER_LEVEL() >= qt[1429].needLevel then
-    ADD_QUEST_BTN(qt[1429].id, qt[1429].name)
-  end
-  if qData[1435].state == 0 and qData[1434].state == 2 and GET_PLAYER_LEVEL() >= qt[1435].needLevel then
-    ADD_QUEST_BTN(qt[1435].id, qt[1435].name)
-  end
-  if qData[3630].state == 0 and qData[1391].state == 2 and GET_PLAYER_LEVEL() >= qt[3630].needLevel then
-    ADD_QUEST_BTN(qt[3630].id, qt[3630].name)
-  end
-  if qData[1356].state == 2 then
-    NPC_WARP_TO_PAINROOM(id)
-  end
-  if qData[1363].state == 2 then
-    NPC_WARP_TO_SADROOM(id)
-  end
-  if qData[1375].state == 2 then
-    NPC_WARP_TO_LIFEROOM(id)
-  end
-  if qData[1390].state == 2 then
-    NPC_WARP_TO_BLOODROOM(id)
-  end
-  if qData[1391].state == 2 then
-    NPC_WARP_TO_BLOODUPROOM(id)
-  end
+-- DB_DRIVEN_EXPORT
+-- source: npc_315025.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
-  if qData[889].state ~= 2 and GET_PLAYER_LEVEL() >= qt[889].needLevel then
-    if qData[889].state == 1 then
-      if qData[889].killMonster[qt[889].goal.killMonster[1].id] >= qt[889].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1348].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1348].needLevel then
-    if qData[1348].state == 1 then
-      if CHECK_ITEM_CNT(qt[1348].goal.getItem[1].id) >= qt[1348].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1349].state ~= 2 and qData[1348].state == 2 and GET_PLAYER_LEVEL() >= qt[1349].needLevel then
-    if qData[1349].state == 1 then
-      if CHECK_ITEM_CNT(qt[1349].goal.getItem[1].id) >= qt[1349].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1350].state ~= 2 and qData[1349].state == 2 and GET_PLAYER_LEVEL() >= qt[1350].needLevel then
-    if qData[1350].state == 1 then
-      if CHECK_ITEM_CNT(qt[1350].goal.getItem[1].id) >= qt[1350].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1351].state ~= 2 and qData[1350].state == 2 and GET_PLAYER_LEVEL() >= qt[1351].needLevel then
-    if qData[1351].state == 1 then
-      if CHECK_ITEM_CNT(qt[1351].goal.getItem[1].id) >= qt[1351].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1352].state ~= 2 and qData[1351].state == 2 and GET_PLAYER_LEVEL() >= qt[1352].needLevel then
-    if qData[1352].state == 1 then
-      if CHECK_ITEM_CNT(qt[1352].goal.getItem[1].id) >= qt[1352].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1353].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1353].needLevel then
-    if qData[1353].state == 1 then
-      if CHECK_ITEM_CNT(qt[1353].goal.getItem[1].id) >= qt[1353].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1354].state ~= 2 and qData[1352].state == 2 and GET_PLAYER_LEVEL() >= qt[1354].needLevel then
-    if qData[1354].state == 1 then
-      if CHECK_ITEM_CNT(qt[1354].goal.getItem[1].id) >= qt[1354].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1354].goal.getItem[2].id) >= qt[1354].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1355].state ~= 2 and qData[1354].state == 2 and GET_PLAYER_LEVEL() >= qt[1355].needLevel then
-    if qData[1355].state == 1 then
-      if CHECK_ITEM_CNT(qt[1355].goal.getItem[1].id) >= qt[1355].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1356].state ~= 2 and qData[1355].state == 2 and GET_PLAYER_LEVEL() >= qt[1356].needLevel then
-    if qData[1356].state == 1 then
-      if CHECK_ITEM_CNT(qt[1356].goal.getItem[1].id) >= qt[1356].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1357].state ~= 2 and qData[1356].state == 2 and GET_PLAYER_LEVEL() >= qt[1357].needLevel then
-    if qData[1357].state == 1 then
-      if qData[1357].killMonster[qt[1357].goal.killMonster[1].id] >= qt[1357].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1358].state ~= 2 and qData[1357].state == 2 and GET_PLAYER_LEVEL() >= qt[1358].needLevel then
-    if qData[1358].state == 1 then
-      if CHECK_ITEM_CNT(qt[1358].goal.getItem[1].id) >= qt[1358].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1359].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1359].needLevel then
-    if qData[1359].state == 1 then
-      if CHECK_ITEM_CNT(qt[1359].goal.getItem[1].id) >= qt[1359].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1360].state ~= 2 and qData[1358].state == 2 and GET_PLAYER_LEVEL() >= qt[1360].needLevel then
-    if qData[1360].state == 1 then
-      if CHECK_ITEM_CNT(qt[1360].goal.getItem[1].id) >= qt[1360].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1361].state ~= 2 and qData[1360].state == 2 and GET_PLAYER_LEVEL() >= qt[1361].needLevel then
-    if qData[1361].state == 1 then
-      if qData[1361].killMonster[qt[1361].goal.killMonster[1].id] >= qt[1361].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1362].state ~= 2 and qData[1361].state == 2 and GET_PLAYER_LEVEL() >= qt[1362].needLevel then
-    if qData[1362].state == 1 then
-      if CHECK_ITEM_CNT(qt[1362].goal.getItem[1].id) >= qt[1362].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1363].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1363].needLevel then
-    if qData[1363].state == 1 then
-      if CHECK_ITEM_CNT(qt[1363].goal.getItem[1].id) >= qt[1363].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1364].state ~= 2 and qData[1347].state == 2 and GET_PLAYER_LEVEL() >= qt[1364].needLevel then
-    if qData[1364].state == 1 then
-      if CHECK_ITEM_CNT(qt[1364].goal.getItem[1].id) >= qt[1364].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1365].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1365].needLevel then
-    if qData[1365].state == 1 then
-      if CHECK_ITEM_CNT(qt[1365].goal.getItem[1].id) >= qt[1365].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1366].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1366].needLevel then
-    if qData[1366].state == 1 then
-      if CHECK_ITEM_CNT(qt[1366].goal.getItem[1].id) >= qt[1366].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1367].state ~= 2 and qData[1366].state == 2 and GET_PLAYER_LEVEL() >= qt[1367].needLevel then
-    if qData[1367].state == 1 then
-      if qData[1367].killMonster[qt[1367].goal.killMonster[1].id] >= qt[1367].goal.killMonster[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1368].state ~= 2 and qData[1367].state == 2 and GET_PLAYER_LEVEL() >= qt[1368].needLevel then
-    if qData[1368].state == 1 then
-      if CHECK_ITEM_CNT(qt[1368].goal.getItem[1].id) >= qt[1368].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1369].state ~= 2 and qData[1368].state == 2 and GET_PLAYER_LEVEL() >= qt[1369].needLevel then
-    if qData[1369].state == 1 then
-      if CHECK_ITEM_CNT(qt[1369].goal.getItem[1].id) >= qt[1369].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1370].state ~= 2 and qData[1369].state == 2 and GET_PLAYER_LEVEL() >= qt[1370].needLevel then
-    if qData[1370].state == 1 then
-      if CHECK_ITEM_CNT(qt[1370].goal.getItem[1].id) >= qt[1370].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1371].state ~= 2 and qData[1370].state == 2 and GET_PLAYER_LEVEL() >= qt[1371].needLevel then
-    if qData[1371].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1372].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1373].state ~= 2 and qData[1372].state == 2 and GET_PLAYER_LEVEL() >= qt[1373].needLevel then
-    if qData[1373].state == 1 then
-      if CHECK_ITEM_CNT(qt[1373].goal.getItem[1].id) >= qt[1373].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1374].state ~= 2 and qData[1373].state == 2 and GET_PLAYER_LEVEL() >= qt[1374].needLevel then
-    if qData[1374].state == 1 then
-      if CHECK_ITEM_CNT(qt[1374].goal.getItem[1].id) >= qt[1374].goal.getItem[1].count and CHECK_ITEM_CNT(qt[1374].goal.getItem[2].id) >= qt[1374].goal.getItem[2].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1375].state ~= 2 and qData[1374].state == 2 and GET_PLAYER_LEVEL() >= qt[1375].needLevel then
-    if qData[1375].state == 1 then
-      if CHECK_ITEM_CNT(qt[1375].goal.getItem[1].id) >= qt[1375].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1376].state ~= 2 and qData[1375].state == 2 and GET_PLAYER_LEVEL() >= qt[1376].needLevel then
-    if qData[1376].state == 1 then
-      if CHECK_ITEM_CNT(qt[1376].goal.getItem[1].id) >= qt[1376].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1377].state ~= 2 and qData[1376].state == 2 and GET_PLAYER_LEVEL() >= qt[1377].needLevel then
-    if qData[1377].state == 1 then
-      if CHECK_ITEM_CNT(qt[1377].goal.getItem[1].id) >= qt[1377].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1378].state ~= 2 and qData[1377].state == 2 and GET_PLAYER_LEVEL() >= qt[1378].needLevel then
-    if qData[1378].state == 1 then
-      if CHECK_ITEM_CNT(qt[1378].goal.getItem[1].id) >= qt[1378].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1379].state ~= 2 and qData[1378].state == 2 and GET_PLAYER_LEVEL() >= qt[1379].needLevel then
-    if qData[1379].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1381].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1382].state ~= 2 and qData[1381].state == 2 and GET_PLAYER_LEVEL() >= qt[1382].needLevel then
-    if qData[1382].state == 1 then
-      if CHECK_ITEM_CNT(qt[1382].goal.getItem[1].id) >= qt[1382].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1383].state ~= 2 and qData[1382].state == 2 and GET_PLAYER_LEVEL() >= qt[1383].needLevel then
-    if qData[1383].state == 1 then
-      if CHECK_ITEM_CNT(qt[1383].goal.getItem[1].id) >= qt[1383].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1384].state ~= 2 and qData[1383].state == 2 and GET_PLAYER_LEVEL() >= qt[1384].needLevel then
-    if qData[1384].state == 1 then
-      if CHECK_ITEM_CNT(qt[1384].goal.getItem[1].id) >= qt[1384].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1385].state ~= 2 and qData[1384].state == 2 and GET_PLAYER_LEVEL() >= qt[1385].needLevel then
-    if qData[1385].state == 1 then
-      if CHECK_ITEM_CNT(qt[1385].goal.getItem[1].id) >= qt[1385].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1386].state ~= 2 and qData[1385].state == 2 and GET_PLAYER_LEVEL() >= qt[1386].needLevel then
-    if qData[1386].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1388].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1389].state ~= 2 and qData[1388].state == 2 and GET_PLAYER_LEVEL() >= qt[1389].needLevel then
-    if qData[1389].state == 1 then
-      if CHECK_ITEM_CNT(qt[1389].goal.getItem[1].id) >= qt[1389].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1390].state ~= 2 and qData[1389].state == 2 and GET_PLAYER_LEVEL() >= qt[1390].needLevel then
-    if qData[1390].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[867].state ~= 2 and GET_PLAYER_LEVEL() >= qt[867].needLevel then
-    if qData[867].state == 1 then
-      if CHECK_ITEM_CNT(qt[867].goal.getItem[1].id) >= qt[867].goal.getItem[1].count then
-        QSTATE(id, 2)
-      else
-        QSTATE(id, 1)
-      end
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1391].state ~= 2 and qData[1390].state == 2 and GET_PLAYER_LEVEL() >= qt[1391].needLevel then
-    if qData[1391].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1426].state ~= 2 and GET_PLAYER_LEVEL() >= qt[1426].needLevel and GET_PLAYER_JOB2() ~= 13 then
-    if qData[1426].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1426].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1428].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1429].state ~= 2 and qData[1428].state == 2 and GET_PLAYER_LEVEL() >= qt[1429].needLevel then
-    if qData[1429].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[1434].state == 1 then
-    QSTATE(id, 2)
-  end
-  if qData[1435].state ~= 2 and qData[1434].state == 2 and GET_PLAYER_LEVEL() >= qt[1435].needLevel then
-    if qData[1435].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
-  if qData[3630].state ~= 2 and qData[1391].state == 2 and GET_PLAYER_LEVEL() >= qt[3630].needLevel then
-    if qData[3630].state == 1 then
-      QSTATE(id, 1)
-    else
-      QSTATE(id, 0)
-    end
-  end
+
+function chkQState(qData, qt)
+  local npc = "npc_315025"
+  local refs = {}
+  refs[867] = {
+    name = "[ ???? ?? ]",
+    content0 = "???? ?????? ????? ???? ? ?? ????? ??? ???. ??? ?? ??? ??? ? ? ???.",
+    reward0_count = 1,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[889] = {
+    name = "[ 守护生死的奖励 ]",
+    content0 = "{0xFFFFFF00}击退40个[影魔]{END}之后回来就给你{0xFFFFFF00}1个生死守护符{END}。记住了，这个任务是{0xFFFFFF00}一天只能完成一次{END}。",
+    reward0_count = 1,
+    needLevel = 80,
+    bQLoop = 0
+  }
+  refs[973] = {
+    name = "{0xFFFFB4B4}[ 生死守护符 ]{END}",
+    content0 = "过去镇压了妖怪们的不只是太和老君和他的12个弟子。也不能忘了没来得及留下名字就倒下的无数的英雄们。",
+    reward0_count = 0,
+    needLevel = 0,
+    bQLoop = 0
+  }
+  refs[1347] = {
+    name = "[ 修行之路 ]",
+    content0 = "拿来了叛徒南呱湃的信？我为什么要收那个？拿回去吧！",
+    reward0_count = 0,
+    needLevel = 80,
+    bQLoop = 0
+  }
+  refs[1348] = {
+    name = "[ 第一寺的逃犯 ]",
+    content0 = "年轻的施主有何事来找在下啊？",
+    reward0_count = 0,
+    needLevel = 80,
+    bQLoop = 0
+  }
+  refs[1349] = {
+    name = "[ 解析密码的方法 ]",
+    content0 = "耳环性能怎么样啊？",
+    reward0_count = 3,
+    needLevel = 80,
+    bQLoop = 0
+  }
+  refs[1350] = {
+    name = "[ 异界的侵蚀 ]",
+    content0 = "我们第一寺的僧侣对空间的裂缝特别敏感，但是感觉这塔就是在异界和现实的境界。",
+    reward0_count = 3,
+    needLevel = 81,
+    bQLoop = 0
+  }
+  refs[1351] = {
+    name = "[ 引起健忘症的粉末 ]",
+    content0 = "侵蚀的理由现在还不清楚，但这期间对塔内的结构一直有研究。对塔内的结构说明的话… ",
+    reward0_count = 80,
+    needLevel = 81,
+    bQLoop = 0
+  }
+  refs[1352] = {
+    name = "[ 引发暴力的喷嚏 ]",
+    content0 = "年、年轻的施主，不是故意的。相信我。",
+    reward0_count = 30,
+    needLevel = 82,
+    bQLoop = 0
+  }
+  refs[1353] = {
+    name = "[ 为了确信的研究 ]",
+    content0 = "查出侵蚀的原因很难啊。还得收集更多的材料，彻底的研究一下。",
+    reward0_count = 3,
+    needLevel = 82,
+    bQLoop = 0
+  }
+  refs[1354] = {
+    name = "[ 塔的结构 ]",
+    content0 = "吞噬了塔表面的巨大的树。利用被叫做血玉髓的那棵巨大的树的藤的话，应该不用经过塔救你能上去了吧。",
+    reward0_count = 30,
+    needLevel = 83,
+    bQLoop = 0
+  }
+  refs[1355] = {
+    name = "[ 为了更方便的移动 ]",
+    content0 = "连续来回塔内，累了吧？",
+    reward0_count = 3,
+    needLevel = 83,
+    bQLoop = 0
+  }
+  refs[1356] = {
+    name = "[ 盲目的挑战（1） ]",
+    content0 = "哇哈哈哈！全烧掉了~！…… 年轻的施主…. 看来火力不够啊。",
+    reward0_count = 0,
+    needLevel = 84,
+    bQLoop = 0
+  }
+  refs[1357] = {
+    name = "[ 盲目的挑战（2） ]",
+    content0 = "忘却之房上面的苦痛之房墙壁出了个洞。现在应该很方便的进去了。",
+    reward0_count = 30,
+    needLevel = 84,
+    bQLoop = 0
+  }
+  refs[1358] = {
+    name = "[ 无止境的恶性循环 ]",
+    content0 = "苦痛之房的岩石怪是，鬼声符咒碰触到构成塔的石头诞生的。所以收集了所有的鬼声符咒才能说是击退了岩石怪。",
+    reward0_count = 30,
+    needLevel = 85,
+    bQLoop = 0
+  }
+  refs[1359] = {
+    name = "[ 私人请求 ]",
+    content0 = "年轻施主，我知道有点过分，但能不能帮我个人的一个忙啊？",
+    reward0_count = 3,
+    needLevel = 85,
+    bQLoop = 0
+  }
+  refs[1360] = {
+    name = "[ 蛀蚀的怪物 ]",
+    content0 = "这次应该是魔眼了。魔眼是个很奇特的怪物，是从别的世界通过间隙挤进了这个世界的怪物。",
+    reward0_count = 0,
+    needLevel = 86,
+    bQLoop = 0
+  }
+  refs[1361] = {
+    name = "[ 另一侵蚀 ]",
+    content0 = "你是说苦痛之房也有被侵蚀的怪物吗？",
+    reward0_count = 1,
+    needLevel = 86,
+    bQLoop = 0
+  }
+  refs[1362] = {
+    name = "[材料不足]",
+    content0 = "年轻的施主，虽然有点过意不去，但能不能再帮我击退侵蚀岩石怪啊？",
+    reward0_count = 0,
+    needLevel = 87,
+    bQLoop = 0
+  }
+  refs[1363] = {
+    name = "[到悲伤之房]",
+    content0 = "不能再上去了？具体是什么问题啊？",
+    reward0_count = 0,
+    needLevel = 87,
+    bQLoop = 0
+  }
+  refs[1364] = {
+    name = "[新入口的可能性]",
+    content0 = "研究施主带过来的痛苦的粘液，知道了有趣的结果。",
+    reward0_count = 1,
+    needLevel = 88,
+    bQLoop = 0
+  }
+  refs[1365] = {
+    name = "[一直都很危险的毒物]",
+    content0 = "东泼肉那么说的？",
+    reward0_count = 0,
+    needLevel = 88,
+    bQLoop = 0
+  }
+  refs[1366] = {
+    name = "[事前预防]",
+    content0 = "刚才刮风的时候发现从悲伤之房再次渗出毒性粉末。",
+    reward0_count = 3,
+    needLevel = 89,
+    bQLoop = 0
+  }
+  refs[1367] = {
+    name = "[从毒雾中]",
+    content0 = "施，施主 看到了吗？从毒雾中看到的巨大的蛇头的…",
+    reward0_count = 30,
+    needLevel = 90,
+    bQLoop = 0
+  }
+  refs[1368] = {
+    name = "[追赶逃跑的蛇]",
+    content0 = "尽然没看出是这样的人物。",
+    reward0_count = 30,
+    needLevel = 90,
+    bQLoop = 0
+  }
+  refs[1369] = {
+    name = "[灵魂的解放(1)]",
+    content0 = "施主。其实我来到生死之塔之后开始，一直担心着一件事情。",
+    reward0_count = 3,
+    needLevel = 91,
+    bQLoop = 0
+  }
+  refs[1370] = {
+    name = "[灵魂的解放(2)]",
+    content0 = "施主，幽灵甲真的是向我们猜测的一样，是邪教群的实验中成为牺牲品的人困在盔甲之中形成的怪物。",
+    reward0_count = 0,
+    needLevel = 91,
+    bQLoop = 0
+  }
+  refs[1371] = {
+    name = "[供奉步骤]",
+    content0 = "年轻的施主，能不能为了安抚这些亡魂，最后一次去趟第一寺啊？",
+    reward0_count = 0,
+    needLevel = 92,
+    bQLoop = 0
+  }
+  refs[1372] = {
+    name = "[回到生死之塔(1)]",
+    content0 = "原来武艺僧长经那么辛劳啊。知道了。少侠也辛苦了。",
+    reward0_count = 3,
+    needLevel = 92,
+    bQLoop = 0
+  }
+  refs[1373] = {
+    name = "[ 出人意料的活用 ]",
+    content0 = "趁着施主去第一寺的这段时间，我研究了下有没有更简单的方法来回生死之塔。",
+    reward0_count = 0,
+    needLevel = 93,
+    bQLoop = 0
+  }
+  refs[1374] = {
+    name = "[ 不足的材料 ]",
+    content0 = "咒术需要的材料是幽灵魔珠和穷鬼布袋。各需要15个。",
+    reward0_count = 30,
+    needLevel = 93,
+    bQLoop = 0
+  }
+  refs[1375] = {
+    name = "[术法的行踪]",
+    content0 = "那，红、红色的树！",
+    reward0_count = 3,
+    needLevel = 94,
+    bQLoop = 0
+  }
+  refs[1376] = {
+    name = "[生死之房的侵蚀度]",
+    content0 = "生死之房比其他下面层侵蚀度更高。得特别注意才行。",
+    reward0_count = 0,
+    needLevel = 94,
+    bQLoop = 0
+  }
+  refs[1377] = {
+    name = "[渐渐清晰的真相]",
+    content0 = "缠绕着生死之塔的巨大的红色树枝和黑树妖肯定有什么关联。",
+    reward0_count = 0,
+    needLevel = 95,
+    bQLoop = 0
+  }
+  refs[1378] = {
+    name = "[独特的油]",
+    content0 = "施主收集回来的这些粘性很强的油真的很独特啊。在常温下是马上就会干掉的。",
+    reward0_count = 0,
+    needLevel = 95,
+    bQLoop = 0
+  }
+  refs[1379] = {
+    name = "[一定会被需要]",
+    content0 = "我研究了黑树妖皮，得到了惊人的事实。",
+    reward0_count = 30,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[1381] = {
+    name = "[回到生死之塔(2)]",
+    content0 = "不知道该怎么报答这恩惠啊。但是少侠为什么回来生死之塔？",
+    reward0_count = 0,
+    needLevel = 96,
+    bQLoop = 0
+  }
+  refs[1382] = {
+    name = "[扎下跟的危险（1）]",
+    content0 = "趁你不在的时候我做了进一步的调查，结果发现塔内部到处生根的树枝竟是血玉髓的树枝。",
+    reward0_count = 3,
+    needLevel = 97,
+    bQLoop = 0
+  }
+  refs[1383] = {
+    name = "[扎下跟的危险（2）]",
+    content0 = "看来这些还是不够啊。为了安全，可不可以再辛苦一次啊？",
+    reward0_count = 1,
+    needLevel = 97,
+    bQLoop = 0
+  }
+  refs[1384] = {
+    name = "[红树生死液]",
+    content0 = "黑树妖喝了血玉髓的生死液，在以叫红树妖的更强大的怪物重新诞生。",
+    reward0_count = 0,
+    needLevel = 98,
+    bQLoop = 0
+  }
+  refs[1385] = {
+    name = "[血玉髓的来历（1）]",
+    content0 = "血玉髓这个怪物是过去邪教的人研究出来的最强的怪物。",
+    reward0_count = 0,
+    needLevel = 98,
+    bQLoop = 0
+  }
+  refs[1386] = {
+    name = "[血玉髓的来历（2）]",
+    content0 = "所有的事情都连在一起了。所有的事…。凶徒匪人把第一寺的视线引到这里来的，东泼肉施主冒着危险前往生死地狱的事等等…。",
+    reward0_count = 1,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1388] = {
+    name = "[要经过的顺序(2) ]",
+    content0 = "其实所有的方法武艺僧长经那孩子都知道。只是在担心可不可以击退像我子女一样的血玉髓，对我会不会有影响。",
+    reward0_count = 0,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1389] = {
+    name = "[准备完毕]",
+    content0 = "其实也猜到了一点，所以已经都准备完毕了。",
+    reward0_count = 30,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1390] = {
+    name = "[去往生死地狱]",
+    content0 = "黄泉结界僧们应该打开了通往生死地狱的通道。但，跟之前不同，这次需要中级灯火。中级灯火可以在汉谟拉比商人处购买。",
+    reward0_count = 1,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1391] = {
+    name = "[凶徒的意义]",
+    content0 = "施主，你先听听。",
+    reward0_count = 0,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  refs[1426] = {
+    name = "[化境-渡头变故]",
+    content0 = "施主，听说西危?谷另一边的古老的渡头出现了时空皲裂",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1428] = {
+    name = "[化境-散不去的雾气]",
+    content0 = "击退火车轮怪也没有什么变化啊。到底问题出在哪儿呢？",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1429] = {
+    name = "[化境-雾气来源]",
+    content0 = "击退怪物后雾气和热气也没有消失…这肯定是因为时空的皲裂",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1434] = {
+    name = "[化境-一丝线索]",
+    content0 = "秋叨鱼师兄的精神异常…怎么可能…",
+    reward0_count = 0,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[1435] = {
+    name = "[化境-结界的位置]",
+    content0 = "要找到结界的位置？你不说我也已经差人把疯癫的老人抓起来搜查了",
+    reward0_count = 1,
+    needLevel = 130,
+    bQLoop = 0
+  }
+  refs[3630] = {
+    name = "[ 重生的血玉髓 ]",
+    content0 = "你来的正好~你去帮忙击退血玉髓吧",
+    reward0_count = 1,
+    needLevel = 99,
+    bQLoop = 0
+  }
+  return refs
 end

@@ -1,12 +1,11 @@
-function npcsay(id)
-  if id ~= 4315022 then
-    return
-  end
-  clickNPCid = id
-  NPC_SAY("古代神秘文字璀璨发光. 带着石碑的气韵到外部去吗?")
-  NPC_WARP_THEME_22(id)
-  NPC_ANSWER_CANCEL(id)
+-- DB_DRIVEN_EXPORT
+-- source: npc_315022.lua
+function npcsay(msg)
+  return msg
 end
-function chkQState(id)
-  QSTATE(id, -1)
+
+function chkQState(qData, qt)
+  local npc = "npc_315022"
+  local refs = {}
+  return refs
 end
