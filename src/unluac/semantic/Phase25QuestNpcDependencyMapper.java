@@ -199,6 +199,9 @@ public class Phase25QuestNpcDependencyMapper {
   }
 
   @SuppressWarnings("unchecked")
+  /**
+   * 从 Phase2 quest 报告加载任务侧聚合行。
+   */
   private int loadQuestAggregates(Map<String, Object> questRoot,
                                   LinkedHashMap<Integer, QuestAggregate> quests) {
     Object questsObj = questRoot.get("quests");
@@ -225,6 +228,9 @@ public class Phase25QuestNpcDependencyMapper {
   }
 
   @SuppressWarnings("unchecked")
+  /**
+   * 从 NPC 侧加载聚合行与引用的 questId。
+   */
   private int loadNpcAggregates(Map<String, Object> npcRoot,
                                 LinkedHashMap<String, NpcAggregate> npcs,
                                 LinkedHashMap<Integer, QuestAggregate> quests) {
@@ -263,6 +269,9 @@ public class Phase25QuestNpcDependencyMapper {
     return totalNpcCount;
   }
 
+  /**
+   * 构建覆盖率与热点统计汇总对象。
+   */
   private SummaryReport buildSummary(LinkedHashMap<Integer, QuestAggregate> quests,
                                      LinkedHashMap<String, NpcAggregate> npcs,
                                      GraphReport graphReport) {
@@ -332,6 +341,9 @@ public class Phase25QuestNpcDependencyMapper {
     return summary;
   }
 
+  /**
+   * 基于 Phase2 基线计数执行严格自检。
+   */
   private void runSelfCheck(int phase2QuestCount,
                             int phase2NpcCount,
                             int totalQuestReferencesDetected,
@@ -350,6 +362,9 @@ public class Phase25QuestNpcDependencyMapper {
     }
   }
 
+  /**
+   * 将任务聚合映射写入图报告负载。
+   */
   private void appendQuestMappings(GraphReport graphReport,
                                    LinkedHashMap<Integer, QuestAggregate> quests) {
     List<Integer> questIds = new ArrayList<Integer>(quests.keySet());
@@ -363,6 +378,9 @@ public class Phase25QuestNpcDependencyMapper {
     }
   }
 
+  /**
+   * 将 NPC 聚合映射写入图报告负载。
+   */
   private void appendNpcMappings(GraphReport graphReport,
                                  LinkedHashMap<String, NpcAggregate> npcs) {
     List<String> files = new ArrayList<String>(npcs.keySet());
@@ -376,6 +394,9 @@ public class Phase25QuestNpcDependencyMapper {
     }
   }
 
+  /**
+   * 为 Quest/NPC 实体生成图节点列表。
+   */
   private void appendNodes(GraphReport graphReport,
                            LinkedHashMap<Integer, QuestAggregate> quests,
                            LinkedHashMap<String, NpcAggregate> npcs) {
@@ -398,6 +419,9 @@ public class Phase25QuestNpcDependencyMapper {
     }
   }
 
+  /**
+   * 规范访问类型文本，保证图边一致性。
+   */
   private String normalizeAccessType(String accessType) {
     if(accessType == null) {
       return "";
@@ -408,6 +432,9 @@ public class Phase25QuestNpcDependencyMapper {
     return accessType;
   }
 
+  /**
+   * 获取已有任务聚合对象，不存在则创建。
+   */
   private QuestAggregate ensureQuestAggregate(LinkedHashMap<Integer, QuestAggregate> quests,
                                               int questId) {
     QuestAggregate quest = quests.get(Integer.valueOf(questId));
@@ -419,6 +446,9 @@ public class Phase25QuestNpcDependencyMapper {
     return quest;
   }
 
+  /**
+   * 获取已有 NPC 聚合对象，不存在则创建。
+   */
   private NpcAggregate ensureNpcAggregate(LinkedHashMap<String, NpcAggregate> npcs,
                                           String npcFile) {
     NpcAggregate npc = npcs.get(npcFile);
@@ -430,21 +460,33 @@ public class Phase25QuestNpcDependencyMapper {
     return npc;
   }
 
+  /**
+   * 读取并解析 JSON 文件为对象根节点。
+   */
   private Map<String, Object> readJsonObject(Path path, String field) throws Exception {
     String json = new String(Files.readAllBytes(path), UTF8);
     return QuestSemanticJson.parseObject(json, field, 0);
   }
 
+  /**
+   * 写报告前确保父目录存在。
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());
     }
   }
 
+  /**
+   * 将可空值转换为去空白字符串。
+   */
   private String safe(Object value) {
     return value == null ? "" : String.valueOf(value).trim();
   }
 
+  /**
+   * 将可空值转换为整数，失败时容错回退。
+   */
   private int intOf(Object value) {
     if(value == null) {
       return 0;
@@ -473,6 +515,9 @@ public class Phase25QuestNpcDependencyMapper {
     final Set<String> referencedNpcFiles = new LinkedHashSet<String>();
     final Map<String, Integer> accessTypeCount = new LinkedHashMap<String, Integer>();
 
+    /**
+     * 将 Quest 聚合对象序列化为 JSON。
+     */
     String toJson() {
       List<String> npcFiles = new ArrayList<String>(referencedNpcFiles);
       Collections.sort(npcFiles, String.CASE_INSENSITIVE_ORDER);
@@ -500,6 +545,9 @@ public class Phase25QuestNpcDependencyMapper {
     final Map<Integer, Set<String>> accessTypesByQuest = new LinkedHashMap<Integer, Set<String>>();
     final Map<Integer, Map<String, Set<Integer>>> indexUsageByQuest = new LinkedHashMap<Integer, Map<String, Set<Integer>>>();
 
+    /**
+     * Record one access type for a quest under this npc file.
+     */
     void touchQuestAccessType(int questId, String accessType) {
       Set<String> set = accessTypesByQuest.get(Integer.valueOf(questId));
       if(set == null) {
@@ -509,6 +557,9 @@ public class Phase25QuestNpcDependencyMapper {
       set.add(accessType);
     }
 
+    /**
+     * Record one concrete indexed access used by this npc file.
+     */
     void touchQuestAccessIndex(int questId, String accessType, int index) {
       Map<String, Set<Integer>> byType = indexUsageByQuest.get(Integer.valueOf(questId));
       if(byType == null) {
@@ -523,6 +574,9 @@ public class Phase25QuestNpcDependencyMapper {
       indexes.add(Integer.valueOf(index));
     }
 
+    /**
+     * 将 NPC 聚合对象序列化为 JSON。
+     */
     String toJson() {
       List<Integer> questIds = new ArrayList<Integer>(referencedQuestIds);
       Collections.sort(questIds);
@@ -543,6 +597,9 @@ public class Phase25QuestNpcDependencyMapper {
     String id = "";
     String type = "";
 
+    /**
+     * 序列化图节点。
+     */
     String toJson() {
       return "{\"id\":" + QuestSemanticJson.jsonString(id)
           + ",\"type\":" + QuestSemanticJson.jsonString(type) + "}";
@@ -555,6 +612,9 @@ public class Phase25QuestNpcDependencyMapper {
     String accessType = "";
     final List<Integer> indexUsed = new ArrayList<Integer>();
 
+    /**
+     * 序列化图边。
+     */
     String toJson() {
       return "{\"from\":" + QuestSemanticJson.jsonString(from)
           + ",\"to\":" + QuestSemanticJson.jsonString(to)
@@ -578,6 +638,9 @@ public class Phase25QuestNpcDependencyMapper {
     final List<Node> nodes = new ArrayList<Node>();
     final List<Edge> edges = new ArrayList<Edge>();
 
+    /**
+     * 序列化完整依赖图报告。
+     */
     String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{\n");
@@ -659,6 +722,9 @@ public class Phase25QuestNpcDependencyMapper {
     int goalKillMonsterAccessCount;
     int goalMeetNpcAccessCount;
 
+    /**
+     * 构建一条 Quest 热点汇总行。
+     */
     static TopQuest from(QuestAggregate quest) {
       TopQuest top = new TopQuest();
       top.questId = quest.questId;
@@ -671,6 +737,9 @@ public class Phase25QuestNpcDependencyMapper {
       return top;
     }
 
+    /**
+     * 序列化 Quest 热点汇总行。
+     */
     String toJson() {
       return "{"
           + "\"questId\":" + questId
@@ -692,6 +761,9 @@ public class Phase25QuestNpcDependencyMapper {
     int goalKillMonsterAccessCount;
     int goalMeetNpcAccessCount;
 
+    /**
+     * 构建一条 NPC 热点汇总行。
+     */
     static TopNpc from(NpcAggregate npc) {
       TopNpc top = new TopNpc();
       top.npcFile = npc.npcFile;
@@ -703,6 +775,9 @@ public class Phase25QuestNpcDependencyMapper {
       return top;
     }
 
+    /**
+     * 序列化 NPC 热点汇总行。
+     */
     String toJson() {
       return "{"
           + "\"npcFile\":" + QuestSemanticJson.jsonString(npcFile)
@@ -728,6 +803,9 @@ public class Phase25QuestNpcDependencyMapper {
     final List<TopQuest> topReferencedQuests = new ArrayList<TopQuest>();
     final List<TopNpc> topHeavyNpcFiles = new ArrayList<TopNpc>();
 
+    /**
+     * 序列化汇总报告 JSON。
+     */
     String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{\n");
@@ -778,6 +856,9 @@ public class Phase25QuestNpcDependencyMapper {
     final List<Integer> questsWithNoNpcReference = new ArrayList<Integer>();
   }
 
+  /**
+   * Serialize string-int map as stable-key JSON object.
+   */
   private static String toJsonMap(Map<String, Integer> map) {
     if(map == null || map.isEmpty()) {
       return "{}";
@@ -798,6 +879,9 @@ public class Phase25QuestNpcDependencyMapper {
     return sb.toString();
   }
 
+  /**
+   * Serialize quest->accessTypes map.
+   */
   private static String toJsonAccessTypesByQuest(Map<Integer, Set<String>> map) {
     if(map == null || map.isEmpty()) {
       return "{}";
@@ -821,6 +905,9 @@ public class Phase25QuestNpcDependencyMapper {
     return sb.toString();
   }
 
+  /**
+   * Serialize quest->(accessType->indexes) map.
+   */
   private static String toJsonIndexUsageByQuest(Map<Integer, Map<String, Set<Integer>>> map) {
     if(map == null || map.isEmpty()) {
       return "{}";

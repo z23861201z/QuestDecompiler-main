@@ -114,6 +114,9 @@ public class Phase7BNpcTextModelBuilder {
     return result;
   }
 
+  /**
+   * 将 Phase7A 报告中的 textNodes 数组解析为行对象。
+   */
   private List<NpcTextRow> parseRows(Map<String, Object> root) {
     Object nodesObj = root.get("textNodes");
     if(!(nodesObj instanceof List<?>)) {
@@ -152,6 +155,9 @@ public class Phase7BNpcTextModelBuilder {
     return out;
   }
 
+  /**
+   * 将关联 questId 归一化为稳定的 JSON 数组文本。
+   */
   private String toQuestIdsJson(Object value) {
     if(!(value instanceof List<?>)) {
       return "[]";
@@ -169,6 +175,9 @@ public class Phase7BNpcTextModelBuilder {
     return QuestSemanticJson.toJsonArrayInt(ids);
   }
 
+  /**
+   * 重建可编辑文本表并批量写入数据。
+   */
   private int createAndLoadTable(List<NpcTextRow> rows,
                                  String ddl,
                                  String jdbcUrl,
@@ -221,6 +230,9 @@ public class Phase7BNpcTextModelBuilder {
     }
   }
 
+  /**
+   * 生成 Phase7B 映射汇总文档。
+   */
   private String buildSummaryMarkdown(Path source,
                                       int sourceTextNodeCount,
                                       int insertedRowCount) {
@@ -275,6 +287,9 @@ public class Phase7BNpcTextModelBuilder {
     return sb.toString();
   }
 
+  /**
+   * 生成 `npc_text_edit_map` 的 DDL。
+   */
   private String ddlSql() {
     return "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
         + "textId BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
@@ -299,10 +314,16 @@ public class Phase7BNpcTextModelBuilder {
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
   }
 
+  /**
+   * Convert nullable value to string.
+   */
   private String safe(Object value) {
     return value == null ? "" : String.valueOf(value);
   }
 
+  /**
+   * 将可空值转换为整数，失败时容错回退。
+   */
   private int intOf(Object value) {
     if(value == null) {
       return 0;
@@ -317,12 +338,18 @@ public class Phase7BNpcTextModelBuilder {
     }
   }
 
+  /**
+   * Ensure parent directory exists for output file.
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());
     }
   }
 
+  /**
+   * Ensure MySQL JDBC driver is available.
+   */
   private void ensureMysqlDriverAvailable(String jdbcUrl) throws Exception {
     try {
       DriverManager.getDriver(jdbcUrl);
@@ -355,19 +382,38 @@ public class Phase7BNpcTextModelBuilder {
     DriverManager.registerDriver(new DriverShim((Driver) obj));
   }
 
+  /**
+   * 用于类加载器加载 MySQL 驱动的适配器。
+   */
   private static final class DriverShim implements Driver {
     private final Driver driver;
 
+    /**
+     * 包装底层 JDBC 驱动实例。
+     */
     DriverShim(Driver driver) {
       this.driver = driver;
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @param info 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
       return driver.connect(url, info);
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -378,16 +424,28 @@ public class Phase7BNpcTextModelBuilder {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }
@@ -398,6 +456,9 @@ public class Phase7BNpcTextModelBuilder {
     }
   }
 
+  /**
+   * `npc_text_edit_map` 的可编辑文本行对象。
+   */
   private static final class NpcTextRow {
     String npcFile = "";
     int line;
@@ -412,6 +473,9 @@ public class Phase7BNpcTextModelBuilder {
     String associatedQuestIdsJson = "[]";
   }
 
+  /**
+   * 执行统计结果。
+   */
   public static final class Result {
     int sourceTextNodeCount;
     int insertedRowCount;

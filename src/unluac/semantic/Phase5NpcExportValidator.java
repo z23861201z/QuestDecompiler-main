@@ -127,6 +127,8 @@ public class Phase5NpcExportValidator {
     String sourceText = new String(Files.readAllBytes(source), UTF8);
     String targetText = new String(Files.readAllBytes(target), UTF8);
 
+    // 将两个文件转换为归一化语义签名，避免仅格式差异
+    // 导致误报差异。
     LuaTextSignature sourceSignature = analyzeLuaText(sourceText);
     LuaTextSignature targetSignature = analyzeLuaText(targetText);
 
@@ -196,6 +198,12 @@ public class Phase5NpcExportValidator {
     }
   }
 
+  /**
+   * 从 Lua 文本构建轻量语义签名。
+   *
+   * @param text raw Lua source
+   * @return token/stat/call/qt access signature set for structure comparison
+   */
   private LuaTextSignature analyzeLuaText(String text) {
     LuaTextSignature out = new LuaTextSignature();
     if(text == null) {
@@ -221,6 +229,13 @@ public class Phase5NpcExportValidator {
     return out;
   }
 
+  /**
+   * 在保证括号配平与字符串安全的前提下进行 Lua 分词。
+   *
+   * @param text source text
+   * @param out signature holder used to report parse status
+   * @return flat token list
+   */
   private List<String> tokenize(String text, LuaTextSignature out) {
     List<String> tokens = new ArrayList<String>();
     StringBuilder current = new StringBuilder();
@@ -304,6 +319,9 @@ public class Phase5NpcExportValidator {
     return tokens;
   }
 
+  /**
+   * 判断字符是否应作为独立 token 切分。
+   */
   private boolean isDelimiter(char ch) {
     return ch == '(' || ch == ')'
         || ch == '[' || ch == ']'
@@ -315,6 +333,9 @@ public class Phase5NpcExportValidator {
         || ch == ':';
   }
 
+  /**
+   * 将当前缓冲 token 刷入 token 列表。
+   */
   private void flushToken(List<String> tokens, StringBuilder current) {
     if(current.length() == 0) {
       return;
@@ -323,6 +344,9 @@ public class Phase5NpcExportValidator {
     current.setLength(0);
   }
 
+  /**
+   * 统计流程控制关键字，作为粗粒度 AST 复杂度指标。
+   */
   private int countStatementTokens(List<String> tokens) {
     int count = 0;
     for(String token : tokens) {
@@ -340,6 +364,9 @@ public class Phase5NpcExportValidator {
     return count;
   }
 
+  /**
+   * 统计指定 token 的出现次数。
+   */
   private int countToken(List<String> tokens, String expected) {
     int count = 0;
     for(String token : tokens) {
@@ -350,6 +377,9 @@ public class Phase5NpcExportValidator {
     return count;
   }
 
+  /**
+   * 提取函数声明顺序，防止导出时发生顺序漂移。
+   */
   private void buildFunctionOrder(List<String> tokens, List<String> out) {
     for(int i = 0; i + 1 < tokens.size(); i++) {
       if("function".equals(tokens.get(i))) {
@@ -358,6 +388,9 @@ public class Phase5NpcExportValidator {
     }
   }
 
+  /**
+   * 从 if/elseif/while 条件头构建归一化表达式签名。
+   */
   private String buildExpressionSignature(List<String> tokens) {
     StringBuilder sb = new StringBuilder();
     for(int i = 0; i < tokens.size(); i++) {
@@ -378,6 +411,9 @@ public class Phase5NpcExportValidator {
     return sb.toString();
   }
 
+  /**
+   * 构建 qt/qData 访问链签名（运行时关键绑定）。
+   */
   private String buildQtAccessSignature(List<String> tokens) {
     StringBuilder sb = new StringBuilder();
     for(int i = 0; i < tokens.size(); i++) {
@@ -398,6 +434,9 @@ public class Phase5NpcExportValidator {
     return sb.toString();
   }
 
+  /**
+   * 构建 NPC 逻辑关键调用的签名。
+   */
   private String buildCallSignature(List<String> tokens) {
     StringBuilder sb = new StringBuilder();
     for(int i = 0; i + 1 < tokens.size(); i++) {
@@ -434,6 +473,9 @@ public class Phase5NpcExportValidator {
     return sb.toString();
   }
 
+  /**
+   * 提取通过 qt[ID]/qData[ID] 引用的 questId。
+   */
   private List<Integer> extractQuestIds(List<String> tokens) {
     Set<Integer> ids = new LinkedHashSet<Integer>();
     for(int i = 0; i + 3 < tokens.size(); i++) {
@@ -457,6 +499,9 @@ public class Phase5NpcExportValidator {
     return out;
   }
 
+  /**
+   * 判断 token 是否为整数字面量。
+   */
   private boolean isIntegerToken(String token) {
     if(token == null || token.isEmpty()) {
       return false;
@@ -473,6 +518,9 @@ public class Phase5NpcExportValidator {
     return true;
   }
 
+  /**
+   * 按稳定顺序收集 root 下全部 `npc_*.lua` 文件。
+   */
   private List<String> collectNpcFiles(Path root) throws Exception {
     List<String> out = new ArrayList<String>();
     Files.walk(root)
@@ -488,6 +536,9 @@ public class Phase5NpcExportValidator {
     return out;
   }
 
+  /**
+   * 统一路径分隔符，保证跨平台报告一致性。
+   */
   private String normalizePath(String path) {
     if(path == null) {
       return "";
@@ -495,12 +546,18 @@ public class Phase5NpcExportValidator {
     return path.replace('\\', '/').trim();
   }
 
+  /**
+   * 确保输出父目录存在。
+   */
   private void ensureParent(Path output) throws Exception {
     if(output.getParent() != null && !Files.exists(output.getParent())) {
       Files.createDirectories(output.getParent());
     }
   }
 
+  /**
+   * 单个 Lua 文件的紧凑语义签名容器。
+   */
   private static final class LuaTextSignature {
     String parseError = "";
     final List<String> functionOrder = new ArrayList<String>();
@@ -532,6 +589,9 @@ public class Phase5NpcExportValidator {
     final List<Map<String, Object>> mismatchDetails = new ArrayList<Map<String, Object>>();
     String finalStatus = "UNSAFE";
 
+    /**
+     * 追加一条不匹配记录，并重算不匹配文件数。
+     */
     void addMismatchFile(String file,
                          String astPath,
                          String originalExpression,
@@ -550,6 +610,9 @@ public class Phase5NpcExportValidator {
       mismatchFileCount = files.size();
     }
 
+    /**
+     * 将validation report序列化为 JSON 文本。
+     */
     String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{\n");
@@ -562,6 +625,9 @@ public class Phase5NpcExportValidator {
       return sb.toString();
     }
 
+    /**
+     * 将对象映射列表序列化为 JSON 数组。
+     */
     private String toJsonArrayOfObject(List<Map<String, Object>> list) {
       StringBuilder sb = new StringBuilder();
       sb.append('[');

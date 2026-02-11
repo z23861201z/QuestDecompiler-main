@@ -124,6 +124,12 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 从语义结构中抽取Quest Data。
+   * @param questLuc 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private QuestDataReport extractQuestData(Path questLuc) throws Exception {
     QuestDataReport report = new QuestDataReport();
     report.generatedAt = OffsetDateTime.now().format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
@@ -171,6 +177,11 @@ public class Phase2LucDataExtractionSystem {
     return report;
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param bindings 方法参数
+   * @return 计算结果
+   */
   private Map<Integer, DialogArrays> collectDialogArrays(List<QuestSemanticExtractor.FieldBinding> bindings) {
     Map<Integer, DialogArrays> out = new LinkedHashMap<Integer, DialogArrays>();
     if(bindings == null) {
@@ -213,6 +224,9 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 按 questId 收集提取绑定中的整数字段值。
+   */
   private Map<Integer, Integer> collectIntField(List<QuestSemanticExtractor.FieldBinding> bindings,
                                                 String fieldKey) {
     Map<Integer, Integer> out = new LinkedHashMap<Integer, Integer>();
@@ -234,6 +248,11 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 将数据填充到输出模型。
+   * @param record 方法参数
+   * @param model 方法参数
+   */
   private void fillGoal(QuestRecord record, QuestSemanticModel model) {
     if(record == null || model == null) {
       return;
@@ -268,6 +287,11 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 将数据追加到目标容器。
+   * @param out 方法参数
+   * @param value 方法参数
+   */
   private void appendMeetNpc(List<Integer> out, Object value) {
     if(value == null || out == null) {
       return;
@@ -296,6 +320,11 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 将数据填充到输出模型。
+   * @param record 方法参数
+   * @param model 方法参数
+   */
   private void fillReward(QuestRecord record, QuestSemanticModel model) {
     if(record == null || model == null || model.rewards == null) {
       return;
@@ -315,6 +344,9 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 扫描全部 NPC Lua 文件并构建任务引用索引。
+   */
   private NpcReferenceReport scanNpcReferences(Path npcDir,
                                                ScanSummary summary) throws Exception {
     NpcReferenceReport report = new NpcReferenceReport();
@@ -338,6 +370,7 @@ public class Phase2LucDataExtractionSystem {
       throw new IllegalStateException("npc file count is 0 in dir: " + npcDir);
     }
 
+    // 遍历所有文件；缺少任意文件都视为扫描失败。
     for(Path file : files) {
       String rel = normalizePath(npcDir.relativize(file).toString());
       try {
@@ -371,6 +404,9 @@ public class Phase2LucDataExtractionSystem {
     return report;
   }
 
+  /**
+   * 扫描单个 NPC Lua 文件并追加任务引用节点。
+   */
   private void scanOneNpcFile(Path file,
                               String relativeFile,
                               NpcReferenceReport report) throws Exception {
@@ -381,6 +417,7 @@ public class Phase2LucDataExtractionSystem {
     List<Token> tokens = tokenize(text);
     NpcFileRef npcRef = ensureNpcRef(report, relativeFile);
 
+    // 遍历 token 流，同时捕获索引式任务访问与状态类 API 调用。
     for(int i = 0; i < tokens.size(); i++) {
       Token token = tokens.get(i);
       if(token.kind != TokenKind.IDENT && token.kind != TokenKind.KEYWORD) {
@@ -429,6 +466,9 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 从索引访问节点中匹配任务引用模式。
+   */
   private QuestRefMatch matchQuestReference(IndexAccessNode idx,
                                             String rootName) {
     if(idx == null || !(unwrapParen(idx.indexExpr) instanceof NumberNode)) {
@@ -461,6 +501,11 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 将数据与预期结构进行匹配。
+   * @param idx 方法参数
+   * @return 计算结果
+   */
   private QuestRefMatch matchGoalIndexedAccess(IndexAccessNode idx) {
     ExprNode indexExpr = unwrapParen(idx.indexExpr);
     if(!(indexExpr instanceof NumberNode)) {
@@ -517,6 +562,9 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 追加已解析引用节点，并更新按任务/按文件计数。
+   */
   private void addNodeLocation(NpcReferenceReport report,
                                NpcFileRef npcRef,
                                String relativeFile,
@@ -555,6 +603,9 @@ public class Phase2LucDataExtractionSystem {
     report.nodeLocations.add(location);
   }
 
+  /**
+   * 在引用报告中获取或创建 NPC 文件聚合行。
+   */
   private NpcFileRef ensureNpcRef(NpcReferenceReport report,
                                   String relativeFile) {
     NpcFileRef ref = report.byNpcFile.get(relativeFile);
@@ -565,6 +616,9 @@ public class Phase2LucDataExtractionSystem {
     return ref;
   }
 
+  /**
+   * 在引用报告中获取或创建任务聚合行。
+   */
   private QuestRef ensureQuestRef(NpcReferenceReport report,
                                   int questId) {
     String key = Integer.toString(questId);
@@ -576,6 +630,13 @@ public class Phase2LucDataExtractionSystem {
     return ref;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param startOffset 方法参数
+   * @param endOffset 方法参数
+   * @return 计算结果
+   */
   private String safeSlice(String text, int startOffset, int endOffset) {
     if(text == null || text.isEmpty()) {
       return "";
@@ -585,6 +646,12 @@ public class Phase2LucDataExtractionSystem {
     return text.substring(start, end);
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param startIndex 方法参数
+   * @return 计算结果
+   */
   private ParseResult parsePostfixChain(List<Token> tokens, int startIndex) {
     if(startIndex < 0 || startIndex >= tokens.size()) {
       return null;
@@ -644,6 +711,13 @@ public class Phase2LucDataExtractionSystem {
     return out;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private List<ExprNode> parseArgs(List<Token> tokens, int start, int endExclusive) {
     List<ExprNode> args = new ArrayList<ExprNode>();
     int cursor = start;
@@ -672,6 +746,13 @@ public class Phase2LucDataExtractionSystem {
     return args;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private ExprNode parseExpressionSlice(List<Token> tokens, int start, int endExclusive) {
     if(start >= endExclusive) {
       return new RawNode("", 0, 0, 1, 1);
@@ -686,6 +767,14 @@ public class Phase2LucDataExtractionSystem {
     return parsed;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param openIndex 方法参数
+   * @param open 方法参数
+   * @param close 方法参数
+   * @return 计算结果
+   */
   private int findMatching(List<Token> tokens, int openIndex, String open, String close) {
     int depth = 0;
     for(int i = openIndex; i < tokens.size(); i++) {
@@ -702,6 +791,13 @@ public class Phase2LucDataExtractionSystem {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private String joinTokenText(List<Token> tokens, int start, int endExclusive) {
     StringBuilder sb = new StringBuilder();
     for(int i = start; i < endExclusive; i++) {
@@ -713,6 +809,11 @@ public class Phase2LucDataExtractionSystem {
     return sb.toString();
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param node 方法参数
+   * @param out 方法参数
+   */
   private void collectIndexNodes(ExprNode node, List<IndexAccessNode> out) {
     if(node == null) {
       return;
@@ -750,6 +851,11 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param node 方法参数
+   * @return 计算结果
+   */
   private ExprNode unwrapParen(ExprNode node) {
     ExprNode current = node;
     while(current instanceof ParenNode) {
@@ -758,6 +864,11 @@ public class Phase2LucDataExtractionSystem {
     return current;
   }
 
+  /**
+   * 将源码文本切分为词法单元。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private List<Token> tokenize(String text) {
     List<Token> tokens = new ArrayList<Token>();
     int index = 0;
@@ -864,14 +975,29 @@ public class Phase2LucDataExtractionSystem {
     return tokens;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierStart(char ch) {
     return ch == '_' || Character.isLetter(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierPart(char ch) {
     return ch == '_' || Character.isLetterOrDigit(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ident 方法参数
+   * @return 计算结果
+   */
   private boolean isKeyword(String ident) {
     if(ident == null) {
       return false;
@@ -892,6 +1018,14 @@ public class Phase2LucDataExtractionSystem {
         || "return".equals(ident);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @return 计算结果
+   */
   private int[] moveLine(String text, int index, int line, int column) {
     if(text.charAt(index) == '\r') {
       if(index + 1 < text.length() && text.charAt(index + 1) == '\n') {
@@ -902,6 +1036,15 @@ public class Phase2LucDataExtractionSystem {
     return new int[] {index + 1, line + 1, 1};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param quote 方法参数
+   * @return 计算结果
+   */
   private int[] consumeQuotedString(String text, int index, int line, int column, char quote) {
     index++;
     column++;
@@ -942,6 +1085,12 @@ public class Phase2LucDataExtractionSystem {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @return 计算结果
+   */
   private int longBracketEquals(String text, int start) {
     if(start < 0 || start >= text.length() || text.charAt(start) != '[') {
       return -1;
@@ -958,6 +1107,15 @@ public class Phase2LucDataExtractionSystem {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param equals 方法参数
+   * @return 计算结果
+   */
   private int[] skipLongBracket(String text, int start, int line, int column, int equals) {
     int index = start + 2 + equals;
     column += 2 + equals;
@@ -991,6 +1149,12 @@ public class Phase2LucDataExtractionSystem {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param raw 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private DecodedText decode(byte[] raw) throws Exception {
     byte[] bom = new byte[0];
     byte[] content = raw;
@@ -1028,6 +1192,11 @@ public class Phase2LucDataExtractionSystem {
     return decoded;
   }
 
+  /**
+   * Normalize normalize Path into stable representation.
+   * @param path 方法参数
+   * @return 计算结果
+   */
   private String normalizePath(String path) {
     if(path == null) {
       return "";
@@ -1035,6 +1204,11 @@ public class Phase2LucDataExtractionSystem {
     return path.replace('\\', '/').trim();
   }
 
+  /**
+   * 解析来源数据。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private int parseIntSafe(String text) {
     if(text == null) {
       return -1;
@@ -1050,6 +1224,12 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 处理write Quest Report辅助逻辑。
+   * @param output 方法参数
+   * @param report 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void writeQuestReport(Path output, QuestDataReport report) throws Exception {
     StringBuilder sb = new StringBuilder();
     sb.append("{\n");
@@ -1081,6 +1261,12 @@ public class Phase2LucDataExtractionSystem {
     Files.write(output, sb.toString().getBytes(UTF8));
   }
 
+  /**
+   * 处理write Npc Report辅助逻辑。
+   * @param output 方法参数
+   * @param report 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void writeNpcReport(Path output, NpcReferenceReport report) throws Exception {
     List<Map.Entry<String, QuestRef>> byQuest = new ArrayList<Map.Entry<String, QuestRef>>(report.byQuestId.entrySet());
     Collections.sort(byQuest, Comparator.comparingInt(e -> parseIntSafe(e.getKey())));
@@ -1144,6 +1330,12 @@ public class Phase2LucDataExtractionSystem {
     Files.write(output, sb.toString().getBytes(UTF8));
   }
 
+  /**
+   * 处理write Summary Report辅助逻辑。
+   * @param output 方法参数
+   * @param summary 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void writeSummaryReport(Path output, ScanSummary summary) throws Exception {
     StringBuilder sb = new StringBuilder();
     sb.append("{\n");
@@ -1159,12 +1351,22 @@ public class Phase2LucDataExtractionSystem {
     Files.write(output, sb.toString().getBytes(UTF8));
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param path 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path path) throws Exception {
     if(path.getParent() != null && !Files.exists(path.getParent())) {
       Files.createDirectories(path.getParent());
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private String safe(String text) {
     return text == null ? "" : text;
   }
@@ -1192,6 +1394,10 @@ public class Phase2LucDataExtractionSystem {
       return index >= endExclusive;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseOr() {
       ExprNode left = parseAnd();
       while(matchKeyword("or")) {
@@ -1202,6 +1408,10 @@ public class Phase2LucDataExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseAnd() {
       ExprNode left = parseCompare();
       while(matchKeyword("and")) {
@@ -1212,6 +1422,10 @@ public class Phase2LucDataExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseCompare() {
       ExprNode left = parseUnary();
       while(matchSymbol("==") || matchSymbol("~=") || matchSymbol(">=")
@@ -1223,6 +1437,10 @@ public class Phase2LucDataExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseUnary() {
       if(matchKeyword("not") || matchSymbol("-")) {
         Token op = previous();
@@ -1232,6 +1450,10 @@ public class Phase2LucDataExtractionSystem {
       return parsePrimary();
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parsePrimary() {
       if(matchSymbol("(")) {
         Token left = previous();
@@ -1262,6 +1484,11 @@ public class Phase2LucDataExtractionSystem {
       return null;
     }
 
+    /**
+     * 解析来源数据。
+     * @param base 方法参数
+     * @return 计算结果
+     */
     private ExprNode parsePostfix(ExprNode base) {
       ExprNode current = base;
       while(!isAtEnd()) {
@@ -1308,6 +1535,13 @@ public class Phase2LucDataExtractionSystem {
       return current;
     }
 
+    /**
+     * 计算并返回结果。
+     * @param openIndex 方法参数
+     * @param open 方法参数
+     * @param close 方法参数
+     * @return 计算结果
+     */
     private int findMatchingWithin(int openIndex, String open, String close) {
       int depth = 0;
       for(int i = openIndex; i < endExclusive; i++) {
@@ -1323,6 +1557,11 @@ public class Phase2LucDataExtractionSystem {
       return -1;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param kind 方法参数
+     * @return 计算结果
+     */
     private boolean matchKind(TokenKind kind) {
       if(isAtEnd()) return false;
       if(peek().kind != kind) return false;
@@ -1330,6 +1569,11 @@ public class Phase2LucDataExtractionSystem {
       return true;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param keyword 方法参数
+     * @return 计算结果
+     */
     private boolean matchKeyword(String keyword) {
       if(isAtEnd()) return false;
       Token t = peek();
@@ -1340,6 +1584,11 @@ public class Phase2LucDataExtractionSystem {
       return false;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param symbol 方法参数
+     * @return 计算结果
+     */
     private boolean matchSymbol(String symbol) {
       if(isAtEnd()) return false;
       Token t = peek();
@@ -1350,14 +1599,26 @@ public class Phase2LucDataExtractionSystem {
       return false;
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token previous() {
       return tokens.get(index - 1);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token peek() {
       return tokens.get(index);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token advance() {
       return tokens.get(index++);
     }
@@ -1541,6 +1802,11 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param items 方法参数
+   * @return 计算结果
+   */
   private static String jsonGoalItems(List<GoalItem> items) {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
@@ -1552,6 +1818,11 @@ public class Phase2LucDataExtractionSystem {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param kills 方法参数
+   * @return 计算结果
+   */
   private static String jsonGoalKills(List<GoalKill> kills) {
     StringBuilder sb = new StringBuilder();
     sb.append("[");
@@ -1587,6 +1858,11 @@ public class Phase2LucDataExtractionSystem {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param items 方法参数
+   * @return 计算结果
+   */
   private static String jsonRewardItems(List<RewardItem> items) {
     StringBuilder sb = new StringBuilder();
     sb.append("[");

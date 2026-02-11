@@ -152,6 +152,13 @@ public class Phase4QuestLucExporter {
     return quests;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param rs 方法参数
+   * @param column 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Integer toNullableInt(ResultSet rs, String column) throws Exception {
     int value = rs.getInt(column);
     if(rs.wasNull()) {
@@ -160,6 +167,9 @@ public class Phase4QuestLucExporter {
     return Integer.valueOf(value);
   }
 
+  /**
+   * 从数据库加载有序字符串数组（contents/answer/info）。
+   */
   private void loadStringArray(Connection connection,
                                Map<Integer, QuestRecord> byQuest,
                                String table,
@@ -186,6 +196,9 @@ public class Phase4QuestLucExporter {
     }
   }
 
+  /**
+   * 从数据库加载有序对数组（goal/reward 的 id-count 行）。
+   */
   private void loadPairArray(Connection connection,
                              Map<Integer, QuestRecord> byQuest,
                              String table,
@@ -218,6 +231,9 @@ public class Phase4QuestLucExporter {
     }
   }
 
+  /**
+   * 从数据库加载有序整数数组（goal.meetNpc）。
+   */
   private void loadIntArray(Connection connection,
                             Map<Integer, QuestRecord> byQuest,
                             String table,
@@ -242,6 +258,11 @@ public class Phase4QuestLucExporter {
     }
   }
 
+  /**
+   * 将数据追加到目标容器。
+   * @param sb 方法参数
+   * @param quest 方法参数
+   */
   private void appendQuest(StringBuilder sb, QuestRecord quest) {
     sb.append("qt[").append(quest.questId).append("] = {\n");
     sb.append("  id = ").append(quest.questId).append(",\n");
@@ -281,6 +302,12 @@ public class Phase4QuestLucExporter {
     sb.append("}\n");
   }
 
+  /**
+   * 将数据追加到目标容器。
+   * @param sb 方法参数
+   * @param values 方法参数
+   * @param indent 方法参数
+   */
   private void appendStringArray(StringBuilder sb, List<String> values, int indent) {
     if(values == null || values.isEmpty()) {
       sb.append("{}");
@@ -299,6 +326,12 @@ public class Phase4QuestLucExporter {
     sb.append(pad).append("}");
   }
 
+  /**
+   * 将数据追加到目标容器。
+   * @param sb 方法参数
+   * @param values 方法参数
+   * @param indent 方法参数
+   */
   private void appendIntArray(StringBuilder sb, List<Integer> values, int indent) {
     if(values == null || values.isEmpty()) {
       sb.append("{}");
@@ -317,6 +350,9 @@ public class Phase4QuestLucExporter {
     sb.append(pad).append("}");
   }
 
+  /**
+   * 在保持源顺序的前提下输出 pair 数组 Lua 表。
+   */
   private void appendPairArray(StringBuilder sb,
                                List<Pair> values,
                                int indent,
@@ -345,6 +381,11 @@ public class Phase4QuestLucExporter {
     sb.append(pad).append("}");
   }
 
+  /**
+   * 计算并返回结果。
+   * @param count 方法参数
+   * @return 计算结果
+   */
   private String pad(int count) {
     StringBuilder sb = new StringBuilder();
     for(int i = 0; i < count; i++) {
@@ -353,10 +394,20 @@ public class Phase4QuestLucExporter {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String luaIntOrNil(Integer value) {
     return value == null ? "nil" : Integer.toString(value.intValue());
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String luaStringOrNil(String value) {
     if(value == null) {
       return "nil";
@@ -400,12 +451,21 @@ public class Phase4QuestLucExporter {
     return sb.toString();
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param output 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path output) throws Exception {
     if(output.getParent() != null && !Files.exists(output.getParent())) {
       Files.createDirectories(output.getParent());
     }
   }
 
+  /**
+   * 确保前置条件满足。
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureMysqlDriverAvailable() throws Exception {
     try {
       DriverManager.getDriver(DEFAULT_JDBC);
@@ -451,6 +511,12 @@ public class Phase4QuestLucExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -461,16 +527,28 @@ public class Phase4QuestLucExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }

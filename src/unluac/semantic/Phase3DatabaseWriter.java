@@ -132,6 +132,11 @@ public class Phase3DatabaseWriter {
     return summary;
   }
 
+  /**
+   * 处理create Schema辅助逻辑。
+   * @param connection 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void createSchema(Connection connection) throws Exception {
     List<String> ddl = new ArrayList<String>();
     ddl.add("CREATE TABLE IF NOT EXISTS quest_main ("
@@ -227,6 +232,11 @@ public class Phase3DatabaseWriter {
     }
   }
 
+  /**
+   * 处理truncate Data辅助逻辑。
+   * @param connection 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void truncateData(Connection connection) throws Exception {
     List<String> tables = new ArrayList<String>();
     tables.add("npc_quest_reference");
@@ -239,6 +249,8 @@ public class Phase3DatabaseWriter {
     tables.add("quest_contents");
     tables.add("quest_main");
 
+    // Truncate child tables first to keep operations deterministic and avoid
+    // transient integrity/order issues in future schema extensions.
     try(Statement statement = connection.createStatement()) {
       for(String table : tables) {
         statement.execute("TRUNCATE TABLE " + table);
@@ -246,6 +258,9 @@ public class Phase3DatabaseWriter {
     }
   }
 
+  /**
+   * 在单事务内写入任务主表、对话数组、目标与奖励。
+   */
   private void insertQuestData(Connection connection,
                                List<QuestRow> quests,
                                InsertSummary summary) throws Exception {
@@ -267,6 +282,7 @@ public class Phase3DatabaseWriter {
         PreparedStatement psGoalMeet = connection.prepareStatement(insertGoalMeet);
         PreparedStatement psRewardItem = connection.prepareStatement(insertRewardItem)) {
 
+      // 按当前数组位置写入 seq_index，保持原始列表顺序。
       for(QuestRow quest : quests) {
         psMain.setInt(1, quest.questId);
         psMain.setString(2, quest.name);
@@ -348,6 +364,9 @@ public class Phase3DatabaseWriter {
     }
   }
 
+  /**
+   * 写入 NPC-任务引用索引行。
+   */
   private void insertNpcReferences(Connection connection,
                                    List<NpcQuestReferenceRow> references,
                                    InsertSummary summary) throws Exception {
@@ -365,6 +384,12 @@ public class Phase3DatabaseWriter {
     }
   }
 
+  /**
+   * 解析来源数据。
+   * @param phase2QuestJson 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private List<QuestRow> parseQuestRows(Path phase2QuestJson) throws Exception {
     String text = new String(Files.readAllBytes(phase2QuestJson), UTF8);
     Map<String, Object> root = QuestSemanticJson.parseObject(text, "phase2_quest_data", 0);
@@ -419,6 +444,12 @@ public class Phase3DatabaseWriter {
     return out;
   }
 
+  /**
+   * 解析来源数据。
+   * @param phase25GraphJson 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private List<NpcQuestReferenceRow> parseNpcQuestReferences(Path phase25GraphJson) throws Exception {
     String text = new String(Files.readAllBytes(phase25GraphJson), UTF8);
     Map<String, Object> root = QuestSemanticJson.parseObject(text, "phase2_5_quest_npc_dependency_graph", 0);
@@ -470,6 +501,11 @@ public class Phase3DatabaseWriter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param accessType 方法参数
+   * @return 计算结果
+   */
   private boolean isGoalAccessType(String accessType) {
     if(accessType == null) {
       return false;
@@ -481,6 +517,11 @@ public class Phase3DatabaseWriter {
         || normalized.startsWith("goal.");
   }
 
+  /**
+   * 解析来源数据。
+   * @param toValue 方法参数
+   * @return 计算结果
+   */
   private int parseQuestId(Object toValue) {
     String text = safe(toValue);
     if(text.isEmpty()) {
@@ -492,6 +533,11 @@ public class Phase3DatabaseWriter {
     return parseIntSafe(text);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<String> asStringList(Object value) {
     List<String> out = new ArrayList<String>();
     if(!(value instanceof List<?>)) {
@@ -505,6 +551,11 @@ public class Phase3DatabaseWriter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<Integer> asIntList(Object value) {
     List<Integer> out = new ArrayList<Integer>();
     if(!(value instanceof List<?>)) {
@@ -518,6 +569,13 @@ public class Phase3DatabaseWriter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @param leftKey 方法参数
+   * @param rightKey 方法参数
+   * @return 计算结果
+   */
   private List<IntPair> asPairList(Object value, String leftKey, String rightKey) {
     List<IntPair> out = new ArrayList<IntPair>();
     if(!(value instanceof List<?>)) {
@@ -540,6 +598,11 @@ public class Phase3DatabaseWriter {
   }
 
   @SuppressWarnings("unchecked")
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private Map<String, Object> asMap(Object value) {
     if(value instanceof Map<?, ?>) {
       return (Map<String, Object>) value;
@@ -547,6 +610,11 @@ public class Phase3DatabaseWriter {
     return Collections.emptyMap();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private int intOf(Object value) {
     if(value == null) {
       return 0;
@@ -557,6 +625,11 @@ public class Phase3DatabaseWriter {
     return parseIntSafe(safe(value));
   }
 
+  /**
+   * 解析来源数据。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private int parseIntSafe(String text) {
     if(text == null) {
       return 0;
@@ -572,10 +645,20 @@ public class Phase3DatabaseWriter {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String safe(Object value) {
     return value == null ? "" : String.valueOf(value);
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param file 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());

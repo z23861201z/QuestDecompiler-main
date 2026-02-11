@@ -171,6 +171,9 @@ public class Phase7ANpcTextExtractionSystem {
     report.textNodes.addAll(nodes);
   }
 
+  /**
+   * 抽取 NPC_SAY/NPC_ASK 文本节点及其定位与上下文信息。
+   */
   private List<NpcTextNode> extractNodes(List<Token> tokens,
                                          String sourceText,
                                          String relativeFile) {
@@ -236,6 +239,11 @@ public class Phase7ANpcTextExtractionSystem {
     return out;
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param call 方法参数
+   * @return 计算结果
+   */
   private List<Token> collectStringTokens(CallNode call) {
     List<Token> out = new ArrayList<Token>();
     if(call == null || call.arguments == null) {
@@ -254,6 +262,9 @@ public class Phase7ANpcTextExtractionSystem {
     return out;
   }
 
+  /**
+   * 在扫描 token 时维护轻量流程上下文栈。
+   */
   private void updateContext(List<Token> tokens,
                              int index,
                              List<BlockContext> stack) {
@@ -317,6 +328,13 @@ public class Phase7ANpcTextExtractionSystem {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param keyword 方法参数
+   * @return 计算结果
+   */
   private int findKeyword(List<Token> tokens, int start, String keyword) {
     int depthParen = 0;
     int depthBracket = 0;
@@ -339,6 +357,13 @@ public class Phase7ANpcTextExtractionSystem {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private List<Token> sliceTokens(List<Token> tokens, int start, int endExclusive) {
     if(start < 0) {
       start = 0;
@@ -352,6 +377,12 @@ public class Phase7ANpcTextExtractionSystem {
     return new ArrayList<Token>(tokens.subList(start, endExclusive));
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @return 计算结果
+   */
   private String parseFunctionName(List<Token> tokens, int start) {
     StringBuilder sb = new StringBuilder();
     int index = start;
@@ -376,6 +407,9 @@ public class Phase7ANpcTextExtractionSystem {
     return sb.length() == 0 ? "<anonymous>" : sb.toString();
   }
 
+  /**
+   * 根据局部表达式与父级上下文推断关联 questId。
+   */
   private Set<Integer> inferQuestIds(List<Token> allTokens,
                                      int fromIndex,
                                      int toIndex,
@@ -398,6 +432,11 @@ public class Phase7ANpcTextExtractionSystem {
     return ids;
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param tokens 方法参数
+   * @param out 方法参数
+   */
   private void collectQuestIdsFromTokens(List<Token> tokens, Set<Integer> out) {
     if(tokens == null || tokens.size() < 4) {
       return;
@@ -421,6 +460,11 @@ public class Phase7ANpcTextExtractionSystem {
     }
   }
 
+  /**
+   * 解析来源数据。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private Integer parseIntegerToken(String text) {
     if(text == null || text.trim().isEmpty()) {
       return null;
@@ -433,6 +477,11 @@ public class Phase7ANpcTextExtractionSystem {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param stack 方法参数
+   * @return 计算结果
+   */
   private String findCurrentFunction(List<BlockContext> stack) {
     for(int i = stack.size() - 1; i >= 0; i--) {
       BlockContext ctx = stack.get(i);
@@ -443,6 +492,11 @@ public class Phase7ANpcTextExtractionSystem {
     return "";
   }
 
+  /**
+   * 计算并返回结果。
+   * @param stack 方法参数
+   * @return 计算结果
+   */
   private String buildAstContext(List<BlockContext> stack) {
     if(stack.isEmpty()) {
       return "<global>";
@@ -467,6 +521,11 @@ public class Phase7ANpcTextExtractionSystem {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param callee 方法参数
+   * @return 计算结果
+   */
   private String resolveCallName(ExprNode callee) {
     ExprNode node = callee;
     while(node instanceof ParenNode) {
@@ -481,6 +540,11 @@ public class Phase7ANpcTextExtractionSystem {
     return "";
   }
 
+  /**
+   * 计算并返回结果。
+   * @param literal 方法参数
+   * @return 计算结果
+   */
   private String stripQuotes(String literal) {
     if(literal == null) {
       return "";
@@ -492,6 +556,9 @@ public class Phase7ANpcTextExtractionSystem {
     return literal;
   }
 
+  /**
+   * 重建 `npc_dialogue_text` 并批量写入抽取节点。
+   */
   private int upsertIntoDatabase(List<NpcTextNode> nodes,
                                  String ddl,
                                  String jdbcUrl,
@@ -543,11 +610,21 @@ public class Phase7ANpcTextExtractionSystem {
     }
   }
 
+  /**
+   * 处理write Ddl辅助逻辑。
+   * @param ddlOutput 方法参数
+   * @param ddl 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void writeDdl(Path ddlOutput, String ddl) throws Exception {
     ensureParent(ddlOutput);
     Files.write(ddlOutput, (ddl + System.lineSeparator()).getBytes(UTF8));
   }
 
+  /**
+   * 计算并返回结果。
+   * @return 计算结果
+   */
   private String ddlSql() {
     return "CREATE TABLE IF NOT EXISTS npc_dialogue_text ("
         + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
@@ -571,6 +648,12 @@ public class Phase7ANpcTextExtractionSystem {
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci";
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param startIndex 方法参数
+   * @return 计算结果
+   */
   private ParseResult parsePostfixChain(List<Token> tokens, int startIndex) {
     if(startIndex < 0 || startIndex >= tokens.size()) {
       return null;
@@ -630,6 +713,13 @@ public class Phase7ANpcTextExtractionSystem {
     return out;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private List<ArgNode> parseArgs(List<Token> tokens, int start, int endExclusive) {
     List<ArgNode> args = new ArrayList<ArgNode>();
     int cursor = start;
@@ -658,6 +748,13 @@ public class Phase7ANpcTextExtractionSystem {
     return args;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private ArgNode buildArg(List<Token> tokens, int start, int endExclusive) {
     ArgNode arg = new ArgNode();
     if(start < 0) {
@@ -674,6 +771,13 @@ public class Phase7ANpcTextExtractionSystem {
     return arg;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private ExprNode parseExpressionSlice(List<Token> tokens, int start, int endExclusive) {
     if(start >= endExclusive) {
       return new RawNode("", 0, 0, 1, 1);
@@ -688,6 +792,14 @@ public class Phase7ANpcTextExtractionSystem {
     return parsed;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param openIndex 方法参数
+   * @param open 方法参数
+   * @param close 方法参数
+   * @return 计算结果
+   */
   private int findMatching(List<Token> tokens, int openIndex, String open, String close) {
     int depth = 0;
     for(int i = openIndex; i < tokens.size(); i++) {
@@ -704,6 +816,13 @@ public class Phase7ANpcTextExtractionSystem {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private String joinTokenText(List<Token> tokens, int start, int endExclusive) {
     StringBuilder sb = new StringBuilder();
     for(int i = start; i < endExclusive; i++) {
@@ -715,6 +834,11 @@ public class Phase7ANpcTextExtractionSystem {
     return sb.toString();
   }
 
+  /**
+   * 将源码文本切分为词法单元。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private List<Token> tokenize(String text) {
     List<Token> tokens = new ArrayList<Token>();
     int index = 0;
@@ -821,14 +945,29 @@ public class Phase7ANpcTextExtractionSystem {
     return tokens;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierStart(char ch) {
     return ch == '_' || Character.isLetter(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierPart(char ch) {
     return ch == '_' || Character.isLetterOrDigit(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ident 方法参数
+   * @return 计算结果
+   */
   private boolean isKeyword(String ident) {
     if(ident == null) {
       return false;
@@ -854,6 +993,14 @@ public class Phase7ANpcTextExtractionSystem {
         || "do".equals(ident);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @return 计算结果
+   */
   private int[] moveLine(String text, int index, int line, int column) {
     if(text.charAt(index) == '\r') {
       if(index + 1 < text.length() && text.charAt(index + 1) == '\n') {
@@ -864,6 +1011,15 @@ public class Phase7ANpcTextExtractionSystem {
     return new int[] {index + 1, line + 1, 1};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param quote 方法参数
+   * @return 计算结果
+   */
   private int[] consumeQuotedString(String text, int index, int line, int column, char quote) {
     index++;
     column++;
@@ -904,6 +1060,12 @@ public class Phase7ANpcTextExtractionSystem {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @return 计算结果
+   */
   private int longBracketEquals(String text, int start) {
     if(start < 0 || start >= text.length() || text.charAt(start) != '[') {
       return -1;
@@ -920,6 +1082,15 @@ public class Phase7ANpcTextExtractionSystem {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param equals 方法参数
+   * @return 计算结果
+   */
   private int[] skipLongBracket(String text, int start, int line, int column, int equals) {
     int index = start + 2 + equals;
     column += 2 + equals;
@@ -953,6 +1124,12 @@ public class Phase7ANpcTextExtractionSystem {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param raw 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private DecodedText decode(byte[] raw) throws Exception {
     byte[] bom = new byte[0];
     byte[] content = raw;
@@ -990,6 +1167,11 @@ public class Phase7ANpcTextExtractionSystem {
     return decoded;
   }
 
+  /**
+   * Normalize normalize Path into stable representation.
+   * @param path 方法参数
+   * @return 计算结果
+   */
   private String normalizePath(String path) {
     if(path == null) {
       return "";
@@ -997,12 +1179,22 @@ public class Phase7ANpcTextExtractionSystem {
     return path.replace('\\', '/').trim();
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param file 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());
     }
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param jdbcUrl 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureMysqlDriverAvailable(String jdbcUrl) throws Exception {
     try {
       DriverManager.getDriver(jdbcUrl);
@@ -1058,6 +1250,10 @@ public class Phase7ANpcTextExtractionSystem {
       return index >= endExclusive;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseOr() {
       ExprNode left = parseAnd();
       while(matchKeyword("or")) {
@@ -1068,6 +1264,10 @@ public class Phase7ANpcTextExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseAnd() {
       ExprNode left = parseEquality();
       while(matchKeyword("and")) {
@@ -1078,6 +1278,10 @@ public class Phase7ANpcTextExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseEquality() {
       ExprNode left = parseComparison();
       while(matchSymbol("==") || matchSymbol("~=")) {
@@ -1088,6 +1292,10 @@ public class Phase7ANpcTextExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseComparison() {
       ExprNode left = parseConcat();
       while(matchSymbol(">") || matchSymbol(">=") || matchSymbol("<") || matchSymbol("<=")) {
@@ -1098,6 +1306,10 @@ public class Phase7ANpcTextExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseConcat() {
       ExprNode left = parseUnary();
       while(matchSymbol("..")) {
@@ -1108,6 +1320,10 @@ public class Phase7ANpcTextExtractionSystem {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseUnary() {
       if(matchKeyword("not")) {
         Token op = previous();
@@ -1122,6 +1338,10 @@ public class Phase7ANpcTextExtractionSystem {
       return parsePrimary();
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parsePrimary() {
       if(matchSymbol("(")) {
         Token left = previous();
@@ -1156,6 +1376,11 @@ public class Phase7ANpcTextExtractionSystem {
       return null;
     }
 
+    /**
+     * 解析来源数据。
+     * @param base 方法参数
+     * @return 计算结果
+     */
     private ExprNode parsePostfix(ExprNode base) {
       ExprNode current = base;
       while(!isAtEnd()) {
@@ -1202,6 +1427,13 @@ public class Phase7ANpcTextExtractionSystem {
       return current;
     }
 
+    /**
+     * 计算并返回结果。
+     * @param openIndex 方法参数
+     * @param open 方法参数
+     * @param close 方法参数
+     * @return 计算结果
+     */
     private int findMatchingWithin(int openIndex, String open, String close) {
       int depth = 0;
       for(int i = openIndex; i < endExclusive; i++) {
@@ -1215,6 +1447,11 @@ public class Phase7ANpcTextExtractionSystem {
       return -1;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param kind 方法参数
+     * @return 计算结果
+     */
     private boolean matchKind(TokenKind kind) {
       if(isAtEnd()) return false;
       if(peek().kind != kind) return false;
@@ -1222,6 +1459,11 @@ public class Phase7ANpcTextExtractionSystem {
       return true;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param keyword 方法参数
+     * @return 计算结果
+     */
     private boolean matchKeyword(String keyword) {
       if(isAtEnd()) return false;
       Token t = peek();
@@ -1232,6 +1474,11 @@ public class Phase7ANpcTextExtractionSystem {
       return false;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param symbol 方法参数
+     * @return 计算结果
+     */
     private boolean matchSymbol(String symbol) {
       if(isAtEnd()) return false;
       Token t = peek();
@@ -1242,14 +1489,26 @@ public class Phase7ANpcTextExtractionSystem {
       return false;
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token previous() {
       return tokens.get(index - 1);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token peek() {
       return tokens.get(index);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token advance() {
       return tokens.get(index++);
     }
@@ -1263,11 +1522,24 @@ public class Phase7ANpcTextExtractionSystem {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @param info 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
       return driver.connect(url, info);
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -1278,16 +1550,28 @@ public class Phase7ANpcTextExtractionSystem {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }

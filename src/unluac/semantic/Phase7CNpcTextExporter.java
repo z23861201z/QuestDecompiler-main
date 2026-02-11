@@ -201,6 +201,12 @@ public class Phase7CNpcTextExporter {
     return report;
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param sourceNpcDir 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private List<Path> collectNpcFiles(Path sourceNpcDir) throws Exception {
     List<Path> files = new ArrayList<Path>();
     Files.walk(sourceNpcDir)
@@ -214,6 +220,12 @@ public class Phase7CNpcTextExporter {
     return files;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param Map<String 方法参数
+   * @param rows 方法参数
+   * @return 计算结果
+   */
   private int countRows(Map<String, List<ModifiedTextRow>> rows) {
     int count = 0;
     for(List<ModifiedTextRow> list : rows.values()) {
@@ -222,6 +234,9 @@ public class Phase7CNpcTextExporter {
     return count;
   }
 
+  /**
+   * 确保未修改文件在导出后保持字节级完全一致。
+   */
   private void verifyUnchangedBytes(Path sourceNpcDir,
                                     Path outputDir,
                                     List<String> changedFiles,
@@ -342,6 +357,9 @@ public class Phase7CNpcTextExporter {
     return result;
   }
 
+  /**
+   * 优先按 astMarker 定位目标文本节点，失败再回退到行列定位。
+   */
   private LuaTextNode locateNode(ModifiedTextRow row,
                                  Map<String, LuaTextNode> byMarker,
                                  Map<String, LuaTextNode> byLineColumn) {
@@ -369,6 +387,12 @@ public class Phase7CNpcTextExporter {
     return null;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param spans 方法参数
+   * @return 计算结果
+   */
   private String applySpans(String text, List<ReplacementSpan> spans) {
     StringBuilder sb = new StringBuilder(text.length() + spans.size() * 16);
     int cursor = 0;
@@ -385,6 +409,13 @@ public class Phase7CNpcTextExporter {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param relativeFile 方法参数
+   * @param original 方法参数
+   * @param rewritten 方法参数
+   * @return 计算结果
+   */
   private String buildUnifiedDiff(String relativeFile, String original, String rewritten) {
     StringBuilder sb = new StringBuilder();
     sb.append("--- ").append(relativeFile).append("\n");
@@ -401,10 +432,18 @@ public class Phase7CNpcTextExporter {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private String[] splitLines(String text) {
     return text.split("\\r?\\n", -1);
   }
 
+  /**
+   * 从可编辑文本表中读取有效修改行。
+   */
   private Map<String, List<ModifiedTextRow>> loadModifiedRows(String jdbcUrl,
                                                               String user,
                                                               String password) throws Exception {
@@ -474,6 +513,12 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param connection 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private TableMapping detectSourceTable(Connection connection) throws Exception {
     String schema = connection.getCatalog();
     if(schema == null || schema.trim().isEmpty()) {
@@ -523,6 +568,14 @@ public class Phase7CNpcTextExporter {
     return null;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param meta 方法参数
+   * @param schema 方法参数
+   * @param table 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private boolean tableExists(DatabaseMetaData meta, String schema, String table) throws Exception {
     try(ResultSet rs = meta.getTables(schema, null, table, new String[] {"TABLE"})) {
       if(rs.next()) {
@@ -534,6 +587,14 @@ public class Phase7CNpcTextExporter {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param meta 方法参数
+   * @param schema 方法参数
+   * @param table 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Map<String, String> readColumnMap(DatabaseMetaData meta, String schema, String table) throws Exception {
     Map<String, String> out = new HashMap<String, String>();
     try(ResultSet rs = meta.getColumns(schema, null, table, "%")) {
@@ -557,6 +618,13 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param Map<String 方法参数
+   * @param columns 方法参数
+   * @param candidates 方法参数
+   * @return 计算结果
+   */
   private String pick(Map<String, String> columns, String... candidates) {
     for(String candidate : candidates) {
       if(candidate == null) {
@@ -570,6 +638,12 @@ public class Phase7CNpcTextExporter {
     return null;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param column 方法参数
+   * @param alias 方法参数
+   * @return 计算结果
+   */
   private String nullableColumnExpr(String column, String alias) {
     if(column == null || column.trim().isEmpty()) {
       return "NULL AS " + alias;
@@ -577,14 +651,29 @@ public class Phase7CNpcTextExporter {
     return quoteIdentifier(column) + " AS " + alias;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param id 方法参数
+   * @return 计算结果
+   */
   private String quoteIdentifier(String id) {
     return "`" + id.replace("`", "``") + "`";
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String safe(String value) {
     return value == null ? "" : value;
   }
 
+  /**
+   * Normalize normalize Path into stable representation.
+   * @param path 方法参数
+   * @return 计算结果
+   */
   private String normalizePath(String path) {
     if(path == null) {
       return "";
@@ -592,12 +681,23 @@ public class Phase7CNpcTextExporter {
     return path.replace('\\', '/').trim();
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param file 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param raw 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private DecodedText decode(byte[] raw) throws Exception {
     byte[] bom = new byte[0];
     byte[] content = raw;
@@ -636,6 +736,13 @@ public class Phase7CNpcTextExporter {
     return decoded;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param decoded 方法参数
+   * @param text 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private byte[] encode(DecodedText decoded, String text) throws Exception {
     byte[] body;
     Charset charset = decoded != null && decoded.charset != null ? decoded.charset : UTF8;
@@ -661,6 +768,12 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param rawText 方法参数
+   * @param originalLiteral 方法参数
+   * @return 计算结果
+   */
   private String buildReplacementLiteral(String rawText, String originalLiteral) {
     if(rawText == null) {
       rawText = "";
@@ -682,6 +795,12 @@ public class Phase7CNpcTextExporter {
     return "\"" + escapeLuaString(rawText, '"') + "\"";
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param quote 方法参数
+   * @return 计算结果
+   */
   private String escapeLuaString(String text, char quote) {
     StringBuilder sb = new StringBuilder(text.length() + 16);
     for(int i = 0; i < text.length(); i++) {
@@ -719,6 +838,12 @@ public class Phase7CNpcTextExporter {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param preferredEquals 方法参数
+   * @return 计算结果
+   */
   private String buildLongBracketLiteral(String text, int preferredEquals) {
     int eq = Math.max(0, preferredEquals);
     while(true) {
@@ -730,6 +855,12 @@ public class Phase7CNpcTextExporter {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @param count 方法参数
+   * @return 计算结果
+   */
   private String repeat(char ch, int count) {
     if(count <= 0) {
       return "";
@@ -739,6 +870,12 @@ public class Phase7CNpcTextExporter {
     return new String(chars);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @return 计算结果
+   */
   private int longBracketEquals(String text, int start) {
     if(text == null || start < 0 || start >= text.length() || text.charAt(start) != '[') {
       return -1;
@@ -755,6 +892,11 @@ public class Phase7CNpcTextExporter {
     return -1;
   }
 
+  /**
+   * 从语义结构中抽取Text Nodes。
+   * @param tokens 方法参数
+   * @return 计算结果
+   */
   private List<LuaTextNode> extractTextNodes(List<Token> tokens) {
     List<LuaTextNode> out = new ArrayList<LuaTextNode>();
     int ordinal = 0;
@@ -797,6 +939,11 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param callee 方法参数
+   * @return 计算结果
+   */
   private String resolveCallName(ExprNode callee) {
     if(callee instanceof NameNode) {
       return ((NameNode) callee).name;
@@ -807,6 +954,11 @@ public class Phase7CNpcTextExporter {
     return "";
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param call 方法参数
+   * @return 计算结果
+   */
   private List<Token> collectStringTokens(CallNode call) {
     List<Token> out = new ArrayList<Token>();
     if(call == null || call.arguments == null) {
@@ -825,6 +977,12 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param startIndex 方法参数
+   * @return 计算结果
+   */
   private ParseResult parsePostfixChain(List<Token> tokens, int startIndex) {
     if(startIndex < 0 || startIndex >= tokens.size()) {
       return null;
@@ -884,6 +1042,13 @@ public class Phase7CNpcTextExporter {
     return out;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private List<ArgNode> parseArgs(List<Token> tokens, int start, int endExclusive) {
     List<ArgNode> args = new ArrayList<ArgNode>();
     int cursor = start;
@@ -912,6 +1077,13 @@ public class Phase7CNpcTextExporter {
     return args;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private ArgNode buildArg(List<Token> tokens, int start, int endExclusive) {
     ArgNode arg = new ArgNode();
     if(start < 0) {
@@ -928,6 +1100,13 @@ public class Phase7CNpcTextExporter {
     return arg;
   }
 
+  /**
+   * 解析来源数据。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private ExprNode parseExpressionSlice(List<Token> tokens, int start, int endExclusive) {
     if(start >= endExclusive) {
       return new RawNode("", 0, 0, 1, 1);
@@ -942,6 +1121,14 @@ public class Phase7CNpcTextExporter {
     return parsed;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param openIndex 方法参数
+   * @param open 方法参数
+   * @param close 方法参数
+   * @return 计算结果
+   */
   private int findMatching(List<Token> tokens, int openIndex, String open, String close) {
     int depth = 0;
     for(int i = openIndex; i < tokens.size(); i++) {
@@ -958,6 +1145,13 @@ public class Phase7CNpcTextExporter {
     return -1;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param tokens 方法参数
+   * @param start 方法参数
+   * @param endExclusive 方法参数
+   * @return 计算结果
+   */
   private String joinTokenText(List<Token> tokens, int start, int endExclusive) {
     StringBuilder sb = new StringBuilder();
     for(int i = start; i < endExclusive; i++) {
@@ -969,6 +1163,11 @@ public class Phase7CNpcTextExporter {
     return sb.toString();
   }
 
+  /**
+   * 将源码文本切分为词法单元。
+   * @param text 方法参数
+   * @return 计算结果
+   */
   private List<Token> tokenize(String text) {
     List<Token> tokens = new ArrayList<Token>();
     int index = 0;
@@ -1075,14 +1274,29 @@ public class Phase7CNpcTextExporter {
     return tokens;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierStart(char ch) {
     return ch == '_' || Character.isLetter(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ch 方法参数
+   * @return 计算结果
+   */
   private boolean isIdentifierPart(char ch) {
     return ch == '_' || Character.isLetterOrDigit(ch);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param ident 方法参数
+   * @return 计算结果
+   */
   private boolean isKeyword(String ident) {
     if(ident == null) {
       return false;
@@ -1108,6 +1322,14 @@ public class Phase7CNpcTextExporter {
         || "do".equals(ident);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @return 计算结果
+   */
   private int[] moveLine(String text, int index, int line, int column) {
     if(text.charAt(index) == '\r') {
       if(index + 1 < text.length() && text.charAt(index + 1) == '\n') {
@@ -1118,6 +1340,15 @@ public class Phase7CNpcTextExporter {
     return new int[] {index + 1, line + 1, 1};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param index 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param quote 方法参数
+   * @return 计算结果
+   */
   private int[] consumeQuotedString(String text, int index, int line, int column, char quote) {
     index++;
     column++;
@@ -1158,6 +1389,15 @@ public class Phase7CNpcTextExporter {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param start 方法参数
+   * @param line 方法参数
+   * @param column 方法参数
+   * @param equals 方法参数
+   * @return 计算结果
+   */
   private int[] skipLongBracket(String text, int start, int line, int column, int equals) {
     int index = start + 2 + equals;
     column += 2 + equals;
@@ -1191,6 +1431,11 @@ public class Phase7CNpcTextExporter {
     return new int[] {index, line, column};
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param jdbcUrl 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureMysqlDriverAvailable(String jdbcUrl) throws Exception {
     try {
       DriverManager.getDriver(jdbcUrl);
@@ -1231,11 +1476,24 @@ public class Phase7CNpcTextExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @param info 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
       return driver.connect(url, info);
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -1246,16 +1504,28 @@ public class Phase7CNpcTextExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }
@@ -1289,6 +1559,10 @@ public class Phase7CNpcTextExporter {
       return index >= endExclusive;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseOr() {
       ExprNode left = parseAnd();
       while(matchKeyword("or")) {
@@ -1299,6 +1573,10 @@ public class Phase7CNpcTextExporter {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseAnd() {
       ExprNode left = parseEquality();
       while(matchKeyword("and")) {
@@ -1309,6 +1587,10 @@ public class Phase7CNpcTextExporter {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseEquality() {
       ExprNode left = parseComparison();
       while(matchSymbol("==") || matchSymbol("~=")) {
@@ -1319,6 +1601,10 @@ public class Phase7CNpcTextExporter {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseComparison() {
       ExprNode left = parseConcat();
       while(matchSymbol(">") || matchSymbol(">=") || matchSymbol("<") || matchSymbol("<=")) {
@@ -1329,6 +1615,10 @@ public class Phase7CNpcTextExporter {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseConcat() {
       ExprNode left = parseUnary();
       while(matchSymbol("..")) {
@@ -1339,6 +1629,10 @@ public class Phase7CNpcTextExporter {
       return left;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parseUnary() {
       if(matchKeyword("not")) {
         Token op = previous();
@@ -1353,6 +1647,10 @@ public class Phase7CNpcTextExporter {
       return parsePrimary();
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private ExprNode parsePrimary() {
       if(matchSymbol("(")) {
         Token left = previous();
@@ -1387,6 +1685,11 @@ public class Phase7CNpcTextExporter {
       return null;
     }
 
+    /**
+     * 解析来源数据。
+     * @param base 方法参数
+     * @return 计算结果
+     */
     private ExprNode parsePostfix(ExprNode base) {
       ExprNode current = base;
       while(!isAtEnd()) {
@@ -1433,6 +1736,12 @@ public class Phase7CNpcTextExporter {
       return current;
     }
 
+    /**
+     * 解析来源数据。
+     * @param start 方法参数
+     * @param endExclusive 方法参数
+     * @return 计算结果
+     */
     private ExprNode parseSubExpression(int start, int endExclusive) {
       if(start >= endExclusive) {
         return new RawNode("", tokens.get(start - 1).startOffset, tokens.get(start - 1).endOffset, tokens.get(start - 1).line, tokens.get(start - 1).column);
@@ -1447,6 +1756,13 @@ public class Phase7CNpcTextExporter {
       return node;
     }
 
+    /**
+     * 计算并返回结果。
+     * @param openIndex 方法参数
+     * @param open 方法参数
+     * @param close 方法参数
+     * @return 计算结果
+     */
     private int findMatching(int openIndex, String open, String close) {
       int depth = 0;
       for(int i = openIndex; i < endExclusive; i++) {
@@ -1463,6 +1779,12 @@ public class Phase7CNpcTextExporter {
       return -1;
     }
 
+    /**
+     * 计算并返回结果。
+     * @param start 方法参数
+     * @param endExclusive 方法参数
+     * @return 计算结果
+     */
     private String joinTokens(int start, int endExclusive) {
       StringBuilder sb = new StringBuilder();
       for(int i = start; i < endExclusive; i++) {
@@ -1474,6 +1796,11 @@ public class Phase7CNpcTextExporter {
       return sb.toString();
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param symbol 方法参数
+     * @return 计算结果
+     */
     private boolean matchSymbol(String symbol) {
       if(isAtEnd()) {
         return false;
@@ -1486,6 +1813,11 @@ public class Phase7CNpcTextExporter {
       return false;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param keyword 方法参数
+     * @return 计算结果
+     */
     private boolean matchKeyword(String keyword) {
       if(isAtEnd()) {
         return false;
@@ -1498,6 +1830,11 @@ public class Phase7CNpcTextExporter {
       return false;
     }
 
+    /**
+     * 将数据与预期结构进行匹配。
+     * @param kind 方法参数
+     * @return 计算结果
+     */
     private boolean matchKind(TokenKind kind) {
       if(isAtEnd()) {
         return false;
@@ -1510,14 +1847,26 @@ public class Phase7CNpcTextExporter {
       return false;
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token advance() {
       return tokens.get(index++);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token previous() {
       return tokens.get(index - 1);
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private Token peek() {
       return tokens.get(index);
     }

@@ -73,6 +73,7 @@ public class Phase7NpcLucBinaryExporter {
     List<ConstantRef> stringConstants = new ArrayList<ConstantRef>();
     collectStringConstants(chunk.mainFunction, stringConstants);
 
+    // 在常量池层应用 DB 变更，保持字节码控制流不变。
     int patchedCount = applyMutations(chunk, stringConstants, mutations, stringCharset);
     if(patchedCount != mutations.size()) {
       throw new IllegalStateException("Not all mutations applied. expected=" + mutations.size() + " actual=" + patchedCount);
@@ -143,6 +144,9 @@ public class Phase7NpcLucBinaryExporter {
     return applied;
   }
 
+  /**
+   * 构建带显式结尾空字节的 LuaString 负载。
+   */
   private static LuaChunk.LuaString buildLuaString(String text, Charset charset) {
     byte[] body = text == null ? new byte[0] : text.getBytes(charset);
     byte[] decoded = new byte[body.length + 1];
@@ -157,6 +161,9 @@ public class Phase7NpcLucBinaryExporter {
     return value;
   }
 
+  /**
+   * 递归收集函数/子原型树中的全部字符串常量。
+   */
   private static void collectStringConstants(LuaChunk.Function function, List<ConstantRef> out) {
     if(function == null) {
       return;
@@ -225,6 +232,9 @@ public class Phase7NpcLucBinaryExporter {
     return out;
   }
 
+  /**
+   * 确保当前运行时可用 MySQL JDBC 驱动。
+   */
   private static void ensureMysqlDriverAvailable(String jdbcUrl) throws Exception {
     try {
       DriverManager.getDriver(jdbcUrl);
@@ -257,19 +267,38 @@ public class Phase7NpcLucBinaryExporter {
     DriverManager.registerDriver(new DriverShim((Driver) obj));
   }
 
+  /**
+   * 用于类加载器加载 MySQL 驱动的适配器。
+   */
   private static final class DriverShim implements Driver {
     private final Driver driver;
 
+    /**
+     * 包装底层 JDBC 驱动实例。
+     */
     DriverShim(Driver driver) {
       this.driver = driver;
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @param info 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
       return driver.connect(url, info);
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -280,16 +309,28 @@ public class Phase7NpcLucBinaryExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }
@@ -300,12 +341,18 @@ public class Phase7NpcLucBinaryExporter {
     }
   }
 
+  /**
+   * 指向 chunk 树中某个可变字符串常量的引用。
+   */
   private static final class ConstantRef {
     String functionPath;
     int constantIndex;
     LuaChunk.Constant constant;
   }
 
+  /**
+   * 从数据库加载的一条文本变更记录。
+   */
   private static final class TextMutation {
     long textId;
     String rawText;

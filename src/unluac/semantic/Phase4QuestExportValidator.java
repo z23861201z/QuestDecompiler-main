@@ -28,6 +28,11 @@ public class Phase4QuestExportValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
 
+  /**
+   * 命令行入口。
+   * @param args 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path originalQuestLuc = args.length >= 1
         ? Paths.get(args[0])
@@ -120,6 +125,12 @@ public class Phase4QuestExportValidator {
     return result;
   }
 
+  /**
+   * Load load Quest Values From Luc from data source.
+   * @param questLuc 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Map<Integer, QuestValue> loadQuestValuesFromLuc(Path questLuc) throws Exception {
     byte[] data = Files.readAllBytes(questLuc);
     LuaChunk chunk = new Lua50ChunkParser().parse(data);
@@ -199,6 +210,12 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * Load load Quest Values From Phase4 Lua from data source.
+   * @param exportedQuestLua 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Map<Integer, QuestValue> loadQuestValuesFromPhase4Lua(Path exportedQuestLua) throws Exception {
     String text = new String(Files.readAllBytes(exportedQuestLua), UTF8);
     Map<Integer, QuestValue> out = new LinkedHashMap<Integer, QuestValue>();
@@ -254,6 +271,13 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param Map<String 方法参数
+   * @param map 方法参数
+   * @param fallbackQuestId 方法参数
+   * @return 计算结果
+   */
   private QuestValue fromMapToQuestValue(Map<String, Object> map, int fallbackQuestId) {
     QuestValue quest = new QuestValue();
     quest.questId = intOrFallback(map.get("id"), fallbackQuestId);
@@ -278,11 +302,20 @@ public class Phase4QuestExportValidator {
     return quest;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @param fallback 方法参数
+   * @return 计算结果
+   */
   private int intOrFallback(Object value, int fallback) {
     Integer parsed = asNullableInteger(value);
     return parsed == null ? fallback : parsed.intValue();
   }
 
+  /**
+   * Compare scalar field values and record mismatch detail.
+   */
   private void compareScalar(ValidationResult result,
                              int questId,
                              String path,
@@ -296,6 +329,9 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * Compare ordered string array values.
+   */
   private void compareStringList(ValidationResult result,
                                  int questId,
                                  String path,
@@ -314,6 +350,9 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * Compare ordered integer array values.
+   */
   private void compareIntegerList(ValidationResult result,
                                   int questId,
                                   String path,
@@ -332,6 +371,9 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * Compare ordered pair-array values.
+   */
   private void comparePairList(ValidationResult result,
                                int questId,
                                String path,
@@ -353,6 +395,12 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param left 方法参数
+   * @param right 方法参数
+   * @return 计算结果
+   */
   private boolean equalsNullable(Integer left, Integer right) {
     if(left == null && right == null) {
       return true;
@@ -363,6 +411,11 @@ public class Phase4QuestExportValidator {
     return left.intValue() == right.intValue();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String pairText(PairValue value) {
     if(value == null) {
       return "null";
@@ -370,10 +423,20 @@ public class Phase4QuestExportValidator {
     return "{id=" + stringify(value.id) + ",count=" + stringify(value.count) + "}";
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String stringify(Object value) {
     return value == null ? "null" : String.valueOf(value);
   }
 
+  /**
+   * 将数据追加到目标容器。
+   * @param out 方法参数
+   * @param value 方法参数
+   */
   private void appendMeetNpc(List<Integer> out, Object value) {
     if(value == null) {
       return;
@@ -391,6 +454,11 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * 收集数据，供后续处理使用。
+   * @param bindings 方法参数
+   * @return 计算结果
+   */
   private Map<Integer, DialogArrays> collectDialogs(List<QuestSemanticExtractor.FieldBinding> bindings) {
     Map<Integer, DialogArrays> out = new LinkedHashMap<Integer, DialogArrays>();
     for(QuestSemanticExtractor.FieldBinding binding : bindings) {
@@ -424,6 +492,9 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * Collect integer binding value by quest id.
+   */
   private Map<Integer, Integer> collectIntField(List<QuestSemanticExtractor.FieldBinding> bindings,
                                                 String fieldKey) {
     Map<Integer, Integer> out = new LinkedHashMap<Integer, Integer>();
@@ -442,6 +513,11 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private Integer asNullableInteger(Object value) {
     if(value == null) {
       return null;
@@ -460,6 +536,11 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String asNullableString(Object value) {
     if(value == null) {
       return null;
@@ -467,6 +548,11 @@ public class Phase4QuestExportValidator {
     return String.valueOf(value);
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<String> asStringList(Object value) {
     List<String> out = new ArrayList<String>();
     if(!(value instanceof List<?>)) {
@@ -480,6 +566,11 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<Integer> asIntegerList(Object value) {
     List<Integer> out = new ArrayList<Integer>();
     if(!(value instanceof List<?>)) {
@@ -493,6 +584,13 @@ public class Phase4QuestExportValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @param idKey 方法参数
+   * @param countKey 方法参数
+   * @return 计算结果
+   */
   private List<PairValue> asPairList(Object value, String idKey, String countKey) {
     List<PairValue> out = new ArrayList<PairValue>();
     if(!(value instanceof List<?>)) {
@@ -515,6 +613,11 @@ public class Phase4QuestExportValidator {
   }
 
   @SuppressWarnings("unchecked")
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private Map<String, Object> asMap(Object value) {
     if(value instanceof Map<?, ?>) {
       return (Map<String, Object>) value;
@@ -522,6 +625,12 @@ public class Phase4QuestExportValidator {
     return Collections.emptyMap();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param text 方法参数
+   * @param openIndex 方法参数
+   * @return 计算结果
+   */
   private int findMatchingBrace(String text, int openIndex) {
     int depth = 0;
     boolean inString = false;
@@ -558,6 +667,11 @@ public class Phase4QuestExportValidator {
     return -1;
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param output 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path output) throws Exception {
     if(output.getParent() != null && !Files.exists(output.getParent())) {
       Files.createDirectories(output.getParent());
@@ -631,6 +745,12 @@ public class Phase4QuestExportValidator {
       return sb.toString();
     }
 
+    /**
+     * 将to Json Array Of Object序列化为 JSON 文本。
+     * @param List<Map<String 方法参数
+     * @param list 方法参数
+     * @return 计算结果
+     */
     private String toJsonArrayOfObject(List<Map<String, Object>> list) {
       StringBuilder sb = new StringBuilder();
       sb.append('[');
@@ -684,6 +804,10 @@ public class Phase4QuestExportValidator {
       return parseBareword();
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private Object parseTable() {
       expect('{');
       skipWhitespace();
@@ -731,6 +855,10 @@ public class Phase4QuestExportValidator {
       return array;
     }
 
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     private String tryParseKey() {
       skipWhitespace();
       if(index >= text.length()) {
@@ -767,6 +895,10 @@ public class Phase4QuestExportValidator {
       return null;
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private Integer parseNumber() {
       int start = index;
       if(peek('-')) {
@@ -782,6 +914,10 @@ public class Phase4QuestExportValidator {
       return Integer.valueOf(Integer.parseInt(number));
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private String parseString() {
       char quote = text.charAt(index++);
       StringBuilder sb = new StringBuilder();
@@ -830,6 +966,10 @@ public class Phase4QuestExportValidator {
       return sb.toString();
     }
 
+    /**
+     * 解析来源数据。
+     * @return 计算结果
+     */
     private String parseBareword() {
       int start = index;
       while(index < text.length()) {
@@ -843,6 +983,9 @@ public class Phase4QuestExportValidator {
       return text.substring(start, index);
     }
 
+    /**
+     * 处理skip Whitespace辅助逻辑。
+     */
     private void skipWhitespace() {
       while(index < text.length()) {
         char ch = text.charAt(index);
@@ -861,10 +1004,19 @@ public class Phase4QuestExportValidator {
       }
     }
 
+    /**
+     * 计算并返回结果。
+     * @param ch 方法参数
+     * @return 计算结果
+     */
     private boolean peek(char ch) {
       return index < text.length() && text.charAt(index) == ch;
     }
 
+    /**
+     * 处理expect辅助逻辑。
+     * @param ch 方法参数
+     */
     private void expect(char ch) {
       skipWhitespace();
       if(index >= text.length() || text.charAt(index) != ch) {
@@ -873,6 +1025,11 @@ public class Phase4QuestExportValidator {
       index++;
     }
 
+    /**
+     * 计算并返回结果。
+     * @param value 方法参数
+     * @return 计算结果
+     */
     private boolean startsWith(String value) {
       return text.regionMatches(index, value, 0, value.length());
     }

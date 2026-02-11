@@ -33,6 +33,11 @@ public class Phase3DbConsistencyValidator {
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
 
+  /**
+   * 命令行入口。
+   * @param args 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   public static void main(String[] args) throws Exception {
     Path phase2QuestJson = args.length >= 1
         ? Paths.get(args[0])
@@ -114,6 +119,9 @@ public class Phase3DbConsistencyValidator {
     return report;
   }
 
+  /**
+   * Read quest-related tables and reconstruct quest model from DB.
+   */
   private Map<Integer, QuestRow> readFromDb(String jdbcUrl,
                                             String user,
                                             String password) throws Exception {
@@ -136,6 +144,9 @@ public class Phase3DbConsistencyValidator {
     return out;
   }
 
+  /**
+   * Load `quest_main` rows into reconstruction map.
+   */
   private void loadQuestMain(Connection connection,
                              Map<Integer, QuestRow> out) throws Exception {
     String sql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold FROM quest_main ORDER BY quest_id ASC";
@@ -154,6 +165,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * Load ordered string arrays (`contents`/`answer`/`info`).
+   */
   private void loadStringArray(Connection connection,
                                Map<Integer, QuestRow> out,
                                String table,
@@ -179,6 +193,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * Load ordered pair arrays (id/count style goal/reward rows).
+   */
   private void loadPairArray(Connection connection,
                              Map<Integer, QuestRow> out,
                              String table,
@@ -210,6 +227,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * Load ordered integer arrays (e.g. goal meetNpc).
+   */
   private void loadIntArray(Connection connection,
                             Map<Integer, QuestRow> out,
                             String table,
@@ -232,6 +252,12 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 解析来源数据。
+   * @param phase2QuestJson 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private List<QuestRow> parseQuestRows(Path phase2QuestJson) throws Exception {
     String text = new String(Files.readAllBytes(phase2QuestJson), UTF8);
     Map<String, Object> root = QuestSemanticJson.parseObject(text, "phase2_quest_data", 0);
@@ -281,6 +307,9 @@ public class Phase3DbConsistencyValidator {
     return out;
   }
 
+  /**
+   * 比较单个标量字段，差异时追加不一致详情。
+   */
   private void compareField(ValidationReport report,
                             int questId,
                             String field,
@@ -296,6 +325,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 比较有序字符串数组（contents/answer/info）。
+   */
   private void compareStringList(ValidationReport report,
                                  int questId,
                                  String field,
@@ -316,6 +348,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 比较有序整数数组。
+   */
   private void compareIntList(ValidationReport report,
                               int questId,
                               String field,
@@ -336,6 +371,9 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 比较有序 id/count 对数组。
+   */
   private void comparePairList(ValidationReport report,
                                int questId,
                                String field,
@@ -357,6 +395,11 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<String> asStringList(Object value) {
     List<String> out = new ArrayList<String>();
     if(!(value instanceof List<?>)) {
@@ -370,6 +413,11 @@ public class Phase3DbConsistencyValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private List<Integer> asIntList(Object value) {
     List<Integer> out = new ArrayList<Integer>();
     if(!(value instanceof List<?>)) {
@@ -383,6 +431,13 @@ public class Phase3DbConsistencyValidator {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @param leftKey 方法参数
+   * @param rightKey 方法参数
+   * @return 计算结果
+   */
   private List<IntPair> asPairList(Object value, String leftKey, String rightKey) {
     List<IntPair> out = new ArrayList<IntPair>();
     if(!(value instanceof List<?>)) {
@@ -405,6 +460,11 @@ public class Phase3DbConsistencyValidator {
   }
 
   @SuppressWarnings("unchecked")
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private Map<String, Object> asMap(Object value) {
     if(value instanceof Map<?, ?>) {
       return (Map<String, Object>) value;
@@ -412,6 +472,11 @@ public class Phase3DbConsistencyValidator {
     return Collections.emptyMap();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private int intOf(Object value) {
     if(value == null) {
       return 0;
@@ -430,10 +495,20 @@ public class Phase3DbConsistencyValidator {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String safe(Object value) {
     return value == null ? "" : String.valueOf(value);
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param output 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path output) throws Exception {
     if(output.getParent() != null && !Files.exists(output.getParent())) {
       Files.createDirectories(output.getParent());

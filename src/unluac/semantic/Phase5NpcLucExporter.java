@@ -146,6 +146,12 @@ public class Phase5NpcLucExporter {
     return summary;
   }
 
+  /**
+   * 从语义结构中抽取Expected Npc Files。
+   * @param Map<String 方法参数
+   * @param npcIndex 方法参数
+   * @return 计算结果
+   */
   private Set<String> extractExpectedNpcFiles(Map<String, Object> npcIndex) {
     Set<String> files = new LinkedHashSet<String>();
     Object byNpcObj = npcIndex.get("byNpcFile");
@@ -166,6 +172,11 @@ public class Phase5NpcLucExporter {
     return files;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param relativePath 方法参数
+   * @return 计算结果
+   */
   private boolean isNpcLua(String relativePath) {
     if(relativePath == null) {
       return false;
@@ -174,6 +185,9 @@ public class Phase5NpcLucExporter {
     return lower.startsWith("npc_") && lower.endsWith(".lua");
   }
 
+  /**
+   * 加载用于导出汇总与引用校验的轻量 DB 快照。
+   */
   private DbSnapshot loadDbSnapshot(String jdbcUrl,
                                     String user,
                                     String password) throws Exception {
@@ -202,6 +216,9 @@ public class Phase5NpcLucExporter {
     return out;
   }
 
+  /**
+   * 加载用于渲染 DB 驱动 NPC Lua 的任务模型。
+   */
   private Map<Integer, QuestDbModel> loadQuestModels(String jdbcUrl,
                                                      String user,
                                                      String password) throws Exception {
@@ -250,6 +267,11 @@ public class Phase5NpcLucExporter {
     return out;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param rows 方法参数
+   * @return 计算结果
+   */
   private Map<String, Set<Integer>> buildNpcQuestMap(List<NpcRefRow> rows) {
     Map<String, Set<Integer>> out = new LinkedHashMap<String, Set<Integer>>();
     for(NpcRefRow row : rows) {
@@ -266,6 +288,9 @@ public class Phase5NpcLucExporter {
     return out;
   }
 
+  /**
+   * 仅基于数据库任务快照构建单个 NPC Lua 输出。
+   */
   private String buildNpcLua(String file,
                              Set<Integer> questIds,
                              Map<Integer, QuestDbModel> quests) {
@@ -289,6 +314,7 @@ public class Phase5NpcLucExporter {
       sorted.addAll(questIds);
     }
     Collections.sort(sorted);
+    // 按稳定顺序输出任务块，保证后续 diff/校验稳定。
     for(Integer questIdObj : sorted) {
       int questId = questIdObj.intValue();
       QuestDbModel model = quests.get(Integer.valueOf(questId));
@@ -312,6 +338,13 @@ public class Phase5NpcLucExporter {
     return sb.toString();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param connection 方法参数
+   * @param sql 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private int queryCount(Connection connection, String sql) throws Exception {
     try(PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery()) {
@@ -322,6 +355,13 @@ public class Phase5NpcLucExporter {
     return 0;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param connection 方法参数
+   * @param sql 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Set<Integer> queryIntSet(Connection connection, String sql) throws Exception {
     Set<Integer> out = new LinkedHashSet<Integer>();
     try(PreparedStatement ps = connection.prepareStatement(sql);
@@ -333,6 +373,10 @@ public class Phase5NpcLucExporter {
     return out;
   }
 
+  /**
+   * 处理validate Db Consistency辅助逻辑。
+   * @param db 方法参数
+   */
   private void validateDbConsistency(DbSnapshot db) {
     if(db.questIds.isEmpty()) {
       throw new IllegalStateException("quest_main has no data");
@@ -346,17 +390,34 @@ public class Phase5NpcLucExporter {
     db.orphanReferenceRows = orphan;
   }
 
+  /**
+   * 计算并返回结果。
+   * @param path 方法参数
+   * @param field 方法参数
+   * @return 计算结果
+   * @throws Exception 处理失败时抛出
+   */
   private Map<String, Object> readJsonObject(Path path, String field) throws Exception {
     String json = new String(Files.readAllBytes(path), UTF8);
     return QuestSemanticJson.parseObject(json, field, 0);
   }
 
+  /**
+   * 确保前置条件满足。
+   * @param file 方法参数
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureParent(Path file) throws Exception {
     if(file.getParent() != null && !Files.exists(file.getParent())) {
       Files.createDirectories(file.getParent());
     }
   }
 
+  /**
+   * Normalize normalize Path into stable representation.
+   * @param path 方法参数
+   * @return 计算结果
+   */
   private String normalizePath(String path) {
     if(path == null) {
       return "";
@@ -364,6 +425,11 @@ public class Phase5NpcLucExporter {
     return path.replace('\\', '/').trim();
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private int intOf(Object value) {
     if(value == null) {
       return 0;
@@ -378,10 +444,19 @@ public class Phase5NpcLucExporter {
     }
   }
 
+  /**
+   * 计算并返回结果。
+   * @param value 方法参数
+   * @return 计算结果
+   */
   private String safe(Object value) {
     return value == null ? "" : String.valueOf(value);
   }
 
+  /**
+   * 确保前置条件满足。
+   * @throws Exception 处理失败时抛出
+   */
   private void ensureMysqlDriverAvailable() throws Exception {
     try {
       DriverManager.getDriver(DEFAULT_JDBC);
@@ -422,11 +497,24 @@ public class Phase5NpcLucExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @param info 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public Connection connect(String url, java.util.Properties info) throws java.sql.SQLException {
       return driver.connect(url, info);
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @param url 方法参数
+     * @return 计算结果
+     * @throws Exception 处理失败时抛出
+     */
     public boolean acceptsURL(String url) throws java.sql.SQLException {
       return driver.acceptsURL(url);
     }
@@ -437,16 +525,28 @@ public class Phase5NpcLucExporter {
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMajorVersion() {
       return driver.getMajorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public int getMinorVersion() {
       return driver.getMinorVersion();
     }
 
     @Override
+    /**
+     * 计算并返回结果。
+     * @return 计算结果
+     */
     public boolean jdbcCompliant() {
       return driver.jdbcCompliant();
     }
