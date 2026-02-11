@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f3f6fb;
+  color: #222;
+}
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #d9e1ef;
+  padding: 6px;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+tr.active {
+  background: #e6f2ff;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #c6d2e1;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 10px;
+  border: 1px solid #2a6adf;
+  background: #2a6adf;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #98b4ea;
+  border-color: #98b4ea;
+}
+
+.textcol {
+  max-width: 280px;
+  white-space: pre-wrap;
+}
+
+.msg {
+  margin-left: 8px;
+  color: #0052cc;
+}
+

@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-02-11T23:36:51.024+08:00",
+  "endpoint": "/api/admin/npc-texts/{textId}/save",
+  "finalStatus": "SAFE",
+  "resultCount": 1,
+  "results": [
+    {
+      "phaseName": "AdminNpcTextSave",
+      "status": "SUCCESS",
+      "elapsedMs": 5,
+      "artifacts": {"changedRows":"1"},
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-02-11T23:36:51.518+08:00",
+  "finalStatus": "SAFE",
+  "elapsedMs": 480,
+  "questExportFileCount": 1,
+  "npcExportFileCount": 468,
+  "dbChanged": true,
+  "exportTimestampChanged": true,
+  "note": "dbChanged=true, exportTimestampChanged=true",
+  "artifacts": {"phase4ExportLua":"D:\\github\\QuestDecompiler-main\\reports\\phase4_exported_quest.lua","phase5OutputDir":"D:\\github\\QuestDecompiler-main\\reports\\phase5_exported_npc","phase5Summary":"D:\\github\\QuestDecompiler-main\\reports\\phase5_export_summary.json"}
+}

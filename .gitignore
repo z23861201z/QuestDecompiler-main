@@ -81,3 +81,18 @@ Thumbs.db
 *.tmp
 *.swp
 *~
+
+############################
+# Frontend (Vue/Vite)
+############################
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.cache/
+frontend/.DS_Store
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+frontend/.env.local
+frontend/.env.*.local

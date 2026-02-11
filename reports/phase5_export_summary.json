@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-02-11T23:09:09.993+08:00",
+  "generatedAt": "2026-02-11T23:36:51.308+08:00",
   "sourceNpcDir": "DB_DRIVEN_GENERATION",
   "outputDir": "D:\\github\\QuestDecompiler-main\\reports\\phase5_exported_npc",
   "expectedNpcFiles": 468,
@@ -12,5 +12,5 @@
   "dbRewardItemRows": 1077,
   "dbNpcReferenceRows": 2373,
   "dbOrphanReferenceRows": 47,
-  "exportMillis": 169
+  "exportMillis": 177
 }
