@@ -1,0 +1,537 @@
+{
+  "generated_at_utc": "2026-02-11T12:09:40.153177+00:00",
+  "analysis_scope": {
+    "source_root": "src/",
+    "java_file_count": 201,
+    "build_files_found": [],
+    "db_connection_classes": [
+      "unluac.semantic.Phase3DatabaseWriter",
+      "unluac.semantic.Phase3DbConsistencyValidator",
+      "unluac.semantic.Phase4QuestLucExporter",
+      "unluac.semantic.Phase5NpcLucExporter",
+      "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+      "unluac.semantic.Phase6CDbDrivenExportValidator",
+      "unluac.semantic.Phase6DbMutationAndImpactValidator",
+      "unluac.semantic.Phase7ANpcTextExtractionSystem",
+      "unluac.semantic.Phase7BNpcTextModelBuilder",
+      "unluac.semantic.Phase7CNpcTextExporter",
+      "unluac.semantic.Phase7DTextImpactValidator",
+      "unluac.semantic.Phase7NpcLucBinaryExporter"
+    ]
+  },
+  "current_executable_entry_classes": [
+    "QuestEditorCli",
+    "unluac.Main",
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.editor.QuestEditorIdempotenceCheck",
+    "unluac.editor.QuestEditorMain",
+    "unluac.encode.LucEncoder",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.NpcHardcodeRewriter",
+    "unluac.semantic.PatternBFixer",
+    "unluac.semantic.PatternFFixer",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestEditorCli",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestGetItemStructureRewriter",
+    "unluac.semantic.QuestModificationAutoPropagator",
+    "unluac.semantic.QuestModificationPropagationAnalyzer",
+    "unluac.semantic.QuestModificationPropagationEngine",
+    "unluac.semantic.QuestModificationRiskValidator",
+    "unluac.semantic.QuestNpcDependencyScanner",
+    "unluac.semantic.QuestNpcGraphBuilder",
+    "unluac.semantic.QuestRuntimeStateDemo",
+    "unluac.semantic.QuestSemanticCsvTool",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.QuestSemanticPatchApplier",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.semantic.RuntimeFailurePatternClassifier"
+  ],
+  "main_classes_all": [
+    "QuestEditorCli",
+    "unluac.Main",
+    "unluac.MainBak",
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.editor.QuestEditorIdempotenceCheck",
+    "unluac.editor.QuestEditorMain",
+    "unluac.encode.LucEncoder",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.NpcHardcodeRewriter",
+    "unluac.semantic.PatternBFixer",
+    "unluac.semantic.PatternFFixer",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestEditorCli",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestGetItemStructureRewriter",
+    "unluac.semantic.QuestModificationAutoPropagator",
+    "unluac.semantic.QuestModificationPropagationAnalyzer",
+    "unluac.semantic.QuestModificationPropagationEngine",
+    "unluac.semantic.QuestModificationRiskValidator",
+    "unluac.semantic.QuestNpcDependencyScanner",
+    "unluac.semantic.QuestNpcGraphBuilder",
+    "unluac.semantic.QuestRuntimeStateDemo",
+    "unluac.semantic.QuestSemanticCsvTool",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.QuestSemanticPatchApplier",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.semantic.RuntimeFailurePatternClassifier",
+    "unluac.test.RunTest",
+    "unluac.test.RunTests"
+  ],
+  "main_classes": [
+    "QuestEditorCli",
+    "unluac.Main",
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.editor.QuestEditorIdempotenceCheck",
+    "unluac.editor.QuestEditorMain",
+    "unluac.encode.LucEncoder",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.NpcHardcodeRewriter",
+    "unluac.semantic.PatternBFixer",
+    "unluac.semantic.PatternFFixer",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestEditorCli",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestGetItemStructureRewriter",
+    "unluac.semantic.QuestModificationAutoPropagator",
+    "unluac.semantic.QuestModificationPropagationAnalyzer",
+    "unluac.semantic.QuestModificationPropagationEngine",
+    "unluac.semantic.QuestModificationRiskValidator",
+    "unluac.semantic.QuestNpcDependencyScanner",
+    "unluac.semantic.QuestNpcGraphBuilder",
+    "unluac.semantic.QuestRuntimeStateDemo",
+    "unluac.semantic.QuestSemanticCsvTool",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.QuestSemanticPatchApplier",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.semantic.RuntimeFailurePatternClassifier"
+  ],
+  "gui_entries": [
+    "unluac.editor.QuestEditorMain"
+  ],
+  "cli_entries": [
+    "QuestEditorCli",
+    "unluac.Main",
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.editor.QuestEditorIdempotenceCheck",
+    "unluac.encode.LucEncoder",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.NpcHardcodeRewriter",
+    "unluac.semantic.PatternBFixer",
+    "unluac.semantic.PatternFFixer",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestEditorCli",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestGetItemStructureRewriter",
+    "unluac.semantic.QuestModificationAutoPropagator",
+    "unluac.semantic.QuestModificationPropagationAnalyzer",
+    "unluac.semantic.QuestModificationPropagationEngine",
+    "unluac.semantic.QuestModificationRiskValidator",
+    "unluac.semantic.QuestNpcDependencyScanner",
+    "unluac.semantic.QuestNpcGraphBuilder",
+    "unluac.semantic.QuestRuntimeStateDemo",
+    "unluac.semantic.QuestSemanticCsvTool",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.QuestSemanticPatchApplier",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.semantic.RuntimeFailurePatternClassifier"
+  ],
+  "entry_class_details": [
+    {
+      "class": "QuestEditorCli",
+      "file": "src/QuestEditorCli.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli"
+      ]
+    },
+    {
+      "class": "unluac.Main",
+      "file": "src/unluac/Main.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.encode.LucEncoder",
+        "unluac.test.TestSuite"
+      ]
+    },
+    {
+      "class": "unluac.chunk.Lua50AstPatchTool",
+      "file": "src/unluac/chunk/Lua50AstPatchTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.chunk.Lua50ChunkRoundTripTool",
+      "file": "src/unluac/chunk/Lua50ChunkRoundTripTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.chunk.Lua50ConstantCsvTool",
+      "file": "src/unluac/chunk/Lua50ConstantCsvTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.chunk.Lua50ValidateTool",
+      "file": "src/unluac/chunk/Lua50ValidateTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.editor.QuestEditorIdempotenceCheck",
+      "file": "src/unluac/editor/QuestEditorIdempotenceCheck.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.editor.QuestEditorMain",
+      "file": "src/unluac/editor/QuestEditorMain.java",
+      "entry_kind": "GUI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.encode.LucEncoder",
+      "file": "src/unluac/encode/LucEncoder.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.IndexedGoalAccessAstScanner",
+      "file": "src/unluac/semantic/IndexedGoalAccessAstScanner.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.NpcHardcodeRewriter",
+      "file": "src/unluac/semantic/NpcHardcodeRewriter.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.QuestModificationAutoPropagator"
+      ]
+    },
+    {
+      "class": "unluac.semantic.PatternBFixer",
+      "file": "src/unluac/semantic/PatternBFixer.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ]
+    },
+    {
+      "class": "unluac.semantic.PatternFFixer",
+      "file": "src/unluac/semantic/PatternFFixer.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ]
+    },
+    {
+      "class": "unluac.semantic.Phase25QuestNpcDependencyMapper",
+      "file": "src/unluac/semantic/Phase25QuestNpcDependencyMapper.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase2LucDataExtractionSystem",
+      "file": "src/unluac/semantic/Phase2LucDataExtractionSystem.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase3DatabaseWriter",
+      "file": "src/unluac/semantic/Phase3DatabaseWriter.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase3DbConsistencyValidator",
+      "file": "src/unluac/semantic/Phase3DbConsistencyValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase4QuestExportValidator",
+      "file": "src/unluac/semantic/Phase4QuestExportValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase4QuestLucExporter",
+      "file": "src/unluac/semantic/Phase4QuestLucExporter.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase5NpcExportValidator",
+      "file": "src/unluac/semantic/Phase5NpcExportValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase5NpcLucExporter",
+      "file": "src/unluac/semantic/Phase5NpcLucExporter.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+        "unluac.semantic.Phase6CDbDrivenExportValidator",
+        "unluac.semantic.Phase6DbMutationAndImpactValidator"
+      ]
+    },
+    {
+      "class": "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+      "file": "src/unluac/semantic/Phase6BForcedHighReferenceMutationValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase6CDbDrivenExportValidator",
+      "file": "src/unluac/semantic/Phase6CDbDrivenExportValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase6DbMutationAndImpactValidator",
+      "file": "src/unluac/semantic/Phase6DbMutationAndImpactValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7ANpcTextExtractionSystem",
+      "file": "src/unluac/semantic/Phase7ANpcTextExtractionSystem.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7BNpcTextModelBuilder",
+      "file": "src/unluac/semantic/Phase7BNpcTextModelBuilder.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7CNpcTextExporter",
+      "file": "src/unluac/semantic/Phase7CNpcTextExporter.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7DTextImpactValidator",
+      "file": "src/unluac/semantic/Phase7DTextImpactValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7NpcLucBinaryExporter",
+      "file": "src/unluac/semantic/Phase7NpcLucBinaryExporter.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestEditorCli",
+      "file": "src/unluac/semantic/QuestEditorCli.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "QuestEditorCli",
+        "unluac.editor.QuestEditorService"
+      ]
+    },
+    {
+      "class": "unluac.semantic.QuestFieldCoverageScanner",
+      "file": "src/unluac/semantic/QuestFieldCoverageScanner.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestGetItemStructureRewriter",
+      "file": "src/unluac/semantic/QuestGetItemStructureRewriter.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestModificationAutoPropagator",
+      "file": "src/unluac/semantic/QuestModificationAutoPropagator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestModificationPropagationAnalyzer",
+      "file": "src/unluac/semantic/QuestModificationPropagationAnalyzer.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestModificationPropagationEngine",
+      "file": "src/unluac/semantic/QuestModificationPropagationEngine.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestModificationRiskValidator",
+      "file": "src/unluac/semantic/QuestModificationRiskValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.editor.QuestEditorService"
+      ]
+    },
+    {
+      "class": "unluac.semantic.QuestNpcDependencyScanner",
+      "file": "src/unluac/semantic/QuestNpcDependencyScanner.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.NpcHardcodeRewriter",
+        "unluac.semantic.QuestModificationAutoPropagator",
+        "unluac.semantic.QuestModificationRiskValidator"
+      ]
+    },
+    {
+      "class": "unluac.semantic.QuestNpcGraphBuilder",
+      "file": "src/unluac/semantic/QuestNpcGraphBuilder.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.RuntimeConsistencyValidator"
+      ]
+    },
+    {
+      "class": "unluac.semantic.QuestRuntimeStateDemo",
+      "file": "src/unluac/semantic/QuestRuntimeStateDemo.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestSemanticCsvTool",
+      "file": "src/unluac/semantic/QuestSemanticCsvTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ]
+    },
+    {
+      "class": "unluac.semantic.QuestSemanticExtractTool",
+      "file": "src/unluac/semantic/QuestSemanticExtractTool.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.QuestSemanticPatchApplier",
+      "file": "src/unluac/semantic/QuestSemanticPatchApplier.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli"
+      ]
+    },
+    {
+      "class": "unluac.semantic.RuntimeAutoFixDispatcher",
+      "file": "src/unluac/semantic/RuntimeAutoFixDispatcher.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.RuntimeAutoRegressionRunner",
+      "file": "src/unluac/semantic/RuntimeAutoRegressionRunner.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.RuntimeConsistencyValidator",
+      "file": "src/unluac/semantic/RuntimeConsistencyValidator.java",
+      "entry_kind": "CLI",
+      "referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.RuntimeFailurePatternClassifier",
+      "file": "src/unluac/semantic/RuntimeFailurePatternClassifier.java",
+      "entry_kind": "CLI",
+      "referenced_by": [
+        "unluac.semantic.PatternBFixer",
+        "unluac.semantic.PatternFFixer",
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ]
+    }
+  ]
+}

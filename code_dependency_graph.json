@@ -1,0 +1,3511 @@
+{
+  "generated_at_utc": "2026-02-11T12:09:40.154177+00:00",
+  "analysis_scope": {
+    "source_root": "src/",
+    "java_file_count": 201,
+    "class_count": 201,
+    "reference_method": [
+      "explicit import reference",
+      "same-package simple-name reference",
+      "wildcard-import simple-name reference",
+      "fully-qualified-name reference"
+    ]
+  },
+  "class_dependency_graph": {
+    "QuestEditorCli": {
+      "file": "src/QuestEditorCli.java",
+      "references": [
+        "unluac.semantic.QuestEditorCli"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.Configuration": {
+      "file": "src/unluac/Configuration.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.decompile.Decompiler",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.BHeader",
+        "unluac.test.Compare"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.Main": {
+      "file": "src/unluac/Main.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.OutputProvider",
+        "unluac.parse.BHeader",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder",
+        "unluac.test.TestSuite"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.MainBak": {
+      "file": "src/unluac/MainBak.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.OutputProvider",
+        "unluac.parse.BHeader",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.Version": {
+      "file": "src/unluac/Version.java",
+      "references": [
+        "unluac.decompile.Op",
+        "unluac.decompile.OpcodeMap",
+        "unluac.parse.LHeaderType"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Function",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.parse.BHeader"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50AstPatchTool": {
+      "file": "src/unluac/chunk/Lua50AstPatchTool.java",
+      "references": [
+        "unluac.chunk.Lua50AstPatcher",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50AstPatcher": {
+      "file": "src/unluac/chunk/Lua50AstPatcher.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [
+        "unluac.chunk.Lua50AstPatchTool",
+        "unluac.chunk.Lua50ConstantCsvTool"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50ChunkParser": {
+      "file": "src/unluac/chunk/Lua50ChunkParser.java",
+      "references": [
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [
+        "unluac.chunk.Lua50AstPatcher",
+        "unluac.chunk.Lua50ChunkRoundTripTool",
+        "unluac.chunk.Lua50ConstantCsvTool",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.Phase7NpcLucBinaryExporter",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestFieldCoverageScanner",
+        "unluac.semantic.QuestModificationPropagationAnalyzer",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractTool",
+        "unluac.semantic.QuestSemanticPatchApplier",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50ChunkRoundTripTool": {
+      "file": "src/unluac/chunk/Lua50ChunkRoundTripTool.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50ChunkSerializer",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50ChunkSerializer": {
+      "file": "src/unluac/chunk/Lua50ChunkSerializer.java",
+      "references": [
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [
+        "unluac.chunk.Lua50ChunkRoundTripTool",
+        "unluac.semantic.Phase7NpcLucBinaryExporter"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50ConstantCsvTool": {
+      "file": "src/unluac/chunk/Lua50ConstantCsvTool.java",
+      "references": [
+        "unluac.chunk.Lua50AstPatcher",
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50StructureValidator": {
+      "file": "src/unluac/chunk/Lua50StructureValidator.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [
+        "unluac.chunk.Lua50ValidateTool",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.Phase7NpcLucBinaryExporter",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.Lua50ValidateTool": {
+      "file": "src/unluac/chunk/Lua50ValidateTool.java",
+      "references": [
+        "unluac.chunk.Lua50StructureValidator"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.chunk.LuaChunk": {
+      "file": "src/unluac/chunk/LuaChunk.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.chunk.Lua50AstPatchTool",
+        "unluac.chunk.Lua50AstPatcher",
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50ChunkRoundTripTool",
+        "unluac.chunk.Lua50ChunkSerializer",
+        "unluac.chunk.Lua50ConstantCsvTool",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.Phase7NpcLucBinaryExporter",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestFieldCoverageScanner",
+        "unluac.semantic.QuestModificationPropagationAnalyzer",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticPatchApplier",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Code": {
+      "file": "src/unluac/decompile/Code.java",
+      "references": [
+        "unluac.decompile.CodeExtract",
+        "unluac.decompile.Op",
+        "unluac.decompile.OpcodeMap",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Disassembler",
+        "unluac.decompile.VariableFinder",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Code50": {
+      "file": "src/unluac/decompile/Code50.java",
+      "references": [
+        "unluac.decompile.CodeExtract"
+      ],
+      "referenced_by": [
+        "unluac.parse.LHeaderType",
+        "unluac.semantic.Lua50InstructionCodec"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.CodeExtract": {
+      "file": "src/unluac/decompile/CodeExtract.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.decompile.Code",
+        "unluac.decompile.Code50",
+        "unluac.decompile.Op",
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Constant": {
+      "file": "src/unluac/decompile/Constant.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.parse.LBoolean",
+        "unluac.parse.LNil",
+        "unluac.parse.LNumber",
+        "unluac.parse.LObject",
+        "unluac.parse.LString"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Function",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.Expression"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Declaration": {
+      "file": "src/unluac/decompile/Declaration.java",
+      "references": [
+        "unluac.parse.LLocal"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers",
+        "unluac.decompile.Upvalues",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Declare",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.VariableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Decompiler": {
+      "file": "src/unluac/decompile/Decompiler.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.Version",
+        "unluac.decompile.Code",
+        "unluac.decompile.Constant",
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Function",
+        "unluac.decompile.Op",
+        "unluac.decompile.Output",
+        "unluac.decompile.OutputProvider",
+        "unluac.decompile.Registers",
+        "unluac.decompile.Upvalues",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.AssignNode",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.EQNode",
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.branch.TestNode",
+        "unluac.decompile.branch.TestSetNode",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.expression.TableReference",
+        "unluac.decompile.expression.Vararg",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.GlobalTarget",
+        "unluac.decompile.target.TableTarget",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.UpvalueTarget",
+        "unluac.decompile.target.VariableTarget",
+        "unluac.parse.LBoolean",
+        "unluac.parse.LFunction",
+        "unluac.util.Stack"
+      ],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.decompile.Constant",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.expression.GlobalExpression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.expression.TableReference",
+        "unluac.decompile.expression.UnaryExpression",
+        "unluac.decompile.expression.UpvalueExpression",
+        "unluac.decompile.expression.Vararg",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Declare",
+        "unluac.decompile.statement.FunctionCallStatement",
+        "unluac.decompile.statement.Return",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.GlobalTarget",
+        "unluac.decompile.target.TableTarget",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.UpvalueTarget",
+        "unluac.decompile.target.VariableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Disassembler": {
+      "file": "src/unluac/decompile/Disassembler.java",
+      "references": [
+        "unluac.decompile.Code",
+        "unluac.decompile.Output",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Function": {
+      "file": "src/unluac/decompile/Function.java",
+      "references": [
+        "unluac.Version",
+        "unluac.decompile.Constant",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.GlobalExpression",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Op": {
+      "file": "src/unluac/decompile/Op.java",
+      "references": [
+        "unluac.decompile.CodeExtract",
+        "unluac.decompile.OpcodeFormat"
+      ],
+      "referenced_by": [
+        "unluac.Version",
+        "unluac.decompile.Code",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.OpcodeMap",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.block.SetBlock",
+        "unluac.semantic.Lua50InstructionCodec",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.OpcodeFormat": {
+      "file": "src/unluac/decompile/OpcodeFormat.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.decompile.Op"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.OpcodeMap": {
+      "file": "src/unluac/decompile/OpcodeMap.java",
+      "references": [
+        "unluac.decompile.Op"
+      ],
+      "referenced_by": [
+        "unluac.Version",
+        "unluac.decompile.Code",
+        "unluac.semantic.Lua50InstructionCodec"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Output": {
+      "file": "src/unluac/decompile/Output.java",
+      "references": [
+        "unluac.decompile.OutputProvider"
+      ],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.decompile.Constant",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Disassembler",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.expression.GlobalExpression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.expression.TableReference",
+        "unluac.decompile.expression.UnaryExpression",
+        "unluac.decompile.expression.UpvalueExpression",
+        "unluac.decompile.expression.Vararg",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Declare",
+        "unluac.decompile.statement.FunctionCallStatement",
+        "unluac.decompile.statement.Return",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.GlobalTarget",
+        "unluac.decompile.target.TableTarget",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.UpvalueTarget",
+        "unluac.decompile.target.VariableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.OutputProvider": {
+      "file": "src/unluac/decompile/OutputProvider.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Registers": {
+      "file": "src/unluac/decompile/Registers.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Function",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.VariableTarget"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.AssignNode",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.EQNode",
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.NotBranch",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.branch.TestNode",
+        "unluac.decompile.branch.TestSetNode",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.Upvalues": {
+      "file": "src/unluac/decompile/Upvalues.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.expression.UpvalueExpression",
+        "unluac.parse.LFunction",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.VariableFinder": {
+      "file": "src/unluac/decompile/VariableFinder.java",
+      "references": [
+        "unluac.decompile.Code",
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Op",
+        "unluac.parse.LFunction",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.AlwaysLoop": {
+      "file": "src/unluac/decompile/block/AlwaysLoop.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.Block": {
+      "file": "src/unluac/decompile/block/Block.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.BooleanIndicator": {
+      "file": "src/unluac/decompile/block/BooleanIndicator.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.SetBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.Break": {
+      "file": "src/unluac/decompile/block/Break.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.IfThenElseBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.CompareBlock": {
+      "file": "src/unluac/decompile/block/CompareBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.DoEndBlock": {
+      "file": "src/unluac/decompile/block/DoEndBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.ElseEndBlock": {
+      "file": "src/unluac/decompile/block/ElseEndBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.IfThenElseBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.ForBlock": {
+      "file": "src/unluac/decompile/block/ForBlock.java",
+      "references": [
+        "unluac.Version",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.IfThenElseBlock": {
+      "file": "src/unluac/decompile/block/IfThenElseBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.statement.Statement"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.IfThenEndBlock": {
+      "file": "src/unluac/decompile/block/IfThenEndBlock.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.TestNode",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction",
+        "unluac.util.Stack"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.ElseEndBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.OuterBlock": {
+      "file": "src/unluac/decompile/block/OuterBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Return",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.RepeatBlock": {
+      "file": "src/unluac/decompile/block/RepeatBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.SetBlock": {
+      "file": "src/unluac/decompile/block/SetBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Op",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.Target",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.TForBlock": {
+      "file": "src/unluac/decompile/block/TForBlock.java",
+      "references": [
+        "unluac.Version",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.block.WhileBlock": {
+      "file": "src/unluac/decompile/block/WhileBlock.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.statement.Statement",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.AndBranch": {
+      "file": "src/unluac/decompile/branch/AndBranch.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.branch.OrBranch"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.AssignNode": {
+      "file": "src/unluac/decompile/branch/AssignNode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.Branch": {
+      "file": "src/unluac/decompile/branch/Branch.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.AssignNode",
+        "unluac.decompile.branch.EQNode",
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.NotBranch",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.branch.TestNode",
+        "unluac.decompile.branch.TestSetNode",
+        "unluac.decompile.branch.TrueNode"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.EQNode": {
+      "file": "src/unluac/decompile/branch/EQNode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.LENode": {
+      "file": "src/unluac/decompile/branch/LENode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.UnaryExpression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.LTNode": {
+      "file": "src/unluac/decompile/branch/LTNode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.UnaryExpression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.NotBranch": {
+      "file": "src/unluac/decompile/branch/NotBranch.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.UnaryExpression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.branch.TestNode"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.OrBranch": {
+      "file": "src/unluac/decompile/branch/OrBranch.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.branch.AndBranch"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.TestNode": {
+      "file": "src/unluac/decompile/branch/TestNode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.NotBranch",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.IfThenEndBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.TestSetNode": {
+      "file": "src/unluac/decompile/branch/TestSetNode.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.branch.TrueNode": {
+      "file": "src/unluac/decompile/branch/TrueNode.java",
+      "references": [
+        "unluac.decompile.Constant",
+        "unluac.decompile.Registers",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.parse.LBoolean"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.BinaryExpression": {
+      "file": "src/unluac/decompile/expression/BinaryExpression.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.EQNode",
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.expression.Expression"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.ClosureExpression": {
+      "file": "src/unluac/decompile/expression/ClosureExpression.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.target.TableTarget",
+        "unluac.decompile.target.Target",
+        "unluac.decompile.target.VariableTarget",
+        "unluac.parse.LFunction",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.ConstantExpression": {
+      "file": "src/unluac/decompile/expression/ConstantExpression.java",
+      "references": [
+        "unluac.decompile.Constant",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Function",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.decompile.expression.Expression"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.Expression": {
+      "file": "src/unluac/decompile/expression/Expression.java",
+      "references": [
+        "unluac.decompile.Constant",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.expression.UnaryExpression",
+        "unluac.decompile.target.Target",
+        "unluac.parse.LNil"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.branch.AndBranch",
+        "unluac.decompile.branch.AssignNode",
+        "unluac.decompile.branch.Branch",
+        "unluac.decompile.branch.EQNode",
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.NotBranch",
+        "unluac.decompile.branch.OrBranch",
+        "unluac.decompile.branch.TestNode",
+        "unluac.decompile.branch.TestSetNode",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.decompile.expression.BinaryExpression",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.ConstantExpression",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.expression.GlobalExpression",
+        "unluac.decompile.expression.LocalVariable",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.expression.TableReference",
+        "unluac.decompile.expression.UnaryExpression",
+        "unluac.decompile.expression.UpvalueExpression",
+        "unluac.decompile.expression.Vararg",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Return",
+        "unluac.decompile.target.TableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.FunctionCall": {
+      "file": "src/unluac/decompile/expression/FunctionCall.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.statement.FunctionCallStatement"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.GlobalExpression": {
+      "file": "src/unluac/decompile/expression/GlobalExpression.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Function"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.LocalVariable": {
+      "file": "src/unluac/decompile/expression/LocalVariable.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.IfThenEndBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.TableLiteral": {
+      "file": "src/unluac/decompile/expression/TableLiteral.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.TableSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.TableReference": {
+      "file": "src/unluac/decompile/expression/TableReference.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.target.TableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.UnaryExpression": {
+      "file": "src/unluac/decompile/expression/UnaryExpression.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.branch.LENode",
+        "unluac.decompile.branch.LTNode",
+        "unluac.decompile.branch.NotBranch",
+        "unluac.decompile.expression.Expression"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.UpvalueExpression": {
+      "file": "src/unluac/decompile/expression/UpvalueExpression.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Upvalues"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.expression.Vararg": {
+      "file": "src/unluac/decompile/expression/Vararg.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.CallOperation": {
+      "file": "src/unluac/decompile/operation/CallOperation.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.FunctionCallStatement",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.GlobalSet": {
+      "file": "src/unluac/decompile/operation/GlobalSet.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.GlobalTarget"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.Operation": {
+      "file": "src/unluac/decompile/operation/Operation.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.RegisterSet": {
+      "file": "src/unluac/decompile/operation/RegisterSet.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.SetBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.ReturnOperation": {
+      "file": "src/unluac/decompile/operation/ReturnOperation.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Return",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.TableSet": {
+      "file": "src/unluac/decompile/operation/TableSet.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.TableLiteral",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.TableTarget"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.operation.UpvalueSet": {
+      "file": "src/unluac/decompile/operation/UpvalueSet.java",
+      "references": [
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.UpvalueTarget"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.statement.Assignment": {
+      "file": "src/unluac/decompile/statement/Assignment.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.statement.Statement",
+        "unluac.decompile.target.Target"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.statement.Declare": {
+      "file": "src/unluac/decompile/statement/Declare.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.statement.FunctionCallStatement": {
+      "file": "src/unluac/decompile/statement/FunctionCallStatement.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.FunctionCall",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.operation.CallOperation"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.statement.Return": {
+      "file": "src/unluac/decompile/statement/Return.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.statement.Statement"
+      ],
+      "referenced_by": [
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.operation.ReturnOperation"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.statement.Statement": {
+      "file": "src/unluac/decompile/statement/Statement.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.block.IfThenElseBlock"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.operation.CallOperation",
+        "unluac.decompile.operation.GlobalSet",
+        "unluac.decompile.operation.Operation",
+        "unluac.decompile.operation.RegisterSet",
+        "unluac.decompile.operation.ReturnOperation",
+        "unluac.decompile.operation.TableSet",
+        "unluac.decompile.operation.UpvalueSet",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.statement.Declare",
+        "unluac.decompile.statement.FunctionCallStatement",
+        "unluac.decompile.statement.Return"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.target.GlobalTarget": {
+      "file": "src/unluac/decompile/target/GlobalTarget.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.target.Target"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.operation.GlobalSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.target.TableTarget": {
+      "file": "src/unluac/decompile/target/TableTarget.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.expression.TableReference",
+        "unluac.decompile.target.Target"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.operation.TableSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.target.Target": {
+      "file": "src/unluac/decompile/target/Target.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.decompile.expression.Expression",
+        "unluac.decompile.statement.Assignment",
+        "unluac.decompile.target.GlobalTarget",
+        "unluac.decompile.target.TableTarget",
+        "unluac.decompile.target.UpvalueTarget",
+        "unluac.decompile.target.VariableTarget"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.target.UpvalueTarget": {
+      "file": "src/unluac/decompile/target/UpvalueTarget.java",
+      "references": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.target.Target"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.operation.UpvalueSet"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.decompile.target.VariableTarget": {
+      "file": "src/unluac/decompile/target/VariableTarget.java",
+      "references": [
+        "unluac.decompile.Declaration",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Output",
+        "unluac.decompile.target.Target"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Registers",
+        "unluac.decompile.expression.ClosureExpression"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.DialogLine": {
+      "file": "src/unluac/editor/DialogLine.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.editor.QuestDialogJsonValidator",
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestDialogJsonModel": {
+      "file": "src/unluac/editor/QuestDialogJsonModel.java",
+      "references": [
+        "unluac.editor.DialogLine"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestDialogJsonValidator",
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorIdempotenceCheck",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestDialogJsonValidator": {
+      "file": "src/unluac/editor/QuestDialogJsonValidator.java",
+      "references": [
+        "unluac.editor.DialogLine",
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorIdempotenceCheck"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorFrame": {
+      "file": "src/unluac/editor/QuestEditorFrame.java",
+      "references": [
+        "unluac.editor.DialogLine",
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.editor.QuestDialogJsonValidator",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorSaveResult",
+        "unluac.editor.QuestEditorService",
+        "unluac.editor.QuestEditorValidator",
+        "unluac.editor.QuestReward",
+        "unluac.editor.QuestStageModel",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.NpcScriptModel",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorMain"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorIdempotenceCheck": {
+      "file": "src/unluac/editor/QuestEditorIdempotenceCheck.java",
+      "references": [
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.editor.QuestDialogJsonValidator",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorService"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorMain": {
+      "file": "src/unluac/editor/QuestEditorMain.java",
+      "references": [
+        "unluac.editor.QuestEditorFrame"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorModel": {
+      "file": "src/unluac/editor/QuestEditorModel.java",
+      "references": [
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.editor.QuestReward",
+        "unluac.editor.QuestStageModel",
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestGoal"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorIdempotenceCheck",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestModificationRiskValidator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorSaveResult": {
+      "file": "src/unluac/editor/QuestEditorSaveResult.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorService": {
+      "file": "src/unluac/editor/QuestEditorService.java",
+      "references": [
+        "QuestEditorCli",
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.chunk.LuaChunk",
+        "unluac.editor.DialogLine",
+        "unluac.editor.QuestDialogJsonModel",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorSaveResult",
+        "unluac.editor.QuestEditorValidator",
+        "unluac.editor.QuestReward",
+        "unluac.editor.QuestRewardDiffDetector",
+        "unluac.editor.QuestStageModel",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.NpcScriptModel",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel",
+        "unluac.semantic.QuestSemanticPatchApplier",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorIdempotenceCheck"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestEditorValidator": {
+      "file": "src/unluac/editor/QuestEditorValidator.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestReward": {
+      "file": "src/unluac/editor/QuestReward.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorService",
+        "unluac.editor.QuestRewardDiffDetector",
+        "unluac.editor.QuestStageModel",
+        "unluac.semantic.QuestModificationRiskValidator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestRewardDiffDetector": {
+      "file": "src/unluac/editor/QuestRewardDiffDetector.java",
+      "references": [
+        "unluac.editor.QuestReward"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.editor.QuestStageModel": {
+      "file": "src/unluac/editor/QuestStageModel.java",
+      "references": [
+        "unluac.editor.QuestReward",
+        "unluac.semantic.QuestGoal"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.encode.BinaryCodec": {
+      "file": "src/unluac/encode/BinaryCodec.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.encode.ChecksumWriter",
+        "unluac.encode.HeaderWriter",
+        "unluac.encode.InstructionEncoder",
+        "unluac.encode.LucEncoder",
+        "unluac.encode.StringTableWriter"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.encode.ChecksumWriter": {
+      "file": "src/unluac/encode/ChecksumWriter.java",
+      "references": [
+        "unluac.encode.BinaryCodec"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.encode.HeaderWriter": {
+      "file": "src/unluac/encode/HeaderWriter.java",
+      "references": [
+        "unluac.encode.BinaryCodec",
+        "unluac.parse.BHeader"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.encode.InstructionEncoder": {
+      "file": "src/unluac/encode/InstructionEncoder.java",
+      "references": [
+        "unluac.encode.BinaryCodec",
+        "unluac.parse.LFunction"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.encode.LucEncoder": {
+      "file": "src/unluac/encode/LucEncoder.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.Main",
+        "unluac.encode.BinaryCodec",
+        "unluac.encode.ChecksumWriter",
+        "unluac.encode.HeaderWriter",
+        "unluac.encode.InstructionEncoder",
+        "unluac.encode.StringTableWriter",
+        "unluac.parse.BSizeT",
+        "unluac.parse.LBoolean",
+        "unluac.parse.LFunction",
+        "unluac.parse.LLocal",
+        "unluac.parse.LNil",
+        "unluac.parse.LNumber",
+        "unluac.parse.LObject",
+        "unluac.parse.LString",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.encode.StringTableWriter": {
+      "file": "src/unluac/encode/StringTableWriter.java",
+      "references": [
+        "unluac.encode.BinaryCodec",
+        "unluac.parse.LString"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BHeader": {
+      "file": "src/unluac/parse/BHeader.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.Version",
+        "unluac.decompile.CodeExtract",
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LBooleanType",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LHeader",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LNumberType",
+        "unluac.parse.LStringType",
+        "unluac.parse.LUpvalueType"
+      ],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.encode.HeaderWriter",
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BObjectType",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LBooleanType",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LHeaderType",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LNumberType",
+        "unluac.parse.LStringType",
+        "unluac.parse.LUpvalueType",
+        "unluac.test.Compare"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BInteger": {
+      "file": "src/unluac/parse/BInteger.java",
+      "references": [
+        "unluac.parse.BObject"
+      ],
+      "referenced_by": [
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BList",
+        "unluac.parse.BObjectType",
+        "unluac.parse.BSizeT",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LLocal",
+        "unluac.parse.LLocalType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BIntegerType": {
+      "file": "src/unluac/parse/BIntegerType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BInteger",
+        "unluac.parse.BObjectType"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BList": {
+      "file": "src/unluac/parse/BList.java",
+      "references": [
+        "unluac.parse.BInteger",
+        "unluac.parse.BObject"
+      ],
+      "referenced_by": [
+        "unluac.parse.BObjectType",
+        "unluac.parse.LFunctionType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BObject": {
+      "file": "src/unluac/parse/BObject.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.parse.BInteger",
+        "unluac.parse.BList",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LFunction",
+        "unluac.parse.LHeader",
+        "unluac.parse.LLocal",
+        "unluac.parse.LObject",
+        "unluac.parse.LUpvalue"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BObjectType": {
+      "file": "src/unluac/parse/BObjectType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BInteger",
+        "unluac.parse.BList",
+        "unluac.parse.BObject"
+      ],
+      "referenced_by": [
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LBooleanType",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LHeaderType",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LNumberType",
+        "unluac.parse.LStringType",
+        "unluac.parse.LUpvalueType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BSizeT": {
+      "file": "src/unluac/parse/BSizeT.java",
+      "references": [
+        "unluac.parse.BInteger"
+      ],
+      "referenced_by": [
+        "unluac.encode.LucEncoder",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LString",
+        "unluac.parse.LStringType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.BSizeTType": {
+      "file": "src/unluac/parse/BSizeTType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BObjectType",
+        "unluac.parse.BSizeT"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LBoolean": {
+      "file": "src/unluac/parse/LBoolean.java",
+      "references": [
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Constant",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.branch.TrueNode",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LBooleanType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LBooleanType": {
+      "file": "src/unluac/parse/LBooleanType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LBoolean"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LConstantType": {
+      "file": "src/unluac/parse/LConstantType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LNil",
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LFunction": {
+      "file": "src/unluac/parse/LFunction.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObject",
+        "unluac.parse.LLocal",
+        "unluac.parse.LObject",
+        "unluac.parse.LString",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.Main",
+        "unluac.MainBak",
+        "unluac.decompile.Code",
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.Disassembler",
+        "unluac.decompile.Function",
+        "unluac.decompile.Upvalues",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.block.AlwaysLoop",
+        "unluac.decompile.block.Block",
+        "unluac.decompile.block.BooleanIndicator",
+        "unluac.decompile.block.Break",
+        "unluac.decompile.block.CompareBlock",
+        "unluac.decompile.block.DoEndBlock",
+        "unluac.decompile.block.ElseEndBlock",
+        "unluac.decompile.block.ForBlock",
+        "unluac.decompile.block.IfThenElseBlock",
+        "unluac.decompile.block.IfThenEndBlock",
+        "unluac.decompile.block.OuterBlock",
+        "unluac.decompile.block.RepeatBlock",
+        "unluac.decompile.block.SetBlock",
+        "unluac.decompile.block.TForBlock",
+        "unluac.decompile.block.WhileBlock",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.encode.InstructionEncoder",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.BHeader",
+        "unluac.parse.LFunctionType",
+        "unluac.test.Compare"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LFunctionType": {
+      "file": "src/unluac/parse/LFunctionType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BInteger",
+        "unluac.parse.BList",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LFunction",
+        "unluac.parse.LLocal",
+        "unluac.parse.LObject",
+        "unluac.parse.LString",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LHeader": {
+      "file": "src/unluac/parse/LHeader.java",
+      "references": [
+        "unluac.decompile.CodeExtract",
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BObject",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LBooleanType",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LNumberType",
+        "unluac.parse.LStringType",
+        "unluac.parse.LUpvalueType"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LHeaderType": {
+      "file": "src/unluac/parse/LHeaderType.java",
+      "references": [
+        "unluac.decompile.Code",
+        "unluac.decompile.Code50",
+        "unluac.decompile.CodeExtract",
+        "unluac.parse.BHeader",
+        "unluac.parse.BIntegerType",
+        "unluac.parse.BObjectType",
+        "unluac.parse.BSizeTType",
+        "unluac.parse.LBooleanType",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LHeader",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LNumberType",
+        "unluac.parse.LStringType",
+        "unluac.parse.LUpvalueType"
+      ],
+      "referenced_by": [
+        "unluac.Version"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LLocal": {
+      "file": "src/unluac/parse/LLocal.java",
+      "references": [
+        "unluac.parse.BInteger",
+        "unluac.parse.BObject",
+        "unluac.parse.LString"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Declaration",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LLocalType",
+        "unluac.test.Compare"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LLocalType": {
+      "file": "src/unluac/parse/LLocalType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BInteger",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LLocal",
+        "unluac.parse.LString"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LNil": {
+      "file": "src/unluac/parse/LNil.java",
+      "references": [
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Constant",
+        "unluac.decompile.expression.Expression",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LConstantType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LNumber": {
+      "file": "src/unluac/parse/LNumber.java",
+      "references": [
+        "unluac.parse.LNumberType",
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Constant",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LNumberType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LNumberType": {
+      "file": "src/unluac/parse/LNumberType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LNumber"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType",
+        "unluac.parse.LNumber"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LObject": {
+      "file": "src/unluac/parse/LObject.java",
+      "references": [
+        "unluac.parse.BObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Constant",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LBoolean",
+        "unluac.parse.LConstantType",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LNil",
+        "unluac.parse.LNumber",
+        "unluac.parse.LString",
+        "unluac.test.Compare"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LSourceLines": {
+      "file": "src/unluac/parse/LSourceLines.java",
+      "references": [],
+      "referenced_by": [],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LString": {
+      "file": "src/unluac/parse/LString.java",
+      "references": [
+        "unluac.parse.BSizeT",
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Constant",
+        "unluac.encode.LucEncoder",
+        "unluac.encode.StringTableWriter",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LLocal",
+        "unluac.parse.LLocalType",
+        "unluac.parse.LStringType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LStringType": {
+      "file": "src/unluac/parse/LStringType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObjectType",
+        "unluac.parse.BSizeT",
+        "unluac.parse.LString"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LUpvalue": {
+      "file": "src/unluac/parse/LUpvalue.java",
+      "references": [
+        "unluac.parse.BObject"
+      ],
+      "referenced_by": [
+        "unluac.decompile.Upvalues",
+        "unluac.decompile.VariableFinder",
+        "unluac.decompile.expression.ClosureExpression",
+        "unluac.encode.LucEncoder",
+        "unluac.parse.LFunction",
+        "unluac.parse.LFunctionType",
+        "unluac.parse.LUpvalueType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.parse.LUpvalueType": {
+      "file": "src/unluac/parse/LUpvalueType.java",
+      "references": [
+        "unluac.parse.BHeader",
+        "unluac.parse.BObjectType",
+        "unluac.parse.LUpvalue"
+      ],
+      "referenced_by": [
+        "unluac.parse.BHeader",
+        "unluac.parse.LHeader",
+        "unluac.parse.LHeaderType"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.AutoRewriteResult": {
+      "file": "src/unluac/semantic/AutoRewriteResult.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationAutoPropagator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.DialogNode": {
+      "file": "src/unluac/semantic/DialogNode.java",
+      "references": [
+        "unluac.semantic.DialogOption"
+      ],
+      "referenced_by": [
+        "unluac.semantic.Phase7DTextImpactValidator",
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.DialogOption": {
+      "file": "src/unluac/semantic/DialogOption.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.FixerResult": {
+      "file": "src/unluac/semantic/FixerResult.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.PatternBFixer",
+        "unluac.semantic.PatternFFixer",
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.IndexedGoalAccessAstScanner": {
+      "file": "src/unluac/semantic/IndexedGoalAccessAstScanner.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.ItemRequirement": {
+      "file": "src/unluac/semantic/ItemRequirement.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.KillRequirement": {
+      "file": "src/unluac/semantic/KillRequirement.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Lua50InstructionCodec": {
+      "file": "src/unluac/semantic/Lua50InstructionCodec.java",
+      "references": [
+        "unluac.decompile.Code50",
+        "unluac.decompile.Op",
+        "unluac.decompile.OpcodeMap"
+      ],
+      "referenced_by": [
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestFieldCoverageScanner",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.NpcHardcodeRewriter": {
+      "file": "src/unluac/semantic/NpcHardcodeRewriter.java",
+      "references": [
+        "unluac.semantic.QuestNpcDependencyScanner"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationAutoPropagator"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.NpcNode": {
+      "file": "src/unluac/semantic/NpcNode.java",
+      "references": [
+        "unluac.semantic.QuestNode"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcDependencyGraph",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.RuntimeConsistencyValidator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.NpcScriptModel": {
+      "file": "src/unluac/semantic/NpcScriptModel.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.QuestFieldCoverageScanner"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.NpcSemanticExtractor": {
+      "file": "src/unluac/semantic/NpcSemanticExtractor.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.decompile.Op",
+        "unluac.semantic.Lua50InstructionCodec",
+        "unluac.semantic.NpcScriptModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestFieldCoverageScanner"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.PatternBFixer": {
+      "file": "src/unluac/semantic/PatternBFixer.java",
+      "references": [
+        "unluac.semantic.FixerResult",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.RuntimeFailurePatternClassifier"
+      ],
+      "referenced_by": [
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.PatternFFixer": {
+      "file": "src/unluac/semantic/PatternFFixer.java",
+      "references": [
+        "unluac.semantic.FixerResult",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.RuntimeFailurePatternClassifier"
+      ],
+      "referenced_by": [
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Phase25QuestNpcDependencyMapper": {
+      "file": "src/unluac/semantic/Phase25QuestNpcDependencyMapper.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Phase2LucDataExtractionSystem": {
+      "file": "src/unluac/semantic/Phase2LucDataExtractionSystem.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Phase3DatabaseWriter": {
+      "file": "src/unluac/semantic/Phase3DatabaseWriter.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase3DbConsistencyValidator": {
+      "file": "src/unluac/semantic/Phase3DbConsistencyValidator.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase4QuestExportValidator": {
+      "file": "src/unluac/semantic/Phase4QuestExportValidator.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Phase4QuestLucExporter": {
+      "file": "src/unluac/semantic/Phase4QuestLucExporter.java",
+      "references": [],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase5NpcExportValidator": {
+      "file": "src/unluac/semantic/Phase5NpcExportValidator.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.Phase5NpcLucExporter": {
+      "file": "src/unluac/semantic/Phase5NpcLucExporter.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [
+        "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+        "unluac.semantic.Phase6CDbDrivenExportValidator",
+        "unluac.semantic.Phase6DbMutationAndImpactValidator"
+      ],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator": {
+      "file": "src/unluac/semantic/Phase6BForcedHighReferenceMutationValidator.java",
+      "references": [
+        "unluac.semantic.Phase5NpcLucExporter",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase6CDbDrivenExportValidator": {
+      "file": "src/unluac/semantic/Phase6CDbDrivenExportValidator.java",
+      "references": [
+        "unluac.semantic.Phase5NpcLucExporter",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase6DbMutationAndImpactValidator": {
+      "file": "src/unluac/semantic/Phase6DbMutationAndImpactValidator.java",
+      "references": [
+        "unluac.semantic.Phase5NpcLucExporter",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase7ANpcTextExtractionSystem": {
+      "file": "src/unluac/semantic/Phase7ANpcTextExtractionSystem.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase7BNpcTextModelBuilder": {
+      "file": "src/unluac/semantic/Phase7BNpcTextModelBuilder.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase7CNpcTextExporter": {
+      "file": "src/unluac/semantic/Phase7CNpcTextExporter.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase7DTextImpactValidator": {
+      "file": "src/unluac/semantic/Phase7DTextImpactValidator.java",
+      "references": [
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.Phase7NpcLucBinaryExporter": {
+      "file": "src/unluac/semantic/Phase7NpcLucBinaryExporter.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50ChunkSerializer",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.chunk.LuaChunk"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": true
+    },
+    "unluac.semantic.PropagationEdge": {
+      "file": "src/unluac/semantic/PropagationEdge.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.PropagationResult",
+        "unluac.semantic.QuestModificationPropagationEngine"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.PropagationResult": {
+      "file": "src/unluac/semantic/PropagationResult.java",
+      "references": [
+        "unluac.semantic.PropagationEdge"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationPropagationEngine"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestDialogTree": {
+      "file": "src/unluac/semantic/QuestDialogTree.java",
+      "references": [
+        "unluac.semantic.DialogNode"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorModel",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestDialogTreeExtractor": {
+      "file": "src/unluac/semantic/QuestDialogTreeExtractor.java",
+      "references": [
+        "unluac.chunk.LuaChunk",
+        "unluac.decompile.Op",
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.DialogOption",
+        "unluac.semantic.Lua50InstructionCodec",
+        "unluac.semantic.QuestDialogTree"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestSemanticExtractor"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestEditorCli": {
+      "file": "src/unluac/semantic/QuestEditorCli.java",
+      "references": [
+        "QuestEditorCli",
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ],
+      "referenced_by": [
+        "QuestEditorCli",
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestFieldCoverageScanner": {
+      "file": "src/unluac/semantic/QuestFieldCoverageScanner.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.Lua50InstructionCodec",
+        "unluac.semantic.NpcScriptModel",
+        "unluac.semantic.NpcSemanticExtractor",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.ScriptTypeDetector"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestGetItemStructureRewriter": {
+      "file": "src/unluac/semantic/QuestGetItemStructureRewriter.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestGoal": {
+      "file": "src/unluac/semantic/QuestGoal.java",
+      "references": [
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestEditorService",
+        "unluac.editor.QuestStageModel",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestModificationAutoPropagator": {
+      "file": "src/unluac/semantic/QuestModificationAutoPropagator.java",
+      "references": [
+        "unluac.semantic.AutoRewriteResult",
+        "unluac.semantic.NpcHardcodeRewriter",
+        "unluac.semantic.QuestNpcDependencyScanner",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestModificationPropagationAnalyzer": {
+      "file": "src/unluac/semantic/QuestModificationPropagationAnalyzer.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestModificationPropagationEngine": {
+      "file": "src/unluac/semantic/QuestModificationPropagationEngine.java",
+      "references": [
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.PropagationEdge",
+        "unluac.semantic.PropagationResult",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcDependencyGraph",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestModificationRiskValidator": {
+      "file": "src/unluac/semantic/QuestModificationRiskValidator.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.editor.QuestEditorModel",
+        "unluac.editor.QuestReward",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestNpcDependencyScanner",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestNode": {
+      "file": "src/unluac/semantic/QuestNode.java",
+      "references": [
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.QuestNpcDependencyGraph",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.RuntimeConsistencyValidator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestNpcDependencyGraph": {
+      "file": "src/unluac/semantic/QuestNpcDependencyGraph.java",
+      "references": [
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.QuestNode"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.RuntimeConsistencyValidator"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestNpcDependencyScanner": {
+      "file": "src/unluac/semantic/QuestNpcDependencyScanner.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.NpcHardcodeRewriter",
+        "unluac.semantic.QuestModificationAutoPropagator",
+        "unluac.semantic.QuestModificationRiskValidator"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestNpcGraphBuilder": {
+      "file": "src/unluac/semantic/QuestNpcGraphBuilder.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcDependencyGraph",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.RuntimeConsistencyValidator"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestRuntimeAstMapper": {
+      "file": "src/unluac/semantic/QuestRuntimeAstMapper.java",
+      "references": [
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestRuntimeState",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestRuntimeStateDemo"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestRuntimeGoalSnapshot": {
+      "file": "src/unluac/semantic/QuestRuntimeGoalSnapshot.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestRuntimeStateMachine"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestRuntimeState": {
+      "file": "src/unluac/semantic/QuestRuntimeState.java",
+      "references": [
+        "unluac.semantic.QuestRuntimeStateMachine"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestRuntimeStateMachine"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestRuntimeStateDemo": {
+      "file": "src/unluac/semantic/QuestRuntimeStateDemo.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeGoalSnapshot",
+        "unluac.semantic.QuestRuntimeState",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestRuntimeStateMachine": {
+      "file": "src/unluac/semantic/QuestRuntimeStateMachine.java",
+      "references": [
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.DialogOption",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.QuestRuntimeGoalSnapshot",
+        "unluac.semantic.QuestRuntimeState",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeState",
+        "unluac.semantic.QuestRuntimeStateDemo"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticCsvTool": {
+      "file": "src/unluac/semantic/QuestSemanticCsvTool.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticExtractTool": {
+      "file": "src/unluac/semantic/QuestSemanticExtractTool.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticExtractor": {
+      "file": "src/unluac/semantic/QuestSemanticExtractor.java",
+      "references": [
+        "unluac.chunk.LuaChunk",
+        "unluac.decompile.Op",
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.DialogOption",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.Lua50InstructionCodec",
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestDialogTreeExtractor",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.QuestFieldCoverageScanner",
+        "unluac.semantic.QuestModificationPropagationAnalyzer",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractTool",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticJson": {
+      "file": "src/unluac/semantic/QuestSemanticJson.java",
+      "references": [
+        "unluac.semantic.DialogNode",
+        "unluac.semantic.DialogOption",
+        "unluac.semantic.ItemRequirement",
+        "unluac.semantic.KillRequirement",
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestGoal",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestDialogJsonValidator",
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService",
+        "unluac.editor.QuestEditorValidator",
+        "unluac.semantic.IndexedGoalAccessAstScanner",
+        "unluac.semantic.PatternBFixer",
+        "unluac.semantic.PatternFFixer",
+        "unluac.semantic.Phase25QuestNpcDependencyMapper",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase3DatabaseWriter",
+        "unluac.semantic.Phase3DbConsistencyValidator",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.Phase5NpcExportValidator",
+        "unluac.semantic.Phase5NpcLucExporter",
+        "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+        "unluac.semantic.Phase6CDbDrivenExportValidator",
+        "unluac.semantic.Phase6DbMutationAndImpactValidator",
+        "unluac.semantic.Phase7ANpcTextExtractionSystem",
+        "unluac.semantic.Phase7BNpcTextModelBuilder",
+        "unluac.semantic.Phase7CNpcTextExporter",
+        "unluac.semantic.Phase7DTextImpactValidator",
+        "unluac.semantic.QuestGetItemStructureRewriter",
+        "unluac.semantic.QuestModificationAutoPropagator",
+        "unluac.semantic.QuestModificationPropagationAnalyzer",
+        "unluac.semantic.QuestModificationPropagationEngine",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractTool",
+        "unluac.semantic.RuntimeAutoFixDispatcher",
+        "unluac.semantic.RuntimeAutoRegressionRunner",
+        "unluac.semantic.RuntimeConsistencyValidator",
+        "unluac.semantic.RuntimeFailurePatternClassifier"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticModel": {
+      "file": "src/unluac/semantic/QuestSemanticModel.java",
+      "references": [
+        "unluac.semantic.QuestDialogTree",
+        "unluac.semantic.QuestGoal"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.Phase2LucDataExtractionSystem",
+        "unluac.semantic.Phase4QuestExportValidator",
+        "unluac.semantic.QuestModificationPropagationAnalyzer",
+        "unluac.semantic.QuestModificationRiskValidator",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestRuntimeAstMapper",
+        "unluac.semantic.QuestRuntimeStateDemo",
+        "unluac.semantic.QuestRuntimeStateMachine",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.QuestSemanticPatchApplier"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.QuestSemanticPatchApplier": {
+      "file": "src/unluac/semantic/QuestSemanticPatchApplier.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.Lua50StructureValidator",
+        "unluac.chunk.LuaChunk",
+        "unluac.semantic.QuestSemanticCsvTool",
+        "unluac.semantic.QuestSemanticExtractor",
+        "unluac.semantic.QuestSemanticModel"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestEditorCli"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.RuntimeAutoFixDispatcher": {
+      "file": "src/unluac/semantic/RuntimeAutoFixDispatcher.java",
+      "references": [
+        "unluac.semantic.FixerResult",
+        "unluac.semantic.PatternBFixer",
+        "unluac.semantic.PatternFFixer",
+        "unluac.semantic.QuestSemanticJson",
+        "unluac.semantic.RuntimeFailurePatternClassifier"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.RuntimeAutoRegressionRunner": {
+      "file": "src/unluac/semantic/RuntimeAutoRegressionRunner.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.RuntimeConsistencyValidator": {
+      "file": "src/unluac/semantic/RuntimeConsistencyValidator.java",
+      "references": [
+        "unluac.semantic.NpcNode",
+        "unluac.semantic.QuestNode",
+        "unluac.semantic.QuestNpcDependencyGraph",
+        "unluac.semantic.QuestNpcGraphBuilder",
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.RuntimeFailurePatternClassifier": {
+      "file": "src/unluac/semantic/RuntimeFailurePatternClassifier.java",
+      "references": [
+        "unluac.semantic.QuestSemanticJson"
+      ],
+      "referenced_by": [
+        "unluac.semantic.PatternBFixer",
+        "unluac.semantic.PatternFFixer",
+        "unluac.semantic.RuntimeAutoFixDispatcher"
+      ],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.semantic.ScriptTypeDetector": {
+      "file": "src/unluac/semantic/ScriptTypeDetector.java",
+      "references": [
+        "unluac.chunk.Lua50ChunkParser",
+        "unluac.chunk.LuaChunk",
+        "unluac.decompile.Op",
+        "unluac.semantic.Lua50InstructionCodec"
+      ],
+      "referenced_by": [
+        "unluac.editor.QuestEditorFrame",
+        "unluac.editor.QuestEditorService",
+        "unluac.semantic.QuestFieldCoverageScanner"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.Compare": {
+      "file": "src/unluac/test/Compare.java",
+      "references": [
+        "unluac.Configuration",
+        "unluac.parse.BHeader",
+        "unluac.parse.LFunction",
+        "unluac.parse.LLocal",
+        "unluac.parse.LObject"
+      ],
+      "referenced_by": [
+        "unluac.test.TestSuite"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.LuaC": {
+      "file": "src/unluac/test/LuaC.java",
+      "references": [
+        "unluac.test.LuaSpec"
+      ],
+      "referenced_by": [
+        "unluac.test.TestSuite"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.LuaSpec": {
+      "file": "src/unluac/test/LuaSpec.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.test.LuaC",
+        "unluac.test.RunTest",
+        "unluac.test.RunTests",
+        "unluac.test.TestSuite"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.RunTest": {
+      "file": "src/unluac/test/RunTest.java",
+      "references": [
+        "unluac.test.LuaSpec",
+        "unluac.test.TestFiles"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.test.RunTests": {
+      "file": "src/unluac/test/RunTests.java",
+      "references": [
+        "unluac.test.LuaSpec",
+        "unluac.test.TestFiles"
+      ],
+      "referenced_by": [],
+      "has_main": true,
+      "has_db_access_code": false
+    },
+    "unluac.test.TestFiles": {
+      "file": "src/unluac/test/TestFiles.java",
+      "references": [
+        "unluac.test.TestSuite"
+      ],
+      "referenced_by": [
+        "unluac.test.RunTest",
+        "unluac.test.RunTests"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.TestResult": {
+      "file": "src/unluac/test/TestResult.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.test.TestSuite"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.test.TestSuite": {
+      "file": "src/unluac/test/TestSuite.java",
+      "references": [
+        "unluac.Main",
+        "unluac.test.Compare",
+        "unluac.test.LuaC",
+        "unluac.test.LuaSpec",
+        "unluac.test.TestResult"
+      ],
+      "referenced_by": [
+        "unluac.test.TestFiles"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    },
+    "unluac.util.Stack": {
+      "file": "src/unluac/util/Stack.java",
+      "references": [],
+      "referenced_by": [
+        "unluac.decompile.Decompiler",
+        "unluac.decompile.block.IfThenEndBlock"
+      ],
+      "has_main": false,
+      "has_db_access_code": false
+    }
+  },
+  "unreferenced_classes": [
+    "unluac.MainBak",
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.decompile.Disassembler",
+    "unluac.decompile.statement.Declare",
+    "unluac.editor.QuestEditorIdempotenceCheck",
+    "unluac.editor.QuestEditorMain",
+    "unluac.encode.LucEncoder",
+    "unluac.parse.LSourceLines",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestGetItemStructureRewriter",
+    "unluac.semantic.QuestModificationAutoPropagator",
+    "unluac.semantic.QuestModificationPropagationAnalyzer",
+    "unluac.semantic.QuestModificationPropagationEngine",
+    "unluac.semantic.QuestRuntimeStateDemo",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.test.RunTest",
+    "unluac.test.RunTests"
+  ],
+  "utility_class_rules": [
+    "simple class name matches utility suffix pattern"
+  ],
+  "utility_classes": [
+    "unluac.chunk.Lua50AstPatchTool",
+    "unluac.chunk.Lua50AstPatcher",
+    "unluac.chunk.Lua50ChunkParser",
+    "unluac.chunk.Lua50ChunkRoundTripTool",
+    "unluac.chunk.Lua50ConstantCsvTool",
+    "unluac.chunk.Lua50StructureValidator",
+    "unluac.chunk.Lua50ValidateTool",
+    "unluac.editor.QuestDialogJsonValidator",
+    "unluac.editor.QuestEditorValidator",
+    "unluac.editor.QuestRewardDiffDetector",
+    "unluac.encode.BinaryCodec",
+    "unluac.encode.ChecksumWriter",
+    "unluac.encode.HeaderWriter",
+    "unluac.encode.StringTableWriter",
+    "unluac.semantic.IndexedGoalAccessAstScanner",
+    "unluac.semantic.Lua50InstructionCodec",
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter",
+    "unluac.semantic.QuestFieldCoverageScanner",
+    "unluac.semantic.QuestModificationRiskValidator",
+    "unluac.semantic.QuestNpcDependencyScanner",
+    "unluac.semantic.QuestRuntimeAstMapper",
+    "unluac.semantic.QuestSemanticCsvTool",
+    "unluac.semantic.QuestSemanticExtractTool",
+    "unluac.semantic.QuestSemanticPatchApplier",
+    "unluac.semantic.RuntimeAutoFixDispatcher",
+    "unluac.semantic.RuntimeAutoRegressionRunner",
+    "unluac.semantic.RuntimeConsistencyValidator",
+    "unluac.semantic.ScriptTypeDetector"
+  ],
+  "stage_utility_rules": [
+    "simple class name matches ^Phase\\d+[A-Za-z0-9_]*$"
+  ],
+  "stage_utility_classes_inferred": [
+    "unluac.semantic.Phase25QuestNpcDependencyMapper",
+    "unluac.semantic.Phase2LucDataExtractionSystem",
+    "unluac.semantic.Phase3DatabaseWriter",
+    "unluac.semantic.Phase3DbConsistencyValidator",
+    "unluac.semantic.Phase4QuestExportValidator",
+    "unluac.semantic.Phase4QuestLucExporter",
+    "unluac.semantic.Phase5NpcExportValidator",
+    "unluac.semantic.Phase5NpcLucExporter",
+    "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+    "unluac.semantic.Phase6CDbDrivenExportValidator",
+    "unluac.semantic.Phase6DbMutationAndImpactValidator",
+    "unluac.semantic.Phase7ANpcTextExtractionSystem",
+    "unluac.semantic.Phase7BNpcTextModelBuilder",
+    "unluac.semantic.Phase7CNpcTextExporter",
+    "unluac.semantic.Phase7DTextImpactValidator",
+    "unluac.semantic.Phase7NpcLucBinaryExporter"
+  ]
+}

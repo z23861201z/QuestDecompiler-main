@@ -1,0 +1,122 @@
+{
+  "generated_at_utc": "2026-02-11T12:09:40.154177+00:00",
+  "active_code_definition": {
+    "roots": [
+      "QuestEditorCli",
+      "unluac.Main",
+      "unluac.chunk.Lua50AstPatchTool",
+      "unluac.chunk.Lua50ChunkRoundTripTool",
+      "unluac.chunk.Lua50ConstantCsvTool",
+      "unluac.chunk.Lua50ValidateTool",
+      "unluac.editor.QuestEditorIdempotenceCheck",
+      "unluac.editor.QuestEditorMain",
+      "unluac.encode.LucEncoder",
+      "unluac.semantic.IndexedGoalAccessAstScanner",
+      "unluac.semantic.NpcHardcodeRewriter",
+      "unluac.semantic.PatternBFixer",
+      "unluac.semantic.PatternFFixer",
+      "unluac.semantic.Phase25QuestNpcDependencyMapper",
+      "unluac.semantic.Phase2LucDataExtractionSystem",
+      "unluac.semantic.Phase3DatabaseWriter",
+      "unluac.semantic.Phase3DbConsistencyValidator",
+      "unluac.semantic.Phase4QuestExportValidator",
+      "unluac.semantic.Phase4QuestLucExporter",
+      "unluac.semantic.Phase5NpcExportValidator",
+      "unluac.semantic.Phase5NpcLucExporter",
+      "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+      "unluac.semantic.Phase6CDbDrivenExportValidator",
+      "unluac.semantic.Phase6DbMutationAndImpactValidator",
+      "unluac.semantic.Phase7ANpcTextExtractionSystem",
+      "unluac.semantic.Phase7BNpcTextModelBuilder",
+      "unluac.semantic.Phase7CNpcTextExporter",
+      "unluac.semantic.Phase7DTextImpactValidator",
+      "unluac.semantic.Phase7NpcLucBinaryExporter",
+      "unluac.semantic.QuestEditorCli",
+      "unluac.semantic.QuestFieldCoverageScanner",
+      "unluac.semantic.QuestGetItemStructureRewriter",
+      "unluac.semantic.QuestModificationAutoPropagator",
+      "unluac.semantic.QuestModificationPropagationAnalyzer",
+      "unluac.semantic.QuestModificationPropagationEngine",
+      "unluac.semantic.QuestModificationRiskValidator",
+      "unluac.semantic.QuestNpcDependencyScanner",
+      "unluac.semantic.QuestNpcGraphBuilder",
+      "unluac.semantic.QuestRuntimeStateDemo",
+      "unluac.semantic.QuestSemanticCsvTool",
+      "unluac.semantic.QuestSemanticExtractTool",
+      "unluac.semantic.QuestSemanticPatchApplier",
+      "unluac.semantic.RuntimeAutoFixDispatcher",
+      "unluac.semantic.RuntimeAutoRegressionRunner",
+      "unluac.semantic.RuntimeConsistencyValidator",
+      "unluac.semantic.RuntimeFailurePatternClassifier"
+    ],
+    "root_rule": "all non-test main() entry classes excluding *Bak",
+    "active_class_count": 189,
+    "reference_condition": "candidate has zero inbound references from active classes (self-reference excluded)"
+  },
+  "semantic_classes_not_referenced_by_active_code": [
+    {
+      "class": "unluac.semantic.QuestSemanticExtractTool",
+      "file": "src/unluac/semantic/QuestSemanticExtractTool.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    }
+  ],
+  "rewrite_classes_not_referenced_by_active_code": [
+    {
+      "class": "unluac.semantic.QuestGetItemStructureRewriter",
+      "file": "src/unluac/semantic/QuestGetItemStructureRewriter.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    }
+  ],
+  "validator_classes_not_referenced_by_active_code": [
+    {
+      "class": "unluac.semantic.Phase3DbConsistencyValidator",
+      "file": "src/unluac/semantic/Phase3DbConsistencyValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase4QuestExportValidator",
+      "file": "src/unluac/semantic/Phase4QuestExportValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase5NpcExportValidator",
+      "file": "src/unluac/semantic/Phase5NpcExportValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase6BForcedHighReferenceMutationValidator",
+      "file": "src/unluac/semantic/Phase6BForcedHighReferenceMutationValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase6CDbDrivenExportValidator",
+      "file": "src/unluac/semantic/Phase6CDbDrivenExportValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase6DbMutationAndImpactValidator",
+      "file": "src/unluac/semantic/Phase6DbMutationAndImpactValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.Phase7DTextImpactValidator",
+      "file": "src/unluac/semantic/Phase7DTextImpactValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    },
+    {
+      "class": "unluac.semantic.RuntimeConsistencyValidator",
+      "file": "src/unluac/semantic/RuntimeConsistencyValidator.java",
+      "referenced_by_active_classes": [],
+      "all_referenced_by": []
+    }
+  ]
+}
