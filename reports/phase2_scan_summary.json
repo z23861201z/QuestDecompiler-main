@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-02-11T00:59:34.279+08:00",
+  "generatedAt": "2026-02-11T22:48:24.183+08:00",
   "questFileDetected": true,
   "totalFilesScanned": 469,
   "totalNpcFilesScanned": 468,
-  "totalQuestReferencesDetected": 24447,
-  "totalGoalIndexedAccessDetected": 4979,
+  "totalQuestReferencesDetected": 19829,
+  "totalGoalIndexedAccessDetected": 2044,
   "missingFiles": [],
   "parsingErrors": []
 }
