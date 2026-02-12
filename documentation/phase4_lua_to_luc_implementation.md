@@ -112,3 +112,18 @@ first32_compare=equal
 - 对于不同源脚本生成的 `.luc`，header 可一致，payload（source 字符串、常量、debug 信息、指令）必然不同。
 - 因此“与 `quest.luc` 前 32 字节完全一致”只在“重打包同一输入”场景成立；对不同 lua 输入不成立。
 
+---
+
+## 附录：业务链路 Phase4（DB -> quest 导出）补全记录入口
+
+本文件描述的是“通用 lua->luc 编译实现”；业务链路里 `Phase4QuestLucExporter` 的字段补全记录见：
+
+- 变更总记录：`documentation/phase2_4_field_completion_change_log.md`
+- 导出实现：`src/unluac/semantic/Phase4QuestLucExporter.java`
+- 导出校验：`src/unluac/semantic/Phase4QuestExportValidator.java`
+
+本次补全覆盖了以下导出字段：
+
+- `reward`: `exp/gold/fame/pvppoint/mileage/getSkill/items/extra`
+- `conditions`: `needLevel/needQuest/requstItem/needItem/deleteItem`
+- `goal.extra`

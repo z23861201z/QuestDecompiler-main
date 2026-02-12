@@ -178,3 +178,34 @@
 - 不改：`rawText`、`stringLiteral`
 - 导出生效条件：`modifiedText IS NOT NULL AND modifiedText <> rawText`
 - 定位优先级：`astMarker` > `npcFile + line + column(+callType)`
+
+## 2026-02-12 Quest 字段补全（Phase2/3/4 + Extractor）
+
+本节用于记录“在现有 `ghost_game` 表结构上做补全，不重建库”的实现入口。
+
+### 1) 代码入口
+- Extractor：`src/unluac/semantic/QuestSemanticExtractor.java`
+  - 新增条件字段识别：`needItem`、`deleteItem`
+- Phase2 抽取：`src/unluac/semantic/Phase2LucDataExtractionSystem.java`
+  - 输出补全：`conditions`、`reward.fame/pvppoint/mileage/skills/extra`、`goal.extra`
+- Phase3 入库：`src/unluac/semantic/Phase3DatabaseWriter.java`
+  - `quest_main` 增量补列 + `quest_reward_skill` 写入
+- Phase3 回读校验：`src/unluac/semantic/Phase3DbConsistencyValidator.java`
+- Phase4 导出：`src/unluac/semantic/Phase4QuestLucExporter.java`
+- Phase4 导出校验：`src/unluac/semantic/Phase4QuestExportValidator.java`
+
+### 2) 数据库补全点（ghost_game）
+- `quest_main` 新增字段：
+  - `reward_fame`
+  - `reward_pvppoint`
+  - `reward_mileage`
+  - `reward_extra_json`
+  - `goal_extra_json`
+  - `conditions_json`
+- 新增表：
+  - `quest_reward_skill(quest_id, seq_index, skill_id)`
+
+### 3) 变更留档文档
+- 变更总记录：`documentation/phase2_4_field_completion_change_log.md`
+- 迁移 SQL：`documentation/sql/phase2_4_field_completion_migration.sql`
+- 回滚 SQL：`documentation/sql/phase2_4_field_completion_rollback.sql`
