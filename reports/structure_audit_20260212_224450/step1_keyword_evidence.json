@@ -1,0 +1,917 @@
+﻿[
+    {
+        "file":  "src/unluac\\editor\\QuestEditorFrame.java",
+        "className":  "QuestEditorFrame",
+        "evidences":  [
+                          {
+                              "line":  40,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   38: import unluac.semantic.KillRequirement;\n   39: import unluac.semantic.NpcScriptModel;\n   40: import unluac.semantic.QuestGoal;\n   41: import unluac.semantic.ScriptTypeDetector;\n   42: "
+                          },
+                          {
+                              "line":  70,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   68: \n   69:   private final JTextField needLevelField = new JTextField();\n   70:   private final JTextArea goalItemsArea = new JTextArea();\n   71:   private final JTextArea goalMonstersArea = new JTextArea();\n   72: "
+                          },
+                          {
+                              "line":  71,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   69:   private final JTextField needLevelField = new JTextField();\n   70:   private final JTextArea goalItemsArea = new JTextArea();\n   71:   private final JTextArea goalMonstersArea = new JTextArea();\n   72: \n   73:   private final JTextField rewardExpField = new JTextField();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestEditorModel.java",
+        "className":  "QuestEditorModel",
+        "evidences":  [
+                          {
+                              "line":  7,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    5: \n    6: import unluac.semantic.QuestDialogTree;\n    7: import unluac.semantic.QuestGoal;\n    8: \n    9: public class QuestEditorModel {"
+                          },
+                          {
+                              "line":  15,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   13:   public String description;\n   14: \n   15:   public int rewardExp;\n   16:   public int rewardFame;\n   17:   public int rewardMoney;"
+                          },
+                          {
+                              "line":  16,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   14: \n   15:   public int rewardExp;\n   16:   public int rewardFame;\n   17:   public int rewardMoney;\n   18:   public int rewardPvppoint;"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestEditorSaveResult.java",
+        "className":  "QuestEditorSaveResult",
+        "evidences":  [
+                          {
+                              "line":  12,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   10:   public String mappingPath;\n   11:   public String validationSummary;\n   12:   public String rewardDiffSummary;\n   13: }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestEditorService.java",
+        "className":  "QuestEditorService",
+        "evidences":  [
+                          {
+                              "line":  30,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   28: import unluac.semantic.ItemRequirement;\n   29: import unluac.semantic.KillRequirement;\n   30: import unluac.semantic.QuestGoal;\n   31: \n   32: public class QuestEditorService {"
+                          },
+                          {
+                              "line":  62,
+                              "method":  "loadFromLuc",
+                              "snippet":  "   60:     Map\u003cInteger, Map\u003cString, String\u003e\u003e boundFieldValueByQuest = collectBoundStringValues(extraction.fieldBindings);\n   61:     Map\u003cInteger, Map\u003cInteger, String\u003e\u003e dialogLineFieldByQuest = collectDialogLineFieldMap(extraction.fieldBindings);\n   62:     Map\u003cInteger, QuestReward\u003e rewardByQuest = buildEditorRewardByQuest(extraction.quests);\n   63: \n   64:     List\u003cQuestEditorModel\u003e out = new ArrayList\u003cQuestEditorModel\u003e();"
+                          },
+                          {
+                              "line":  71,
+                              "method":  "loadFromLuc",
+                              "snippet":  "   69:       model.description = row.description;\n   70: \n   71:       QuestReward reward = rewardByQuest.get(Integer.valueOf(row.questId));\n   72:       if(reward == null) {\n   73:         reward = new QuestReward();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestReward.java",
+        "className":  "QuestReward",
+        "evidences":  [
+                          {
+                              "line":  8,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    6: import java.util.Map;\n    7: \n    8: public class QuestReward {\n    9: \n   10:   public int exp;"
+                          },
+                          {
+                              "line":  11,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    9: \n   10:   public int exp;\n   11:   public int fame;\n   12:   public int money;\n   13:   public int pvppoint;"
+                          },
+                          {
+                              "line":  13,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   11:   public int fame;\n   12:   public int money;\n   13:   public int pvppoint;\n   14:   public final List\u003cItemReward\u003e items = new ArrayList\u003cItemReward\u003e();\n   15:   public final List\u003cInteger\u003e skillIds = new ArrayList\u003cInteger\u003e();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestRewardDiffDetector.java",
+        "className":  "QuestRewardDiffDetector",
+        "evidences":  [
+                          {
+                              "line":  8,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    6: import java.util.Objects;\n    7: \n    8: public class QuestRewardDiffDetector {\n    9: \n   10:   public QuestRewardDiffReport detect(QuestReward before, QuestReward after) {"
+                          },
+                          {
+                              "line":  10,
+                              "method":  "detect",
+                              "snippet":  "    8: public class QuestRewardDiffDetector {\n    9: \n   10:   public QuestRewardDiffReport detect(QuestReward before, QuestReward after) {\n   11:     QuestReward left = before == null ? new QuestReward() : before;\n   12:     QuestReward right = after == null ? new QuestReward() : after;"
+                          },
+                          {
+                              "line":  11,
+                              "method":  "detect",
+                              "snippet":  "    9: \n   10:   public QuestRewardDiffReport detect(QuestReward before, QuestReward after) {\n   11:     QuestReward left = before == null ? new QuestReward() : before;\n   12:     QuestReward right = after == null ? new QuestReward() : after;\n   13: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\editor\\QuestStageModel.java",
+        "className":  "QuestStageModel",
+        "evidences":  [
+                          {
+                              "line":  6,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    4: import java.util.List;\n    5: \n    6: import unluac.semantic.QuestGoal;\n    7: \n    8: public class QuestStageModel {"
+                          },
+                          {
+                              "line":  25,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   23:   public int completionDialogLineIndex = -1;\n   24: \n   25:   public QuestGoal goal = new QuestGoal();\n   26:   public QuestReward reward = new QuestReward();\n   27: }"
+                          },
+                          {
+                              "line":  26,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   24: \n   25:   public QuestGoal goal = new QuestGoal();\n   26:   public QuestReward reward = new QuestReward();\n   27: }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\IndexedGoalAccessAstScanner.java",
+        "className":  "IndexedGoalAccessAstScanner",
+        "evidences":  [
+                          {
+                              "line":  25,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   23: import java.util.Set;\n   24: \n   25: public class IndexedGoalAccessAstScanner {\n   26: \n   27:   private static final Charset UTF8 = Charset.forName(\"UTF-8\");"
+                          },
+                          {
+                              "line":  35,
+                              "method":  "main",
+                              "snippet":  "   33:     Path output = args.length \u003e= 2\n   34:         ? Paths.get(args[1])\n   35:         : Paths.get(\"reports\", \"indexed_goal_access_full_scan.json\");\n   36: \n   37:     IndexedGoalAccessAstScanner scanner = new IndexedGoalAccessAstScanner();"
+                          },
+                          {
+                              "line":  37,
+                              "method":  "main",
+                              "snippet":  "   35:         : Paths.get(\"reports\", \"indexed_goal_access_full_scan.json\");\n   36: \n   37:     IndexedGoalAccessAstScanner scanner = new IndexedGoalAccessAstScanner();\n   38:     ScanReport report = scanner.scan(inputDir, output);\n   39: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\NpcHardcodeRewriter.java",
+        "className":  "NpcHardcodeRewriter",
+        "evidences":  [
+                          {
+                              "line":  30,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   28:   private static final Charset UTF8 = Charset.forName(\"UTF-8\");\n   29: \n   30:   private static final Pattern SIMPLE_GETITEM_REF = Pattern.compile(\n   31:       \"qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*(id|count)\");\n   32: "
+                          },
+                          {
+                              "line":  31,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   29: \n   30:   private static final Pattern SIMPLE_GETITEM_REF = Pattern.compile(\n   31:       \"qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*(id|count)\");\n   32: \n   33:   private static final Pattern CHECK_ITEM_PAIR = Pattern.compile("
+                          },
+                          {
+                              "line":  34,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   32: \n   33:   private static final Pattern CHECK_ITEM_PAIR = Pattern.compile(\n   34:       \"CHECK_ITEM_CNT\\\\s*\\\\(\\\\s*qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\\\\s*\\\\)\\\\s*([\u003c\u003e]=?)\\\\s*qt\\\\s*\\\\[\\\\s*\\\\1\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\2\\\\s*\\\\]\\\\s*\\\\.\\\\s*count\");\n   35: \n   36:   private static final Pattern DUPLICATED_HAS_ALL_ITEMS_AND = Pattern.compile("
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\PatternBFixer.java",
+        "className":  "PatternBFixer",
+        "evidences":  [
+                          {
+                              "line":  32,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   30: \n   31:   private static final Pattern CHECK_ITEM_PAIR = Pattern.compile(\n   32:       \"CHECK_ITEM_CNT\\\\s*\\\\(\\\\s*qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\\\\s*\\\\)\\\\s*([\u003c\u003e]=?)\\\\s*qt\\\\s*\\\\[\\\\s*\\\\1\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\2\\\\s*\\\\]\\\\s*\\\\.\\\\s*count\",\n   33:       Pattern.CASE_INSENSITIVE);\n   34:   private static final Pattern GETITEM_ID = Pattern.compile("
+                          },
+                          {
+                              "line":  34,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   32:       \"CHECK_ITEM_CNT\\\\s*\\\\(\\\\s*qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\\\\s*\\\\)\\\\s*([\u003c\u003e]=?)\\\\s*qt\\\\s*\\\\[\\\\s*\\\\1\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\2\\\\s*\\\\]\\\\s*\\\\.\\\\s*count\",\n   33:       Pattern.CASE_INSENSITIVE);\n   34:   private static final Pattern GETITEM_ID = Pattern.compile(\n   35:       \"qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\",\n   36:       Pattern.CASE_INSENSITIVE);"
+                          },
+                          {
+                              "line":  35,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   33:       Pattern.CASE_INSENSITIVE);\n   34:   private static final Pattern GETITEM_ID = Pattern.compile(\n   35:       \"qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\",\n   36:       Pattern.CASE_INSENSITIVE);\n   37:   private static final Pattern GETITEM_COUNT = Pattern.compile("
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\PatternFFixer.java",
+        "className":  "PatternFFixer",
+        "evidences":  [
+                          {
+                              "line":  30,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   28: \n   29:   private static final Pattern KILL_MONSTER_PAIR = Pattern.compile(\n   30:       \"qData\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*qt\\\\s*\\\\[\\\\s*\\\\1\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*id\\\\s*\\\\]\\\\s*\u003e=\\\\s*qt\\\\s*\\\\[\\\\s*\\\\1\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*\\\\2\\\\s*\\\\]\\\\s*\\\\.\\\\s*count\",\n   31:       Pattern.CASE_INSENSITIVE);\n   32:   private static final Pattern KILL_MONSTER_INDEX_ACCESS = Pattern.compile("
+                          },
+                          {
+                              "line":  33,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   31:       Pattern.CASE_INSENSITIVE);\n   32:   private static final Pattern KILL_MONSTER_INDEX_ACCESS = Pattern.compile(\n   33:       \"qt\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.(id|count)\",\n   34:       Pattern.CASE_INSENSITIVE);\n   35: "
+                          },
+                          {
+                              "line":  245,
+                              "method":  "transformLine",
+                              "snippet":  "  243:         continue;\n  244:       }\n  245:       String replacement = \"__QUEST_HAS_ALL_KILL_TARGETS(qt[\" + questId + \"].goal.killMonster)\";\n  246:       matcher.appendReplacement(sb, Matcher.quoteReplacement(replacement));\n  247:     }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase25QuestNpcDependencyMapper.java",
+        "className":  "Phase25QuestNpcDependencyMapper",
+        "evidences":  [
+                          {
+                              "line":  142,
+                              "method":  "build",
+                              "snippet":  "  140:       }\n  141: \n  142:       if(\"goal.getItem\".equals(accessType)) {\n  143:         if(quest != null) {\n  144:           quest.goalGetItemAccessCount++;"
+                          },
+                          {
+                              "line":  144,
+                              "method":  "build",
+                              "snippet":  "  142:       if(\"goal.getItem\".equals(accessType)) {\n  143:         if(quest != null) {\n  144:           quest.goalGetItemAccessCount++;\n  145:         }\n  146:         npc.goalGetItemAccessCount++;"
+                          },
+                          {
+                              "line":  146,
+                              "method":  "build",
+                              "snippet":  "  144:           quest.goalGetItemAccessCount++;\n  145:         }\n  146:         npc.goalGetItemAccessCount++;\n  147:       } else if(\"goal.killMonster\".equals(accessType)) {\n  148:         if(quest != null) {"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase2LucDataExtractionSystem.java",
+        "className":  "Phase2LucDataExtractionSystem",
+        "evidences":  [
+                          {
+                              "line":  80,
+                              "method":  "main",
+                              "snippet":  "   78:     System.out.println(\"totalQuestCount=\" + result.questData.totalQuestCount);\n   79:     System.out.println(\"totalQuestReferences=\" + result.npcIndex.totalQuestReferences);\n   80:     System.out.println(\"totalGoalIndexedAccess=\" + result.summary.totalGoalIndexedAccessDetected);\n   81:   }\n   82: "
+                          },
+                          {
+                              "line":  114,
+                              "method":  "run",
+                              "snippet":  "  112:     out.summary.totalFilesScanned = out.summary.totalNpcFilesScanned + (out.summary.questFileDetected ? 1 : 0);\n  113:     out.summary.totalQuestReferencesDetected = out.npcIndex.totalQuestReferences;\n  114:     out.summary.totalGoalIndexedAccessDetected = out.npcIndex.totalGoalIndexedAccess;\n  115: \n  116:     ensureParent(questOut);"
+                          },
+                          {
+                              "line":  166,
+                              "method":  "extractQuestData",
+                              "snippet":  "  164:       }\n  165: \n  166:       record.needLevel = model.goal == null ? 0 : model.goal.needLevel;\n  167:       Integer bq = bQLoopByQuest.get(Integer.valueOf(model.questId));\n  168:       record.bQLoop = bq == null ? 0 : bq.intValue();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase3DatabaseWriter.java",
+        "className":  "Phase3DatabaseWriter",
+        "evidences":  [
+                          {
+                              "line":  69,
+                              "method":  "main",
+                              "snippet":  "   67:     System.out.println(\"summaryOutput=\" + summaryOutput.toAbsolutePath());\n   68:     System.out.println(\"totalQuestInserted=\" + summary.totalQuestInserted);\n   69:     System.out.println(\"totalGoalGetItemRows=\" + summary.totalGoalGetItemRows);\n   70:     System.out.println(\"totalGoalKillMonsterRows=\" + summary.totalGoalKillMonsterRows);\n   71:     System.out.println(\"totalGoalMeetNpcRows=\" + summary.totalGoalMeetNpcRows);"
+                          },
+                          {
+                              "line":  70,
+                              "method":  "main",
+                              "snippet":  "   68:     System.out.println(\"totalQuestInserted=\" + summary.totalQuestInserted);\n   69:     System.out.println(\"totalGoalGetItemRows=\" + summary.totalGoalGetItemRows);\n   70:     System.out.println(\"totalGoalKillMonsterRows=\" + summary.totalGoalKillMonsterRows);\n   71:     System.out.println(\"totalGoalMeetNpcRows=\" + summary.totalGoalMeetNpcRows);\n   72:     System.out.println(\"totalRewardItemRows=\" + summary.totalRewardItemRows);"
+                          },
+                          {
+                              "line":  71,
+                              "method":  "main",
+                              "snippet":  "   69:     System.out.println(\"totalGoalGetItemRows=\" + summary.totalGoalGetItemRows);\n   70:     System.out.println(\"totalGoalKillMonsterRows=\" + summary.totalGoalKillMonsterRows);\n   71:     System.out.println(\"totalGoalMeetNpcRows=\" + summary.totalGoalMeetNpcRows);\n   72:     System.out.println(\"totalRewardItemRows=\" + summary.totalRewardItemRows);\n   73:     System.out.println(\"totalNpcReferenceRows=\" + summary.totalNpcReferenceRows);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase3DbConsistencyValidator.java",
+        "className":  "Phase3DbConsistencyValidator",
+        "evidences":  [
+                          {
+                              "line":  97,
+                              "method":  "validate",
+                              "snippet":  "   95:       compareField(report, row.questId, \"needLevel\", Integer.valueOf(row.needLevel), Integer.valueOf(actual.needLevel));\n   96:       compareField(report, row.questId, \"bqLoop\", Integer.valueOf(row.bqLoop), Integer.valueOf(actual.bqLoop));\n   97:       compareField(report, row.questId, \"rewardExp\", Integer.valueOf(row.rewardExp), Integer.valueOf(actual.rewardExp));\n   98:       compareField(report, row.questId, \"rewardGold\", Integer.valueOf(row.rewardGold), Integer.valueOf(actual.rewardGold));\n   99: "
+                          },
+                          {
+                              "line":  98,
+                              "method":  "validate",
+                              "snippet":  "   96:       compareField(report, row.questId, \"bqLoop\", Integer.valueOf(row.bqLoop), Integer.valueOf(actual.bqLoop));\n   97:       compareField(report, row.questId, \"rewardExp\", Integer.valueOf(row.rewardExp), Integer.valueOf(actual.rewardExp));\n   98:       compareField(report, row.questId, \"rewardGold\", Integer.valueOf(row.rewardGold), Integer.valueOf(actual.rewardGold));\n   99: \n  100:       compareStringList(report, row.questId, \"contents\", row.contents, actual.contents);"
+                          },
+                          {
+                              "line":  104,
+                              "method":  "validate",
+                              "snippet":  "  102:       compareStringList(report, row.questId, \"info\", row.info, actual.info);\n  103: \n  104:       comparePairList(report, row.questId, \"goal.getItem\", row.goalGetItem, actual.goalGetItem);\n  105:       comparePairList(report, row.questId, \"goal.killMonster\", row.goalKillMonster, actual.goalKillMonster);\n  106:       compareIntList(report, row.questId, \"goal.meetNpc\", row.goalMeetNpc, actual.goalMeetNpc);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase4QuestExportValidator.java",
+        "className":  "Phase4QuestExportValidator",
+        "evidences":  [
+                          {
+                              "line":  96,
+                              "method":  "validate",
+                              "snippet":  "   94:       compareScalar(result, questId, \"needLevel\", source.needLevel, target.needLevel);\n   95:       compareScalar(result, questId, \"bQLoop\", source.bqLoop, target.bqLoop);\n   96:       compareScalar(result, questId, \"reward.exp\", source.rewardExp, target.rewardExp);\n   97:       compareScalar(result, questId, \"reward.gold\", source.rewardGold, target.rewardGold);\n   98: "
+                          },
+                          {
+                              "line":  97,
+                              "method":  "validate",
+                              "snippet":  "   95:       compareScalar(result, questId, \"bQLoop\", source.bqLoop, target.bqLoop);\n   96:       compareScalar(result, questId, \"reward.exp\", source.rewardExp, target.rewardExp);\n   97:       compareScalar(result, questId, \"reward.gold\", source.rewardGold, target.rewardGold);\n   98: \n   99:       compareStringList(result, questId, \"contents\", source.contents, target.contents);"
+                          },
+                          {
+                              "line":  103,
+                              "method":  "validate",
+                              "snippet":  "  101:       compareStringList(result, questId, \"info\", source.info, target.info);\n  102: \n  103:       comparePairList(result, questId, \"goal.getItem\", source.goalGetItem, target.goalGetItem);\n  104:       comparePairList(result, questId, \"goal.killMonster\", source.goalKillMonster, target.goalKillMonster);\n  105:       compareIntegerList(result, questId, \"goal.meetNpc\", source.goalMeetNpc, target.goalMeetNpc);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase4QuestLucExporter.java",
+        "className":  "Phase4QuestLucExporter",
+        "evidences":  [
+                          {
+                              "line":  26,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   24:  *\n   25:  * \u003cp\u003e所属链路：链路 B（DB -\u003e semantic model -\u003e 导出 lua -\u003e 导出 luc -\u003e 客户端读取）的 quest 分支。\u003c/p\u003e\n   26:  * \u003cp\u003e输入：`ghost_game` 中 quest 相关表（quest_main/goal/reward 等）。\u003c/p\u003e\n   27:  * \u003cp\u003e输出：`phase4_exported_quest.lua`。\u003c/p\u003e\n   28:  * \u003cp\u003e数据库副作用：无（只读）。\u003c/p\u003e"
+                          },
+                          {
+                              "line":  120,
+                              "method":  "loadFromDb",
+                              "snippet":  "  118: \n  119:     try(Connection connection = DriverManager.getConnection(jdbcUrl, user, password)) {\n  120:       String mainSql = \"SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold \"\n  121:           + \"FROM quest_main ORDER BY quest_id ASC\";\n  122:       try(PreparedStatement ps = connection.prepareStatement(mainSql);"
+                          },
+                          {
+                              "line":  134,
+                              "method":  "loadFromDb",
+                              "snippet":  "  132:           record.needLevel = toNullableInt(rs, \"need_level\");\n  133:           record.bqLoop = toNullableInt(rs, \"bq_loop\");\n  134:           record.rewardExp = toNullableInt(rs, \"reward_exp\");\n  135:           record.rewardGold = toNullableInt(rs, \"reward_gold\");\n  136:           byQuest.put(Integer.valueOf(record.questId), record);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase5NpcLucExporter.java",
+        "className":  "Phase5NpcLucExporter",
+        "evidences":  [
+                          {
+                              "line":  126,
+                              "method":  "export",
+                              "snippet":  "  124:     summary.dbNpcReferenceRows = db.npcReferenceRows;\n  125:     summary.dbOrphanReferenceRows = db.orphanReferenceRows;\n  126:     summary.dbGoalGetItemRows = db.goalGetItemRows;\n  127:     summary.dbGoalKillMonsterRows = db.goalKillMonsterRows;\n  128:     summary.dbGoalMeetNpcRows = db.goalMeetNpcRows;"
+                          },
+                          {
+                              "line":  127,
+                              "method":  "export",
+                              "snippet":  "  125:     summary.dbOrphanReferenceRows = db.orphanReferenceRows;\n  126:     summary.dbGoalGetItemRows = db.goalGetItemRows;\n  127:     summary.dbGoalKillMonsterRows = db.goalKillMonsterRows;\n  128:     summary.dbGoalMeetNpcRows = db.goalMeetNpcRows;\n  129:     summary.dbRewardItemRows = db.rewardItemRows;"
+                          },
+                          {
+                              "line":  128,
+                              "method":  "export",
+                              "snippet":  "  126:     summary.dbGoalGetItemRows = db.goalGetItemRows;\n  127:     summary.dbGoalKillMonsterRows = db.goalKillMonsterRows;\n  128:     summary.dbGoalMeetNpcRows = db.goalMeetNpcRows;\n  129:     summary.dbRewardItemRows = db.rewardItemRows;\n  130: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase6BForcedHighReferenceMutationValidator.java",
+        "className":  "Phase6BForcedHighReferenceMutationValidator",
+        "evidences":  [
+                          {
+                              "line":  192,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  190:       try {\n  191:         String updateName = \"UPDATE quest_main SET name = CONCAT(COALESCE(name,\u0027\u0027), ?) WHERE quest_id = ?\";\n  192:         String updateReward = \"UPDATE quest_reward_item SET item_count = item_count + 2 WHERE quest_id = ? ORDER BY seq_index ASC LIMIT 1\";\n  193:         String insertReward = \"INSERT INTO quest_reward_item(quest_id, seq_index, item_id, item_count) VALUES(?,?,?,?)\";\n  194:         String updateContent = \"UPDATE quest_contents SET text = CONCAT(COALESCE(text,\u0027\u0027), ?) WHERE quest_id = ? AND seq_index = 0\";"
+                          },
+                          {
+                              "line":  193,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  191:         String updateName = \"UPDATE quest_main SET name = CONCAT(COALESCE(name,\u0027\u0027), ?) WHERE quest_id = ?\";\n  192:         String updateReward = \"UPDATE quest_reward_item SET item_count = item_count + 2 WHERE quest_id = ? ORDER BY seq_index ASC LIMIT 1\";\n  193:         String insertReward = \"INSERT INTO quest_reward_item(quest_id, seq_index, item_id, item_count) VALUES(?,?,?,?)\";\n  194:         String updateContent = \"UPDATE quest_contents SET text = CONCAT(COALESCE(text,\u0027\u0027), ?) WHERE quest_id = ? AND seq_index = 0\";\n  195: "
+                          },
+                          {
+                              "line":  197,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  195: \n  196:         try(PreparedStatement psName = connection.prepareStatement(updateName);\n  197:             PreparedStatement psReward = connection.prepareStatement(updateReward);\n  198:             PreparedStatement psInsertReward = connection.prepareStatement(insertReward);\n  199:             PreparedStatement psContent = connection.prepareStatement(updateContent)) {"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase6CDbDrivenExportValidator.java",
+        "className":  "Phase6CDbDrivenExportValidator",
+        "evidences":  [
+                          {
+                              "line":  115,
+                              "method":  "pickQuestForMutation",
+                              "snippet":  "  113:     String sql = \"SELECT DISTINCT qm.quest_id \"\n  114:         + \"FROM quest_main qm \"\n  115:         + \"INNER JOIN quest_reward_item qri ON qri.quest_id = qm.quest_id \"\n  116:         + \"ORDER BY qm.quest_id ASC\";\n  117:     try(Connection connection = DriverManager.getConnection(DEFAULT_JDBC, DEFAULT_USER, DEFAULT_PASSWORD);"
+                          },
+                          {
+                              "line":  136,
+                              "method":  "applyDatabaseMutation",
+                              "snippet":  "  134:       try {\n  135:         String updateName = \"UPDATE quest_main SET name = CONCAT(COALESCE(name,\u0027\u0027), ?) WHERE quest_id = ?\";\n  136:         String updateReward = \"UPDATE quest_reward_item SET item_count = item_count + 5 WHERE quest_id = ? ORDER BY seq_index ASC LIMIT 1\";\n  137: \n  138:         try(PreparedStatement psName = connection.prepareStatement(updateName);"
+                          },
+                          {
+                              "line":  139,
+                              "method":  "applyDatabaseMutation",
+                              "snippet":  "  137: \n  138:         try(PreparedStatement psName = connection.prepareStatement(updateName);\n  139:             PreparedStatement psReward = connection.prepareStatement(updateReward)) {\n  140:           psName.setString(1, DB_ONLY_MARK);\n  141:           psName.setInt(2, questId);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\Phase6DbMutationAndImpactValidator.java",
+        "className":  "Phase6DbMutationAndImpactValidator",
+        "evidences":  [
+                          {
+                              "line":  111,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  109:             + \"FROM quest_main qm \"\n  110:             + \"WHERE EXISTS (SELECT 1 FROM quest_contents qc WHERE qc.quest_id = qm.quest_id AND qc.seq_index = 0) \"\n  111:             + \"AND EXISTS (SELECT 1 FROM quest_reward_item qri WHERE qri.quest_id = qm.quest_id) \"\n  112:             + \"ORDER BY qm.quest_id ASC\";\n  113: "
+                          },
+                          {
+                              "line":  135,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  133: \n  134:         String updateName = \"UPDATE quest_main SET name = CONCAT(COALESCE(name,\u0027\u0027), ?) WHERE quest_id = ?\";\n  135:         String updateReward = \"UPDATE quest_reward_item SET item_count = item_count + 1 WHERE quest_id = ? ORDER BY seq_index ASC LIMIT 1\";\n  136:         String updateContent = \"UPDATE quest_contents SET text = CONCAT(COALESCE(text,\u0027\u0027), ?) WHERE quest_id = ? AND seq_index = 0\";\n  137: "
+                          },
+                          {
+                              "line":  139,
+                              "method":  "mutateDatabase",
+                              "snippet":  "  137: \n  138:         try(PreparedStatement psName = connection.prepareStatement(updateName);\n  139:             PreparedStatement psReward = connection.prepareStatement(updateReward);\n  140:             PreparedStatement psContent = connection.prepareStatement(updateContent)) {\n  141: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestFieldCoverageScanner.java",
+        "className":  "QuestFieldCoverageScanner",
+        "evidences":  [
+                          {
+                              "line":  23,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   21: \n   22:   private static final List\u003cString\u003e EDITOR_QUEST_FIELDS = Arrays.asList(\n   23:       \"id\", \"name\", \"contents\", \"answer\", \"info\", \"npcsay\", \"needLevel\", \"needQuest\", \"goal\", \"reward\", \"requstItem\");\n   24:   private static final List\u003cString\u003e EDITOR_GOAL_FIELDS = Arrays.asList(\n   25:       \"getItem\", \"killMonster\", \"id\", \"itemid\", \"itemcnt\", \"count\", \"meetcnt\", \"monsterid\", \"killcount\");"
+                          },
+                          {
+                              "line":  24,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   22:   private static final List\u003cString\u003e EDITOR_QUEST_FIELDS = Arrays.asList(\n   23:       \"id\", \"name\", \"contents\", \"answer\", \"info\", \"npcsay\", \"needLevel\", \"needQuest\", \"goal\", \"reward\", \"requstItem\");\n   24:   private static final List\u003cString\u003e EDITOR_GOAL_FIELDS = Arrays.asList(\n   25:       \"getItem\", \"killMonster\", \"id\", \"itemid\", \"itemcnt\", \"count\", \"meetcnt\", \"monsterid\", \"killcount\");\n   26:   private static final List\u003cString\u003e EDITOR_REWARD_FIELDS = Arrays.asList("
+                          },
+                          {
+                              "line":  25,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   23:       \"id\", \"name\", \"contents\", \"answer\", \"info\", \"npcsay\", \"needLevel\", \"needQuest\", \"goal\", \"reward\", \"requstItem\");\n   24:   private static final List\u003cString\u003e EDITOR_GOAL_FIELDS = Arrays.asList(\n   25:       \"getItem\", \"killMonster\", \"id\", \"itemid\", \"itemcnt\", \"count\", \"meetcnt\", \"monsterid\", \"killcount\");\n   26:   private static final List\u003cString\u003e EDITOR_REWARD_FIELDS = Arrays.asList(\n   27:       \"exp\", \"fame\", \"money\", \"pvppoint\", \"getItem\", \"getSkill\", \"id\", \"itemid\", \"count\", \"itemcnt\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestGetItemStructureRewriter.java",
+        "className":  "QuestGetItemStructureRewriter",
+        "evidences":  [
+                          {
+                              "line":  28,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   26: import java.util.regex.Pattern;\n   27: \n   28: public class QuestGetItemStructureRewriter {\n   29: \n   30:   private static final Charset UTF8 = Charset.forName(\"UTF-8\");"
+                          },
+                          {
+                              "line":  33,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   31:   private static final Set\u003cString\u003e TARGET_CLUSTERS = new LinkedHashSet\u003cString\u003e(Arrays.asList(\"X1\", \"X2\", \"X3\"));\n   32:   private static final Pattern INDEXED_ACCESS_PATTERN = Pattern.compile(\n   33:       \"qt\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*(id|count)\",\n   34:       Pattern.CASE_INSENSITIVE);\n   35:   private static final Pattern HELPER_DEF_PATTERN = Pattern.compile("
+                          },
+                          {
+                              "line":  58,
+                              "method":  "main",
+                              "snippet":  "   56:         : Paths.get(\"reports\", \"rewrite_round_7A_stats.json\");\n   57: \n   58:     QuestGetItemStructureRewriter rewriter = new QuestGetItemStructureRewriter();\n   59:     RewriteStats stats = rewriter.rewrite(clusterReport, sourceDir, outputDir, diffOut, statsOut);\n   60: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestModificationAutoPropagator.java",
+        "className":  "QuestModificationAutoPropagator",
+        "evidences":  [
+                          {
+                              "line":  118,
+                              "method":  "buildConsistencyResult",
+                              "snippet":  "  116:       }\n  117:       for(QuestNpcDependencyScanner.AccessEntry access : entries) {\n  118:         result.remainingHardcodedGoalIndexes.add(file + \":line=\" + access.line + \":index=\" + access.index);\n  119:       }\n  120:     }"
+                          },
+                          {
+                              "line":  129,
+                              "method":  "buildConsistencyResult",
+                              "snippet":  "  127:     }\n  128: \n  129:     if(!result.remainingHardcodedGoalIndexes.isEmpty() || !result.brokenReferences.isEmpty()) {\n  130:       result.validationStatus = \"FAIL\";\n  131:     } else {"
+                          },
+                          {
+                              "line":  139,
+                              "method":  "buildConsistencyResult",
+                              "snippet":  "  137:     Collections.sort(result.unmatchedQuestIds, String.CASE_INSENSITIVE_ORDER);\n  138:     Collections.sort(result.brokenReferences, String.CASE_INSENSITIVE_ORDER);\n  139:     Collections.sort(result.remainingHardcodedGoalIndexes, String.CASE_INSENSITIVE_ORDER);\n  140:     return result;\n  141:   }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestModificationPropagationAnalyzer.java",
+        "className":  "QuestModificationPropagationAnalyzer",
+        "evidences":  [
+                          {
+                              "line":  150,
+                              "method":  "isRewriteRequired",
+                              "snippet":  "  148:     }\n  149:     if(hasType(modificationTypes, \"QUEST_ID_CHANGED\")\n  150:         || hasType(modificationTypes, \"GOAL_DELETED\")\n  151:         || hasType(modificationTypes, \"REWARD_DELETED\")) {\n  152:       return true;"
+                          },
+                          {
+                              "line":  151,
+                              "method":  "isRewriteRequired",
+                              "snippet":  "  149:     if(hasType(modificationTypes, \"QUEST_ID_CHANGED\")\n  150:         || hasType(modificationTypes, \"GOAL_DELETED\")\n  151:         || hasType(modificationTypes, \"REWARD_DELETED\")) {\n  152:       return true;\n  153:     }"
+                          },
+                          {
+                              "line":  154,
+                              "method":  "isRewriteRequired",
+                              "snippet":  "  152:       return true;\n  153:     }\n  154:     if(hasType(modificationTypes, \"GOAL_ITEM_COUNT_CHANGED\") || hasType(modificationTypes, \"REWARD_STRUCTURE_CHANGED\")) {\n  155:       return relation != null \u0026\u0026 (relation.hasRole(\"GOAL_VERIFY\") || relation.hasRole(\"REWARD_TRIGGER\") || relation.hasRole(\"STATE_ADVANCE\"));\n  156:     }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestModificationRiskValidator.java",
+        "className":  "QuestModificationRiskValidator",
+        "evidences":  [
+                          {
+                              "line":  16,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   14: import unluac.chunk.LuaChunk;\n   15: import unluac.editor.QuestEditorModel;\n   16: import unluac.editor.QuestReward;\n   17: \n   18: public class QuestModificationRiskValidator {"
+                          },
+                          {
+                              "line":  165,
+                              "method":  "detectQuestDeltas",
+                              "snippet":  "  163:       }\n  164: \n  165:       QuestGoal beforeGoal = before.goal == null ? new QuestGoal() : before.goal;\n  166:       QuestGoal afterGoal = row.goal == null ? new QuestGoal() : row.goal;\n  167:       if(before.goal != null \u0026\u0026 row.goal == null) {"
+                          },
+                          {
+                              "line":  166,
+                              "method":  "detectQuestDeltas",
+                              "snippet":  "  164: \n  165:       QuestGoal beforeGoal = before.goal == null ? new QuestGoal() : before.goal;\n  166:       QuestGoal afterGoal = row.goal == null ? new QuestGoal() : row.goal;\n  167:       if(before.goal != null \u0026\u0026 row.goal == null) {\n  168:         delta.modificationTypes.add(\"goal_deleted\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestNode.java",
+        "className":  "QuestNode",
+        "evidences":  [
+                          {
+                              "line":  10,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    8: \n    9:   public int questId;\n   10:   public QuestGoal goal = new QuestGoal();\n   11:   public final List\u003cQuestSemanticModel.Reward\u003e reward = new ArrayList\u003cQuestSemanticModel.Reward\u003e();\n   12:   public int needLevel;"
+                          },
+                          {
+                              "line":  11,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    9:   public int questId;\n   10:   public QuestGoal goal = new QuestGoal();\n   11:   public final List\u003cQuestSemanticModel.Reward\u003e reward = new ArrayList\u003cQuestSemanticModel.Reward\u003e();\n   12:   public int needLevel;\n   13:   public final List\u003cString\u003e referencedNpcFiles = new ArrayList\u003cString\u003e();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestNpcDependencyScanner.java",
+        "className":  "QuestNpcDependencyScanner",
+        "evidences":  [
+                          {
+                              "line":  27,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   25:   private static final Pattern QDATA_PATTERN = Pattern.compile(\"\\\\bqData\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   26:   private static final Pattern SET_QUEST_STATE_PATTERN = Pattern.compile(\"\\\\bSET_QUEST_STATE\\\\s*\\\\(\\\\s*(\\\\d+)\\\\s*,\");\n   27:   private static final Pattern GOAL_GET_ITEM_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   28:   private static final Pattern GOAL_KILL_MONSTER_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   29:   private static final Pattern NEED_LEVEL_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*needLevel\\\\b\");"
+                          },
+                          {
+                              "line":  28,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   26:   private static final Pattern SET_QUEST_STATE_PATTERN = Pattern.compile(\"\\\\bSET_QUEST_STATE\\\\s*\\\\(\\\\s*(\\\\d+)\\\\s*,\");\n   27:   private static final Pattern GOAL_GET_ITEM_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   28:   private static final Pattern GOAL_KILL_MONSTER_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   29:   private static final Pattern NEED_LEVEL_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*needLevel\\\\b\");\n   30:   private static final Pattern REWARD_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*reward\\\\b\");"
+                          },
+                          {
+                              "line":  30,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   28:   private static final Pattern GOAL_KILL_MONSTER_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*killMonster\\\\s*\\\\[\\\\s*(\\\\d+)\\\\s*\\\\]\");\n   29:   private static final Pattern NEED_LEVEL_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*needLevel\\\\b\");\n   30:   private static final Pattern REWARD_PATTERN = Pattern.compile(\"^\\\\s*\\\\.\\\\s*reward\\\\b\");\n   31: \n   32:   private static final Charset UTF8 = Charset.forName(\"UTF-8\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestNpcGraphBuilder.java",
+        "className":  "QuestNpcGraphBuilder",
+        "evidences":  [
+                          {
+                              "line":  170,
+                              "method":  "loadDependencyIndex",
+                              "snippet":  "  168:             }\n  169: \n  170:             if(hardcodedIndex \u0026\u0026 \"goal.getItem\".equalsIgnoreCase(type)) {\n  171:               npcNode.addHardcodedGoalIndex(index);\n  172:             }"
+                          },
+                          {
+                              "line":  171,
+                              "method":  "loadDependencyIndex",
+                              "snippet":  "  169: \n  170:             if(hardcodedIndex \u0026\u0026 \"goal.getItem\".equalsIgnoreCase(type)) {\n  171:               npcNode.addHardcodedGoalIndex(index);\n  172:             }\n  173:           }"
+                          },
+                          {
+                              "line":  269,
+                              "method":  "loadPropagation",
+                              "snippet":  "  267:     for(NpcNode npcNode : graph.npcNodes.values()) {\n  268:       if(npcNode.riskLevel == null || npcNode.riskLevel.isEmpty()) {\n  269:         npcNode.riskLevel = npcNode.hardcodedGoalIndexes.isEmpty() ? \"LOW\" : \"HIGH\";\n  270:       }\n  271:     }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestRuntimeAstMapper.java",
+        "className":  "QuestRuntimeAstMapper",
+        "evidences":  [
+                          {
+                              "line":  79,
+                              "method":  "buildAstMappingSummary",
+                              "snippet":  "   77:     sb.append(\";contentsCount=\").append(model.dialogLines == null ? 0 : model.dialogLines.size());\n   78:     sb.append(\";answerPrefixCount=\").append(countAnswerPrefix(model.dialogLines));\n   79:     sb.append(\";goalItems=\").append(model.goal == null ? 0 : model.goal.items.size());\n   80:     sb.append(\";goalMonsters=\").append(model.goal == null ? 0 : model.goal.monsters.size());\n   81:     sb.append(\";rewards=\").append(model.rewards == null ? 0 : model.rewards.size());"
+                          },
+                          {
+                              "line":  80,
+                              "method":  "buildAstMappingSummary",
+                              "snippet":  "   78:     sb.append(\";answerPrefixCount=\").append(countAnswerPrefix(model.dialogLines));\n   79:     sb.append(\";goalItems=\").append(model.goal == null ? 0 : model.goal.items.size());\n   80:     sb.append(\";goalMonsters=\").append(model.goal == null ? 0 : model.goal.monsters.size());\n   81:     sb.append(\";rewards=\").append(model.rewards == null ? 0 : model.rewards.size());\n   82:     return sb.toString();"
+                          },
+                          {
+                              "line":  81,
+                              "method":  "buildAstMappingSummary",
+                              "snippet":  "   79:     sb.append(\";goalItems=\").append(model.goal == null ? 0 : model.goal.items.size());\n   80:     sb.append(\";goalMonsters=\").append(model.goal == null ? 0 : model.goal.monsters.size());\n   81:     sb.append(\";rewards=\").append(model.rewards == null ? 0 : model.rewards.size());\n   82:     return sb.toString();\n   83:   }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestRuntimeGoalSnapshot.java",
+        "className":  "QuestRuntimeGoalSnapshot",
+        "evidences":  [
+                          {
+                              "line":  6,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    4: import java.util.Map;\n    5: \n    6: public class QuestRuntimeGoalSnapshot {\n    7: \n    8:   public int playerLevel;"
+                          },
+                          {
+                              "line":  12,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   10:   private final Map\u003cInteger, Integer\u003e killCounts = new HashMap\u003cInteger, Integer\u003e();\n   11: \n   12:   public QuestRuntimeGoalSnapshot() {\n   13:     this.playerLevel = 0;\n   14:   }"
+                          },
+                          {
+                              "line":  20,
+                              "method":  "getItemCount",
+                              "snippet":  "   18:   }\n   19: \n   20:   public int getItemCount(int itemId) {\n   21:     Integer value = this.itemCounts.get(Integer.valueOf(itemId));\n   22:     return value == null ? 0 : value.intValue();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestRuntimeStateDemo.java",
+        "className":  "QuestRuntimeStateDemo",
+        "evidences":  [
+                          {
+                              "line":  39,
+                              "method":  "main",
+                              "snippet":  "   37:     }\n   38: \n   39:     QuestRuntimeGoalSnapshot goal = new QuestRuntimeGoalSnapshot();\n   40:     goal.playerLevel = Math.max(1, model.goal == null ? 1 : model.goal.needLevel);\n   41:     if(model.goal != null) {"
+                          },
+                          {
+                              "line":  40,
+                              "method":  "main",
+                              "snippet":  "   38: \n   39:     QuestRuntimeGoalSnapshot goal = new QuestRuntimeGoalSnapshot();\n   40:     goal.playerLevel = Math.max(1, model.goal == null ? 1 : model.goal.needLevel);\n   41:     if(model.goal != null) {\n   42:       for(ItemRequirement item : model.goal.items) {"
+                          },
+                          {
+                              "line":  41,
+                              "method":  "main",
+                              "snippet":  "   39:     QuestRuntimeGoalSnapshot goal = new QuestRuntimeGoalSnapshot();\n   40:     goal.playerLevel = Math.max(1, model.goal == null ? 1 : model.goal.needLevel);\n   41:     if(model.goal != null) {\n   42:       for(ItemRequirement item : model.goal.items) {\n   43:         goal.setItemCount(item.itemId, item.itemCount);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestRuntimeStateMachine.java",
+        "className":  "QuestRuntimeStateMachine",
+        "evidences":  [
+                          {
+                              "line":  12,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   10:   public static final int STATE_DIALOG = 1;\n   11:   public static final int STATE_CHOICE = 2;\n   12:   public static final int STATE_GOAL_CHECK = 3;\n   13:   public static final int STATE_REWARD_PENDING = 4;\n   14:   public static final int STATE_FINISHED = 5;"
+                          },
+                          {
+                              "line":  13,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   11:   public static final int STATE_CHOICE = 2;\n   12:   public static final int STATE_GOAL_CHECK = 3;\n   13:   public static final int STATE_REWARD_PENDING = 4;\n   14:   public static final int STATE_FINISHED = 5;\n   15: "
+                          },
+                          {
+                              "line":  50,
+                              "method":  "apply",
+                              "snippet":  "   48:       QuestSemanticModel model,\n   49:       int action,\n   50:       QuestRuntimeGoalSnapshot goalSnapshot) {\n   51:     if(current == null) {\n   52:       throw new IllegalStateException(\"state is null\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestSemanticCsvTool.java",
+        "className":  "QuestSemanticCsvTool",
+        "evidences":  [
+                          {
+                              "line":  21,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   19: \n   20:   public static final String CSV_HEADER =\n   21:       \"quest_id,title,description,pre_quest_ids,reward_exp,reward_item_id,reward_item_count,reward_skill_ids,dialog_lines_json,condition_json\";\n   22: \n   23:   public static void main(String[] args) throws Exception {"
+                          },
+                          {
+                              "line":  236,
+                              "method":  "printUsage",
+                              "snippet":  "  234:     public String description;\n  235:     public List\u003cInteger\u003e preQuestIds = new ArrayList\u003cInteger\u003e();\n  236:     public int rewardExp;\n  237:     public List\u003cInteger\u003e rewardItemId = new ArrayList\u003cInteger\u003e();\n  238:     public List\u003cInteger\u003e rewardItemCount = new ArrayList\u003cInteger\u003e();"
+                          },
+                          {
+                              "line":  237,
+                              "method":  "printUsage",
+                              "snippet":  "  235:     public List\u003cInteger\u003e preQuestIds = new ArrayList\u003cInteger\u003e();\n  236:     public int rewardExp;\n  237:     public List\u003cInteger\u003e rewardItemId = new ArrayList\u003cInteger\u003e();\n  238:     public List\u003cInteger\u003e rewardItemCount = new ArrayList\u003cInteger\u003e();\n  239:     public List\u003cInteger\u003e rewardSkillIds = new ArrayList\u003cInteger\u003e();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestSemanticExtractor.java",
+        "className":  "QuestSemanticExtractor",
+        "evidences":  [
+                          {
+                              "line":  28,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   26:   private static final String RULE_DESCRIPTION = \"R-DESCRIPTION\";\n   27:   private static final String RULE_PREQUEST = \"R-PREQUEST\";\n   28:   private static final String RULE_REWARD = \"R-REWARD\";\n   29:   private static final String RULE_DIALOG = \"R-DIALOG\";\n   30:   private static final String RULE_CONDITION = \"R-CONDITION\";"
+                          },
+                          {
+                              "line":  38,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   36:   private static final Set\u003cString\u003e QUEST_KEYS = new LinkedHashSet\u003cString\u003e();\n   37:   private static final Set\u003cString\u003e DIALOG_KEYS = new LinkedHashSet\u003cString\u003e();\n   38:   private static final Set\u003cString\u003e REWARD_KEYS = new LinkedHashSet\u003cString\u003e();\n   39:   private static final Set\u003cString\u003e CONDITION_KEYS = new LinkedHashSet\u003cString\u003e();\n   40: "
+                          },
+                          {
+                              "line":  50,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   48:     QUEST_KEYS.add(\"needLevel\");\n   49:     QUEST_KEYS.add(\"needQuest\");\n   50:     QUEST_KEYS.add(\"goal\");\n   51:     QUEST_KEYS.add(\"reward\");\n   52:     QUEST_KEYS.add(\"requstItem\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestSemanticJson.java",
+        "className":  "QuestSemanticJson",
+        "evidences":  [
+                          {
+                              "line":  63,
+                              "method":  "appendQuest",
+                              "snippet":  "   61:     sb.append(indent).append(\"  \\\"preQuestIds\\\": \").append(toJsonArrayInt(model.preQuestIds)).append(\",\\n\");\n   62: \n   63:     sb.append(indent).append(\"  \\\"rewards\\\": [\\n\");\n   64:     for(int i = 0; i \u003c model.rewards.size(); i++) {\n   65:       QuestSemanticModel.Reward reward = model.rewards.get(i);"
+                          },
+                          {
+                              "line":  64,
+                              "method":  "appendQuest",
+                              "snippet":  "   62: \n   63:     sb.append(indent).append(\"  \\\"rewards\\\": [\\n\");\n   64:     for(int i = 0; i \u003c model.rewards.size(); i++) {\n   65:       QuestSemanticModel.Reward reward = model.rewards.get(i);\n   66:       if(i \u003e 0) {"
+                          },
+                          {
+                              "line":  65,
+                              "method":  "appendQuest",
+                              "snippet":  "   63:     sb.append(indent).append(\"  \\\"rewards\\\": [\\n\");\n   64:     for(int i = 0; i \u003c model.rewards.size(); i++) {\n   65:       QuestSemanticModel.Reward reward = model.rewards.get(i);\n   66:       if(i \u003e 0) {\n   67:         sb.append(\",\\n\");"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestSemanticModel.java",
+        "className":  "QuestSemanticModel",
+        "evidences":  [
+                          {
+                              "line":  14,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   12:   public String description;\n   13:   public final List\u003cInteger\u003e preQuestIds = new ArrayList\u003cInteger\u003e();\n   14:   public final List\u003cReward\u003e rewards = new ArrayList\u003cReward\u003e();\n   15:   public final List\u003cString\u003e dialogLines = new ArrayList\u003cString\u003e();\n   16:   public QuestDialogTree dialogTree = new QuestDialogTree();"
+                          },
+                          {
+                              "line":  17,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   15:   public final List\u003cString\u003e dialogLines = new ArrayList\u003cString\u003e();\n   16:   public QuestDialogTree dialogTree = new QuestDialogTree();\n   17:   public QuestGoal goal = new QuestGoal();\n   18:   public final Map\u003cString, Object\u003e conditions = new LinkedHashMap\u003cString, Object\u003e();\n   19:   public final Map\u003cString, Object\u003e completionConditions = new LinkedHashMap\u003cString, Object\u003e();"
+                          },
+                          {
+                              "line":  21,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   19:   public final Map\u003cString, Object\u003e completionConditions = new LinkedHashMap\u003cString, Object\u003e();\n   20: \n   21:   public static final class Reward {\n   22:     public String type;\n   23:     public int id;"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\QuestSemanticPatchApplier.java",
+        "className":  "QuestSemanticPatchApplier",
+        "evidences":  [
+                          {
+                              "line":  165,
+                              "method":  "decidePatchAction",
+                              "snippet":  "  163:           next = edited.dialogLines.get(index.intValue());\n  164:         }\n  165:       } else if(binding.fieldKey != null \u0026\u0026 binding.fieldKey.startsWith(\"reward_extra.\")) {\n  166:         String extraKey = binding.fieldKey.substring(\"reward_extra.\".length());\n  167:         Object value = edited.conditions == null ? null : edited.conditions.get(\"reward_extra_fields\");"
+                          },
+                          {
+                              "line":  166,
+                              "method":  "decidePatchAction",
+                              "snippet":  "  164:         }\n  165:       } else if(binding.fieldKey != null \u0026\u0026 binding.fieldKey.startsWith(\"reward_extra.\")) {\n  166:         String extraKey = binding.fieldKey.substring(\"reward_extra.\".length());\n  167:         Object value = edited.conditions == null ? null : edited.conditions.get(\"reward_extra_fields\");\n  168:         if(value instanceof Map\u003c?, ?\u003e) {"
+                          },
+                          {
+                              "line":  167,
+                              "method":  "decidePatchAction",
+                              "snippet":  "  165:       } else if(binding.fieldKey != null \u0026\u0026 binding.fieldKey.startsWith(\"reward_extra.\")) {\n  166:         String extraKey = binding.fieldKey.substring(\"reward_extra.\".length());\n  167:         Object value = edited.conditions == null ? null : edited.conditions.get(\"reward_extra_fields\");\n  168:         if(value instanceof Map\u003c?, ?\u003e) {\n  169:           @SuppressWarnings(\"unchecked\")"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\RuntimeConsistencyValidator.java",
+        "className":  "RuntimeConsistencyValidator",
+        "evidences":  [
+                          {
+                              "line":  76,
+                              "method":  "validate",
+                              "snippet":  "   74:     validateNpcReferencedQuestIds(graph, report);\n   75:     validateRiskLevelThreshold(graph, report);\n   76:     validateRewardStructureConsistency(propagationV2Path, report);\n   77: \n   78:     report.failedCount = report.failureDetails.size();"
+                          },
+                          {
+                              "line":  90,
+                              "method":  "validateNoHardcodedIndexes",
+                              "snippet":  "   88:   private void validateNoHardcodedIndexes(QuestNpcDependencyGraph graph, ValidationReport report) {\n   89:     for(NpcNode npcNode : graph.npcNodes.values()) {\n   90:       if(npcNode == null || npcNode.hardcodedGoalIndexes == null || npcNode.hardcodedGoalIndexes.isEmpty()) {\n   91:         continue;\n   92:       }"
+                          },
+                          {
+                              "line":  94,
+                              "method":  "validateNoHardcodedIndexes",
+                              "snippet":  "   92:       }\n   93:       FailureDetail detail = new FailureDetail();\n   94:       detail.rule = \"RULE_1_NO_HARDCODED_GOAL_INDEX\";\n   95:       detail.entityType = \"NPC\";\n   96:       detail.entityId = npcNode.filePath;"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\semantic\\RuntimeFailurePatternClassifier.java",
+        "className":  "RuntimeFailurePatternClassifier",
+        "evidences":  [
+                          {
+                              "line":  30,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   28: \n   29:   private static final Pattern PATTERN_A = Pattern.compile(\n   30:       \"qt\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\](?!\\\\s*\\\\.)\",\n   31:       Pattern.CASE_INSENSITIVE);\n   32:   private static final Pattern PATTERN_B = Pattern.compile("
+                          },
+                          {
+                              "line":  33,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   31:       Pattern.CASE_INSENSITIVE);\n   32:   private static final Pattern PATTERN_B = Pattern.compile(\n   33:       \"qt\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*(id|count)\\\\b\",\n   34:       Pattern.CASE_INSENSITIVE);\n   35:   private static final Pattern PATTERN_C = Pattern.compile("
+                          },
+                          {
+                              "line":  36,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   34:       Pattern.CASE_INSENSITIVE);\n   35:   private static final Pattern PATTERN_C = Pattern.compile(\n   36:       \"\\\\blocal\\\\s+\\\\w+\\\\s*=\\\\s*qt\\\\s*\\\\[\\\\s*\\\\d+\\\\s*\\\\]\\\\s*\\\\.\\\\s*goal\\\\s*\\\\.\\\\s*getItem\\\\b\",\n   37:       Pattern.CASE_INSENSITIVE);\n   38:   private static final Pattern PATTERN_D = Pattern.compile("
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\web\\controller\\AdminController.java",
+        "className":  "AdminController",
+        "evidences":  [
+                          {
+                              "line":  58,
+                              "method":  "dashboard",
+                              "snippet":  "   56:       out.questCount = queryCount(connection, \"SELECT COUNT(*) FROM quest_main\");\n   57:       out.npcCount = queryCount(connection, \"SELECT COUNT(DISTINCT npcFile) FROM npc_text_edit_map\");\n   58:       out.itemCount = queryCount(connection, \"SELECT COUNT(*) FROM quest_reward_item\");\n   59:       out.mapCount = queryCount(connection, \"SELECT COUNT(DISTINCT npc_file) FROM npc_quest_reference\");\n   60:       out.fashionCount = queryCount(connection, \"SELECT COUNT(*) FROM quest_goal_getitem\");"
+                          },
+                          {
+                              "line":  60,
+                              "method":  "dashboard",
+                              "snippet":  "   58:       out.itemCount = queryCount(connection, \"SELECT COUNT(*) FROM quest_reward_item\");\n   59:       out.mapCount = queryCount(connection, \"SELECT COUNT(DISTINCT npc_file) FROM npc_quest_reference\");\n   60:       out.fashionCount = queryCount(connection, \"SELECT COUNT(*) FROM quest_goal_getitem\");\n   61:     }\n   62: "
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\web\\result\\AdminQuestDetail.java",
+        "className":  "AdminQuestDetail",
+        "evidences":  [
+                          {
+                              "line":  11,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    9:   public Integer needLevel;\n   10:   public Integer bqLoop;\n   11:   public Integer rewardExp;\n   12:   public Integer rewardGold;\n   13:   public final List\u003cString\u003e contents = new ArrayList\u003cString\u003e();"
+                          },
+                          {
+                              "line":  12,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "   10:   public Integer bqLoop;\n   11:   public Integer rewardExp;\n   12:   public Integer rewardGold;\n   13:   public final List\u003cString\u003e contents = new ArrayList\u003cString\u003e();\n   14:   public final List\u003cString\u003e answer = new ArrayList\u003cString\u003e();"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\web\\result\\AdminQuestListItem.java",
+        "className":  "AdminQuestListItem",
+        "evidences":  [
+                          {
+                              "line":  7,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    5:   public String name;\n    6:   public Integer needLevel;\n    7:   public Integer rewardExp;\n    8:   public Integer rewardGold;\n    9:   public String recentModifiedAt;"
+                          },
+                          {
+                              "line":  8,
+                              "method":  "\u003cclass-level-or-init\u003e",
+                              "snippet":  "    6:   public Integer needLevel;\n    7:   public Integer rewardExp;\n    8:   public Integer rewardGold;\n    9:   public String recentModifiedAt;\n   10: }"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\web\\service\\AdminQuestService.java",
+        "className":  "AdminQuestService",
+        "evidences":  [
+                          {
+                              "line":  38,
+                              "method":  "list",
+                              "snippet":  "   36:       ensureUpdatedAtColumn(connection, \"quest_main\");\n   37:       out.total = count(connection, keyword);\n   38:       String sql = \"SELECT quest_id, name, need_level, reward_exp, reward_gold FROM quest_main\"\n   39:           + \" WHERE (? IS NULL OR ? = \u0027\u0027 OR name LIKE CONCAT(\u0027%\u0027, ?, \u0027%\u0027) OR CAST(quest_id AS CHAR) LIKE CONCAT(\u0027%\u0027, ?, \u0027%\u0027))\"\n   40:           + \" ORDER BY updated_at DESC, quest_id DESC LIMIT ? OFFSET ?\";"
+                          },
+                          {
+                              "line":  54,
+                              "method":  "list",
+                              "snippet":  "   52:             item.name = rs.getString(\"name\");\n   53:             item.needLevel = getNullableInt(rs, \"need_level\");\n   54:             item.rewardExp = getNullableInt(rs, \"reward_exp\");\n   55:             item.rewardGold = getNullableInt(rs, \"reward_gold\");\n   56:             item.recentModifiedAt = recentModifiedService.findQuestRecentModifiedAt(connection, item.questId);"
+                          },
+                          {
+                              "line":  55,
+                              "method":  "list",
+                              "snippet":  "   53:             item.needLevel = getNullableInt(rs, \"need_level\");\n   54:             item.rewardExp = getNullableInt(rs, \"reward_exp\");\n   55:             item.rewardGold = getNullableInt(rs, \"reward_gold\");\n   56:             item.recentModifiedAt = recentModifiedService.findQuestRecentModifiedAt(connection, item.questId);\n   57:             out.records.add(item);"
+                          }
+                      ]
+    },
+    {
+        "file":  "src/unluac\\web\\support\\AdminRecentModifiedService.java",
+        "className":  "AdminRecentModifiedService",
+        "evidences":  [
+                          {
+                              "line":  19,
+                              "method":  "findQuestRecentModifiedAt",
+                              "snippet":  "   17:         + \" UNION ALL SELECT updated_at AS ts FROM quest_answer WHERE quest_id=?\"\n   18:         + \" UNION ALL SELECT updated_at AS ts FROM quest_info WHERE quest_id=?\"\n   19:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_getitem WHERE quest_id=?\"\n   20:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_killmonster WHERE quest_id=?\"\n   21:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_meetnpc WHERE quest_id=?\""
+                          },
+                          {
+                              "line":  20,
+                              "method":  "findQuestRecentModifiedAt",
+                              "snippet":  "   18:         + \" UNION ALL SELECT updated_at AS ts FROM quest_info WHERE quest_id=?\"\n   19:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_getitem WHERE quest_id=?\"\n   20:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_killmonster WHERE quest_id=?\"\n   21:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_meetnpc WHERE quest_id=?\"\n   22:         + \" UNION ALL SELECT updated_at AS ts FROM quest_reward_item WHERE quest_id=?\""
+                          },
+                          {
+                              "line":  21,
+                              "method":  "findQuestRecentModifiedAt",
+                              "snippet":  "   19:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_getitem WHERE quest_id=?\"\n   20:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_killmonster WHERE quest_id=?\"\n   21:         + \" UNION ALL SELECT updated_at AS ts FROM quest_goal_meetnpc WHERE quest_id=?\"\n   22:         + \" UNION ALL SELECT updated_at AS ts FROM quest_reward_item WHERE quest_id=?\"\n   23:         + \") v\";"
+                          }
+                      ]
+    }
+]
