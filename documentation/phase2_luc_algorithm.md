@@ -243,15 +243,3 @@ Proto (sub_9D22D0 分配 0x48)
 - [x] 字节流程图
 - [x] 内存结构草图
 
----
-
-## 附录：业务链路 Phase2（语义抽取）补全记录入口
-
-本文件聚焦 `.luc` 字节解密算法；业务链路中的 Phase2 语义抽取与字段补全记录见：
-
-- 实现：`src/unluac/semantic/Phase2LucDataExtractionSystem.java`
-- 变更总记录：`documentation/phase2_4_field_completion_change_log.md`
-- 关键补全字段：
-  - `conditions`（含 `needQuest/requstItem/needItem/deleteItem`）
-  - `reward.fame/pvppoint/mileage/skills/extra`
-  - `goal.extra`
