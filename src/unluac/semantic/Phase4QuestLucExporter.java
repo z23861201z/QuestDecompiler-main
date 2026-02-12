@@ -117,7 +117,8 @@ public class Phase4QuestLucExporter {
     Map<Integer, QuestRecord> byQuest = new LinkedHashMap<Integer, QuestRecord>();
 
     try(Connection connection = DriverManager.getConnection(jdbcUrl, user, password)) {
-      String mainSql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold "
+      String mainSql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold, "
+          + "reward_fame, reward_pvppoint, reward_mileage, reward_extra_json, goal_extra_json, conditions_json "
           + "FROM quest_main ORDER BY quest_id ASC";
       try(PreparedStatement ps = connection.prepareStatement(mainSql);
           ResultSet rs = ps.executeQuery()) {
@@ -133,6 +134,12 @@ public class Phase4QuestLucExporter {
           record.bqLoop = toNullableInt(rs, "bq_loop");
           record.rewardExp = toNullableInt(rs, "reward_exp");
           record.rewardGold = toNullableInt(rs, "reward_gold");
+          record.rewardFame = toNullableInt(rs, "reward_fame");
+          record.rewardPvppoint = toNullableInt(rs, "reward_pvppoint");
+          record.rewardMileage = toNullableInt(rs, "reward_mileage");
+          record.rewardExtra = parseJsonObjectOrEmpty(rs.getString("reward_extra_json"), "reward_extra_json", record.questId);
+          record.goalExtra = parseJsonObjectOrEmpty(rs.getString("goal_extra_json"), "goal_extra_json", record.questId);
+          record.conditions = parseJsonObjectOrEmpty(rs.getString("conditions_json"), "conditions_json", record.questId);
           byQuest.put(Integer.valueOf(record.questId), record);
         }
       }
@@ -143,8 +150,9 @@ public class Phase4QuestLucExporter {
 
       loadPairArray(connection, byQuest, "quest_goal_getitem", "item_id", "item_count", PairType.GOAL_GET_ITEM);
       loadPairArray(connection, byQuest, "quest_goal_killmonster", "monster_id", "monster_count", PairType.GOAL_KILL_MONSTER);
-      loadIntArray(connection, byQuest, "quest_goal_meetnpc", "npc_id");
+      loadIntArray(connection, byQuest, "quest_goal_meetnpc", "npc_id", IntArrayType.GOAL_MEET_NPC);
       loadPairArray(connection, byQuest, "quest_reward_item", "item_id", "item_count", PairType.REWARD_ITEM);
+      loadIntArray(connection, byQuest, "quest_reward_skill", "skill_id", IntArrayType.REWARD_SKILL);
     }
 
     List<QuestRecord> quests = new ArrayList<QuestRecord>(byQuest.values());
@@ -237,7 +245,8 @@ public class Phase4QuestLucExporter {
   private void loadIntArray(Connection connection,
                             Map<Integer, QuestRecord> byQuest,
                             String table,
-                            String valueColumn) throws Exception {
+                            String valueColumn,
+                            IntArrayType type) throws Exception {
     String sql = "SELECT quest_id, seq_index, " + valueColumn
         + " FROM " + table + " ORDER BY quest_id ASC, seq_index ASC";
     try(PreparedStatement ps = connection.prepareStatement(sql);
@@ -250,9 +259,17 @@ public class Phase4QuestLucExporter {
         }
         int value = rs.getInt(valueColumn);
         if(rs.wasNull()) {
-          quest.goalMeetNpc.add(null);
+          if(type == IntArrayType.GOAL_MEET_NPC) {
+            quest.goalMeetNpc.add(null);
+          } else {
+            quest.rewardSkills.add(null);
+          }
         } else {
-          quest.goalMeetNpc.add(Integer.valueOf(value));
+          if(type == IntArrayType.GOAL_MEET_NPC) {
+            quest.goalMeetNpc.add(Integer.valueOf(value));
+          } else {
+            quest.rewardSkills.add(Integer.valueOf(value));
+          }
         }
       }
     }
@@ -286,16 +303,56 @@ public class Phase4QuestLucExporter {
     sb.append(",\n");
     sb.append("    meetNpc = ");
     appendIntArray(sb, quest.goalMeetNpc, 4);
+    if(quest.goalExtra != null && !quest.goalExtra.isEmpty()) {
+      for(Map.Entry<String, Object> entry : quest.goalExtra.entrySet()) {
+        String key = entry.getKey();
+        if(key == null || key.trim().isEmpty()) {
+          continue;
+        }
+        sb.append(",\n");
+        sb.append("    ").append(luaFieldKey(key)).append(" = ");
+        appendLuaValue(sb, entry.getValue(), 4);
+      }
+    }
     sb.append("\n");
     sb.append("  },\n");
 
     sb.append("  reward = {\n");
     sb.append("    exp = ").append(luaIntOrNil(quest.rewardExp)).append(",\n");
     sb.append("    gold = ").append(luaIntOrNil(quest.rewardGold)).append(",\n");
+    sb.append("    fame = ").append(luaIntOrNil(quest.rewardFame)).append(",\n");
+    sb.append("    pvppoint = ").append(luaIntOrNil(quest.rewardPvppoint)).append(",\n");
+    sb.append("    mileage = ").append(luaIntOrNil(quest.rewardMileage)).append(",\n");
     sb.append("    items = ");
     appendPairArray(sb, quest.rewardItems, 4, "id", "count");
+    sb.append(",\n");
+    sb.append("    getSkill = ");
+    appendIntArray(sb, quest.rewardSkills, 4);
     sb.append("\n");
     sb.append("  },\n");
+
+    if(quest.conditions != null && !quest.conditions.isEmpty()) {
+      for(Map.Entry<String, Object> entry : quest.conditions.entrySet()) {
+        String key = entry.getKey();
+        if(key == null || key.trim().isEmpty()) {
+          continue;
+        }
+        if("needLevel".equals(key)
+            || "goal".equals(key)
+            || "id".equals(key)
+            || "name".equals(key)
+            || "contents".equals(key)
+            || "answer".equals(key)
+            || "info".equals(key)
+            || "reward".equals(key)
+            || "bQLoop".equals(key)) {
+          continue;
+        }
+        sb.append("  ").append(luaFieldKey(key)).append(" = ");
+        appendLuaValue(sb, entry.getValue(), 2);
+        sb.append(",\n");
+      }
+    }
 
     sb.append("  needLevel = ").append(luaIntOrNil(quest.needLevel)).append(",\n");
     sb.append("  bQLoop = ").append(luaIntOrNil(quest.bqLoop)).append("\n");
@@ -379,6 +436,92 @@ public class Phase4QuestLucExporter {
       sb.append("\n");
     }
     sb.append(pad).append("}");
+  }
+
+  private String luaFieldKey(String key) {
+    if(key != null && key.matches("[A-Za-z_][A-Za-z0-9_]*")) {
+      return key;
+    }
+    return "[" + luaStringOrNil(key) + "]";
+  }
+
+  @SuppressWarnings("unchecked")
+  private void appendLuaValue(StringBuilder sb, Object value, int indent) {
+    if(value == null) {
+      sb.append("nil");
+      return;
+    }
+    if(value instanceof Boolean) {
+      sb.append(Boolean.TRUE.equals(value) ? "true" : "false");
+      return;
+    }
+    if(value instanceof Number) {
+      sb.append(((Number) value).intValue());
+      return;
+    }
+    if(value instanceof String) {
+      sb.append(luaStringOrNil((String) value));
+      return;
+    }
+    if(value instanceof List<?>) {
+      List<Object> list = (List<Object>) value;
+      if(list.isEmpty()) {
+        sb.append("{}");
+        return;
+      }
+      String pad = pad(indent);
+      String childPad = pad(indent + 2);
+      sb.append("{\n");
+      for(int i = 0; i < list.size(); i++) {
+        sb.append(childPad);
+        appendLuaValue(sb, list.get(i), indent + 2);
+        if(i < list.size() - 1) {
+          sb.append(',');
+        }
+        sb.append("\n");
+      }
+      sb.append(pad).append("}");
+      return;
+    }
+    if(value instanceof Map<?, ?>) {
+      Map<String, Object> map = (Map<String, Object>) value;
+      if(map.isEmpty()) {
+        sb.append("{}");
+        return;
+      }
+      List<Map.Entry<String, Object>> entries = new ArrayList<Map.Entry<String, Object>>();
+      for(Map.Entry<String, Object> entry : map.entrySet()) {
+        if(entry != null && entry.getKey() != null) {
+          entries.add(entry);
+        }
+      }
+      if(entries.isEmpty()) {
+        sb.append("{}");
+        return;
+      }
+      String pad = pad(indent);
+      String childPad = pad(indent + 2);
+      sb.append("{\n");
+      for(int i = 0; i < entries.size(); i++) {
+        Map.Entry<String, Object> entry = entries.get(i);
+        sb.append(childPad).append(luaFieldKey(entry.getKey())).append(" = ");
+        appendLuaValue(sb, entry.getValue(), indent + 2);
+        if(i < entries.size() - 1) {
+          sb.append(',');
+        }
+        sb.append("\n");
+      }
+      sb.append(pad).append("}");
+      return;
+    }
+    sb.append(luaStringOrNil(String.valueOf(value)));
+  }
+
+  private Map<String, Object> parseJsonObjectOrEmpty(String json, String field, int questId) {
+    if(json == null || json.trim().isEmpty()) {
+      return Collections.emptyMap();
+    }
+    return QuestSemanticJson.parseObject(json, field, questId);
   }
 
   /**
@@ -571,6 +714,11 @@ public class Phase4QuestLucExporter {
     REWARD_ITEM
   }
 
+  private enum IntArrayType {
+    GOAL_MEET_NPC,
+    REWARD_SKILL
+  }
+
   private static final class Pair {
     Integer id;
     Integer count;
@@ -583,6 +731,9 @@ public class Phase4QuestLucExporter {
     Integer bqLoop;
     Integer rewardExp;
     Integer rewardGold;
+    Integer rewardFame;
+    Integer rewardPvppoint;
+    Integer rewardMileage;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
@@ -590,6 +741,10 @@ public class Phase4QuestLucExporter {
     final List<Pair> goalKillMonster = new ArrayList<Pair>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
     final List<Pair> rewardItems = new ArrayList<Pair>();
+    final List<Integer> rewardSkills = new ArrayList<Integer>();
+    Map<String, Object> rewardExtra = Collections.emptyMap();
+    Map<String, Object> goalExtra = Collections.emptyMap();
+    Map<String, Object> conditions = Collections.emptyMap();
   }
 
   public static final class ExportResult {

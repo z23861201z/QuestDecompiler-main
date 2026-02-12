@@ -169,6 +169,7 @@ public class Phase2LucDataExtractionSystem {
 
       fillGoal(record, model);
       fillReward(record, model);
+      fillConditions(record, model);
       report.quests.add(record);
     }
 
@@ -284,6 +285,25 @@ public class Phase2LucDataExtractionSystem {
       Map<String, Object> goalMap = (Map<String, Object>) goalObj;
       Object meetNpc = goalMap.get("meetNpc");
       appendMeetNpc(record.goal.meetNpc, meetNpc);
+
+      for(Map.Entry<String, Object> entry : goalMap.entrySet()) {
+        String key = entry.getKey();
+        if(key == null) {
+          continue;
+        }
+        String normalized = key.trim();
+        if(normalized.isEmpty()) {
+          continue;
+        }
+        if("getItem".equals(normalized)
+            || "getitem".equals(normalized)
+            || "killMonster".equals(normalized)
+            || "meetNpc".equals(normalized)
+            || "meetNPC".equals(normalized)) {
+          continue;
+        }
+        mergeObjectField(record.goal.extra, normalized, copyObject(entry.getValue()));
+      }
     }
   }
 
@@ -335,12 +355,148 @@ public class Phase2LucDataExtractionSystem {
       }
       record.reward.exp += reward.exp;
       record.reward.gold += reward.money;
+      record.reward.fame += reward.fame;
+      record.reward.pvppoint += reward.pvppoint;
       if(reward.id > 0 && reward.count > 0) {
         RewardItem item = new RewardItem();
         item.id = reward.id;
         item.count = reward.count;
         record.reward.items.add(item);
       }
+      for(Integer skillId : reward.skillIds) {
+        if(skillId == null) {
+          continue;
+        }
+        int skill = skillId.intValue();
+        if(skill <= 0) {
+          continue;
+        }
+        if(!record.reward.skills.contains(Integer.valueOf(skill))) {
+          record.reward.skills.add(Integer.valueOf(skill));
+        }
+      }
+      if(reward.extraFields != null) {
+        for(Map.Entry<String, Object> entry : reward.extraFields.entrySet()) {
+          if(entry == null || entry.getKey() == null) {
+            continue;
+          }
+          String key = entry.getKey();
+          Object value = copyObject(entry.getValue());
+          if("mileage".equalsIgnoreCase(key)) {
+            Integer mileage = toPositiveInt(value);
+            if(mileage != null) {
+              record.reward.mileage += mileage.intValue();
+              continue;
+            }
+          }
+          mergeObjectField(record.reward.extra, key, value);
+        }
+      }
+    }
+  }
+
+  /**
+   * 将条件字段完整拷贝到 Phase2 输出，以便 Phase3/4 保留 needQuest/requstItem/needItem/deleteItem 等结构。
+   */
+  private void fillConditions(QuestRecord record, QuestSemanticModel model) {
+    if(record == null || model == null || model.conditions == null || model.conditions.isEmpty()) {
+      return;
+    }
+    for(Map.Entry<String, Object> entry : model.conditions.entrySet()) {
+      if(entry == null || entry.getKey() == null) {
+        continue;
+      }
+      mergeObjectField(record.conditions, entry.getKey(), copyObject(entry.getValue()));
+    }
+  }
+
+  /**
+   * 递归拷贝 JSON 兼容结构（Map/List/基础类型）。
+   */
+  @SuppressWarnings("unchecked")
+  private Object copyObject(Object value) {
+    if(value == null) {
+      return null;
+    }
+    if(value instanceof Map<?, ?>) {
+      Map<String, Object> out = new LinkedHashMap<String, Object>();
+      Map<String, Object> src = (Map<String, Object>) value;
+      for(Map.Entry<String, Object> entry : src.entrySet()) {
+        out.put(entry.getKey(), copyObject(entry.getValue()));
+      }
+      return out;
+    }
+    if(value instanceof List<?>) {
+      List<Object> out = new ArrayList<Object>();
+      List<Object> src = (List<Object>) value;
+      for(Object item : src) {
+        out.add(copyObject(item));
+      }
+      return out;
+    }
+    if(value instanceof Number) {
+      if(value instanceof Integer) {
+        return value;
+      }
+      return Integer.valueOf(((Number) value).intValue());
+    }
+    if(value instanceof Boolean) {
+      return value;
+    }
+    return String.valueOf(value);
+  }
+
+  /**
+   * 合并同名字段：首次直接写入，重复时升级为数组并保留顺序。
+   */
+  @SuppressWarnings("unchecked")
+  private void mergeObjectField(Map<String, Object> target, String key, Object value) {
+    if(target == null || key == null || key.trim().isEmpty()) {
+      return;
+    }
+    if(value == null) {
+      return;
+    }
+    if(!target.containsKey(key)) {
+      target.put(key, value);
+      return;
+    }
+    Object current = target.get(key);
+    if(current == null) {
+      target.put(key, value);
+      return;
+    }
+    if(current instanceof List<?>) {
+      List<Object> list = (List<Object>) current;
+      list.add(value);
+      return;
+    }
+    List<Object> list = new ArrayList<Object>();
+    list.add(current);
+    list.add(value);
+    target.put(key, list);
+  }
+
+  /**
+   * 尝试把对象解释为正整数。
+   */
+  private Integer toPositiveInt(Object value) {
+    if(value == null) {
+      return null;
+    }
+    if(value instanceof Number) {
+      int n = ((Number) value).intValue();
+      return n <= 0 ? null : Integer.valueOf(n);
+    }
+    String text = String.valueOf(value).trim();
+    if(text.isEmpty()) {
+      return null;
+    }
+    try {
+      int n = Integer.parseInt(text);
+      return n <= 0 ? null : Integer.valueOf(n);
+    } catch(Exception ex) {
+      return null;
     }
   }
 
@@ -1250,6 +1406,7 @@ public class Phase2LucDataExtractionSystem {
             .append("\"info\": ").append(QuestSemanticJson.toJsonArrayString(q.info)).append(", ")
             .append("\"goal\": ").append(q.goal.toJson()).append(", ")
             .append("\"reward\": ").append(q.reward.toJson()).append(", ")
+            .append("\"conditions\": ").append(QuestSemanticJson.toJsonObject(q.conditions)).append(", ")
             .append("\"needLevel\": ").append(q.needLevel).append(", ")
             .append("\"bQLoop\": ").append(q.bQLoop)
             .append("}");
@@ -1790,13 +1947,15 @@ public class Phase2LucDataExtractionSystem {
     final List<GoalItem> getItem = new ArrayList<GoalItem>();
     final List<GoalKill> killMonster = new ArrayList<GoalKill>();
     final List<Integer> meetNpc = new ArrayList<Integer>();
+    final Map<String, Object> extra = new LinkedHashMap<String, Object>();
 
     String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{")
           .append("\"getItem\":").append(jsonGoalItems(getItem)).append(",")
           .append("\"killMonster\":").append(jsonGoalKills(killMonster)).append(",")
-          .append("\"meetNpc\":").append(QuestSemanticJson.toJsonArrayInt(meetNpc))
+          .append("\"meetNpc\":").append(QuestSemanticJson.toJsonArrayInt(meetNpc)).append(",")
+          .append("\"extra\":").append(QuestSemanticJson.toJsonObject(extra))
           .append("}");
       return sb.toString();
     }
@@ -1845,14 +2004,24 @@ public class Phase2LucDataExtractionSystem {
   private static final class RewardBlock {
     int exp;
     int gold;
+    int fame;
+    int pvppoint;
+    int mileage;
     final List<RewardItem> items = new ArrayList<RewardItem>();
+    final List<Integer> skills = new ArrayList<Integer>();
+    final Map<String, Object> extra = new LinkedHashMap<String, Object>();
 
     String toJson() {
       StringBuilder sb = new StringBuilder();
       sb.append("{")
           .append("\"exp\":").append(exp).append(",")
           .append("\"gold\":").append(gold).append(",")
-          .append("\"items\":").append(jsonRewardItems(items))
+          .append("\"fame\":").append(fame).append(",")
+          .append("\"pvppoint\":").append(pvppoint).append(",")
+          .append("\"mileage\":").append(mileage).append(",")
+          .append("\"items\":").append(jsonRewardItems(items)).append(",")
+          .append("\"skills\":").append(QuestSemanticJson.toJsonArrayInt(skills)).append(",")
+          .append("\"extra\":").append(QuestSemanticJson.toJsonObject(extra))
           .append("}");
       return sb.toString();
     }
@@ -1882,6 +2051,7 @@ public class Phase2LucDataExtractionSystem {
     final List<String> info = new ArrayList<String>();
     final QuestGoalBlock goal = new QuestGoalBlock();
     final RewardBlock reward = new RewardBlock();
+    final Map<String, Object> conditions = new LinkedHashMap<String, Object>();
     int needLevel;
     int bQLoop;
   }

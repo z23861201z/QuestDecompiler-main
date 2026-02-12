@@ -47,6 +47,8 @@ public class QuestSemanticExtractor {
     QUEST_KEYS.add("npcsay");
     QUEST_KEYS.add("needLevel");
     QUEST_KEYS.add("needQuest");
+    QUEST_KEYS.add("needItem");
+    QUEST_KEYS.add("deleteItem");
     QUEST_KEYS.add("goal");
     QUEST_KEYS.add("reward");
     QUEST_KEYS.add("requstItem");
@@ -68,6 +70,8 @@ public class QuestSemanticExtractor {
 
     CONDITION_KEYS.add("needLevel");
     CONDITION_KEYS.add("needQuest");
+    CONDITION_KEYS.add("needItem");
+    CONDITION_KEYS.add("deleteItem");
     CONDITION_KEYS.add("requstItem");
     CONDITION_KEYS.add("goal");
     CONDITION_KEYS.add("killMonster");
@@ -374,7 +378,12 @@ public class QuestSemanticExtractor {
     if(line == null) {
       return null;
     }
-    int split = line.indexOf(':');
+    int split = line.indexOf(':'); /*
+    int splitCn = line.indexOf('：');
+    if(split < 0 || (splitCn >= 0 && splitCn < split)) {
+      split = splitCn;
+    }
+    */
     int splitCn = line.indexOf('：');
     if(split < 0 || (splitCn >= 0 && splitCn < split)) {
       split = splitCn;
@@ -806,6 +815,28 @@ public class QuestSemanticExtractor {
             table.createPc,
             table.createOffset,
             "questId=" + questId + " condition=requstItem"));
+      }
+
+      Value needItem = table.fields.get("needItem");
+      if(needItem != null) {
+        putCondition(model.conditions, "needItem", toObject(needItem, 0, new HashSet<Integer>()));
+        state.ruleHits.add(new RuleHit(
+            RULE_CONDITION,
+            table.functionPath,
+            table.createPc,
+            table.createOffset,
+            "questId=" + questId + " condition=needItem"));
+      }
+
+      Value deleteItem = table.fields.get("deleteItem");
+      if(deleteItem != null) {
+        putCondition(model.conditions, "deleteItem", toObject(deleteItem, 0, new HashSet<Integer>()));
+        state.ruleHits.add(new RuleHit(
+            RULE_CONDITION,
+            table.functionPath,
+            table.createPc,
+            table.createOffset,
+            "questId=" + questId + " condition=deleteItem"));
       }
 
       Value goal = table.fields.get("goal");

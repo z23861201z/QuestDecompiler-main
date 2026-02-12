@@ -95,6 +95,9 @@ public class Phase4QuestExportValidator {
       compareScalar(result, questId, "bQLoop", source.bqLoop, target.bqLoop);
       compareScalar(result, questId, "reward.exp", source.rewardExp, target.rewardExp);
       compareScalar(result, questId, "reward.gold", source.rewardGold, target.rewardGold);
+      compareScalar(result, questId, "reward.fame", source.rewardFame, target.rewardFame);
+      compareScalar(result, questId, "reward.pvppoint", source.rewardPvppoint, target.rewardPvppoint);
+      compareScalar(result, questId, "reward.mileage", source.rewardMileage, target.rewardMileage);
 
       compareStringList(result, questId, "contents", source.contents, target.contents);
       compareStringList(result, questId, "answer", source.answer, target.answer);
@@ -104,6 +107,11 @@ public class Phase4QuestExportValidator {
       comparePairList(result, questId, "goal.killMonster", source.goalKillMonster, target.goalKillMonster);
       compareIntegerList(result, questId, "goal.meetNpc", source.goalMeetNpc, target.goalMeetNpc);
       comparePairList(result, questId, "reward.items", source.rewardItems, target.rewardItems);
+      compareIntegerList(result, questId, "reward.getSkill", source.rewardSkills, target.rewardSkills);
+      compareObject(result, questId, "conditions",
+          normalizeConditionsForCompare(source.conditions),
+          normalizeConditionsForCompare(target.conditions));
+      compareObject(result, questId, "goal.extra", source.goalExtra, target.goalExtra);
     }
 
     for(Integer questId : exported.keySet()) {
@@ -149,6 +157,9 @@ public class Phase4QuestExportValidator {
       QuestValue quest = new QuestValue();
       quest.questId = model.questId;
       quest.name = model.title;
+      if(model.conditions != null) {
+        quest.conditions.putAll(copyMap(model.conditions));
+      }
 
       DialogArrays arrays = dialogs.get(Integer.valueOf(model.questId));
       if(arrays != null) {
@@ -182,26 +193,71 @@ public class Phase4QuestExportValidator {
         @SuppressWarnings("unchecked")
         Map<String, Object> goalMap = (Map<String, Object>) goalObj;
         appendMeetNpc(quest.goalMeetNpc, goalMap.get("meetNpc"));
+        for(Map.Entry<String, Object> entry : goalMap.entrySet()) {
+          if(entry == null || entry.getKey() == null) {
+            continue;
+          }
+          String key = entry.getKey();
+          if("getItem".equals(key)
+              || "getitem".equals(key)
+              || "killMonster".equals(key)
+              || "meetNpc".equals(key)
+              || "meetNPC".equals(key)) {
+            continue;
+          }
+          quest.goalExtra.put(key, copyObject(entry.getValue()));
+        }
       }
 
       if(model.rewards != null) {
         int rewardExp = 0;
         int rewardGold = 0;
+        int rewardFame = 0;
+        int rewardPvppoint = 0;
+        int rewardMileage = 0;
         for(QuestSemanticModel.Reward reward : model.rewards) {
           if(reward == null) {
             continue;
           }
           rewardExp += reward.exp;
           rewardGold += reward.money;
+          rewardFame += reward.fame;
+          rewardPvppoint += reward.pvppoint;
           if(reward.id > 0 && reward.count > 0) {
             PairValue pair = new PairValue();
             pair.id = Integer.valueOf(reward.id);
             pair.count = Integer.valueOf(reward.count);
             quest.rewardItems.add(pair);
           }
+          for(Integer skillId : reward.skillIds) {
+            if(skillId == null || skillId.intValue() <= 0) {
+              continue;
+            }
+            if(!quest.rewardSkills.contains(skillId)) {
+              quest.rewardSkills.add(skillId);
+            }
+          }
+          if(reward.extraFields != null) {
+            for(Map.Entry<String, Object> entry : reward.extraFields.entrySet()) {
+              if(entry == null || entry.getKey() == null) {
+                continue;
+              }
+              String key = entry.getKey();
+              Object value = copyObject(entry.getValue());
+              if("mileage".equalsIgnoreCase(key)) {
+                Integer mileage = asNullableInteger(value);
+                if(mileage != null) {
+                  rewardMileage += mileage.intValue();
+                }
+              }
+            }
+          }
         }
         quest.rewardExp = Integer.valueOf(rewardExp);
         quest.rewardGold = Integer.valueOf(rewardGold);
+        quest.rewardFame = Integer.valueOf(rewardFame);
+        quest.rewardPvppoint = Integer.valueOf(rewardPvppoint);
+        quest.rewardMileage = Integer.valueOf(rewardMileage);
       }
 
       out.put(Integer.valueOf(quest.questId), quest);
@@ -291,14 +347,52 @@ public class Phase4QuestExportValidator {
     quest.goalGetItem.addAll(asPairList(goal.get("getItem"), "id", "count"));
     quest.goalKillMonster.addAll(asPairList(goal.get("killMonster"), "id", "count"));
     quest.goalMeetNpc.addAll(asIntegerList(goal.get("meetNpc")));
+    for(Map.Entry<String, Object> entry : goal.entrySet()) {
+      String key = entry.getKey();
+      if(key == null) {
+        continue;
+      }
+      if("getItem".equals(key) || "killMonster".equals(key) || "meetNpc".equals(key)) {
+        continue;
+      }
+      quest.goalExtra.put(key, entry.getValue());
+    }
 
     Map<String, Object> reward = asMap(map.get("reward"));
     quest.rewardExp = asNullableInteger(reward.get("exp"));
     quest.rewardGold = asNullableInteger(reward.get("gold"));
+    quest.rewardFame = asNullableInteger(reward.get("fame"));
+    quest.rewardPvppoint = asNullableInteger(reward.get("pvppoint"));
+    quest.rewardMileage = asNullableInteger(reward.get("mileage"));
     quest.rewardItems.addAll(asPairList(reward.get("items"), "id", "count"));
+    quest.rewardSkills.addAll(asIntegerList(reward.get("getSkill")));
+    if(quest.rewardSkills.isEmpty()) {
+      quest.rewardSkills.addAll(asIntegerList(reward.get("skills")));
+    }
 
     quest.needLevel = asNullableInteger(map.get("needLevel"));
     quest.bqLoop = asNullableInteger(map.get("bQLoop"));
+    if(quest.needLevel != null) {
+      quest.conditions.put("needLevel", quest.needLevel);
+    }
+    for(Map.Entry<String, Object> entry : map.entrySet()) {
+      String key = entry.getKey();
+      if(key == null) {
+        continue;
+      }
+      if("id".equals(key)
+          || "name".equals(key)
+          || "contents".equals(key)
+          || "answer".equals(key)
+          || "info".equals(key)
+          || "goal".equals(key)
+          || "reward".equals(key)
+          || "needLevel".equals(key)
+          || "bQLoop".equals(key)) {
+        continue;
+      }
+      quest.conditions.put(key, entry.getValue());
+    }
     return quest;
   }
 
@@ -395,6 +489,87 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  private void compareObject(ValidationResult result,
+                             int questId,
+                             String path,
+                             Object original,
+                             Object exported) {
+    if(deepEquals(original, exported)) {
+      return;
+    }
+    result.addMismatch(questId, path, stringifyObject(original), stringifyObject(exported));
+  }
+
+  @SuppressWarnings("unchecked")
+  private boolean deepEquals(Object left, Object right) {
+    if(left == right) {
+      return true;
+    }
+    if(left == null || right == null) {
+      return false;
+    }
+    if(left instanceof Number && right instanceof Number) {
+      return ((Number) left).doubleValue() == ((Number) right).doubleValue();
+    }
+    if(left instanceof List<?> && right instanceof List<?>) {
+      List<Object> l = (List<Object>) left;
+      List<Object> r = (List<Object>) right;
+      if(l.size() != r.size()) {
+        return false;
+      }
+      for(int i = 0; i < l.size(); i++) {
+        if(!deepEquals(l.get(i), r.get(i))) {
+          return false;
+        }
+      }
+      return true;
+    }
+    if(left instanceof Map<?, ?> && right instanceof Map<?, ?>) {
+      Map<String, Object> l = (Map<String, Object>) left;
+      Map<String, Object> r = (Map<String, Object>) right;
+      if(l.size() != r.size()) {
+        return false;
+      }
+      for(Map.Entry<String, Object> entry : l.entrySet()) {
+        String key = entry.getKey();
+        if(!r.containsKey(key)) {
+          return false;
+        }
+        if(!deepEquals(entry.getValue(), r.get(key))) {
+          return false;
+        }
+      }
+      return true;
+    }
+    return left.equals(right);
+  }
+
+  private String stringifyObject(Object value) {
+    if(value == null) {
+      return "null";
+    }
+    if(value instanceof Map<?, ?>) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> map = (Map<String, Object>) value;
+      return QuestSemanticJson.toJsonObject(map);
+    }
+    if(value instanceof List<?>) {
+      return String.valueOf(value);
+    }
+    return String.valueOf(value);
+  }
+
+  private Map<String, Object> normalizeConditionsForCompare(Map<String, Object> conditions) {
+    Map<String, Object> out = new LinkedHashMap<String, Object>();
+    if(conditions == null || conditions.isEmpty()) {
+      return out;
+    }
+    out.putAll(conditions);
+    // needLevel 由顶层标量字段对比，这里不再重复比较列表/聚合形态。
+    out.remove("needLevel");
+    return out;
+  }
+
   /**
    * 计算并返回结果。
    * @param left 方法参数
@@ -450,6 +625,14 @@ public class Phase4QuestExportValidator {
       List<Object> list = (List<Object>) value;
       for(Object item : list) {
         appendMeetNpc(out, item);
+      }
+      return;
+    }
+    if(value instanceof Map<?, ?>) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> map = (Map<String, Object>) value;
+      for(Map.Entry<String, Object> entry : map.entrySet()) {
+        appendMeetNpc(out, entry.getValue());
       }
     }
   }
@@ -511,6 +694,46 @@ public class Phase4QuestExportValidator {
       out.put(Integer.valueOf(binding.questId), Integer.valueOf(binding.numberValue.intValue()));
     }
     return out;
+  }
+
+  @SuppressWarnings("unchecked")
+  private Map<String, Object> copyMap(Map<String, Object> source) {
+    Map<String, Object> out = new LinkedHashMap<String, Object>();
+    if(source == null) {
+      return out;
+    }
+    for(Map.Entry<String, Object> entry : source.entrySet()) {
+      if(entry == null || entry.getKey() == null) {
+        continue;
+      }
+      out.put(entry.getKey(), copyObject(entry.getValue()));
+    }
+    return out;
+  }
+
+  @SuppressWarnings("unchecked")
+  private Object copyObject(Object value) {
+    if(value == null) {
+      return null;
+    }
+    if(value instanceof Map<?, ?>) {
+      return copyMap((Map<String, Object>) value);
+    }
+    if(value instanceof List<?>) {
+      List<Object> out = new ArrayList<Object>();
+      List<Object> list = (List<Object>) value;
+      for(Object item : list) {
+        out.add(copyObject(item));
+      }
+      return out;
+    }
+    if(value instanceof Number) {
+      return Integer.valueOf(((Number) value).intValue());
+    }
+    if(value instanceof Boolean) {
+      return value;
+    }
+    return String.valueOf(value);
   }
 
   /**
@@ -696,6 +919,9 @@ public class Phase4QuestExportValidator {
     Integer bqLoop;
     Integer rewardExp;
     Integer rewardGold;
+    Integer rewardFame;
+    Integer rewardPvppoint;
+    Integer rewardMileage;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
@@ -703,6 +929,10 @@ public class Phase4QuestExportValidator {
     final List<PairValue> goalKillMonster = new ArrayList<PairValue>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
     final List<PairValue> rewardItems = new ArrayList<PairValue>();
+    final List<Integer> rewardSkills = new ArrayList<Integer>();
+    final Map<String, Object> conditions = new LinkedHashMap<String, Object>();
+    final Map<String, Object> goalExtra = new LinkedHashMap<String, Object>();
+    final Map<String, Object> rewardExtra = new LinkedHashMap<String, Object>();
 
     String toJson() {
       StringBuilder sb = new StringBuilder();
@@ -713,6 +943,9 @@ public class Phase4QuestExportValidator {
           .append(",\"bQLoop\":").append(bqLoop == null ? "null" : bqLoop)
           .append(",\"rewardExp\":").append(rewardExp == null ? "null" : rewardExp)
           .append(",\"rewardGold\":").append(rewardGold == null ? "null" : rewardGold)
+          .append(",\"rewardFame\":").append(rewardFame == null ? "null" : rewardFame)
+          .append(",\"rewardPvppoint\":").append(rewardPvppoint == null ? "null" : rewardPvppoint)
+          .append(",\"rewardMileage\":").append(rewardMileage == null ? "null" : rewardMileage)
           .append("}");
       return sb.toString();
     }

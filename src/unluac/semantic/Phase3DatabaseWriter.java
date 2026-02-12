@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
@@ -70,6 +71,7 @@ public class Phase3DatabaseWriter {
     System.out.println("totalGoalKillMonsterRows=" + summary.totalGoalKillMonsterRows);
     System.out.println("totalGoalMeetNpcRows=" + summary.totalGoalMeetNpcRows);
     System.out.println("totalRewardItemRows=" + summary.totalRewardItemRows);
+    System.out.println("totalRewardSkillRows=" + summary.totalRewardSkillRows);
     System.out.println("totalNpcReferenceRows=" + summary.totalNpcReferenceRows);
     System.out.println("insertMillis=" + elapsed);
   }
@@ -145,7 +147,13 @@ public class Phase3DatabaseWriter {
         + "need_level INT NOT NULL DEFAULT 0,"
         + "bq_loop INT NOT NULL DEFAULT 0,"
         + "reward_exp INT NOT NULL DEFAULT 0,"
-        + "reward_gold INT NOT NULL DEFAULT 0"
+        + "reward_gold INT NOT NULL DEFAULT 0,"
+        + "reward_fame INT NOT NULL DEFAULT 0,"
+        + "reward_pvppoint INT NOT NULL DEFAULT 0,"
+        + "reward_mileage INT NOT NULL DEFAULT 0,"
+        + "reward_extra_json LONGTEXT NULL,"
+        + "goal_extra_json LONGTEXT NULL,"
+        + "conditions_json LONGTEXT NULL"
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
 
     ddl.add("CREATE TABLE IF NOT EXISTS quest_contents ("
@@ -214,6 +222,15 @@ public class Phase3DatabaseWriter {
         + "KEY idx_reward_item_quest (quest_id)"
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
 
+    ddl.add("CREATE TABLE IF NOT EXISTS quest_reward_skill ("
+        + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+        + "quest_id INT NOT NULL,"
+        + "seq_index INT NOT NULL,"
+        + "skill_id INT NOT NULL,"
+        + "UNIQUE KEY uk_reward_skill (quest_id, seq_index),"
+        + "KEY idx_reward_skill_quest (quest_id)"
+        + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
+
     ddl.add("CREATE TABLE IF NOT EXISTS npc_quest_reference ("
         + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
         + "npc_file VARCHAR(255) NOT NULL,"
@@ -230,6 +247,34 @@ public class Phase3DatabaseWriter {
         statement.execute(sql);
       }
     }
+
+    // 兼容已有旧库：如果 quest_main 是早期结构，增量补齐缺失列。
+    ensureColumnExists(connection, "quest_main", "reward_fame", "INT NOT NULL DEFAULT 0");
+    ensureColumnExists(connection, "quest_main", "reward_pvppoint", "INT NOT NULL DEFAULT 0");
+    ensureColumnExists(connection, "quest_main", "reward_mileage", "INT NOT NULL DEFAULT 0");
+    ensureColumnExists(connection, "quest_main", "reward_extra_json", "LONGTEXT NULL");
+    ensureColumnExists(connection, "quest_main", "goal_extra_json", "LONGTEXT NULL");
+    ensureColumnExists(connection, "quest_main", "conditions_json", "LONGTEXT NULL");
+  }
+
+  private void ensureColumnExists(Connection connection,
+                                  String table,
+                                  String column,
+                                  String definition) throws Exception {
+    String existsSql = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.COLUMNS "
+        + "WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ? AND COLUMN_NAME = ?";
+    try(PreparedStatement ps = connection.prepareStatement(existsSql)) {
+      ps.setString(1, table);
+      ps.setString(2, column);
+      try(ResultSet rs = ps.executeQuery()) {
+        if(rs.next() && rs.getInt(1) > 0) {
+          return;
+        }
+      }
+    }
+    try(Statement statement = connection.createStatement()) {
+      statement.execute("ALTER TABLE " + table + " ADD COLUMN " + column + " " + definition);
+    }
   }
 
   /**
@@ -240,6 +285,7 @@ public class Phase3DatabaseWriter {
   private void truncateData(Connection connection) throws Exception {
     List<String> tables = new ArrayList<String>();
     tables.add("npc_quest_reference");
+    tables.add("quest_reward_skill");
     tables.add("quest_reward_item");
     tables.add("quest_goal_meetnpc");
     tables.add("quest_goal_killmonster");
@@ -264,7 +310,9 @@ public class Phase3DatabaseWriter {
   private void insertQuestData(Connection connection,
                                List<QuestRow> quests,
                                InsertSummary summary) throws Exception {
-    String insertMain = "INSERT INTO quest_main(quest_id, name, need_level, bq_loop, reward_exp, reward_gold) VALUES(?,?,?,?,?,?)";
+    String insertMain = "INSERT INTO quest_main(quest_id, name, need_level, bq_loop, reward_exp, reward_gold, "
+        + "reward_fame, reward_pvppoint, reward_mileage, reward_extra_json, goal_extra_json, conditions_json) "
+        + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
     String insertContents = "INSERT INTO quest_contents(quest_id, seq_index, text) VALUES(?,?,?)";
     String insertAnswer = "INSERT INTO quest_answer(quest_id, seq_index, text) VALUES(?,?,?)";
     String insertInfo = "INSERT INTO quest_info(quest_id, seq_index, text) VALUES(?,?,?)";
@@ -272,6 +320,7 @@ public class Phase3DatabaseWriter {
     String insertGoalKill = "INSERT INTO quest_goal_killmonster(quest_id, seq_index, monster_id, monster_count) VALUES(?,?,?,?)";
     String insertGoalMeet = "INSERT INTO quest_goal_meetnpc(quest_id, seq_index, npc_id) VALUES(?,?,?)";
     String insertRewardItem = "INSERT INTO quest_reward_item(quest_id, seq_index, item_id, item_count) VALUES(?,?,?,?)";
+    String insertRewardSkill = "INSERT INTO quest_reward_skill(quest_id, seq_index, skill_id) VALUES(?,?,?)";
 
     try(PreparedStatement psMain = connection.prepareStatement(insertMain);
         PreparedStatement psContents = connection.prepareStatement(insertContents);
@@ -280,7 +329,8 @@ public class Phase3DatabaseWriter {
         PreparedStatement psGoalItem = connection.prepareStatement(insertGoalItem);
         PreparedStatement psGoalKill = connection.prepareStatement(insertGoalKill);
         PreparedStatement psGoalMeet = connection.prepareStatement(insertGoalMeet);
-        PreparedStatement psRewardItem = connection.prepareStatement(insertRewardItem)) {
+        PreparedStatement psRewardItem = connection.prepareStatement(insertRewardItem);
+        PreparedStatement psRewardSkill = connection.prepareStatement(insertRewardSkill)) {
 
       // 按当前数组位置写入 seq_index，保持原始列表顺序。
       for(QuestRow quest : quests) {
@@ -290,6 +340,12 @@ public class Phase3DatabaseWriter {
         psMain.setInt(4, quest.bqLoop);
         psMain.setInt(5, quest.rewardExp);
         psMain.setInt(6, quest.rewardGold);
+        psMain.setInt(7, quest.rewardFame);
+        psMain.setInt(8, quest.rewardPvppoint);
+        psMain.setInt(9, quest.rewardMileage);
+        psMain.setString(10, quest.rewardExtraJson);
+        psMain.setString(11, quest.goalExtraJson);
+        psMain.setString(12, quest.conditionsJson);
         psMain.addBatch();
         summary.totalQuestInserted++;
 
@@ -351,6 +407,18 @@ public class Phase3DatabaseWriter {
           psRewardItem.addBatch();
           summary.totalRewardItemRows++;
         }
+
+        for(int i = 0; i < quest.rewardSkills.size(); i++) {
+          Integer skillId = quest.rewardSkills.get(i);
+          if(skillId == null || skillId.intValue() <= 0) {
+            continue;
+          }
+          psRewardSkill.setInt(1, quest.questId);
+          psRewardSkill.setInt(2, i);
+          psRewardSkill.setInt(3, skillId.intValue());
+          psRewardSkill.addBatch();
+          summary.totalRewardSkillRows++;
+        }
       }
 
       psMain.executeBatch();
@@ -361,6 +429,7 @@ public class Phase3DatabaseWriter {
       psGoalKill.executeBatch();
       psGoalMeet.executeBatch();
       psRewardItem.executeBatch();
+      psRewardSkill.executeBatch();
     }
   }
 
@@ -433,9 +502,19 @@ public class Phase3DatabaseWriter {
       Map<String, Object> reward = asMap(map.get("reward"));
       row.rewardExp = intOf(reward.get("exp"));
       row.rewardGold = intOf(reward.get("gold"));
+      row.rewardFame = intOf(reward.get("fame"));
+      row.rewardPvppoint = intOf(reward.get("pvppoint"));
+      row.rewardMileage = intOf(reward.get("mileage"));
       for(IntPair pair : asPairList(reward.get("items"), "id", "count")) {
         row.rewardItems.add(pair);
       }
+      row.rewardSkills.addAll(asIntList(reward.get("skills")));
+      if(row.rewardSkills.isEmpty()) {
+        row.rewardSkills.addAll(asIntList(reward.get("getSkill")));
+      }
+      row.rewardExtraJson = toJsonOrNull(asMap(reward.get("extra")));
+      row.goalExtraJson = toJsonOrNull(asMap(goal.get("extra")));
+      row.conditionsJson = toJsonOrNull(asMap(map.get("conditions")));
 
       out.add(row);
     }
@@ -610,6 +689,13 @@ public class Phase3DatabaseWriter {
     return Collections.emptyMap();
   }
 
+  private String toJsonOrNull(Map<String, Object> map) {
+    if(map == null || map.isEmpty()) {
+      return null;
+    }
+    return QuestSemanticJson.toJsonObject(map);
+  }
+
   /**
    * 计算并返回结果。
    * @param value 方法参数
@@ -672,6 +758,12 @@ public class Phase3DatabaseWriter {
     int bqLoop;
     int rewardExp;
     int rewardGold;
+    int rewardFame;
+    int rewardPvppoint;
+    int rewardMileage;
+    String rewardExtraJson;
+    String goalExtraJson;
+    String conditionsJson;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
@@ -679,6 +771,7 @@ public class Phase3DatabaseWriter {
     final List<IntPair> goalKillMonster = new ArrayList<IntPair>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
     final List<IntPair> rewardItems = new ArrayList<IntPair>();
+    final List<Integer> rewardSkills = new ArrayList<Integer>();
   }
 
   private static final class IntPair {
@@ -699,6 +792,7 @@ public class Phase3DatabaseWriter {
     int totalGoalKillMonsterRows;
     int totalGoalMeetNpcRows;
     int totalRewardItemRows;
+    int totalRewardSkillRows;
     int totalNpcReferenceRows;
     long insertMillis;
 
@@ -711,6 +805,7 @@ public class Phase3DatabaseWriter {
       sb.append("  \"totalGoalKillMonsterRows\": ").append(totalGoalKillMonsterRows).append(",\n");
       sb.append("  \"totalGoalMeetNpcRows\": ").append(totalGoalMeetNpcRows).append(",\n");
       sb.append("  \"totalRewardItemRows\": ").append(totalRewardItemRows).append(",\n");
+      sb.append("  \"totalRewardSkillRows\": ").append(totalRewardSkillRows).append(",\n");
       sb.append("  \"totalNpcReferenceRows\": ").append(totalNpcReferenceRows).append(",\n");
       sb.append("  \"insertMillis\": ").append(insertMillis).append("\n");
       sb.append("}\n");
