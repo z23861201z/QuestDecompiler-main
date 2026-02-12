@@ -96,9 +96,6 @@ public class Phase3DbConsistencyValidator {
       compareField(report, row.questId, "bqLoop", Integer.valueOf(row.bqLoop), Integer.valueOf(actual.bqLoop));
       compareField(report, row.questId, "rewardExp", Integer.valueOf(row.rewardExp), Integer.valueOf(actual.rewardExp));
       compareField(report, row.questId, "rewardGold", Integer.valueOf(row.rewardGold), Integer.valueOf(actual.rewardGold));
-      compareField(report, row.questId, "rewardFame", Integer.valueOf(row.rewardFame), Integer.valueOf(actual.rewardFame));
-      compareField(report, row.questId, "rewardPvppoint", Integer.valueOf(row.rewardPvppoint), Integer.valueOf(actual.rewardPvppoint));
-      compareField(report, row.questId, "rewardMileage", Integer.valueOf(row.rewardMileage), Integer.valueOf(actual.rewardMileage));
 
       compareStringList(report, row.questId, "contents", row.contents, actual.contents);
       compareStringList(report, row.questId, "answer", row.answer, actual.answer);
@@ -108,10 +105,6 @@ public class Phase3DbConsistencyValidator {
       comparePairList(report, row.questId, "goal.killMonster", row.goalKillMonster, actual.goalKillMonster);
       compareIntList(report, row.questId, "goal.meetNpc", row.goalMeetNpc, actual.goalMeetNpc);
       comparePairList(report, row.questId, "reward.items", row.rewardItems, actual.rewardItems);
-      compareIntList(report, row.questId, "reward.skills", row.rewardSkills, actual.rewardSkills);
-      compareObjectField(report, row.questId, "conditions", row.conditions, actual.conditions);
-      compareObjectField(report, row.questId, "goal.extra", row.goalExtra, actual.goalExtra);
-      compareObjectField(report, row.questId, "reward.extra", row.rewardExtra, actual.rewardExtra);
     }
 
     report.mismatchCount = report.mismatchDetails.size();
@@ -147,7 +140,6 @@ public class Phase3DbConsistencyValidator {
       loadPairArray(connection, out, "quest_goal_killmonster", "goalKillMonster", "monster_id", "monster_count");
       loadIntArray(connection, out, "quest_goal_meetnpc", "goalMeetNpc", "npc_id");
       loadPairArray(connection, out, "quest_reward_item", "rewardItems", "item_id", "item_count");
-      loadIntArray(connection, out, "quest_reward_skill", "rewardSkills", "skill_id");
     }
     return out;
   }
@@ -157,9 +149,7 @@ public class Phase3DbConsistencyValidator {
    */
   private void loadQuestMain(Connection connection,
                              Map<Integer, QuestRow> out) throws Exception {
-    String sql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold, "
-        + "reward_fame, reward_pvppoint, reward_mileage, reward_extra_json, goal_extra_json, conditions_json "
-        + "FROM quest_main ORDER BY quest_id ASC";
+    String sql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold FROM quest_main ORDER BY quest_id ASC";
     try(PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet rs = ps.executeQuery()) {
       while(rs.next()) {
@@ -170,12 +160,6 @@ public class Phase3DbConsistencyValidator {
         row.bqLoop = rs.getInt("bq_loop");
         row.rewardExp = rs.getInt("reward_exp");
         row.rewardGold = rs.getInt("reward_gold");
-        row.rewardFame = rs.getInt("reward_fame");
-        row.rewardPvppoint = rs.getInt("reward_pvppoint");
-        row.rewardMileage = rs.getInt("reward_mileage");
-        row.rewardExtra = parseJsonObjectOrEmpty(rs.getString("reward_extra_json"), "reward_extra_json", row.questId);
-        row.goalExtra = parseJsonObjectOrEmpty(rs.getString("goal_extra_json"), "goal_extra_json", row.questId);
-        row.conditions = parseJsonObjectOrEmpty(rs.getString("conditions_json"), "conditions_json", row.questId);
         out.put(Integer.valueOf(row.questId), row);
       }
     }
@@ -263,8 +247,6 @@ public class Phase3DbConsistencyValidator {
         }
         if("goalMeetNpc".equals(field)) {
           row.goalMeetNpc.add(Integer.valueOf(rs.getInt(valueColumn)));
-        } else if("rewardSkills".equals(field)) {
-          row.rewardSkills.add(Integer.valueOf(rs.getInt(valueColumn)));
         }
       }
     }
@@ -316,17 +298,7 @@ public class Phase3DbConsistencyValidator {
       Map<String, Object> reward = asMap(map.get("reward"));
       row.rewardExp = intOf(reward.get("exp"));
       row.rewardGold = intOf(reward.get("gold"));
-      row.rewardFame = intOf(reward.get("fame"));
-      row.rewardPvppoint = intOf(reward.get("pvppoint"));
-      row.rewardMileage = intOf(reward.get("mileage"));
       row.rewardItems.addAll(asPairList(reward.get("items"), "id", "count"));
-      row.rewardSkills.addAll(asIntList(reward.get("skills")));
-      if(row.rewardSkills.isEmpty()) {
-        row.rewardSkills.addAll(asIntList(reward.get("getSkill")));
-      }
-      row.rewardExtra = asMap(reward.get("extra"));
-      row.goalExtra = asMap(goal.get("extra"));
-      row.conditions = asMap(map.get("conditions"));
 
       out.add(row);
     }
@@ -351,84 +323,6 @@ public class Phase3DbConsistencyValidator {
           + " expected=" + String.valueOf(expected)
           + " actual=" + String.valueOf(actual));
     }
-  }
-
-  private void compareObjectField(ValidationReport report,
-                                  int questId,
-                                  String field,
-                                  Object expected,
-                                  Object actual) {
-    if(deepEquals(expected, actual)) {
-      return;
-    }
-    report.mismatchDetails.add("questId=" + questId + " field=" + field
-        + " expected=" + stringifyObject(expected)
-        + " actual=" + stringifyObject(actual));
-  }
-
-  @SuppressWarnings("unchecked")
-  private boolean deepEquals(Object left, Object right) {
-    if(left == right) {
-      return true;
-    }
-    if(left == null || right == null) {
-      return false;
-    }
-    if(left instanceof Number && right instanceof Number) {
-      return ((Number) left).doubleValue() == ((Number) right).doubleValue();
-    }
-    if(left instanceof List<?> && right instanceof List<?>) {
-      List<Object> l = (List<Object>) left;
-      List<Object> r = (List<Object>) right;
-      if(l.size() != r.size()) {
-        return false;
-      }
-      for(int i = 0; i < l.size(); i++) {
-        if(!deepEquals(l.get(i), r.get(i))) {
-          return false;
-        }
-      }
-      return true;
-    }
-    if(left instanceof Map<?, ?> && right instanceof Map<?, ?>) {
-      Map<String, Object> l = (Map<String, Object>) left;
-      Map<String, Object> r = (Map<String, Object>) right;
-      if(l.size() != r.size()) {
-        return false;
-      }
-      for(Map.Entry<String, Object> entry : l.entrySet()) {
-        String key = entry.getKey();
-        if(!r.containsKey(key)) {
-          return false;
-        }
-        if(!deepEquals(entry.getValue(), r.get(key))) {
-          return false;
-        }
-      }
-      return true;
-    }
-    return left.equals(right);
-  }
-
-  private String stringifyObject(Object value) {
-    if(value == null) {
-      return "null";
-    }
-    if(value instanceof Map<?, ?>) {
-      @SuppressWarnings("unchecked")
-      Map<String, Object> map = (Map<String, Object>) value;
-      return QuestSemanticJson.toJsonObject(map);
-    }
-    if(value instanceof List<?>) {
-      return QuestSemanticJson.toJsonObject(wrapListForJson((List<?>) value));
-    }
-    return String.valueOf(value);
-  }
-
-  private Map<String, Object> wrapListForJson(List<?> list) {
-    Map<String, Object> map = new LinkedHashMap<String, Object>();
-    map.put("list", list);
-    return map;
   }
 
   /**
@@ -578,13 +472,6 @@ public class Phase3DbConsistencyValidator {
     return Collections.emptyMap();
   }
 
-  private Map<String, Object> parseJsonObjectOrEmpty(String json, String field, int row) {
-    if(json == null || json.trim().isEmpty()) {
-      return Collections.emptyMap();
-    }
-    return QuestSemanticJson.parseObject(json, field, row);
-  }
-
   /**
    * 计算并返回结果。
    * @param value 方法参数
@@ -640,9 +527,6 @@ public class Phase3DbConsistencyValidator {
     int bqLoop;
     int rewardExp;
     int rewardGold;
-    int rewardFame;
-    int rewardPvppoint;
-    int rewardMileage;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
@@ -650,10 +534,6 @@ public class Phase3DbConsistencyValidator {
     final List<IntPair> goalKillMonster = new ArrayList<IntPair>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
     final List<IntPair> rewardItems = new ArrayList<IntPair>();
-    final List<Integer> rewardSkills = new ArrayList<Integer>();
-    Map<String, Object> conditions = Collections.emptyMap();
-    Map<String, Object> goalExtra = Collections.emptyMap();
-    Map<String, Object> rewardExtra = Collections.emptyMap();
   }
 
   public static final class ValidationReport {

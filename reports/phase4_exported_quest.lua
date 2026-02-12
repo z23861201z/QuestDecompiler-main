@@ -1,29 +1,18 @@
 -- phase4 exported quest data
--- generatedAt: 2026-02-12T21:37:09.561+08:00
+-- generatedAt: 2026-02-11T23:36:51.16+08:00
 
 qt[1] = {
   id = 1,
-  name = "[ ??? ??? ]",
+  name = "[ ??? ??? ] [phaseD]",
   contents = {
-    "?…!!  {0xFF99FF99}PLAYERNAME{END}?!! ???? ?????!???? ???? ??? ?? ??? ?????",
-    "?? ???? ?????? ???? ???? ?? ?? ?? ??? ?????.??? ??? ??? {0xFF99FF99}PLAYERNAME{END}??? ??? ?? ?? ????.",
-    "ANSWER_YES:?? ??? ??????.",
-    "ANSWER_NO:?? ? ? ????.",
-    "?????. ???? ???? ?? ???? ??? ??? ??? ??? ???? ????. {0xFFFFFF00}?????? ?? ????{END}??? ???? ??? ?????. {0xFFFFFF00}[???] 9?{END}? ??? ????.",
-    "{0xFFFFFF00}雾影术，可以隐藏自己身形移动的武功{END}。要学吗？",
-    "ANSWER_YES:是的，我要学习。",
-    "ANSWER_NO:我不要学习。",
-    "学过一次的武功，在使用武功还原符之前无法消除。深思熟虑之后再和我说吧。"
+    "phaseD line 1",
+    "phaseD line 2"
   },
   answer = {
-    "??????.",
-    "?.. ??? ?? ???… ??? ??????.",
-    "嗯，我考虑一下。",
-    "想都不用想，我不要学。"
+    "phaseD answer"
   },
   info = {
-    "???? ???? ??? ?? {0xFFFFFF00}[???] 9?{END}? ?? ???? ????. ?????? ??.",
-    "{0xFFFFFF00}雾影术是可以隐藏自己身形移动的武功{END}。和刺客转职NPC完成对话后，才能学习雾影术。"
+    "phaseD info"
   },
   goal = {
     getItem = {
@@ -35,13 +24,7 @@ qt[1] = {
   reward = {
     exp = 0,
     gold = 3000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10207
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -71,11 +54,7 @@ qt[2] = {
   reward = {
     exp = 0,
     gold = 200,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 2,
   bQLoop = 0
@@ -105,18 +84,7 @@ qt[3] = {
   reward = {
     exp = 30,
     gold = 300,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990002,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 2,
   bQLoop = 0
@@ -146,19 +114,7 @@ qt[4] = {
   reward = {
     exp = 30,
     gold = 400,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  needQuest = 3,
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990003,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 3,
   bQLoop = 0
@@ -191,11 +147,7 @@ qt[5] = {
   reward = {
     exp = 50,
     gold = 600,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 5,
   bQLoop = 0
@@ -228,11 +180,7 @@ qt[6] = {
   reward = {
     exp = 200,
     gold = 1200,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 8,
   bQLoop = 0
@@ -266,14 +214,10 @@ qt[7] = {
   reward = {
     exp = 300,
     gold = 1500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810011, count = 99},
       {id = 8820011, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -306,11 +250,7 @@ qt[8] = {
   reward = {
     exp = 500,
     gold = 1800,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 12,
   bQLoop = 0
@@ -342,13 +282,8 @@ qt[9] = {
   reward = {
     exp = 500,
     gold = 2000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  needQuest = 8,
   needLevel = 13,
   bQLoop = 0
 }
@@ -376,11 +311,7 @@ qt[11] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -409,15 +340,10 @@ qt[12] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990004, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  needQuest = 11,
   needLevel = 18,
   bQLoop = 0
 }
@@ -452,20 +378,7 @@ qt[13] = {
   reward = {
     exp = 2000,
     gold = 9000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  needQuest = 12,
-  needItem = 11572,
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990004,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -500,11 +413,7 @@ qt[14] = {
   reward = {
     exp = 34600,
     gold = 54000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -542,11 +451,7 @@ qt[15] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -579,14 +484,10 @@ qt[16] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010101, count = 1},
       {id = 8020101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -619,11 +520,7 @@ qt[17] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -661,11 +558,7 @@ qt[18] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -698,14 +591,10 @@ qt[19] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030101, count = 1},
       {id = 8040101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -743,11 +632,7 @@ qt[20] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -780,14 +665,10 @@ qt[21] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050101, count = 1},
       {id = 8060101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -817,13 +698,7 @@ qt[22] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10101
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -853,13 +728,7 @@ qt[23] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10102
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -889,13 +758,7 @@ qt[24] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10105
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -925,13 +788,7 @@ qt[25] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10103
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -961,13 +818,7 @@ qt[26] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10106
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -997,13 +848,7 @@ qt[27] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10108
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -1033,13 +878,7 @@ qt[28] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10107
-    }
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -1069,13 +908,7 @@ qt[29] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10104
-    }
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -1105,13 +938,7 @@ qt[30] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10109
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -1141,13 +968,7 @@ qt[31] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10110
-    }
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -1177,13 +998,7 @@ qt[32] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10201
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1213,13 +1028,7 @@ qt[33] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10202
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1249,13 +1058,7 @@ qt[34] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10203
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1285,13 +1088,7 @@ qt[35] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10206
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1321,13 +1118,7 @@ qt[36] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10209
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -1357,13 +1148,7 @@ qt[37] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10208
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -1393,13 +1178,7 @@ qt[38] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10204
-    }
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -1429,13 +1208,7 @@ qt[39] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10205
-    }
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -1465,13 +1238,7 @@ qt[41] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10210
-    }
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -1501,13 +1268,7 @@ qt[42] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10301
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1535,13 +1296,7 @@ qt[43] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10302
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1571,13 +1326,7 @@ qt[44] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10304
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1607,13 +1356,7 @@ qt[45] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10303
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -1643,13 +1386,7 @@ qt[46] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10305
-    }
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -1679,13 +1416,7 @@ qt[47] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10306
-    }
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -1715,13 +1446,7 @@ qt[48] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10307
-    }
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -1751,13 +1476,7 @@ qt[49] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10308
-    }
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -1787,13 +1506,7 @@ qt[50] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10309
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -1823,13 +1536,7 @@ qt[51] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10310
-    }
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -1868,40 +1575,7 @@ qt[52] = {
   reward = {
     exp = 1,
     gold = 500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990012,
-      itemcnt = 4
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 4,
-      itemid = 8990012,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 4,
   bQLoop = 0
@@ -1941,25 +1615,7 @@ qt[53] = {
   reward = {
     exp = 1,
     gold = 500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990013,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990013,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -1999,13 +1655,9 @@ qt[54] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890108, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -2040,13 +1692,9 @@ qt[55] = {
   reward = {
     exp = 11000,
     gold = 10000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 26,
   bQLoop = 0
@@ -2080,18 +1728,7 @@ qt[56] = {
   reward = {
     exp = 10000,
     gold = 30000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 2,
-      itemid = 8910321,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -2123,11 +1760,7 @@ qt[57] = {
   reward = {
     exp = 0,
     gold = 32000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -2163,11 +1796,7 @@ qt[58] = {
   reward = {
     exp = 15000,
     gold = 270000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2201,18 +1830,7 @@ qt[59] = {
   reward = {
     exp = 20000,
     gold = 60000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990018,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2257,25 +1875,7 @@ qt[60] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990019,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910421,
-      itemcnt = 15
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2307,13 +1907,7 @@ qt[61] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21101
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2345,13 +1939,7 @@ qt[62] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21201
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2383,13 +1971,7 @@ qt[63] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21301
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2435,25 +2017,7 @@ qt[64] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990020,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910421,
-      itemcnt = 15
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2485,13 +2049,7 @@ qt[65] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22101
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2523,13 +2081,7 @@ qt[66] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22201
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2561,13 +2113,7 @@ qt[67] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22301
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2601,13 +2147,9 @@ qt[68] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890011, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 25,
   bQLoop = 0
@@ -2641,13 +2183,9 @@ qt[69] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890021, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 25,
   bQLoop = 0
@@ -2686,36 +2224,8 @@ qt[70] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519011, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980003,
-      itemcnt = 3
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980003,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980003,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980003,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -2755,36 +2265,8 @@ qt[71] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519012, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980003,
-      itemcnt = 3
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980003,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980003,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980003,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -2820,13 +2302,9 @@ qt[72] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -2859,15 +2337,11 @@ qt[73] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519051, count = 1},
       {id = 9519053, count = 1},
       {id = 9519055, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -2900,15 +2374,11 @@ qt[74] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519052, count = 1},
       {id = 9519054, count = 1},
       {id = 9519056, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -2942,18 +2412,7 @@ qt[75] = {
   reward = {
     exp = 20000,
     gold = 60000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990018,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -2988,11 +2447,7 @@ qt[76] = {
   reward = {
     exp = 0,
     gold = 65000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -3030,25 +2485,7 @@ qt[77] = {
   reward = {
     exp = 0,
     gold = 40000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990023,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990023,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -3078,11 +2515,7 @@ qt[78] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -3119,11 +2552,7 @@ qt[79] = {
   reward = {
     exp = 48000,
     gold = 80000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 47,
   bQLoop = 0
@@ -3162,25 +2591,7 @@ qt[80] = {
   reward = {
     exp = 48000,
     gold = 70000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 2,
-      itemid = 8990026,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 2,
-      itemid = 8910491,
-      itemcnt = 20
-    }
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -3215,11 +2626,7 @@ qt[81] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -3258,18 +2665,7 @@ qt[82] = {
   reward = {
     exp = 100000,
     gold = 2000000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910501,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 51,
   bQLoop = 0
@@ -3301,11 +2697,7 @@ qt[83] = {
   reward = {
     exp = 23000,
     gold = 100000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -3340,11 +2732,7 @@ qt[84] = {
   reward = {
     exp = 34000,
     gold = 85000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -3380,19 +2768,8 @@ qt[85] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990025, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990024,
-      itemcnt = 1
     }
   },
   needLevel = 45,
@@ -3428,18 +2805,7 @@ qt[87] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990031,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -3474,13 +2840,9 @@ qt[88] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -3509,13 +2871,9 @@ qt[89] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -3544,13 +2902,9 @@ qt[90] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -3594,18 +2948,7 @@ qt[91] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990032,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -3641,13 +2984,9 @@ qt[92] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990034, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -3685,18 +3024,7 @@ qt[93] = {
   reward = {
     exp = 30000,
     gold = 40000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990022,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -3729,20 +3057,9 @@ qt[94] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810031, count = 50},
       {id = 8820031, count = 99}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990022,
-      itemcnt = 1
     }
   },
   needLevel = 44,
@@ -3778,11 +3095,7 @@ qt[95] = {
   reward = {
     exp = 45000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -3815,11 +3128,7 @@ qt[96] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -3856,18 +3165,7 @@ qt[97] = {
   reward = {
     exp = 60000,
     gold = 0,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910431,
-      itemcnt = 20
-    }
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -3904,18 +3202,7 @@ qt[98] = {
   reward = {
     exp = 60000,
     gold = 0,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910431,
-      itemcnt = 20
-    }
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -3962,18 +3249,7 @@ qt[99] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990038,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4002,11 +3278,7 @@ qt[101] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4044,11 +3316,7 @@ qt[102] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4083,18 +3351,7 @@ qt[103] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990038,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4123,11 +3380,7 @@ qt[104] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4161,18 +3414,7 @@ qt[105] = {
   reward = {
     exp = 42000,
     gold = 80000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910521,
-      itemcnt = 15
-    }
+    items = {}
   },
   needLevel = 52,
   bQLoop = 0
@@ -4208,11 +3450,7 @@ qt[106] = {
   reward = {
     exp = 30000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -4248,25 +3486,7 @@ qt[107] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990037,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990037,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 54,
   bQLoop = 0
@@ -4302,18 +3522,7 @@ qt[108] = {
   reward = {
     exp = 0,
     gold = 200000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 2,
-      itemid = 8820031,
-      itemcnt = 99
-    }
+    items = {}
   },
   needLevel = 54,
   bQLoop = 0
@@ -4349,11 +3558,7 @@ qt[109] = {
   reward = {
     exp = 54000,
     gold = 100000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -4386,11 +3591,7 @@ qt[110] = {
   reward = {
     exp = 200000,
     gold = 3000000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 61,
   bQLoop = 0
@@ -4431,25 +3632,7 @@ qt[111] = {
   reward = {
     exp = 45000,
     gold = 150000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990039,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990039,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 56,
   bQLoop = 0
@@ -4489,11 +3672,7 @@ qt[112] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4533,11 +3712,7 @@ qt[113] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -4570,11 +3745,7 @@ qt[114] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -4610,14 +3781,10 @@ qt[115] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 50},
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 21,
   bQLoop = 0
@@ -4654,13 +3821,9 @@ qt[116] = {
   reward = {
     exp = 1500,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 27,
   bQLoop = 0
@@ -4690,13 +3853,9 @@ qt[117] = {
   reward = {
     exp = 16000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 35}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 28,
   bQLoop = 0
@@ -4736,13 +3895,7 @@ qt[118] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21102
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -4782,13 +3935,7 @@ qt[119] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21202
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -4828,13 +3975,7 @@ qt[120] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21302
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -4866,13 +4007,9 @@ qt[121] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990042, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -4906,13 +4043,9 @@ qt[122] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990043, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -4950,13 +4083,7 @@ qt[123] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22102
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -4994,13 +4121,7 @@ qt[124] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22202
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -5038,13 +4159,7 @@ qt[125] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22302
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -5076,13 +4191,9 @@ qt[126] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990042, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -5116,13 +4227,9 @@ qt[127] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990043, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -5155,16 +4262,12 @@ qt[128] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211011, count = 1},
       {id = 8211021, count = 1},
       {id = 8211031, count = 1},
       {id = 8211041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 34,
   bQLoop = 0
@@ -5202,11 +4305,7 @@ qt[129] = {
   reward = {
     exp = 27000,
     gold = 50000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -5241,13 +4340,9 @@ qt[130] = {
   reward = {
     exp = 18000,
     gold = 50000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8881081, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 36,
   bQLoop = 0
@@ -5280,13 +4375,9 @@ qt[131] = {
   reward = {
     exp = 32000,
     gold = 40000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8210241, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 38,
   bQLoop = 0
@@ -5326,13 +4417,9 @@ qt[132] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -5362,13 +4449,9 @@ qt[133] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -5400,13 +4483,9 @@ qt[134] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -5437,13 +4516,9 @@ qt[135] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -5477,18 +4552,7 @@ qt[136] = {
   reward = {
     exp = 0,
     gold = 1000000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990044,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -5523,18 +4587,7 @@ qt[137] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990031,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -5569,18 +4622,7 @@ qt[138] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990031,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -5612,13 +4654,9 @@ qt[139] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890038, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -5653,14 +4691,10 @@ qt[140] = {
   reward = {
     exp = 61000,
     gold = 200000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30},
       {id = 8820051, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 56,
   bQLoop = 0
@@ -5695,13 +4729,9 @@ qt[141] = {
   reward = {
     exp = 63000,
     gold = 180000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 57,
   bQLoop = 0
@@ -5738,13 +4768,9 @@ qt[142] = {
   reward = {
     exp = 61000,
     gold = 200000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 58,
   bQLoop = 0
@@ -5780,13 +4806,9 @@ qt[143] = {
   reward = {
     exp = 33000,
     gold = 190000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 59,
   bQLoop = 0
@@ -5826,19 +4848,8 @@ qt[144] = {
   reward = {
     exp = 0,
     gold = 200000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990055,
-      itemcnt = 1
     }
   },
   needLevel = 59,
@@ -5874,13 +4885,9 @@ qt[145] = {
   reward = {
     exp = 34000,
     gold = 200000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 50}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -5912,13 +4919,9 @@ qt[146] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -5955,11 +4958,7 @@ qt[147] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -5996,11 +4995,7 @@ qt[148] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -6037,11 +5032,7 @@ qt[149] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -6078,11 +5069,7 @@ qt[150] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -6117,11 +5104,7 @@ qt[151] = {
   reward = {
     exp = 250000,
     gold = 210000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 61,
   bQLoop = 0
@@ -6154,13 +5137,9 @@ qt[152] = {
   reward = {
     exp = 320000,
     gold = 170000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 62,
   bQLoop = 0
@@ -6195,11 +5174,7 @@ qt[153] = {
   reward = {
     exp = 340000,
     gold = 190000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 63,
   bQLoop = 0
@@ -6236,19 +5211,8 @@ qt[154] = {
   reward = {
     exp = 120000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990029,
-      itemcnt = 1
     }
   },
   needLevel = 64,
@@ -6285,13 +5249,9 @@ qt[155] = {
   reward = {
     exp = 280000,
     gold = 150000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 65,
   bQLoop = 0
@@ -6329,11 +5289,7 @@ qt[156] = {
   reward = {
     exp = 140000,
     gold = 100000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 66,
   bQLoop = 0
@@ -6367,11 +5323,7 @@ qt[157] = {
   reward = {
     exp = 380000,
     gold = 280000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -6406,11 +5358,7 @@ qt[158] = {
   reward = {
     exp = 290000,
     gold = 250000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -6445,13 +5393,9 @@ qt[159] = {
   reward = {
     exp = 335000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 69,
   bQLoop = 0
@@ -6488,11 +5432,7 @@ qt[160] = {
   reward = {
     exp = 440000,
     gold = 5000000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -6527,11 +5467,7 @@ qt[161] = {
   reward = {
     exp = 390000,
     gold = 300000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 71,
   bQLoop = 0
@@ -6566,13 +5502,9 @@ qt[162] = {
   reward = {
     exp = 405000,
     gold = 280000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 72,
   bQLoop = 0
@@ -6607,11 +5539,7 @@ qt[163] = {
   reward = {
     exp = 550000,
     gold = 350000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 74,
   bQLoop = 0
@@ -6646,13 +5574,9 @@ qt[164] = {
   reward = {
     exp = 600000,
     gold = 340000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 75,
   bQLoop = 0
@@ -6687,11 +5611,7 @@ qt[165] = {
   reward = {
     exp = 320000,
     gold = 390000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -6726,13 +5646,9 @@ qt[166] = {
   reward = {
     exp = 700000,
     gold = 410000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 79,
   bQLoop = 0
@@ -6770,13 +5686,9 @@ qt[167] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -6807,19 +5719,8 @@ qt[168] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -6846,19 +5747,14 @@ qt[169] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -6896,13 +5792,9 @@ qt[170] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -6934,19 +5826,8 @@ qt[171] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -6973,19 +5854,14 @@ qt[172] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7023,13 +5899,9 @@ qt[173] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7060,19 +5932,8 @@ qt[174] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -7099,19 +5960,14 @@ qt[175] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7149,13 +6005,9 @@ qt[176] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7187,19 +6039,8 @@ qt[177] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -7226,19 +6067,14 @@ qt[178] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7276,13 +6112,9 @@ qt[179] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7313,19 +6145,8 @@ qt[180] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -7352,19 +6173,14 @@ qt[181] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7402,13 +6218,9 @@ qt[182] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7440,19 +6252,8 @@ qt[183] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -7479,19 +6280,14 @@ qt[184] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -7531,11 +6327,7 @@ qt[185] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -7575,11 +6367,7 @@ qt[186] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -7612,11 +6400,7 @@ qt[187] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -7653,11 +6437,7 @@ qt[188] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -7697,18 +6477,7 @@ qt[189] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990021,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -7740,13 +6509,7 @@ qt[190] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31001
-    }
+    items = {}
   },
   needLevel = 62,
   bQLoop = 0
@@ -7778,13 +6541,7 @@ qt[191] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31002
-    }
+    items = {}
   },
   needLevel = 62,
   bQLoop = 0
@@ -7816,13 +6573,7 @@ qt[192] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32001
-    }
+    items = {}
   },
   needLevel = 62,
   bQLoop = 0
@@ -7854,13 +6605,7 @@ qt[193] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32002
-    }
+    items = {}
   },
   needLevel = 62,
   bQLoop = 0
@@ -7900,11 +6645,7 @@ qt[197] = {
   reward = {
     exp = 33000,
     gold = 150000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 47,
   bQLoop = 0
@@ -7939,11 +6680,7 @@ qt[198] = {
   reward = {
     exp = 35000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -7987,25 +6724,7 @@ qt[199] = {
   reward = {
     exp = 67000,
     gold = 700000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 2,
-      itemid = 8990058,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 2,
-      itemid = 8910502,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -8040,13 +6759,9 @@ qt[200] = {
   reward = {
     exp = 83000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890040, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 58,
   bQLoop = 0
@@ -8083,11 +6798,7 @@ qt[201] = {
   reward = {
     exp = 65000,
     gold = 80000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -8124,11 +6835,7 @@ qt[202] = {
   reward = {
     exp = 108000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -8163,13 +6870,9 @@ qt[203] = {
   reward = {
     exp = 44000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8090131, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 58,
   bQLoop = 0
@@ -8205,13 +6908,7 @@ qt[204] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31101
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8247,13 +6944,7 @@ qt[205] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31107
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8289,13 +6980,7 @@ qt[206] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31201
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8331,13 +7016,7 @@ qt[207] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31207
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8373,13 +7052,7 @@ qt[208] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31301
-    }
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -8415,13 +7088,7 @@ qt[209] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31308
-    }
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -8457,13 +7124,7 @@ qt[210] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32101
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8499,13 +7160,7 @@ qt[211] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32107
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8541,13 +7196,7 @@ qt[212] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32201
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8583,13 +7232,7 @@ qt[213] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32207
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -8625,13 +7268,7 @@ qt[214] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32301
-    }
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -8667,13 +7304,7 @@ qt[215] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32308
-    }
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -8711,13 +7342,7 @@ qt[216] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31102
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -8752,13 +7377,9 @@ qt[217] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -8794,13 +7415,9 @@ qt[218] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -8838,13 +7455,7 @@ qt[219] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31202
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -8879,13 +7490,9 @@ qt[220] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -8921,13 +7528,9 @@ qt[221] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -8965,13 +7568,7 @@ qt[222] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31302
-    }
+    items = {}
   },
   needLevel = 74,
   bQLoop = 0
@@ -9006,13 +7603,9 @@ qt[223] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -9048,13 +7641,9 @@ qt[224] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -9092,13 +7681,7 @@ qt[225] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32102
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -9133,13 +7716,9 @@ qt[226] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -9175,13 +7754,9 @@ qt[227] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -9219,13 +7794,7 @@ qt[228] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32202
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -9260,13 +7829,9 @@ qt[229] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -9302,13 +7867,9 @@ qt[230] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -9346,13 +7907,7 @@ qt[231] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32302
-    }
+    items = {}
   },
   needLevel = 74,
   bQLoop = 0
@@ -9387,13 +7942,9 @@ qt[232] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -9429,13 +7980,9 @@ qt[233] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -9470,11 +8017,7 @@ qt[234] = {
   reward = {
     exp = 700000,
     gold = 7000000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -9511,11 +8054,7 @@ qt[235] = {
   reward = {
     exp = 30000,
     gold = 200000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 81,
   bQLoop = 0
@@ -9552,13 +8091,9 @@ qt[236] = {
   reward = {
     exp = 30000,
     gold = 400000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 84,
   bQLoop = 0
@@ -9597,11 +8132,7 @@ qt[237] = {
   reward = {
     exp = 35000,
     gold = 300000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -9644,11 +8175,7 @@ qt[238] = {
   reward = {
     exp = 30000,
     gold = 500000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 86,
   bQLoop = 0
@@ -9685,13 +8212,9 @@ qt[239] = {
   reward = {
     exp = 20000,
     gold = 350000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820081, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 89,
   bQLoop = 0
@@ -9730,11 +8253,7 @@ qt[240] = {
   reward = {
     exp = 100000,
     gold = 5000000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -9769,11 +8288,7 @@ qt[241] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -9804,13 +8319,9 @@ qt[242] = {
   reward = {
     exp = 0,
     gold = 3000000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -9848,19 +8359,8 @@ qt[243] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990063, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990062,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -9909,18 +8409,7 @@ qt[244] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990064,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -9954,13 +8443,9 @@ qt[245] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -10004,13 +8489,9 @@ qt[246] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -10041,11 +8522,7 @@ qt[247] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -10078,19 +8555,8 @@ qt[248] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850031, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990065,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -10124,11 +8590,7 @@ qt[249] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -10163,13 +8625,7 @@ qt[250] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31103
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10204,13 +8660,7 @@ qt[251] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31108
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10245,13 +8695,7 @@ qt[252] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31203
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10286,13 +8730,7 @@ qt[253] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31208
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10327,13 +8765,7 @@ qt[254] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31303
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -10368,13 +8800,7 @@ qt[255] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31309
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -10409,13 +8835,7 @@ qt[256] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32103
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10450,13 +8870,7 @@ qt[257] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32108
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10491,13 +8905,7 @@ qt[258] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32203
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10532,13 +8940,7 @@ qt[259] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32208
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -10573,13 +8975,7 @@ qt[260] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32303
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -10614,13 +9010,7 @@ qt[261] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32309
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -10650,13 +9040,9 @@ qt[262] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890045, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -10686,13 +9072,9 @@ qt[263] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890046, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -10724,13 +9106,9 @@ qt[264] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890048, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -10762,13 +9140,9 @@ qt[265] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890049, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -10803,13 +9177,7 @@ qt[266] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31104
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -10844,13 +9212,7 @@ qt[267] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31204
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -10885,13 +9247,7 @@ qt[268] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31304
-    }
+    items = {}
   },
   needLevel = 86,
   bQLoop = 0
@@ -10926,13 +9282,7 @@ qt[269] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31305
-    }
+    items = {}
   },
   needLevel = 92,
   bQLoop = 0
@@ -10967,13 +9317,7 @@ qt[270] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32104
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11008,13 +9352,7 @@ qt[271] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32204
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11049,13 +9387,7 @@ qt[272] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32304
-    }
+    items = {}
   },
   needLevel = 86,
   bQLoop = 0
@@ -11090,13 +9422,7 @@ qt[273] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32305
-    }
+    items = {}
   },
   needLevel = 92,
   bQLoop = 0
@@ -11135,11 +9461,7 @@ qt[274] = {
   reward = {
     exp = 120000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11180,11 +9502,7 @@ qt[275] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11222,11 +9540,7 @@ qt[276] = {
   reward = {
     exp = 90000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11257,18 +9571,7 @@ qt[277] = {
   reward = {
     exp = 130000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990068,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11308,18 +9611,7 @@ qt[278] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990068,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11348,18 +9640,7 @@ qt[279] = {
   reward = {
     exp = 115000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990068,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11388,18 +9669,7 @@ qt[280] = {
   reward = {
     exp = 120000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990068,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11428,19 +9698,8 @@ qt[281] = {
   reward = {
     exp = 125000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990066, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990068,
-      itemcnt = 1
     }
   },
   needLevel = 80,
@@ -11482,11 +9741,7 @@ qt[282] = {
   reward = {
     exp = 500000,
     gold = 10000000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -11523,11 +9778,7 @@ qt[283] = {
   reward = {
     exp = 15000,
     gold = 250000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -11564,11 +9815,7 @@ qt[284] = {
   reward = {
     exp = 0,
     gold = 500000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11600,18 +9847,7 @@ qt[285] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990069,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11648,11 +9884,7 @@ qt[286] = {
   reward = {
     exp = 30000,
     gold = 35000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11687,11 +9919,7 @@ qt[287] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11727,13 +9955,9 @@ qt[288] = {
   reward = {
     exp = 50000,
     gold = 2000000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990069, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 90,
   bQLoop = 0
@@ -11772,11 +9996,7 @@ qt[289] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11804,18 +10024,7 @@ qt[290] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990069,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -11849,13 +10058,9 @@ qt[291] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990070, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 90,
   bQLoop = 0
@@ -11890,11 +10095,7 @@ qt[292] = {
   reward = {
     exp = 0,
     gold = 200000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -11927,13 +10128,9 @@ qt[293] = {
   reward = {
     exp = 40000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820061, count = 50}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 87,
   bQLoop = 0
@@ -11973,11 +10170,7 @@ qt[294] = {
   reward = {
     exp = 0,
     gold = 500000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 82,
   bQLoop = 0
@@ -12016,11 +10209,7 @@ qt[295] = {
   reward = {
     exp = 30000,
     gold = 1000000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 93,
   bQLoop = 0
@@ -12055,13 +10244,7 @@ qt[296] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31105
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -12096,13 +10279,7 @@ qt[297] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31206
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -12137,13 +10314,7 @@ qt[298] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31306
-    }
+    items = {}
   },
   needLevel = 98,
   bQLoop = 0
@@ -12178,13 +10349,7 @@ qt[299] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32105
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -12219,13 +10384,7 @@ qt[300] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32206
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -12260,13 +10419,7 @@ qt[301] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32306
-    }
+    items = {}
   },
   needLevel = 98,
   bQLoop = 0
@@ -12296,11 +10449,7 @@ qt[302] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -12322,11 +10471,7 @@ qt[303] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -12362,13 +10507,7 @@ qt[304] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31106
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12403,11 +10542,7 @@ qt[305] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12440,13 +10575,7 @@ qt[306] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31109
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12481,11 +10610,7 @@ qt[307] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12518,13 +10643,7 @@ qt[308] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31205
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12561,11 +10680,7 @@ qt[309] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12598,13 +10713,7 @@ qt[310] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31209
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12639,11 +10748,7 @@ qt[311] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12676,13 +10781,7 @@ qt[312] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31307
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12717,11 +10816,7 @@ qt[313] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12754,13 +10849,7 @@ qt[314] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31310
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12795,11 +10884,7 @@ qt[315] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12832,11 +10917,7 @@ qt[316] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12871,13 +10952,7 @@ qt[317] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32106
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12910,11 +10985,7 @@ qt[318] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12951,13 +11022,7 @@ qt[319] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32109
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -12994,11 +11059,7 @@ qt[320] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13033,13 +11094,7 @@ qt[321] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32205
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13075,11 +11130,7 @@ qt[322] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13116,13 +11167,7 @@ qt[323] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32209
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13157,11 +11202,7 @@ qt[324] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13196,13 +11237,7 @@ qt[325] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32307
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13239,11 +11274,7 @@ qt[326] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13278,13 +11309,7 @@ qt[327] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32310
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -13320,11 +11345,7 @@ qt[328] = {
   reward = {
     exp = 1000,
     gold = 4000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -13357,11 +11378,7 @@ qt[329] = {
   reward = {
     exp = 8000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -13398,11 +11415,7 @@ qt[330] = {
   reward = {
     exp = 4500,
     gold = 4000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -13435,11 +11448,7 @@ qt[331] = {
   reward = {
     exp = 5400,
     gold = 3500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -13472,11 +11481,7 @@ qt[332] = {
   reward = {
     exp = 20000,
     gold = 10000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -13509,11 +11514,7 @@ qt[333] = {
   reward = {
     exp = 6000,
     gold = 12000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -13548,11 +11549,7 @@ qt[334] = {
   reward = {
     exp = 16000,
     gold = 50000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -13589,11 +11586,7 @@ qt[335] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13626,18 +11619,7 @@ qt[336] = {
   reward = {
     exp = 3500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990075,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13670,11 +11652,7 @@ qt[337] = {
   reward = {
     exp = 6000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13705,11 +11683,7 @@ qt[338] = {
   reward = {
     exp = 8000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13738,13 +11712,9 @@ qt[339] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990027, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -13775,11 +11745,7 @@ qt[340] = {
   reward = {
     exp = 15000,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13809,11 +11775,7 @@ qt[341] = {
   reward = {
     exp = 250000,
     gold = 400000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13849,13 +11811,9 @@ qt[342] = {
   reward = {
     exp = 6000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990027, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -13886,11 +11844,7 @@ qt[343] = {
   reward = {
     exp = 15000,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13920,11 +11874,7 @@ qt[344] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -13959,11 +11909,7 @@ qt[345] = {
   reward = {
     exp = 100000,
     gold = 200000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -14000,13 +11946,9 @@ qt[346] = {
   reward = {
     exp = 6000,
     gold = 4000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 27,
   bQLoop = 0
@@ -14043,11 +11985,7 @@ qt[347] = {
   reward = {
     exp = 8000,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -14080,13 +12018,9 @@ qt[348] = {
   reward = {
     exp = 25000,
     gold = 35000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 37,
   bQLoop = 0
@@ -14119,11 +12053,7 @@ qt[349] = {
   reward = {
     exp = 500,
     gold = 2800,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 8,
   bQLoop = 0
@@ -14161,11 +12091,7 @@ qt[350] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -14198,14 +12124,10 @@ qt[351] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070101, count = 1},
       {id = 8080101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -14235,13 +12157,7 @@ qt[352] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10401
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -14271,13 +12187,7 @@ qt[353] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10402
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -14307,13 +12217,7 @@ qt[354] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10403
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -14343,13 +12247,7 @@ qt[355] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10404
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -14379,13 +12277,7 @@ qt[356] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10405
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -14415,13 +12307,7 @@ qt[357] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10406
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -14451,13 +12337,7 @@ qt[358] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10407
-    }
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -14487,13 +12367,7 @@ qt[359] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10408
-    }
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -14523,13 +12397,7 @@ qt[360] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10409
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -14559,13 +12427,7 @@ qt[361] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10410
-    }
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -14600,18 +12462,7 @@ qt[362] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990031,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -14650,13 +12501,7 @@ qt[363] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21103
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14695,13 +12540,7 @@ qt[364] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21203
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14740,13 +12579,7 @@ qt[365] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21303
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14785,13 +12618,7 @@ qt[366] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21403
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14830,13 +12657,7 @@ qt[367] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22103
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14875,13 +12696,7 @@ qt[368] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22203
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14920,13 +12735,7 @@ qt[369] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22303
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -14965,13 +12774,7 @@ qt[370] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22403
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -15006,13 +12809,7 @@ qt[371] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21104
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15047,13 +12844,7 @@ qt[372] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21204
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15088,13 +12879,7 @@ qt[373] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21304
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15129,13 +12914,7 @@ qt[374] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21404
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15170,13 +12949,7 @@ qt[375] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22104
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15211,13 +12984,7 @@ qt[376] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22204
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15252,13 +13019,7 @@ qt[377] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22304
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15293,13 +13054,7 @@ qt[378] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22404
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -15331,13 +13086,7 @@ qt[379] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21401
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -15369,13 +13118,7 @@ qt[380] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22401
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -15415,13 +13158,7 @@ qt[381] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21402
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -15459,13 +13196,7 @@ qt[382] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22402
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -15503,13 +13234,9 @@ qt[383] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -15540,19 +13267,8 @@ qt[384] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -15579,19 +13295,14 @@ qt[385] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -15629,13 +13340,9 @@ qt[386] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -15667,19 +13374,8 @@ qt[387] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -15706,19 +13402,14 @@ qt[388] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -15754,13 +13445,7 @@ qt[389] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31401
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -15796,13 +13481,7 @@ qt[390] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31407
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -15838,13 +13517,7 @@ qt[391] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32401
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -15880,13 +13553,7 @@ qt[392] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32407
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -15924,13 +13591,7 @@ qt[393] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31402
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -15965,13 +13626,9 @@ qt[394] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -16007,13 +13664,9 @@ qt[395] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -16051,13 +13704,7 @@ qt[396] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32402
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -16092,13 +13739,9 @@ qt[397] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990060, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -16134,13 +13777,9 @@ qt[398] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -16171,13 +13810,9 @@ qt[401] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9300011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16207,13 +13842,9 @@ qt[402] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8880211, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16245,13 +13876,9 @@ qt[403] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16283,13 +13910,9 @@ qt[404] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16323,13 +13946,9 @@ qt[405] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9300021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16359,13 +13978,9 @@ qt[406] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980048, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16395,13 +14010,9 @@ qt[407] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980047, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16433,13 +14044,9 @@ qt[408] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980046, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -16474,13 +14081,7 @@ qt[409] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31403
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -16515,13 +14116,7 @@ qt[410] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31408
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -16557,13 +14152,7 @@ qt[411] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32403
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -16598,13 +14187,7 @@ qt[412] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32408
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -16639,13 +14222,7 @@ qt[413] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31404
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -16680,13 +14257,7 @@ qt[414] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32404
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -16721,13 +14292,7 @@ qt[415] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31405
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -16762,13 +14327,7 @@ qt[416] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32405
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -16803,13 +14362,7 @@ qt[417] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31406
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -16844,11 +14397,7 @@ qt[418] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -16881,13 +14430,7 @@ qt[419] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31409
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -16922,11 +14465,7 @@ qt[420] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -16961,11 +14500,7 @@ qt[421] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -17000,13 +14535,7 @@ qt[422] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32406
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -17039,11 +14568,7 @@ qt[423] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -17080,13 +14605,7 @@ qt[424] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32409
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -17118,16 +14637,12 @@ qt[425] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010151, count = 1},
       {id = 8020251, count = 1},
       {id = 8110151, count = 1},
       {id = 8110152, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -17159,16 +14674,12 @@ qt[426] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030151, count = 1},
       {id = 8040151, count = 1},
       {id = 8120151, count = 1},
       {id = 8120152, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -17200,16 +14711,12 @@ qt[427] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050151, count = 1},
       {id = 8060151, count = 1},
       {id = 8130151, count = 1},
       {id = 8130152, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -17241,16 +14748,12 @@ qt[428] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070151, count = 1},
       {id = 8080151, count = 1},
       {id = 8140151, count = 1},
       {id = 8140152, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -17288,16 +14791,12 @@ qt[429] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010251, count = 1},
       {id = 8020251, count = 1},
       {id = 8110251, count = 1},
       {id = 8110252, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -17335,16 +14834,12 @@ qt[430] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030251, count = 1},
       {id = 8040251, count = 1},
       {id = 8120251, count = 1},
       {id = 8120252, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -17382,16 +14877,12 @@ qt[431] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050251, count = 1},
       {id = 8060251, count = 1},
       {id = 8130251, count = 1},
       {id = 8130252, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -17429,16 +14920,12 @@ qt[432] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070251, count = 1},
       {id = 8080251, count = 1},
       {id = 8140251, count = 1},
       {id = 8140252, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -17475,11 +14962,7 @@ qt[433] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 12,
   bQLoop = 0
@@ -17514,11 +14997,7 @@ qt[434] = {
   reward = {
     exp = 1600,
     gold = 7000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -17550,11 +15029,7 @@ qt[435] = {
   reward = {
     exp = 2000,
     gold = 7500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -17581,17 +15056,12 @@ qt[436] = {
       {id = 8820031, count = 1}
     },
     killMonster = {},
-    meetNpc = {},
-    timeOut = 1800
+    meetNpc = {}
   },
   reward = {
     exp = 1700,
     gold = 2000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -17623,18 +15093,7 @@ qt[437] = {
   reward = {
     exp = 2000,
     gold = 2000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990080,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -17668,11 +15127,7 @@ qt[438] = {
   reward = {
     exp = 3800,
     gold = 10000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -17708,11 +15163,7 @@ qt[439] = {
   reward = {
     exp = 4200,
     gold = 12000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -17747,11 +15198,7 @@ qt[440] = {
   reward = {
     exp = 22000,
     gold = 20000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -17786,13 +15233,9 @@ qt[441] = {
   reward = {
     exp = 30000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8310321, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -17829,11 +15272,7 @@ qt[442] = {
   reward = {
     exp = 4000,
     gold = 8000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -17869,13 +15308,9 @@ qt[443] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8493335, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -17909,13 +15344,9 @@ qt[444] = {
   reward = {
     exp = 1600,
     gold = 3000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7810111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -17945,17 +15376,12 @@ qt[445] = {
       {id = 8910101, count = 20}
     },
     killMonster = {},
-    meetNpc = {},
-    timeOut = 3600
+    meetNpc = {}
   },
   reward = {
     exp = 2000,
     gold = 4000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -17988,13 +15414,9 @@ qt[446] = {
   reward = {
     exp = 2200,
     gold = 6000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8310161, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -18034,11 +15456,7 @@ qt[447] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -18075,11 +15493,7 @@ qt[448] = {
   reward = {
     exp = 4500,
     gold = 12000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -18121,11 +15535,7 @@ qt[449] = {
   reward = {
     exp = 4300,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -18166,18 +15576,7 @@ qt[450] = {
   reward = {
     exp = 0,
     gold = 22000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990080,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -18220,18 +15619,7 @@ qt[451] = {
   reward = {
     exp = 0,
     gold = 22000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990080,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -18268,15 +15656,11 @@ qt[452] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519021, count = 1},
       {id = 9519023, count = 1},
       {id = 9519025, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -18313,15 +15697,11 @@ qt[453] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519022, count = 1},
       {id = 9519024, count = 1},
       {id = 9519026, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -18357,11 +15737,7 @@ qt[454] = {
   reward = {
     exp = 190000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18399,17 +15775,12 @@ qt[455] = {
     killMonster = {
       {id = 1009401, count = 2}
     },
-    meetNpc = {},
-    timeOut = 300
+    meetNpc = {}
   },
   reward = {
     exp = 284000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18474,18 +15845,7 @@ qt[456] = {
   reward = {
     exp = 89000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990082,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18524,11 +15884,7 @@ qt[457] = {
   reward = {
     exp = 112000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18576,11 +15932,7 @@ qt[458] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18623,11 +15975,7 @@ qt[459] = {
   reward = {
     exp = 96700,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18668,18 +16016,7 @@ qt[460] = {
   reward = {
     exp = 105200,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990083,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18753,11 +16090,7 @@ qt[461] = {
   reward = {
     exp = 127000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18790,11 +16123,7 @@ qt[462] = {
   reward = {
     exp = 57000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18832,11 +16161,7 @@ qt[463] = {
   reward = {
     exp = 131000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18873,11 +16198,7 @@ qt[464] = {
   reward = {
     exp = 291000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18911,11 +16232,7 @@ qt[465] = {
   reward = {
     exp = 780000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -18955,13 +16272,9 @@ qt[466] = {
   reward = {
     exp = 210000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8210401, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 80,
   bQLoop = 0
@@ -18999,16 +16312,12 @@ qt[467] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010051, count = 1},
       {id = 8030051, count = 1},
       {id = 8060051, count = 1},
       {id = 8070051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -19049,14 +16358,10 @@ qt[468] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010811, count = 1},
       {id = 8020811, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -19097,14 +16402,10 @@ qt[469] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030811, count = 1},
       {id = 8040811, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -19145,14 +16446,10 @@ qt[470] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050811, count = 1},
       {id = 8060811, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -19193,14 +16490,10 @@ qt[471] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070811, count = 1},
       {id = 8080811, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -19237,11 +16530,7 @@ qt[472] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19276,11 +16565,7 @@ qt[473] = {
   reward = {
     exp = 200000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19317,11 +16602,7 @@ qt[474] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19366,11 +16647,7 @@ qt[475] = {
   reward = {
     exp = 280000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19406,11 +16683,7 @@ qt[476] = {
   reward = {
     exp = 340000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19441,11 +16714,7 @@ qt[477] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19479,18 +16748,7 @@ qt[478] = {
   reward = {
     exp = 440000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910841,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -19522,11 +16780,7 @@ qt[479] = {
   reward = {
     exp = 1000000,
     gold = 2000000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 95,
   bQLoop = 0
@@ -19561,11 +16815,7 @@ qt[480] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 96,
   bQLoop = 0
@@ -19597,25 +16847,7 @@ qt[481] = {
   reward = {
     exp = 200000,
     gold = 500000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990087,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990087,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 96,
   bQLoop = 0
@@ -19648,11 +16880,7 @@ qt[482] = {
   reward = {
     exp = 1100000,
     gold = 2800000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -19691,22 +16919,11 @@ qt[483] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211014, count = 1},
       {id = 8211024, count = 1},
       {id = 8211034, count = 1},
       {id = 8211044, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 2,
-      itemid = 8990088,
-      itemcnt = 1
     }
   },
   needLevel = 98,
@@ -19738,11 +16955,7 @@ qt[484] = {
   reward = {
     exp = 1500000,
     gold = 3400000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -19785,18 +16998,7 @@ qt[485] = {
   reward = {
     exp = 1500000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8910991,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -19827,18 +17029,7 @@ qt[486] = {
   reward = {
     exp = 1700000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8911051,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -19872,18 +17063,7 @@ qt[487] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8911051,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -19913,11 +17093,7 @@ qt[488] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -19953,11 +17129,7 @@ qt[489] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20002,11 +17174,7 @@ qt[490] = {
   reward = {
     exp = 2300000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20041,18 +17209,7 @@ qt[491] = {
   reward = {
     exp = 2100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8911081,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20083,18 +17240,7 @@ qt[492] = {
   reward = {
     exp = 2300000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8910991,
-      itemcnt = 50
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20127,13 +17273,9 @@ qt[493] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990085, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -20163,13 +17305,9 @@ qt[494] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990089, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -20216,11 +17354,7 @@ qt[495] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20254,13 +17388,9 @@ qt[497] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990085, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -20294,22 +17424,11 @@ qt[498] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890031, count = 5},
       {id = 8890032, count = 5},
       {id = 8890033, count = 5},
       {id = 8890034, count = 5}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8910011,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -20347,13 +17466,9 @@ qt[499] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8493335, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -20388,11 +17503,7 @@ qt[500] = {
   reward = {
     exp = 40000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -20429,11 +17540,7 @@ qt[501] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20471,13 +17578,7 @@ qt[502] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41101
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20514,11 +17615,7 @@ qt[503] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20556,13 +17653,7 @@ qt[504] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42101
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20599,11 +17690,7 @@ qt[505] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20641,13 +17728,7 @@ qt[506] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41201
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20684,11 +17765,7 @@ qt[507] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20726,13 +17803,7 @@ qt[508] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42201
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20769,11 +17840,7 @@ qt[509] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20811,13 +17878,7 @@ qt[510] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41301
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20854,11 +17915,7 @@ qt[511] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20896,13 +17953,7 @@ qt[512] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42301
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20939,11 +17990,7 @@ qt[513] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -20981,13 +18028,7 @@ qt[514] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41401
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -21024,11 +18065,7 @@ qt[515] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -21066,13 +18103,7 @@ qt[516] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42401
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -21103,11 +18134,7 @@ qt[517] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21142,13 +18169,7 @@ qt[518] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41102
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21179,11 +18200,7 @@ qt[519] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21218,13 +18235,7 @@ qt[520] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42102
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21255,11 +18266,7 @@ qt[521] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21294,13 +18301,7 @@ qt[522] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41202
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21331,11 +18332,7 @@ qt[523] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21370,13 +18367,7 @@ qt[524] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42202
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21407,11 +18398,7 @@ qt[525] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21446,13 +18433,7 @@ qt[526] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41302
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21483,11 +18464,7 @@ qt[527] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21522,13 +18499,7 @@ qt[528] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42302
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21559,11 +18530,7 @@ qt[529] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21598,13 +18565,7 @@ qt[530] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41402
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21635,11 +18596,7 @@ qt[531] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21674,13 +18631,7 @@ qt[532] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42402
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -21724,18 +18675,7 @@ qt[533] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990089,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -21771,13 +18711,7 @@ qt[534] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      40001
-    }
+    items = {}
   },
   needLevel = 120,
   bQLoop = 0
@@ -21812,13 +18746,7 @@ qt[535] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41103
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -21853,13 +18781,7 @@ qt[536] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42103
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -21894,13 +18816,7 @@ qt[537] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41203
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -21935,13 +18851,7 @@ qt[538] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42203
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -21976,13 +18886,7 @@ qt[539] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41303
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -22017,13 +18921,7 @@ qt[540] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42303
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -22058,13 +18956,7 @@ qt[541] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41403
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -22099,13 +18991,7 @@ qt[542] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42403
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -22152,11 +19038,7 @@ qt[543] = {
   reward = {
     exp = 135000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22196,11 +19078,7 @@ qt[544] = {
   reward = {
     exp = 82000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22231,11 +19109,7 @@ qt[545] = {
   reward = {
     exp = 200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22276,11 +19150,7 @@ qt[546] = {
   reward = {
     exp = 104000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22322,11 +19192,7 @@ qt[547] = {
   reward = {
     exp = 150000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22366,18 +19232,7 @@ qt[548] = {
   reward = {
     exp = 170400,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990090,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22415,11 +19270,7 @@ qt[549] = {
   reward = {
     exp = 109000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22460,25 +19311,7 @@ qt[550] = {
   reward = {
     exp = 150000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990091,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990091,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22535,11 +19368,7 @@ qt[551] = {
   reward = {
     exp = 150000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22578,18 +19407,7 @@ qt[552] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990092,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22640,18 +19458,7 @@ qt[553] = {
   reward = {
     exp = 500000,
     gold = 200000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990092,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -22686,11 +19493,7 @@ qt[554] = {
   reward = {
     exp = 80000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -22729,11 +19532,7 @@ qt[555] = {
   reward = {
     exp = 85000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -22771,11 +19570,7 @@ qt[556] = {
   reward = {
     exp = 700000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -22808,11 +19603,7 @@ qt[557] = {
   reward = {
     exp = 700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -22849,14 +19640,10 @@ qt[558] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890099, count = 1},
       {id = 8890100, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -22893,13 +19680,9 @@ qt[559] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890101, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -22936,11 +19719,7 @@ qt[560] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 101,
   bQLoop = 0
@@ -22977,11 +19756,7 @@ qt[561] = {
   reward = {
     exp = 350000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 102,
   bQLoop = 0
@@ -23017,11 +19792,7 @@ qt[562] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 106,
   bQLoop = 0
@@ -23056,11 +19827,7 @@ qt[563] = {
   reward = {
     exp = 7000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 108,
   bQLoop = 0
@@ -23095,11 +19862,7 @@ qt[564] = {
   reward = {
     exp = 5500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 105,
   bQLoop = 0
@@ -23138,11 +19901,7 @@ qt[565] = {
   reward = {
     exp = 5,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -23173,11 +19932,7 @@ qt[566] = {
   reward = {
     exp = 5,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -23216,11 +19971,7 @@ qt[567] = {
   reward = {
     exp = 20,
     gold = 300,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -23261,11 +20012,7 @@ qt[568] = {
   reward = {
     exp = 50,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 4,
   bQLoop = 0
@@ -23305,11 +20052,7 @@ qt[569] = {
   reward = {
     exp = 120,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 6,
   bQLoop = 0
@@ -23350,18 +20093,7 @@ qt[570] = {
   reward = {
     exp = 150,
     gold = 300,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990095,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 7,
   bQLoop = 0
@@ -23390,11 +20122,7 @@ qt[571] = {
   reward = {
     exp = 150,
     gold = 300,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 7,
   bQLoop = 0
@@ -23433,11 +20161,7 @@ qt[572] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -23472,11 +20196,7 @@ qt[573] = {
   reward = {
     exp = 350,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 8,
   bQLoop = 0
@@ -23513,11 +20233,7 @@ qt[574] = {
   reward = {
     exp = 500,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -23554,11 +20270,7 @@ qt[575] = {
   reward = {
     exp = 550,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -23595,13 +20307,9 @@ qt[576] = {
   reward = {
     exp = 700,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8090012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 12,
   bQLoop = 0
@@ -23640,11 +20348,7 @@ qt[577] = {
   reward = {
     exp = 650,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -23683,11 +20387,7 @@ qt[578] = {
   reward = {
     exp = 800,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 12,
   bQLoop = 0
@@ -23724,11 +20424,7 @@ qt[579] = {
   reward = {
     exp = 700,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -23769,11 +20465,7 @@ qt[580] = {
   reward = {
     exp = 1000,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -23816,11 +20508,7 @@ qt[581] = {
   reward = {
     exp = 1200,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -23860,11 +20548,7 @@ qt[582] = {
   reward = {
     exp = 3000,
     gold = 3000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -23901,11 +20585,7 @@ qt[583] = {
   reward = {
     exp = 3800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -23944,11 +20624,7 @@ qt[584] = {
   reward = {
     exp = 3500,
     gold = 4000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -23985,13 +20661,9 @@ qt[585] = {
   reward = {
     exp = 1800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810051, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 20,
   bQLoop = 0
@@ -24030,11 +20702,7 @@ qt[586] = {
   reward = {
     exp = 1200,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -24073,11 +20741,7 @@ qt[587] = {
   reward = {
     exp = 3000,
     gold = 5000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -24118,11 +20782,7 @@ qt[588] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -24161,11 +20821,7 @@ qt[589] = {
   reward = {
     exp = 5500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -24209,18 +20865,7 @@ qt[590] = {
   reward = {
     exp = 500,
     gold = 2000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990096,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -24255,11 +20900,7 @@ qt[591] = {
   reward = {
     exp = 4500,
     gold = 7000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -24296,11 +20937,7 @@ qt[592] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -24333,11 +20970,7 @@ qt[593] = {
   reward = {
     exp = 7000,
     gold = 15000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -24376,11 +21009,7 @@ qt[594] = {
   reward = {
     exp = 8000,
     gold = 20000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -24419,11 +21048,7 @@ qt[595] = {
   reward = {
     exp = 10000,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -24460,11 +21085,7 @@ qt[596] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -24503,11 +21124,7 @@ qt[597] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -24556,11 +21173,7 @@ qt[598] = {
   reward = {
     exp = 13000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -24603,11 +21216,7 @@ qt[599] = {
   reward = {
     exp = 18000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -24646,11 +21255,7 @@ qt[600] = {
   reward = {
     exp = 19000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -24697,11 +21302,7 @@ qt[601] = {
   reward = {
     exp = 25000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -24740,11 +21341,7 @@ qt[602] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -24779,11 +21376,7 @@ qt[603] = {
   reward = {
     exp = 95000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -24818,11 +21411,7 @@ qt[604] = {
   reward = {
     exp = 25000,
     gold = 20000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -24861,11 +21450,7 @@ qt[605] = {
   reward = {
     exp = 55000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -24902,11 +21487,7 @@ qt[606] = {
   reward = {
     exp = 30000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -24939,11 +21520,7 @@ qt[607] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -24984,11 +21561,7 @@ qt[608] = {
   reward = {
     exp = 60000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -25021,11 +21594,7 @@ qt[609] = {
   reward = {
     exp = 60000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -25058,11 +21627,7 @@ qt[610] = {
   reward = {
     exp = 2000,
     gold = 50000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -25097,11 +21662,7 @@ qt[611] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25134,14 +21695,10 @@ qt[612] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7930101, count = 1},
       {id = 7940101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -25171,13 +21728,7 @@ qt[613] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10501
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25207,13 +21758,7 @@ qt[614] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10502
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25243,13 +21788,7 @@ qt[615] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10503
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25279,13 +21818,7 @@ qt[616] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10504
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25315,13 +21848,7 @@ qt[617] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10505
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -25351,13 +21878,7 @@ qt[618] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10506
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -25387,13 +21908,7 @@ qt[619] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10507
-    }
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -25423,13 +21938,7 @@ qt[620] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10508
-    }
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -25459,13 +21968,7 @@ qt[621] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10509
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -25495,13 +21998,7 @@ qt[622] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10510
-    }
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -25531,13 +22028,7 @@ qt[623] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10511
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -25567,13 +22058,7 @@ qt[624] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10512
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -25605,13 +22090,7 @@ qt[625] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21501
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25650,13 +22129,7 @@ qt[626] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21503
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -25696,13 +22169,7 @@ qt[627] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21502
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -25737,13 +22204,7 @@ qt[628] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21504
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -25775,13 +22236,7 @@ qt[629] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22501
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -25820,13 +22275,7 @@ qt[630] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22503
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -25864,13 +22313,7 @@ qt[631] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22502
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -25905,13 +22348,7 @@ qt[632] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22504
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -25951,13 +22388,9 @@ qt[633] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -25991,13 +22424,9 @@ qt[634] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -26023,19 +22452,14 @@ qt[635] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -26075,13 +22499,9 @@ qt[636] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -26115,13 +22535,9 @@ qt[637] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -26147,19 +22563,14 @@ qt[638] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -26195,13 +22606,7 @@ qt[639] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31501
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -26237,13 +22642,7 @@ qt[640] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31502
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -26282,13 +22681,7 @@ qt[641] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31503
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -26326,11 +22719,7 @@ qt[642] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -26370,13 +22759,9 @@ qt[643] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990093, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -26411,13 +22796,7 @@ qt[644] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31504
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -26452,13 +22831,7 @@ qt[645] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31505
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -26493,13 +22866,7 @@ qt[646] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31506
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -26534,13 +22901,7 @@ qt[647] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31507
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -26579,11 +22940,7 @@ qt[648] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -26622,13 +22979,7 @@ qt[649] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31508
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -26667,11 +23018,7 @@ qt[650] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -26710,13 +23057,7 @@ qt[651] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      31509
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -26752,13 +23093,7 @@ qt[652] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32501
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -26794,13 +23129,7 @@ qt[653] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32502
-    }
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -26839,13 +23168,7 @@ qt[654] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32503
-    }
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -26882,11 +23205,7 @@ qt[655] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -26926,13 +23245,9 @@ qt[656] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990094, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -26967,13 +23282,7 @@ qt[657] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32504
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -27008,13 +23317,7 @@ qt[658] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32505
-    }
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -27049,13 +23352,7 @@ qt[659] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32506
-    }
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -27090,13 +23387,7 @@ qt[660] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32507
-    }
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -27135,11 +23426,7 @@ qt[661] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -27180,13 +23467,7 @@ qt[662] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32508
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -27225,11 +23506,7 @@ qt[663] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -27270,13 +23547,7 @@ qt[664] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      32509
-    }
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -27313,11 +23584,7 @@ qt[665] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -27355,13 +23622,7 @@ qt[666] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41501
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -27398,11 +23659,7 @@ qt[667] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -27440,13 +23697,7 @@ qt[668] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42501
-    }
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -27477,11 +23728,7 @@ qt[669] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -27516,13 +23763,7 @@ qt[670] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41502
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -27553,11 +23794,7 @@ qt[671] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -27592,13 +23829,7 @@ qt[672] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42502
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -27633,13 +23864,7 @@ qt[673] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41503
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -27674,13 +23899,7 @@ qt[674] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42503
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -27715,11 +23934,7 @@ qt[675] = {
   reward = {
     exp = 1500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -27760,11 +23975,7 @@ qt[676] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -27799,18 +24010,7 @@ qt[677] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990031,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -27840,13 +24040,7 @@ qt[678] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10111
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -27876,13 +24070,7 @@ qt[679] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10112
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -27912,13 +24100,7 @@ qt[680] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10211
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -27948,13 +24130,7 @@ qt[681] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10212
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -27984,13 +24160,7 @@ qt[682] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10311
-    }
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -28020,13 +24190,7 @@ qt[683] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10312
-    }
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -28056,13 +24220,7 @@ qt[684] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10411
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -28092,13 +24250,7 @@ qt[685] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10412
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -28130,16 +24282,12 @@ qt[686] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7930151, count = 1},
       {id = 7940151, count = 1},
       {id = 8160151, count = 1},
       {id = 8160152, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -28177,16 +24325,12 @@ qt[687] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7930251, count = 1},
       {id = 7940251, count = 1},
       {id = 8160251, count = 1},
       {id = 8160252, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -28218,13 +24362,9 @@ qt[688] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28258,13 +24398,9 @@ qt[689] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28295,13 +24431,9 @@ qt[690] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28334,14 +24466,10 @@ qt[691] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890128, count = 1},
       {id = 8890129, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28373,13 +24501,9 @@ qt[692] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980059, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28410,13 +24534,9 @@ qt[698] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28447,13 +24567,9 @@ qt[699] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -28496,11 +24612,7 @@ qt[700] = {
   reward = {
     exp = 1100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -28541,13 +24653,8 @@ qt[701] = {
   reward = {
     exp = 1300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  needQuest = 806,
   needLevel = 18,
   bQLoop = 0
 }
@@ -28585,11 +24692,7 @@ qt[702] = {
   reward = {
     exp = 1600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -28624,11 +24727,7 @@ qt[703] = {
   reward = {
     exp = 2200,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -28667,11 +24766,7 @@ qt[704] = {
   reward = {
     exp = 2500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -28708,11 +24803,7 @@ qt[705] = {
   reward = {
     exp = 2800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -28751,11 +24842,7 @@ qt[706] = {
   reward = {
     exp = 3100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -28790,11 +24877,7 @@ qt[707] = {
   reward = {
     exp = 3500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -28837,11 +24920,7 @@ qt[708] = {
   reward = {
     exp = 4000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -28882,11 +24961,7 @@ qt[709] = {
   reward = {
     exp = 4400,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -28930,25 +25005,7 @@ qt[710] = {
   reward = {
     exp = 67000,
     gold = 700000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 2,
-      itemid = 8990058,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 2,
-      itemid = 8910502,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -28977,13 +25034,9 @@ qt[711] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890132, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -29012,13 +25065,9 @@ qt[712] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890132, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -29059,11 +25108,7 @@ qt[713] = {
   reward = {
     exp = 501000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29104,11 +25149,7 @@ qt[714] = {
   reward = {
     exp = 1253000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29145,11 +25186,7 @@ qt[715] = {
   reward = {
     exp = 250000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29180,11 +25217,7 @@ qt[716] = {
   reward = {
     exp = 375000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29221,11 +25254,7 @@ qt[717] = {
   reward = {
     exp = 626000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29262,18 +25291,7 @@ qt[718] = {
   reward = {
     exp = 751000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990100,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29308,11 +25326,7 @@ qt[719] = {
   reward = {
     exp = 1253000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29353,18 +25367,7 @@ qt[720] = {
   reward = {
     exp = 501000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990101,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29399,11 +25402,7 @@ qt[721] = {
   reward = {
     exp = 1378000,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29442,11 +25441,7 @@ qt[722] = {
   reward = {
     exp = 2004000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29479,11 +25474,7 @@ qt[723] = {
   reward = {
     exp = 501000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29522,11 +25513,7 @@ qt[724] = {
   reward = {
     exp = 2380000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -29560,11 +25547,7 @@ qt[725] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -29595,13 +25578,9 @@ qt[726] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980070, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -29630,13 +25609,9 @@ qt[727] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980070, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 17,
   bQLoop = 0
@@ -29667,13 +25642,9 @@ qt[728] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980070, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 27,
   bQLoop = 0
@@ -29707,13 +25678,9 @@ qt[729] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980070, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 37,
   bQLoop = 0
@@ -29746,11 +25713,7 @@ qt[730] = {
   reward = {
     exp = 150,
     gold = 99,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -29782,13 +25745,9 @@ qt[731] = {
   reward = {
     exp = 400,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -29823,11 +25782,7 @@ qt[732] = {
   reward = {
     exp = 2000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -29863,11 +25818,7 @@ qt[733] = {
   reward = {
     exp = 15000,
     gold = 30000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -29895,19 +25846,14 @@ qt[734] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 50
+    meetNpc = {}
   },
   reward = {
     exp = 18000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -29941,11 +25887,7 @@ qt[735] = {
   reward = {
     exp = 1000,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 5,
   bQLoop = 0
@@ -29983,11 +25925,7 @@ qt[736] = {
   reward = {
     exp = 3000,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -30023,13 +25961,9 @@ qt[737] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8090011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 25,
   bQLoop = 0
@@ -30070,13 +26004,9 @@ qt[738] = {
   reward = {
     exp = 13000,
     gold = 6000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8090111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 30,
   bQLoop = 0
@@ -30107,13 +26037,9 @@ qt[739] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -30144,13 +26070,9 @@ qt[740] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843022, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -30181,13 +26103,9 @@ qt[741] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843022, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -30224,13 +26142,9 @@ qt[742] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6810006, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 16,
   bQLoop = 0
@@ -30267,13 +26181,9 @@ qt[743] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6810005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -30308,13 +26218,9 @@ qt[744] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6820006, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -30349,13 +26255,9 @@ qt[747] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6820006, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -30379,11 +26281,7 @@ qt[748] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -30410,11 +26308,7 @@ qt[749] = {
   reward = {
     exp = 0,
     gold = 50000000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -30441,13 +26335,9 @@ qt[750] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8871611, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 150,
   bQLoop = 0
@@ -30477,11 +26367,7 @@ qt[765] = {
   reward = {
     exp = 1,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 4,
   bQLoop = 0
@@ -30511,11 +26397,7 @@ qt[766] = {
   reward = {
     exp = 592,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 6,
   bQLoop = 0
@@ -30545,11 +26427,7 @@ qt[767] = {
   reward = {
     exp = 845,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 7,
   bQLoop = 0
@@ -30579,11 +26457,7 @@ qt[768] = {
   reward = {
     exp = 1715,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -30613,11 +26487,7 @@ qt[769] = {
   reward = {
     exp = 2175,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 11,
   bQLoop = 0
@@ -30647,11 +26517,7 @@ qt[770] = {
   reward = {
     exp = 2720,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -30681,11 +26547,7 @@ qt[771] = {
   reward = {
     exp = 2720,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -30715,11 +26577,7 @@ qt[772] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 20,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -30749,11 +26607,7 @@ qt[773] = {
   reward = {
     exp = 4935,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -30783,11 +26637,7 @@ qt[774] = {
   reward = {
     exp = 5885,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -30817,11 +26667,7 @@ qt[775] = {
   reward = {
     exp = 6955,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -30854,11 +26700,7 @@ qt[776] = {
   reward = {
     exp = 8155,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -30888,11 +26730,7 @@ qt[777] = {
   reward = {
     exp = 11115,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -30922,11 +26760,7 @@ qt[778] = {
   reward = {
     exp = 12585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -30956,11 +26790,7 @@ qt[779] = {
   reward = {
     exp = 12585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -30990,11 +26820,7 @@ qt[780] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -31023,11 +26849,7 @@ qt[781] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -31057,11 +26879,7 @@ qt[782] = {
   reward = {
     exp = 20005,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -31090,11 +26908,7 @@ qt[783] = {
   reward = {
     exp = 20005,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -31124,11 +26938,7 @@ qt[784] = {
   reward = {
     exp = 24735,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -31157,11 +26967,7 @@ qt[785] = {
   reward = {
     exp = 24735,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -31191,11 +26997,7 @@ qt[786] = {
   reward = {
     exp = 30225,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -31224,11 +27026,7 @@ qt[787] = {
   reward = {
     exp = 30225,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -31258,11 +27056,7 @@ qt[788] = {
   reward = {
     exp = 34600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -31291,11 +27085,7 @@ qt[789] = {
   reward = {
     exp = 34600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -31325,11 +27115,7 @@ qt[790] = {
   reward = {
     exp = 49500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -31360,11 +27146,7 @@ qt[791] = {
   reward = {
     exp = 49500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -31394,11 +27176,7 @@ qt[792] = {
   reward = {
     exp = 61050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -31427,11 +27205,7 @@ qt[793] = {
   reward = {
     exp = 61050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -31460,11 +27234,7 @@ qt[794] = {
   reward = {
     exp = 74000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -31493,11 +27263,7 @@ qt[795] = {
   reward = {
     exp = 81050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -31527,11 +27293,7 @@ qt[796] = {
   reward = {
     exp = 125600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -31564,16 +27326,12 @@ qt[802] = {
   reward = {
     exp = 500000,
     gold = 20000,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
     items = {
       {id = 8990111, count = 1},
       {id = 8921611, count = 1},
       {id = 8921621, count = 1},
       {id = 8890045, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 30,
   bQLoop = 0
@@ -31604,11 +27362,7 @@ qt[803] = {
   reward = {
     exp = 1848780,
     gold = 0,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -31649,15 +27403,11 @@ qt[804] = {
   reward = {
     exp = 3000000,
     gold = 350000,
-    fame = 0,
-    pvppoint = 4,
-    mileage = 0,
     items = {
       {id = 8921311, count = 1},
       {id = 8921321, count = 1},
       {id = 8890102, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -31694,11 +27444,7 @@ qt[805] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -31733,14 +27479,10 @@ qt[806] = {
   reward = {
     exp = 875000,
     gold = 35000,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
     items = {
       {id = 8921511, count = 1},
       {id = 8921521, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 30,
   bQLoop = 0
@@ -31774,13 +27516,9 @@ qt[807] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31811,13 +27549,9 @@ qt[808] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31848,13 +27582,9 @@ qt[809] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 4}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31885,13 +27615,9 @@ qt[810] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 4}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31922,13 +27648,9 @@ qt[811] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 4}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31959,13 +27681,9 @@ qt[812] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 4}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -31996,13 +27714,9 @@ qt[813] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980057, count = 4}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32033,16 +27747,12 @@ qt[814] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890031, count = 1},
       {id = 8890032, count = 1},
       {id = 8890033, count = 1},
       {id = 8890034, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32073,16 +27783,12 @@ qt[815] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890031, count = 1},
       {id = 8890032, count = 1},
       {id = 8890033, count = 1},
       {id = 8890034, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32117,14 +27823,10 @@ qt[816] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890145, count = 1},
       {id = 8890146, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32157,19 +27859,8 @@ qt[817] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980051, count = 5}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990130,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -32207,13 +27898,9 @@ qt[818] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890420, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32249,13 +27936,9 @@ qt[819] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890158, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -32285,11 +27968,7 @@ qt[820] = {
   reward = {
     exp = 1,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 4,
   bQLoop = 0
@@ -32319,11 +27998,7 @@ qt[821] = {
   reward = {
     exp = 592,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 6,
   bQLoop = 0
@@ -32353,11 +28028,7 @@ qt[822] = {
   reward = {
     exp = 845,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 7,
   bQLoop = 0
@@ -32387,11 +28058,7 @@ qt[823] = {
   reward = {
     exp = 1715,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -32421,11 +28088,7 @@ qt[824] = {
   reward = {
     exp = 2175,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 11,
   bQLoop = 0
@@ -32455,11 +28118,7 @@ qt[825] = {
   reward = {
     exp = 2720,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -32489,11 +28148,7 @@ qt[826] = {
   reward = {
     exp = 2720,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -32523,11 +28178,7 @@ qt[827] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 20,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -32557,11 +28208,7 @@ qt[828] = {
   reward = {
     exp = 4935,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -32591,11 +28238,7 @@ qt[829] = {
   reward = {
     exp = 5885,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -32625,11 +28268,7 @@ qt[830] = {
   reward = {
     exp = 6955,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -32662,11 +28301,7 @@ qt[831] = {
   reward = {
     exp = 8155,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -32696,11 +28331,7 @@ qt[832] = {
   reward = {
     exp = 11115,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -32730,11 +28361,7 @@ qt[833] = {
   reward = {
     exp = 12585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -32764,11 +28391,7 @@ qt[834] = {
   reward = {
     exp = 12585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -32798,11 +28421,7 @@ qt[835] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -32831,11 +28450,7 @@ qt[836] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -32865,11 +28480,7 @@ qt[837] = {
   reward = {
     exp = 20005,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -32898,11 +28509,7 @@ qt[838] = {
   reward = {
     exp = 20005,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -32932,11 +28539,7 @@ qt[839] = {
   reward = {
     exp = 24735,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -32965,11 +28568,7 @@ qt[840] = {
   reward = {
     exp = 24735,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -32999,11 +28598,7 @@ qt[841] = {
   reward = {
     exp = 30225,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -33032,11 +28627,7 @@ qt[842] = {
   reward = {
     exp = 30225,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -33066,11 +28657,7 @@ qt[844] = {
   reward = {
     exp = 34600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -33099,11 +28686,7 @@ qt[845] = {
   reward = {
     exp = 34600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -33133,11 +28716,7 @@ qt[846] = {
   reward = {
     exp = 49500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -33168,11 +28747,7 @@ qt[847] = {
   reward = {
     exp = 49500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -33202,11 +28777,7 @@ qt[848] = {
   reward = {
     exp = 61050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -33235,11 +28806,7 @@ qt[849] = {
   reward = {
     exp = 61050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -33268,11 +28835,7 @@ qt[850] = {
   reward = {
     exp = 74000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -33301,11 +28864,7 @@ qt[851] = {
   reward = {
     exp = 81050,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -33335,11 +28894,7 @@ qt[852] = {
   reward = {
     exp = 125600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -33372,11 +28927,7 @@ qt[853] = {
   reward = {
     exp = 50,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 6,
   bQLoop = 0
@@ -33411,11 +28962,7 @@ qt[854] = {
   reward = {
     exp = 300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -33448,11 +28995,7 @@ qt[855] = {
   reward = {
     exp = 230000,
     gold = 0,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -33487,11 +29030,7 @@ qt[856] = {
   reward = {
     exp = 610000,
     gold = 0,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -33526,11 +29065,7 @@ qt[857] = {
   reward = {
     exp = 750000,
     gold = 0,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -33567,14 +29102,10 @@ qt[858] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 30},
       {id = 8810071, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -33611,14 +29142,10 @@ qt[859] = {
   reward = {
     exp = 30000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820121, count = 30},
       {id = 8810091, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -33657,14 +29184,10 @@ qt[860] = {
   reward = {
     exp = 9000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 30},
       {id = 8810081, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 25,
   bQLoop = 0
@@ -33696,19 +29219,8 @@ qt[861] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890161, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980097,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -33747,13 +29259,9 @@ qt[862] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890122, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -33790,13 +29298,9 @@ qt[863] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843164, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -33833,13 +29337,9 @@ qt[864] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843164, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 41,
   bQLoop = 0
@@ -33876,13 +29376,9 @@ qt[865] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843164, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -33919,13 +29415,9 @@ qt[866] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843164, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 121,
   bQLoop = 0
@@ -33962,13 +29454,9 @@ qt[867] = {
   reward = {
     exp = 876659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990066, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 99,
   bQLoop = 0
@@ -34001,13 +29489,9 @@ qt[868] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890208, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -34042,13 +29526,9 @@ qt[869] = {
   reward = {
     exp = 24774090,
     gold = 0,
-    fame = 2,
-    pvppoint = 8,
-    mileage = 0,
     items = {
       {id = 8990109, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -34079,13 +29559,9 @@ qt[870] = {
   reward = {
     exp = 6723360,
     gold = 0,
-    fame = 0,
-    pvppoint = 5,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -34118,13 +29594,9 @@ qt[871] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8849035, count = 6}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -34153,13 +29625,9 @@ qt[872] = {
   reward = {
     exp = 10808400,
     gold = 0,
-    fame = 0,
-    pvppoint = 5,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -34193,19 +29661,8 @@ qt[873] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890208, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980146,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -34241,13 +29698,9 @@ qt[874] = {
   reward = {
     exp = 11826495,
     gold = 0,
-    fame = 0,
-    pvppoint = 6,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -34282,13 +29735,9 @@ qt[875] = {
   reward = {
     exp = 11826495,
     gold = 0,
-    fame = 0,
-    pvppoint = 6,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -34319,19 +29768,8 @@ qt[876] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890244, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590007,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -34363,13 +29801,9 @@ qt[877] = {
   reward = {
     exp = 11826495,
     gold = 0,
-    fame = 0,
-    pvppoint = 6,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -34400,13 +29834,9 @@ qt[878] = {
   reward = {
     exp = 11826495,
     gold = 0,
-    fame = 0,
-    pvppoint = 6,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -34439,13 +29869,9 @@ qt[879] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846106, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 20,
   bQLoop = 0
@@ -34478,14 +29904,10 @@ qt[880] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890245, count = 1},
       {id = 8890246, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -34524,15 +29946,10 @@ qt[881] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890292, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34565,15 +29982,10 @@ qt[882] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890252, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34611,15 +30023,10 @@ qt[883] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890260, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34653,16 +30060,11 @@ qt[884] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890261, count = 2},
       {id = 8890262, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34698,15 +30100,10 @@ qt[885] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846109, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34738,15 +30135,10 @@ qt[886] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890259, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34782,15 +30174,10 @@ qt[887] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -34818,15 +30205,10 @@ qt[888] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990201, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -34854,15 +30236,10 @@ qt[889] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990202, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 80,
   bQLoop = 0
 }
@@ -34890,15 +30267,10 @@ qt[890] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990203, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -34926,15 +30298,10 @@ qt[891] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990204, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 120,
   bQLoop = 0
 }
@@ -34962,15 +30329,10 @@ qt[892] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990205, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 140,
   bQLoop = 0
 }
@@ -34998,15 +30360,10 @@ qt[893] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990206, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -35031,21 +30388,15 @@ qt[894] = {
     killMonster = {
       {id = 1090038, count = 1}
     },
-    meetNpc = {},
-    timeOut = 180
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980172, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -35079,15 +30430,10 @@ qt[895] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990150, count = 6}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -35120,15 +30466,10 @@ qt[896] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890295, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -35164,15 +30505,10 @@ qt[897] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890242, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -35209,19 +30545,8 @@ qt[899] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846106, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980146,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -35247,11 +30572,7 @@ qt[901] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35277,11 +30598,7 @@ qt[902] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35303,11 +30620,7 @@ qt[903] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35329,11 +30642,7 @@ qt[904] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35360,11 +30669,7 @@ qt[905] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35387,11 +30692,7 @@ qt[906] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35419,11 +30720,7 @@ qt[907] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35446,11 +30743,7 @@ qt[908] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35474,11 +30767,7 @@ qt[909] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35501,11 +30790,7 @@ qt[910] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35530,11 +30815,7 @@ qt[911] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35559,11 +30840,7 @@ qt[912] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35587,11 +30864,7 @@ qt[913] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35615,11 +30888,7 @@ qt[914] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35649,11 +30918,7 @@ qt[915] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35677,11 +30942,7 @@ qt[916] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35707,11 +30968,7 @@ qt[917] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35734,11 +30991,7 @@ qt[918] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35761,11 +31014,7 @@ qt[919] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35788,11 +31037,7 @@ qt[920] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35817,11 +31062,7 @@ qt[921] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35844,11 +31085,7 @@ qt[922] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35871,11 +31108,7 @@ qt[923] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35899,11 +31132,7 @@ qt[924] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35934,11 +31163,7 @@ qt[925] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35963,11 +31188,7 @@ qt[926] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -35990,11 +31211,7 @@ qt[927] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36017,11 +31234,7 @@ qt[928] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36044,11 +31257,7 @@ qt[929] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36071,11 +31280,7 @@ qt[930] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36098,11 +31303,7 @@ qt[931] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36126,11 +31327,7 @@ qt[932] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36155,11 +31352,7 @@ qt[933] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36183,11 +31376,7 @@ qt[934] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36211,11 +31400,7 @@ qt[935] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36238,11 +31423,7 @@ qt[936] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36265,11 +31446,7 @@ qt[937] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36292,11 +31469,7 @@ qt[938] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36318,11 +31491,7 @@ qt[939] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36344,11 +31513,7 @@ qt[940] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36370,11 +31535,7 @@ qt[941] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36401,11 +31562,7 @@ qt[942] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36428,11 +31585,7 @@ qt[943] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36455,11 +31608,7 @@ qt[944] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36482,11 +31631,7 @@ qt[945] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36510,11 +31655,7 @@ qt[946] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36538,11 +31679,7 @@ qt[947] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36566,11 +31703,7 @@ qt[948] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36594,11 +31727,7 @@ qt[949] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36621,11 +31750,7 @@ qt[950] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36648,11 +31773,7 @@ qt[951] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36675,11 +31796,7 @@ qt[952] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36703,11 +31820,7 @@ qt[953] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36730,11 +31843,7 @@ qt[954] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36759,11 +31868,7 @@ qt[955] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36794,11 +31899,7 @@ qt[956] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36829,11 +31930,7 @@ qt[957] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36864,11 +31961,7 @@ qt[958] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36899,11 +31992,7 @@ qt[959] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36934,11 +32023,7 @@ qt[960] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36962,11 +32047,7 @@ qt[961] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -36991,11 +32072,7 @@ qt[962] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37017,11 +32094,7 @@ qt[963] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37044,11 +32117,7 @@ qt[964] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37073,11 +32142,7 @@ qt[965] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37099,11 +32164,7 @@ qt[966] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37125,11 +32186,7 @@ qt[967] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37151,11 +32208,7 @@ qt[968] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37177,11 +32230,7 @@ qt[969] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37205,11 +32254,7 @@ qt[970] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37233,11 +32278,7 @@ qt[971] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37267,11 +32308,7 @@ qt[972] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37301,11 +32338,7 @@ qt[973] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37335,11 +32368,7 @@ qt[974] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37369,11 +32398,7 @@ qt[975] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37403,11 +32428,7 @@ qt[976] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37437,11 +32458,7 @@ qt[977] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37473,11 +32490,7 @@ qt[978] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37509,11 +32522,7 @@ qt[979] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37535,11 +32544,7 @@ qt[980] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37567,11 +32572,7 @@ qt[981] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37601,11 +32602,7 @@ qt[982] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37632,11 +32629,7 @@ qt[983] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 0,
   bQLoop = 0
@@ -37669,11 +32662,7 @@ qt[1002] = {
   reward = {
     exp = 14865,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37706,11 +32695,7 @@ qt[1003] = {
   reward = {
     exp = 14865,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37743,11 +32728,7 @@ qt[1004] = {
   reward = {
     exp = 14865,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37781,18 +32762,7 @@ qt[1005] = {
   reward = {
     exp = 67568,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990132,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37823,11 +32793,7 @@ qt[1006] = {
   reward = {
     exp = 2973,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37860,11 +32826,7 @@ qt[1007] = {
   reward = {
     exp = 14865,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37899,18 +32861,7 @@ qt[1008] = {
   reward = {
     exp = 74325,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990133,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -37943,11 +32894,7 @@ qt[1009] = {
   reward = {
     exp = 1500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 127,
   bQLoop = 0
@@ -37980,11 +32927,7 @@ qt[1010] = {
   reward = {
     exp = 3000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -38017,11 +32960,7 @@ qt[1011] = {
   reward = {
     exp = 8000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 134,
   bQLoop = 0
@@ -38054,11 +32993,7 @@ qt[1012] = {
   reward = {
     exp = 5000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 140,
   bQLoop = 0
@@ -38093,11 +33028,7 @@ qt[1013] = {
   reward = {
     exp = 10000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 137,
   bQLoop = 0
@@ -38130,11 +33061,7 @@ qt[1014] = {
   reward = {
     exp = 11000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -38167,11 +33094,7 @@ qt[1015] = {
   reward = {
     exp = 15000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 142,
   bQLoop = 0
@@ -38204,11 +33127,7 @@ qt[1016] = {
   reward = {
     exp = 15000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 145,
   bQLoop = 0
@@ -38241,11 +33160,7 @@ qt[1017] = {
   reward = {
     exp = 15000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 146,
   bQLoop = 0
@@ -38278,11 +33193,7 @@ qt[1018] = {
   reward = {
     exp = 15000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 147,
   bQLoop = 0
@@ -38314,13 +33225,9 @@ qt[1019] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9231082, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38352,13 +33259,9 @@ qt[1020] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9231081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38390,13 +33293,9 @@ qt[1021] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9231083, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38428,13 +33327,9 @@ qt[1022] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9231084, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38467,13 +33362,9 @@ qt[1023] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38506,13 +33397,9 @@ qt[1024] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8020805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38545,13 +33432,9 @@ qt[1025] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38584,13 +33467,9 @@ qt[1026] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8040805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38623,13 +33502,9 @@ qt[1027] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38662,13 +33537,9 @@ qt[1028] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8060805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38701,13 +33572,9 @@ qt[1029] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38740,13 +33607,9 @@ qt[1030] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8080805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38779,13 +33642,9 @@ qt[1031] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7930805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38818,13 +33677,9 @@ qt[1032] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7940805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38857,13 +33712,9 @@ qt[1033] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8011005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38896,13 +33747,9 @@ qt[1034] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8021005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38935,13 +33782,9 @@ qt[1035] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8031005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -38974,13 +33817,9 @@ qt[1036] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8041005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39013,13 +33852,9 @@ qt[1037] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8051005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39052,13 +33887,9 @@ qt[1038] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8061005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39091,13 +33922,9 @@ qt[1039] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8071005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39130,13 +33957,9 @@ qt[1040] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8081005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39169,13 +33992,9 @@ qt[1041] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7931005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39208,13 +34027,9 @@ qt[1042] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7941005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -39247,18 +34062,7 @@ qt[1043] = {
   reward = {
     exp = 20154,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990134,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -39289,11 +34093,7 @@ qt[1044] = {
   reward = {
     exp = 47592,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -39321,11 +34121,7 @@ qt[1045] = {
   reward = {
     exp = 47592,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -39355,11 +34151,7 @@ qt[1046] = {
   reward = {
     exp = 47592,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -39394,13 +34186,9 @@ qt[1047] = {
   reward = {
     exp = 128780238,
     gold = 800000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850121, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 149,
   bQLoop = 0
@@ -39435,13 +34223,9 @@ qt[1048] = {
   reward = {
     exp = 178637765,
     gold = 840000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 152,
   bQLoop = 0
@@ -39476,13 +34260,9 @@ qt[1049] = {
   reward = {
     exp = 185783275,
     gold = 860000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843241, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 153,
   bQLoop = 0
@@ -39517,13 +34297,9 @@ qt[1050] = {
   reward = {
     exp = 208980918,
     gold = 900000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843251, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 156,
   bQLoop = 0
@@ -39558,13 +34334,9 @@ qt[1051] = {
   reward = {
     exp = 251148624,
     gold = 920000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990128, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 158,
   bQLoop = 0
@@ -39599,11 +34371,7 @@ qt[1052] = {
   reward = {
     exp = 19085231,
     gold = 320000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 151,
   bQLoop = 0
@@ -39638,11 +34406,7 @@ qt[1053] = {
   reward = {
     exp = 22327021,
     gold = 360000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 155,
   bQLoop = 0
@@ -39677,11 +34441,7 @@ qt[1054] = {
   reward = {
     exp = 24148906,
     gold = 400000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 157,
   bQLoop = 0
@@ -39716,14 +34476,10 @@ qt[1055] = {
   reward = {
     exp = 155985063,
     gold = 820000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843213, count = 5},
       {id = 8843223, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 150,
   bQLoop = 0
@@ -39756,14 +34512,10 @@ qt[1056] = {
   reward = {
     exp = 193214606,
     gold = 880000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843213, count = 5},
       {id = 8843223, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 154,
   bQLoop = 0
@@ -39799,14 +34551,10 @@ qt[1057] = {
   reward = {
     exp = 294220613,
     gold = 940000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843213, count = 5},
       {id = 8843223, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 159,
   bQLoop = 0
@@ -39839,11 +34587,7 @@ qt[1058] = {
   reward = {
     exp = 200000,
     gold = 240000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -39876,11 +34620,7 @@ qt[1059] = {
   reward = {
     exp = 200000,
     gold = 240000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -39913,11 +34653,7 @@ qt[1060] = {
   reward = {
     exp = 200000,
     gold = 240000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -39950,11 +34686,7 @@ qt[1061] = {
   reward = {
     exp = 200000,
     gold = 240000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -39989,11 +34721,7 @@ qt[1062] = {
   reward = {
     exp = 19085231,
     gold = 320000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 151,
   bQLoop = 0
@@ -40028,11 +34756,7 @@ qt[1063] = {
   reward = {
     exp = 22327021,
     gold = 360000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 155,
   bQLoop = 0
@@ -40067,11 +34791,7 @@ qt[1064] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -40102,13 +34822,9 @@ qt[1065] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8610665, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40140,13 +34856,9 @@ qt[1066] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8610666, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40178,13 +34890,9 @@ qt[1067] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8610667, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40216,13 +34924,9 @@ qt[1068] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8610668, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40256,11 +34960,7 @@ qt[1069] = {
   reward = {
     exp = 420000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 73,
   bQLoop = 0
@@ -40297,11 +34997,7 @@ qt[1070] = {
   reward = {
     exp = 490000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -40339,11 +35035,7 @@ qt[1071] = {
   reward = {
     exp = 540000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 78,
   bQLoop = 0
@@ -40384,11 +35076,7 @@ qt[1072] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -40429,11 +35117,7 @@ qt[1073] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -40467,13 +35151,9 @@ qt[1074] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980102, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40507,13 +35187,9 @@ qt[1075] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980102, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 41,
   bQLoop = 0
@@ -40547,13 +35223,9 @@ qt[1076] = {
   reward = {
     exp = 250000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980102, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -40588,13 +35260,9 @@ qt[1077] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8891001, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40629,13 +35297,9 @@ qt[1078] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8891001, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 41,
   bQLoop = 0
@@ -40670,13 +35334,9 @@ qt[1079] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890122, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -40712,11 +35372,7 @@ qt[1080] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -40745,15 +35401,11 @@ qt[1081] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519051, count = 1},
       {id = 9519053, count = 1},
       {id = 9519055, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40782,15 +35434,11 @@ qt[1082] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519052, count = 1},
       {id = 9519054, count = 1},
       {id = 9519056, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40821,13 +35469,9 @@ qt[1083] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890178, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40858,13 +35502,9 @@ qt[1084] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890178, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40897,13 +35537,9 @@ qt[1085] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890168, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40936,13 +35572,9 @@ qt[1086] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890169, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -40975,13 +35607,9 @@ qt[1087] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890170, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41018,13 +35646,9 @@ qt[1088] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8493295, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41055,13 +35679,9 @@ qt[1089] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890190, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41092,13 +35712,9 @@ qt[1090] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890191, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41137,35 +35753,7 @@ qt[1091] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980109,
-      itemcnt = 3
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980109,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -41200,26 +35788,8 @@ qt[1092] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980110,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980110,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -41253,13 +35823,9 @@ qt[1093] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890237, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41292,13 +35858,9 @@ qt[1094] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890237, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41331,13 +35893,9 @@ qt[1095] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890237, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41370,13 +35928,9 @@ qt[1096] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890197, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41411,13 +35965,9 @@ qt[1097] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890202, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41450,13 +36000,9 @@ qt[1098] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890203, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -41489,19 +36035,8 @@ qt[1099] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590001,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -41535,11 +36070,7 @@ qt[1100] = {
   reward = {
     exp = 5,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -41575,11 +36106,7 @@ qt[1101] = {
   reward = {
     exp = 5,
     gold = 99,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -41612,11 +36139,7 @@ qt[1102] = {
   reward = {
     exp = 12,
     gold = 50,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 2,
   bQLoop = 0
@@ -41649,11 +36172,7 @@ qt[1103] = {
   reward = {
     exp = 13,
     gold = 50,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 2,
   bQLoop = 0
@@ -41690,19 +36209,8 @@ qt[1104] = {
   reward = {
     exp = 66,
     gold = 99,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820013, count = 20}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8820013,
-      itemcnt = 1
     }
   },
   needLevel = 3,
@@ -41732,11 +36240,7 @@ qt[1105] = {
   reward = {
     exp = 75,
     gold = 99,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 4,
   bQLoop = 0
@@ -41767,13 +36271,9 @@ qt[1106] = {
   reward = {
     exp = 75,
     gold = 300,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810013, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 4,
   bQLoop = 0
@@ -41812,13 +36312,9 @@ qt[1107] = {
   reward = {
     exp = 500,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 5,
   bQLoop = 0
@@ -41851,11 +36347,7 @@ qt[1108] = {
   reward = {
     exp = 795,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 6,
   bQLoop = 0
@@ -41890,11 +36382,7 @@ qt[1109] = {
   reward = {
     exp = 1185,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 7,
   bQLoop = 0
@@ -41927,11 +36415,7 @@ qt[1110] = {
   reward = {
     exp = 1690,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 8,
   bQLoop = 0
@@ -41966,11 +36450,7 @@ qt[1111] = {
   reward = {
     exp = 2660,
     gold = 1000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -42009,11 +36489,7 @@ qt[1112] = {
   reward = {
     exp = 99,
     gold = 10000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 9,
   bQLoop = 0
@@ -42046,14 +36522,10 @@ qt[1113] = {
   reward = {
     exp = 1600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820011, count = 20},
       {id = 8810011, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -42088,18 +36560,7 @@ qt[1114] = {
   reward = {
     exp = 1600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990105,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -42135,41 +36596,8 @@ qt[1115] = {
   reward = {
     exp = 1200,
     gold = 500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990012,
-      itemcnt = 4
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 4,
-      itemid = 8990012,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -42205,13 +36633,9 @@ qt[1116] = {
   reward = {
     exp = 2800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820091, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 12,
   bQLoop = 0
@@ -42244,11 +36668,7 @@ qt[1117] = {
   reward = {
     exp = 4100,
     gold = 1500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 11,
   bQLoop = 0
@@ -42281,14 +36701,10 @@ qt[1118] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820011, count = 20},
       {id = 8810011, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 13,
   bQLoop = 0
@@ -42319,11 +36735,7 @@ qt[1119] = {
   reward = {
     exp = 1100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -42354,13 +36766,9 @@ qt[1120] = {
   reward = {
     exp = 200,
     gold = 2000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 13,
   bQLoop = 0
@@ -42397,31 +36805,8 @@ qt[1121] = {
   reward = {
     exp = 300,
     gold = 6000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990105,
-      itemcnt = 2
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990105,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8990105,
-      itemcnt = 1
     }
   },
   needLevel = 14,
@@ -42455,11 +36840,7 @@ qt[1122] = {
   reward = {
     exp = 1700,
     gold = 5000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -42488,13 +36869,9 @@ qt[1123] = {
   reward = {
     exp = 300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 14,
   bQLoop = 0
@@ -42525,11 +36902,7 @@ qt[1124] = {
   reward = {
     exp = 2800,
     gold = 2000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -42560,13 +36933,9 @@ qt[1125] = {
   reward = {
     exp = 1800,
     gold = 0,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -42595,11 +36964,7 @@ qt[1126] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -42632,13 +36997,9 @@ qt[1127] = {
   reward = {
     exp = 1500,
     gold = 0,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -42669,13 +37030,9 @@ qt[1128] = {
   reward = {
     exp = 2400,
     gold = 1000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 15,
   bQLoop = 0
@@ -42706,13 +37063,9 @@ qt[1129] = {
   reward = {
     exp = 2500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 16,
   bQLoop = 0
@@ -42745,11 +37098,7 @@ qt[1130] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -42783,13 +37132,9 @@ qt[1131] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 17,
   bQLoop = 0
@@ -42826,18 +37171,7 @@ qt[1132] = {
   reward = {
     exp = 500,
     gold = 1000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990105,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -42877,19 +37211,8 @@ qt[1133] = {
   reward = {
     exp = 2500,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510011, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8510011,
-      itemcnt = 1
     }
   },
   needLevel = 17,
@@ -42927,11 +37250,7 @@ qt[1134] = {
   reward = {
     exp = 2000,
     gold = 3000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -42960,13 +37279,9 @@ qt[1135] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810101, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -43001,11 +37316,7 @@ qt[1136] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -43041,40 +37352,7 @@ qt[1137] = {
   reward = {
     exp = 500,
     gold = 4000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990012,
-      itemcnt = 4
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8990012,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 4,
-      itemid = 8990012,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -43108,13 +37386,9 @@ qt[1138] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -43143,13 +37417,9 @@ qt[1139] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -43176,13 +37446,9 @@ qt[1140] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 18,
   bQLoop = 0
@@ -43219,11 +37485,7 @@ qt[1141] = {
   reward = {
     exp = 4078,
     gold = 10000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -43254,13 +37516,9 @@ qt[1142] = {
   reward = {
     exp = 4078,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 19,
   bQLoop = 0
@@ -43291,14 +37549,10 @@ qt[1143] = {
   reward = {
     exp = 5558,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820021, count = 30},
       {id = 8810021, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 20,
   bQLoop = 0
@@ -43331,11 +37585,7 @@ qt[1144] = {
   reward = {
     exp = 5558,
     gold = 15000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -43368,13 +37618,9 @@ qt[1145] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 21,
   bQLoop = 0
@@ -43407,11 +37653,7 @@ qt[1146] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -43444,13 +37686,9 @@ qt[1147] = {
   reward = {
     exp = 5000,
     gold = 5000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 21,
   bQLoop = 0
@@ -43479,11 +37717,7 @@ qt[1148] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -43512,13 +37746,9 @@ qt[1149] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 21,
   bQLoop = 0
@@ -43551,13 +37781,9 @@ qt[1150] = {
   reward = {
     exp = 7100,
     gold = 5000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 22,
   bQLoop = 0
@@ -43588,11 +37814,7 @@ qt[1151] = {
   reward = {
     exp = 7100,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -43624,13 +37846,9 @@ qt[1152] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 23,
   bQLoop = 0
@@ -43663,13 +37881,9 @@ qt[1153] = {
   reward = {
     exp = 0,
     gold = 1500,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 23,
   bQLoop = 0
@@ -43702,11 +37916,7 @@ qt[1154] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -43737,13 +37947,9 @@ qt[1155] = {
   reward = {
     exp = 10000,
     gold = 15000,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 23,
   bQLoop = 0
@@ -43776,11 +37982,7 @@ qt[1156] = {
   reward = {
     exp = 6988,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -43815,11 +38017,7 @@ qt[1157] = {
   reward = {
     exp = 6988,
     gold = 18000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -43856,13 +38054,9 @@ qt[1158] = {
   reward = {
     exp = 8953,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -43897,13 +38091,9 @@ qt[1159] = {
   reward = {
     exp = 8953,
     gold = 20000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 24,
   bQLoop = 0
@@ -43936,11 +38126,7 @@ qt[1160] = {
   reward = {
     exp = 10003,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -43971,11 +38157,7 @@ qt[1161] = {
   reward = {
     exp = 10003,
     gold = 21000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -44010,11 +38192,7 @@ qt[1162] = {
   reward = {
     exp = 11140,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -44047,13 +38225,9 @@ qt[1163] = {
   reward = {
     exp = 11140,
     gold = 23000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 26,
   bQLoop = 0
@@ -44090,11 +38264,7 @@ qt[1164] = {
   reward = {
     exp = 12368,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -44131,13 +38301,9 @@ qt[1165] = {
   reward = {
     exp = 12368,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 27,
   bQLoop = 0
@@ -44170,11 +38336,7 @@ qt[1166] = {
   reward = {
     exp = 13693,
     gold = 13000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -44207,11 +38369,7 @@ qt[1167] = {
   reward = {
     exp = 13693,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -44246,13 +38404,9 @@ qt[1168] = {
   reward = {
     exp = 15113,
     gold = 22000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 29,
   bQLoop = 0
@@ -44285,11 +38439,7 @@ qt[1169] = {
   reward = {
     exp = 15113,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -44322,11 +38472,7 @@ qt[1170] = {
   reward = {
     exp = 17300,
     gold = 20000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -44360,14 +38506,10 @@ qt[1171] = {
   reward = {
     exp = 17300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 30},
       {id = 8810031, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 30,
   bQLoop = 0
@@ -44406,11 +38548,7 @@ qt[1172] = {
   reward = {
     exp = 19625,
     gold = 18000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -44443,13 +38581,9 @@ qt[1173] = {
   reward = {
     exp = 19625,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 31,
   bQLoop = 0
@@ -44483,11 +38617,7 @@ qt[1174] = {
   reward = {
     exp = 22100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -44519,13 +38649,9 @@ qt[1175] = {
   reward = {
     exp = 22100,
     gold = 26000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820031, count = 50}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 32,
   bQLoop = 0
@@ -44556,11 +38682,7 @@ qt[1176] = {
   reward = {
     exp = 24750,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -44595,13 +38717,9 @@ qt[1177] = {
   reward = {
     exp = 24750,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 33,
   bQLoop = 0
@@ -44639,11 +38757,7 @@ qt[1178] = {
   reward = {
     exp = 27550,
     gold = 27000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -44676,11 +38790,7 @@ qt[1179] = {
   reward = {
     exp = 27550,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -44711,13 +38821,9 @@ qt[1180] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -44753,11 +38859,7 @@ qt[1181] = {
   reward = {
     exp = 29525,
     gold = 30000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -44792,11 +38894,7 @@ qt[1182] = {
   reward = {
     exp = 29525,
     gold = 20000,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -44829,13 +38927,9 @@ qt[1183] = {
   reward = {
     exp = 33675,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 36,
   bQLoop = 0
@@ -44866,13 +38960,9 @@ qt[1184] = {
   reward = {
     exp = 33675,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 36,
   bQLoop = 0
@@ -44905,11 +38995,7 @@ qt[1185] = {
   reward = {
     exp = 37000,
     gold = 42000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -44940,13 +39026,9 @@ qt[1186] = {
   reward = {
     exp = 37000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 37,
   bQLoop = 0
@@ -44979,11 +39061,7 @@ qt[1187] = {
   reward = {
     exp = 40525,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -45015,11 +39093,7 @@ qt[1188] = {
   reward = {
     exp = 40525,
     gold = 30000,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -45056,13 +39130,9 @@ qt[1189] = {
   reward = {
     exp = 62800,
     gold = 50000,
-    fame = 4,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810081, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 39,
   bQLoop = 0
@@ -45102,13 +39172,9 @@ qt[1190] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8920611, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -45144,13 +39210,9 @@ qt[1191] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -45182,11 +39244,7 @@ qt[1192] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -45218,11 +39276,7 @@ qt[1193] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -45254,11 +39308,7 @@ qt[1194] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -45292,13 +39342,9 @@ qt[1195] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8991011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 20,
   bQLoop = 0
@@ -45331,13 +39377,9 @@ qt[1196] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45366,13 +39408,9 @@ qt[1197] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6810001, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45405,13 +39443,9 @@ qt[1198] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8881041, count = 99}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45444,13 +39478,9 @@ qt[1199] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45477,13 +39507,9 @@ qt[1201] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 9,
   bQLoop = 0
@@ -45510,13 +39536,9 @@ qt[1202] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45549,13 +39571,9 @@ qt[1203] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45587,13 +39605,9 @@ qt[1204] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619022, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45627,13 +39641,9 @@ qt[1205] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619023, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45678,11 +39688,7 @@ qt[1206] = {
   reward = {
     exp = 43776,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -45714,13 +39720,9 @@ qt[1207] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8310403, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -45761,13 +39763,9 @@ qt[1208] = {
   reward = {
     exp = 30000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520001, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 35,
   bQLoop = 0
@@ -45802,11 +39800,7 @@ qt[1209] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -45853,13 +39847,9 @@ qt[1210] = {
   reward = {
     exp = 43776,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45888,13 +39878,9 @@ qt[1211] = {
   reward = {
     exp = 40000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8920611, count = 95}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45931,13 +39917,9 @@ qt[1212] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -45966,11 +39948,7 @@ qt[1213] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -46001,16 +39979,12 @@ qt[1214] = {
   reward = {
     exp = 46972,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211011, count = 1},
       {id = 8211021, count = 1},
       {id = 8211031, count = 1},
       {id = 8211041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 41,
   bQLoop = 0
@@ -46041,11 +40015,7 @@ qt[1215] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -46082,13 +40052,9 @@ qt[1216] = {
   reward = {
     exp = 50890,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810111, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 42,
   bQLoop = 0
@@ -46117,11 +40083,7 @@ qt[1217] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -46161,19 +40123,8 @@ qt[1218] = {
   reward = {
     exp = 50890,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990022,
-      itemcnt = 1
     }
   },
   needLevel = 42,
@@ -46205,19 +40156,8 @@ qt[1219] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991021, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990022,
-      itemcnt = 1
     }
   },
   needLevel = 42,
@@ -46259,11 +40199,7 @@ qt[1220] = {
   reward = {
     exp = 54318,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -46294,11 +40230,7 @@ qt[1221] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -46331,13 +40263,9 @@ qt[1222] = {
   reward = {
     exp = 54318,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 43,
   bQLoop = 0
@@ -46372,11 +40300,7 @@ qt[1223] = {
   reward = {
     exp = 4000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -46411,13 +40335,9 @@ qt[1224] = {
   reward = {
     exp = 57810,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820121, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 44,
   bQLoop = 0
@@ -46446,11 +40366,7 @@ qt[1225] = {
   reward = {
     exp = 4000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -46483,13 +40399,9 @@ qt[1226] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 44,
   bQLoop = 0
@@ -46520,13 +40432,9 @@ qt[1227] = {
   reward = {
     exp = 121408,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820121, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 45,
   bQLoop = 0
@@ -46557,11 +40465,7 @@ qt[1228] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -46602,13 +40506,9 @@ qt[1229] = {
   reward = {
     exp = 65054,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 46,
   bQLoop = 0
@@ -46645,11 +40545,7 @@ qt[1230] = {
   reward = {
     exp = 65054,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -46689,18 +40585,7 @@ qt[1231] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990107,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -46733,13 +40618,9 @@ qt[1232] = {
   reward = {
     exp = 127860,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 47,
   bQLoop = 0
@@ -46770,11 +40651,7 @@ qt[1233] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -46809,11 +40686,7 @@ qt[1234] = {
   reward = {
     exp = 70616,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -46842,11 +40715,7 @@ qt[1235] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -46881,16 +40750,12 @@ qt[1236] = {
   reward = {
     exp = 70616,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211012, count = 1},
       {id = 8211022, count = 1},
       {id = 8211032, count = 1},
       {id = 8211042, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 48,
   bQLoop = 0
@@ -46923,13 +40788,9 @@ qt[1237] = {
   reward = {
     exp = 88284,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 49,
   bQLoop = 0
@@ -46958,11 +40819,7 @@ qt[1238] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -46997,11 +40854,7 @@ qt[1239] = {
   reward = {
     exp = 88284,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -47036,13 +40889,9 @@ qt[1240] = {
   reward = {
     exp = 92708,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -47083,19 +40932,8 @@ qt[1241] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8920511, count = 95}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990044,
-      itemcnt = 1
     }
   },
   needLevel = 50,
@@ -47137,13 +40975,9 @@ qt[1242] = {
   reward = {
     exp = 92708,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 50,
   bQLoop = 0
@@ -47174,11 +41008,7 @@ qt[1243] = {
   reward = {
     exp = 97184,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 51,
   bQLoop = 0
@@ -47215,13 +41045,9 @@ qt[1244] = {
   reward = {
     exp = 101732,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 52,
   bQLoop = 0
@@ -47258,11 +41084,7 @@ qt[1245] = {
   reward = {
     exp = 3000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -47297,13 +41119,9 @@ qt[1246] = {
   reward = {
     exp = 104832,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820131, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 54,
   bQLoop = 0
@@ -47336,11 +41154,7 @@ qt[1247] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -47375,11 +41189,7 @@ qt[1248] = {
   reward = {
     exp = 110030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 56,
   bQLoop = 0
@@ -47412,11 +41222,7 @@ qt[1249] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 57,
   bQLoop = 0
@@ -47451,13 +41257,9 @@ qt[1250] = {
   reward = {
     exp = 113942,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 57,
   bQLoop = 0
@@ -47494,13 +41296,9 @@ qt[1251] = {
   reward = {
     exp = 117480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990105, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 58,
   bQLoop = 0
@@ -47536,13 +41334,9 @@ qt[1252] = {
   reward = {
     exp = 123252,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 59,
   bQLoop = 0
@@ -47577,11 +41371,7 @@ qt[1253] = {
   reward = {
     exp = 5000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -47618,13 +41408,9 @@ qt[1254] = {
   reward = {
     exp = 97184,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 51,
   bQLoop = 0
@@ -47661,13 +41447,9 @@ qt[1255] = {
   reward = {
     exp = 101732,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 52,
   bQLoop = 0
@@ -47702,11 +41484,7 @@ qt[1256] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -47741,11 +41519,7 @@ qt[1257] = {
   reward = {
     exp = 104832,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 54,
   bQLoop = 0
@@ -47782,13 +41556,9 @@ qt[1258] = {
   reward = {
     exp = 37760,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 55,
   bQLoop = 0
@@ -47819,11 +41589,7 @@ qt[1259] = {
   reward = {
     exp = 110030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 56,
   bQLoop = 0
@@ -47855,11 +41621,7 @@ qt[1260] = {
   reward = {
     exp = 113942,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 57,
   bQLoop = 0
@@ -47892,13 +41654,9 @@ qt[1261] = {
   reward = {
     exp = 117480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810111, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 58,
   bQLoop = 0
@@ -47929,13 +41687,9 @@ qt[1262] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846709, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 59,
   bQLoop = 0
@@ -47974,13 +41728,9 @@ qt[1263] = {
   reward = {
     exp = 123252,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520002, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 59,
   bQLoop = 0
@@ -48009,11 +41759,7 @@ qt[1264] = {
   reward = {
     exp = 3000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -48046,13 +41792,9 @@ qt[1265] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7519001, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -48083,13 +41825,9 @@ qt[1266] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -48125,19 +41863,8 @@ qt[1267] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499002, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980123,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -48173,11 +41900,7 @@ qt[1268] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -48212,11 +41935,7 @@ qt[1269] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -48251,13 +41970,9 @@ qt[1270] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -48288,13 +42003,9 @@ qt[1271] = {
   reward = {
     exp = 129868,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850031, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 61,
   bQLoop = 0
@@ -48323,11 +42034,7 @@ qt[1272] = {
   reward = {
     exp = 21645,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 61,
   bQLoop = 0
@@ -48360,13 +42067,9 @@ qt[1273] = {
   reward = {
     exp = 129868,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850081, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 61,
   bQLoop = 0
@@ -48401,13 +42104,9 @@ qt[1274] = {
   reward = {
     exp = 132192,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 62,
   bQLoop = 0
@@ -48443,13 +42142,9 @@ qt[1275] = {
   reward = {
     exp = 132192,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843261, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 62,
   bQLoop = 0
@@ -48484,11 +42179,7 @@ qt[1276] = {
   reward = {
     exp = 22946,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 63,
   bQLoop = 0
@@ -48521,11 +42212,7 @@ qt[1277] = {
   reward = {
     exp = 22946,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 63,
   bQLoop = 0
@@ -48558,11 +42245,7 @@ qt[1278] = {
   reward = {
     exp = 22946,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 63,
   bQLoop = 0
@@ -48599,13 +42282,9 @@ qt[1279] = {
   reward = {
     exp = 142962,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850031, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 64,
   bQLoop = 0
@@ -48640,11 +42319,7 @@ qt[1280] = {
   reward = {
     exp = 23827,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 64,
   bQLoop = 0
@@ -48679,13 +42354,9 @@ qt[1281] = {
   reward = {
     exp = 147944,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 65,
   bQLoop = 0
@@ -48720,13 +42391,9 @@ qt[1282] = {
   reward = {
     exp = 147944,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 65,
   bQLoop = 0
@@ -48761,13 +42428,9 @@ qt[1283] = {
   reward = {
     exp = 152678,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 66,
   bQLoop = 0
@@ -48800,11 +42463,7 @@ qt[1284] = {
   reward = {
     exp = 152678,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 66,
   bQLoop = 0
@@ -48835,13 +42494,9 @@ qt[1285] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990107, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 67,
   bQLoop = 0
@@ -48872,11 +42527,7 @@ qt[1286] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -48915,11 +42566,7 @@ qt[1287] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -48952,11 +42599,7 @@ qt[1288] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -48997,11 +42640,7 @@ qt[1289] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -49036,18 +42675,7 @@ qt[1290] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990108,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -49080,11 +42708,7 @@ qt[1291] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -49120,13 +42744,9 @@ qt[1292] = {
   reward = {
     exp = 235698,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850081, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 67,
   bQLoop = 0
@@ -49155,11 +42775,7 @@ qt[1293] = {
   reward = {
     exp = 26189,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -49196,11 +42812,7 @@ qt[1294] = {
   reward = {
     exp = 26880,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -49235,11 +42847,7 @@ qt[1295] = {
   reward = {
     exp = 26880,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -49270,11 +42878,7 @@ qt[1296] = {
   reward = {
     exp = 26880,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -49311,13 +42915,9 @@ qt[1297] = {
   reward = {
     exp = 161280,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 68,
   bQLoop = 0
@@ -49350,13 +42950,9 @@ qt[1298] = {
   reward = {
     exp = 26880,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8921311, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 68,
   bQLoop = 0
@@ -49393,13 +42989,9 @@ qt[1299] = {
   reward = {
     exp = 172420,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 69,
   bQLoop = 0
@@ -49434,11 +43026,7 @@ qt[1300] = {
   reward = {
     exp = 172420,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -49475,11 +43063,7 @@ qt[1301] = {
   reward = {
     exp = 196220,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -49510,11 +43094,7 @@ qt[1302] = {
   reward = {
     exp = 29370,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -49547,13 +43127,9 @@ qt[1303] = {
   reward = {
     exp = 179480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 71,
   bQLoop = 0
@@ -49588,13 +43164,9 @@ qt[1304] = {
   reward = {
     exp = 179480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850031, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 71,
   bQLoop = 0
@@ -49625,11 +43197,7 @@ qt[1305] = {
   reward = {
     exp = 30360,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 72,
   bQLoop = 0
@@ -49662,11 +43230,7 @@ qt[1306] = {
   reward = {
     exp = 182160,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 72,
   bQLoop = 0
@@ -49703,13 +43267,9 @@ qt[1307] = {
   reward = {
     exp = 182160,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 72,
   bQLoop = 0
@@ -49742,11 +43302,7 @@ qt[1308] = {
   reward = {
     exp = 184218,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 73,
   bQLoop = 0
@@ -49781,13 +43337,9 @@ qt[1309] = {
   reward = {
     exp = 185622,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850031, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -49822,13 +43374,9 @@ qt[1310] = {
   reward = {
     exp = 185622,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843231, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 74,
   bQLoop = 0
@@ -49863,11 +43411,7 @@ qt[1311] = {
   reward = {
     exp = 186384,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 75,
   bQLoop = 0
@@ -49906,11 +43450,7 @@ qt[1312] = {
   reward = {
     exp = 186384,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 75,
   bQLoop = 0
@@ -49939,11 +43479,7 @@ qt[1313] = {
   reward = {
     exp = 31069,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -49984,13 +43520,9 @@ qt[1314] = {
   reward = {
     exp = 246412,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 76,
   bQLoop = 0
@@ -50021,11 +43553,7 @@ qt[1315] = {
   reward = {
     exp = 31812,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -50068,11 +43596,7 @@ qt[1316] = {
   reward = {
     exp = 31812,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -50111,11 +43635,7 @@ qt[1317] = {
   reward = {
     exp = 31812,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -50150,11 +43670,7 @@ qt[1318] = {
   reward = {
     exp = 31812,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -50187,11 +43703,7 @@ qt[1319] = {
   reward = {
     exp = 190874,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -50224,11 +43736,7 @@ qt[1320] = {
   reward = {
     exp = 195048,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 78,
   bQLoop = 0
@@ -50259,13 +43767,9 @@ qt[1321] = {
   reward = {
     exp = 195048,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 78,
   bQLoop = 0
@@ -50294,11 +43798,7 @@ qt[1322] = {
   reward = {
     exp = 199040,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 79,
   bQLoop = 0
@@ -50335,16 +43835,12 @@ qt[1323] = {
   reward = {
     exp = 199040,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8211013, count = 1},
       {id = 8211023, count = 1},
       {id = 8211033, count = 1},
       {id = 8211043, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 79,
   bQLoop = 0
@@ -50371,11 +43867,7 @@ qt[1324] = {
   reward = {
     exp = 34842,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -50406,13 +43898,9 @@ qt[1325] = {
   reward = {
     exp = 309052,
     gold = 0,
-    fame = 20,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520003, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 80,
   bQLoop = 0
@@ -50447,13 +43935,7 @@ qt[1326] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21105
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50488,13 +43970,7 @@ qt[1327] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21205
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50529,13 +44005,7 @@ qt[1328] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21305
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50570,13 +44040,7 @@ qt[1329] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21405
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50611,13 +44075,7 @@ qt[1330] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21505
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50652,13 +44110,7 @@ qt[1331] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22105
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50693,13 +44145,7 @@ qt[1332] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22205
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50734,13 +44180,7 @@ qt[1333] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22305
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50775,13 +44215,7 @@ qt[1334] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22405
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50816,13 +44250,7 @@ qt[1335] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22505
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -50860,13 +44288,9 @@ qt[1336] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890207, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -50901,13 +44325,9 @@ qt[1337] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -50942,13 +44362,9 @@ qt[1338] = {
   reward = {
     exp = 1500,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820091, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 11,
   bQLoop = 0
@@ -50981,11 +44397,7 @@ qt[1339] = {
   reward = {
     exp = 1500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 11,
   bQLoop = 0
@@ -51020,13 +44432,9 @@ qt[1340] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 12,
   bQLoop = 0
@@ -51059,14 +44467,10 @@ qt[1341] = {
   reward = {
     exp = 2000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820011, count = 20},
       {id = 8810011, count = 20}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 12,
   bQLoop = 0
@@ -51097,11 +44501,7 @@ qt[1342] = {
   reward = {
     exp = 2300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -51134,13 +44534,9 @@ qt[1343] = {
   reward = {
     exp = 2300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820041, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 13,
   bQLoop = 0
@@ -51169,11 +44565,7 @@ qt[1344] = {
   reward = {
     exp = 800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -51210,13 +44602,9 @@ qt[1345] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8920211, count = 80}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 80,
   bQLoop = 0
@@ -51255,18 +44643,7 @@ qt[1346] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990065,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -51303,18 +44680,7 @@ qt[1347] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990065,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -51358,18 +44724,7 @@ qt[1348] = {
   reward = {
     exp = 261315,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 7510021,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -51402,13 +44757,9 @@ qt[1349] = {
   reward = {
     exp = 261315,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 80,
   bQLoop = 0
@@ -51439,13 +44790,9 @@ qt[1350] = {
   reward = {
     exp = 274140,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -51480,13 +44827,9 @@ qt[1351] = {
   reward = {
     exp = 274140,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8920221, count = 80}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -51519,13 +44862,9 @@ qt[1352] = {
   reward = {
     exp = 277703,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 82,
   bQLoop = 0
@@ -51558,13 +44897,9 @@ qt[1353] = {
   reward = {
     exp = 277703,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 82,
   bQLoop = 0
@@ -51600,13 +44935,9 @@ qt[1354] = {
   reward = {
     exp = 280685,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 83,
   bQLoop = 0
@@ -51639,13 +44970,9 @@ qt[1355] = {
   reward = {
     exp = 280685,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 83,
   bQLoop = 0
@@ -51678,11 +45005,7 @@ qt[1356] = {
   reward = {
     exp = 293580,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 84,
   bQLoop = 0
@@ -51712,19 +45035,14 @@ qt[1357] = {
     killMonster = {
       {id = 1008501, count = 1}
     },
-    meetNpc = {},
-    timeOut = 300
+    meetNpc = {}
   },
   reward = {
     exp = 293580,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 84,
   bQLoop = 0
@@ -51755,13 +45073,9 @@ qt[1358] = {
   reward = {
     exp = 306768,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 85,
   bQLoop = 0
@@ -51796,13 +45110,9 @@ qt[1359] = {
   reward = {
     exp = 306768,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 85,
   bQLoop = 0
@@ -51835,11 +45145,7 @@ qt[1360] = {
   reward = {
     exp = 320290,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 86,
   bQLoop = 0
@@ -51870,13 +45176,9 @@ qt[1361] = {
   reward = {
     exp = 320290,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 86,
   bQLoop = 0
@@ -51907,11 +45209,7 @@ qt[1362] = {
   reward = {
     exp = 326950,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 87,
   bQLoop = 0
@@ -51946,11 +45244,7 @@ qt[1363] = {
   reward = {
     exp = 326950,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 87,
   bQLoop = 0
@@ -51987,13 +45281,9 @@ qt[1364] = {
   reward = {
     exp = 335825,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991071, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 88,
   bQLoop = 0
@@ -52028,11 +45318,7 @@ qt[1365] = {
   reward = {
     exp = 335825,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 88,
   bQLoop = 0
@@ -52067,13 +45353,9 @@ qt[1366] = {
   reward = {
     exp = 348423,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 89,
   bQLoop = 0
@@ -52108,13 +45390,9 @@ qt[1367] = {
   reward = {
     exp = 378575,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 90,
   bQLoop = 0
@@ -52149,13 +45427,9 @@ qt[1368] = {
   reward = {
     exp = 378575,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 90,
   bQLoop = 0
@@ -52190,13 +45464,9 @@ qt[1369] = {
   reward = {
     exp = 393910,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 91,
   bQLoop = 0
@@ -52227,11 +45497,7 @@ qt[1370] = {
   reward = {
     exp = 393910,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 91,
   bQLoop = 0
@@ -52262,11 +45528,7 @@ qt[1371] = {
   reward = {
     exp = 409570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 92,
   bQLoop = 0
@@ -52295,13 +45557,9 @@ qt[1372] = {
   reward = {
     exp = 409570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 92,
   bQLoop = 0
@@ -52338,11 +45596,7 @@ qt[1373] = {
   reward = {
     exp = 425590,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 93,
   bQLoop = 0
@@ -52376,13 +45630,9 @@ qt[1374] = {
   reward = {
     exp = 425590,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 93,
   bQLoop = 0
@@ -52417,13 +45667,9 @@ qt[1375] = {
   reward = {
     exp = 441970,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 94,
   bQLoop = 0
@@ -52454,11 +45700,7 @@ qt[1376] = {
   reward = {
     exp = 441970,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 94,
   bQLoop = 0
@@ -52489,11 +45731,7 @@ qt[1377] = {
   reward = {
     exp = 458675,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 95,
   bQLoop = 0
@@ -52526,11 +45764,7 @@ qt[1378] = {
   reward = {
     exp = 458675,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 95,
   bQLoop = 0
@@ -52561,13 +45795,9 @@ qt[1379] = {
   reward = {
     exp = 475740,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 96,
   bQLoop = 0
@@ -52600,11 +45830,7 @@ qt[1380] = {
   reward = {
     exp = 475740,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 96,
   bQLoop = 0
@@ -52633,11 +45859,7 @@ qt[1381] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 96,
   bQLoop = 0
@@ -52672,13 +45894,9 @@ qt[1382] = {
   reward = {
     exp = 493163,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 97,
   bQLoop = 0
@@ -52709,13 +45927,9 @@ qt[1383] = {
   reward = {
     exp = 493163,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7992081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 97,
   bQLoop = 0
@@ -52748,11 +45962,7 @@ qt[1384] = {
   reward = {
     exp = 510948,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 98,
   bQLoop = 0
@@ -52785,11 +45995,7 @@ qt[1385] = {
   reward = {
     exp = 510948,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 98,
   bQLoop = 0
@@ -52822,13 +46028,9 @@ qt[1386] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 99,
   bQLoop = 0
@@ -52863,13 +46065,9 @@ qt[1387] = {
   reward = {
     exp = 558110,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850141, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 99,
   bQLoop = 0
@@ -52902,11 +46100,7 @@ qt[1388] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -52939,13 +46133,9 @@ qt[1389] = {
   reward = {
     exp = 558110,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 99,
   bQLoop = 0
@@ -52974,13 +46164,9 @@ qt[1390] = {
   reward = {
     exp = 676659,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520004, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 99,
   bQLoop = 0
@@ -53021,11 +46207,7 @@ qt[1391] = {
   reward = {
     exp = 876659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -53059,11 +46241,7 @@ qt[1392] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53097,11 +46275,7 @@ qt[1393] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -53135,11 +46309,7 @@ qt[1394] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 81,
   bQLoop = 0
@@ -53178,11 +46348,7 @@ qt[1395] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53213,11 +46379,7 @@ qt[1396] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53252,11 +46414,7 @@ qt[1397] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53283,11 +46441,7 @@ qt[1398] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53322,13 +46476,9 @@ qt[1399] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890212, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53361,11 +46511,7 @@ qt[1400] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53394,11 +46540,7 @@ qt[1401] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53437,11 +46579,7 @@ qt[1402] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53470,11 +46608,7 @@ qt[1403] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53509,13 +46643,9 @@ qt[1404] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890213, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53553,14 +46683,10 @@ qt[1405] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890212, count = 1},
       {id = 8890213, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53596,13 +46722,9 @@ qt[1406] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419003, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53637,18 +46759,7 @@ qt[1407] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8850091,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -53684,13 +46795,9 @@ qt[1408] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419003, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 30,
   bQLoop = 0
@@ -53737,11 +46844,7 @@ qt[1409] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53788,11 +46891,7 @@ qt[1410] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -53836,13 +46935,9 @@ qt[1411] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890222, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53882,13 +46977,9 @@ qt[1412] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980130, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53922,13 +47013,9 @@ qt[1413] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980130, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -53959,15 +47046,11 @@ qt[1414] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8719002, count = 1},
       {id = 8619041, count = 1},
       {id = 8619042, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54006,16 +47089,12 @@ qt[1415] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890216, count = 1},
       {id = 8890217, count = 1},
       {id = 8890218, count = 1},
       {id = 8890219, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54048,14 +47127,10 @@ qt[1416] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010661, count = 1},
       {id = 8020661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54088,14 +47163,10 @@ qt[1417] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8050661, count = 1},
       {id = 8060661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54123,21 +47194,15 @@ qt[1418] = {
       {id = 8980133, count = 300}
     },
     killMonster = {},
-    meetNpc = {},
-    exp = 10000,
-    fame = 1
+    meetNpc = {}
   },
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8070661, count = 1},
       {id = 8080661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54170,14 +47235,10 @@ qt[1419] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8030661, count = 1},
       {id = 8040661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54210,14 +47271,10 @@ qt[1420] = {
   reward = {
     exp = 10000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7930661, count = 1},
       {id = 7940661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54252,18 +47309,7 @@ qt[1421] = {
   reward = {
     exp = 1000000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590009,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -54296,13 +47342,7 @@ qt[1422] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      7
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -54335,13 +47375,7 @@ qt[1423] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      4
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -54375,13 +47409,9 @@ qt[1424] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890226, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54416,19 +47446,8 @@ qt[1425] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890227, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590009,
-      itemcnt = 1
     }
   },
   needLevel = 140,
@@ -54460,11 +47479,7 @@ qt[1426] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54497,11 +47512,7 @@ qt[1427] = {
   reward = {
     exp = 336168,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54532,11 +47543,7 @@ qt[1428] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54567,11 +47574,7 @@ qt[1429] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54608,11 +47611,7 @@ qt[1430] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54645,11 +47644,7 @@ qt[1431] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54680,11 +47675,7 @@ qt[1432] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54713,11 +47704,7 @@ qt[1433] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54748,11 +47735,7 @@ qt[1434] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54785,13 +47768,9 @@ qt[1435] = {
   reward = {
     exp = 336168,
     gold = 0,
-    fame = 30,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990109, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -54830,11 +47809,7 @@ qt[1436] = {
   reward = {
     exp = 67234,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -54867,13 +47842,9 @@ qt[1437] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520901, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54904,13 +47875,9 @@ qt[1438] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499003, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54943,13 +47910,9 @@ qt[1439] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890235, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -54980,13 +47943,9 @@ qt[1440] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499004, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55017,13 +47976,9 @@ qt[1441] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890234, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55054,13 +48009,9 @@ qt[1442] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232131, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55091,13 +48042,9 @@ qt[1443] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9212061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55128,13 +48075,9 @@ qt[1444] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232132, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55167,15 +48110,11 @@ qt[1445] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519051, count = 1},
       {id = 9519053, count = 1},
       {id = 9519055, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55208,15 +48147,11 @@ qt[1446] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519052, count = 1},
       {id = 9519054, count = 1},
       {id = 9519056, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55249,11 +48184,7 @@ qt[1457] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55294,11 +48225,7 @@ qt[1458] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55335,13 +48262,9 @@ qt[1459] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8991013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -55374,11 +48297,7 @@ qt[1460] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55411,11 +48330,7 @@ qt[1461] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55452,11 +48367,7 @@ qt[1462] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55485,13 +48396,9 @@ qt[1463] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8711181, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -55522,11 +48429,7 @@ qt[1464] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55559,11 +48462,7 @@ qt[1465] = {
   reward = {
     exp = 112056,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -55592,13 +48491,9 @@ qt[1466] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8871707, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 170,
   bQLoop = 0
@@ -55629,13 +48524,9 @@ qt[1467] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8871621, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 170,
   bQLoop = 0
@@ -55668,13 +48559,9 @@ qt[1468] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499007, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55705,13 +48592,9 @@ qt[1469] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55747,13 +48630,9 @@ qt[1470] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8493335, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55792,35 +48671,7 @@ qt[1471] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980109,
-      itemcnt = 3
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980109,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -55855,26 +48706,8 @@ qt[1472] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980110,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980110,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -55908,13 +48741,9 @@ qt[1473] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499008, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -55945,11 +48774,7 @@ qt[1475] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -55986,11 +48811,7 @@ qt[1476] = {
   reward = {
     exp = 3942165,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56023,11 +48844,7 @@ qt[1477] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56062,13 +48879,9 @@ qt[1478] = {
   reward = {
     exp = 3942165,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990105, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -56101,13 +48914,9 @@ qt[1479] = {
   reward = {
     exp = 3942165,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990105, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -56136,11 +48945,7 @@ qt[1480] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56181,11 +48986,7 @@ qt[1481] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56222,11 +49023,7 @@ qt[1482] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56265,11 +49062,7 @@ qt[1483] = {
   reward = {
     exp = 3942165,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56302,11 +49095,7 @@ qt[1484] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56341,11 +49130,7 @@ qt[1485] = {
   reward = {
     exp = 438018,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56378,13 +49163,9 @@ qt[1486] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56415,13 +49196,9 @@ qt[1487] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 99,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846421, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56452,13 +49229,9 @@ qt[1488] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 99,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846421, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56493,11 +49266,7 @@ qt[1489] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56532,11 +49301,7 @@ qt[1490] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56567,11 +49332,7 @@ qt[1491] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56600,11 +49361,7 @@ qt[1492] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56635,11 +49392,7 @@ qt[1493] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56672,11 +49425,7 @@ qt[1494] = {
   reward = {
     exp = 21152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -56709,13 +49458,9 @@ qt[1495] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980148, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56748,13 +49493,9 @@ qt[1496] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890197, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56787,13 +49528,9 @@ qt[1497] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980149, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56824,11 +49561,7 @@ qt[1498] = {
   reward = {
     exp = 42165,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -56861,13 +49594,9 @@ qt[1499] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -56900,19 +49629,8 @@ qt[1501] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590001,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -56946,15 +49664,10 @@ qt[1502] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520902, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -56986,15 +49699,10 @@ qt[1503] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499014, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57027,17 +49735,12 @@ qt[1504] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619024, count = 1},
       {id = 8619025, count = 1},
       {id = 8619026, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57075,17 +49778,12 @@ qt[1505] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390007, count = 1},
       {id = 7390008, count = 1},
       {id = 7390009, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57117,15 +49815,10 @@ qt[1506] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846108, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57163,15 +49856,10 @@ qt[1507] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57209,15 +49897,10 @@ qt[1508] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57251,15 +49934,10 @@ qt[1509] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57293,15 +49971,10 @@ qt[1510] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57333,15 +50006,10 @@ qt[1511] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57373,15 +50041,10 @@ qt[1512] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57407,13 +50070,8 @@ qt[1513] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57439,13 +50097,8 @@ qt[1514] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57481,13 +50134,8 @@ qt[1515] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57523,13 +50171,8 @@ qt[1516] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57567,15 +50210,10 @@ qt[1517] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991041, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57605,15 +50243,10 @@ qt[1518] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850071, count = 3}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57645,15 +50278,10 @@ qt[1519] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820111, count = 99}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57683,15 +50311,10 @@ qt[1520] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 99}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57721,15 +50344,10 @@ qt[1521] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 99}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57759,15 +50377,10 @@ qt[1522] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810071, count = 99}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57801,13 +50414,8 @@ qt[1523] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57841,13 +50449,8 @@ qt[1524] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57879,13 +50482,8 @@ qt[1525] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57919,13 +50517,8 @@ qt[1526] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57953,13 +50546,8 @@ qt[1527] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -57987,13 +50575,8 @@ qt[1528] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58021,13 +50604,8 @@ qt[1529] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58057,11 +50635,7 @@ qt[1530] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -58096,13 +50670,7 @@ qt[1531] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43202
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -58137,13 +50705,7 @@ qt[1532] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43203
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -58176,15 +50738,10 @@ qt[1533] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58212,13 +50769,8 @@ qt[1534] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58246,13 +50798,8 @@ qt[1535] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58284,15 +50831,10 @@ qt[1536] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846110, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58325,21 +50867,10 @@ qt[1537] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8864003, count = 1},
       {id = 8843012, count = 1},
       {id = 8830016, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980165,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -58373,15 +50904,10 @@ qt[1539] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499015, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58415,15 +50941,10 @@ qt[1540] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846112, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -58461,13 +50982,8 @@ qt[1541] = {
   reward = {
     exp = 476659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -58504,15 +51020,10 @@ qt[1542] = {
   reward = {
     exp = 676659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850051, count = 3}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -58540,13 +51051,8 @@ qt[1543] = {
   reward = {
     exp = 476659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -58578,15 +51084,10 @@ qt[1544] = {
   reward = {
     exp = 676659,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -58618,13 +51119,8 @@ qt[1545] = {
   reward = {
     exp = 488086,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 101,
   bQLoop = 0
 }
@@ -58658,15 +51154,10 @@ qt[1546] = {
   reward = {
     exp = 688086,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 101,
   bQLoop = 0
 }
@@ -58694,13 +51185,8 @@ qt[1547] = {
   reward = {
     exp = 488086,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 101,
   bQLoop = 0
 }
@@ -58730,13 +51216,8 @@ qt[1548] = {
   reward = {
     exp = 688086,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 101,
   bQLoop = 0
 }
@@ -58766,13 +51247,8 @@ qt[1549] = {
   reward = {
     exp = 507478,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 102,
   bQLoop = 0
 }
@@ -58806,15 +51282,10 @@ qt[1550] = {
   reward = {
     exp = 707478,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850051, count = 3}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 102,
   bQLoop = 0
 }
@@ -58846,13 +51317,8 @@ qt[1551] = {
   reward = {
     exp = 507478,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 102,
   bQLoop = 0
 }
@@ -58886,15 +51352,10 @@ qt[1552] = {
   reward = {
     exp = 707478,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 102,
   bQLoop = 0
 }
@@ -58926,13 +51387,8 @@ qt[1553] = {
   reward = {
     exp = 527320,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 103,
   bQLoop = 0
 }
@@ -58964,15 +51420,10 @@ qt[1554] = {
   reward = {
     exp = 527320,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8850051, count = 3}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 103,
   bQLoop = 0
 }
@@ -59004,13 +51455,8 @@ qt[1555] = {
   reward = {
     exp = 727320,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 103,
   bQLoop = 0
 }
@@ -59042,13 +51488,8 @@ qt[1556] = {
   reward = {
     exp = 727320,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 103,
   bQLoop = 0
 }
@@ -59083,15 +51524,10 @@ qt[1557] = {
   reward = {
     exp = 747618,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7991081, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 104,
   bQLoop = 0
 }
@@ -59124,13 +51560,8 @@ qt[1558] = {
   reward = {
     exp = 747618,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 104,
   bQLoop = 0
 }
@@ -59162,13 +51593,8 @@ qt[1559] = {
   reward = {
     exp = 768375,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 105,
   bQLoop = 0
 }
@@ -59198,15 +51624,10 @@ qt[1560] = {
   reward = {
     exp = 768375,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 30}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 105,
   bQLoop = 0
 }
@@ -59242,13 +51663,8 @@ qt[1561] = {
   reward = {
     exp = 568375,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 105,
   bQLoop = 0
 }
@@ -59280,13 +51696,8 @@ qt[1562] = {
   reward = {
     exp = 768375,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 105,
   bQLoop = 0
 }
@@ -59318,15 +51729,10 @@ qt[1563] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980186, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59354,15 +51760,10 @@ qt[1564] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980185, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59394,15 +51795,10 @@ qt[1565] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59430,15 +51826,10 @@ qt[1566] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8590008, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59466,15 +51857,8 @@ qt[1567] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      7
-    }
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59502,15 +51886,8 @@ qt[1568] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      4
-    }
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -59540,11 +51917,7 @@ qt[1569] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -59579,13 +51952,7 @@ qt[1570] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43302
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -59620,13 +51987,7 @@ qt[1571] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43303
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -59660,13 +52021,9 @@ qt[1572] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9300021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59696,13 +52053,9 @@ qt[1573] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980048, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59732,13 +52085,9 @@ qt[1574] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980047, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59770,13 +52119,9 @@ qt[1575] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980046, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59809,15 +52154,11 @@ qt[1576] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519051, count = 1},
       {id = 9519053, count = 1},
       {id = 9519055, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59850,15 +52191,11 @@ qt[1577] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9519052, count = 1},
       {id = 9519054, count = 1},
       {id = 9519056, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -59895,15 +52232,10 @@ qt[1578] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990150, count = 12}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -59939,15 +52271,10 @@ qt[1579] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846086, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -59985,35 +52312,7 @@ qt[1580] = {
   reward = {
     exp = 500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980109,
-      itemcnt = 3
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980109,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980109,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -60048,26 +52347,8 @@ qt[1581] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980110,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980110,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -60101,13 +52382,9 @@ qt[1582] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499008, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -60140,13 +52417,9 @@ qt[1583] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -60179,19 +52452,8 @@ qt[1584] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390001, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590001,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -60225,13 +52487,9 @@ qt[1585] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -60264,17 +52522,12 @@ qt[1586] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499016, count = 1},
       {id = 8499017, count = 1},
       {id = 8499018, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -60310,15 +52563,10 @@ qt[1587] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7200991, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -60356,15 +52604,10 @@ qt[1588] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890203, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -60394,15 +52637,10 @@ qt[1589] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890203, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -60425,11 +52663,7 @@ qt[1600] = {
   reward = {
     exp = 3531,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -60453,11 +52687,7 @@ qt[1601] = {
   reward = {
     exp = 4173,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -60481,11 +52711,7 @@ qt[1602] = {
   reward = {
     exp = 4893,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -60509,11 +52735,7 @@ qt[1603] = {
   reward = {
     exp = 6669,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -60537,11 +52759,7 @@ qt[1604] = {
   reward = {
     exp = 7551,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -60565,11 +52783,7 @@ qt[1605] = {
   reward = {
     exp = 8520,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -60593,11 +52807,7 @@ qt[1606] = {
   reward = {
     exp = 9585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -60621,11 +52831,7 @@ qt[1607] = {
   reward = {
     exp = 10743,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -60649,11 +52855,7 @@ qt[1608] = {
   reward = {
     exp = 12003,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -60677,11 +52879,7 @@ qt[1609] = {
   reward = {
     exp = 13368,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -60705,11 +52903,7 @@ qt[1610] = {
   reward = {
     exp = 14841,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -60733,11 +52927,7 @@ qt[1611] = {
   reward = {
     exp = 16431,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -60761,11 +52951,7 @@ qt[1612] = {
   reward = {
     exp = 17226,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -60789,11 +52975,7 @@ qt[1613] = {
   reward = {
     exp = 18684,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -60817,11 +52999,7 @@ qt[1614] = {
   reward = {
     exp = 21195,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -60845,11 +53023,7 @@ qt[1615] = {
   reward = {
     exp = 23868,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -60873,11 +53047,7 @@ qt[1616] = {
   reward = {
     exp = 26730,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -60901,11 +53071,7 @@ qt[1617] = {
   reward = {
     exp = 29754,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -60929,11 +53095,7 @@ qt[1618] = {
   reward = {
     exp = 32967,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -60957,11 +53119,7 @@ qt[1619] = {
   reward = {
     exp = 36369,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -60985,11 +53143,7 @@ qt[1620] = {
   reward = {
     exp = 39960,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -61013,11 +53167,7 @@ qt[1621] = {
   reward = {
     exp = 43767,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -61041,11 +53191,7 @@ qt[1622] = {
   reward = {
     exp = 60288,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -61069,11 +53215,7 @@ qt[1623] = {
   reward = {
     exp = 65664,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -61097,11 +53239,7 @@ qt[1624] = {
   reward = {
     exp = 70458,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -61125,11 +53263,7 @@ qt[1625] = {
   reward = {
     exp = 76335,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -61153,11 +53287,7 @@ qt[1626] = {
   reward = {
     exp = 81477,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -61181,11 +53311,7 @@ qt[1627] = {
   reward = {
     exp = 86715,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -61209,11 +53335,7 @@ qt[1628] = {
   reward = {
     exp = 32112,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -61237,11 +53359,7 @@ qt[1629] = {
   reward = {
     exp = 97581,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -61265,11 +53383,7 @@ qt[1630] = {
   reward = {
     exp = 101790,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 47,
   bQLoop = 0
@@ -61293,11 +53407,7 @@ qt[1631] = {
   reward = {
     exp = 105924,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -61321,11 +53431,7 @@ qt[1632] = {
   reward = {
     exp = 132426,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -61349,11 +53455,7 @@ qt[1633] = {
   reward = {
     exp = 139062,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -61377,11 +53479,7 @@ qt[1634] = {
   reward = {
     exp = 145776,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 51,
   bQLoop = 0
@@ -61405,11 +53503,7 @@ qt[1635] = {
   reward = {
     exp = 152598,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 52,
   bQLoop = 0
@@ -61433,11 +53527,7 @@ qt[1636] = {
   reward = {
     exp = 154656,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -61461,11 +53551,7 @@ qt[1637] = {
   reward = {
     exp = 157248,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 54,
   bQLoop = 0
@@ -61489,11 +53575,7 @@ qt[1638] = {
   reward = {
     exp = 161490,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -61517,11 +53599,7 @@ qt[1639] = {
   reward = {
     exp = 165045,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 56,
   bQLoop = 0
@@ -61545,11 +53623,7 @@ qt[1640] = {
   reward = {
     exp = 170913,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 57,
   bQLoop = 0
@@ -61573,11 +53647,7 @@ qt[1641] = {
   reward = {
     exp = 176220,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 58,
   bQLoop = 0
@@ -61601,11 +53671,7 @@ qt[1642] = {
   reward = {
     exp = 184878,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 59,
   bQLoop = 0
@@ -61629,11 +53695,7 @@ qt[1643] = {
   reward = {
     exp = 190368,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -61657,11 +53719,7 @@ qt[1644] = {
   reward = {
     exp = 194802,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 61,
   bQLoop = 0
@@ -61685,11 +53743,7 @@ qt[1645] = {
   reward = {
     exp = 198288,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 62,
   bQLoop = 0
@@ -61713,11 +53767,7 @@ qt[1646] = {
   reward = {
     exp = 206514,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 63,
   bQLoop = 0
@@ -61741,11 +53791,7 @@ qt[1647] = {
   reward = {
     exp = 214443,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 64,
   bQLoop = 0
@@ -61769,11 +53815,7 @@ qt[1648] = {
   reward = {
     exp = 221916,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 65,
   bQLoop = 0
@@ -61797,11 +53839,7 @@ qt[1649] = {
   reward = {
     exp = 229017,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 66,
   bQLoop = 0
@@ -61825,11 +53863,7 @@ qt[1650] = {
   reward = {
     exp = 235698,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 67,
   bQLoop = 0
@@ -61853,11 +53887,7 @@ qt[1651] = {
   reward = {
     exp = 241920,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 68,
   bQLoop = 0
@@ -61881,11 +53911,7 @@ qt[1652] = {
   reward = {
     exp = 258630,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 69,
   bQLoop = 0
@@ -61909,11 +53935,7 @@ qt[1653] = {
   reward = {
     exp = 264330,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 70,
   bQLoop = 0
@@ -61937,11 +53959,7 @@ qt[1654] = {
   reward = {
     exp = 269220,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 71,
   bQLoop = 0
@@ -61965,11 +53983,7 @@ qt[1655] = {
   reward = {
     exp = 273240,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 72,
   bQLoop = 0
@@ -61993,11 +54007,7 @@ qt[1656] = {
   reward = {
     exp = 276327,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 73,
   bQLoop = 0
@@ -62021,11 +54031,7 @@ qt[1657] = {
   reward = {
     exp = 278433,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 74,
   bQLoop = 0
@@ -62049,11 +54055,7 @@ qt[1658] = {
   reward = {
     exp = 279576,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 75,
   bQLoop = 0
@@ -62077,11 +54079,7 @@ qt[1659] = {
   reward = {
     exp = 279618,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 76,
   bQLoop = 0
@@ -62105,11 +54103,7 @@ qt[1660] = {
   reward = {
     exp = 286311,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 77,
   bQLoop = 0
@@ -62133,11 +54127,7 @@ qt[1661] = {
   reward = {
     exp = 292572,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 78,
   bQLoop = 0
@@ -62161,11 +54151,7 @@ qt[1662] = {
   reward = {
     exp = 298560,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 79,
   bQLoop = 0
@@ -62189,11 +54175,7 @@ qt[1663] = {
   reward = {
     exp = 313470,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 80,
   bQLoop = 0
@@ -62217,11 +54199,7 @@ qt[1664] = {
   reward = {
     exp = 326790,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 81,
   bQLoop = 0
@@ -62245,11 +54223,7 @@ qt[1665] = {
   reward = {
     exp = 329880,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 82,
   bQLoop = 0
@@ -62273,11 +54247,7 @@ qt[1666] = {
   reward = {
     exp = 337020,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 83,
   bQLoop = 0
@@ -62301,11 +54271,7 @@ qt[1667] = {
   reward = {
     exp = 342570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 84,
   bQLoop = 0
@@ -62329,11 +54295,7 @@ qt[1668] = {
   reward = {
     exp = 348210,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 85,
   bQLoop = 0
@@ -62357,11 +54319,7 @@ qt[1669] = {
   reward = {
     exp = 353850,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 86,
   bQLoop = 0
@@ -62385,11 +54343,7 @@ qt[1670] = {
   reward = {
     exp = 357060,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 87,
   bQLoop = 0
@@ -62413,11 +54367,7 @@ qt[1671] = {
   reward = {
     exp = 364470,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 88,
   bQLoop = 0
@@ -62441,11 +54391,7 @@ qt[1672] = {
   reward = {
     exp = 370260,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 89,
   bQLoop = 0
@@ -62469,11 +54415,7 @@ qt[1673] = {
   reward = {
     exp = 373530,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 90,
   bQLoop = 0
@@ -62497,11 +54439,7 @@ qt[1674] = {
   reward = {
     exp = 389820,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 91,
   bQLoop = 0
@@ -62525,11 +54463,7 @@ qt[1675] = {
   reward = {
     exp = 395820,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 92,
   bQLoop = 0
@@ -62553,11 +54487,7 @@ qt[1676] = {
   reward = {
     exp = 403520,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 93,
   bQLoop = 0
@@ -62581,11 +54511,7 @@ qt[1677] = {
   reward = {
     exp = 409710,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 94,
   bQLoop = 0
@@ -62609,11 +54535,7 @@ qt[1678] = {
   reward = {
     exp = 415860,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 95,
   bQLoop = 0
@@ -62637,11 +54559,7 @@ qt[1679] = {
   reward = {
     exp = 419310,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 96,
   bQLoop = 0
@@ -62665,11 +54583,7 @@ qt[1680] = {
   reward = {
     exp = 425520,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 97,
   bQLoop = 0
@@ -62693,11 +54607,7 @@ qt[1681] = {
   reward = {
     exp = 429030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 98,
   bQLoop = 0
@@ -62721,11 +54631,7 @@ qt[1682] = {
   reward = {
     exp = 435300,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -62749,11 +54655,7 @@ qt[1683] = {
   reward = {
     exp = 438810,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 99,
   bQLoop = 0
@@ -62777,11 +54679,7 @@ qt[1684] = {
   reward = {
     exp = 466890,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 101,
   bQLoop = 0
@@ -62805,11 +54703,7 @@ qt[1685] = {
   reward = {
     exp = 470610,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 102,
   bQLoop = 0
@@ -62833,11 +54727,7 @@ qt[1686] = {
   reward = {
     exp = 480060,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 103,
   bQLoop = 0
@@ -62861,11 +54751,7 @@ qt[1687] = {
   reward = {
     exp = 489630,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 104,
   bQLoop = 0
@@ -62889,11 +54775,7 @@ qt[1688] = {
   reward = {
     exp = 499410,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 105,
   bQLoop = 0
@@ -62917,11 +54799,7 @@ qt[1689] = {
   reward = {
     exp = 507030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 106,
   bQLoop = 0
@@ -62945,11 +54823,7 @@ qt[1690] = {
   reward = {
     exp = 514440,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -62973,11 +54847,7 @@ qt[1691] = {
   reward = {
     exp = 521640,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 108,
   bQLoop = 0
@@ -63001,11 +54871,7 @@ qt[1692] = {
   reward = {
     exp = 527070,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 109,
   bQLoop = 0
@@ -63029,11 +54895,7 @@ qt[1693] = {
   reward = {
     exp = 540720,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -63057,11 +54919,7 @@ qt[1694] = {
   reward = {
     exp = 543990,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 111,
   bQLoop = 0
@@ -63085,11 +54943,7 @@ qt[1695] = {
   reward = {
     exp = 547170,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 112,
   bQLoop = 0
@@ -63113,11 +54967,7 @@ qt[1696] = {
   reward = {
     exp = 550230,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 113,
   bQLoop = 0
@@ -63141,11 +54991,7 @@ qt[1697] = {
   reward = {
     exp = 553230,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 114,
   bQLoop = 0
@@ -63169,11 +55015,7 @@ qt[1698] = {
   reward = {
     exp = 556140,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -63197,11 +55039,7 @@ qt[1699] = {
   reward = {
     exp = 558900,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 116,
   bQLoop = 0
@@ -63225,11 +55063,7 @@ qt[1700] = {
   reward = {
     exp = 561600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 117,
   bQLoop = 0
@@ -63253,11 +55087,7 @@ qt[1701] = {
   reward = {
     exp = 564120,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 118,
   bQLoop = 0
@@ -63281,11 +55111,7 @@ qt[1702] = {
   reward = {
     exp = 571380,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 119,
   bQLoop = 0
@@ -63309,11 +55135,7 @@ qt[1703] = {
   reward = {
     exp = 573570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 120,
   bQLoop = 0
@@ -63337,11 +55159,7 @@ qt[1704] = {
   reward = {
     exp = 575580,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 121,
   bQLoop = 0
@@ -63365,11 +55183,7 @@ qt[1705] = {
   reward = {
     exp = 583140,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 122,
   bQLoop = 0
@@ -63393,11 +55207,7 @@ qt[1706] = {
   reward = {
     exp = 586230,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 123,
   bQLoop = 0
@@ -63421,11 +55231,7 @@ qt[1707] = {
   reward = {
     exp = 588690,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 124,
   bQLoop = 0
@@ -63449,11 +55255,7 @@ qt[1708] = {
   reward = {
     exp = 590370,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -63477,11 +55279,7 @@ qt[1709] = {
   reward = {
     exp = 591240,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 126,
   bQLoop = 0
@@ -63505,11 +55303,7 @@ qt[1710] = {
   reward = {
     exp = 603030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 127,
   bQLoop = 0
@@ -63533,11 +55327,7 @@ qt[1711] = {
   reward = {
     exp = 615840,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 128,
   bQLoop = 0
@@ -63561,11 +55351,7 @@ qt[1712] = {
   reward = {
     exp = 630660,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 129,
   bQLoop = 0
@@ -63589,11 +55375,7 @@ qt[1713] = {
   reward = {
     exp = 655500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -63617,11 +55399,7 @@ qt[1714] = {
   reward = {
     exp = 674970,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 131,
   bQLoop = 0
@@ -63645,11 +55423,7 @@ qt[1715] = {
   reward = {
     exp = 687000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -63673,11 +55447,7 @@ qt[1716] = {
   reward = {
     exp = 720540,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -63701,11 +55471,7 @@ qt[1717] = {
   reward = {
     exp = 750000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 134,
   bQLoop = 0
@@ -63729,11 +55495,7 @@ qt[1718] = {
   reward = {
     exp = 773550,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 135,
   bQLoop = 0
@@ -63757,11 +55519,7 @@ qt[1719] = {
   reward = {
     exp = 789030,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 136,
   bQLoop = 0
@@ -63785,11 +55543,7 @@ qt[1720] = {
   reward = {
     exp = 846570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 137,
   bQLoop = 0
@@ -63813,11 +55567,7 @@ qt[1721] = {
   reward = {
     exp = 904800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -63841,11 +55591,7 @@ qt[1722] = {
   reward = {
     exp = 991950,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -63869,11 +55615,7 @@ qt[1723] = {
   reward = {
     exp = 1043820,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 140,
   bQLoop = 0
@@ -63897,11 +55639,7 @@ qt[1724] = {
   reward = {
     exp = 1090830,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 141,
   bQLoop = 0
@@ -63925,11 +55663,7 @@ qt[1725] = {
   reward = {
     exp = 1130490,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 142,
   bQLoop = 0
@@ -63953,11 +55687,7 @@ qt[1726] = {
   reward = {
     exp = 1159890,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 143,
   bQLoop = 0
@@ -63981,11 +55711,7 @@ qt[1727] = {
   reward = {
     exp = 1175340,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 144,
   bQLoop = 0
@@ -64009,11 +55735,7 @@ qt[1728] = {
   reward = {
     exp = 1256130,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 145,
   bQLoop = 0
@@ -64037,11 +55759,7 @@ qt[1729] = {
   reward = {
     exp = 1336560,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 146,
   bQLoop = 0
@@ -64065,11 +55783,7 @@ qt[1730] = {
   reward = {
     exp = 1414830,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 147,
   bQLoop = 0
@@ -64093,11 +55807,7 @@ qt[1731] = {
   reward = {
     exp = 1488810,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 148,
   bQLoop = 0
@@ -64121,11 +55831,7 @@ qt[1732] = {
   reward = {
     exp = 1569450,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 149,
   bQLoop = 0
@@ -64149,11 +55855,7 @@ qt[1733] = {
   reward = {
     exp = 1610310,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 150,
   bQLoop = 0
@@ -64177,11 +55879,7 @@ qt[1734] = {
   reward = {
     exp = 1678020,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 151,
   bQLoop = 0
@@ -64205,11 +55903,7 @@ qt[1735] = {
   reward = {
     exp = 1745760,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 152,
   bQLoop = 0
@@ -64233,11 +55927,7 @@ qt[1736] = {
   reward = {
     exp = 1813470,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 153,
   bQLoop = 0
@@ -64261,11 +55951,7 @@ qt[1737] = {
   reward = {
     exp = 1881210,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 154,
   bQLoop = 0
@@ -64289,11 +55975,7 @@ qt[1738] = {
   reward = {
     exp = 1948920,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 155,
   bQLoop = 0
@@ -64317,11 +55999,7 @@ qt[1739] = {
   reward = {
     exp = 2016660,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 156,
   bQLoop = 0
@@ -64345,11 +56023,7 @@ qt[1740] = {
   reward = {
     exp = 2084400,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 157,
   bQLoop = 0
@@ -64373,11 +56047,7 @@ qt[1741] = {
   reward = {
     exp = 2152110,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 158,
   bQLoop = 0
@@ -64401,11 +56071,7 @@ qt[1742] = {
   reward = {
     exp = 2219850,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 159,
   bQLoop = 0
@@ -64429,11 +56095,7 @@ qt[1743] = {
   reward = {
     exp = 2287560,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -64457,11 +56119,7 @@ qt[1744] = {
   reward = {
     exp = 3532464,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 161,
   bQLoop = 0
@@ -64485,11 +56143,7 @@ qt[1745] = {
   reward = {
     exp = 3545517,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 162,
   bQLoop = 0
@@ -64513,11 +56167,7 @@ qt[1746] = {
   reward = {
     exp = 3558570,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -64541,11 +56191,7 @@ qt[1747] = {
   reward = {
     exp = 3571623,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -64569,11 +56215,7 @@ qt[1748] = {
   reward = {
     exp = 3584685,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -64597,11 +56239,7 @@ qt[1749] = {
   reward = {
     exp = 3963429,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 166,
   bQLoop = 0
@@ -64625,11 +56263,7 @@ qt[1750] = {
   reward = {
     exp = 4042698,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 167,
   bQLoop = 0
@@ -64653,11 +56287,7 @@ qt[1751] = {
   reward = {
     exp = 4042698,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -64681,11 +56311,7 @@ qt[1752] = {
   reward = {
     exp = 4208901,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 169,
   bQLoop = 0
@@ -64709,11 +56335,7 @@ qt[1753] = {
   reward = {
     exp = 4293078,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 170,
   bQLoop = 0
@@ -64737,11 +56359,7 @@ qt[1754] = {
   reward = {
     exp = 4378941,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 171,
   bQLoop = 0
@@ -64765,11 +56383,7 @@ qt[1755] = {
   reward = {
     exp = 4466520,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 172,
   bQLoop = 0
@@ -64793,11 +56407,7 @@ qt[1756] = {
   reward = {
     exp = 4555848,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 173,
   bQLoop = 0
@@ -64821,11 +56431,7 @@ qt[1757] = {
   reward = {
     exp = 4646967,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 174,
   bQLoop = 0
@@ -64849,11 +56455,7 @@ qt[1758] = {
   reward = {
     exp = 2354528,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 175,
   bQLoop = 0
@@ -64877,11 +56479,7 @@ qt[1759] = {
   reward = {
     exp = 2417400,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 176,
   bQLoop = 0
@@ -64905,11 +56503,7 @@ qt[1760] = {
   reward = {
     exp = 2481585,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 177,
   bQLoop = 0
@@ -64933,11 +56527,7 @@ qt[1761] = {
   reward = {
     exp = 2650500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 178,
   bQLoop = 0
@@ -64961,11 +56551,7 @@ qt[1762] = {
   reward = {
     exp = 2721180,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 179,
   bQLoop = 0
@@ -64989,11 +56575,7 @@ qt[1763] = {
   reward = {
     exp = 2880210,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 180,
   bQLoop = 0
@@ -65017,11 +56599,7 @@ qt[1764] = {
   reward = {
     exp = 3063095,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 181,
   bQLoop = 0
@@ -65045,11 +56623,7 @@ qt[1765] = {
   reward = {
     exp = 3255123,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 182,
   bQLoop = 0
@@ -65073,11 +56647,7 @@ qt[1766] = {
   reward = {
     exp = 3456753,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 183,
   bQLoop = 0
@@ -65101,11 +56671,7 @@ qt[1767] = {
   reward = {
     exp = 3728954,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 184,
   bQLoop = 0
@@ -65129,11 +56695,7 @@ qt[1768] = {
   reward = {
     exp = 4014765,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 185,
   bQLoop = 0
@@ -65157,11 +56719,7 @@ qt[1769] = {
   reward = {
     exp = 4314866,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 186,
   bQLoop = 0
@@ -65185,11 +56743,7 @@ qt[1770] = {
   reward = {
     exp = 4629973,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -65217,14 +56771,10 @@ qt[1801] = {
   reward = {
     exp = 3000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8921011, count = 2},
       {id = 8921021, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65253,11 +56803,7 @@ qt[1802] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65287,13 +56833,9 @@ qt[1803] = {
   reward = {
     exp = 5000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311015, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -65321,11 +56863,7 @@ qt[1804] = {
   reward = {
     exp = 600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 20,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65354,13 +56892,9 @@ qt[1805] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65390,16 +56924,12 @@ qt[1806] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7511013, count = 1},
       {id = 7511023, count = 1},
       {id = 7511033, count = 1},
       {id = 7511043, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65427,14 +56957,10 @@ qt[1807] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843241, count = 2},
       {id = 8843251, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65463,13 +56989,9 @@ qt[1808] = {
   reward = {
     exp = 5000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990128, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65497,13 +57019,9 @@ qt[1809] = {
   reward = {
     exp = 6500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990127, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 130,
   bQLoop = 0
@@ -65532,15 +57050,11 @@ qt[1810] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843213, count = 3},
       {id = 8843223, count = 3},
       {id = 8843231, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65568,11 +57082,7 @@ qt[1811] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65600,11 +57110,7 @@ qt[1812] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65632,11 +57138,7 @@ qt[1813] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65664,11 +57166,7 @@ qt[1814] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65696,11 +57194,7 @@ qt[1815] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65728,11 +57222,7 @@ qt[1816] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65760,11 +57250,7 @@ qt[1817] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65792,11 +57278,7 @@ qt[1818] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65824,11 +57306,7 @@ qt[1819] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65856,11 +57334,7 @@ qt[1820] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65887,13 +57361,9 @@ qt[1821] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8311013, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 110,
   bQLoop = 0
@@ -65920,11 +57390,7 @@ qt[1822] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65951,11 +57417,7 @@ qt[1823] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -65984,11 +57446,7 @@ qt[1824] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66016,11 +57474,7 @@ qt[1825] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66048,11 +57502,7 @@ qt[1826] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66079,11 +57529,7 @@ qt[1827] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66111,11 +57557,7 @@ qt[1828] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66143,11 +57585,7 @@ qt[1829] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66174,11 +57612,7 @@ qt[1830] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66205,11 +57639,7 @@ qt[1831] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 110,
   bQLoop = 0
@@ -66242,11 +57672,7 @@ qt[1901] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -66279,11 +57705,7 @@ qt[1902] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -66314,13 +57736,9 @@ qt[1903] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8843161, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -66354,11 +57772,7 @@ qt[1904] = {
   reward = {
     exp = 50000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -66389,11 +57803,7 @@ qt[1905] = {
   reward = {
     exp = 4000,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -66422,13 +57832,9 @@ qt[1906] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890045, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -66461,13 +57867,9 @@ qt[1908] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -66502,13 +57904,9 @@ qt[1909] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -66539,15 +57937,10 @@ qt[1910] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66575,13 +57968,8 @@ qt[1911] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66609,13 +57997,8 @@ qt[1912] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66641,13 +58024,8 @@ qt[1913] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66679,13 +58057,9 @@ qt[1914] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -66720,13 +58094,9 @@ qt[1915] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -66757,15 +58127,10 @@ qt[1916] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66793,13 +58158,8 @@ qt[1917] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66827,13 +58187,8 @@ qt[1918] = {
   reward = {
     exp = 0,
     gold = 10000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66859,13 +58214,8 @@ qt[1919] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 60,
   bQLoop = 0
 }
@@ -66892,13 +58242,8 @@ qt[1920] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 71,
   bQLoop = 0
 }
@@ -66925,13 +58270,8 @@ qt[1921] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 83,
   bQLoop = 0
 }
@@ -66958,13 +58298,8 @@ qt[1922] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 95,
   bQLoop = 0
 }
@@ -66991,13 +58326,8 @@ qt[1923] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 107,
   bQLoop = 0
 }
@@ -67024,13 +58354,8 @@ qt[1924] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 119,
   bQLoop = 0
 }
@@ -67068,11 +58393,7 @@ qt[2001] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67103,11 +58424,7 @@ qt[2002] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67142,11 +58459,7 @@ qt[2003] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67174,11 +58487,7 @@ qt[2004] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67211,13 +58520,9 @@ qt[2005] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890212, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67250,11 +58555,7 @@ qt[2006] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67283,11 +58584,7 @@ qt[2007] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67326,11 +58623,7 @@ qt[2008] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67359,11 +58652,7 @@ qt[2009] = {
   reward = {
     exp = 99,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67396,13 +58685,9 @@ qt[2010] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890213, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67438,13 +58723,9 @@ qt[2011] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419003, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67484,13 +58765,9 @@ qt[2012] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980130, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67524,13 +58801,9 @@ qt[2013] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980130, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67561,15 +58834,11 @@ qt[2014] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8719002, count = 1},
       {id = 8619041, count = 1},
       {id = 8619042, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67600,13 +58869,9 @@ qt[2015] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846114, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67639,13 +58904,9 @@ qt[2016] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980204, count = 30}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67678,13 +58939,9 @@ qt[2017] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418023, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67717,13 +58974,9 @@ qt[2018] = {
   reward = {
     exp = 1330,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7910101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -67756,13 +59009,7 @@ qt[2019] = {
   reward = {
     exp = 665,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10601
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67795,13 +59042,7 @@ qt[2020] = {
   reward = {
     exp = 665,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10602
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -67836,13 +59077,7 @@ qt[2021] = {
   reward = {
     exp = 3430,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10603
-    }
+    items = {}
   },
   needLevel = 11,
   bQLoop = 0
@@ -67881,13 +59116,7 @@ qt[2022] = {
   reward = {
     exp = 4350,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10604
-    }
+    items = {}
   },
   needLevel = 12,
   bQLoop = 0
@@ -67924,11 +59153,7 @@ qt[2023] = {
   reward = {
     exp = 5440,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 13,
   bQLoop = 0
@@ -67965,11 +59190,7 @@ qt[2024] = {
   reward = {
     exp = 6720,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 14,
   bQLoop = 0
@@ -68008,11 +59229,7 @@ qt[2025] = {
   reward = {
     exp = 8190,
     gold = 5000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 15,
   bQLoop = 0
@@ -68041,11 +59258,7 @@ qt[2026] = {
   reward = {
     exp = 3290,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -68078,11 +59291,7 @@ qt[2027] = {
   reward = {
     exp = 3290,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -68111,11 +59320,7 @@ qt[2028] = {
   reward = {
     exp = 3290,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 16,
   bQLoop = 0
@@ -68152,11 +59357,7 @@ qt[2029] = {
   reward = {
     exp = 11770,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 17,
   bQLoop = 0
@@ -68197,13 +59398,7 @@ qt[2030] = {
   reward = {
     exp = 13910,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10605
-    }
+    items = {}
   },
   needLevel = 18,
   bQLoop = 0
@@ -68242,11 +59437,7 @@ qt[2031] = {
   reward = {
     exp = 16310,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 19,
   bQLoop = 0
@@ -68283,11 +59474,7 @@ qt[2032] = {
   reward = {
     exp = 22230,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 20,
   bQLoop = 0
@@ -68324,11 +59511,7 @@ qt[2033] = {
   reward = {
     exp = 25170,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 21,
   bQLoop = 0
@@ -68367,11 +59550,7 @@ qt[2034] = {
   reward = {
     exp = 28400,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 22,
   bQLoop = 0
@@ -68406,11 +59585,7 @@ qt[2035] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -68439,13 +59614,7 @@ qt[2036] = {
   reward = {
     exp = 15975,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10606
-    }
+    items = {}
   },
   needLevel = 23,
   bQLoop = 0
@@ -68480,11 +59649,7 @@ qt[2037] = {
   reward = {
     exp = 17905,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -68517,11 +59682,7 @@ qt[2038] = {
   reward = {
     exp = 17905,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 24,
   bQLoop = 0
@@ -68556,11 +59717,7 @@ qt[2039] = {
   reward = {
     exp = 40010,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 25,
   bQLoop = 0
@@ -68593,11 +59750,7 @@ qt[2040] = {
   reward = {
     exp = 44560,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 26,
   bQLoop = 0
@@ -68632,11 +59785,7 @@ qt[2041] = {
   reward = {
     exp = 49470,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 27,
   bQLoop = 0
@@ -68673,13 +59822,7 @@ qt[2042] = {
   reward = {
     exp = 54770,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10607
-    }
+    items = {}
   },
   needLevel = 28,
   bQLoop = 0
@@ -68718,11 +59861,7 @@ qt[2043] = {
   reward = {
     exp = 60450,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 29,
   bQLoop = 0
@@ -68755,11 +59894,7 @@ qt[2044] = {
   reward = {
     exp = 69200,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 30,
   bQLoop = 0
@@ -68788,11 +59923,7 @@ qt[2045] = {
   reward = {
     exp = 20000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -68827,11 +59958,7 @@ qt[2046] = {
   reward = {
     exp = 58500,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 31,
   bQLoop = 0
@@ -68868,11 +59995,7 @@ qt[2047] = {
   reward = {
     exp = 88400,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 32,
   bQLoop = 0
@@ -68907,13 +60030,7 @@ qt[2048] = {
   reward = {
     exp = 99000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10608
-    }
+    items = {}
   },
   needLevel = 33,
   bQLoop = 0
@@ -68948,11 +60065,7 @@ qt[2049] = {
   reward = {
     exp = 110200,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 34,
   bQLoop = 0
@@ -68985,11 +60098,7 @@ qt[2050] = {
   reward = {
     exp = 122100,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 35,
   bQLoop = 0
@@ -69028,11 +60137,7 @@ qt[2051] = {
   reward = {
     exp = 67350,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -69069,11 +60174,7 @@ qt[2052] = {
   reward = {
     exp = 67350,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 36,
   bQLoop = 0
@@ -69102,11 +60203,7 @@ qt[2053] = {
   reward = {
     exp = 74000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -69139,11 +60236,7 @@ qt[2054] = {
   reward = {
     exp = 74000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 37,
   bQLoop = 0
@@ -69182,13 +60275,7 @@ qt[2055] = {
   reward = {
     exp = 162100,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10609
-    }
+    items = {}
   },
   needLevel = 38,
   bQLoop = 0
@@ -69227,11 +60314,7 @@ qt[2056] = {
   reward = {
     exp = 251200,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 39,
   bQLoop = 0
@@ -69262,13 +60345,9 @@ qt[2057] = {
   reward = {
     exp = 273600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7920401, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -69307,11 +60386,7 @@ qt[2058] = {
   reward = {
     exp = 297300,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 41,
   bQLoop = 0
@@ -69350,11 +60425,7 @@ qt[2059] = {
   reward = {
     exp = 322100,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 42,
   bQLoop = 0
@@ -69385,13 +60456,7 @@ qt[2060] = {
   reward = {
     exp = 348200,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      10610
-    }
+    items = {}
   },
   needLevel = 43,
   bQLoop = 0
@@ -69436,11 +60501,7 @@ qt[2061] = {
   reward = {
     exp = 375400,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 44,
   bQLoop = 0
@@ -69483,11 +60544,7 @@ qt[2062] = {
   reward = {
     exp = 404000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -69522,11 +60579,7 @@ qt[2063] = {
   reward = {
     exp = 433700,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 46,
   bQLoop = 0
@@ -69563,11 +60616,7 @@ qt[2064] = {
   reward = {
     exp = 464800,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 47,
   bQLoop = 0
@@ -69604,11 +60653,7 @@ qt[2065] = {
   reward = {
     exp = 497300,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 48,
   bQLoop = 0
@@ -69654,11 +60699,7 @@ qt[2066] = {
   reward = {
     exp = 630600,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 49,
   bQLoop = 0
@@ -69701,11 +60742,7 @@ qt[2067] = {
   reward = {
     exp = 671800,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -69754,11 +60791,7 @@ qt[2068] = {
   reward = {
     exp = 714600,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 51,
   bQLoop = 0
@@ -69791,11 +60824,7 @@ qt[2069] = {
   reward = {
     exp = 379600,
     gold = 0,
-    fame = 1,
-    pvppoint = 30,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 52,
   bQLoop = 0
@@ -69824,11 +60853,7 @@ qt[2070] = {
   reward = {
     exp = 379600,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 52,
   bQLoop = 0
@@ -69859,11 +60884,7 @@ qt[2071] = {
   reward = {
     exp = 805500,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 53,
   bQLoop = 0
@@ -69900,11 +60921,7 @@ qt[2072] = {
   reward = {
     exp = 873600,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 54,
   bQLoop = 0
@@ -69941,11 +60958,7 @@ qt[2073] = {
   reward = {
     exp = 944400,
     gold = 0,
-    fame = 2,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -69988,11 +61001,7 @@ qt[2074] = {
   reward = {
     exp = 1018800,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 56,
   bQLoop = 0
@@ -70023,11 +61032,7 @@ qt[2075] = {
   reward = {
     exp = 1095600,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 57,
   bQLoop = 0
@@ -70056,11 +61061,7 @@ qt[2076] = {
   reward = {
     exp = 370800,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 58,
   bQLoop = 0
@@ -70095,11 +61096,7 @@ qt[2077] = {
   reward = {
     exp = 804000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 58,
   bQLoop = 0
@@ -70134,11 +61131,7 @@ qt[2078] = {
   reward = {
     exp = 1467300,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 59,
   bQLoop = 0
@@ -70171,11 +61164,7 @@ qt[2079] = {
   reward = {
     exp = 120400,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -70210,11 +61199,7 @@ qt[2080] = {
   reward = {
     exp = 466000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -70247,11 +61232,7 @@ qt[2081] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -70290,13 +61271,7 @@ qt[2082] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21603
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -70336,13 +61311,7 @@ qt[2083] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21602
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -70377,13 +61346,7 @@ qt[2084] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21604
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -70418,13 +61381,7 @@ qt[2085] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      21605
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -70463,13 +61420,7 @@ qt[2086] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22603
-    }
+    items = {}
   },
   needLevel = 45,
   bQLoop = 0
@@ -70509,13 +61460,7 @@ qt[2087] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22602
-    }
+    items = {}
   },
   needLevel = 50,
   bQLoop = 0
@@ -70550,13 +61495,7 @@ qt[2088] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22604
-    }
+    items = {}
   },
   needLevel = 55,
   bQLoop = 0
@@ -70591,13 +61530,7 @@ qt[2089] = {
   reward = {
     exp = 100000,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      22605
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -70637,13 +61570,9 @@ qt[2090] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -70675,19 +61604,8 @@ qt[2091] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -70714,19 +61632,14 @@ qt[2092] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -70764,13 +61677,9 @@ qt[2093] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -70802,19 +61711,8 @@ qt[2094] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510071, count = 1}
-    },
-    getSkill = {}
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8810012,
-      itemcnt = 1
     }
   },
   needLevel = 60,
@@ -70841,19 +61739,14 @@ qt[2095] = {
   goal = {
     getItem = {},
     killMonster = {},
-    meetNpc = {},
-    fame = 99
+    meetNpc = {}
   },
   reward = {
     exp = 0,
     gold = 0,
-    fame = 5,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8510081, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -70884,11 +61777,7 @@ qt[2096] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -70923,13 +61812,7 @@ qt[2097] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41602
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -70960,11 +61843,7 @@ qt[2098] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -70999,13 +61878,7 @@ qt[2099] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42602
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -71040,13 +61913,7 @@ qt[2100] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      41603
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -71081,13 +61948,7 @@ qt[2101] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      42603
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -71118,13 +61979,9 @@ qt[2102] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846452, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -71157,13 +62014,9 @@ qt[2114] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890299, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -71196,13 +62049,9 @@ qt[2115] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890299, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -71235,13 +62084,9 @@ qt[2117] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890302, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -71274,13 +62119,9 @@ qt[2118] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890302, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -71311,11 +62152,7 @@ qt[2119] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -71348,11 +62185,7 @@ qt[2120] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -71383,13 +62216,9 @@ qt[2121] = {
   reward = {
     exp = 3800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 107,
   bQLoop = 0
@@ -71426,11 +62255,7 @@ qt[2122] = {
   reward = {
     exp = 200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -71463,11 +62288,7 @@ qt[2123] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -71500,13 +62321,9 @@ qt[2124] = {
   reward = {
     exp = 2000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 107,
   bQLoop = 0
@@ -71541,11 +62358,7 @@ qt[2125] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 107,
   bQLoop = 0
@@ -71578,11 +62391,7 @@ qt[2126] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 108,
   bQLoop = 0
@@ -71615,11 +62424,7 @@ qt[2127] = {
   reward = {
     exp = 3000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 108,
   bQLoop = 0
@@ -71650,13 +62455,9 @@ qt[2128] = {
   reward = {
     exp = 4050000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8820061, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 108,
   bQLoop = 0
@@ -71689,13 +62490,9 @@ qt[2129] = {
   reward = {
     exp = 3500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 108,
   bQLoop = 0
@@ -71728,13 +62525,9 @@ qt[2130] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 108,
   bQLoop = 0
@@ -71765,11 +62558,7 @@ qt[2131] = {
   reward = {
     exp = 1300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 109,
   bQLoop = 0
@@ -71800,11 +62589,7 @@ qt[2132] = {
   reward = {
     exp = 1400000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 109,
   bQLoop = 0
@@ -71837,11 +62622,7 @@ qt[2133] = {
   reward = {
     exp = 1400000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 109,
   bQLoop = 0
@@ -71872,11 +62653,7 @@ qt[2134] = {
   reward = {
     exp = 3100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 109,
   bQLoop = 0
@@ -71909,13 +62686,9 @@ qt[2135] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8810041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 109,
   bQLoop = 0
@@ -71944,13 +62717,8 @@ qt[2146] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 12,
   bQLoop = 0
 }
@@ -71980,15 +62748,10 @@ qt[2147] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 6810002, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 12,
   bQLoop = 0
 }
@@ -72020,13 +62783,8 @@ qt[2148] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 12,
   bQLoop = 0
 }
@@ -72058,15 +62816,10 @@ qt[2149] = {
   reward = {
     exp = 1000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990161, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 12,
   bQLoop = 0
 }
@@ -72098,13 +62851,9 @@ qt[2150] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7200995, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -72142,19 +62891,8 @@ qt[2151] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846106, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980146,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -72190,19 +62928,8 @@ qt[2152] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7410049, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980194,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -72236,13 +62963,9 @@ qt[2153] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -72275,13 +62998,9 @@ qt[2154] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -72315,15 +63034,10 @@ qt[2155] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890288, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72359,15 +63073,10 @@ qt[2156] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890314, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72403,15 +63112,10 @@ qt[2157] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890314, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72447,15 +63151,10 @@ qt[2158] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890314, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72487,15 +63186,10 @@ qt[2159] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890319, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72525,15 +63219,10 @@ qt[2160] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980235, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72583,15 +63272,10 @@ qt[2161] = {
   reward = {
     exp = 3000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520011, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 110,
   bQLoop = 0
 }
@@ -72621,15 +63305,10 @@ qt[2162] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990162, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 110,
   bQLoop = 0
 }
@@ -72665,15 +63344,10 @@ qt[2163] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419010, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72709,15 +63383,10 @@ qt[2164] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7200991, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72749,13 +63418,9 @@ qt[2165] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499008, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -72788,13 +63453,9 @@ qt[2166] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -72829,15 +63490,10 @@ qt[2170] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890355, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72870,15 +63526,10 @@ qt[2171] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7200999, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72911,15 +63562,10 @@ qt[2172] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520906, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72952,15 +63598,10 @@ qt[2173] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8219025, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -72993,15 +63634,10 @@ qt[2174] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8390006, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73034,15 +63670,10 @@ qt[2175] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7519005, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73075,15 +63706,10 @@ qt[2176] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201000, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73116,15 +63742,10 @@ qt[2177] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7520907, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73157,15 +63778,10 @@ qt[2178] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8219026, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73198,15 +63814,10 @@ qt[2179] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8390007, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73239,15 +63850,10 @@ qt[2180] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7519006, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73281,13 +63887,8 @@ qt[2181] = {
   reward = {
     exp = 11772640,
     gold = 1500000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 175,
   bQLoop = 0
 }
@@ -73323,13 +63924,8 @@ qt[2182] = {
   reward = {
     exp = 12087000,
     gold = 1550000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 176,
   bQLoop = 0
 }
@@ -73365,13 +63961,8 @@ qt[2183] = {
   reward = {
     exp = 12407930,
     gold = 1600000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 177,
   bQLoop = 0
 }
@@ -73409,13 +64000,8 @@ qt[2184] = {
   reward = {
     exp = 13252500,
     gold = 1650000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 178,
   bQLoop = 0
 }
@@ -73453,13 +64039,8 @@ qt[2185] = {
   reward = {
     exp = 13605900,
     gold = 1700000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 179,
   bQLoop = 0
 }
@@ -73493,15 +64074,10 @@ qt[2186] = {
   reward = {
     exp = 0,
     gold = 1000000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8928021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 180,
   bQLoop = 0
 }
@@ -73531,15 +64107,10 @@ qt[2258] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73569,15 +64140,10 @@ qt[2259] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73607,15 +64173,10 @@ qt[2260] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73643,13 +64204,8 @@ qt[2261] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73683,13 +64239,8 @@ qt[2262] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73719,15 +64270,10 @@ qt[2263] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73757,15 +64303,10 @@ qt[2264] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73795,15 +64336,10 @@ qt[2265] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73831,13 +64367,8 @@ qt[2266] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73871,13 +64402,8 @@ qt[2267] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -73907,11 +64433,7 @@ qt[2268] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -73946,13 +64468,7 @@ qt[2269] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43502
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -73987,13 +64503,7 @@ qt[2270] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43503
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -74026,13 +64536,9 @@ qt[2273] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9419012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -74065,13 +64571,9 @@ qt[2274] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -74104,13 +64606,9 @@ qt[2275] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846156, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -74141,13 +64639,8 @@ qt[2327] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74179,13 +64672,8 @@ qt[2328] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74222,13 +64710,8 @@ qt[2329] = {
   reward = {
     exp = 2700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74263,18 +64746,7 @@ qt[2330] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990173,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -74309,18 +64781,7 @@ qt[2331] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990174,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -74351,13 +64812,8 @@ qt[2332] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74388,13 +64844,8 @@ qt[2333] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74426,13 +64877,8 @@ qt[2334] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74462,13 +64908,8 @@ qt[2335] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74498,13 +64939,8 @@ qt[2336] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74534,13 +64970,8 @@ qt[2337] = {
   reward = {
     exp = 2900000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74570,13 +65001,8 @@ qt[2338] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74606,13 +65032,8 @@ qt[2339] = {
   reward = {
     exp = 240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -74643,15 +65064,10 @@ qt[2340] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390012, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -74681,13 +65097,8 @@ qt[2341] = {
   reward = {
     exp = 230057,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74722,13 +65133,8 @@ qt[2342] = {
   reward = {
     exp = 2005073,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74757,13 +65163,8 @@ qt[2343] = {
   reward = {
     exp = 214500,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74799,13 +65200,8 @@ qt[2344] = {
   reward = {
     exp = 2005073,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74835,13 +65231,8 @@ qt[2345] = {
   reward = {
     exp = 2534756,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74871,13 +65262,8 @@ qt[2346] = {
   reward = {
     exp = 2534756,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74911,13 +65297,8 @@ qt[2347] = {
   reward = {
     exp = 2005073,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 126,
   bQLoop = 0
 }
@@ -74949,13 +65330,8 @@ qt[2348] = {
   reward = {
     exp = 237747,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -74989,13 +65365,8 @@ qt[2349] = {
   reward = {
     exp = 1785510,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75025,13 +65396,8 @@ qt[2350] = {
   reward = {
     exp = 1605241,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75061,13 +65427,8 @@ qt[2351] = {
   reward = {
     exp = 1605241,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75099,13 +65460,8 @@ qt[2352] = {
   reward = {
     exp = 1470045,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75137,13 +65493,8 @@ qt[2353] = {
   reward = {
     exp = 1500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75178,13 +65529,8 @@ qt[2354] = {
   reward = {
     exp = 237747,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75214,13 +65560,8 @@ qt[2355] = {
   reward = {
     exp = 237747,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75247,13 +65588,8 @@ qt[2356] = {
   reward = {
     exp = 224575,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -75283,13 +65619,8 @@ qt[2357] = {
   reward = {
     exp = 242100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75319,13 +65650,8 @@ qt[2358] = {
   reward = {
     exp = 242100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75362,13 +65688,8 @@ qt[2359] = {
   reward = {
     exp = 2305945,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75400,13 +65721,8 @@ qt[2360] = {
   reward = {
     exp = 242100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75435,13 +65751,8 @@ qt[2361] = {
   reward = {
     exp = 230152,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75473,13 +65784,8 @@ qt[2362] = {
   reward = {
     exp = 242100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75512,13 +65818,8 @@ qt[2363] = {
   reward = {
     exp = 1905851,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75551,13 +65852,8 @@ qt[2364] = {
   reward = {
     exp = 2155073,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75588,13 +65884,8 @@ qt[2365] = {
   reward = {
     exp = 2005073,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75626,13 +65917,8 @@ qt[2366] = {
   reward = {
     exp = 242100,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75672,13 +65958,8 @@ qt[2367] = {
   reward = {
     exp = 2505480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75710,13 +65991,8 @@ qt[2368] = {
   reward = {
     exp = 2635477,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 128,
   bQLoop = 0
 }
@@ -75744,13 +66020,8 @@ qt[2369] = {
   reward = {
     exp = 249989,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -75778,13 +66049,8 @@ qt[2370] = {
   reward = {
     exp = 249989,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -75816,13 +66082,8 @@ qt[2371] = {
   reward = {
     exp = 2635477,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -75854,13 +66115,8 @@ qt[2372] = {
   reward = {
     exp = 2505480,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -75894,13 +66150,8 @@ qt[2373] = {
   reward = {
     exp = 2754561,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -75929,18 +66180,7 @@ qt[2374] = {
   reward = {
     exp = 249989,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990175,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 129,
   bQLoop = 0
@@ -75978,13 +66218,8 @@ qt[2375] = {
   reward = {
     exp = 3005481,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 129,
   bQLoop = 0
 }
@@ -76016,18 +66251,7 @@ qt[2376] = {
   reward = {
     exp = 249989,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990176,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 129,
   bQLoop = 0
@@ -76058,13 +66282,8 @@ qt[2377] = {
   reward = {
     exp = 239005,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76094,13 +66313,8 @@ qt[2378] = {
   reward = {
     exp = 253755,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76134,13 +66348,8 @@ qt[2379] = {
   reward = {
     exp = 2635477,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76173,13 +66382,8 @@ qt[2380] = {
   reward = {
     exp = 2333870,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76214,13 +66418,8 @@ qt[2381] = {
   reward = {
     exp = 2435449,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76250,13 +66449,8 @@ qt[2382] = {
   reward = {
     exp = 253755,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -76288,13 +66482,9 @@ qt[2383] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18020805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76327,13 +66517,9 @@ qt[2384] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18040805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76366,13 +66552,9 @@ qt[2385] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18030805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76405,13 +66587,9 @@ qt[2386] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18080805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76444,13 +66622,9 @@ qt[2387] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18050805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76483,13 +66657,9 @@ qt[2388] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18060805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76522,13 +66692,9 @@ qt[2389] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18070805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76561,13 +66727,9 @@ qt[2390] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 17930805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76600,13 +66762,9 @@ qt[2391] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18010805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76639,13 +66797,9 @@ qt[2392] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 17940805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76678,13 +66832,9 @@ qt[2393] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18021005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76717,13 +66867,9 @@ qt[2394] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18041005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76756,13 +66902,9 @@ qt[2395] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18031005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76795,13 +66937,9 @@ qt[2396] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18081005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76834,13 +66972,9 @@ qt[2397] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18051005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76873,13 +67007,9 @@ qt[2398] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18061005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76912,13 +67042,9 @@ qt[2399] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18071005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76951,13 +67077,9 @@ qt[2400] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 17931005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -76990,13 +67112,9 @@ qt[2401] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 18011005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -77029,13 +67147,9 @@ qt[2402] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 17941005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -77068,13 +67182,9 @@ qt[2403] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7910805, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -77107,13 +67217,9 @@ qt[2404] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7911005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -77148,11 +67254,7 @@ qt[2405] = {
   reward = {
     exp = 270000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 131,
   bQLoop = 0
@@ -77182,11 +67284,7 @@ qt[2406] = {
   reward = {
     exp = 270000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 131,
   bQLoop = 0
@@ -77225,11 +67323,7 @@ qt[2407] = {
   reward = {
     exp = 2740758,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 131,
   bQLoop = 0
@@ -77267,11 +67361,7 @@ qt[2408] = {
   reward = {
     exp = 270000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 131,
   bQLoop = 0
@@ -77304,11 +67394,7 @@ qt[2409] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -77338,11 +67424,7 @@ qt[2410] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -77373,11 +67455,7 @@ qt[2411] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -77408,11 +67486,7 @@ qt[2412] = {
   reward = {
     exp = 300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 132,
   bQLoop = 0
@@ -77443,11 +67517,7 @@ qt[2413] = {
   reward = {
     exp = 330000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -77477,11 +67547,7 @@ qt[2414] = {
   reward = {
     exp = 330000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -77512,11 +67578,7 @@ qt[2415] = {
   reward = {
     exp = 330000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -77551,11 +67613,7 @@ qt[2416] = {
   reward = {
     exp = 3505700,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -77586,11 +67644,7 @@ qt[2417] = {
   reward = {
     exp = 330000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 133,
   bQLoop = 0
@@ -77621,13 +67675,9 @@ qt[2418] = {
   reward = {
     exp = 370000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195011, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 134,
   bQLoop = 0
@@ -77658,11 +67708,7 @@ qt[2419] = {
   reward = {
     exp = 370000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 134,
   bQLoop = 0
@@ -77695,13 +67741,9 @@ qt[2420] = {
   reward = {
     exp = 3480051,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195021, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 134,
   bQLoop = 0
@@ -77734,13 +67776,9 @@ qt[2421] = {
   reward = {
     exp = 3785051,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 135,
   bQLoop = 0
@@ -77771,11 +67809,7 @@ qt[2422] = {
   reward = {
     exp = 410000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 135,
   bQLoop = 0
@@ -77813,13 +67847,9 @@ qt[2423] = {
   reward = {
     exp = 4250664,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195041, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 135,
   bQLoop = 0
@@ -77852,11 +67882,7 @@ qt[2424] = {
   reward = {
     exp = 410000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 135,
   bQLoop = 0
@@ -77888,13 +67914,9 @@ qt[2425] = {
   reward = {
     exp = 4562576,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890367, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 135,
   bQLoop = 0
@@ -77927,11 +67949,7 @@ qt[2426] = {
   reward = {
     exp = 435000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 136,
   bQLoop = 0
@@ -77961,13 +67979,9 @@ qt[2427] = {
   reward = {
     exp = 435000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194911, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 136,
   bQLoop = 0
@@ -77998,13 +68012,9 @@ qt[2428] = {
   reward = {
     exp = 435000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194921, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 136,
   bQLoop = 0
@@ -78036,13 +68046,9 @@ qt[2429] = {
   reward = {
     exp = 4359664,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194931, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 136,
   bQLoop = 0
@@ -78073,13 +68079,9 @@ qt[2430] = {
   reward = {
     exp = 435000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194941, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 136,
   bQLoop = 0
@@ -78110,13 +68112,9 @@ qt[2431] = {
   reward = {
     exp = 3997522,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194951, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 137,
   bQLoop = 0
@@ -78149,13 +68147,9 @@ qt[2432] = {
   reward = {
     exp = 3997522,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194961, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 137,
   bQLoop = 0
@@ -78186,13 +68180,9 @@ qt[2433] = {
   reward = {
     exp = 4759647,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194971, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 137,
   bQLoop = 0
@@ -78223,13 +68213,9 @@ qt[2434] = {
   reward = {
     exp = 4299652,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194981, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 137,
   bQLoop = 0
@@ -78260,13 +68246,9 @@ qt[2435] = {
   reward = {
     exp = 450000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194991, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 137,
   bQLoop = 0
@@ -78296,11 +68278,7 @@ qt[2436] = {
   reward = {
     exp = 450000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 137,
   bQLoop = 0
@@ -78333,11 +68311,7 @@ qt[2437] = {
   reward = {
     exp = 4300257,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -78370,11 +68344,7 @@ qt[2438] = {
   reward = {
     exp = 4300257,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -78408,11 +68378,7 @@ qt[2439] = {
   reward = {
     exp = 4199274,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78445,11 +68411,7 @@ qt[2440] = {
   reward = {
     exp = 4709012,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78482,11 +68444,7 @@ qt[2441] = {
   reward = {
     exp = 4709012,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78519,11 +68477,7 @@ qt[2442] = {
   reward = {
     exp = 4615786,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 140,
   bQLoop = 0
@@ -78556,11 +68510,7 @@ qt[2443] = {
   reward = {
     exp = 4406571,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 140,
   bQLoop = 0
@@ -78593,11 +68543,7 @@ qt[2444] = {
   reward = {
     exp = 5014752,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 140,
   bQLoop = 0
@@ -78630,11 +68576,7 @@ qt[2445] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -78665,13 +68607,9 @@ qt[2446] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194811, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 138,
   bQLoop = 0
@@ -78706,13 +68644,9 @@ qt[2447] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194821, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 138,
   bQLoop = 0
@@ -78747,13 +68681,9 @@ qt[2448] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194831, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 138,
   bQLoop = 0
@@ -78784,13 +68714,9 @@ qt[2449] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194841, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 138,
   bQLoop = 0
@@ -78821,11 +68747,7 @@ qt[2450] = {
   reward = {
     exp = 500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 138,
   bQLoop = 0
@@ -78856,11 +68778,7 @@ qt[2451] = {
   reward = {
     exp = 550000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78895,11 +68813,7 @@ qt[2452] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78933,11 +68847,7 @@ qt[2453] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -78971,11 +68881,7 @@ qt[2454] = {
   reward = {
     exp = 1500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 139,
   bQLoop = 0
@@ -79008,13 +68914,9 @@ qt[2455] = {
   reward = {
     exp = 600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194851, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 140,
   bQLoop = 0
@@ -79044,13 +68946,9 @@ qt[2456] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194861, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 140,
   bQLoop = 0
@@ -79081,13 +68979,9 @@ qt[2457] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194871, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 140,
   bQLoop = 0
@@ -79118,13 +69012,9 @@ qt[2458] = {
   reward = {
     exp = 600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194881, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 140,
   bQLoop = 0
@@ -79154,13 +69044,9 @@ qt[2459] = {
   reward = {
     exp = 700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890368, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 141,
   bQLoop = 0
@@ -79191,13 +69077,9 @@ qt[2460] = {
   reward = {
     exp = 700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194461, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 141,
   bQLoop = 0
@@ -79228,13 +69110,9 @@ qt[2461] = {
   reward = {
     exp = 700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194471, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 141,
   bQLoop = 0
@@ -79267,13 +69145,9 @@ qt[2462] = {
   reward = {
     exp = 6500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194481, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 141,
   bQLoop = 0
@@ -79307,13 +69181,9 @@ qt[2463] = {
   reward = {
     exp = 6500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194491, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 141,
   bQLoop = 0
@@ -79346,13 +69216,9 @@ qt[2464] = {
   reward = {
     exp = 800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890369, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 142,
   bQLoop = 0
@@ -79385,13 +69251,9 @@ qt[2465] = {
   reward = {
     exp = 6500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890370, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 142,
   bQLoop = 0
@@ -79423,13 +69285,9 @@ qt[2466] = {
   reward = {
     exp = 800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194891, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 142,
   bQLoop = 0
@@ -79464,13 +69322,9 @@ qt[2467] = {
   reward = {
     exp = 9000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890371, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 142,
   bQLoop = 0
@@ -79500,13 +69354,9 @@ qt[2468] = {
   reward = {
     exp = 800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194611, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 142,
   bQLoop = 0
@@ -79539,13 +69389,9 @@ qt[2469] = {
   reward = {
     exp = 10000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194621, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 143,
   bQLoop = 0
@@ -79576,13 +69422,9 @@ qt[2470] = {
   reward = {
     exp = 900000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194631, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 143,
   bQLoop = 0
@@ -79611,13 +69453,9 @@ qt[2471] = {
   reward = {
     exp = 900000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194641, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 143,
   bQLoop = 0
@@ -79648,13 +69486,9 @@ qt[2472] = {
   reward = {
     exp = 900000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194651, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 143,
   bQLoop = 0
@@ -79687,13 +69521,9 @@ qt[2473] = {
   reward = {
     exp = 8800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194661, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 144,
   bQLoop = 0
@@ -79724,13 +69554,9 @@ qt[2474] = {
   reward = {
     exp = 7000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194671, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 144,
   bQLoop = 0
@@ -79763,13 +69589,9 @@ qt[2475] = {
   reward = {
     exp = 12000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194681, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 144,
   bQLoop = 0
@@ -79802,13 +69624,9 @@ qt[2476] = {
   reward = {
     exp = 7500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194691, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 144,
   bQLoop = 0
@@ -79839,13 +69657,9 @@ qt[2477] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194711, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 145,
   bQLoop = 0
@@ -79878,13 +69692,9 @@ qt[2478] = {
   reward = {
     exp = 1000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194721, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 145,
   bQLoop = 0
@@ -79919,13 +69729,9 @@ qt[2479] = {
   reward = {
     exp = 7500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194731, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 145,
   bQLoop = 0
@@ -79956,13 +69762,9 @@ qt[2480] = {
   reward = {
     exp = 8300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194741, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 145,
   bQLoop = 0
@@ -79993,13 +69795,9 @@ qt[2481] = {
   reward = {
     exp = 9500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194751, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 145,
   bQLoop = 0
@@ -80032,13 +69830,9 @@ qt[2482] = {
   reward = {
     exp = 11000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194761, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 146,
   bQLoop = 0
@@ -80069,13 +69863,9 @@ qt[2483] = {
   reward = {
     exp = 13000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1194771, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 146,
   bQLoop = 0
@@ -80108,13 +69898,9 @@ qt[2484] = {
   reward = {
     exp = 15000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890372, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 146,
   bQLoop = 0
@@ -80144,11 +69930,7 @@ qt[2485] = {
   reward = {
     exp = 1100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 146,
   bQLoop = 0
@@ -80181,13 +69963,9 @@ qt[2486] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201005, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -80219,11 +69997,7 @@ qt[2487] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -80255,13 +70029,9 @@ qt[2488] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846187, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -80292,13 +70062,9 @@ qt[2489] = {
   reward = {
     exp = 1200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80331,13 +70097,9 @@ qt[2490] = {
   reward = {
     exp = 5560000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195121, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80370,13 +70132,9 @@ qt[2491] = {
   reward = {
     exp = 7720000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195131, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80408,13 +70166,9 @@ qt[2492] = {
   reward = {
     exp = 12180000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195141, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80445,13 +70199,9 @@ qt[2493] = {
   reward = {
     exp = 1574000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990178, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80483,13 +70233,9 @@ qt[2494] = {
   reward = {
     exp = 1250000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890373, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 147,
   bQLoop = 0
@@ -80520,13 +70266,9 @@ qt[2495] = {
   reward = {
     exp = 1320000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195211, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 148,
   bQLoop = 0
@@ -80558,13 +70300,9 @@ qt[2496] = {
   reward = {
     exp = 1320000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195221, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 148,
   bQLoop = 0
@@ -80594,13 +70332,9 @@ qt[2497] = {
   reward = {
     exp = 1320000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195231, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 148,
   bQLoop = 0
@@ -80637,15 +70371,10 @@ qt[2498] = {
   reward = {
     exp = 10770000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195241, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 148,
   bQLoop = 0
 }
@@ -80677,15 +70406,10 @@ qt[2499] = {
   reward = {
     exp = 6570000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195251, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 148,
   bQLoop = 0
 }
@@ -80718,15 +70442,10 @@ qt[2500] = {
   reward = {
     exp = 18760000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195261, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 149,
   bQLoop = 0
 }
@@ -80756,15 +70475,10 @@ qt[2501] = {
   reward = {
     exp = 9570000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195271, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 149,
   bQLoop = 0
 }
@@ -80799,15 +70513,10 @@ qt[2502] = {
   reward = {
     exp = 16100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990179, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 149,
   bQLoop = 0
 }
@@ -80839,15 +70548,10 @@ qt[2503] = {
   reward = {
     exp = 1450000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890374, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 149,
   bQLoop = 0
 }
@@ -80879,15 +70583,10 @@ qt[2504] = {
   reward = {
     exp = 5300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195311, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 150,
   bQLoop = 0
 }
@@ -80917,13 +70616,8 @@ qt[2505] = {
   reward = {
     exp = 1600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 150,
   bQLoop = 0
 }
@@ -80954,15 +70648,10 @@ qt[2506] = {
   reward = {
     exp = 21590000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195321, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 150,
   bQLoop = 0
 }
@@ -80994,15 +70683,10 @@ qt[2507] = {
   reward = {
     exp = 11600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195331, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 150,
   bQLoop = 0
 }
@@ -81034,13 +70718,8 @@ qt[2508] = {
   reward = {
     exp = 1760000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 151,
   bQLoop = 0
 }
@@ -81070,13 +70749,8 @@ qt[2509] = {
   reward = {
     exp = 1760000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 151,
   bQLoop = 0
 }
@@ -81112,15 +70786,10 @@ qt[2510] = {
   reward = {
     exp = 6700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195341, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 151,
   bQLoop = 0
 }
@@ -81150,15 +70819,10 @@ qt[2511] = {
   reward = {
     exp = 7090000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195351, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 151,
   bQLoop = 0
 }
@@ -81188,15 +70852,10 @@ qt[2512] = {
   reward = {
     exp = 7620000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195361, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 151,
   bQLoop = 0
 }
@@ -81226,13 +70885,8 @@ qt[2513] = {
   reward = {
     exp = 1940000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 152,
   bQLoop = 0
 }
@@ -81266,15 +70920,10 @@ qt[2514] = {
   reward = {
     exp = 2430000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195371, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 152,
   bQLoop = 0
 }
@@ -81304,15 +70953,10 @@ qt[2515] = {
   reward = {
     exp = 15680000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195381, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 152,
   bQLoop = 0
 }
@@ -81342,15 +70986,10 @@ qt[2516] = {
   reward = {
     exp = 1940000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195391, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 152,
   bQLoop = 0
 }
@@ -81382,15 +71021,10 @@ qt[2517] = {
   reward = {
     exp = 2130000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195411, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 153,
   bQLoop = 0
 }
@@ -81422,15 +71056,10 @@ qt[2518] = {
   reward = {
     exp = 3650000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195421, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 153,
   bQLoop = 0
 }
@@ -81462,15 +71091,10 @@ qt[2519] = {
   reward = {
     exp = 5160000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195431, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 153,
   bQLoop = 0
 }
@@ -81500,13 +71124,8 @@ qt[2520] = {
   reward = {
     exp = 2130000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 153,
   bQLoop = 0
 }
@@ -81538,15 +71157,10 @@ qt[2521] = {
   reward = {
     exp = 5070000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195441, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 154,
   bQLoop = 0
 }
@@ -81578,15 +71192,10 @@ qt[2522] = {
   reward = {
     exp = 6270000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195451, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 154,
   bQLoop = 0
 }
@@ -81618,15 +71227,10 @@ qt[2523] = {
   reward = {
     exp = 6580000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195461, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 154,
   bQLoop = 0
 }
@@ -81656,15 +71260,10 @@ qt[2524] = {
   reward = {
     exp = 6160000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195471, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 154,
   bQLoop = 0
 }
@@ -81696,18 +71295,7 @@ qt[2525] = {
   reward = {
     exp = 2340000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990180,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 154,
   bQLoop = 0
@@ -81738,13 +71326,8 @@ qt[2526] = {
   reward = {
     exp = 2570000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 155,
   bQLoop = 0
 }
@@ -81774,15 +71357,10 @@ qt[2527] = {
   reward = {
     exp = 6250000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195481, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 155,
   bQLoop = 0
 }
@@ -81812,15 +71390,10 @@ qt[2528] = {
   reward = {
     exp = 6870000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990181, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 155,
   bQLoop = 0
 }
@@ -81851,15 +71424,10 @@ qt[2529] = {
   reward = {
     exp = 2570000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195491, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 155,
   bQLoop = 0
 }
@@ -81891,13 +71459,9 @@ qt[2530] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418024, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -81929,13 +71493,9 @@ qt[2531] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232161, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -81968,13 +71528,9 @@ qt[2532] = {
   reward = {
     exp = 5560000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195511, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 156,
   bQLoop = 0
@@ -82007,15 +71563,10 @@ qt[2533] = {
   reward = {
     exp = 6100000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195521, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 156,
   bQLoop = 0
 }
@@ -82047,15 +71598,10 @@ qt[2534] = {
   reward = {
     exp = 6650000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195531, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 156,
   bQLoop = 0
 }
@@ -82083,13 +71629,8 @@ qt[2535] = {
   reward = {
     exp = 2830000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 156,
   bQLoop = 0
 }
@@ -82121,15 +71662,10 @@ qt[2536] = {
   reward = {
     exp = 8180000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195541, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 156,
   bQLoop = 0
 }
@@ -82159,19 +71695,8 @@ qt[2537] = {
   reward = {
     exp = 3110000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195551, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990182,
-      itemcnt = 1
     }
   },
   needLevel = 157,
@@ -82205,15 +71730,10 @@ qt[2538] = {
   reward = {
     exp = 9300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195561, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 157,
   bQLoop = 0
 }
@@ -82245,15 +71765,10 @@ qt[2539] = {
   reward = {
     exp = 9300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195571, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 157,
   bQLoop = 0
 }
@@ -82285,15 +71800,10 @@ qt[2540] = {
   reward = {
     exp = 11670000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195581, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 157,
   bQLoop = 0
 }
@@ -82325,15 +71835,10 @@ qt[2541] = {
   reward = {
     exp = 11670000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195591, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 157,
   bQLoop = 0
 }
@@ -82366,15 +71871,10 @@ qt[2542] = {
   reward = {
     exp = 3420000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195611, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 158,
   bQLoop = 0
 }
@@ -82406,15 +71906,10 @@ qt[2543] = {
   reward = {
     exp = 14120000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990183, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 158,
   bQLoop = 0
 }
@@ -82448,15 +71943,10 @@ qt[2544] = {
   reward = {
     exp = 3420000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195621, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 158,
   bQLoop = 0
 }
@@ -82485,15 +71975,10 @@ qt[2545] = {
   reward = {
     exp = 14870000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990184, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 158,
   bQLoop = 0
 }
@@ -82526,15 +72011,10 @@ qt[2546] = {
   reward = {
     exp = 3420000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195631, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 158,
   bQLoop = 0
 }
@@ -82564,13 +72044,8 @@ qt[2547] = {
   reward = {
     exp = 3760000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 159,
   bQLoop = 0
 }
@@ -82606,15 +72081,10 @@ qt[2548] = {
   reward = {
     exp = 9650000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195641, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 159,
   bQLoop = 0
 }
@@ -82648,15 +72118,10 @@ qt[2549] = {
   reward = {
     exp = 10120000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195651, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 159,
   bQLoop = 0
 }
@@ -82690,15 +72155,10 @@ qt[2550] = {
   reward = {
     exp = 3760000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195661, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 159,
   bQLoop = 0
 }
@@ -82729,15 +72189,10 @@ qt[2551] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195671, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82769,15 +72224,10 @@ qt[2552] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195681, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82809,13 +72259,8 @@ qt[2553] = {
   reward = {
     exp = 20190000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82849,15 +72294,10 @@ qt[2554] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195691, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82884,15 +72324,10 @@ qt[2555] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 1195701, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82921,13 +72356,8 @@ qt[2556] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82957,13 +72387,8 @@ qt[2557] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -82993,13 +72418,8 @@ qt[2558] = {
   reward = {
     exp = 17640000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83027,13 +72447,8 @@ qt[2559] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83067,13 +72482,8 @@ qt[2560] = {
   reward = {
     exp = 21320000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83108,13 +72518,8 @@ qt[2561] = {
   reward = {
     exp = 86770000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83145,13 +72550,8 @@ qt[2562] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83183,13 +72583,8 @@ qt[2563] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83220,13 +72615,8 @@ qt[2564] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83260,13 +72650,8 @@ qt[2565] = {
   reward = {
     exp = 8790000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83301,13 +72686,8 @@ qt[2566] = {
   reward = {
     exp = 57900000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83339,13 +72719,8 @@ qt[2567] = {
   reward = {
     exp = 57640000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83376,13 +72751,8 @@ qt[2568] = {
   reward = {
     exp = 55190000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83414,13 +72784,8 @@ qt[2569] = {
   reward = {
     exp = 26300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83449,13 +72814,8 @@ qt[2570] = {
   reward = {
     exp = 4630000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83489,18 +72849,7 @@ qt[2571] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990185,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 160,
   bQLoop = 0
@@ -83531,13 +72880,8 @@ qt[2572] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83570,13 +72914,8 @@ qt[2573] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83613,13 +72952,8 @@ qt[2574] = {
   reward = {
     exp = 31140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83652,13 +72986,8 @@ qt[2575] = {
   reward = {
     exp = 4140000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -83709,58 +73038,7 @@ qt[2576] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 4,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 5,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 6,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 7,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 8,
-      itemid = 8980251,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 9,
-      itemid = 8980251,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -83795,13 +73073,8 @@ qt[2577] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -83842,29 +73115,8 @@ qt[2578] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390011, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8980255,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 2,
-      itemid = 8980256,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 3,
-      itemid = 8980257,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -83900,15 +73152,10 @@ qt[2579] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418028, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -83943,15 +73190,10 @@ qt[2580] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890393, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -83988,15 +73230,10 @@ qt[2581] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890395, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84026,15 +73263,10 @@ qt[2582] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846212, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84064,15 +73296,10 @@ qt[2583] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846213, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84100,22 +73327,10 @@ qt[2584] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201007, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980283,
-      itemcnt = 1
     }
   },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84147,15 +73362,10 @@ qt[2585] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846216, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84189,14 +73399,8 @@ qt[2586] = {
   reward = {
     exp = 38370000,
     gold = 1800000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 180,
   bQLoop = 0
 }
@@ -84228,14 +73432,8 @@ qt[2587] = {
   reward = {
     exp = 61110000,
     gold = 1800000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 180,
   bQLoop = 0
 }
@@ -84269,14 +73467,8 @@ qt[2588] = {
   reward = {
     exp = 64380000,
     gold = 1810000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 181,
   bQLoop = 0
 }
@@ -84310,14 +73502,8 @@ qt[2589] = {
   reward = {
     exp = 65530000,
     gold = 1810000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 181,
   bQLoop = 0
 }
@@ -84349,14 +73535,8 @@ qt[2590] = {
   reward = {
     exp = 66540000,
     gold = 1810000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 181,
   bQLoop = 0
 }
@@ -84390,14 +73570,8 @@ qt[2591] = {
   reward = {
     exp = 74360000,
     gold = 1820000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 182,
   bQLoop = 0
 }
@@ -84431,14 +73605,8 @@ qt[2592] = {
   reward = {
     exp = 44420000,
     gold = 1820000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 182,
   bQLoop = 0
 }
@@ -84472,14 +73640,8 @@ qt[2593] = {
   reward = {
     exp = 73230000,
     gold = 1820000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 182,
   bQLoop = 0
 }
@@ -84511,14 +73673,8 @@ qt[2594] = {
   reward = {
     exp = 72640000,
     gold = 1830000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 183,
   bQLoop = 0
 }
@@ -84552,14 +73708,8 @@ qt[2595] = {
   reward = {
     exp = 77830000,
     gold = 1830000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 183,
   bQLoop = 0
 }
@@ -84593,14 +73743,8 @@ qt[2596] = {
   reward = {
     exp = 79030000,
     gold = 1830000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 183,
   bQLoop = 0
 }
@@ -84634,14 +73778,8 @@ qt[2597] = {
   reward = {
     exp = 65690000,
     gold = 1840000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 184,
   bQLoop = 0
 }
@@ -84675,14 +73813,8 @@ qt[2598] = {
   reward = {
     exp = 90040000,
     gold = 1840000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 184,
   bQLoop = 0
 }
@@ -84716,14 +73848,8 @@ qt[2599] = {
   reward = {
     exp = 82030000,
     gold = 1840000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 184,
   bQLoop = 0
 }
@@ -84757,14 +73883,8 @@ qt[2600] = {
   reward = {
     exp = 0,
     gold = 3700000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 185,
   bQLoop = 0
 }
@@ -84796,15 +73916,10 @@ qt[2601] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8719003, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -84836,13 +73951,9 @@ qt[2602] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201009, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -84875,13 +73986,9 @@ qt[2609] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -84912,13 +74019,9 @@ qt[2610] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -84949,13 +74052,9 @@ qt[2611] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -84983,13 +74082,9 @@ qt[2612] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85017,11 +74112,7 @@ qt[2613] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -85051,13 +74142,9 @@ qt[2614] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846478, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85090,13 +74177,9 @@ qt[2615] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85127,13 +74210,9 @@ qt[2616] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85164,13 +74243,9 @@ qt[2617] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85198,13 +74273,9 @@ qt[2618] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85232,11 +74303,7 @@ qt[2619] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 60,
   bQLoop = 0
@@ -85266,13 +74333,9 @@ qt[2620] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846478, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -85303,11 +74366,7 @@ qt[2621] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -85342,13 +74401,7 @@ qt[2622] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43102
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -85383,13 +74436,7 @@ qt[2623] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43103
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -85417,14 +74464,10 @@ qt[2624] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846483, count = 1},
       {id = 8846484, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -85457,13 +74500,9 @@ qt[2627] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201012, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -85496,13 +74535,9 @@ qt[2628] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232111, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -85538,15 +74573,10 @@ qt[2630] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890393, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -85583,15 +74613,10 @@ qt[2631] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890395, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -85623,13 +74648,9 @@ qt[2651] = {
   reward = {
     exp = 35000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990191, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 160,
   bQLoop = 0
@@ -85672,18 +74693,7 @@ qt[2654] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990208,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -85726,18 +74736,7 @@ qt[2655] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990208,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 130,
   bQLoop = 0
@@ -85775,15 +74774,10 @@ qt[2656] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890395, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -85818,15 +74812,10 @@ qt[2657] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890393, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -85858,15 +74847,10 @@ qt[2658] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8719008, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -85895,13 +74879,8 @@ qt[2660] = {
   reward = {
     exp = 4550000,
     gold = 55820,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -85935,13 +74914,8 @@ qt[2661] = {
   reward = {
     exp = 6690000,
     gold = 162800,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -85973,13 +74947,8 @@ qt[2662] = {
   reward = {
     exp = 4550000,
     gold = 55820,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86013,13 +74982,8 @@ qt[2663] = {
   reward = {
     exp = 7220000,
     gold = 189540,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86049,13 +75013,8 @@ qt[2664] = {
   reward = {
     exp = 10110000,
     gold = 333750,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86083,13 +75042,8 @@ qt[2665] = {
   reward = {
     exp = 4550000,
     gold = 55820,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86121,13 +75075,8 @@ qt[2666] = {
   reward = {
     exp = 12090000,
     gold = 432970,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86157,18 +75106,7 @@ qt[2667] = {
   reward = {
     exp = 4550000,
     gold = 55820,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990211,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 161,
   bQLoop = 0
@@ -86196,13 +75134,8 @@ qt[2668] = {
   reward = {
     exp = 4970000,
     gold = 61410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86235,13 +75168,8 @@ qt[2669] = {
   reward = {
     exp = 4970000,
     gold = 61410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86281,13 +75209,8 @@ qt[2670] = {
   reward = {
     exp = 7190000,
     gold = 172580,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86323,13 +75246,8 @@ qt[2671] = {
   reward = {
     exp = 12130000,
     gold = 419320,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86361,13 +75279,8 @@ qt[2672] = {
   reward = {
     exp = 27600000,
     gold = 1192850,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86400,13 +75313,8 @@ qt[2673] = {
   reward = {
     exp = 26300000,
     gold = 940850,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86438,18 +75346,7 @@ qt[2674] = {
   reward = {
     exp = 4970000,
     gold = 61410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990213,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 162,
   bQLoop = 0
@@ -86488,13 +75385,8 @@ qt[2675] = {
   reward = {
     exp = 27180000,
     gold = 1187270,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86528,13 +75420,8 @@ qt[2676] = {
   reward = {
     exp = 20060000,
     gold = 815700,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86566,13 +75453,8 @@ qt[2677] = {
   reward = {
     exp = 6150000,
     gold = 136050,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86604,13 +75486,8 @@ qt[2678] = {
   reward = {
     exp = 6220000,
     gold = 139200,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -86647,13 +75524,8 @@ qt[2679] = {
   reward = {
     exp = 16570000,
     gold = 450030,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -86684,15 +75556,10 @@ qt[2680] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890423, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -86723,15 +75590,10 @@ qt[2681] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890424, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -86762,15 +75624,10 @@ qt[2682] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890425, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -86799,11 +75656,7 @@ qt[2688] = {
   reward = {
     exp = 6890000,
     gold = 84430,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -86842,11 +75695,7 @@ qt[2689] = {
   reward = {
     exp = 9560000,
     gold = 218150,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -86881,11 +75730,7 @@ qt[2690] = {
   reward = {
     exp = 9670000,
     gold = 223390,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -86922,11 +75767,7 @@ qt[2691] = {
   reward = {
     exp = 11690000,
     gold = 324580,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -86959,11 +75800,7 @@ qt[2692] = {
   reward = {
     exp = 11880000,
     gold = 334000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -86993,11 +75830,7 @@ qt[2693] = {
   reward = {
     exp = 6890000,
     gold = 84430,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -87029,11 +75862,7 @@ qt[2694] = {
   reward = {
     exp = 6890000,
     gold = 84430,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -87063,11 +75892,7 @@ qt[2695] = {
   reward = {
     exp = 7580000,
     gold = 92880,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87098,11 +75923,7 @@ qt[2696] = {
   reward = {
     exp = 7580000,
     gold = 92880,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87132,11 +75953,7 @@ qt[2697] = {
   reward = {
     exp = 7580000,
     gold = 92880,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87176,11 +75993,7 @@ qt[2698] = {
   reward = {
     exp = 26850000,
     gold = 770770,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87212,11 +76025,7 @@ qt[2699] = {
   reward = {
     exp = 29050000,
     gold = 880560,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87250,11 +76059,7 @@ qt[2700] = {
   reward = {
     exp = 27530000,
     gold = 804870,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87288,11 +76093,7 @@ qt[2701] = {
   reward = {
     exp = 28010000,
     gold = 829170,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87323,11 +76124,7 @@ qt[2702] = {
   reward = {
     exp = 8340000,
     gold = 102160,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87360,11 +76157,7 @@ qt[2703] = {
   reward = {
     exp = 11340000,
     gold = 252250,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87399,11 +76192,7 @@ qt[2704] = {
   reward = {
     exp = 11460000,
     gold = 258140,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87431,11 +76220,7 @@ qt[2705] = {
   reward = {
     exp = 8340000,
     gold = 102160,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87472,18 +76257,7 @@ qt[2706] = {
   reward = {
     exp = 14580000,
     gold = 414120,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590010,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87511,11 +76285,7 @@ qt[2707] = {
   reward = {
     exp = 14580000,
     gold = 414120,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87548,11 +76318,7 @@ qt[2708] = {
   reward = {
     exp = 8340000,
     gold = 102160,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87589,11 +76355,7 @@ qt[2709] = {
   reward = {
     exp = 8340000,
     gold = 102160,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87629,11 +76391,7 @@ qt[2710] = {
   reward = {
     exp = 27380000,
     gold = 953130,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -87666,11 +76424,7 @@ qt[2711] = {
   reward = {
     exp = 19200000,
     gold = 544110,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 163,
   bQLoop = 0
@@ -87703,11 +76457,7 @@ qt[2712] = {
   reward = {
     exp = 16870000,
     gold = 614620,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87744,11 +76494,7 @@ qt[2713] = {
   reward = {
     exp = 17290000,
     gold = 635830,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 164,
   bQLoop = 0
@@ -87786,11 +76532,7 @@ qt[2714] = {
   reward = {
     exp = 35380000,
     gold = 1265310,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 165,
   bQLoop = 0
@@ -87823,11 +76565,7 @@ qt[2715] = {
   reward = {
     exp = 60500000,
     gold = 2209780,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 186,
   bQLoop = 0
@@ -87864,11 +76602,7 @@ qt[2716] = {
   reward = {
     exp = 61250000,
     gold = 2246900,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 186,
   bQLoop = 0
@@ -87903,11 +76637,7 @@ qt[2717] = {
   reward = {
     exp = 66880000,
     gold = 2447330,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -87944,11 +76674,7 @@ qt[2718] = {
   reward = {
     exp = 68520000,
     gold = 2529180,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -87988,26 +76714,8 @@ qt[2720] = {
   reward = {
     exp = 49940000,
     gold = 1748270,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890428, count = 29}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990218,
-      itemcnt = 30
-    }
-  },
-  deleteItem = {
-    {
-      meetcnt = 1,
-      itemid = 8990217,
-      itemcnt = 30
     }
   },
   needLevel = 186,
@@ -88041,11 +76749,7 @@ qt[2721] = {
   reward = {
     exp = 40210000,
     gold = 1261870,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 186,
   bQLoop = 0
@@ -88081,11 +76785,7 @@ qt[2722] = {
   reward = {
     exp = 75570000,
     gold = 2265900,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -88120,11 +76820,7 @@ qt[2723] = {
   reward = {
     exp = 59120000,
     gold = 2199760,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -88163,11 +76859,7 @@ qt[2724] = {
   reward = {
     exp = 33970000,
     gold = 942320,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 187,
   bQLoop = 0
@@ -88202,13 +76894,8 @@ qt[2730] = {
   reward = {
     exp = 22680000,
     gold = 787780,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88242,13 +76929,8 @@ qt[2731] = {
   reward = {
     exp = 23210000,
     gold = 814290,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88284,13 +76966,8 @@ qt[2732] = {
   reward = {
     exp = 11830000,
     gold = 245030,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88330,13 +77007,8 @@ qt[2733] = {
   reward = {
     exp = 13540000,
     gold = 330750,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88368,13 +77040,8 @@ qt[2734] = {
   reward = {
     exp = 9180000,
     gold = 112380,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88412,15 +77079,10 @@ qt[2735] = {
   reward = {
     exp = 31170000,
     gold = 1212040,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990223, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88456,13 +77118,8 @@ qt[2736] = {
   reward = {
     exp = 19980000,
     gold = 652700,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88497,13 +77154,8 @@ qt[2737] = {
   reward = {
     exp = 42270000,
     gold = 1420750,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -88535,23 +77187,7 @@ qt[2738] = {
   reward = {
     exp = 9180000,
     gold = 112380,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990226,
-      itemcnt = 1
-    },
-    {
-      meetcnt = 0,
-      itemid = 8990227,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 166,
   bQLoop = 0
@@ -88584,18 +77220,7 @@ qt[2739] = {
   reward = {
     exp = 10090000,
     gold = 123620,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990228,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 167,
   bQLoop = 0
@@ -88630,13 +77255,8 @@ qt[2740] = {
   reward = {
     exp = 10090000,
     gold = 123620,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88672,13 +77292,8 @@ qt[2741] = {
   reward = {
     exp = 14450000,
     gold = 341990,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88712,13 +77327,8 @@ qt[2742] = {
   reward = {
     exp = 10090000,
     gold = 123620,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88754,13 +77364,8 @@ qt[2743] = {
   reward = {
     exp = 21440000,
     gold = 691180,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88796,13 +77401,8 @@ qt[2744] = {
   reward = {
     exp = 56230000,
     gold = 1669010,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88836,13 +77436,8 @@ qt[2745] = {
   reward = {
     exp = 32630000,
     gold = 1250810,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88871,13 +77466,8 @@ qt[2746] = {
   reward = {
     exp = 10090000,
     gold = 123620,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -88909,13 +77499,9 @@ qt[2751] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418031, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -88952,13 +77538,9 @@ qt[2756] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890476, count = 3}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -88993,13 +77575,9 @@ qt[2765] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89034,13 +77612,9 @@ qt[2766] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89075,13 +77649,9 @@ qt[2767] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89107,13 +77677,9 @@ qt[2768] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89148,13 +77714,9 @@ qt[2769] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89189,13 +77751,9 @@ qt[2770] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89230,13 +77788,9 @@ qt[2771] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89262,13 +77816,9 @@ qt[2772] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890148, count = 15}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89299,11 +77849,7 @@ qt[2773] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -89338,13 +77884,7 @@ qt[2774] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43402
-    }
+    items = {}
   },
   needLevel = 115,
   bQLoop = 0
@@ -89379,13 +77919,7 @@ qt[2775] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {
-      43403
-    }
+    items = {}
   },
   needLevel = 125,
   bQLoop = 0
@@ -89415,13 +77949,9 @@ qt[2777] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846628, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89451,13 +77981,9 @@ qt[2778] = {
   reward = {
     exp = 0,
     gold = 100000,
-    fame = 1,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846628, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 60,
   bQLoop = 0
@@ -89488,13 +78014,9 @@ qt[2779] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390015, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -89527,13 +78049,9 @@ qt[2783] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390016, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -89570,13 +78088,8 @@ qt[2786] = {
   reward = {
     exp = 15360000,
     gold = 348820,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -89616,18 +78129,7 @@ qt[2787] = {
   reward = {
     exp = 16410000,
     gold = 401540,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990234,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -89664,13 +78166,8 @@ qt[2788] = {
   reward = {
     exp = 15390000,
     gold = 350450,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -89705,13 +78202,8 @@ qt[2789] = {
   reward = {
     exp = 20490000,
     gold = 521970,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -89742,18 +78234,7 @@ qt[2790] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990235,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -89790,18 +78271,7 @@ qt[2791] = {
   reward = {
     exp = 16410000,
     gold = 401540,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990235,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -89840,18 +78310,7 @@ qt[2792] = {
   reward = {
     exp = 17890000,
     gold = 475410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990235,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -89882,18 +78341,7 @@ qt[2793] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990235,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 168,
   bQLoop = 0
@@ -89926,13 +78374,8 @@ qt[2794] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -89964,13 +78407,8 @@ qt[2795] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -90002,13 +78440,8 @@ qt[2796] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -90038,13 +78471,8 @@ qt[2797] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -90075,13 +78503,8 @@ qt[2798] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -90117,13 +78540,8 @@ qt[2799] = {
   reward = {
     exp = 12210000,
     gold = 149580,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90159,13 +78577,8 @@ qt[2800] = {
   reward = {
     exp = 18970000,
     gold = 487280,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90195,13 +78608,8 @@ qt[2801] = {
   reward = {
     exp = 25720000,
     gold = 824980,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90233,15 +78641,10 @@ qt[2802] = {
   reward = {
     exp = 25720000,
     gold = 824980,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990236, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90278,13 +78681,8 @@ qt[2803] = {
   reward = {
     exp = 22630000,
     gold = 578180,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90317,13 +78715,8 @@ qt[2804] = {
   reward = {
     exp = 30600000,
     gold = 976828,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90354,15 +78747,10 @@ qt[2805] = {
   reward = {
     exp = 38570000,
     gold = 1375488,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990236, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90392,13 +78780,8 @@ qt[2806] = {
   reward = {
     exp = 19000000,
     gold = 489010,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90430,13 +78813,8 @@ qt[2807] = {
   reward = {
     exp = 14010000,
     gold = 239630,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90466,15 +78844,10 @@ qt[2808] = {
   reward = {
     exp = 17520000,
     gold = 415140,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990236, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 169,
   bQLoop = 0
 }
@@ -90510,15 +78883,10 @@ qt[2810] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390020, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -90554,15 +78922,10 @@ qt[2811] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -90594,13 +78957,8 @@ qt[2812] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90636,13 +78994,8 @@ qt[2813] = {
   reward = {
     exp = 15310000,
     gold = 258120,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90674,13 +79027,8 @@ qt[2814] = {
   reward = {
     exp = 17690000,
     gold = 377370,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90713,13 +79061,8 @@ qt[2815] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90753,13 +79096,8 @@ qt[2816] = {
   reward = {
     exp = 24080000,
     gold = 696630,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90786,13 +79124,8 @@ qt[2817] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90831,13 +79164,8 @@ qt[2818] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90873,13 +79201,8 @@ qt[2819] = {
   reward = {
     exp = 24710000,
     gold = 728130,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90911,13 +79234,8 @@ qt[2820] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90953,13 +79271,8 @@ qt[2821] = {
   reward = {
     exp = 22460000,
     gold = 615410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -90995,15 +79308,10 @@ qt[2822] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7390022, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91037,13 +79345,8 @@ qt[2830] = {
   reward = {
     exp = 24080000,
     gold = 696630,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91073,13 +79376,8 @@ qt[2831] = {
   reward = {
     exp = 24710000,
     gold = 728130,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91113,18 +79411,7 @@ qt[2832] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990245,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 170,
   bQLoop = 0
@@ -91158,13 +79445,8 @@ qt[2833] = {
   reward = {
     exp = 23960000,
     gold = 589352,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91196,13 +79478,8 @@ qt[2834] = {
   reward = {
     exp = 17690000,
     gold = 377370,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91233,18 +79510,7 @@ qt[2835] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990245,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 170,
   bQLoop = 0
@@ -91291,13 +79557,8 @@ qt[2836] = {
   reward = {
     exp = 17690000,
     gold = 385830,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91328,13 +79589,8 @@ qt[2837] = {
   reward = {
     exp = 13440000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -91366,13 +79622,8 @@ qt[2844] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91402,13 +79653,8 @@ qt[2845] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91443,15 +79689,10 @@ qt[2846] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8219037, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91486,15 +79727,10 @@ qt[2847] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201048, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91527,15 +79763,10 @@ qt[2848] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201049, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91568,15 +79799,10 @@ qt[2849] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201050, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91609,15 +79835,10 @@ qt[2850] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201051, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91653,16 +79874,10 @@ qt[2853] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9300021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91692,16 +79907,10 @@ qt[2854] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980048, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91729,16 +79938,10 @@ qt[2855] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980047, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91768,16 +79971,10 @@ qt[2856] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980046, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -91809,14 +80006,8 @@ qt[2857] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -91855,14 +80046,8 @@ qt[2858] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -91898,13 +80083,8 @@ qt[2859] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -91938,13 +80118,8 @@ qt[2860] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -91980,15 +80155,10 @@ qt[2861] = {
   reward = {
     exp = 23810000,
     gold = 631870,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990250, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92022,13 +80192,8 @@ qt[2862] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92062,15 +80227,10 @@ qt[2863] = {
   reward = {
     exp = 25970000,
     gold = 739960,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990256, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92105,13 +80265,8 @@ qt[2864] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92145,13 +80300,8 @@ qt[2865] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92184,13 +80334,8 @@ qt[2866] = {
   reward = {
     exp = 25970000,
     gold = 739960,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92222,13 +80367,8 @@ qt[2867] = {
   reward = {
     exp = 26410000,
     gold = 762190,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -92259,13 +80399,8 @@ qt[2868] = {
   reward = {
     exp = 28350000,
     gold = 803420,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92300,13 +80435,8 @@ qt[2869] = {
   reward = {
     exp = 31370000,
     gold = 831670,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92340,13 +80470,8 @@ qt[2870] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92380,13 +80505,8 @@ qt[2871] = {
   reward = {
     exp = 27890000,
     gold = 780290,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92417,13 +80537,8 @@ qt[2872] = {
   reward = {
     exp = 28350000,
     gold = 803420,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92455,13 +80570,8 @@ qt[2873] = {
   reward = {
     exp = 30240000,
     gold = 897800,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92490,13 +80600,8 @@ qt[2874] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -92530,13 +80635,8 @@ qt[2877] = {
   reward = {
     exp = 28790000,
     gold = 763870,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92570,13 +80670,8 @@ qt[2878] = {
   reward = {
     exp = 33000000,
     gold = 974410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92608,15 +80703,10 @@ qt[2879] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990258, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92650,13 +80740,8 @@ qt[2880] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92692,13 +80777,8 @@ qt[2881] = {
   reward = {
     exp = 33000000,
     gold = 974410,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92728,18 +80808,7 @@ qt[2882] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990258,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 173,
   bQLoop = 0
@@ -92776,13 +80845,8 @@ qt[2883] = {
   reward = {
     exp = 25440000,
     gold = 596700,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -92812,18 +80876,7 @@ qt[2884] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8990260,
-      itemcnt = 1
-    }
+    items = {}
   },
   needLevel = 173,
   bQLoop = 0
@@ -92857,11 +80910,7 @@ qt[2885] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 173,
   bQLoop = 0
@@ -92896,13 +80945,8 @@ qt[2886] = {
   reward = {
     exp = 29750000,
     gold = 744500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -92934,13 +80978,8 @@ qt[2887] = {
   reward = {
     exp = 30150000,
     gold = 764540,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -92976,13 +81015,8 @@ qt[2888] = {
   reward = {
     exp = 33650000,
     gold = 939610,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93020,13 +81054,8 @@ qt[2889] = {
   reward = {
     exp = 33650000,
     gold = 939610,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93060,13 +81089,8 @@ qt[2890] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93100,13 +81124,8 @@ qt[2891] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93150,13 +81169,8 @@ qt[2892] = {
   reward = {
     exp = 25260000,
     gold = 520380,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93186,13 +81200,8 @@ qt[2893] = {
   reward = {
     exp = 25490000,
     gold = 531500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93222,13 +81231,8 @@ qt[2894] = {
   reward = {
     exp = 29750000,
     gold = 744500,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93258,13 +81262,8 @@ qt[2895] = {
   reward = {
     exp = 30150000,
     gold = 764540,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93294,13 +81293,8 @@ qt[2896] = {
   reward = {
     exp = 1000000,
     gold = 5000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -93344,13 +81338,8 @@ qt[2898] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 80,
   bQLoop = 0
 }
@@ -93386,13 +81375,8 @@ qt[2903] = {
   reward = {
     exp = 127550000,
     gold = 4971150,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 188,
   bQLoop = 0
 }
@@ -93426,13 +81410,8 @@ qt[2904] = {
   reward = {
     exp = 127920000,
     gold = 4975720,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 189,
   bQLoop = 0
 }
@@ -93464,13 +81443,8 @@ qt[2905] = {
   reward = {
     exp = 85780000,
     gold = 2686730,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 189,
   bQLoop = 0
 }
@@ -93506,13 +81480,8 @@ qt[2906] = {
   reward = {
     exp = 74170000,
     gold = 2273900,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 190,
   bQLoop = 0
 }
@@ -93546,13 +81515,8 @@ qt[2907] = {
   reward = {
     exp = 86230000,
     gold = 2876750,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 190,
   bQLoop = 0
 }
@@ -93586,13 +81550,8 @@ qt[2908] = {
   reward = {
     exp = 154040000,
     gold = 6253120,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 191,
   bQLoop = 0
 }
@@ -93628,13 +81587,8 @@ qt[2909] = {
   reward = {
     exp = 94930000,
     gold = 3297300,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 191,
   bQLoop = 0
 }
@@ -93666,13 +81620,8 @@ qt[2910] = {
   reward = {
     exp = 155880000,
     gold = 6330680,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 192,
   bQLoop = 0
 }
@@ -93706,13 +81655,8 @@ qt[2911] = {
   reward = {
     exp = 96020000,
     gold = 3337630,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 192,
   bQLoop = 0
 }
@@ -93746,13 +81690,8 @@ qt[2912] = {
   reward = {
     exp = 137980000,
     gold = 5420860,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 193,
   bQLoop = 0
 }
@@ -93784,13 +81723,8 @@ qt[2913] = {
   reward = {
     exp = 118210000,
     gold = 4432570,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 193,
   bQLoop = 0
 }
@@ -93824,13 +81758,8 @@ qt[2914] = {
   reward = {
     exp = 59580000,
     gold = 1500780,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 193,
   bQLoop = 0
 }
@@ -93866,13 +81795,8 @@ qt[2915] = {
   reward = {
     exp = 44600000,
     gold = 751800,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 193,
   bQLoop = 0
 }
@@ -93902,11 +81826,7 @@ qt[2925] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
   needLevel = 1,
   bQLoop = 0
@@ -93937,13 +81857,9 @@ qt[2949] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619098, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -93975,13 +81891,9 @@ qt[2950] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619099, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94013,13 +81925,9 @@ qt[2951] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619100, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94051,13 +81959,9 @@ qt[2952] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8619101, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94090,16 +81994,10 @@ qt[2954] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201038, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -94136,19 +82034,8 @@ qt[3601] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890309, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980146,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -94184,19 +82071,8 @@ qt[3602] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7410049, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980194,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -94229,13 +82105,9 @@ qt[3603] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94267,13 +82139,9 @@ qt[3604] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94305,13 +82173,9 @@ qt[3605] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94341,13 +82205,9 @@ qt[3606] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94388,13 +82248,9 @@ qt[3607] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94426,13 +82282,9 @@ qt[3608] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94462,13 +82314,9 @@ qt[3609] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94498,13 +82346,9 @@ qt[3610] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890133, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94537,13 +82381,9 @@ qt[3611] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890305, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94574,13 +82414,9 @@ qt[3612] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890306, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94611,13 +82447,9 @@ qt[3613] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890307, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94649,13 +82481,9 @@ qt[3614] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8010016, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94690,13 +82518,9 @@ qt[3615] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890311, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94731,13 +82555,9 @@ qt[3616] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890312, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94772,13 +82592,9 @@ qt[3617] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890313, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94812,13 +82628,9 @@ qt[3618] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890315, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -94852,13 +82664,9 @@ qt[3619] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890316, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 81,
   bQLoop = 0
@@ -94892,13 +82700,9 @@ qt[3620] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890317, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 131,
   bQLoop = 0
@@ -94932,13 +82736,9 @@ qt[3621] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890318, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 188,
   bQLoop = 0
@@ -94973,13 +82773,9 @@ qt[3622] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890326, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -95012,13 +82808,8 @@ qt[3623] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 110,
   bQLoop = 0
 }
@@ -95052,15 +82843,10 @@ qt[3624] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890331, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95095,19 +82881,8 @@ qt[3626] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846137, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980146,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -95143,19 +82918,8 @@ qt[3627] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7410049, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8590001,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -95193,20 +82957,9 @@ qt[3628] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890340, count = 1},
       {id = 8890341, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980221,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -95246,15 +82999,10 @@ qt[3629] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8499021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95288,15 +83036,10 @@ qt[3630] = {
   reward = {
     exp = 3960000,
     gold = 0,
-    fame = 0,
-    pvppoint = 5,
-    mileage = 0,
     items = {
       {id = 8990067, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 99,
   bQLoop = 0
 }
@@ -95330,15 +83073,10 @@ qt[3631] = {
   reward = {
     exp = 5160000,
     gold = 0,
-    fame = 0,
-    pvppoint = 5,
-    mileage = 0,
     items = {
       {id = 8990086, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 110,
   bQLoop = 0
 }
@@ -95370,15 +83108,10 @@ qt[3633] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890342, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95412,15 +83145,10 @@ qt[3634] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890344, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95454,15 +83182,10 @@ qt[3635] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890345, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95496,15 +83219,10 @@ qt[3636] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890346, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95538,15 +83256,10 @@ qt[3637] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890347, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95580,15 +83293,10 @@ qt[3638] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890348, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95622,15 +83330,10 @@ qt[3639] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890349, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95664,15 +83367,10 @@ qt[3640] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890350, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95706,15 +83404,10 @@ qt[3641] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890351, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95748,15 +83441,10 @@ qt[3642] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890352, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95788,15 +83476,10 @@ qt[3643] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980233, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -95830,13 +83513,8 @@ qt[3644] = {
   reward = {
     exp = 4709056,
     gold = 300000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 175,
   bQLoop = 0
 }
@@ -95868,13 +83546,8 @@ qt[3645] = {
   reward = {
     exp = 4834800,
     gold = 310000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 176,
   bQLoop = 0
 }
@@ -95906,13 +83579,8 @@ qt[3646] = {
   reward = {
     exp = 4963172,
     gold = 320000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 177,
   bQLoop = 0
 }
@@ -95944,13 +83612,8 @@ qt[3647] = {
   reward = {
     exp = 5301000,
     gold = 330000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 178,
   bQLoop = 0
 }
@@ -95984,13 +83647,8 @@ qt[3648] = {
   reward = {
     exp = 5442360,
     gold = 340000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 179,
   bQLoop = 0
 }
@@ -96020,15 +83678,10 @@ qt[3649] = {
   reward = {
     exp = 0,
     gold = 1000000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8928021, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 180,
   bQLoop = 0
 }
@@ -96060,13 +83713,8 @@ qt[3650] = {
   reward = {
     exp = 3700000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 118,
   bQLoop = 0
 }
@@ -96098,13 +83746,8 @@ qt[3651] = {
   reward = {
     exp = 3800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 119,
   bQLoop = 0
 }
@@ -96136,13 +83779,8 @@ qt[3652] = {
   reward = {
     exp = 4000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 120,
   bQLoop = 0
 }
@@ -96176,13 +83814,8 @@ qt[3653] = {
   reward = {
     exp = 4500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 3,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 120,
   bQLoop = 0
 }
@@ -96212,15 +83845,10 @@ qt[3654] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980235, count = 50}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -96252,15 +83880,10 @@ qt[3655] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201003, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -96295,15 +83918,10 @@ qt[3656] = {
   reward = {
     exp = 3560000,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990207, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 146,
   bQLoop = 0
 }
@@ -96337,15 +83955,10 @@ qt[3657] = {
   reward = {
     exp = 3595600,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990207, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 146,
   bQLoop = 0
 }
@@ -96379,15 +83992,10 @@ qt[3658] = {
   reward = {
     exp = 3631556,
     gold = 0,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990207, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 146,
   bQLoop = 0
 }
@@ -96419,13 +84027,8 @@ qt[3659] = {
   reward = {
     exp = 4200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 121,
   bQLoop = 0
 }
@@ -96457,13 +84060,8 @@ qt[3660] = {
   reward = {
     exp = 4400000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 123,
   bQLoop = 0
 }
@@ -96495,13 +84093,8 @@ qt[3661] = {
   reward = {
     exp = 4500000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 125,
   bQLoop = 0
 }
@@ -96534,20 +84127,9 @@ qt[3662] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890365, count = 1},
       {id = 8499024, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8980241,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -96579,15 +84161,10 @@ qt[3663] = {
   reward = {
     exp = 28000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980243, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 160,
   bQLoop = 0
 }
@@ -96617,13 +84194,8 @@ qt[3664] = {
   reward = {
     exp = 4600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 127,
   bQLoop = 0
 }
@@ -96653,13 +84225,8 @@ qt[3665] = {
   reward = {
     exp = 4800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 130,
   bQLoop = 0
 }
@@ -96689,13 +84256,8 @@ qt[3666] = {
   reward = {
     exp = 6000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 132,
   bQLoop = 0
 }
@@ -96725,13 +84287,8 @@ qt[3667] = {
   reward = {
     exp = 6300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 134,
   bQLoop = 0
 }
@@ -96763,13 +84320,8 @@ qt[3668] = {
   reward = {
     exp = 9240000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 136,
   bQLoop = 0
 }
@@ -96801,13 +84353,8 @@ qt[3669] = {
   reward = {
     exp = 10360000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 137,
   bQLoop = 0
 }
@@ -96839,13 +84386,8 @@ qt[3670] = {
   reward = {
     exp = 11200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 139,
   bQLoop = 0
 }
@@ -96877,13 +84419,8 @@ qt[3671] = {
   reward = {
     exp = 12600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 140,
   bQLoop = 0
 }
@@ -96914,13 +84451,8 @@ qt[3672] = {
   reward = {
     exp = 3300000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 141,
   bQLoop = 0
 }
@@ -96950,13 +84482,8 @@ qt[3673] = {
   reward = {
     exp = 3480000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 142,
   bQLoop = 0
 }
@@ -96986,13 +84513,8 @@ qt[3674] = {
   reward = {
     exp = 3600000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 143,
   bQLoop = 0
 }
@@ -97022,13 +84544,8 @@ qt[3675] = {
   reward = {
     exp = 3660000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 144,
   bQLoop = 0
 }
@@ -97059,13 +84576,8 @@ qt[3676] = {
   reward = {
     exp = 3840000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 145,
   bQLoop = 0
 }
@@ -97096,13 +84608,8 @@ qt[3677] = {
   reward = {
     exp = 4080000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 146,
   bQLoop = 0
 }
@@ -97133,13 +84640,8 @@ qt[3678] = {
   reward = {
     exp = 4350000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 147,
   bQLoop = 0
 }
@@ -97169,13 +84671,8 @@ qt[3679] = {
   reward = {
     exp = 4560000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 148,
   bQLoop = 0
 }
@@ -97205,13 +84702,8 @@ qt[3680] = {
   reward = {
     exp = 4800000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 149,
   bQLoop = 0
 }
@@ -97241,13 +84733,8 @@ qt[3681] = {
   reward = {
     exp = 8250000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 150,
   bQLoop = 0
 }
@@ -97278,13 +84765,8 @@ qt[3682] = {
   reward = {
     exp = 4080000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 146,
   bQLoop = 0
 }
@@ -97314,15 +84796,10 @@ qt[3683] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201006, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97354,15 +84831,10 @@ qt[3684] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 9232162, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97392,15 +84864,10 @@ qt[3685] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890375, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97432,19 +84899,8 @@ qt[3686] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846106, count = 1}
-    },
-    getSkill = {}
-  },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890380,
-      itemcnt = 1
     }
   },
   needLevel = 1,
@@ -97483,20 +84939,8 @@ qt[3687] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890381,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97533,20 +84977,8 @@ qt[3688] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890382,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97583,20 +85015,8 @@ qt[3689] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890383,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97633,20 +85053,8 @@ qt[3690] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890384,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97683,20 +85091,8 @@ qt[3691] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890385,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97733,20 +85129,8 @@ qt[3692] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890386,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97783,20 +85167,8 @@ qt[3693] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890387,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97833,20 +85205,8 @@ qt[3694] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890388,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97883,20 +85243,8 @@ qt[3695] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890389,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97933,20 +85281,8 @@ qt[3696] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890390,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -97983,20 +85319,8 @@ qt[3697] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {
-    {
-      meetcnt = 0,
-      itemid = 8890391,
-      itemcnt = 1
-    }
-  },
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98030,14 +85354,8 @@ qt[3698] = {
   reward = {
     exp = 21140000,
     gold = 360000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 180,
   bQLoop = 0
 }
@@ -98072,14 +85390,8 @@ qt[3699] = {
   reward = {
     exp = 45380000,
     gold = 362000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 181,
   bQLoop = 0
 }
@@ -98116,14 +85428,8 @@ qt[3700] = {
   reward = {
     exp = 50050000,
     gold = 364000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 182,
   bQLoop = 0
 }
@@ -98155,14 +85461,8 @@ qt[3701] = {
   reward = {
     exp = 17140000,
     gold = 366000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 183,
   bQLoop = 0
 }
@@ -98196,14 +85496,8 @@ qt[3702] = {
   reward = {
     exp = 31150000,
     gold = 368000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 184,
   bQLoop = 0
 }
@@ -98239,14 +85533,8 @@ qt[3703] = {
   reward = {
     exp = 0,
     gold = 6000000,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 185,
   bQLoop = 0
 }
@@ -98278,16 +85566,10 @@ qt[3704] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846211, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98319,16 +85601,10 @@ qt[3705] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980285, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98360,16 +85636,10 @@ qt[3706] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980285, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98401,16 +85671,10 @@ qt[3707] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980285, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98442,16 +85706,10 @@ qt[3708] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980285, count = 15}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98483,16 +85741,10 @@ qt[3709] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980286, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98524,16 +85776,10 @@ qt[3710] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890221, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98565,16 +85811,10 @@ qt[3711] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846224, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98606,16 +85846,10 @@ qt[3712] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890669, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98643,16 +85877,10 @@ qt[3713] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890413, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98680,16 +85908,10 @@ qt[3714] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890405, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98729,16 +85951,10 @@ qt[3717] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980317, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -98770,14 +85986,8 @@ qt[3718] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 65,
   bQLoop = 0
 }
@@ -98811,13 +86021,9 @@ qt[3719] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980319, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 65,
   bQLoop = 0
@@ -98852,13 +86058,9 @@ qt[3720] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846317, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 65,
   bQLoop = 0
@@ -98887,13 +86089,9 @@ qt[3721] = {
   reward = {
     exp = 42000000,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990191, count = 5}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -98930,13 +86128,9 @@ qt[3723] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890420, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -98971,13 +86165,9 @@ qt[3724] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890420, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -99010,13 +86200,8 @@ qt[3725] = {
   reward = {
     exp = 9880000,
     gold = 66150,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 161,
   bQLoop = 0
 }
@@ -99048,13 +86233,8 @@ qt[3726] = {
   reward = {
     exp = 10640000,
     gold = 69880,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 162,
   bQLoop = 0
 }
@@ -99086,13 +86266,8 @@ qt[3727] = {
   reward = {
     exp = 12160000,
     gold = 77930,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 164,
   bQLoop = 0
 }
@@ -99124,13 +86299,8 @@ qt[3728] = {
   reward = {
     exp = 12920000,
     gold = 82480,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 165,
   bQLoop = 0
 }
@@ -99166,13 +86336,8 @@ qt[3729] = {
   reward = {
     exp = 9070000,
     gold = 378400,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 186,
   bQLoop = 0
 }
@@ -99207,13 +86372,8 @@ qt[3730] = {
   reward = {
     exp = 9200000,
     gold = 385360,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 186,
   bQLoop = 0
 }
@@ -99250,13 +86410,8 @@ qt[3731] = {
   reward = {
     exp = 11150000,
     gold = 406590,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 187,
   bQLoop = 0
 }
@@ -99290,13 +86445,8 @@ qt[3732] = {
   reward = {
     exp = 9840000,
     gold = 416240,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 187,
   bQLoop = 0
 }
@@ -99330,15 +86480,10 @@ qt[3733] = {
   reward = {
     exp = 4990000,
     gold = 174820,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7810104, count = 30}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 186,
   bQLoop = 0
 }
@@ -99370,15 +86515,10 @@ qt[3734] = {
   reward = {
     exp = 4430000,
     gold = 146750,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990049, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 186,
   bQLoop = 0
 }
@@ -99410,15 +86550,10 @@ qt[3735] = {
   reward = {
     exp = 4590000,
     gold = 153640,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990049, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 187,
   bQLoop = 0
 }
@@ -99453,15 +86588,10 @@ qt[3736] = {
   reward = {
     exp = 8780000,
     gold = 287720,
-    fame = 3,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8990049, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 187,
   bQLoop = 0
 }
@@ -99493,15 +86623,10 @@ qt[3737] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846385, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99533,16 +86658,10 @@ qt[3741] = {
   reward = {
     exp = 7200000,
     gold = 0,
-    fame = 0,
-    pvppoint = 5,
-    mileage = 0,
     items = {
       {id = 8990049, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
-  deleteItem = {},
   needLevel = 140,
   bQLoop = 0
 }
@@ -99575,13 +86694,8 @@ qt[3742] = {
   reward = {
     exp = 11270000,
     gold = 318930,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 166,
   bQLoop = 0
 }
@@ -99613,13 +86727,8 @@ qt[3743] = {
   reward = {
     exp = 7350000,
     gold = 143320,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 167,
   bQLoop = 0
 }
@@ -99651,15 +86760,10 @@ qt[3744] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201031, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99691,15 +86795,10 @@ qt[3745] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7201032, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99731,15 +86830,10 @@ qt[3746] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890447, count = 5}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99775,15 +86869,10 @@ qt[3747] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890448, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99817,15 +86906,10 @@ qt[3750] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890460, count = 2}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99857,15 +86941,10 @@ qt[3751] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846569, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99901,15 +86980,10 @@ qt[3752] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 7418032, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -99941,13 +87015,8 @@ qt[3753] = {
   reward = {
     exp = 6200000,
     gold = 94910,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 168,
   bQLoop = 0
 }
@@ -99979,13 +87048,8 @@ qt[3755] = {
   reward = {
     exp = 6800000,
     gold = 93970,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 170,
   bQLoop = 0
 }
@@ -100017,15 +87081,10 @@ qt[3756] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890523, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100057,15 +87116,10 @@ qt[3757] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846871, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100095,15 +87149,10 @@ qt[3758] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100133,15 +87182,10 @@ qt[3759] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100171,15 +87215,10 @@ qt[3760] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100209,15 +87248,10 @@ qt[3761] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100247,15 +87281,10 @@ qt[3762] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100285,15 +87314,10 @@ qt[3763] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100323,15 +87347,10 @@ qt[3764] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100361,15 +87380,10 @@ qt[3765] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100399,15 +87413,10 @@ qt[3766] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8980365, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100446,15 +87455,10 @@ qt[3767] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8846870, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100487,15 +87491,10 @@ qt[3768] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890551, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100525,15 +87524,10 @@ qt[3769] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8871740, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -100567,13 +87561,9 @@ qt[3770] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890051, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -100606,13 +87596,9 @@ qt[3775] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890567, count = 2}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -100645,13 +87631,8 @@ qt[3776] = {
   reward = {
     exp = 10380000,
     gold = 197320,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 171,
   bQLoop = 0
 }
@@ -100683,13 +87664,8 @@ qt[3777] = {
   reward = {
     exp = 11500000,
     gold = 208080,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 172,
   bQLoop = 0
 }
@@ -100725,13 +87701,9 @@ qt[3778] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890575, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
@@ -100764,13 +87736,8 @@ qt[3780] = {
   reward = {
     exp = 13380000,
     gold = 192690,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 173,
   bQLoop = 0
 }
@@ -100802,13 +87769,8 @@ qt[3781] = {
   reward = {
     exp = 15500000,
     gold = 203880,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 174,
   bQLoop = 0
 }
@@ -100842,13 +87804,8 @@ qt[3783] = {
   reward = {
     exp = 12790000,
     gold = 497570,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 189,
   bQLoop = 0
 }
@@ -100882,13 +87839,8 @@ qt[3784] = {
   reward = {
     exp = 7420000,
     gold = 227390,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 190,
   bQLoop = 0
 }
@@ -100920,13 +87872,8 @@ qt[3785] = {
   reward = {
     exp = 13480000,
     gold = 528930,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 191,
   bQLoop = 0
 }
@@ -100960,13 +87907,8 @@ qt[3786] = {
   reward = {
     exp = 13640000,
     gold = 535470,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 192,
   bQLoop = 0
 }
@@ -101002,13 +87944,8 @@ qt[3787] = {
   reward = {
     exp = 13800000,
     gold = 542090,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
-    items = {},
-    getSkill = {}
+    items = {}
   },
-  requstItem = {},
   needLevel = 193,
   bQLoop = 0
 }
@@ -101049,15 +87986,10 @@ qt[3788] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8871744, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -101093,15 +88025,10 @@ qt[3789] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890622, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -101133,15 +88060,10 @@ qt[3790] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890623, count = 1}
-    },
-    getSkill = {}
+    }
   },
-  requstItem = {},
   needLevel = 1,
   bQLoop = 0
 }
@@ -101179,13 +88101,9 @@ qt[3795] = {
   reward = {
     exp = 0,
     gold = 0,
-    fame = 0,
-    pvppoint = 0,
-    mileage = 0,
     items = {
       {id = 8890646, count = 1}
-    },
-    getSkill = {}
+    }
   },
   needLevel = 1,
   bQLoop = 0
