@@ -6,5 +6,5 @@ public final class AdminQuestListItem {
   public Integer needLevel;
   public Integer rewardExp;
   public Integer rewardGold;
+  public String recentModifiedAt;
 }
-

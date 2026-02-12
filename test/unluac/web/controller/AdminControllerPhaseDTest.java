@@ -36,10 +36,11 @@ public class AdminControllerPhaseDTest {
 
   @Test
   public void fullFlowModifySaveExportGeneratesPhaseDReport() throws Exception {
-    MvcResult questListResult = mockMvc.perform(get("/api/admin/quests").param("limit", "1"))
+    MvcResult questListResult = mockMvc.perform(get("/api/admin/quests").param("page", "1").param("pageSize", "1"))
         .andExpect(status().isOk())
         .andReturn();
-    JsonNode questList = mapper.readTree(questListResult.getResponse().getContentAsString());
+    JsonNode questListPage = mapper.readTree(questListResult.getResponse().getContentAsString());
+    JsonNode questList = questListPage.path("records");
     if(!questList.isArray() || questList.size() == 0) {
       throw new IllegalStateException("no quest rows found");
     }
@@ -62,7 +63,8 @@ public class AdminControllerPhaseDTest {
             .contentType(MediaType.APPLICATION_JSON)
             .content(saveQuestPayload))
         .andExpect(status().isOk())
-        .andExpect(jsonPath("$.status").value("SUCCESS"));
+        .andExpect(jsonPath("$.status").value("SUCCESS"))
+        .andExpect(jsonPath("$.artifacts.afterName").value(newName));
 
     MvcResult questVerify = mockMvc.perform(get("/api/admin/quests/{questId}", questId))
         .andExpect(status().isOk())
@@ -72,10 +74,11 @@ public class AdminControllerPhaseDTest {
       throw new IllegalStateException("quest save verification failed");
     }
 
-    MvcResult npcListResult = mockMvc.perform(get("/api/admin/npc-texts").param("limit", "1"))
+    MvcResult npcListResult = mockMvc.perform(get("/api/admin/npc-texts").param("page", "1").param("pageSize", "1"))
         .andExpect(status().isOk())
         .andReturn();
-    JsonNode npcList = mapper.readTree(npcListResult.getResponse().getContentAsString());
+    JsonNode npcPage = mapper.readTree(npcListResult.getResponse().getContentAsString());
+    JsonNode npcList = npcPage.path("records");
     if(!npcList.isArray() || npcList.size() == 0) {
       throw new IllegalStateException("no npc text rows found");
     }
@@ -159,4 +162,3 @@ public class AdminControllerPhaseDTest {
     }
   }
 }
-

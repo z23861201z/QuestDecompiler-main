@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-02-12T14:56:32.318+08:00",
+  "endpoint": "/api/admin/quests/{questId}/save",
+  "finalStatus": "SAFE",
+  "resultCount": 1,
+  "results": [
+    {
+      "phaseName": "AdminQuestSave",
+      "status": "SUCCESS",
+      "elapsedMs": 1322,
+      "artifacts": {"changedRows":"20"},
+      "error": null
+    }
+  ]
+}

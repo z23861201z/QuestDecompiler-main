@@ -27,6 +27,7 @@ import unluac.web.result.AdminNpcTextItem;
 import unluac.web.result.AdminQuestDetail;
 import unluac.web.result.AdminQuestListItem;
 import unluac.web.result.DashboardSummary;
+import unluac.web.result.PagedResult;
 import unluac.web.result.PhaseDExportReport;
 import unluac.web.result.WebApiResponse;
 import unluac.web.service.AdminNpcTextService;
@@ -54,6 +55,9 @@ public class AdminController {
     try(Connection connection = WebJdbcSupport.open(DEFAULT_JDBC, "root", "root")) {
       out.questCount = queryCount(connection, "SELECT COUNT(*) FROM quest_main");
       out.npcCount = queryCount(connection, "SELECT COUNT(DISTINCT npcFile) FROM npc_text_edit_map");
+      out.itemCount = queryCount(connection, "SELECT COUNT(*) FROM quest_reward_item");
+      out.mapCount = queryCount(connection, "SELECT COUNT(DISTINCT npc_file) FROM npc_quest_reference");
+      out.fashionCount = queryCount(connection, "SELECT COUNT(*) FROM quest_goal_getitem");
     }
 
     Path reportsDir = Paths.get("reports");
@@ -72,9 +76,10 @@ public class AdminController {
   }
 
   @GetMapping(path = "/quests")
-  public List<AdminQuestListItem> questList(@RequestParam(name = "keyword", required = false) String keyword,
-                                            @RequestParam(name = "limit", required = false, defaultValue = "100") int limit) throws Exception {
-    return questService.list(DEFAULT_JDBC, "root", "root", keyword, limit);
+  public PagedResult<AdminQuestListItem> questList(@RequestParam(name = "keyword", required = false) String keyword,
+                                                   @RequestParam(name = "page", required = false, defaultValue = "1") int page,
+                                                   @RequestParam(name = "pageSize", required = false, defaultValue = "20") int pageSize) throws Exception {
+    return questService.list(DEFAULT_JDBC, "root", "root", keyword, page, pageSize);
   }
 
   @GetMapping(path = "/quests/{questId}")
@@ -89,10 +94,14 @@ public class AdminController {
     WebApiResponse response = new WebApiResponse();
     response.phaseName = "AdminQuestSave";
     try {
+      String beforeName = questService.detail(DEFAULT_JDBC, "root", "root", questId).name;
       int changed = questService.save(DEFAULT_JDBC, "root", "root", questId, request);
       response.status = "SUCCESS";
       response.elapsedMs = System.currentTimeMillis() - started;
       response.artifacts.put("changedRows", Integer.toString(changed));
+      String afterName = questService.detail(DEFAULT_JDBC, "root", "root", questId).name;
+      response.artifacts.put("beforeName", beforeName == null ? "" : beforeName);
+      response.artifacts.put("afterName", afterName == null ? "" : afterName);
       writeOpsArtifacts("/api/admin/quests/{questId}/save", request, response, started);
       return response;
     } catch(Throwable ex) {
@@ -105,11 +114,12 @@ public class AdminController {
   }
 
   @GetMapping(path = "/npc-texts")
-  public List<AdminNpcTextItem> npcTextList(@RequestParam(name = "questId", required = false) Integer questId,
-                                            @RequestParam(name = "npcFile", required = false) String npcFile,
-                                            @RequestParam(name = "keyword", required = false) String keyword,
-                                            @RequestParam(name = "limit", required = false, defaultValue = "200") int limit) throws Exception {
-    return npcTextService.list(DEFAULT_JDBC, "root", "root", questId, npcFile, keyword, limit);
+  public PagedResult<AdminNpcTextItem> npcTextList(@RequestParam(name = "questId", required = false) Integer questId,
+                                                   @RequestParam(name = "npcFile", required = false) String npcFile,
+                                                   @RequestParam(name = "keyword", required = false) String keyword,
+                                                   @RequestParam(name = "page", required = false, defaultValue = "1") int page,
+                                                   @RequestParam(name = "pageSize", required = false, defaultValue = "20") int pageSize) throws Exception {
+    return npcTextService.list(DEFAULT_JDBC, "root", "root", questId, npcFile, keyword, page, pageSize);
   }
 
   @PostMapping(path = "/npc-texts/{textId}/save", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -188,4 +198,3 @@ public class AdminController {
     }
   }
 }
-

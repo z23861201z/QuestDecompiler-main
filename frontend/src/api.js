@@ -9,8 +9,8 @@ export function getDashboard() {
   return http.get('/admin/dashboard').then(r => r.data)
 }
 
-export function getQuestList(keyword = '', limit = 100) {
-  return http.get('/admin/quests', { params: { keyword, limit } }).then(r => r.data)
+export function getQuestList(keyword = '', page = 1, pageSize = 20) {
+  return http.get('/admin/quests', { params: { keyword, page, pageSize } }).then(r => r.data)
 }
 
 export function getQuestDetail(questId) {
@@ -32,4 +32,3 @@ export function saveNpcText(textId, payload) {
 export function runExport() {
   return http.post('/admin/export/run', {}).then(r => r.data)
 }
-

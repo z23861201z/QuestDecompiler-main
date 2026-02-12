@@ -10,5 +10,5 @@ public final class AdminNpcTextItem {
   public String modifiedText;
   public String astMarker;
   public Integer linkedQuestCount;
+  public String recentModifiedAt;
 }
-
