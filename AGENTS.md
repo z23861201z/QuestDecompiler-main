@@ -158,6 +158,14 @@
 - 导出单个 NPC Luc（客户端替换用）：
   - `java "-Dunluac.stringCharset=GBK" -cp build unluac.semantic.Phase7NpcLucBinaryExporter "npc_218008.lua" "D:/TitanGames/GhostOnline/zChina/Script/npc_218008.luc" "reports/npc_218008.luc"`
 
+#### quest.luc 编码与导出避坑（必须遵守）
+- 背景：`Phase4QuestLucExporter` 产物 `phase4_exported_quest*.lua` 默认是 UTF-8 文本文件；若直接编译为 luc，字符串常量字节将偏 UTF-8。
+- 客户端链路建议：导出 `quest.luc` 前先将 `phase4_exported_quest*.lua` 转为 GBK 编码，再编译为 luc（保证字符串常量字节与既有 GBK 链路一致）。
+- 校验规则：
+  - 用 `-Dunluac.stringCharset=GBK` 反编译时应能正常看到中文；
+  - 用 `-Dunluac.stringCharset=UTF-8` 反编译同一文件会出现明显乱码（这是预期现象，说明常量按 GBK 存储）。
+- 备注：quest 文件包含多区服文本，原始数据中本就存在大量 `?` 占位，不应将其误判为本次导出引入的问题。
+
 ## 涉及数据库表（功能 + 核心字段）
 
 ### Quest 主数据与结构表（Phase3）
