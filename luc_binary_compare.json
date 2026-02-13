@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-02-13T11:52:16.028+08:00",
+  "inputs": {
+    "before": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\quest_before_db_export_20260213_110051.luc",
+    "current": "D:\\TitanGames\\GhostOnline\\zChina\\Script\\quest.luc"
+  },
+  "before": {
+    "fileSize": 2231503,
+    "constantPoolCount": 24576,
+    "prototypeCount": 33,
+    "functionCount": 34,
+    "instructionCount": 127908,
+    "newtableCount": 26514,
+    "settableCount": 43144,
+    "maxStackDepth": 36,
+    "maxFunctionNestingDepth": 1
+  },
+  "current": {
+    "fileSize": 2084563,
+    "constantPoolCount": 23864,
+    "prototypeCount": 0,
+    "functionCount": 1,
+    "instructionCount": 114374,
+    "newtableCount": 23041,
+    "settableCount": 40170,
+    "maxStackDepth": 36,
+    "maxFunctionNestingDepth": 0
+  },
+  "delta": {
+    "fileSize": { "before": 2231503, "current": 2084563, "delta": -146940, "deltaPercent": -6.584800 },
+    "constantPoolCount": { "before": 24576, "current": 23864, "delta": -712, "deltaPercent": -2.897135 },
+    "prototypeCount": { "before": 33, "current": 0, "delta": -33, "deltaPercent": -100.000000 },
+    "instructionCount": { "before": 127908, "current": 114374, "delta": -13534, "deltaPercent": -10.581043 },
+    "newtableCount": { "before": 26514, "current": 23041, "delta": -3473, "deltaPercent": -13.098740 },
+    "settableCount": { "before": 43144, "current": 40170, "delta": -2974, "deltaPercent": -6.893195 },
+    "maxStackDepth": { "before": 36, "current": 36, "delta": 0, "deltaPercent": 0.000000 },
+    "maxFunctionNestingDepth": { "before": 1, "current": 0, "delta": -1, "deltaPercent": -100.000000 }
+  }
+}
