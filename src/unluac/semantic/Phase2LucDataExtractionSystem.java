@@ -166,6 +166,8 @@ public class Phase2LucDataExtractionSystem {
       record.needLevel = model.goal == null ? 0 : model.goal.needLevel;
       Integer bq = bQLoopByQuest.get(Integer.valueOf(model.questId));
       record.bQLoop = bq == null ? 0 : bq.intValue();
+      record.needItem = extractPositiveInt(model.conditions.get("needItem"));
+      record.requstItem = normalizeRequirementValue(model.conditions.get("requstItem"));
 
       fillGoal(record, model);
       fillReward(record, model);
@@ -321,6 +323,92 @@ public class Phase2LucDataExtractionSystem {
   }
 
   /**
+   * 从条件对象中提取正整数值。
+   * @param value 条件字段值
+   * @return 大于0的整数；否则返回null
+   */
+  private Integer extractPositiveInt(Object value) {
+    if(!(value instanceof Number)) {
+      return null;
+    }
+    int n = ((Number) value).intValue();
+    return n > 0 ? Integer.valueOf(n) : null;
+  }
+
+  /**
+   * 规范化 requstItem 结构，仅保留可序列化且非空的值。
+   * @param value 条件字段值
+   * @return 规范化后的值，若为空则返回null
+   */
+  private Object normalizeRequirementValue(Object value) {
+    if(value == null) {
+      return null;
+    }
+    if(value instanceof Number || value instanceof Boolean || value instanceof String) {
+      String text = String.valueOf(value).trim();
+      return text.isEmpty() ? null : value;
+    }
+    if(value instanceof List<?>) {
+      @SuppressWarnings("unchecked")
+      List<Object> list = (List<Object>) value;
+      List<Object> out = new ArrayList<Object>();
+      for(Object item : list) {
+        Object normalized = normalizeRequirementValue(item);
+        if(normalized != null) {
+          out.add(normalized);
+        }
+      }
+      return out.isEmpty() ? null : out;
+    }
+    if(value instanceof Map<?, ?>) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> map = (Map<String, Object>) value;
+      Map<String, Object> out = new LinkedHashMap<String, Object>();
+      for(Map.Entry<String, Object> entry : map.entrySet()) {
+        Object normalized = normalizeRequirementValue(entry.getValue());
+        if(normalized != null) {
+          out.put(entry.getKey(), normalized);
+        }
+      }
+      return out.isEmpty() ? null : out;
+    }
+    String text = String.valueOf(value).trim();
+    return text.isEmpty() ? null : text;
+  }
+
+  /**
+   * 将对象安全转换为正整数；无法转换或<=0返回null。
+   * @param value 输入值
+   * @return 正整数或null
+   */
+  private Integer asPositiveInt(Object value) {
+    if(!(value instanceof Number)) {
+      return null;
+    }
+    int n = ((Number) value).intValue();
+    return n > 0 ? Integer.valueOf(n) : null;
+  }
+
+  /**
+   * 以 id+count 去重后追加奖励道具。
+   * @param out 输出列表
+   * @param seen 去重集合
+   * @param item 奖励道具
+   */
+  private void addRewardItemIfAbsent(List<RewardItem> out, Set<String> seen, RewardItem item) {
+    if(out == null || seen == null || item == null) {
+      return;
+    }
+    if(item.id <= 0 || item.count <= 0) {
+      return;
+    }
+    String signature = item.id + "#" + item.count;
+    if(seen.add(signature)) {
+      out.add(item);
+    }
+  }
+
+  /**
    * 将数据填充到输出模型。
    * @param record 方法参数
    * @param model 方法参数
@@ -329,17 +417,52 @@ public class Phase2LucDataExtractionSystem {
     if(record == null || model == null || model.rewards == null) {
       return;
     }
+    Set<String> rewardItemSeen = new LinkedHashSet<String>();
+    Set<Integer> skillSeen = new LinkedHashSet<Integer>();
     for(QuestSemanticModel.Reward reward : model.rewards) {
       if(reward == null) {
         continue;
       }
-      record.reward.exp += reward.exp;
-      record.reward.gold += reward.money;
+
+      if(reward.money != 0) {
+        int current = record.reward.money == null ? 0 : record.reward.money.intValue();
+        record.reward.money = Integer.valueOf(current + reward.money);
+      }
+      if(reward.exp != 0) {
+        int current = record.reward.exp == null ? 0 : record.reward.exp.intValue();
+        record.reward.exp = Integer.valueOf(current + reward.exp);
+      }
+      if(reward.fame != 0) {
+        int current = record.reward.fame == null ? 0 : record.reward.fame.intValue();
+        record.reward.fame = Integer.valueOf(current + reward.fame);
+      }
+      if(reward.pvppoint != 0) {
+        int current = record.reward.pvppoint == null ? 0 : record.reward.pvppoint.intValue();
+        record.reward.pvppoint = Integer.valueOf(current + reward.pvppoint);
+      }
+
+      Integer mileage = asPositiveInt(reward.extraFields.get("mileage"));
+      if(mileage != null) {
+        int current = record.reward.mileage == null ? 0 : record.reward.mileage.intValue();
+        record.reward.mileage = Integer.valueOf(current + mileage.intValue());
+      }
+
       if(reward.id > 0 && reward.count > 0) {
         RewardItem item = new RewardItem();
         item.id = reward.id;
         item.count = reward.count;
-        record.reward.items.add(item);
+        addRewardItemIfAbsent(record.reward.getItem, rewardItemSeen, item);
+      }
+
+      if(reward.skillIds != null) {
+        for(Integer skillId : reward.skillIds) {
+          if(skillId == null || skillId.intValue() <= 0) {
+            continue;
+          }
+          if(skillSeen.add(skillId)) {
+            record.reward.getSkill.add(skillId);
+          }
+        }
       }
     }
   }
@@ -1247,9 +1370,20 @@ public class Phase2LucDataExtractionSystem {
             .append("\"name\": ").append(QuestSemanticJson.jsonString(q.name)).append(", ")
             .append("\"contents\": ").append(QuestSemanticJson.toJsonArrayString(q.contents)).append(", ")
             .append("\"answer\": ").append(QuestSemanticJson.toJsonArrayString(q.answer)).append(", ")
-            .append("\"info\": ").append(QuestSemanticJson.toJsonArrayString(q.info)).append(", ")
-            .append("\"goal\": ").append(q.goal.toJson()).append(", ")
-            .append("\"reward\": ").append(q.reward.toJson()).append(", ")
+            .append("\"info\": ").append(QuestSemanticJson.toJsonArrayString(q.info));
+        if(q.needItem != null && q.needItem.intValue() > 0) {
+          sb.append(", \"needItem\": ").append(q.needItem.intValue());
+        }
+        if(q.requstItem != null) {
+          sb.append(", \"requstItem\": ").append(toJsonValue(q.requstItem));
+        }
+        if(q.goal.hasAny()) {
+          sb.append(", \"goal\": ").append(q.goal.toJson());
+        }
+        if(q.reward.hasAny()) {
+          sb.append(", \"reward\": ").append(q.reward.toJson());
+        }
+        sb.append(", ")
             .append("\"needLevel\": ").append(q.needLevel).append(", ")
             .append("\"bQLoop\": ").append(q.bQLoop)
             .append("}");
@@ -1791,13 +1925,32 @@ public class Phase2LucDataExtractionSystem {
     final List<GoalKill> killMonster = new ArrayList<GoalKill>();
     final List<Integer> meetNpc = new ArrayList<Integer>();
 
+    boolean hasAny() {
+      return !getItem.isEmpty() || !killMonster.isEmpty() || !meetNpc.isEmpty();
+    }
+
     String toJson() {
       StringBuilder sb = new StringBuilder();
-      sb.append("{")
-          .append("\"getItem\":").append(jsonGoalItems(getItem)).append(",")
-          .append("\"killMonster\":").append(jsonGoalKills(killMonster)).append(",")
-          .append("\"meetNpc\":").append(QuestSemanticJson.toJsonArrayInt(meetNpc))
-          .append("}");
+      sb.append("{");
+      boolean appended = false;
+      if(!getItem.isEmpty()) {
+        sb.append("\"getItem\":").append(jsonGoalItems(getItem));
+        appended = true;
+      }
+      if(!killMonster.isEmpty()) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"killMonster\":").append(jsonGoalKills(killMonster));
+        appended = true;
+      }
+      if(!meetNpc.isEmpty()) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"meetNpc\":").append(QuestSemanticJson.toJsonArrayInt(meetNpc));
+      }
+      sb.append("}");
       return sb.toString();
     }
   }
@@ -1843,17 +1996,80 @@ public class Phase2LucDataExtractionSystem {
   }
 
   private static final class RewardBlock {
-    int exp;
-    int gold;
-    final List<RewardItem> items = new ArrayList<RewardItem>();
+    Integer money;
+    Integer exp;
+    Integer fame;
+    Integer pvppoint;
+    Integer mileage;
+    final List<RewardItem> getItem = new ArrayList<RewardItem>();
+    final List<Integer> getSkill = new ArrayList<Integer>();
+
+    private boolean hasPositive(Integer value) {
+      return value != null && value.intValue() > 0;
+    }
+
+    boolean hasAny() {
+      return hasPositive(money)
+          || hasPositive(exp)
+          || hasPositive(fame)
+          || hasPositive(pvppoint)
+          || hasPositive(mileage)
+          || !getItem.isEmpty()
+          || !getSkill.isEmpty();
+    }
 
     String toJson() {
       StringBuilder sb = new StringBuilder();
-      sb.append("{")
-          .append("\"exp\":").append(exp).append(",")
-          .append("\"gold\":").append(gold).append(",")
-          .append("\"items\":").append(jsonRewardItems(items))
-          .append("}");
+      sb.append("{");
+      boolean appended = false;
+
+      if(hasPositive(money)) {
+        sb.append("\"money\":").append(money.intValue());
+        appended = true;
+      }
+      if(hasPositive(exp)) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"exp\":").append(exp.intValue());
+        appended = true;
+      }
+      if(hasPositive(fame)) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"fame\":").append(fame.intValue());
+        appended = true;
+      }
+      if(hasPositive(pvppoint)) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"pvppoint\":").append(pvppoint.intValue());
+        appended = true;
+      }
+      if(hasPositive(mileage)) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"mileage\":").append(mileage.intValue());
+        appended = true;
+      }
+      if(!getItem.isEmpty()) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"getItem\":").append(jsonRewardItems(getItem));
+        appended = true;
+      }
+      if(!getSkill.isEmpty()) {
+        if(appended) {
+          sb.append(",");
+        }
+        sb.append("\"getSkill\":").append(jsonIntArray(getSkill));
+      }
+
+      sb.append("}");
       return sb.toString();
     }
   }
@@ -1874,12 +2090,79 @@ public class Phase2LucDataExtractionSystem {
     return sb.toString();
   }
 
+  /**
+   * 序列化整数数组。
+   */
+  private static String jsonIntArray(List<Integer> values) {
+    StringBuilder sb = new StringBuilder();
+    sb.append("[");
+    for(int i = 0; i < values.size(); i++) {
+      if(i > 0) {
+        sb.append(',');
+      }
+      Integer value = values.get(i);
+      sb.append(value == null ? "null" : value.intValue());
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  /**
+   * 将任意可序列化对象转为 JSON 文本。
+   */
+  private static String toJsonValue(Object value) {
+    if(value == null) {
+      return "null";
+    }
+    if(value instanceof String) {
+      return QuestSemanticJson.jsonString((String) value);
+    }
+    if(value instanceof Number || value instanceof Boolean) {
+      return String.valueOf(value);
+    }
+    if(value instanceof List<?>) {
+      StringBuilder sb = new StringBuilder();
+      sb.append("[");
+      @SuppressWarnings("unchecked")
+      List<Object> list = (List<Object>) value;
+      for(int i = 0; i < list.size(); i++) {
+        if(i > 0) {
+          sb.append(",");
+        }
+        sb.append(toJsonValue(list.get(i)));
+      }
+      sb.append("]");
+      return sb.toString();
+    }
+    if(value instanceof Map<?, ?>) {
+      StringBuilder sb = new StringBuilder();
+      sb.append("{");
+      @SuppressWarnings("unchecked")
+      Map<Object, Object> map = (Map<Object, Object>) value;
+      boolean first = true;
+      for(Map.Entry<Object, Object> entry : map.entrySet()) {
+        if(!first) {
+          sb.append(",");
+        }
+        first = false;
+        sb.append(QuestSemanticJson.jsonString(String.valueOf(entry.getKey())));
+        sb.append(":");
+        sb.append(toJsonValue(entry.getValue()));
+      }
+      sb.append("}");
+      return sb.toString();
+    }
+    return QuestSemanticJson.jsonString(String.valueOf(value));
+  }
+
   private static final class QuestRecord {
     int questId;
     String name = "";
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
+    Integer needItem;
+    Object requstItem;
     final QuestGoalBlock goal = new QuestGoalBlock();
     final RewardBlock reward = new RewardBlock();
     int needLevel;

@@ -47,6 +47,7 @@ public class QuestSemanticExtractor {
     QUEST_KEYS.add("npcsay");
     QUEST_KEYS.add("needLevel");
     QUEST_KEYS.add("needQuest");
+    QUEST_KEYS.add("needItem");
     QUEST_KEYS.add("goal");
     QUEST_KEYS.add("reward");
     QUEST_KEYS.add("requstItem");
@@ -60,6 +61,8 @@ public class QuestSemanticExtractor {
     REWARD_KEYS.add("exp");
     REWARD_KEYS.add("fame");
     REWARD_KEYS.add("pvppoint");
+    REWARD_KEYS.add("mileage");
+    REWARD_KEYS.add("getItem");
     REWARD_KEYS.add("getSkill");
     REWARD_KEYS.add("id");
     REWARD_KEYS.add("count");
@@ -68,6 +71,7 @@ public class QuestSemanticExtractor {
 
     CONDITION_KEYS.add("needLevel");
     CONDITION_KEYS.add("needQuest");
+    CONDITION_KEYS.add("needItem");
     CONDITION_KEYS.add("requstItem");
     CONDITION_KEYS.add("goal");
     CONDITION_KEYS.add("killMonster");
@@ -796,10 +800,30 @@ public class QuestSemanticExtractor {
         }
       }
 
+      Value needItem = table.fields.get("needItem");
+      if(needItem != null) {
+        putCondition(model.conditions, "needItem", toObject(needItem, 0, new HashSet<Integer>()));
+        state.ruleHits.add(new RuleHit(
+            RULE_CONDITION,
+            table.functionPath,
+            table.createPc,
+            table.createOffset,
+            "questId=" + questId + " condition=needItem"));
+        if(needItem.isNumber()) {
+          state.fieldBindings.add(FieldBinding.numberBinding(
+              model.questId,
+              "condition_json.needItem",
+              table.functionPath,
+              needItem.constantIndex,
+              needItem.sourcePc,
+              needItem.sourceFunctionPath,
+              needItem.numberValue));
+        }
+      }
+
       Value requestItem = table.fields.get("requstItem");
       if(requestItem != null) {
         putCondition(model.conditions, "requstItem", toObject(requestItem, 0, new HashSet<Integer>()));
-        fillQuestItemRequirements(model.goal, requestItem);
         state.ruleHits.add(new RuleHit(
             RULE_CONDITION,
             table.functionPath,
@@ -960,6 +984,18 @@ public class QuestSemanticExtractor {
           pvpPoint.numberValue));
     }
 
+    Value mileage = table.fields.get("mileage");
+    if(mileage != null && mileage.isNumber()) {
+      state.fieldBindings.add(FieldBinding.numberBinding(
+          questId,
+          "reward_mileage",
+          ownerFunctionPath,
+          mileage.constantIndex,
+          mileage.sourcePc,
+          mileage.sourceFunctionPath,
+          mileage.numberValue));
+    }
+
     Value getSkill = table.fields.get("getSkill");
     if(getSkill != null) {
       collectRewardSkillBindings(state, questId, ownerFunctionPath, getSkill, new HashSet<Integer>(), new int[] { 0 });
@@ -1047,6 +1083,7 @@ public class QuestSemanticExtractor {
         || "exp".equals(key)
         || "fame".equals(key)
         || "pvppoint".equals(key)
+        || "mileage".equals(key)
         || "getSkill".equals(key)
         || "getItem".equals(key);
   }
@@ -1447,6 +1484,16 @@ public class QuestSemanticExtractor {
           reward.pvppoint = number.intValue();
           if("table".equals(reward.type)) {
             reward.type = "pvppoint";
+          }
+        }
+        continue;
+      }
+      if("mileage".equals(key)) {
+        Integer number = value == null ? null : value.asInteger();
+        if(number != null) {
+          reward.extraFields.put("mileage", number);
+          if("table".equals(reward.type)) {
+            reward.type = "mileage";
           }
         }
         continue;

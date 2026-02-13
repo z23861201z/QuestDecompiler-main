@@ -117,7 +117,7 @@ public class Phase4QuestLucExporter {
     Map<Integer, QuestRecord> byQuest = new LinkedHashMap<Integer, QuestRecord>();
 
     try(Connection connection = DriverManager.getConnection(jdbcUrl, user, password)) {
-      String mainSql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold, reward_money, reward_fame, reward_pvppoint, reward_mileage, need_item "
+      String mainSql = "SELECT quest_id, name, need_level, bq_loop, reward_exp, reward_gold "
           + "FROM quest_main ORDER BY quest_id ASC";
       try(PreparedStatement ps = connection.prepareStatement(mainSql);
           ResultSet rs = ps.executeQuery()) {
@@ -132,15 +132,7 @@ public class Phase4QuestLucExporter {
           record.needLevel = toNullableInt(rs, "need_level");
           record.bqLoop = toNullableInt(rs, "bq_loop");
           record.rewardExp = toNullableInt(rs, "reward_exp");
-          Integer rewardGold = toNullableInt(rs, "reward_gold");
-          record.rewardMoney = toNullableInt(rs, "reward_money");
-          if(!isPositive(record.rewardMoney) && isPositive(rewardGold)) {
-            record.rewardMoney = rewardGold;
-          }
-          record.rewardFame = toNullableInt(rs, "reward_fame");
-          record.rewardPvppoint = toNullableInt(rs, "reward_pvppoint");
-          record.rewardMileage = toNullableInt(rs, "reward_mileage");
-          record.needItem = toNullableInt(rs, "need_item");
+          record.rewardGold = toNullableInt(rs, "reward_gold");
           byQuest.put(Integer.valueOf(record.questId), record);
         }
       }
@@ -152,9 +144,7 @@ public class Phase4QuestLucExporter {
       loadPairArray(connection, byQuest, "quest_goal_getitem", "item_id", "item_count", PairType.GOAL_GET_ITEM);
       loadPairArray(connection, byQuest, "quest_goal_killmonster", "monster_id", "monster_count", PairType.GOAL_KILL_MONSTER);
       loadIntArray(connection, byQuest, "quest_goal_meetnpc", "npc_id");
-      loadPairArray(connection, byQuest, "quest_reward_item", "item_id", "item_count", PairType.REWARD_GET_ITEM);
-      loadSkillArray(connection, byQuest);
-      loadRequstItemArray(connection, byQuest);
+      loadPairArray(connection, byQuest, "quest_reward_item", "item_id", "item_count", PairType.REWARD_ITEM);
     }
 
     List<QuestRecord> quests = new ArrayList<QuestRecord>(byQuest.values());
@@ -235,7 +225,7 @@ public class Phase4QuestLucExporter {
         } else if(type == PairType.GOAL_KILL_MONSTER) {
           quest.goalKillMonster.add(pair);
         } else {
-          quest.rewardGetItem.add(pair);
+          quest.rewardItems.add(pair);
         }
       }
     }
@@ -269,219 +259,47 @@ public class Phase4QuestLucExporter {
   }
 
   /**
-   * 从数据库加载 reward.getSkill（按 seq_index 保序）。
-   */
-  private void loadSkillArray(Connection connection,
-                              Map<Integer, QuestRecord> byQuest) throws Exception {
-    String sql = "SELECT quest_id, seq_index, skill_id FROM quest_reward_skill ORDER BY quest_id ASC, seq_index ASC";
-    try(PreparedStatement ps = connection.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery()) {
-      while(rs.next()) {
-        int questId = rs.getInt("quest_id");
-        QuestRecord quest = byQuest.get(Integer.valueOf(questId));
-        if(quest == null) {
-          continue;
-        }
-        Integer skillId = toNullableInt(rs, "skill_id");
-        if(skillId != null && skillId.intValue() > 0) {
-          quest.rewardGetSkill.add(skillId);
-        }
-      }
-    } catch(Exception ignored) {
-      // 兼容旧库：没有 quest_reward_skill 时保留为空集合。
-    }
-  }
-
-  /**
-   * 从数据库加载 requstItem 原始 JSON 结构。
-   */
-  private void loadRequstItemArray(Connection connection,
-                                   Map<Integer, QuestRecord> byQuest) throws Exception {
-    String sql = "SELECT quest_id, seq_index, raw_json FROM quest_requst_item ORDER BY quest_id ASC, seq_index ASC";
-    Map<Integer, List<Object>> grouped = new LinkedHashMap<Integer, List<Object>>();
-    try(PreparedStatement ps = connection.prepareStatement(sql);
-        ResultSet rs = ps.executeQuery()) {
-      while(rs.next()) {
-        int questId = rs.getInt("quest_id");
-        QuestRecord quest = byQuest.get(Integer.valueOf(questId));
-        if(quest == null) {
-          continue;
-        }
-        Object value = parseJsonValue(rs.getString("raw_json"));
-        List<Object> list = grouped.get(Integer.valueOf(questId));
-        if(list == null) {
-          list = new ArrayList<Object>();
-          grouped.put(Integer.valueOf(questId), list);
-        }
-        list.add(value);
-      }
-    } catch(Exception ignored) {
-      // 兼容旧库：没有 quest_requst_item 时保持为空。
-      return;
-    }
-
-    for(Map.Entry<Integer, List<Object>> entry : grouped.entrySet()) {
-      QuestRecord quest = byQuest.get(entry.getKey());
-      if(quest == null) {
-        continue;
-      }
-      List<Object> values = entry.getValue();
-      if(values == null || values.isEmpty()) {
-        continue;
-      }
-      quest.requstItem = values.size() == 1 ? values.get(0) : values;
-    }
-  }
-
-  /**
    * 将数据追加到目标容器。
    * @param sb 方法参数
    * @param quest 方法参数
    */
   private void appendQuest(StringBuilder sb, QuestRecord quest) {
-    List<String> fields = new ArrayList<String>();
-    fields.add("id = " + quest.questId);
-
-    if(hasText(quest.name)) {
-      fields.add("name = " + luaStringOrNil(quest.name));
-    }
-    if(!quest.contents.isEmpty()) {
-      fields.add("contents = " + renderStringArray(quest.contents, 2));
-    }
-    if(!quest.answer.isEmpty()) {
-      fields.add("answer = " + renderStringArray(quest.answer, 2));
-    }
-    if(!quest.info.isEmpty()) {
-      fields.add("info = " + renderStringArray(quest.info, 2));
-    }
-    if(isPositive(quest.needItem)) {
-      fields.add("needItem = " + quest.needItem.intValue());
-    }
-    if(quest.requstItem != null) {
-      fields.add("requstItem = " + toLuaValue(quest.requstItem, 2));
-    }
-
-    String goal = renderGoal(quest);
-    if(goal != null) {
-      fields.add("goal = " + goal);
-    }
-    String reward = renderReward(quest);
-    if(reward != null) {
-      fields.add("reward = " + reward);
-    }
-
-    if(isPositive(quest.needLevel)) {
-      fields.add("needLevel = " + quest.needLevel.intValue());
-    }
-    if(isPositive(quest.bqLoop)) {
-      fields.add("bQLoop = " + quest.bqLoop.intValue());
-    }
-
     sb.append("qt[").append(quest.questId).append("] = {\n");
-    for(int i = 0; i < fields.size(); i++) {
-      sb.append("  ").append(fields.get(i));
-      if(i < fields.size() - 1) {
-        sb.append(",");
-      }
-      sb.append("\n");
-    }
+    sb.append("  id = ").append(quest.questId).append(",\n");
+    sb.append("  name = ").append(luaStringOrNil(quest.name)).append(",\n");
+    sb.append("  contents = ");
+    appendStringArray(sb, quest.contents, 2);
+    sb.append(",\n");
+    sb.append("  answer = ");
+    appendStringArray(sb, quest.answer, 2);
+    sb.append(",\n");
+    sb.append("  info = ");
+    appendStringArray(sb, quest.info, 2);
+    sb.append(",\n");
+
+    sb.append("  goal = {\n");
+    sb.append("    getItem = ");
+    appendPairArray(sb, quest.goalGetItem, 4, "id", "count");
+    sb.append(",\n");
+    sb.append("    killMonster = ");
+    appendPairArray(sb, quest.goalKillMonster, 4, "id", "count");
+    sb.append(",\n");
+    sb.append("    meetNpc = ");
+    appendIntArray(sb, quest.goalMeetNpc, 4);
+    sb.append("\n");
+    sb.append("  },\n");
+
+    sb.append("  reward = {\n");
+    sb.append("    exp = ").append(luaIntOrNil(quest.rewardExp)).append(",\n");
+    sb.append("    gold = ").append(luaIntOrNil(quest.rewardGold)).append(",\n");
+    sb.append("    items = ");
+    appendPairArray(sb, quest.rewardItems, 4, "id", "count");
+    sb.append("\n");
+    sb.append("  },\n");
+
+    sb.append("  needLevel = ").append(luaIntOrNil(quest.needLevel)).append(",\n");
+    sb.append("  bQLoop = ").append(luaIntOrNil(quest.bqLoop)).append("\n");
     sb.append("}\n");
-  }
-
-  private String renderGoal(QuestRecord quest) {
-    boolean hasGoal = !quest.goalGetItem.isEmpty() || !quest.goalKillMonster.isEmpty() || !quest.goalMeetNpc.isEmpty();
-    if(!hasGoal) {
-      return null;
-    }
-
-    StringBuilder sb = new StringBuilder();
-    sb.append("{\n");
-    List<String> lines = new ArrayList<String>();
-    if(!quest.goalGetItem.isEmpty()) {
-      lines.add("getItem = " + renderPairArray(quest.goalGetItem, 4, "id", "count"));
-    }
-    if(!quest.goalKillMonster.isEmpty()) {
-      lines.add("killMonster = " + renderPairArray(quest.goalKillMonster, 4, "id", "count"));
-    }
-    if(!quest.goalMeetNpc.isEmpty()) {
-      lines.add("meetNpc = " + renderIntArray(quest.goalMeetNpc, 4));
-    }
-
-    for(int i = 0; i < lines.size(); i++) {
-      sb.append("    ").append(lines.get(i));
-      if(i < lines.size() - 1) {
-        sb.append(",");
-      }
-      sb.append("\n");
-    }
-    sb.append("  }");
-    return sb.toString();
-  }
-
-  private String renderReward(QuestRecord quest) {
-    boolean hasReward = isPositive(quest.rewardMoney)
-        || isPositive(quest.rewardExp)
-        || isPositive(quest.rewardFame)
-        || isPositive(quest.rewardPvppoint)
-        || isPositive(quest.rewardMileage)
-        || !quest.rewardGetItem.isEmpty()
-        || !quest.rewardGetSkill.isEmpty();
-    if(!hasReward) {
-      return null;
-    }
-
-    StringBuilder sb = new StringBuilder();
-    sb.append("{\n");
-    List<String> lines = new ArrayList<String>();
-    if(isPositive(quest.rewardMoney)) {
-      lines.add("money = " + quest.rewardMoney.intValue());
-    }
-    if(isPositive(quest.rewardExp)) {
-      lines.add("exp = " + quest.rewardExp.intValue());
-    }
-    if(isPositive(quest.rewardFame)) {
-      lines.add("fame = " + quest.rewardFame.intValue());
-    }
-    if(isPositive(quest.rewardPvppoint)) {
-      lines.add("pvppoint = " + quest.rewardPvppoint.intValue());
-    }
-    if(isPositive(quest.rewardMileage)) {
-      lines.add("mileage = " + quest.rewardMileage.intValue());
-    }
-    if(!quest.rewardGetItem.isEmpty()) {
-      lines.add("getItem = " + renderPairArray(quest.rewardGetItem, 4, "id", "count"));
-    }
-    if(!quest.rewardGetSkill.isEmpty()) {
-      lines.add("getSkill = " + renderIntArray(quest.rewardGetSkill, 4));
-    }
-
-    for(int i = 0; i < lines.size(); i++) {
-      sb.append("    ").append(lines.get(i));
-      if(i < lines.size() - 1) {
-        sb.append(",");
-      }
-      sb.append("\n");
-    }
-    sb.append("  }");
-    return sb.toString();
-  }
-
-  private String renderStringArray(List<String> values, int indent) {
-    StringBuilder sb = new StringBuilder();
-    appendStringArray(sb, values, indent);
-    return sb.toString();
-  }
-
-  private String renderIntArray(List<Integer> values, int indent) {
-    StringBuilder sb = new StringBuilder();
-    appendIntArray(sb, values, indent);
-    return sb.toString();
-  }
-
-  private String renderPairArray(List<Pair> values, int indent, String leftKey, String rightKey) {
-    StringBuilder sb = new StringBuilder();
-    appendPairArray(sb, values, indent, leftKey, rightKey);
-    return sb.toString();
   }
 
   /**
@@ -633,102 +451,6 @@ public class Phase4QuestLucExporter {
     return sb.toString();
   }
 
-  private boolean hasText(String value) {
-    return value != null && !value.isEmpty();
-  }
-
-  private boolean isPositive(Integer value) {
-    return value != null && value.intValue() > 0;
-  }
-
-  private String toLuaValue(Object value, int indent) {
-    if(value == null) {
-      return "nil";
-    }
-    if(value instanceof String) {
-      return luaStringOrNil((String) value);
-    }
-    if(value instanceof Number || value instanceof Boolean) {
-      return String.valueOf(value);
-    }
-    if(value instanceof List<?>) {
-      @SuppressWarnings("unchecked")
-      List<Object> list = (List<Object>) value;
-      if(list.isEmpty()) {
-        return "{}";
-      }
-      StringBuilder sb = new StringBuilder();
-      sb.append("{\n");
-      String pad = pad(indent);
-      String childPad = pad(indent + 2);
-      for(int i = 0; i < list.size(); i++) {
-        sb.append(childPad).append(toLuaValue(list.get(i), indent + 2));
-        if(i < list.size() - 1) {
-          sb.append(",");
-        }
-        sb.append("\n");
-      }
-      sb.append(pad).append("}");
-      return sb.toString();
-    }
-    if(value instanceof Map<?, ?>) {
-      @SuppressWarnings("unchecked")
-      Map<Object, Object> map = (Map<Object, Object>) value;
-      if(map.isEmpty()) {
-        return "{}";
-      }
-      StringBuilder sb = new StringBuilder();
-      sb.append("{\n");
-      String pad = pad(indent);
-      String childPad = pad(indent + 2);
-      int index = 0;
-      for(Map.Entry<Object, Object> entry : map.entrySet()) {
-        sb.append(childPad)
-            .append(renderLuaKey(entry.getKey()))
-            .append(" = ")
-            .append(toLuaValue(entry.getValue(), indent + 2));
-        if(index < map.size() - 1) {
-          sb.append(",");
-        }
-        sb.append("\n");
-        index++;
-      }
-      sb.append(pad).append("}");
-      return sb.toString();
-    }
-    return luaStringOrNil(String.valueOf(value));
-  }
-
-  private String renderLuaKey(Object key) {
-    if(key == null) {
-      return "[\"null\"]";
-    }
-    String text = String.valueOf(key);
-    if(text.matches("[A-Za-z_][A-Za-z0-9_]*")) {
-      return text;
-    }
-    if(text.matches("[0-9]+")) {
-      return "[" + text + "]";
-    }
-    return "[" + luaStringOrNil(text) + "]";
-  }
-
-  private Object parseJsonValue(String rawJson) {
-    if(rawJson == null) {
-      return null;
-    }
-    String trimmed = rawJson.trim();
-    if(trimmed.isEmpty() || "null".equals(trimmed)) {
-      return null;
-    }
-    try {
-      Map<String, Object> wrapper = QuestSemanticJson.parseObject("{\"value\":" + trimmed + "}", "quest_requst_item.raw_json", 0);
-      return wrapper.get("value");
-    } catch(Exception ignored) {
-      return rawJson;
-    }
-  }
-
   /**
    * 确保前置条件满足。
    * @param output 方法参数
@@ -846,7 +568,7 @@ public class Phase4QuestLucExporter {
   private enum PairType {
     GOAL_GET_ITEM,
     GOAL_KILL_MONSTER,
-    REWARD_GET_ITEM
+    REWARD_ITEM
   }
 
   private static final class Pair {
@@ -858,22 +580,16 @@ public class Phase4QuestLucExporter {
     int questId;
     String name;
     Integer needLevel;
-    Integer needItem;
     Integer bqLoop;
     Integer rewardExp;
-    Integer rewardMoney;
-    Integer rewardFame;
-    Integer rewardPvppoint;
-    Integer rewardMileage;
-    Object requstItem;
+    Integer rewardGold;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
     final List<Pair> goalGetItem = new ArrayList<Pair>();
     final List<Pair> goalKillMonster = new ArrayList<Pair>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
-    final List<Pair> rewardGetItem = new ArrayList<Pair>();
-    final List<Integer> rewardGetSkill = new ArrayList<Integer>();
+    final List<Pair> rewardItems = new ArrayList<Pair>();
   }
 
   public static final class ExportResult {

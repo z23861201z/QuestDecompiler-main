@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.sql.Types;
 import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -145,7 +146,12 @@ public class Phase3DatabaseWriter {
         + "need_level INT NOT NULL DEFAULT 0,"
         + "bq_loop INT NOT NULL DEFAULT 0,"
         + "reward_exp INT NOT NULL DEFAULT 0,"
-        + "reward_gold INT NOT NULL DEFAULT 0"
+        + "reward_gold INT NOT NULL DEFAULT 0,"
+        + "reward_money INT NOT NULL DEFAULT 0,"
+        + "reward_fame INT NOT NULL DEFAULT 0,"
+        + "reward_pvppoint INT NOT NULL DEFAULT 0,"
+        + "reward_mileage INT NOT NULL DEFAULT 0,"
+        + "need_item INT NOT NULL DEFAULT 0"
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
 
     ddl.add("CREATE TABLE IF NOT EXISTS quest_contents ("
@@ -214,6 +220,26 @@ public class Phase3DatabaseWriter {
         + "KEY idx_reward_item_quest (quest_id)"
         + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
 
+    ddl.add("CREATE TABLE IF NOT EXISTS quest_reward_skill ("
+        + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+        + "quest_id INT NOT NULL,"
+        + "seq_index INT NOT NULL,"
+        + "skill_id INT NOT NULL,"
+        + "UNIQUE KEY uk_reward_skill (quest_id, seq_index),"
+        + "KEY idx_reward_skill_quest (quest_id)"
+        + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
+
+    ddl.add("CREATE TABLE IF NOT EXISTS quest_requst_item ("
+        + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+        + "quest_id INT NOT NULL,"
+        + "seq_index INT NOT NULL,"
+        + "item_id INT NULL,"
+        + "item_count INT NULL,"
+        + "raw_json LONGTEXT,"
+        + "UNIQUE KEY uk_requst_item (quest_id, seq_index),"
+        + "KEY idx_requst_item_quest (quest_id)"
+        + ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci");
+
     ddl.add("CREATE TABLE IF NOT EXISTS npc_quest_reference ("
         + "id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
         + "npc_file VARCHAR(255) NOT NULL,"
@@ -229,6 +255,26 @@ public class Phase3DatabaseWriter {
       for(String sql : ddl) {
         statement.execute(sql);
       }
+      tryExecuteSchemaChange(statement, "ALTER TABLE quest_main ADD COLUMN reward_money INT NOT NULL DEFAULT 0");
+      tryExecuteSchemaChange(statement, "ALTER TABLE quest_main ADD COLUMN reward_fame INT NOT NULL DEFAULT 0");
+      tryExecuteSchemaChange(statement, "ALTER TABLE quest_main ADD COLUMN reward_pvppoint INT NOT NULL DEFAULT 0");
+      tryExecuteSchemaChange(statement, "ALTER TABLE quest_main ADD COLUMN reward_mileage INT NOT NULL DEFAULT 0");
+      tryExecuteSchemaChange(statement, "ALTER TABLE quest_main ADD COLUMN need_item INT NOT NULL DEFAULT 0");
+    }
+  }
+
+  /**
+   * 对已存在列执行幂等补列；重复列错误会被忽略。
+   */
+  private void tryExecuteSchemaChange(Statement statement, String sql) throws Exception {
+    try {
+      statement.execute(sql);
+    } catch(Exception ex) {
+      String message = ex.getMessage();
+      if(message != null && message.toLowerCase(Locale.ROOT).contains("duplicate column")) {
+        return;
+      }
+      throw ex;
     }
   }
 
@@ -240,6 +286,8 @@ public class Phase3DatabaseWriter {
   private void truncateData(Connection connection) throws Exception {
     List<String> tables = new ArrayList<String>();
     tables.add("npc_quest_reference");
+    tables.add("quest_requst_item");
+    tables.add("quest_reward_skill");
     tables.add("quest_reward_item");
     tables.add("quest_goal_meetnpc");
     tables.add("quest_goal_killmonster");
@@ -264,7 +312,7 @@ public class Phase3DatabaseWriter {
   private void insertQuestData(Connection connection,
                                List<QuestRow> quests,
                                InsertSummary summary) throws Exception {
-    String insertMain = "INSERT INTO quest_main(quest_id, name, need_level, bq_loop, reward_exp, reward_gold) VALUES(?,?,?,?,?,?)";
+    String insertMain = "INSERT INTO quest_main(quest_id, name, need_level, bq_loop, reward_exp, reward_gold, reward_money, reward_fame, reward_pvppoint, reward_mileage, need_item) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
     String insertContents = "INSERT INTO quest_contents(quest_id, seq_index, text) VALUES(?,?,?)";
     String insertAnswer = "INSERT INTO quest_answer(quest_id, seq_index, text) VALUES(?,?,?)";
     String insertInfo = "INSERT INTO quest_info(quest_id, seq_index, text) VALUES(?,?,?)";
@@ -272,6 +320,8 @@ public class Phase3DatabaseWriter {
     String insertGoalKill = "INSERT INTO quest_goal_killmonster(quest_id, seq_index, monster_id, monster_count) VALUES(?,?,?,?)";
     String insertGoalMeet = "INSERT INTO quest_goal_meetnpc(quest_id, seq_index, npc_id) VALUES(?,?,?)";
     String insertRewardItem = "INSERT INTO quest_reward_item(quest_id, seq_index, item_id, item_count) VALUES(?,?,?,?)";
+    String insertRewardSkill = "INSERT INTO quest_reward_skill(quest_id, seq_index, skill_id) VALUES(?,?,?)";
+    String insertRequstItem = "INSERT INTO quest_requst_item(quest_id, seq_index, item_id, item_count, raw_json) VALUES(?,?,?,?,?)";
 
     try(PreparedStatement psMain = connection.prepareStatement(insertMain);
         PreparedStatement psContents = connection.prepareStatement(insertContents);
@@ -280,7 +330,9 @@ public class Phase3DatabaseWriter {
         PreparedStatement psGoalItem = connection.prepareStatement(insertGoalItem);
         PreparedStatement psGoalKill = connection.prepareStatement(insertGoalKill);
         PreparedStatement psGoalMeet = connection.prepareStatement(insertGoalMeet);
-        PreparedStatement psRewardItem = connection.prepareStatement(insertRewardItem)) {
+        PreparedStatement psRewardItem = connection.prepareStatement(insertRewardItem);
+        PreparedStatement psRewardSkill = connection.prepareStatement(insertRewardSkill);
+        PreparedStatement psRequstItem = connection.prepareStatement(insertRequstItem)) {
 
       // 按当前数组位置写入 seq_index，保持原始列表顺序。
       for(QuestRow quest : quests) {
@@ -290,6 +342,11 @@ public class Phase3DatabaseWriter {
         psMain.setInt(4, quest.bqLoop);
         psMain.setInt(5, quest.rewardExp);
         psMain.setInt(6, quest.rewardGold);
+        psMain.setInt(7, quest.rewardMoney);
+        psMain.setInt(8, quest.rewardFame);
+        psMain.setInt(9, quest.rewardPvppoint);
+        psMain.setInt(10, quest.rewardMileage);
+        psMain.setInt(11, quest.needItem);
         psMain.addBatch();
         summary.totalQuestInserted++;
 
@@ -342,14 +399,42 @@ public class Phase3DatabaseWriter {
           summary.totalGoalMeetNpcRows++;
         }
 
-        for(int i = 0; i < quest.rewardItems.size(); i++) {
-          IntPair row = quest.rewardItems.get(i);
+        for(int i = 0; i < quest.rewardGetItem.size(); i++) {
+          IntPair row = quest.rewardGetItem.get(i);
           psRewardItem.setInt(1, quest.questId);
           psRewardItem.setInt(2, i);
           psRewardItem.setInt(3, row.left);
           psRewardItem.setInt(4, row.right);
           psRewardItem.addBatch();
           summary.totalRewardItemRows++;
+        }
+
+        for(int i = 0; i < quest.rewardSkillIds.size(); i++) {
+          Integer skillId = quest.rewardSkillIds.get(i);
+          psRewardSkill.setInt(1, quest.questId);
+          psRewardSkill.setInt(2, i);
+          psRewardSkill.setInt(3, skillId == null ? 0 : skillId.intValue());
+          psRewardSkill.addBatch();
+          summary.totalRewardSkillRows++;
+        }
+
+        for(int i = 0; i < quest.requstItems.size(); i++) {
+          RequstItemRow row = quest.requstItems.get(i);
+          psRequstItem.setInt(1, quest.questId);
+          psRequstItem.setInt(2, i);
+          if(row.itemId == null) {
+            psRequstItem.setNull(3, Types.INTEGER);
+          } else {
+            psRequstItem.setInt(3, row.itemId.intValue());
+          }
+          if(row.itemCount == null) {
+            psRequstItem.setNull(4, Types.INTEGER);
+          } else {
+            psRequstItem.setInt(4, row.itemCount.intValue());
+          }
+          psRequstItem.setString(5, row.rawJson);
+          psRequstItem.addBatch();
+          summary.totalRequstItemRows++;
         }
       }
 
@@ -361,6 +446,8 @@ public class Phase3DatabaseWriter {
       psGoalKill.executeBatch();
       psGoalMeet.executeBatch();
       psRewardItem.executeBatch();
+      psRewardSkill.executeBatch();
+      psRequstItem.executeBatch();
     }
   }
 
@@ -416,6 +503,7 @@ public class Phase3DatabaseWriter {
       row.name = safe(map.get("name"));
       row.needLevel = intOf(map.get("needLevel"));
       row.bqLoop = intOf(map.get("bQLoop"));
+      row.needItem = intOf(map.get("needItem"));
 
       row.contents.addAll(asStringList(map.get("contents")));
       row.answer.addAll(asStringList(map.get("answer")));
@@ -432,10 +520,18 @@ public class Phase3DatabaseWriter {
 
       Map<String, Object> reward = asMap(map.get("reward"));
       row.rewardExp = intOf(reward.get("exp"));
-      row.rewardGold = intOf(reward.get("gold"));
-      for(IntPair pair : asPairList(reward.get("items"), "id", "count")) {
-        row.rewardItems.add(pair);
+      row.rewardMoney = intOf(firstNonNull(reward.get("money"), reward.get("gold")));
+      row.rewardGold = row.rewardMoney;
+      row.rewardFame = intOf(reward.get("fame"));
+      row.rewardPvppoint = intOf(reward.get("pvppoint"));
+      row.rewardMileage = intOf(reward.get("mileage"));
+      Object rewardGetItem = reward.containsKey("getItem") ? reward.get("getItem") : reward.get("items");
+      for(IntPair pair : asPairList(rewardGetItem, "id", "count")) {
+        row.rewardGetItem.add(pair);
       }
+      row.rewardSkillIds.addAll(asPositiveIntList(reward.get("getSkill")));
+
+      row.requstItems.addAll(asRequstItemRows(map.get("requstItem")));
 
       out.add(row);
     }
@@ -570,6 +666,87 @@ public class Phase3DatabaseWriter {
   }
 
   /**
+   * 读取正整数列表（用于 reward.getSkill）。
+   */
+  private List<Integer> asPositiveIntList(Object value) {
+    List<Integer> out = new ArrayList<Integer>();
+    if(!(value instanceof List<?>)) {
+      return out;
+    }
+    @SuppressWarnings("unchecked")
+    List<Object> list = (List<Object>) value;
+    Set<Integer> deduplicated = new LinkedHashSet<Integer>();
+    for(Object item : list) {
+      int parsed = intOf(item);
+      if(parsed > 0) {
+        deduplicated.add(Integer.valueOf(parsed));
+      }
+    }
+    out.addAll(deduplicated);
+    return out;
+  }
+
+  /**
+   * 将 requstItem 任意 JSON 结构展开为可入库行。
+   */
+  private List<RequstItemRow> asRequstItemRows(Object value) {
+    List<RequstItemRow> out = new ArrayList<RequstItemRow>();
+    if(value == null) {
+      return out;
+    }
+
+    if(value instanceof List<?>) {
+      @SuppressWarnings("unchecked")
+      List<Object> list = (List<Object>) value;
+      for(Object item : list) {
+        out.add(toRequstItemRow(item));
+      }
+      return out;
+    }
+
+    out.add(toRequstItemRow(value));
+    return out;
+  }
+
+  /**
+   * 生成单行 requstItem 记录，保留原始 JSON 以支持回放。
+   */
+  private RequstItemRow toRequstItemRow(Object value) {
+    RequstItemRow row = new RequstItemRow();
+    row.rawJson = toJsonValue(value);
+    if(value instanceof Map<?, ?>) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> map = (Map<String, Object>) value;
+      row.itemId = toNullablePositiveInt(firstNonNull(map.get("id"), map.get("itemId"), map.get("item_id")));
+      row.itemCount = toNullablePositiveInt(firstNonNull(map.get("count"), map.get("itemCount"), map.get("item_count")));
+    }
+    return row;
+  }
+
+  /**
+   * 按顺序返回第一个非 null 的值。
+   */
+  private Object firstNonNull(Object... values) {
+    if(values == null) {
+      return null;
+    }
+    for(Object value : values) {
+      if(value != null) {
+        return value;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * 将对象转换为正整数，否则返回 null。
+   */
+  private Integer toNullablePositiveInt(Object value) {
+    int parsed = intOf(value);
+    return parsed > 0 ? Integer.valueOf(parsed) : null;
+  }
+
+  /**
    * 计算并返回结果。
    * @param value 方法参数
    * @param leftKey 方法参数
@@ -626,6 +803,41 @@ public class Phase3DatabaseWriter {
   }
 
   /**
+   * 将任意 JSON 可表示对象序列化为文本。
+   */
+  private String toJsonValue(Object value) {
+    if(value == null) {
+      return "null";
+    }
+    if(value instanceof String) {
+      return QuestSemanticJson.jsonString((String) value);
+    }
+    if(value instanceof Number || value instanceof Boolean) {
+      return String.valueOf(value);
+    }
+    if(value instanceof List<?>) {
+      @SuppressWarnings("unchecked")
+      List<Object> list = (List<Object>) value;
+      StringBuilder sb = new StringBuilder();
+      sb.append('[');
+      for(int i = 0; i < list.size(); i++) {
+        if(i > 0) {
+          sb.append(',');
+        }
+        sb.append(toJsonValue(list.get(i)));
+      }
+      sb.append(']');
+      return sb.toString();
+    }
+    if(value instanceof Map<?, ?>) {
+      @SuppressWarnings("unchecked")
+      Map<String, Object> map = (Map<String, Object>) value;
+      return QuestSemanticJson.toJsonObject(map);
+    }
+    return QuestSemanticJson.jsonString(String.valueOf(value));
+  }
+
+  /**
    * 解析来源数据。
    * @param text 方法参数
    * @return 计算结果
@@ -670,20 +882,33 @@ public class Phase3DatabaseWriter {
     String name = "";
     int needLevel;
     int bqLoop;
+    int needItem;
     int rewardExp;
     int rewardGold;
+    int rewardMoney;
+    int rewardFame;
+    int rewardPvppoint;
+    int rewardMileage;
     final List<String> contents = new ArrayList<String>();
     final List<String> answer = new ArrayList<String>();
     final List<String> info = new ArrayList<String>();
     final List<IntPair> goalGetItem = new ArrayList<IntPair>();
     final List<IntPair> goalKillMonster = new ArrayList<IntPair>();
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
-    final List<IntPair> rewardItems = new ArrayList<IntPair>();
+    final List<IntPair> rewardGetItem = new ArrayList<IntPair>();
+    final List<Integer> rewardSkillIds = new ArrayList<Integer>();
+    final List<RequstItemRow> requstItems = new ArrayList<RequstItemRow>();
   }
 
   private static final class IntPair {
     int left;
     int right;
+  }
+
+  private static final class RequstItemRow {
+    Integer itemId;
+    Integer itemCount;
+    String rawJson = "null";
   }
 
   private static final class NpcQuestReferenceRow {
@@ -699,6 +924,8 @@ public class Phase3DatabaseWriter {
     int totalGoalKillMonsterRows;
     int totalGoalMeetNpcRows;
     int totalRewardItemRows;
+    int totalRewardSkillRows;
+    int totalRequstItemRows;
     int totalNpcReferenceRows;
     long insertMillis;
 
@@ -711,6 +938,8 @@ public class Phase3DatabaseWriter {
       sb.append("  \"totalGoalKillMonsterRows\": ").append(totalGoalKillMonsterRows).append(",\n");
       sb.append("  \"totalGoalMeetNpcRows\": ").append(totalGoalMeetNpcRows).append(",\n");
       sb.append("  \"totalRewardItemRows\": ").append(totalRewardItemRows).append(",\n");
+      sb.append("  \"totalRewardSkillRows\": ").append(totalRewardSkillRows).append(",\n");
+      sb.append("  \"totalRequstItemRows\": ").append(totalRequstItemRows).append(",\n");
       sb.append("  \"totalNpcReferenceRows\": ").append(totalNpcReferenceRows).append(",\n");
       sb.append("  \"insertMillis\": ").append(insertMillis).append("\n");
       sb.append("}\n");
