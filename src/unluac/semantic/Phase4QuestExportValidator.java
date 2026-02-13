@@ -8,9 +8,11 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import unluac.chunk.Lua50ChunkParser;
 import unluac.chunk.LuaChunk;
@@ -27,6 +29,12 @@ import unluac.chunk.LuaChunk;
 public class Phase4QuestExportValidator {
 
   private static final Charset UTF8 = Charset.forName("UTF-8");
+  private static final List<String> TOP_FIELDS = listOf(
+      "id", "name", "contents", "answer", "info", "needItem", "requstItem", "goal", "reward", "needLevel", "bQLoop");
+  private static final List<String> GOAL_FIELDS = listOf("getItem", "killMonster", "meetNpc");
+  private static final List<String> REWARD_FIELDS = listOf("money", "exp", "fame", "pvppoint", "mileage", "getItem", "getSkill");
+  private static final Set<String> GOAL_ONLY_FIELDS = new HashSet<String>(listOf("killMonster", "meetNpc"));
+  private static final Set<String> REWARD_ONLY_FIELDS = new HashSet<String>(listOf("money", "exp", "fame", "pvppoint", "mileage", "getSkill"));
 
   /**
    * 命令行入口。
@@ -110,6 +118,19 @@ public class Phase4QuestExportValidator {
       compareIntegerList(result, questId, "goal.meetNpc", source.goalMeetNpc, target.goalMeetNpc);
       comparePairList(result, questId, "reward.getItem", source.rewardGetItem, target.rewardGetItem);
       compareIntegerList(result, questId, "reward.getSkill", source.rewardGetSkill, target.rewardGetSkill);
+
+      compareFieldPresence(result, questId, "top", TOP_FIELDS, source.presence.topFields, target.presence.topFields);
+      compareFieldPresence(result, questId, "goal", GOAL_FIELDS, source.presence.goalFields, target.presence.goalFields);
+      compareFieldPresence(result, questId, "reward", REWARD_FIELDS, source.presence.rewardFields, target.presence.rewardFields);
+
+      for(String violation : target.partitionViolations) {
+        String partition = violation.startsWith("goal.") ? "goal" : (violation.startsWith("reward.") ? "reward" : "top");
+        result.addMismatch(questId,
+            "semanticPartition." + violation,
+            "valid",
+            "invalid",
+            partition);
+      }
     }
 
     for(Integer questId : exported.keySet()) {
@@ -155,12 +176,25 @@ public class Phase4QuestExportValidator {
       QuestValue quest = new QuestValue();
       quest.questId = model.questId;
       quest.name = model.title;
+      quest.presence.topFields.add("id");
+      if(quest.name != null) {
+        quest.presence.topFields.add("name");
+      }
 
       DialogArrays arrays = dialogs.get(Integer.valueOf(model.questId));
       if(arrays != null) {
         quest.contents.addAll(arrays.contents);
         quest.answer.addAll(arrays.answer);
         quest.info.addAll(arrays.info);
+      }
+      if(!quest.contents.isEmpty()) {
+        quest.presence.topFields.add("contents");
+      }
+      if(!quest.answer.isEmpty()) {
+        quest.presence.topFields.add("answer");
+      }
+      if(!quest.info.isEmpty()) {
+        quest.presence.topFields.add("info");
       }
 
       quest.needLevel = Integer.valueOf(model.goal == null ? 0 : model.goal.needLevel);
@@ -169,6 +203,18 @@ public class Phase4QuestExportValidator {
       quest.bqLoop = bqLoopMap.containsKey(Integer.valueOf(model.questId))
           ? bqLoopMap.get(Integer.valueOf(model.questId))
           : Integer.valueOf(0);
+      if(model.goal != null && model.goal.needLevel > 0) {
+        quest.presence.topFields.add("needLevel");
+      }
+      if(model.conditions.containsKey("needItem")) {
+        quest.presence.topFields.add("needItem");
+      }
+      if(model.conditions.containsKey("requstItem")) {
+        quest.presence.topFields.add("requstItem");
+      }
+      if(bqLoopMap.containsKey(Integer.valueOf(model.questId))) {
+        quest.presence.topFields.add("bQLoop");
+      }
 
       if(model.goal != null) {
         for(ItemRequirement item : model.goal.items) {
@@ -184,12 +230,24 @@ public class Phase4QuestExportValidator {
           quest.goalKillMonster.add(pair);
         }
       }
+      if(!quest.goalGetItem.isEmpty()) {
+        quest.presence.topFields.add("goal");
+        quest.presence.goalFields.add("getItem");
+      }
+      if(!quest.goalKillMonster.isEmpty()) {
+        quest.presence.topFields.add("goal");
+        quest.presence.goalFields.add("killMonster");
+      }
 
       Object goalObj = model.completionConditions.get("goal");
       if(goalObj instanceof Map<?, ?>) {
         @SuppressWarnings("unchecked")
         Map<String, Object> goalMap = (Map<String, Object>) goalObj;
         appendMeetNpc(quest.goalMeetNpc, goalMap.get("meetNpc"));
+        if(goalMap.containsKey("meetNpc")) {
+          quest.presence.topFields.add("goal");
+          quest.presence.goalFields.add("meetNpc");
+        }
       }
 
       if(model.rewards != null) {
@@ -207,10 +265,23 @@ public class Phase4QuestExportValidator {
           rewardExp += reward.exp;
           rewardFame += reward.fame;
           rewardPvppoint += reward.pvppoint;
+          if(reward.money != 0) {
+            quest.presence.rewardFields.add("money");
+          }
+          if(reward.exp != 0) {
+            quest.presence.rewardFields.add("exp");
+          }
+          if(reward.fame != 0) {
+            quest.presence.rewardFields.add("fame");
+          }
+          if(reward.pvppoint != 0) {
+            quest.presence.rewardFields.add("pvppoint");
+          }
 
           Integer mileage = asNullableInteger(reward.extraFields.get("mileage"));
           if(mileage != null && mileage.intValue() > 0) {
             rewardMileage += mileage.intValue();
+            quest.presence.rewardFields.add("mileage");
           }
 
           if(reward.id > 0 && reward.count > 0) {
@@ -218,6 +289,7 @@ public class Phase4QuestExportValidator {
             pair.id = Integer.valueOf(reward.id);
             pair.count = Integer.valueOf(reward.count);
             quest.rewardGetItem.add(pair);
+            quest.presence.rewardFields.add("getItem");
           }
 
           if(reward.skillIds != null) {
@@ -228,6 +300,7 @@ public class Phase4QuestExportValidator {
               if(!skillSeen.containsKey(skillId)) {
                 skillSeen.put(skillId, Boolean.TRUE);
                 quest.rewardGetSkill.add(skillId);
+                quest.presence.rewardFields.add("getSkill");
               }
             }
           }
@@ -237,6 +310,9 @@ public class Phase4QuestExportValidator {
         quest.rewardFame = Integer.valueOf(rewardFame);
         quest.rewardPvppoint = Integer.valueOf(rewardPvppoint);
         quest.rewardMileage = Integer.valueOf(rewardMileage);
+      }
+      if(!quest.presence.rewardFields.isEmpty()) {
+        quest.presence.topFields.add("reward");
       }
 
       out.put(Integer.valueOf(quest.questId), quest);
@@ -316,6 +392,13 @@ public class Phase4QuestExportValidator {
   private QuestValue fromMapToQuestValue(Map<String, Object> map, int fallbackQuestId) {
     QuestValue quest = new QuestValue();
     quest.questId = intOrFallback(map.get("id"), fallbackQuestId);
+    quest.presence.topFields.add("id");
+    for(String key : map.keySet()) {
+      String normalized = normalizeTopField(key);
+      if(normalized != null && TOP_FIELDS.contains(normalized)) {
+        quest.presence.topFields.add(normalized);
+      }
+    }
     quest.name = asNullableString(map.get("name"));
 
     quest.contents.addAll(asStringList(map.get("contents")));
@@ -323,11 +406,29 @@ public class Phase4QuestExportValidator {
     quest.info.addAll(asStringList(map.get("info")));
 
     Map<String, Object> goal = asMap(map.get("goal"));
+    for(String key : goal.keySet()) {
+      String normalized = normalizeGoalField(key);
+      if(normalized != null && GOAL_FIELDS.contains(normalized)) {
+        quest.presence.goalFields.add(normalized);
+      }
+      if(normalized != null && REWARD_ONLY_FIELDS.contains(normalized)) {
+        quest.partitionViolations.add("goal." + normalized);
+      }
+    }
     quest.goalGetItem.addAll(asPairList(goal.get("getItem"), "id", "count"));
     quest.goalKillMonster.addAll(asPairList(goal.get("killMonster"), "id", "count"));
     quest.goalMeetNpc.addAll(asIntegerList(goal.get("meetNpc")));
 
     Map<String, Object> reward = asMap(map.get("reward"));
+    for(String key : reward.keySet()) {
+      String normalized = normalizeRewardField(key);
+      if(normalized != null && REWARD_FIELDS.contains(normalized)) {
+        quest.presence.rewardFields.add(normalized);
+      }
+      if(normalized != null && GOAL_ONLY_FIELDS.contains(normalized)) {
+        quest.partitionViolations.add("reward." + normalized);
+      }
+    }
     quest.rewardMoney = asNullableInteger(firstNonNull(reward.get("money"), reward.get("gold")));
     quest.rewardExp = asNullableInteger(reward.get("exp"));
     quest.rewardFame = asNullableInteger(reward.get("fame"));
@@ -446,6 +547,34 @@ public class Phase4QuestExportValidator {
           && equalsNullable(left.count, right.count);
       if(!same) {
         result.addMismatch(questId, path + "[" + i + "]", pairText(left), pairText(right));
+      }
+    }
+  }
+
+  private void compareFieldPresence(ValidationResult result,
+                                    int questId,
+                                    String partition,
+                                    List<String> knownFields,
+                                    Set<String> originalFields,
+                                    Set<String> exportedFields) {
+    for(String field : knownFields) {
+      boolean sourceHas = originalFields != null && originalFields.contains(field);
+      boolean targetHas = exportedFields != null && exportedFields.contains(field);
+      if(sourceHas == targetHas) {
+        continue;
+      }
+      if(sourceHas) {
+        result.addMismatch(questId,
+            "presence." + partition + "." + field,
+            "present",
+            "missing",
+            partition);
+      } else {
+        result.addMismatch(questId,
+            "presence." + partition + "." + field,
+            "missing",
+            "extra",
+            partition);
       }
     }
   }
@@ -650,6 +779,44 @@ public class Phase4QuestExportValidator {
       }
     }
     return null;
+  }
+
+  private static String normalizeTopField(String key) {
+    if(key == null) {
+      return null;
+    }
+    if("requestItem".equals(key)) {
+      return "requstItem";
+    }
+    return key;
+  }
+
+  private static String normalizeGoalField(String key) {
+    return key;
+  }
+
+  private static String normalizeRewardField(String key) {
+    if(key == null) {
+      return null;
+    }
+    if("gold".equals(key)) {
+      return "money";
+    }
+    if("items".equals(key)) {
+      return "getItem";
+    }
+    return key;
+  }
+
+  private static List<String> listOf(String... values) {
+    List<String> out = new ArrayList<String>();
+    if(values == null) {
+      return out;
+    }
+    for(String value : values) {
+      out.add(value);
+    }
+    return out;
   }
 
   private Object normalizeValue(Object value) {
@@ -869,6 +1036,8 @@ public class Phase4QuestExportValidator {
     final List<Integer> goalMeetNpc = new ArrayList<Integer>();
     final List<PairValue> rewardGetItem = new ArrayList<PairValue>();
     final List<Integer> rewardGetSkill = new ArrayList<Integer>();
+    final Presence presence = new Presence();
+    final List<String> partitionViolations = new ArrayList<String>();
 
     String toJson() {
       StringBuilder sb = new StringBuilder();
@@ -888,6 +1057,12 @@ public class Phase4QuestExportValidator {
     }
   }
 
+  private static final class Presence {
+    final Set<String> topFields = new HashSet<String>();
+    final Set<String> goalFields = new HashSet<String>();
+    final Set<String> rewardFields = new HashSet<String>();
+  }
+
   public static final class ValidationResult {
     int totalComparedQuests;
     int mismatchCount;
@@ -895,12 +1070,34 @@ public class Phase4QuestExportValidator {
     String finalStatus = "UNSAFE";
 
     void addMismatch(int questId, String fieldPath, String originalValue, String exportedValue) {
+      addMismatch(questId, fieldPath, originalValue, exportedValue, inferPartition(fieldPath));
+    }
+
+    void addMismatch(int questId,
+                     String fieldPath,
+                     String originalValue,
+                     String exportedValue,
+                     String sourcePartition) {
       Map<String, Object> item = new LinkedHashMap<String, Object>();
       item.put("questId", Integer.valueOf(questId));
       item.put("fieldPath", fieldPath);
+      item.put("sourcePartition", sourcePartition);
       item.put("originalValue", originalValue);
       item.put("exportedValue", exportedValue);
       mismatchDetails.add(item);
+    }
+
+    private String inferPartition(String fieldPath) {
+      if(fieldPath == null) {
+        return "top";
+      }
+      if(fieldPath.startsWith("goal.") || fieldPath.startsWith("presence.goal.") || fieldPath.startsWith("semanticPartition.goal.")) {
+        return "goal";
+      }
+      if(fieldPath.startsWith("reward.") || fieldPath.startsWith("presence.reward.") || fieldPath.startsWith("semanticPartition.reward.")) {
+        return "reward";
+      }
+      return "top";
     }
 
     String toJson() {

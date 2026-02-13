@@ -3,6 +3,7 @@ package unluac.semantic;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.charset.Charset;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,9 +16,11 @@ import java.time.OffsetDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Phase4 导出器：从 MySQL 重建 quest 脚本（Lua 文本形态）。
@@ -36,6 +39,10 @@ public class Phase4QuestLucExporter {
       + "?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true";
   private static final String DEFAULT_USER = "root";
   private static final String DEFAULT_PASSWORD = "root";
+  private static final List<String> KNOWN_TOP_FIELDS = listOf(
+      "id", "name", "contents", "answer", "info", "needItem", "requstItem", "goal", "reward", "needLevel", "bQLoop");
+  private static final List<String> KNOWN_GOAL_FIELDS = listOf("getItem", "killMonster", "meetNpc");
+  private static final List<String> KNOWN_REWARD_FIELDS = listOf("money", "exp", "fame", "pvppoint", "mileage", "getItem", "getSkill");
 
   /**
    * CLI 入口。
@@ -50,13 +57,18 @@ public class Phase4QuestLucExporter {
     String jdbcUrl = args.length >= 2 ? args[1] : DEFAULT_JDBC;
     String user = args.length >= 3 ? args[2] : DEFAULT_USER;
     String password = args.length >= 4 ? args[3] : DEFAULT_PASSWORD;
+    Path referenceQuestLua = args.length >= 5 ? Paths.get(args[4]) : null;
 
     long start = System.nanoTime();
     Phase4QuestLucExporter exporter = new Phase4QuestLucExporter();
-    ExportResult result = exporter.export(output, jdbcUrl, user, password);
+    ExportResult result = exporter.export(output, jdbcUrl, user, password, referenceQuestLua);
     long elapsed = (System.nanoTime() - start) / 1_000_000L;
 
     System.out.println("output=" + output.toAbsolutePath());
+    System.out.println("referenceQuestLua=" + (result.referenceQuestLua == null ? "<none>" : result.referenceQuestLua.toAbsolutePath()));
+    System.out.println("profileQuestCount=" + result.profileQuestCount);
+    System.out.println("profileMissingQuestCount=" + result.profileMissingQuestCount);
+    System.out.println("suppressedFieldCount=" + result.suppressedFieldCount);
     System.out.println("questCount=" + result.questCount);
     System.out.println("exportMillis=" + elapsed);
   }
@@ -76,9 +88,22 @@ public class Phase4QuestLucExporter {
                              String jdbcUrl,
                              String user,
                              String password) throws Exception {
+    return export(output, jdbcUrl, user, password, null);
+  }
+
+  public ExportResult export(Path output,
+                             String jdbcUrl,
+                             String user,
+                             String password,
+                             Path referenceQuestLua) throws Exception {
     ensureMysqlDriverAvailable();
 
     List<QuestRecord> quests = loadFromDb(jdbcUrl, user, password);
+    Path resolvedReference = resolveReferenceQuestLua(referenceQuestLua);
+    Map<Integer, QuestFieldProfile> profiles = loadReferenceFieldProfiles(resolvedReference);
+    ExportResult result = new ExportResult();
+    result.referenceQuestLua = resolvedReference;
+    result.profileQuestCount = profiles.size();
 
     StringBuilder sb = new StringBuilder();
     sb.append("-- phase4 exported quest data\n");
@@ -87,7 +112,12 @@ public class Phase4QuestLucExporter {
     // 逐任务按稳定顺序输出，确保后续 validator 比对时结构可预测。
     for(int i = 0; i < quests.size(); i++) {
       QuestRecord quest = quests.get(i);
-      appendQuest(sb, quest);
+      QuestFieldProfile profile = profiles.get(Integer.valueOf(quest.questId));
+      if(profile == null) {
+        profile = QuestFieldProfile.defaultProfile();
+        result.profileMissingQuestCount++;
+      }
+      appendQuest(sb, quest, profile, result);
       if(i < quests.size() - 1) {
         sb.append("\n");
       }
@@ -96,7 +126,6 @@ public class Phase4QuestLucExporter {
     ensureParent(output);
     Files.write(output, sb.toString().getBytes(UTF8));
 
-    ExportResult result = new ExportResult();
     result.questCount = quests.size();
     return result;
   }
@@ -338,45 +367,25 @@ public class Phase4QuestLucExporter {
    * @param sb 方法参数
    * @param quest 方法参数
    */
-  private void appendQuest(StringBuilder sb, QuestRecord quest) {
+  private void appendQuest(StringBuilder sb,
+                           QuestRecord quest,
+                           QuestFieldProfile profile,
+                           ExportResult result) {
     List<String> fields = new ArrayList<String>();
-    fields.add("id = " + quest.questId);
-
-    if(hasText(quest.name)) {
-      fields.add("name = " + luaStringOrNil(quest.name));
+    recordSuppressedTopFields(quest, profile, result);
+    for(String field : profile.topFieldOrder) {
+      if("id".equals(field)) {
+        fields.add("id = " + quest.questId);
+        continue;
+      }
+      String rendered = renderTopField(field, quest, profile, result);
+      if(rendered != null) {
+        fields.add(rendered);
+      }
     }
-    if(!quest.contents.isEmpty()) {
-      fields.add("contents = " + renderStringArray(quest.contents, 2));
+    if(fields.isEmpty()) {
+      fields.add("id = " + quest.questId);
     }
-    if(!quest.answer.isEmpty()) {
-      fields.add("answer = " + renderStringArray(quest.answer, 2));
-    }
-    if(!quest.info.isEmpty()) {
-      fields.add("info = " + renderStringArray(quest.info, 2));
-    }
-    if(isPositive(quest.needItem)) {
-      fields.add("needItem = " + quest.needItem.intValue());
-    }
-    if(quest.requstItem != null) {
-      fields.add("requstItem = " + toLuaValue(quest.requstItem, 2));
-    }
-
-    String goal = renderGoal(quest);
-    if(goal != null) {
-      fields.add("goal = " + goal);
-    }
-    String reward = renderReward(quest);
-    if(reward != null) {
-      fields.add("reward = " + reward);
-    }
-
-    if(isPositive(quest.needLevel)) {
-      fields.add("needLevel = " + quest.needLevel.intValue());
-    }
-    if(isPositive(quest.bqLoop)) {
-      fields.add("bQLoop = " + quest.bqLoop.intValue());
-    }
-
     sb.append("qt[").append(quest.questId).append("] = {\n");
     for(int i = 0; i < fields.size(); i++) {
       sb.append("  ").append(fields.get(i));
@@ -388,25 +397,87 @@ public class Phase4QuestLucExporter {
     sb.append("}\n");
   }
 
-  private String renderGoal(QuestRecord quest) {
-    boolean hasGoal = !quest.goalGetItem.isEmpty() || !quest.goalKillMonster.isEmpty() || !quest.goalMeetNpc.isEmpty();
-    if(!hasGoal) {
-      return null;
+  private String renderTopField(String field,
+                                QuestRecord quest,
+                                QuestFieldProfile profile,
+                                ExportResult result) {
+    if("name".equals(field)) {
+      return "name = " + luaStringOrNil(quest.name);
     }
+    if("contents".equals(field)) {
+      return "contents = " + renderStringArray(quest.contents, 2);
+    }
+    if("answer".equals(field)) {
+      return "answer = " + renderStringArray(quest.answer, 2);
+    }
+    if("info".equals(field)) {
+      return "info = " + renderStringArray(quest.info, 2);
+    }
+    if("needItem".equals(field)) {
+      return "needItem = " + luaIntOrNil(quest.needItem);
+    }
+    if("requstItem".equals(field)) {
+      return "requstItem = " + toLuaValue(quest.requstItem, 2);
+    }
+    if("goal".equals(field)) {
+      return "goal = " + renderGoal(quest, profile, result);
+    }
+    if("reward".equals(field)) {
+      return "reward = " + renderReward(quest, profile, result);
+    }
+    if("needLevel".equals(field)) {
+      return "needLevel = " + luaIntOrNil(quest.needLevel);
+    }
+    if("bQLoop".equals(field)) {
+      return "bQLoop = " + luaIntOrNil(quest.bqLoop);
+    }
+    return null;
+  }
 
+  private String renderGoal(QuestRecord quest, QuestFieldProfile profile, ExportResult result) {
+    recordSuppressedGoalFields(quest, profile, result);
+    List<String> lines = new ArrayList<String>();
+    for(String field : profile.goalFieldOrder) {
+      if("getItem".equals(field)) {
+        lines.add("getItem = " + renderPairArray(quest.goalGetItem, 4, "id", "count"));
+      } else if("killMonster".equals(field)) {
+        lines.add("killMonster = " + renderPairArray(quest.goalKillMonster, 4, "id", "count"));
+      } else if("meetNpc".equals(field)) {
+        lines.add("meetNpc = " + renderIntArray(quest.goalMeetNpc, 4));
+      }
+    }
+    return renderFieldBlock(lines);
+  }
+
+  private String renderReward(QuestRecord quest, QuestFieldProfile profile, ExportResult result) {
+    recordSuppressedRewardFields(quest, profile, result);
+    List<String> lines = new ArrayList<String>();
+    for(String field : profile.rewardFieldOrder) {
+      if("money".equals(field)) {
+        lines.add("money = " + luaIntOrNil(quest.rewardMoney));
+      } else if("exp".equals(field)) {
+        lines.add("exp = " + luaIntOrNil(quest.rewardExp));
+      } else if("fame".equals(field)) {
+        lines.add("fame = " + luaIntOrNil(quest.rewardFame));
+      } else if("pvppoint".equals(field)) {
+        lines.add("pvppoint = " + luaIntOrNil(quest.rewardPvppoint));
+      } else if("mileage".equals(field)) {
+        lines.add("mileage = " + luaIntOrNil(quest.rewardMileage));
+      } else if("getItem".equals(field)) {
+        lines.add("getItem = " + renderPairArray(quest.rewardGetItem, 4, "id", "count"));
+      } else if("getSkill".equals(field)) {
+        lines.add("getSkill = " + renderIntArray(quest.rewardGetSkill, 4));
+      }
+    }
+    return renderFieldBlock(lines);
+  }
+
+  private String renderFieldBlock(List<String> lines) {
+    if(lines == null || lines.isEmpty()) {
+      return "{}";
+    }
     StringBuilder sb = new StringBuilder();
     sb.append("{\n");
-    List<String> lines = new ArrayList<String>();
-    if(!quest.goalGetItem.isEmpty()) {
-      lines.add("getItem = " + renderPairArray(quest.goalGetItem, 4, "id", "count"));
-    }
-    if(!quest.goalKillMonster.isEmpty()) {
-      lines.add("killMonster = " + renderPairArray(quest.goalKillMonster, 4, "id", "count"));
-    }
-    if(!quest.goalMeetNpc.isEmpty()) {
-      lines.add("meetNpc = " + renderIntArray(quest.goalMeetNpc, 4));
-    }
-
     for(int i = 0; i < lines.size(); i++) {
       sb.append("    ").append(lines.get(i));
       if(i < lines.size() - 1) {
@@ -418,52 +489,444 @@ public class Phase4QuestLucExporter {
     return sb.toString();
   }
 
-  private String renderReward(QuestRecord quest) {
-    boolean hasReward = isPositive(quest.rewardMoney)
-        || isPositive(quest.rewardExp)
-        || isPositive(quest.rewardFame)
-        || isPositive(quest.rewardPvppoint)
-        || isPositive(quest.rewardMileage)
+  private void recordSuppressedTopFields(QuestRecord quest,
+                                         QuestFieldProfile profile,
+                                         ExportResult result) {
+    if(result == null || profile == null) {
+      return;
+    }
+    if(!profile.hasTopField("name") && hasText(quest.name)) {
+      addSuppressedField(result, quest.questId, "name");
+    }
+    if(!profile.hasTopField("contents") && !quest.contents.isEmpty()) {
+      addSuppressedField(result, quest.questId, "contents");
+    }
+    if(!profile.hasTopField("answer") && !quest.answer.isEmpty()) {
+      addSuppressedField(result, quest.questId, "answer");
+    }
+    if(!profile.hasTopField("info") && !quest.info.isEmpty()) {
+      addSuppressedField(result, quest.questId, "info");
+    }
+    if(!profile.hasTopField("needItem") && isNonNullNumber(quest.needItem)) {
+      addSuppressedField(result, quest.questId, "needItem");
+    }
+    if(!profile.hasTopField("requstItem") && quest.requstItem != null) {
+      addSuppressedField(result, quest.questId, "requstItem");
+    }
+    if(!profile.hasTopField("goal") && hasGoalData(quest)) {
+      addSuppressedField(result, quest.questId, "goal");
+    }
+    if(!profile.hasTopField("reward") && hasRewardData(quest)) {
+      addSuppressedField(result, quest.questId, "reward");
+    }
+    if(!profile.hasTopField("needLevel") && isNonNullNumber(quest.needLevel)) {
+      addSuppressedField(result, quest.questId, "needLevel");
+    }
+    if(!profile.hasTopField("bQLoop") && isNonNullNumber(quest.bqLoop)) {
+      addSuppressedField(result, quest.questId, "bQLoop");
+    }
+  }
+
+  private void recordSuppressedGoalFields(QuestRecord quest,
+                                          QuestFieldProfile profile,
+                                          ExportResult result) {
+    if(result == null || profile == null) {
+      return;
+    }
+    if(!profile.hasGoalField("getItem") && !quest.goalGetItem.isEmpty()) {
+      addSuppressedField(result, quest.questId, "goal.getItem");
+    }
+    if(!profile.hasGoalField("killMonster") && !quest.goalKillMonster.isEmpty()) {
+      addSuppressedField(result, quest.questId, "goal.killMonster");
+    }
+    if(!profile.hasGoalField("meetNpc") && !quest.goalMeetNpc.isEmpty()) {
+      addSuppressedField(result, quest.questId, "goal.meetNpc");
+    }
+  }
+
+  private void recordSuppressedRewardFields(QuestRecord quest,
+                                            QuestFieldProfile profile,
+                                            ExportResult result) {
+    if(result == null || profile == null) {
+      return;
+    }
+    if(!profile.hasRewardField("money") && isNonNullNumber(quest.rewardMoney)) {
+      addSuppressedField(result, quest.questId, "reward.money");
+    }
+    if(!profile.hasRewardField("exp") && isNonNullNumber(quest.rewardExp)) {
+      addSuppressedField(result, quest.questId, "reward.exp");
+    }
+    if(!profile.hasRewardField("fame") && isNonNullNumber(quest.rewardFame)) {
+      addSuppressedField(result, quest.questId, "reward.fame");
+    }
+    if(!profile.hasRewardField("pvppoint") && isNonNullNumber(quest.rewardPvppoint)) {
+      addSuppressedField(result, quest.questId, "reward.pvppoint");
+    }
+    if(!profile.hasRewardField("mileage") && isNonNullNumber(quest.rewardMileage)) {
+      addSuppressedField(result, quest.questId, "reward.mileage");
+    }
+    if(!profile.hasRewardField("getItem") && !quest.rewardGetItem.isEmpty()) {
+      addSuppressedField(result, quest.questId, "reward.getItem");
+    }
+    if(!profile.hasRewardField("getSkill") && !quest.rewardGetSkill.isEmpty()) {
+      addSuppressedField(result, quest.questId, "reward.getSkill");
+    }
+  }
+
+  private void addSuppressedField(ExportResult result, int questId, String fieldPath) {
+    result.suppressedFieldCount++;
+    if(result.suppressedFieldExamples.size() >= 20) {
+      return;
+    }
+    result.suppressedFieldExamples.add("questId=" + questId + ", field=" + fieldPath);
+  }
+
+  private boolean hasGoalData(QuestRecord quest) {
+    return quest != null
+        && (!quest.goalGetItem.isEmpty() || !quest.goalKillMonster.isEmpty() || !quest.goalMeetNpc.isEmpty());
+  }
+
+  private boolean hasRewardData(QuestRecord quest) {
+    return quest != null
+        && (isNonNullNumber(quest.rewardMoney)
+        || isNonNullNumber(quest.rewardExp)
+        || isNonNullNumber(quest.rewardFame)
+        || isNonNullNumber(quest.rewardPvppoint)
+        || isNonNullNumber(quest.rewardMileage)
         || !quest.rewardGetItem.isEmpty()
-        || !quest.rewardGetSkill.isEmpty();
-    if(!hasReward) {
+        || !quest.rewardGetSkill.isEmpty());
+  }
+
+  private boolean isNonNullNumber(Integer value) {
+    return value != null;
+  }
+
+  private Path resolveReferenceQuestLua(Path explicitReference) throws Exception {
+    if(explicitReference != null) {
+      if(Files.exists(explicitReference) && Files.isRegularFile(explicitReference)) {
+        return explicitReference;
+      }
+      throw new IllegalStateException("reference quest lua not found: " + explicitReference.toAbsolutePath());
+    }
+    Path reportsDir = Paths.get("reports");
+    if(!Files.exists(reportsDir) || !Files.isDirectory(reportsDir)) {
       return null;
     }
-
-    StringBuilder sb = new StringBuilder();
-    sb.append("{\n");
-    List<String> lines = new ArrayList<String>();
-    if(isPositive(quest.rewardMoney)) {
-      lines.add("money = " + quest.rewardMoney.intValue());
-    }
-    if(isPositive(quest.rewardExp)) {
-      lines.add("exp = " + quest.rewardExp.intValue());
-    }
-    if(isPositive(quest.rewardFame)) {
-      lines.add("fame = " + quest.rewardFame.intValue());
-    }
-    if(isPositive(quest.rewardPvppoint)) {
-      lines.add("pvppoint = " + quest.rewardPvppoint.intValue());
-    }
-    if(isPositive(quest.rewardMileage)) {
-      lines.add("mileage = " + quest.rewardMileage.intValue());
-    }
-    if(!quest.rewardGetItem.isEmpty()) {
-      lines.add("getItem = " + renderPairArray(quest.rewardGetItem, 4, "id", "count"));
-    }
-    if(!quest.rewardGetSkill.isEmpty()) {
-      lines.add("getSkill = " + renderIntArray(quest.rewardGetSkill, 4));
-    }
-
-    for(int i = 0; i < lines.size(); i++) {
-      sb.append("    ").append(lines.get(i));
-      if(i < lines.size() - 1) {
-        sb.append(",");
+    List<Path> candidates = new ArrayList<Path>();
+    try(DirectoryStream<Path> stream = Files.newDirectoryStream(reportsDir, "structure_audit_*")) {
+      for(Path dir : stream) {
+        if(!Files.isDirectory(dir)) {
+          continue;
+        }
+        Path candidate = dir.resolve("questbak_decompiled.lua");
+        if(Files.exists(candidate) && Files.isRegularFile(candidate)) {
+          candidates.add(candidate);
+        }
       }
-      sb.append("\n");
     }
-    sb.append("  }");
-    return sb.toString();
+    if(candidates.isEmpty()) {
+      Path fallback = reportsDir.resolve("questbak_decompiled.lua");
+      if(Files.exists(fallback) && Files.isRegularFile(fallback)) {
+        return fallback;
+      }
+      return null;
+    }
+    Collections.sort(candidates, (left, right) -> right.toString().compareTo(left.toString()));
+    return candidates.get(0);
+  }
+
+  private Map<Integer, QuestFieldProfile> loadReferenceFieldProfiles(Path referenceQuestLua) throws Exception {
+    Map<Integer, QuestFieldProfile> out = new LinkedHashMap<Integer, QuestFieldProfile>();
+    if(referenceQuestLua == null || !Files.exists(referenceQuestLua) || !Files.isRegularFile(referenceQuestLua)) {
+      return out;
+    }
+    String text = new String(Files.readAllBytes(referenceQuestLua), UTF8);
+    int cursor = 0;
+    while(cursor < text.length()) {
+      int tupleStart = text.indexOf("({", cursor);
+      if(tupleStart < 0) {
+        break;
+      }
+      int tableOpen = tupleStart + 1;
+      int tableClose = findMatchingBrace(text, tableOpen);
+      if(tableClose < 0) {
+        break;
+      }
+      String tableBlock = text.substring(tableOpen, tableClose + 1);
+      List<FieldSpan> tableFields = scanTableFields(tableBlock);
+      Integer questId = parseQuestIdFromFieldSpans(tableBlock, tableFields);
+      if(questId == null || questId.intValue() <= 0) {
+        cursor = tableClose + 1;
+        continue;
+      }
+
+      QuestFieldProfile profile = out.get(questId);
+      if(profile == null) {
+        profile = new QuestFieldProfile();
+        out.put(questId, profile);
+      }
+      mergeBaseProfileFields(profile, tableFields);
+
+      int suffixIndex = skipWhitespaceAndComments(text, tableClose + 1, text.length());
+      if(suffixIndex < text.length() && text.charAt(suffixIndex) == ')') {
+        suffixIndex++;
+      }
+      suffixIndex = skipWhitespaceAndComments(text, suffixIndex, text.length());
+      if(suffixIndex < text.length() && text.charAt(suffixIndex) == '.') {
+        int keyStart = suffixIndex + 1;
+        int keyEnd = keyStart;
+        while(keyEnd < text.length() && isIdentifierPart(text.charAt(keyEnd))) {
+          keyEnd++;
+        }
+        String assignedField = normalizeTopField(text.substring(keyStart, keyEnd));
+        int afterField = skipWhitespaceAndComments(text, keyEnd, text.length());
+        if(afterField < text.length() && text.charAt(afterField) == '=') {
+          int valueStart = skipWhitespaceAndComments(text, afterField + 1, text.length());
+          int valueEnd = valueStart;
+          int valueCursor = valueStart;
+          while(valueCursor < text.length()) {
+            int singleEnd = skipLuaValue(text, valueCursor, text.length());
+            if(singleEnd <= valueCursor) {
+              break;
+            }
+            if("goal".equals(assignedField) || "reward".equals(assignedField)) {
+              String assignedBlock = text.substring(valueCursor, Math.min(singleEnd, text.length()));
+              mergeNestedProfileFields(profile, assignedField, assignedBlock);
+            }
+            int next = skipWhitespaceAndComments(text, singleEnd, text.length());
+            valueEnd = singleEnd;
+            if(next < text.length() && text.charAt(next) == ',') {
+              valueCursor = skipWhitespaceAndComments(text, next + 1, text.length());
+              continue;
+            }
+            break;
+          }
+          if(assignedField != null && KNOWN_TOP_FIELDS.contains(assignedField)) {
+            profile.addTopField(assignedField);
+          }
+          cursor = valueEnd;
+          profile.ensureIdAsFirstField();
+          continue;
+        }
+      }
+      profile.ensureIdAsFirstField();
+      cursor = tableClose + 1;
+    }
+    for(QuestFieldProfile profile : out.values()) {
+      profile.ensureIdAsFirstField();
+    }
+    return out;
+  }
+
+  private void mergeBaseProfileFields(QuestFieldProfile profile, List<FieldSpan> topFields) {
+    if(profile == null || topFields == null) {
+      return;
+    }
+    for(FieldSpan span : topFields) {
+      String normalized = normalizeTopField(span.key);
+      if(normalized == null || !KNOWN_TOP_FIELDS.contains(normalized)) {
+        continue;
+      }
+      profile.addTopField(normalized);
+    }
+  }
+
+  private void mergeNestedProfileFields(QuestFieldProfile profile, String containerField, String containerBlock) {
+    if(profile == null || containerField == null || containerBlock == null) {
+      return;
+    }
+    List<FieldSpan> nestedFields = scanTableFields(containerBlock);
+    for(FieldSpan span : nestedFields) {
+      if("goal".equals(containerField)) {
+        String normalizedGoal = normalizeGoalField(span.key);
+        if(normalizedGoal != null && KNOWN_GOAL_FIELDS.contains(normalizedGoal)) {
+          profile.addGoalField(normalizedGoal);
+        }
+      } else if("reward".equals(containerField)) {
+        String normalizedReward = normalizeRewardField(span.key);
+        if(normalizedReward != null && KNOWN_REWARD_FIELDS.contains(normalizedReward)) {
+          profile.addRewardField(normalizedReward);
+        }
+      }
+    }
+  }
+
+  private Integer parseQuestIdFromFieldSpans(String tableBlock, List<FieldSpan> fields) {
+    if(tableBlock == null || fields == null) {
+      return null;
+    }
+    for(FieldSpan span : fields) {
+      if(!"id".equals(span.key)) {
+        continue;
+      }
+      String valueText = tableBlock.substring(span.valueStart, Math.min(span.valueEnd, tableBlock.length())).trim();
+      if(valueText.isEmpty()) {
+        continue;
+      }
+      int end = 0;
+      while(end < valueText.length() && (Character.isDigit(valueText.charAt(end)) || (end == 0 && valueText.charAt(end) == '-'))) {
+        end++;
+      }
+      if(end <= 0) {
+        continue;
+      }
+      try {
+        return Integer.valueOf(Integer.parseInt(valueText.substring(0, end)));
+      } catch(Exception ignored) {
+      }
+    }
+    return null;
+  }
+
+  private List<FieldSpan> scanTableFields(String tableText) {
+    List<FieldSpan> out = new ArrayList<FieldSpan>();
+    if(tableText == null || tableText.isEmpty()) {
+      return out;
+    }
+    int openBrace = tableText.indexOf('{');
+    if(openBrace < 0) {
+      return out;
+    }
+    int closeBrace = findMatchingBrace(tableText, openBrace);
+    if(closeBrace < 0) {
+      closeBrace = tableText.length() - 1;
+    }
+
+    int index = openBrace + 1;
+    while(index < closeBrace) {
+      index = skipWhitespaceAndComments(tableText, index, closeBrace);
+      if(index >= closeBrace) {
+        break;
+      }
+      char ch = tableText.charAt(index);
+      if(ch == ',') {
+        index++;
+        continue;
+      }
+      if(!isIdentifierStart(ch)) {
+        index = skipLuaValue(tableText, index, closeBrace);
+        continue;
+      }
+      int keyStart = index;
+      index++;
+      while(index < closeBrace && isIdentifierPart(tableText.charAt(index))) {
+        index++;
+      }
+      String key = tableText.substring(keyStart, index);
+      int afterKey = skipWhitespaceAndComments(tableText, index, closeBrace);
+      if(afterKey >= closeBrace || tableText.charAt(afterKey) != '=') {
+        index = skipLuaValue(tableText, keyStart, closeBrace);
+        continue;
+      }
+      int valueStart = skipWhitespaceAndComments(tableText, afterKey + 1, closeBrace);
+      int valueEnd = skipLuaValue(tableText, valueStart, closeBrace);
+      out.add(new FieldSpan(key, valueStart, valueEnd));
+      index = valueEnd;
+    }
+    return out;
+  }
+
+  private int skipLuaValue(String text, int index, int limitExclusive) {
+    if(index >= limitExclusive) {
+      return limitExclusive;
+    }
+    char ch = text.charAt(index);
+    if(ch == '{') {
+      int end = findMatchingBrace(text, index);
+      if(end < 0) {
+        return limitExclusive;
+      }
+      return end + 1;
+    }
+    if(ch == '"' || ch == '\'') {
+      return skipLuaString(text, index, limitExclusive);
+    }
+    int cursor = index;
+    while(cursor < limitExclusive) {
+      char c = text.charAt(cursor);
+      if(c == ',') {
+        break;
+      }
+      if(c == '}') {
+        break;
+      }
+      if(c == ';' || c == '\n' || c == '\r') {
+        break;
+      }
+      if(c == '"' || c == '\'') {
+        cursor = skipLuaString(text, cursor, limitExclusive);
+        continue;
+      }
+      if(c == '{') {
+        int end = findMatchingBrace(text, cursor);
+        if(end < 0) {
+          return limitExclusive;
+        }
+        cursor = end + 1;
+        continue;
+      }
+      if(c == '-' && cursor + 1 < limitExclusive && text.charAt(cursor + 1) == '-') {
+        cursor = skipLuaComment(text, cursor + 2, limitExclusive);
+        continue;
+      }
+      cursor++;
+    }
+    return cursor;
+  }
+
+  private int skipLuaString(String text, int start, int limitExclusive) {
+    char quote = text.charAt(start);
+    int cursor = start + 1;
+    while(cursor < limitExclusive) {
+      char c = text.charAt(cursor++);
+      if(c == '\\') {
+        if(cursor < limitExclusive) {
+          cursor++;
+        }
+        continue;
+      }
+      if(c == quote) {
+        break;
+      }
+    }
+    return cursor;
+  }
+
+  private int skipLuaComment(String text, int start, int limitExclusive) {
+    int cursor = start;
+    while(cursor < limitExclusive) {
+      char c = text.charAt(cursor);
+      if(c == '\n' || c == '\r') {
+        break;
+      }
+      cursor++;
+    }
+    return cursor;
+  }
+
+  private int skipWhitespaceAndComments(String text, int index, int limitExclusive) {
+    int cursor = index;
+    while(cursor < limitExclusive) {
+      char ch = text.charAt(cursor);
+      if(Character.isWhitespace(ch)) {
+        cursor++;
+        continue;
+      }
+      if(ch == '-' && cursor + 1 < limitExclusive && text.charAt(cursor + 1) == '-') {
+        cursor = skipLuaComment(text, cursor + 2, limitExclusive);
+        continue;
+      }
+      break;
+    }
+    return cursor;
+  }
+
+  private boolean isIdentifierStart(char ch) {
+    return Character.isLetter(ch) || ch == '_';
+  }
+
+  private boolean isIdentifierPart(char ch) {
+    return Character.isLetterOrDigit(ch) || ch == '_';
   }
 
   private String renderStringArray(List<String> values, int indent) {
@@ -729,6 +1192,80 @@ public class Phase4QuestLucExporter {
     }
   }
 
+  private int findMatchingBrace(String text, int openIndex) {
+    int depth = 0;
+    boolean inString = false;
+    char quote = 0;
+    for(int i = openIndex; i < text.length(); i++) {
+      char ch = text.charAt(i);
+      if(inString) {
+        if(ch == '\\') {
+          i++;
+          continue;
+        }
+        if(ch == quote) {
+          inString = false;
+          quote = 0;
+        }
+        continue;
+      }
+
+      if(ch == '"' || ch == '\'') {
+        inString = true;
+        quote = ch;
+        continue;
+      }
+
+      if(ch == '{') {
+        depth++;
+      } else if(ch == '}') {
+        depth--;
+        if(depth == 0) {
+          return i;
+        }
+      }
+    }
+    return -1;
+  }
+
+  private static String normalizeTopField(String key) {
+    if(key == null) {
+      return null;
+    }
+    if("requestItem".equals(key)) {
+      return "requstItem";
+    }
+    return key;
+  }
+
+  private static String normalizeGoalField(String key) {
+    return key;
+  }
+
+  private static String normalizeRewardField(String key) {
+    if(key == null) {
+      return null;
+    }
+    if("gold".equals(key)) {
+      return "money";
+    }
+    if("items".equals(key)) {
+      return "getItem";
+    }
+    return key;
+  }
+
+  private static List<String> listOf(String... values) {
+    List<String> out = new ArrayList<String>();
+    if(values == null) {
+      return out;
+    }
+    for(String value : values) {
+      out.add(value);
+    }
+    return Collections.unmodifiableList(out);
+  }
+
   /**
    * 确保前置条件满足。
    * @param output 方法参数
@@ -837,6 +1374,356 @@ public class Phase4QuestLucExporter {
     }
   }
 
+  private static final class QuestFieldProfile {
+    final List<String> topFieldOrder = new ArrayList<String>();
+    final Set<String> topFieldSet = new HashSet<String>();
+    final List<String> goalFieldOrder = new ArrayList<String>();
+    final Set<String> goalFieldSet = new HashSet<String>();
+    final List<String> rewardFieldOrder = new ArrayList<String>();
+    final Set<String> rewardFieldSet = new HashSet<String>();
+
+    static QuestFieldProfile fromMap(Map<String, Object> map) {
+      QuestFieldProfile profile = new QuestFieldProfile();
+      if(map != null) {
+        for(String key : map.keySet()) {
+          String normalized = normalizeTopField(key);
+          if(normalized != null && KNOWN_TOP_FIELDS.contains(normalized)) {
+            addOrderedUnique(profile.topFieldOrder, profile.topFieldSet, normalized);
+          }
+        }
+        Object goalValue = map.get("goal");
+        if(goalValue instanceof Map<?, ?>) {
+          @SuppressWarnings("unchecked")
+          Map<String, Object> goalMap = (Map<String, Object>) goalValue;
+          for(String key : goalMap.keySet()) {
+            String normalized = normalizeGoalField(key);
+            if(normalized != null && KNOWN_GOAL_FIELDS.contains(normalized)) {
+              addOrderedUnique(profile.goalFieldOrder, profile.goalFieldSet, normalized);
+            }
+          }
+        }
+        Object rewardValue = map.get("reward");
+        if(rewardValue instanceof Map<?, ?>) {
+          @SuppressWarnings("unchecked")
+          Map<String, Object> rewardMap = (Map<String, Object>) rewardValue;
+          for(String key : rewardMap.keySet()) {
+            String normalized = normalizeRewardField(key);
+            if(normalized != null && KNOWN_REWARD_FIELDS.contains(normalized)) {
+              addOrderedUnique(profile.rewardFieldOrder, profile.rewardFieldSet, normalized);
+            }
+          }
+        }
+      }
+      if(!profile.topFieldSet.contains("id")) {
+        profile.topFieldOrder.add(0, "id");
+        profile.topFieldSet.add("id");
+      }
+      return profile;
+    }
+
+    void addTopField(String field) {
+      addOrderedUnique(topFieldOrder, topFieldSet, field);
+    }
+
+    void addGoalField(String field) {
+      addOrderedUnique(goalFieldOrder, goalFieldSet, field);
+    }
+
+    void addRewardField(String field) {
+      addOrderedUnique(rewardFieldOrder, rewardFieldSet, field);
+    }
+
+    void ensureIdAsFirstField() {
+      if(topFieldSet.contains("id")) {
+        if(!topFieldOrder.isEmpty() && "id".equals(topFieldOrder.get(0))) {
+          return;
+        }
+        topFieldOrder.remove("id");
+      }
+      topFieldOrder.add(0, "id");
+      topFieldSet.add("id");
+    }
+
+    static QuestFieldProfile defaultProfile() {
+      QuestFieldProfile profile = new QuestFieldProfile();
+      for(String field : KNOWN_TOP_FIELDS) {
+        addOrderedUnique(profile.topFieldOrder, profile.topFieldSet, field);
+      }
+      for(String field : KNOWN_GOAL_FIELDS) {
+        addOrderedUnique(profile.goalFieldOrder, profile.goalFieldSet, field);
+      }
+      for(String field : KNOWN_REWARD_FIELDS) {
+        addOrderedUnique(profile.rewardFieldOrder, profile.rewardFieldSet, field);
+      }
+      return profile;
+    }
+
+    boolean hasTopField(String field) {
+      return topFieldSet.contains(field);
+    }
+
+    boolean hasGoalField(String field) {
+      return goalFieldSet.contains(field);
+    }
+
+    boolean hasRewardField(String field) {
+      return rewardFieldSet.contains(field);
+    }
+
+    private static void addOrderedUnique(List<String> order, Set<String> set, String value) {
+      if(value == null || set.contains(value)) {
+        return;
+      }
+      set.add(value);
+      order.add(value);
+    }
+  }
+
+  private static final class LuaTableParser {
+    private final String text;
+    private int index;
+
+    LuaTableParser(String text) {
+      this.text = text == null ? "" : text;
+      this.index = 0;
+    }
+
+    Object parseValue() {
+      skipWhitespace();
+      if(index >= text.length()) {
+        return null;
+      }
+      char ch = text.charAt(index);
+      if(ch == '{') {
+        return parseTable();
+      }
+      if(ch == '"' || ch == '\'') {
+        return parseString();
+      }
+      if(Character.isDigit(ch) || ch == '-') {
+        return parseNumber();
+      }
+      if(startsWith("nil")) {
+        index += 3;
+        return null;
+      }
+      if(startsWith("true")) {
+        index += 4;
+        return Boolean.TRUE;
+      }
+      if(startsWith("false")) {
+        index += 5;
+        return Boolean.FALSE;
+      }
+      return parseBareword();
+    }
+
+    private Object parseTable() {
+      expect('{');
+      skipWhitespace();
+      List<Object> array = new ArrayList<Object>();
+      Map<String, Object> object = new LinkedHashMap<String, Object>();
+      boolean hasKeyValue = false;
+
+      while(index < text.length()) {
+        skipWhitespace();
+        if(peek('}')) {
+          index++;
+          break;
+        }
+
+        int save = index;
+        String key = tryParseKey();
+        if(key != null) {
+          hasKeyValue = true;
+          skipWhitespace();
+          expect('=');
+          Object value = parseValue();
+          object.put(key, value);
+        } else {
+          index = save;
+          Object value = parseValue();
+          array.add(value);
+        }
+
+        skipWhitespace();
+        if(peek(',')) {
+          index++;
+        }
+      }
+
+      if(hasKeyValue && array.isEmpty()) {
+        return object;
+      }
+      if(hasKeyValue) {
+        int i = 1;
+        for(Object item : array) {
+          object.put(Integer.toString(i++), item);
+        }
+        return object;
+      }
+      return array;
+    }
+
+    private String tryParseKey() {
+      skipWhitespace();
+      if(index >= text.length()) {
+        return null;
+      }
+      char ch = text.charAt(index);
+      if(ch == '"' || ch == '\'') {
+        int save = index;
+        String key = parseString();
+        skipWhitespace();
+        if(peek('=')) {
+          return key;
+        }
+        index = save;
+        return null;
+      }
+      if(Character.isLetter(ch) || ch == '_') {
+        int start = index;
+        index++;
+        while(index < text.length()) {
+          char c = text.charAt(index);
+          if(Character.isLetterOrDigit(c) || c == '_') {
+            index++;
+          } else {
+            break;
+          }
+        }
+        String key = text.substring(start, index);
+        skipWhitespace();
+        if(peek('=')) {
+          return key;
+        }
+      }
+      return null;
+    }
+
+    private Integer parseNumber() {
+      int start = index;
+      if(peek('-')) {
+        index++;
+      }
+      while(index < text.length() && Character.isDigit(text.charAt(index))) {
+        index++;
+      }
+      String number = text.substring(start, index);
+      if(number.trim().isEmpty() || "-".equals(number)) {
+        return null;
+      }
+      return Integer.valueOf(Integer.parseInt(number));
+    }
+
+    private String parseString() {
+      char quote = text.charAt(index++);
+      StringBuilder sb = new StringBuilder();
+      while(index < text.length()) {
+        char ch = text.charAt(index++);
+        if(ch == '\\') {
+          if(index >= text.length()) {
+            break;
+          }
+          char esc = text.charAt(index++);
+          switch(esc) {
+            case 'n': sb.append('\n'); break;
+            case 'r': sb.append('\r'); break;
+            case 't': sb.append('\t'); break;
+            case 'b': sb.append('\b'); break;
+            case 'f': sb.append('\f'); break;
+            case '\\': sb.append('\\'); break;
+            case '"': sb.append('"'); break;
+            case '\'': sb.append('\''); break;
+            case 'u': {
+              if(index + 4 <= text.length()) {
+                String hex = text.substring(index, index + 4);
+                try {
+                  sb.append((char) Integer.parseInt(hex, 16));
+                  index += 4;
+                } catch(Exception ex) {
+                  sb.append('u').append(hex);
+                  index += 4;
+                }
+              } else {
+                sb.append('u');
+              }
+              break;
+            }
+            default:
+              sb.append(esc);
+              break;
+          }
+          continue;
+        }
+        if(ch == quote) {
+          break;
+        }
+        sb.append(ch);
+      }
+      return sb.toString();
+    }
+
+    private String parseBareword() {
+      int start = index;
+      while(index < text.length()) {
+        char ch = text.charAt(index);
+        if(Character.isLetterOrDigit(ch) || ch == '_' || ch == '.') {
+          index++;
+        } else {
+          break;
+        }
+      }
+      return text.substring(start, index);
+    }
+
+    private void skipWhitespace() {
+      while(index < text.length()) {
+        char ch = text.charAt(index);
+        if(Character.isWhitespace(ch)) {
+          index++;
+          continue;
+        }
+        if(ch == '-' && index + 1 < text.length() && text.charAt(index + 1) == '-') {
+          index += 2;
+          while(index < text.length() && text.charAt(index) != '\n' && text.charAt(index) != '\r') {
+            index++;
+          }
+          continue;
+        }
+        break;
+      }
+    }
+
+    private boolean peek(char ch) {
+      return index < text.length() && text.charAt(index) == ch;
+    }
+
+    private void expect(char ch) {
+      skipWhitespace();
+      if(index >= text.length() || text.charAt(index) != ch) {
+        throw new IllegalStateException("Expected '" + ch + "' at index=" + index);
+      }
+      index++;
+    }
+
+    private boolean startsWith(String value) {
+      return text.regionMatches(index, value, 0, value.length());
+    }
+  }
+
+  private static final class FieldSpan {
+    final String key;
+    final int valueStart;
+    final int valueEnd;
+
+    FieldSpan(String key, int valueStart, int valueEnd) {
+      this.key = key;
+      this.valueStart = valueStart;
+      this.valueEnd = valueEnd;
+    }
+  }
+
   private enum ArrayType {
     CONTENTS,
     ANSWER,
@@ -878,5 +1765,10 @@ public class Phase4QuestLucExporter {
 
   public static final class ExportResult {
     int questCount;
+    int profileQuestCount;
+    int profileMissingQuestCount;
+    int suppressedFieldCount;
+    Path referenceQuestLua;
+    final List<String> suppressedFieldExamples = new ArrayList<String>();
   }
 }
