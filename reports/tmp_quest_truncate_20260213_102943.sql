@@ -1,0 +1,13 @@
+﻿SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE npc_quest_reference;
+TRUNCATE TABLE quest_requst_item;
+TRUNCATE TABLE quest_reward_skill;
+TRUNCATE TABLE quest_reward_item;
+TRUNCATE TABLE quest_goal_meetnpc;
+TRUNCATE TABLE quest_goal_killmonster;
+TRUNCATE TABLE quest_goal_getitem;
+TRUNCATE TABLE quest_info;
+TRUNCATE TABLE quest_answer;
+TRUNCATE TABLE quest_contents;
+TRUNCATE TABLE quest_main;
+SET FOREIGN_KEY_CHECKS=1;

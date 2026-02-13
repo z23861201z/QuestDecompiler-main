@@ -1,10 +1,12 @@
 {
-  "generatedAt": "2026-02-11T23:09:09.76+08:00",
-  "totalQuestInserted": 2602,
-  "totalGoalGetItemRows": 1609,
+  "generatedAt": "2026-02-13T10:30:55.177+08:00",
+  "totalQuestInserted": 2604,
+  "totalGoalGetItemRows": 1536,
   "totalGoalKillMonsterRows": 638,
-  "totalGoalMeetNpcRows": 395,
+  "totalGoalMeetNpcRows": 397,
   "totalRewardItemRows": 1077,
+  "totalRewardSkillRows": 273,
+  "totalRequstItemRows": 151,
   "totalNpcReferenceRows": 2373,
-  "insertMillis": 2163
+  "insertMillis": 2119
 }

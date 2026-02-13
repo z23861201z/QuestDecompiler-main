@@ -114,6 +114,32 @@
 - 不改：`rawText`、`stringLiteral`（二者属于基线定位/原始字面量信息）
 - 导出器只会处理：`modifiedText IS NOT NULL AND modifiedText <> rawText`
 
+#### DB 字段改动边界（可改 / 谨慎改 / 禁改）
+
+##### A) NPC 文本链路（`npc_text_edit_map` / `npc_dialogue_text`）
+- 可改（业务编辑）：`npc_text_edit_map.modifiedText`
+- 回滚方式：将 `modifiedText` 置为 `NULL` 或回填为 `rawText`
+- 禁改（定位与基线）：`npc_text_edit_map.textId`、`npcFile`、`line`、`columnNumber`、`callType`、`rawText`、`stringLiteral`、`astMarker`、`functionName`、`surroundingAstContext`、`associatedQuestId`、`associatedQuestIdsJson`、`created_at`
+- 只读（抽取快照）：`npc_dialogue_text` 全表字段默认只读，不作为编辑入口
+
+##### B) Quest 导出链路（Phase4 / Phase5 读取的 Quest 相关表）
+- 可改（业务值字段）：
+  - `quest_main`: `name`、`need_level`、`bq_loop`、`reward_exp`、`reward_gold`、`reward_money`、`reward_fame`、`reward_pvppoint`、`reward_mileage`、`need_item`
+  - `quest_contents`: `text`
+  - `quest_answer`: `text`
+  - `quest_info`: `text`
+  - `quest_goal_getitem`: `item_id`、`item_count`
+  - `quest_goal_killmonster`: `monster_id`、`monster_count`
+  - `quest_goal_meetnpc`: `npc_id`
+  - `quest_reward_item`: `item_id`、`item_count`
+  - `quest_reward_skill`: `skill_id`
+  - `quest_requst_item`: `item_id`、`item_count`、`raw_json`
+- 谨慎改（顺序语义字段）：所有 `seq_index` 字段；修改后必须做导出与结构校验（顺序错误会直接改变 Lua 数组语义）
+- 禁改（主键/关系锚点/派生索引）：
+  - `quest_main.quest_id`
+  - 子表主键 `id` 与外键 `quest_id`
+  - `npc_quest_reference` 全表字段（`npc_file`、`quest_id`、`reference_count`、`goal_access_count`）默认视为 Phase2.5 派生索引，不做手工编辑
+
 #### 导出与验证代码入口
 - DB 文本导出到 Lua：`src/unluac/semantic/Phase7CNpcTextExporter.java`
   - 输入：`npc_text_edit_map`（优先）/`npc_dialogue_text`（兼容）
@@ -178,3 +204,26 @@
 - 不改：`rawText`、`stringLiteral`
 - 导出生效条件：`modifiedText IS NOT NULL AND modifiedText <> rawText`
 - 定位优先级：`astMarker` > `npcFile + line + column(+callType)`
+
+## Quest Database Authority Tables
+
+以下表为 Quest 主链路权威白名单（Phase3 写入 / Phase4 或 Phase5 导出读取）：
+
+- `quest_main`
+- `quest_contents`
+- `quest_answer`
+- `quest_info`
+- `quest_goal_getitem`
+- `quest_goal_killmonster`
+- `quest_goal_meetnpc`
+- `quest_reward_item`
+- `quest_reward_skill`
+- `quest_requst_item`
+- `npc_quest_reference`
+
+执行约束：
+
+- 不允许新增临时表替代上述白名单表。
+- 不允许绕过 `Phase3DatabaseWriter` 直接写入白名单表。
+- 不允许删除白名单内字段；如需扩展，仅允许向后兼容新增字段并先做影响评估。
+- 所有 DB 改动需保持 `Lua -> DB -> Lua` 可逆，且不得改变数组顺序语义。
